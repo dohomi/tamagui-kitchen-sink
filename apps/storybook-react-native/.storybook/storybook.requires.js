@@ -32,7 +32,7 @@ try {
 const getStories = () => {
   return [
     require("../../../packages/ui/stories/LmButton.stories.tsx"),
-    require("@my/ui/stories/MyComponent.stories.tsx"),
+    require("../../../packages/ui/stories/MyComponent.stories.tsx"),
   ];
 };
 

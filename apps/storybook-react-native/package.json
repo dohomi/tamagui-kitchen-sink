@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "node-libs-react-native": "^1.2.1",
+    "@expo/webpack-config": "^0.17.2",
     "@babel/core": "^7.12.9",
     "jest-expo": "~46.0.0",
     "typescript": "4.7.4"

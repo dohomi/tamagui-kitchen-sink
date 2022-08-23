@@ -8,8 +8,9 @@
   "scripts": {
     "native": "yarn build && cd apps/expo && yarn start",
     "web": "yarn build && cd apps/next && yarn next",
-    "sb:web": "cd apps/storybook-react && yarn dev",
+    "sb:vite": "cd apps/storybook-react && yarn dev",
     "sb:native": "cd apps/storybook-react-native && yarn start",
+    "sb": "cd apps/storybook-base && yarn dev",
     "web:prod": "yarn workspace next-app build",
     "watch": "yarn turbo run watch --filter=@mui/ui",
     "postinstall": "yarn build",
