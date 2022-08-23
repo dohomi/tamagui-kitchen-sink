@@ -13,7 +13,7 @@ const defaultConfig = defineConfig({
     plugins: [
         tamaguiPlugin({
             ...tamaguiConfig,
-            useReactNativeWebLite: false,
+            useReactNativeWebLite: true,
         }),
         tamaguiExtractPlugin(tamaguiConfig)
     ],
@@ -42,7 +42,7 @@ const config: StorybookViteConfig = {
                     [
                         '@tamagui/babel-plugin',
                         {
-                            components: ['tamagui', '@my/ui'],
+                            components: ['tamagui', '@tamagui/core', '@my/ui'],
                             config: './tamagui.config.ts',
                         },
                     ],

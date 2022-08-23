@@ -15,7 +15,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native-web": "0.18.7",
-    "react-native-web-lite": "^1.0.1-beta.144"
+    "react-native-web-lite": "^1.0.1-beta.153"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

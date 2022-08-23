@@ -17,7 +17,8 @@
     "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader",
     "sync:tamagui": "${TAMAGUI_PATH:-$HOME/tamagui}/starters-sync.sh",
     "eas:dev:ios": "cd apps/expo && yarn eas:dev:ios",
-    "doctor": "yarn turbo run doc"
+    "doctor": "yarn turbo run doc",
+    "tests": "yarn build && cd apps/tests && yarn test"
   },
   "resolutions": {
     "esbuild": "0.15.5",
@@ -25,7 +26,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-refresh": "^0.14.0",
-    "react-native-web": "0.18.6"
+    "react-native-web": "0.18.7"
   },
   "devDependencies": {
     "@manypkg/cli": "^0.19.1",
