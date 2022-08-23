@@ -29,7 +29,6 @@
   },
   "devDependencies": {
     "@manypkg/cli": "^0.19.1",
-    "@types/react": "^18.0.15",
     "@types/react-native": "^0.69.5",
     "eslint": "^8.21.0",
     "prettier": "^2.7.1",
