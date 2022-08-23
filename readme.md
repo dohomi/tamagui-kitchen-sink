@@ -49,6 +49,9 @@ You can add other folders inside of `packages/` if you know what you're doing an
   - Runs `yarn next`
 - Expo local dev: `yarn native`
   - Runs `expo start`
+- Storybook vite dev: `yarn sb:web` (in progress)
+- Storybook react-native: `yarn sb:native`
+- Tests: `yarn tests`
 
 ## Developing
 
