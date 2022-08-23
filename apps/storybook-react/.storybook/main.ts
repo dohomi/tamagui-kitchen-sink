@@ -1,7 +1,23 @@
 import type {StorybookViteConfig} from '@storybook/builder-vite';
-
 const {mergeConfig} = require('vite');
+import {tamaguiExtractPlugin, tamaguiPlugin} from '@tamagui/vite-plugin'
+import {defineConfig} from 'vite'
 
+const tamaguiConfig = {
+    config: './tamagui.config.ts',
+    components: ['tamagui', '@tamagui/core', '@my/ui'],
+}
+
+const defaultConfig = defineConfig({
+    clearScreen: false,
+    plugins: [
+        tamaguiPlugin({
+            ...tamaguiConfig,
+            useReactNativeWebLite: false,
+        }),
+        tamaguiExtractPlugin(tamaguiConfig)
+    ],
+})
 
 const config: StorybookViteConfig = {
     stories: [
@@ -16,12 +32,13 @@ const config: StorybookViteConfig = {
             name: "@storybook/addon-react-native-web",
             options: {
                 modulesToTranspile: [
-                   "tamagui",
+                    "@tamagui/core",
+                    "tamagui",
                     "@my/ui",
                     "app"
                 ],
                 babelPlugins: [
-                    "react-native-reanimated/plugin",
+                    // "react-native-reanimated/plugin",
                     [
                         '@tamagui/babel-plugin',
                         {
@@ -52,17 +69,9 @@ const config: StorybookViteConfig = {
     //   return config;
     // },
     viteFinal(config) {
-        return mergeConfig(config, {
-            define:{
-                global:{
-                }
-            },
-            resolve: {
-                alias: {
-                     // 'react-native': 'tamagui'
-                }
-            }
-        })
+        config.define = config.define || {}
+        config.define.global = {}
+        return mergeConfig(defaultConfig, config)
     }
 };
 export default config

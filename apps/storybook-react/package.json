@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn storybook",
+    "dev": "TAMAGUI_TARGET=web yarn storybook",
     "build": "yarn build:storybook",
     "build:storybook": "build-storybook -s public",
     "storybook": "start-storybook -p 6006 -s ./public",
@@ -28,6 +28,8 @@
     "@types/node": "16.11.9",
     "@types/react": "^18.0.17",
     "babel-loader": "^8.2.3",
+    "@tamagui/unagi": "^1.0.1-beta.153",
+    "@tamagui/vite-plugin": "^1.0.1-beta.153",
     "@tamagui/babel-plugin": "1.0.1-beta.153",
     "babel-plugin-react-native-web": "^0.17.5",
     "chromatic": "^6.0.6",
