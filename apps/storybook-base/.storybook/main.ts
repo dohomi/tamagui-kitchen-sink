@@ -12,7 +12,6 @@ const config = {
             name: "@storybook/addon-react-native-web",
             options: {
                 modulesToTranspile: [
-                    "@tamagui/core",
                     "tamagui",
                     "@my/ui",
                     "app"
@@ -22,7 +21,7 @@ const config = {
                     [
                         '@tamagui/babel-plugin',
                         {
-                            components: ['tamagui', '@tamagui/core', '@my/ui'],
+                            components: ['tamagui', '@my/ui'],
                             config: './tamagui.config.ts',
                         },
                     ],

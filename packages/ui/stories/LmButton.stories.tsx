@@ -1,4 +1,4 @@
-import LmButton from "../src/LmButton";
+import {LmButton} from "../src/LmButton";
 
 export default {
     title: 'forms/LmButton',
