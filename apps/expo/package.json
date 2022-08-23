@@ -29,11 +29,12 @@
   },
   "scripts": {
     "start": "TAMAGUI_TARGET=native expo start",
-    "android": "TAMAGUI_TARGET=native yarn expo run:android",
-    "ios": "TAMAGUI_TARGET=native yarn expo run:ios",
-    "web": "TAMAGUI_TARGET=web yarn expo start --web",
-    "eject": "expo eject",
-    "eas:dev": "eas build --profile development --platform ios"
+    "android": "TAMAGUI_TARGET=native yarn node_modules/.bin/expo run:android",
+    "ios": "TAMAGUI_TARGET=native yarn node_modules/.bin/expo run:ios",
+    "web": "TAMAGUI_TARGET=web yarn node_modules/.bin/expo start --web",
+    "eject": "node_modules/.bin/expo eject",
+    "eas:dev:ios": "eas build --profile development --platform ios",
+    "doc": "expo-cli doctor --fix-dependencies"
   },
   "main": "index.js",
   "version": "1.0.0",

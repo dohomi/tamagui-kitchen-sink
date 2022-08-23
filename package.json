@@ -2,20 +2,22 @@
   "name": "tamagui-monorepo",
   "private": true,
   "workspaces": [
-    "expo",
-    "next",
+    "apps/*",
     "packages/*"
   ],
   "scripts": {
-    "native": "yarn build && cd expo && yarn start",
-    "web": "yarn build && cd next && yarn next",
+    "native": "yarn build && cd apps/expo && yarn start",
+    "web": "yarn build && cd apps/next && yarn next",
+    "sb:web": "cd apps/storybook-react && yarn dev",
+    "sb:native": "cd apps/storybook-react-native && yarn start",
     "web:prod": "yarn workspace next-app build",
-    "watch": "yarn workspaces foreach -pi run watch",
+    "watch": "yarn turbo run watch --filter=@mui/ui",
     "postinstall": "yarn build",
     "build": "yarn turbo run build --filter=@my/ui",
     "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader",
     "sync:tamagui": "${TAMAGUI_PATH:-$HOME/tamagui}/starters-sync.sh",
-    "eas": "cd expo && yarn eas:dev"
+    "eas:dev:ios": "cd apps/expo && yarn eas:dev:ios",
+    "doctor": "yarn turbo run doc"
   },
   "resolutions": {
     "esbuild": "0.15.5",

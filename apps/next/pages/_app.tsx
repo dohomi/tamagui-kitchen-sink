@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
       <Head>
         <title>Tamagui Example App</title>
         <meta name="description" content="Tamagui, Solito, Expo & Next.js" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/apps/next/public/favicon.ico" />
       </Head>
       <NextThemeProvider onChangeTheme={setTheme}>
         <Provider disableRootThemeClass defaultTheme={theme}>

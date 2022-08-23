@@ -1,11 +1,11 @@
-import config from '../tamagui.config'
-import { NavigationProvider } from './navigation'
-import { TamaguiProvider, TamaguiProviderProps } from '@my/ui'
+import {NavigationProvider} from './navigation'
+import {TamaguiProviderProps} from '@my/ui'
+import {LmTamaguiProvider} from "app/provider/LmTamaguiProvider";
 
-export function Provider({ children, ...rest }: Omit<TamaguiProviderProps, 'config'>) {
-  return (
-    <TamaguiProvider config={config} disableInjectCSS defaultTheme="light" {...rest}>
-      <NavigationProvider>{children}</NavigationProvider>
-    </TamaguiProvider>
-  )
+export function Provider({children, ...rest}: Omit<TamaguiProviderProps, 'config'>) {
+    return (
+        <LmTamaguiProvider {...rest}>
+            <NavigationProvider>{children}</NavigationProvider>
+        </LmTamaguiProvider>
+    )
 }

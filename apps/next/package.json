@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "cd .. && yarn build && cd next && next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "node_modules/.bin/next dev",
+    "build": "cd ../.. && yarn build && cd next && next build",
+    "start": "node_modules/.bin/next start",
+    "lint": "node_modules/.bin/next lint"
   },
   "dependencies": {
     "@tamagui/next-theme": "1.0.1-beta.153",
