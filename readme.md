@@ -1,4 +1,4 @@
-# Tamagui + Solito + Next + Expo Monorepo
+# Tamagui + Solito + Next + Expo Kitchen-Sink
 
 ```sh
 npx create-tamagui-app@latest my-app
@@ -26,8 +26,11 @@ Many thanks to  [@FernandoTheRojo](https://twitter.com/fernandotherojo) for the 
 
 The main apps are:
 
-- `expo` (native)
-- `next` (web)
+- `apps` 
+  - `expo` (native)
+  - `next` (web)
+  - `storybook-react` (web)
+  - `storybook-react-native` (native)
 
 - `packages` shared packages across apps
   - `ui` includes your custom UI kit that will be optimized by Tamagui
