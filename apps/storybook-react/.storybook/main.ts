@@ -1,5 +1,5 @@
 const pkgs = ['tamagui'];
-module.exports = {
+const config = {
     stories: [
         "../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)",
         "../../../packages/app/**/*.stories.@(js|jsx|ts|tsx|mdx)",
@@ -26,14 +26,15 @@ module.exports = {
     core: {
         builder: 'webpack5'
     },
-    // framework: "@storybook/react",
-    typescript: { reactDocgen: false },
+    framework: "@storybook/react",
+    // typescript: { reactDocgen: false },
     webpackFinal: async (config, {configType}) => {
-        config.resolve.fallback = {
-            stream: require.resolve("stream-browserify"),
-            path: require.resolve("path-browserify"),
-        };
+        // config.resolve.fallback = {
+        //     stream: require.resolve("stream-browserify"),
+        //     path: require.resolve("path-browserify"),
+        // };
         return config
     },
 
 };
+export default config
