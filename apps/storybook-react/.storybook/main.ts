@@ -37,40 +37,8 @@ const config = {
     framework: "@storybook/react",
     // typescript: { reactDocgen: false },
     webpackFinal: async (config, {configType}) => {
-        // config.resolve.fallback = {
-        //   stream: require.resolve("stream-browserify"),
-        //   path: require.resolve("path-browserify"),
-        // };
         return {
-            ...config,
-            // module: {
-            //     ...config.module,
-            //     rules: [
-            //         ...config.module.rules,
-            //         {
-            //             test: /\.[jt]sx?$/,
-            //             // todo
-            //             exclude: path => shouldExclude(path, projectRoot),
-            //             use: [
-            //                 // todo: get thread-loader working later
-            //                 // optionally thread-loader for significantly faster compile!
-            //                 // 'thread-loader',
-            //                 //
-            //                 // {
-            //                 //     loader: 'esbuild-loader',
-            //                 //     options: {
-            //                 //         loader: 'tsx',
-            //                 //         minify: process.env.NODE_ENV === 'production',
-            //                 //     },
-            //                 // },
-            //                 {
-            //                     loader: 'tamagui-loader',
-            //                     options:  tamaguiOptions
-            //                 },
-            //             ]
-            //         }
-            //     ]
-            // },
+            ...config
         };
     },
 
