@@ -105,13 +105,13 @@ const config: StorybookViteConfig = {
                             // optionally thread-loader for significantly faster compile!
                             // 'thread-loader',
                             //
-                            // {
-                            //     loader: 'esbuild-loader',
-                            //     options: {
-                            //         loader: 'tsx',
-                            //         minify: process.env.NODE_ENV === 'production',
-                            //     },
-                            // },
+                            {
+                                loader: 'esbuild-loader',
+                                options: {
+                                    loader: 'tsx',
+                                    minify: process.env.NODE_ENV === 'production',
+                                },
+                            },
                             {
                                 loader: 'tamagui-loader',
                                 options:  tamaguiOptions
