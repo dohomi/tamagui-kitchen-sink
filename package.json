@@ -8,11 +8,11 @@
   "scripts": {
     "native": "yarn build && cd apps/expo && yarn start",
     "web": "yarn build && cd apps/next && yarn next",
-    "sb:vite": "cd apps/storybook-react && yarn dev",
+    "sb:vite": "cd apps/storybook-vite && yarn sb",
     "sb:native": "cd apps/storybook-react-native && yarn start",
-    "sb": "cd apps/storybook-base && yarn dev",
+    "sb": "cd apps/storybook-react && yarn sb",
     "web:prod": "yarn workspace next-app build",
-    "watch": "yarn turbo run watch --filter=@mui/ui",
+    "watch": "yarn turbo run watch --filter=@my/ui",
     "postinstall": "yarn build",
     "build": "yarn turbo run build --filter=@my/ui",
     "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader",
@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@manypkg/cli": "^0.19.1",
-    "@types/react-native": "^0.69.5",
     "eslint": "^8.21.0",
     "prettier": "^2.7.1",
     "turbo": "^1.4.2",

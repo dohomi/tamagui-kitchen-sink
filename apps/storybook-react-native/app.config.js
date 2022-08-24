@@ -1,7 +1,7 @@
 export default {
   name: 'Storybook',
   description: 'Storybook',
-  slug: 'storybook-react-native',
+  slug: 'storybook-vite-native',
   version: '1.0.0',
   orientation: 'portrait',
   icon: './assets/icon.storybook.png',

@@ -1,4 +1,4 @@
-import { Anchor, Button, H1, Paragraph, Separator, XStack, YStack, Sheet } from '@my/ui'
+import {Anchor, Button, H1, Paragraph, Separator, XStack, YStack, Sheet, LmButton} from '@my/ui'
 import { ChevronDown, ChevronUp } from '@tamagui/feather-icons'
 import React, { useState } from 'react'
 import { useLink } from 'solito/link'
@@ -33,6 +33,9 @@ export function HomeScreen() {
       <XStack>
         <Button {...linkProps}>Link to user</Button>
       </XStack>
+        <XStack>
+            <LmButton>lm button</LmButton>
+        </XStack>
 
       <SheetDemo />
     </YStack>
