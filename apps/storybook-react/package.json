@@ -23,21 +23,18 @@
     "@storybook/addon-links": "~6.5.10",
     "@storybook/addon-react-native-web": "^0.0.18",
     "@storybook/react": "~6.5.10",
-    "@tamagui/babel-plugin": "1.0.1-beta.153",
     "@storybook/builder-webpack5": "^6.5.10",
     "@storybook/manager-webpack5": "^6.5.10",
     "@types/node": "16.11.9",
     "@types/react": "^18.0.17",
     "babel-loader": "^8.2.3",
+    "storybook-addon-next": "^1.6.7",
     "babel-plugin-react-native-web": "^0.17.5",
-    "tamagui-loader": "^1.0.1-beta.153",
     "chromatic": "^6.0.6",
     "eslint": "7",
     "eslint-config-next": "^12.2.0",
     "eslint-plugin-storybook": "^0.6.4",
     "path-browserify": "^1.0.1",
-    "storybook-addon-next": "^1.6.7",
-    "typescript": "4.7.4",
-    "vite": "3.0.9"
+    "typescript": "4.7.4"
   }
 }

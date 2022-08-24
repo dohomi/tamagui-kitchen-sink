@@ -1,5 +1,5 @@
 // import * as NextImage from 'next/image'
-import {LmTamaguiProvider} from "@my/ui/src/LmTamaguiProvider";
+import {Provider} from "app/provider";
 
 
 // const OriginalNextImage = NextImage.default
@@ -21,8 +21,8 @@ export const parameters = {
 
 export const decorators = [
     (Story) => (
-        <LmTamaguiProvider>
-            <Story/>
-        </LmTamaguiProvider>
+        <Provider>
+            {Story()}
+        </Provider>
     )
 ]

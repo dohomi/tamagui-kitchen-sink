@@ -8,7 +8,11 @@ export default {
 } as ComponentMeta<typeof MyComponent>;
 
 
-const Template: ComponentStory<typeof MyComponent> = (args) => <MyComponent {...args}><Text>My
-    Component</Text></MyComponent>;
+const Template: ComponentStory<typeof MyComponent> = (args) => <MyComponent {...args} />;
 
 export const Base = Template.bind({})
+Base.args={
+    children: (
+        <Text>My Component</Text>
+    )
+}

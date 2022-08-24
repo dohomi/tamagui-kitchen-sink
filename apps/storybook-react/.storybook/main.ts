@@ -1,5 +1,5 @@
-const pkgs = ['tamagui', '@tamagui/core', '@my/config', '@my/ui', 'app'];
-const config = {
+const pkgs = ['tamagui'];
+module.exports = {
     stories: [
         "../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)",
         "../../../packages/app/**/*.stories.@(js|jsx|ts|tsx|mdx)",
@@ -8,37 +8,32 @@ const config = {
     addons: [
         "@storybook/addon-links",
         "@storybook/addon-essentials",
+        "storybook-addon-next",
         {
             name: "@storybook/addon-react-native-web",
             options: {
-                modulesToTranspile: pkgs,
-                babelPlugins: [
-                    // "react-native-reanimated/plugin",
-                    [
-                        '@tamagui/babel-plugin',
-                        {
-                            components: pkgs,
-                            config: './tamagui.config.ts',
-                        },
-                    ],
-                    [
-                        'transform-inline-environment-variables',
-                        {
-                            include: 'TAMAGUI_TARGET',
-                        },
-                    ],
+                modulesToTranspile: [
+                    "@gorhom/bottom-sheet",
+                    "@gorhom/portal",
+                    "twrnc",
+                    "moti",
+                    "zeego",
                 ],
+                babelPlugins: ["react-native-reanimated/plugin"],
             },
         },
     ],
     core: {
         builder: 'webpack5'
     },
-    framework: "@storybook/react",
-    // typescript: { reactDocgen: false },
+    // framework: "@storybook/react",
+    typescript: { reactDocgen: false },
     webpackFinal: async (config, {configType}) => {
+        config.resolve.fallback = {
+            stream: require.resolve("stream-browserify"),
+            path: require.resolve("path-browserify"),
+        };
         return config
     },
 
 };
-export default config

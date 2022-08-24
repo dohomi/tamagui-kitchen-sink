@@ -22,8 +22,6 @@
     "tests": "yarn build && cd apps/tests && yarn test"
   },
   "resolutions": {
-    "esbuild": "0.15.5",
-    "@types/react": "17.0.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-refresh": "^0.14.0",
