@@ -1,5 +1,5 @@
 // import * as NextImage from 'next/image'
-import {LmTamaguiProvider} from "@my/ui/src";
+import {LmTamaguiProvider} from "@my/ui/src/LmTamaguiProvider";
 
 
 // const OriginalNextImage = NextImage.default

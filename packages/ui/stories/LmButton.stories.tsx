@@ -1,13 +1,13 @@
-import {LmButton, LmTamaguiProvider} from "../src";
+import {LmButton} from "../src";
+import {ComponentMeta, ComponentStory} from "@storybook/react";
 
 export default {
     title: 'forms/LmButton',
     component: LmButton
-};
+} as ComponentMeta<typeof LmButton>;
 
-export const Primary = () => (
-    <LmTamaguiProvider>
-        <LmButton onPress={() => {
-        }}>LmButton</LmButton>;
-    </LmTamaguiProvider>
-)
+const Template: ComponentStory<typeof LmButton> = (args) => <LmButton {...args} />
+export const Primary = Template.bind({})
+Primary.args = {
+    children: 'Standard Button'
+}

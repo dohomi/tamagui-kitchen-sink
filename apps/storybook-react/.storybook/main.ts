@@ -1,4 +1,4 @@
-const pkgs = ['tamagui', '@tamagui/core', '@tamagui/portal', '@tamagui/config-base', '@tamagui/use-window-size', '@tamagui/use-force-update', '@tamagui/use-debounce', '@my/config', '@my/ui', 'app'];
+const pkgs = ['tamagui', '@tamagui/core', '@my/config', '@my/ui', 'app'];
 const config = {
     stories: [
         "../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)",
@@ -37,9 +37,7 @@ const config = {
     framework: "@storybook/react",
     // typescript: { reactDocgen: false },
     webpackFinal: async (config, {configType}) => {
-        return {
-            ...config
-        };
+        return config
     },
 
 };
