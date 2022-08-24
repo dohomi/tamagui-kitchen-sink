@@ -850,6 +850,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.18.6"
 
+"@babel/plugin-transform-object-assign@^7.16.7":
+  version "7.18.6"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-object-assign/-/plugin-transform-object-assign-7.18.6.tgz#7830b4b6f83e1374a5afb9f6111bcfaea872cdd2"
+  integrity sha512-mQisZ3JfqWh2gVXvfqYCAAyRs6+7oev+myBsTwW5RnPhYXOTuCEw2oe3YgxlXMViXUS53lG8koulI7mJ+8JE+A==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.18.6"
+
 "@babel/plugin-transform-object-super@^7.0.0", "@babel/plugin-transform-object-super@^7.18.6":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-object-super/-/plugin-transform-object-super-7.18.6.tgz#fb3c6ccdd15939b6ff7939944b51971ddc35912c"
@@ -1119,7 +1126,7 @@
     "@babel/plugin-transform-react-jsx-development" "^7.18.6"
     "@babel/plugin-transform-react-pure-annotations" "^7.18.6"
 
-"@babel/preset-typescript@^7.12.7", "@babel/preset-typescript@^7.13.0":
+"@babel/preset-typescript@^7.12.7", "@babel/preset-typescript@^7.13.0", "@babel/preset-typescript@^7.16.7":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.18.6.tgz#ce64be3e63eddc44240c6358daefac17b3186399"
   integrity sha512-s9ik86kXBAnD760aybBucdpnLsAt0jK1xqJn2juOn9lkOvSHV60os5hxoVJsPzMQxvnUJFAlkont2DvvaYEBtQ==
@@ -4154,6 +4161,16 @@
     "@tamagui/animate-presence" "^1.0.1-beta.153"
     "@tamagui/core" "^1.0.1-beta.153"
 
+"@tamagui/animations-reanimated@^1.0.1-beta.153":
+  version "1.0.1-beta.153"
+  resolved "https://registry.yarnpkg.com/@tamagui/animations-reanimated/-/animations-reanimated-1.0.1-beta.153.tgz#1e66e5a2b7a2c22be22ca7f9acbe54802087f3fc"
+  integrity sha512-XjQtAs9Wl2bXIGwxjJau16Cz/iwFaEacaEjAtklJ8KzT9XsW6tu+/eh+PD30b68dUcb6uREWhiE0Qw/IyRcdgQ==
+  dependencies:
+    "@tamagui/animate-presence" "^1.0.1-beta.153"
+    "@tamagui/animations-react-native" "^1.0.1-beta.153"
+    "@tamagui/core" "^1.0.1-beta.153"
+    react-native-reanimated "^2.8.0"
+
 "@tamagui/aria-hidden@^1.0.1-beta.153":
   version "1.0.1-beta.153"
   resolved "https://registry.yarnpkg.com/@tamagui/aria-hidden/-/aria-hidden-1.0.1-beta.153.tgz#2a30acc900a9a512488a8ae969dcd307848b76ca"
@@ -4229,6 +4246,19 @@
   version "1.0.1-beta.153"
   resolved "https://registry.yarnpkg.com/@tamagui/compose-refs/-/compose-refs-1.0.1-beta.153.tgz#9a06ec679cbde83da23887d93ceebbb4faf529f0"
   integrity sha512-J2LyfZ7Ee5PuK6poWi/0rHOc/7saQmU6SPImbwtAmyuli/pIitVOnqtrlsnADRMdE+vYznA0VoQXg+7Qy/sPOw==
+
+"@tamagui/config-base@^1.0.1-beta.153":
+  version "1.0.1-beta.153"
+  resolved "https://registry.yarnpkg.com/@tamagui/config-base/-/config-base-1.0.1-beta.153.tgz#707b6b485dd171bab3ebdb210f175902cbc4fd6c"
+  integrity sha512-YEHFlpH1OdsDfWEPYYBao9FSyPkRiJ8oUj+Y8dEbDGJnw9g8+qsIsEQDDGScIrpvCsNLK9SBTX+Ck/tg5A3u3Q==
+  dependencies:
+    "@tamagui/animations-reanimated" "^1.0.1-beta.153"
+    "@tamagui/colors" "^1.0.1-beta.153"
+    "@tamagui/core" "^1.0.1-beta.153"
+    "@tamagui/font-inter" "^1.0.1-beta.153"
+    "@tamagui/font-silkscreen" "^1.0.1-beta.153"
+    "@tamagui/shorthands" "^1.0.1-beta.153"
+    "@tamagui/theme-base" "^1.0.1-beta.153"
 
 "@tamagui/config-default-node@^1.0.1-beta.153":
   version "1.0.1-beta.153"
@@ -4330,10 +4360,17 @@
     "@tamagui/compose-refs" "^1.0.1-beta.153"
     "@tamagui/core" "^1.0.1-beta.153"
 
-"@tamagui/font-inter@1.0.1-beta.153":
+"@tamagui/font-inter@1.0.1-beta.153", "@tamagui/font-inter@^1.0.1-beta.153":
   version "1.0.1-beta.153"
   resolved "https://registry.yarnpkg.com/@tamagui/font-inter/-/font-inter-1.0.1-beta.153.tgz#291ada28038f231fd3557d31a4d74b8104b55fa9"
   integrity sha512-Ya01tnDTpxkJ7qqtZvNoJjhwcEpRb7JI+R27El91qwEVHRHe8F0Xuzz+mCtbGwCfeqxYzvy6OW4moWG/26niRA==
+  dependencies:
+    "@tamagui/core" "^1.0.1-beta.153"
+
+"@tamagui/font-silkscreen@^1.0.1-beta.153":
+  version "1.0.1-beta.153"
+  resolved "https://registry.yarnpkg.com/@tamagui/font-silkscreen/-/font-silkscreen-1.0.1-beta.153.tgz#dc990e5895ae0b3798c3c60bcebeb2a36e8a7365"
+  integrity sha512-YYoRTcnVeiGm+4vq2N0Lb4hg/xpHX+lyOEbtqQzEEH2I8VxZ4RVKMWWgyn876dKXpnrrUM6kuX80by5z6aDHjA==
   dependencies:
     "@tamagui/core" "^1.0.1-beta.153"
 
@@ -4645,7 +4682,7 @@
     "@tamagui/core" "^1.0.1-beta.153"
     "@tamagui/helpers-tamagui" "^1.0.1-beta.153"
 
-"@tamagui/theme-base@1.0.1-beta.153":
+"@tamagui/theme-base@1.0.1-beta.153", "@tamagui/theme-base@^1.0.1-beta.153":
   version "1.0.1-beta.153"
   resolved "https://registry.yarnpkg.com/@tamagui/theme-base/-/theme-base-1.0.1-beta.153.tgz#4234b33b0daf20607abac8ddf33b6b1bbfb2bf54"
   integrity sha512-Cf4VA5EpUX4XoTynqv9XkwIljnJRCEwHVKRrDzIshC+x+Jwcb8b3v/LwwX1hgXHR82yisfNfJR8UwzQCFARc9A==
@@ -4856,6 +4893,11 @@
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@types/html-minifier-terser/-/html-minifier-terser-6.1.0.tgz#4fc33a00c1d0c16987b1a20cf92d20614c55ac35"
   integrity sha512-oh/6byDPnL1zeNXFrDXFLyZjkr1MsBG667IM792caf1L2UPOOMf65NFzjUH/ltyfwjAGfs1rsX1eftK0jC/KIg==
+
+"@types/invariant@^2.2.35":
+  version "2.2.35"
+  resolved "https://registry.yarnpkg.com/@types/invariant/-/invariant-2.2.35.tgz#cd3ebf581a6557452735688d8daba6cf0bd5a3be"
+  integrity sha512-DxX1V9P8zdJPYQat1gHyY0xj3efl8gnMVjiM9iCY6y27lj+PoQWkgjt8jDqmovPqULkKVpKRg8J36iQiA+EtEg==
 
 "@types/is-function@^1.0.0":
   version "1.0.1"
@@ -12912,6 +12954,11 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
 
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+  integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
+
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -16147,6 +16194,19 @@ react-native-randombytes@^3.5.1:
     buffer "^4.9.1"
     sjcl "^1.0.3"
 
+react-native-reanimated@^2.8.0:
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-2.10.0.tgz#ed53be66bbb553b5b5e93e93ef4217c87b8c73db"
+  integrity sha512-jKm3xz5nX7ABtHzzuuLmawP0pFWP77lXNdIC6AWOceBs23OHUaJ29p4prxr/7Sb588GwTbkPsYkDqVFaE3ezNQ==
+  dependencies:
+    "@babel/plugin-transform-object-assign" "^7.16.7"
+    "@babel/preset-typescript" "^7.16.7"
+    "@types/invariant" "^2.2.35"
+    invariant "^2.2.4"
+    lodash.isequal "^4.5.0"
+    setimmediate "^1.0.5"
+    string-hash-64 "^1.0.3"
+
 react-native-safe-area-context@4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.3.1.tgz#5cf97b25b395e0d09bc1f828920cd7da0d792ade"
@@ -17711,6 +17771,11 @@ strict-uri-encode@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz#b9c7330c7042862f6b142dc274bbcc5866ce3546"
   integrity sha512-QwiXZgpRcKkhTj2Scnn++4PKtWsH0kpzZ62L2R6c/LUVYv7hVnZqcg2+sMuT6R7Jusu1vviK/MFsu6kNJfWlEQ==
+
+string-hash-64@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/string-hash-64/-/string-hash-64-1.0.3.tgz#0deb56df58678640db5c479ccbbb597aaa0de322"
+  integrity sha512-D5OKWKvDhyVWWn2x5Y9b+37NUllks34q1dCDhk/vYcso9fmhs+Tl3KR/gE4v5UNj2UA35cnX4KdVVGkG1deKqw==
 
 string-length@^4.0.1:
   version "4.0.2"

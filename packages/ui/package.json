@@ -14,14 +14,15 @@
     "dist"
   ],
   "scripts": {
-    "build": "tamagui-build",
-    "watch": "tamagui-build --watch"
+    "build": "tamagui-build src/index.tsx",
+    "watch": "tamagui-build src/index.tsx --watch"
   },
   "dependencies": {
     "@my/config": "*",
     "@tamagui/use-debounce": "^1.0.1-beta.153",
     "@tamagui/use-force-update": "^1.0.1-beta.153",
     "@tamagui/use-window-size": "^1.0.1-beta.152",
+    "@tamagui/config-base": "^1.0.1-beta.153",
     "tamagui": "^1.0.1-beta.153"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 // import * as NextImage from 'next/image'
-import {LmTamaguiProvider} from "app/provider/LmTamaguiProvider";
+import {LmTamaguiProvider} from "@my/ui/src";
 
 
 // const OriginalNextImage = NextImage.default
@@ -10,19 +10,19 @@ import {LmTamaguiProvider} from "app/provider/LmTamaguiProvider";
 // })
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/
+    actions: {argTypesRegex: '^on[A-Z].*'},
+    controls: {
+        matchers: {
+            color: /(background|color)$/i,
+            date: /Date$/
+        }
     }
-  }
 }
 
 export const decorators = [
-  (Story) => (
-      <LmTamaguiProvider>
-        <Story />
-      </LmTamaguiProvider>
-  )
+    (Story) => (
+        <LmTamaguiProvider>
+            <Story/>
+        </LmTamaguiProvider>
+    )
 ]
