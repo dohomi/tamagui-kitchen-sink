@@ -1,4 +1,14 @@
+import { shouldExclude } from 'tamagui-loader'
+import path from 'path'
+const projectRoot = path.join(__dirname)
 const pkgs = ['tamagui'];
+const tamaguiOptions = {
+    config: './tamagui.config.ts',
+    components: ['tamagui','@tamagui/core'],
+    importsWhitelist: ['constants.js', 'colors.js'],
+    logTimings: true,
+    disableExtraction: process.env.NODE_ENV === 'development',
+}
 const config = {
     stories: [
         "../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)",
@@ -18,6 +28,8 @@ const config = {
                     // "twrnc",
                     // "moti",
                     // "zeego",
+                    // 'tamagui',
+                    // '@tamagui/core',
                     'app',
                     '@my/ui',
                     '@my/config'
@@ -29,7 +41,7 @@ const config = {
                     //     {
                     //         exclude: /node_modules/,
                     //         config: './tamagui.config.ts',
-                    //         components: ['app', 'tamagui']
+                    //         components: ['app', 'tamagui', '@tamagui/core']
                     //     },
                     // ],
                 ],
@@ -58,11 +70,24 @@ const config = {
         //     stream: require.resolve("stream-browserify"),
         //     path: require.resolve("path-browserify"),
         // };
-
+        config.resolve.alias = {
+            ...config.resolve.alias,
+            // Resolve react-native to react-native-web
+            // 'react-native$': require.resolve('react-native-web'),
+            // 'react-native-web$': require.resolve('react-native-web'),
+            // @tamagui/rnw exports a couple internal hooks from react-native-web
+            // resolve both to CommonJS so they match
+            '@tamagui/rnw': require.resolve('@tamagui/rnw'),
+            // optional, for svg icons
+            'react-native-svg': require.resolve('@tamagui/react-native-svg'),
+        }
         return {
-            ...config
+            ...config,
         }
     },
-
+    env: (config) => ({
+        ...config,
+        TAMAGUI_TARGET: 'web'
+    })
 };
 export default config

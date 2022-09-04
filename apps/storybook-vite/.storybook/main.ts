@@ -5,7 +5,7 @@ import {mergeConfig} from 'vite'
 const tamaguiConfig = {
     config: './tamagui.config.ts',
     components: [
-        /*'app', '@my/ui', '@my/config',*/ 'tamagui', '@tamagui/core'
+        /*'app', '@my/ui', '@my/config',*/ 'tamagui', '@tamagui/core', 'app'
     ],
     logTimings: true,
     importsWhitelist: ['constants.js', 'colors.js'],
@@ -14,9 +14,9 @@ const tamaguiConfig = {
 
 const config: StorybookViteConfig = {
     stories: [
-        "../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+        // "../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)",
         "../../../packages/app/**/*.stories.@(js|jsx|ts|tsx|mdx)",
-        "../../../packages/ui/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+        // "../../../packages/ui/**/*.stories.@(js|jsx|ts|tsx|mdx)",
     ],
 
     addons: [
@@ -29,7 +29,7 @@ const config: StorybookViteConfig = {
     },
     framework: "@storybook/react",
     features: {
-        storyStoreV7: true,
+        // storyStoreV7: true,
     },
     viteFinal(config) {
         return mergeConfig(config, {
@@ -42,6 +42,7 @@ const config: StorybookViteConfig = {
             ],
             define: {
                 global: {},
+                TAMAGUI_TARGET: 'web'
             },
             // resolve: {
             //     alias: {
