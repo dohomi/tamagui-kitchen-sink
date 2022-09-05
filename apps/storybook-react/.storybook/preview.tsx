@@ -1,10 +1,6 @@
 // import * as NextImage from 'next/image'
 import {Provider} from "app/provider";
-import Tamagui from '../tamagui.config'
-import {Theme, useDefaultThemeName, useTheme, useThemeName} from "@my/ui";
 
-const css = Tamagui.getCSS()
-console.log(css)
 
 // const OriginalNextImage = NextImage.default
 //
