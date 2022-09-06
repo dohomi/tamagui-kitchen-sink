@@ -1,3 +1,2 @@
-import StorybookUIRoot from './.storybook/Storybook'
+export {default} from './.storybook/Storybook'
 
-export { StorybookUIRoot as default }
