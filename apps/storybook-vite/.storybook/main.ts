@@ -1,11 +1,11 @@
 import type {StorybookViteConfig} from '@storybook/builder-vite';
 import {tamaguiExtractPlugin, tamaguiPlugin} from '@tamagui/vite-plugin'
-import {mergeConfig} from 'vite'
+import {mergeConfig, loadEnv} from 'vite'
 
 const tamaguiConfig = {
     config: './tamagui.config.ts',
     components: [
-        /*'app', '@my/ui', '@my/config',*/ 'tamagui', '@tamagui/core', 'app'
+        /*'app', '@my/ui', '@my/config',*/ 'tamagui', '@tamagui/core'
     ],
     logTimings: true,
     importsWhitelist: ['constants.js', 'colors.js'],
@@ -32,6 +32,12 @@ const config: StorybookViteConfig = {
         // storyStoreV7: true,
     },
     viteFinal(config) {
+        process.env = Object.assign(process.env, loadEnv(config.mode as string, process.cwd(), ''), {
+            global: {},
+            TAMAGUI_TARGET: 'web',
+            NODE_DEBUG: false
+        });
+
         return mergeConfig(config, {
             plugins: [
                 tamaguiPlugin({
@@ -42,7 +48,9 @@ const config: StorybookViteConfig = {
             ],
             define: {
                 global: {},
-                TAMAGUI_TARGET: 'web'
+                // TAMAGUI_TARGET: "web",
+                'process.env.TAMAGUI_TARGET': 'web',
+                'process.env.NODE_DEBUG': false
             },
             // resolve: {
             //     alias: {

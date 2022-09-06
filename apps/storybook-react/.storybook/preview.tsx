@@ -1,6 +1,6 @@
 // import * as NextImage from 'next/image'
-import {Provider} from "app/provider";
-
+import {LmTamaguiProvider} from "app/provider/LmTamaguiProvider";
+import {StoryObj} from '@storybook/react'
 
 // const OriginalNextImage = NextImage.default
 //
@@ -20,13 +20,18 @@ export const parameters = {
 }
 
 export const decorators = [
-    (Story) => {
-        // todo: enable theme switch. need to bring tamagui provider into front
+    (Story, args: any) => {
+        let theme = args.globals.backgrounds?.value === '#33333' ? 'dark' : 'light'
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // dark mode
+            theme = 'dark'
+        }
+
         return (
             <>
-                <Provider>
+                <LmTamaguiProvider defaultTheme={theme}>
                     {Story()}
-                </Provider>
+                </LmTamaguiProvider>
             </>
         )
     }
