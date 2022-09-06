@@ -1,5 +1,5 @@
-import {TamaguiProvider, TamaguiProviderProps} from "@my/ui";
-// import {TamaguiProvider, TamaguiProviderProps} from 'tamagui'
+// import {TamaguiProvider, TamaguiProviderProps} from "@my/ui";
+import {TamaguiProvider, TamaguiProviderProps} from 'tamagui'
 import config from '../tamagui.config'
 
 type LmTamaguiProviderProps = Omit<TamaguiProviderProps, 'config'>
