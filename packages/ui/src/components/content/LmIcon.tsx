@@ -1,23 +1,22 @@
 import {getTokens, SizeTokens, Theme, ThemeProps} from "tamagui";
-import FontAwesome from '@expo/vector-icons/FontAwesome'
+import Ionicons from '@expo/vector-icons/Ionicons'
 
-export type FontAwesomeIconNames = keyof typeof FontAwesome.glyphMap
+export type IoniconIconNames = keyof typeof Ionicons.glyphMap;
 
 type colors = '$blue' | '$gray' | '$green'
 type saturation = '3' | '5' | '10'
 type mode = 'Dark' | 'Light'
 
 export type LmIconProps = {
-    iconName: FontAwesomeIconNames,
+    iconName: IoniconIconNames,
     size?: SizeTokens | number,
     color?: `${colors}${saturation}${mode}`
     themeColor?: ThemeProps['name']
 }
 
 
-const tokens = getTokens()
-
 export function LmIcon({iconName, size, color, themeColor}: LmIconProps) {
+    const tokens = getTokens()
     let sizeInNumber: number = 24
     let colorValue: string = 'inherit'
 
@@ -36,9 +35,9 @@ export function LmIcon({iconName, size, color, themeColor}: LmIconProps) {
     console.log(sizeInNumber, color, colorValue)
     return themeColor ? (
         <Theme name={themeColor}>
-            <FontAwesome name={iconName} size={sizeInNumber} color={'inherit'}/>
+            <Ionicons name={iconName} size={sizeInNumber} color={'inherit'}/>
         </Theme>
     ) : (
-        <FontAwesome name={iconName} size={sizeInNumber} color={colorValue}/>
+        <Ionicons name={iconName} size={sizeInNumber} color={colorValue}/>
     )
 }

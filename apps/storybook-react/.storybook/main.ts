@@ -45,7 +45,7 @@ const config = {
             // resolve both to CommonJS so they match
             '@tamagui/rnw': require.resolve('@tamagui/rnw'),
             // optional, for svg icons
-            'react-native-svg': require.resolve('@tamagui/react-native-svg'),
+            // 'react-native-svg': require.resolve('@tamagui/react-native-svg'),
         }
         return {
             ...config,
