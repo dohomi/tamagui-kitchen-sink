@@ -1,4 +1,5 @@
 import {LmIcon} from "../../../src/components/content/LmIcon";
+import {XStack} from "tamagui";
 
 export default {
     title: 'ui/content/icon',
@@ -12,17 +13,23 @@ Basic.args = {
     iconName: 'download'
 }
 
-export const Size = Template.bind({})
-Size.args = {
-    iconName: 'bug',
-    size: '$8',
-    iconSize: 80
-}
+export const Sizes = () => (
+    <XStack space={'$4'}>
+        <LmIcon iconName={'bug'}/>
+        <LmIcon iconName={'bug'} size={'$2'}/>
+        <LmIcon iconName={'bug'} size={'$4'}/>
+        <LmIcon iconName={'bug'} size={'$6'}/>
+        <LmIcon iconName={'bug'} size={'$8'}/>
+    </XStack>
+)
 
-export const BgColor = Template.bind({})
-BgColor.args = {
-    iconName: 'bug',
-    size: '$8',
-    iconSize: 60,
-    backgroundColor: '$red1'
-}
+
+export const Colors = () => (
+    <XStack space={'$4'}>
+        <LmIcon iconName={'bug'} color={'$gray3Light'}/>
+        <LmIcon iconName={'bug'} size={'$2'} themeColor={'red_alt2'}/>
+        <LmIcon iconName={'bug'} size={'$4'}/>
+        <LmIcon iconName={'bug'} size={'$6'}/>
+        <LmIcon iconName={'bug'} size={'$8'}/>
+    </XStack>
+)
