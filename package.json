@@ -20,7 +20,7 @@
     "eas:dev:ios": "cd apps/expo && yarn eas:dev:ios",
     "doctor": "yarn turbo run doc",
     "tests": "yarn build && cd apps/tests && yarn test",
-    "rm:nodemodule": "rm -rf node_modules apps/expo/node_modules apps/next/node_modules packages/ui/node_modules"
+    "rm:nodemodule": "rm -rf node_modules apps/expo/node_modules apps/next/node_modules packages/ui/node_modules yarn.lock apps/storybook-react/node_modules apps/storybook-react-native/node_modules"
   },
   "resolutions": {
     "react": "18.2.0",

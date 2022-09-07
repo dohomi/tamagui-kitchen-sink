@@ -8,8 +8,8 @@ const withTM = require('next-transpile-modules')([
     'expo-linking',
     'expo-constants',
     'expo-modules-core',
-    'react-native-vector-icons',
-    '@expo/vector-icons',
+    '@fortawesome/react-native-fontawesome',
+    // '@expo/vector-icons',
     '@my/config'])
 // const {withExpo} = require('@expo/next-adapter')
 
@@ -22,7 +22,8 @@ if (disableExtraction) {
 }
 
 
-const transform = withPlugins([withTM, // withExpo,
+const transform = withPlugins([
+    withTM, // withExpo,
     withFonts,
     withTamagui({
         config: './tamagui.config.ts',
@@ -37,7 +38,7 @@ const transform = withPlugins([withTM, // withExpo,
 
             console.log(path)
         },
-        disableFontSupport: true,
+        // disableFontSupport: true,
         disableExtractInlineMedia: true,
         excludeReactNativeWebExports: ['Switch', 'ProgressBar', 'Picker', 'Modal', 'VirtualizedList', 'VirtualizedSectionList', 'AnimatedFlatList', 'FlatList', 'CheckBox', 'Touchable', 'SectionList'],
     })])
@@ -46,7 +47,11 @@ const transform = withPlugins([withTM, // withExpo,
 const config = {
     webpack: (config, options) => {
         config.module.rules.push({
-            test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/, type: 'asset/resource'
+            test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+            type: 'asset/resource',
+            exclude: (m) => {
+                return /node_modules/.test(m) && !/node_modules\/@expo\/vector-icons/.test(m)
+            },
         })
         return config
     },

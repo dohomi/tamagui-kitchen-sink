@@ -1,15 +1,18 @@
-import {getTokens, SizeTokens, Theme, ThemeProps} from "tamagui";
-import Ionicons from '@expo/vector-icons/Ionicons'
+import {getTokens, SizeTokens, Theme, ThemeProps, useTheme, useThemeName} from "tamagui";
+// import Ionicons from '@expo/vector-icons/Ionicons'
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome'
+import {IconProp} from "@fortawesome/fontawesome-svg-core";
+import {Platform} from "react-native";
+// export type IoniconIconNames = keyof typeof Ionicons.glyphMap;
 
-export type IoniconIconNames = keyof typeof Ionicons.glyphMap;
 
 type colors = '$blue' | '$gray' | '$green'
 type saturation = '3' | '5' | '10'
 type mode = 'Dark' | 'Light'
 
 export type LmIconProps = {
-    iconName: IoniconIconNames,
-    size?: SizeTokens | number,
+    iconName: IconProp//IoniconIconNames
+    size?: SizeTokens | number
     color?: `${colors}${saturation}${mode}`
     themeColor?: ThemeProps['name']
 }
@@ -17,6 +20,8 @@ export type LmIconProps = {
 
 export function LmIcon({iconName, size, color, themeColor}: LmIconProps) {
     const tokens = getTokens()
+    const currentTheme = useThemeName()
+    const {color: c} = useTheme(currentTheme)
     let sizeInNumber: number = 24
     let colorValue: string = 'inherit'
 
@@ -32,12 +37,18 @@ export function LmIcon({iconName, size, color, themeColor}: LmIconProps) {
         colorValue = color
     }
 
-    console.log(sizeInNumber, color, colorValue)
+    console.log(c, currentTheme, sizeInNumber, color, colorValue)
     return themeColor ? (
         <Theme name={themeColor}>
-            <Ionicons name={iconName} size={sizeInNumber} color={'inherit'}/>
+            <FontAwesomeIcon icon={iconName} size={sizeInNumber} color={colorValue}/>
         </Theme>
     ) : (
-        <Ionicons name={iconName} size={sizeInNumber} color={colorValue}/>
+        <Theme name={currentTheme as any}>
+            <FontAwesomeIcon icon={iconName} size={sizeInNumber}
+                             color={Platform.OS === 'web' ? 'currentcolor' : 'inherit'}
+                // color={'currentColor'}
+                // secondaryColor={'currentColor'}
+            />
+        </Theme>
     )
 }

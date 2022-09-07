@@ -1,5 +1,7 @@
-import {H2, Separator, XStack, YStack, LmButton, H3, LmIcon} from '@my/ui'
+import {H2, H3, LmButton, LmIcon, Separator, XStack, YStack} from '@my/ui'
 import React from 'react'
+import {faSafari} from "@fortawesome/free-brands-svg-icons/faSafari";
+
 
 export function OverviewScreen() {
 
@@ -8,7 +10,7 @@ export function OverviewScreen() {
             <YStack space="$4" maxWidth={600}>
                 <H2 textAlign="center">Components Overview</H2>
             </YStack>
-            <Separator />
+            <Separator/>
             <XStack>
                 <H3>Button Sizes</H3>
             </XStack>
@@ -53,16 +55,19 @@ export function OverviewScreen() {
             </XStack>
             <YStack space={'$4'}>
                 <XStack space={'$4'}>
-                    <LmButton size={'$2'} icon={<LmIcon iconName={'bug'}/>}>size 2</LmButton>
-                    <LmButton size={'$4'} icon={<LmIcon iconName={'bug'}/>}>size 4</LmButton>
-                    <LmButton size={'$6'} icon={<LmIcon iconName={'bug'}/>}>size 6</LmButton>
-                    <LmButton size={'$8'} icon={<LmIcon iconName={'bug'}/>}>size 8</LmButton>
+                    <LmButton size={'$2'} icon={<LmIcon iconName={faSafari}/>}>size 2</LmButton>
+                    <LmButton size={'$4'} icon={<LmIcon iconName={faSafari}/>}>size 4</LmButton>
+                    <LmButton size={'$6'} icon={<LmIcon iconName={faSafari}/>}>size 6</LmButton>
+                    <LmButton size={'$8'} icon={<LmIcon iconName={faSafari}/>}>size 8</LmButton>
                 </XStack>
                 <XStack space={'$4'}>
-                    <LmButton size={'$2'} iconAfter={<LmIcon iconName={'bug'}/>} colorVariant={'primary'}>size 2</LmButton>
-                    <LmButton size={'$4'} iconAfter={<LmIcon iconName={'bug'}/>} colorVariant={'secondary'}>size 4</LmButton>
-                    <LmButton size={'$6'} iconAfter={<LmIcon iconName={'bug'}/>} themeName={'dark_pink_alt1'}>size 6</LmButton>
-                    <LmButton size={'$8'} iconAfter={<LmIcon iconName={'bug'}/>}>size 8</LmButton>
+                    <LmButton size={'$2'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'primary'}>size
+                        2</LmButton>
+                    <LmButton size={'$4'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'secondary'}>size
+                        4</LmButton>
+                    <LmButton size={'$6'} iconAfter={<LmIcon iconName={faSafari}/>} themeName={'dark_pink_alt1'}>size
+                        6</LmButton>
+                    <LmButton size={'$8'} iconAfter={<LmIcon iconName={faSafari}/>}>size 8</LmButton>
                 </XStack>
             </YStack>
         </YStack>

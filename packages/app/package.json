@@ -10,7 +10,9 @@
     "@tamagui/animations-react-native": "1.0.1-beta.160",
     "@tamagui/feather-icons": "1.0.1-beta.160",
     "expo-linking": "^3.2.2",
-    "solito": "^0.0.26"
+    "solito": "^0.0.26",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0"
   },
   "sideEffects": false
 }
