@@ -14,6 +14,8 @@ Basic.args = {
     subTitle: 'how are you',
     width: 300,
     height: 500,
+    elevate: true,
+    elevation: '$4',
     image: {
         width: 300,
         height: 500,
