@@ -1,7 +1,6 @@
 const withPlugins = require('next-compose-plugins')
 const {withTamagui} = require('@tamagui/next-plugin')
 const withFonts = require('next-fonts')
-const withImages = require('next-images')
 
 const withTM = require('next-transpile-modules')([
     'solito',
@@ -25,7 +24,6 @@ if (disableExtraction) {
 
 const transform = withPlugins([withTM, // withExpo,
     withFonts,
-    withImages,
     withTamagui({
         config: './tamagui.config.ts',
         components: ['tamagui', '@my/ui'],
