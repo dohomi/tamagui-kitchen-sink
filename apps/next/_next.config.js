@@ -1,20 +1,13 @@
-const withPlugins = require('next-compose-plugins')
-const {withTamagui} = require('@tamagui/next-plugin')
+const {withExpo} = require('@expo/next-adapter')
 const withFonts = require('next-fonts')
 const withImages = require('next-images')
-
+const withPlugins = require('next-compose-plugins')
+const {withTamagui} = require("@tamagui/next-plugin");
 const withTM = require('next-transpile-modules')([
     'solito',
-    'react-native-web',
-    'expo-linking',
-    'expo-constants',
-    'expo-modules-core',
     'react-native-vector-icons',
-    '@expo/vector-icons',
-    '@my/config'
+    'app'
 ])
-// const {withExpo} = require('@expo/next-adapter')
-
 process.env.IGNORE_TS_CONFIG_PATHS = 'true'
 process.env.TAMAGUI_TARGET = 'web'
 
@@ -25,10 +18,6 @@ if (disableExtraction) {
 
 
 const transform = withPlugins([
-    withTM,
-    // withExpo,
-    [withFonts, {}],
-    withImages,
     withTamagui({
         config: './tamagui.config.ts',
         components: ['tamagui', '@my/ui'],
@@ -46,7 +35,11 @@ const transform = withPlugins([
             'Picker',
             'Modal',
             'VirtualizedList', 'VirtualizedSectionList', 'AnimatedFlatList', 'FlatList', 'CheckBox', 'Touchable', 'SectionList'],
-    })
+    }),
+    withTM,
+    withFonts,
+    withImages,
+    withExpo
 ])
 
 /** @type {import('next').NextConfig} */
@@ -56,21 +49,16 @@ const config = {
             test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
             type: 'asset/resource'
         })
+        console.log(config.module.rules)
         return config
-    },
-    webpack5: true,
-    typescript: {
-        ignoreBuildErrors: true
-    },
-    swcMinify: false,
-    experimental: {
-        plugins: true, scrollRestoration: true, legacyBrowsers: false, browsersListForSwc: true,
     }
 }
 
 module.exports = function (name, {defaultConfig}) {
     return transform(name, {
         ...defaultConfig,
-        ...config
+        ...config,
+        webpack5: true,
+        reactStrictMode: true
     })
 }
