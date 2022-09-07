@@ -9,7 +9,7 @@ type mode = 'Dark' | 'Light'
 
 export type LmIconProps = {
     iconName: FontAwesomeIconNames,
-    size?: SizeTokens,
+    size?: SizeTokens | number,
     color?: `${colors}${saturation}${mode}`
     themeColor?: ThemeProps['name']
 }
@@ -18,10 +18,22 @@ export type LmIconProps = {
 const tokens = getTokens()
 
 export function LmIcon({iconName, size, color, themeColor}: LmIconProps) {
-    console.log(tokens)
-    const sizeInNumber: number = size ? Number(tokens.size[size].val) : 24;
-    const colorValue: string = color ? tokens.color[color]?.val as string : 'inherit';
-    console.log(sizeInNumber, colorValue)
+    let sizeInNumber: number = 24
+    let colorValue: string = 'inherit'
+
+    if (typeof size === 'number') { // required for LmButton with LmIcon
+        sizeInNumber = size
+    } else if (size) {
+        sizeInNumber = Number(tokens.size[size].val)
+    }
+
+    if (color && tokens.color[color]) {
+        colorValue = tokens.color[color]?.val as string
+    } else if (color && typeof color === 'string') {
+        colorValue = color
+    }
+
+    console.log(sizeInNumber, color, colorValue)
     return themeColor ? (
         <Theme name={themeColor}>
             <FontAwesome name={iconName} size={sizeInNumber} color={'inherit'}/>

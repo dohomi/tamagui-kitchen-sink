@@ -47,7 +47,10 @@ export const LmCard = ({bouncy, title, subTitle, footer, image, ...cardProps}: L
             )}
             {!!image?.src && (
                 <Card.Background>
-                    <LmImage pos="absolute" width={image.width} height={image.height} resizeMode="cover"
+                    <LmImage position="absolute"
+                             width={image.width}
+                             height={image.height}
+                             resizeMode="cover"
                              src={image.src}/>
                 </Card.Background>
             )}

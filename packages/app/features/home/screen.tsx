@@ -9,15 +9,15 @@ export function HomeScreen() {
   })
 
   return (
-    <YStack f={1} jc="center" ai="center" p="$4" space>
-      <YStack space="$4" maw={600}>
-        <H1 ta="center">Welcome to Tamagui.</H1>
-        <Paragraph ta="center">
+    <YStack flex={1} justifyContent="center" alignItems="center" padding="$4" space>
+      <YStack space="$4" maxWidth={600}>
+        <H1 textAlign="center">Welcome to Tamagui.</H1>
+        <Paragraph textAlign="center">
           Here's a basic starter to show navigating from one screen to another. This screen uses the
           same code on Next.js and React Native.
         </Paragraph>
         <Separator />
-        <Paragraph ta="center">
+        <Paragraph textAlign="center">
           Tamagui is made by{' '}
           <Anchor href="https://twitter.com/natebirdman" target="_blank">
             Nate Wienert
@@ -63,7 +63,7 @@ function SheetDemo() {
         dismissOnSnapToBottom
       >
         <Sheet.Overlay />
-        <Sheet.Frame ai="center" jc="center">
+        <Sheet.Frame alignItems="center" justifyContent="center">
           <Sheet.Handle />
           <Button
             size="$6"

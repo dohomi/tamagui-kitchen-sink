@@ -1,6 +1,3 @@
-[32m@my/ui:build[0m: cache hit, replaying output [2maba90a349783c516[0m
+[32m@my/ui:build[0m: cache hit, replaying output [2mee08c9b8e3d0ffcc[0m
 [32m@my/ui:build: [0m$ tamagui-build src/index.tsx
-[32m@my/ui:build: [0mError building: Command failed with exit code 2: npx tsc --baseUrl . --outDir types --rootDir src --emitDeclarationOnly --declarationMap
-[32m@my/ui:build: [0msrc/components/content/LmAvatar.tsx(4,25): error TS2339: Property 'bc' does not exist on type '(Omit<ViewProps, "display" | "children"> & RNWViewProps & TamaguiComponentPropsBase & WithThemeValues<StackStylePropsBase> & ... 4 more ... & PseudoProps<...>) | (Omit<...> & ... 7 more ... & PseudoProps<...>)'.
-[32m@my/ui:build: [0msrc/components/content/LmCard.tsx(50,30): error TS2322: Type '{ pos: string; width: number; height: number; resizeMode: "cover"; src: string; }' is not assignable to type 'IntrinsicAttributes & Omit<(ImageProps & Omit<StackProps, keyof ImageProps>) | (ImageProps & ... 4 more ... & PseudoProps<...>), "style" | ... 3 more ... | "source"> & { ...; } & Omit<...>'.
-[32m@my/ui:build: [0m  Property 'pos' does not exist on type 'IntrinsicAttributes & Omit<(ImageProps & Omit<StackProps, keyof ImageProps>) | (ImageProps & ... 4 more ... & PseudoProps<...>), "style" | ... 3 more ... | "source"> & { ...; } & Omit<...>'.
+[32m@my/ui:build: [0mbuilt @my/ui in 4611 ms

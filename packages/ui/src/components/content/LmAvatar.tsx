@@ -1,7 +1,7 @@
 import {Avatar, AvatarProps, Text} from "tamagui";
 
 export type LmAvatarProps = AvatarProps & {
-    color?: AvatarProps['bc'],
+    color?: AvatarProps['backgroundColor'],
     src?: string
     letter?: string
 }
@@ -13,7 +13,7 @@ export function LmAvatar({color, src, letter, ...rest}: LmAvatarProps) {
             {src ? (
                 <>
                     <Avatar.Image src={src}/>
-                    <Avatar.Fallback bc={color || '$gray10'}/>
+                    <Avatar.Fallback backgroundColor={color || '$gray10'}/>
                 </>
             ) : (
                 <Text fontSize={'$8'} backgroundColor={'$gray10'}>{letter}</Text>

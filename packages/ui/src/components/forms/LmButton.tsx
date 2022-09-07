@@ -1,4 +1,5 @@
 import {Button, ButtonProps, Spinner, Theme, ThemeProps} from "tamagui";
+import {ReactNode} from "react";
 
 type ThemeColors = 'primary' | 'secondary' | 'info' | 'warning' | 'success' | 'error'
 
@@ -18,7 +19,9 @@ export type LmButtonProps = ButtonProps & {
 }
 
 export function LmButton({colorVariant, themeName, loading, ...rest}: LmButtonProps) {
+
     const Child = loading ? () => <Button {...rest} icon={<Spinner/>} disabled/> : () => <Button {...rest}/>
+
     if (colorVariant || themeName) {
         return (
             <Theme name={colorVariant ? colormap[colorVariant] as any : themeName}>
