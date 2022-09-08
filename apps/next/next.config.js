@@ -35,8 +35,6 @@ const transform = withPlugins([
             if (path.includes('packages/app')) {
                 return true
             }
-
-            console.log(path)
         },
         // disableFontSupport: true,
         disableExtractInlineMedia: true,
@@ -53,6 +51,7 @@ const config = {
                 return /node_modules/.test(m) && !/node_modules\/@expo\/vector-icons/.test(m)
             },
         })
+        console.log('Im here', config)
         return config
     },
     webpack5: true,

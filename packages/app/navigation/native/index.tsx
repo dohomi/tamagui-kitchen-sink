@@ -20,7 +20,7 @@ export function NativeNavigation() {
                 name="home"
                 component={HomeScreen}
                 options={{
-                    title: 'Home',
+                    title: 'Home'
                 }}
             />
             <Stack.Screen

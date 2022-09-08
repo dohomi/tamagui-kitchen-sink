@@ -2,7 +2,6 @@ import {getTokens, SizeTokens, Theme, ThemeProps, useTheme, useThemeName} from "
 // import Ionicons from '@expo/vector-icons/Ionicons'
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome'
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
-import {Platform} from "react-native";
 // export type IoniconIconNames = keyof typeof Ionicons.glyphMap;
 
 
@@ -45,7 +44,7 @@ export function LmIcon({iconName, size, color, themeColor}: LmIconProps) {
     ) : (
         <Theme name={currentTheme as any}>
             <FontAwesomeIcon icon={iconName} size={sizeInNumber}
-                             color={Platform.OS === 'web' ? 'currentcolor' : 'inherit'}
+                             color={'currenColor'}
                 // color={'currentColor'}
                 // secondaryColor={'currentColor'}
             />
