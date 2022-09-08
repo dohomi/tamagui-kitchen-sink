@@ -40,3 +40,5 @@ export function NativeNavigation() {
         </Stack.Navigator>
     )
 }
+
+NativeNavigation.displayName = 'NativeNavigation'
