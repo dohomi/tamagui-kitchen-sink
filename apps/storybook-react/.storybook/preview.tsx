@@ -1,6 +1,6 @@
 // import * as NextImage from 'next/image'
 import {LmTamaguiProvider} from "app/provider/LmTamaguiProvider";
-import {StoryObj} from '@storybook/react'
+import {useThemeState} from "app/components/state/themeState";
 
 // const OriginalNextImage = NextImage.default
 //
@@ -33,14 +33,16 @@ export const parameters = {
 
 export const decorators = [
     (Story, args: any) => {
+        const {name} = useThemeState()
         let theme = args.globals.backgrounds?.value === '#151515' ? 'dark' : 'light'
         if (!args.globals.backgrounds && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             // dark mode
             theme = 'dark'
         }
+        console.log('###preview', name, theme)
         return (
             <>
-                <LmTamaguiProvider defaultTheme={theme}>
+                <LmTamaguiProvider defaultTheme={name || theme}>
                     {Story()}
                 </LmTamaguiProvider>
             </>

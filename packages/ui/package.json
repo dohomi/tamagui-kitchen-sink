@@ -24,7 +24,8 @@
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "react-native-svg": "^12.4.4",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
-    "@fortawesome/free-brands-svg-icons": "^6.2.0"
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "zustand": "^4.1.1"
   },
   "devDependencies": {
     "@tamagui/build": "1.0.1-beta.159"

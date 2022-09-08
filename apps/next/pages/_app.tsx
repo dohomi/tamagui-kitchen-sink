@@ -2,34 +2,36 @@ import '@tamagui/core/reset.css'
 import '@tamagui/font-inter/css/400.css'
 import '@tamagui/font-inter/css/700.css'
 
-import { NextThemeProvider, useRootTheme } from '@tamagui/next-theme'
-import { Provider } from 'app/provider'
+import {NextThemeProvider, useRootTheme} from '@tamagui/next-theme'
+import {Provider} from 'app/provider'
+import {useThemeState} from 'app/components/state/themeState'
 import Head from 'next/head'
-import React, { useMemo } from 'react'
-import type { SolitoAppProps } from 'solito'
+import React, {useMemo} from 'react'
+import type {SolitoAppProps} from 'solito'
 import 'raf/polyfill'
 
-function MyApp({ Component, pageProps }: SolitoAppProps) {
-  const [theme, setTheme] = useRootTheme()
+function MyApp({Component, pageProps}: SolitoAppProps) {
+    const [theme, setTheme] = useRootTheme()
+    const {name} = useThemeState()
+    console.log(name)
+    const contents = useMemo(() => {
+        return <Component {...pageProps} />
+    }, [pageProps])
 
-  const contents = useMemo(() => {
-    return <Component {...pageProps} />
-  }, [pageProps])
-
-  return (
-    <>
-      <Head>
-        <title>Tamagui Example App</title>
-        <meta name="description" content="Tamagui, Solito, Expo & Next.js" />
-        <link rel="icon" href="/apps/next/public/favicon.ico" />
-      </Head>
-      <NextThemeProvider onChangeTheme={setTheme}>
-        <Provider disableRootThemeClass defaultTheme={theme}>
-          {contents}
-        </Provider>
-      </NextThemeProvider>
-    </>
-  )
+    return (
+        <>
+            <Head>
+                <title>Tamagui Example App</title>
+                <meta name="description" content="Tamagui, Solito, Expo & Next.js"/>
+                <link rel="icon" href="/apps/next/public/favicon.ico"/>
+            </Head>
+            <NextThemeProvider onChangeTheme={setTheme}>
+                <Provider disableRootThemeClass defaultTheme={name || theme}>
+                    {contents}
+                </Provider>
+            </NextThemeProvider>
+        </>
+    )
 }
 
 export default MyApp

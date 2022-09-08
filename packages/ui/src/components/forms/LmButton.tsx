@@ -8,18 +8,12 @@ export type LmButtonProps = ButtonProps & {
 }
 
 export function LmButton({colorVariant, themeName, loading, ...rest}: LmButtonProps) {
-    let paddingHorizontal = rest.size;
-    let [, currentSize] = (rest.size as string)?.split('$');
-    console.log(currentSize)
-    const customProps: ButtonProps = {
 
-        borderRadius: 100000,
-        noTextWrap: true,
-        // paddingHorizontal: `$${Number(currentSize || 4) - 1}`
-    }
-
-    const Child = loading ? () => <Button {...rest} icon={<Spinner/>} disabled {...customProps}/> : () =>
-        <Button {...rest} {...customProps}/>
+    let isCircular = rest.circular ?? !rest.children;
+    const Child = loading ? () => {
+        return <Button circular={isCircular} {...rest} icon={<Spinner/>}
+                       disabled/>;
+    } : () => <Button circular={isCircular} {...rest}/>
 
     if (colorVariant || themeName) {
         return (

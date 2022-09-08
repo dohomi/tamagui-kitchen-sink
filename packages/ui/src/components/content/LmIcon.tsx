@@ -37,7 +37,6 @@ export function LmIcon({iconName, size, color, themeColor}: LmIconProps) {
         colorValue = color
     }
 
-    console.log(c, currentTheme, sizeInNumber, color, colorValue)
 
     return themeColor ? (
         <Theme name={themeColor}>
