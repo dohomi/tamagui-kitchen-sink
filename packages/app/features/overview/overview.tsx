@@ -1,4 +1,4 @@
-import {H2, H3, LmButton, LmIcon, Separator, LmInput, XStack, YStack} from '@my/ui'
+import {H2, H3, LmButton, LmIcon, Separator, LmInput, XStack, YStack, XGroup, YGroup} from '@my/ui'
 import React from 'react'
 import {faSafari} from "@fortawesome/free-brands-svg-icons/faSafari";
 import {ScrollView} from "react-native";
@@ -59,36 +59,50 @@ export function OverviewScreen() {
                     <XStack space={'$4'} flexWrap={'wrap'}>
                         <LmButton size={'$2'} icon={<LmIcon iconName={faSafari}/>}>size 2</LmButton>
                         <LmButton size={'$4'} icon={<LmIcon iconName={faSafari}/>}>size 4</LmButton>
-                        <LmButton size={'$6'} icon={<LmIcon iconName={faSafari}/>}>size 6</LmButton>
                     </XStack>
                     <XStack space={'$4'} flexWrap={'wrap'}>
                         <LmButton size={'$2'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'primary'}>size
                             2</LmButton>
                         <LmButton size={'$4'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'secondary'}>size
                             4</LmButton>
-                        <LmButton size={'$6'} iconAfter={<LmIcon iconName={faSafari}/>}
-                                  themeName={'dark_pink_alt1'}>size
-                            6</LmButton>
+
                     </XStack>
+                </YStack>
+                <XStack>
+                    <H3>Buttons Groups</H3>
+                </XStack>
+                <YStack space={'$4'}>
+                    <XGroup>
+                        <LmButton icon={<LmIcon iconName={faSafari}/>}>size 2</LmButton>
+                        <LmButton icon={<LmIcon iconName={faSafari}/>}>size 4</LmButton>
+                    </XGroup>
+                    <Separator />
+                    <YGroup>
+                        <LmButton iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'primary'}>size
+                            2</LmButton>
+                        <LmButton iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'secondary'}>size
+                            4</LmButton>
+
+                    </YGroup>
                 </YStack>
                 <XStack>
                     <H3>Input sizes</H3>
                 </XStack>
                 <XStack space={'$4'} flexWrap={'wrap'}>
-                    <LmInput size={'$2'} />
-                    <LmInput size={'$4'} />
-                    <LmInput size={'$6'} />
+                    <LmInput size={'$2'}/>
+                    <LmInput size={'$4'}/>
+                    <LmInput size={'$6'}/>
                 </XStack>
                 <XStack>
                     <H3>Input variants</H3>
                 </XStack>
                 <XStack space={'$4'} flexWrap={'wrap'}>
-                    <LmInput size={'$4'} colorVariant={'primary'} />
-                    <LmInput size={'$4'} colorVariant={'secondary'} />
-                    <LmInput size={'$4'} colorVariant={'success'} />
-                    <LmInput size={'$4'} colorVariant={'error'} />
-                    <LmInput size={'$4'} colorVariant={'warning'} />
-                    <LmInput size={'$4'} colorVariant={'info'} />
+                    <LmInput size={'$4'} colorVariant={'primary'}/>
+                    <LmInput size={'$4'} colorVariant={'secondary'}/>
+                    <LmInput size={'$4'} colorVariant={'success'}/>
+                    <LmInput size={'$4'} colorVariant={'error'}/>
+                    <LmInput size={'$4'} colorVariant={'warning'}/>
+                    <LmInput size={'$4'} colorVariant={'info'}/>
                 </XStack>
                 <XStack>
                     <H3>Input multiline (TextArea)</H3>
@@ -97,6 +111,21 @@ export function OverviewScreen() {
                     <LmInput size={'$4'} colorVariant={'primary'} multiline/>
                     <LmInput size={'$4'} colorVariant={'secondary'} multiline/>
                 </XStack>
+                <XStack>
+                    <H3>Input label / placeholder / value</H3>
+                </XStack>
+                <XStack space={'$4'} flexDirection={'column'} flexWrap={'wrap'}>
+                    <LmInput size={'$4'} defaultValue={'With default value'}/>
+                    <LmInput size={'$4'} placeholder={'With placeholder text'}/>
+                </XStack>
+                <XStack>
+                    <LmInput size={'$4'} placeholder={'With label text'}
+                             labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
+                </XStack>
+                <YStack>
+                    <LmInput size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
+                             labelText={'Label Text'}/>
+                </YStack>
             </YStack>
         </ScrollView>
     )
