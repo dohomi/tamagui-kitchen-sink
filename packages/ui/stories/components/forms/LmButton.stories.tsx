@@ -65,8 +65,26 @@ export const Icons = () => (
         <XStack space={'$4'}>
             <LmButton size={'$2'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'primary'}>size 2</LmButton>
             <LmButton size={'$4'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'secondary'}>size 4</LmButton>
-            <LmButton size={'$6'} iconAfter={<LmIcon iconName={faSafari}/>} themeName={'dark_pink_alt1'}>size 6</LmButton>
+            <LmButton size={'$6'} iconAfter={<LmIcon iconName={faSafari}/>} themeName={'dark_pink_alt1'}>size
+                6</LmButton>
             <LmButton size={'$8'} iconAfter={<LmIcon iconName={faSafari}/>}>size 8</LmButton>
+        </XStack>
+    </YStack>
+)
+
+export const IconButton = () => (
+    <YStack space={'$4'}>
+        <XStack space={'$4'}>
+            <LmButton size={'$2'} icon={<LmIcon iconName={faSafari}/>}/>
+            <LmButton size={'$4'} icon={<LmIcon iconName={faSafari}/>}/>
+            <LmButton size={'$6'} icon={<LmIcon iconName={faSafari}/>}/>
+            <LmButton size={'$8'} icon={<LmIcon iconName={faSafari}/>}/>
+        </XStack>
+        <XStack space={'$4'}>
+            <LmButton size={'$2'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'primary'}/>
+            <LmButton size={'$4'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'secondary'}/>
+            <LmButton size={'$6'} iconAfter={<LmIcon iconName={faSafari}/>} themeName={'dark_pink_alt1'}/>
+            <LmButton size={'$8'} iconAfter={<LmIcon iconName={faSafari}/>}/>
         </XStack>
     </YStack>
 )
