@@ -34,7 +34,8 @@
     "ios": "TAMAGUI_TARGET=native yarn expo run:ios",
     "web": "TAMAGUI_TARGET=web yarn expo start --web",
     "eas:dev:ios": "eas build --profile development --platform ios",
-    "doc": "expo-cli doctor --fix-dependencies"
+    "doc": "expo-cli doctor --fix-dependencies",
+    "eas:dev:local": "npx eas build --profile development --platform android"
   },
   "main": "index.js",
   "version": "1.0.0",
