@@ -12,7 +12,8 @@
     "expo-linking": "^3.2.2",
     "solito": "^0.0.26",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
-    "@fortawesome/free-brands-svg-icons": "^6.2.0"
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@mdi/js": "^7.0.96"
   },
   "sideEffects": false
 }

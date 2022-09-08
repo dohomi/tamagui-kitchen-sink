@@ -39,7 +39,6 @@ export const decorators = [
             // dark mode
             theme = 'dark'
         }
-        console.log('###preview', name, theme)
         return (
             <>
                 <LmTamaguiProvider defaultTheme={name || theme}>
