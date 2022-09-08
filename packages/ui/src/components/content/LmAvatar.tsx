@@ -8,7 +8,7 @@ export type LmAvatarProps = AvatarProps & {
 
 export function LmAvatar({color, src, letter, ...rest}: LmAvatarProps) {
     return (
-        <Avatar theme={'dark'} circular={rest.circular ?? true} size={'$8'} {...rest}
+        <Avatar theme={'dark'} circular={rest.circular ?? true} {...rest}
                 backgroundColor={src ? undefined : color || '$gray10'}>
             {src ? (
                 <>
