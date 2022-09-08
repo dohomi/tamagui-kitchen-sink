@@ -46,7 +46,7 @@ export function LmIcon({iconName, size, color, themeColor}: LmIconProps) {
     ) : (
         <Theme name={currentTheme as any}>
             <FontAwesomeIcon icon={iconName} size={sizeInNumber}
-                             color={Platform.OS === 'web' ? 'currentColor' : c.val}/>
+                             color={Platform.OS === 'web' ? 'currentcolor' : c.val}/>
         </Theme>
     )
 }
