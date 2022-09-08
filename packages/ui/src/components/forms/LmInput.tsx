@@ -1,15 +1,14 @@
-import {Button, ButtonProps, Spinner, Theme, ThemeProps} from "tamagui";
+import {Input, InputProps, TextArea, Theme, ThemeProps} from "tamagui";
 import {colormap, ThemeColors} from "../../themeMappings";
 
-export type LmButtonProps = ButtonProps & {
+export type LmInputProps = InputProps & {
     colorVariant?: ThemeColors
     themeName?: ThemeProps['name']
-    loading?: boolean
+    multiline?: boolean
 }
 
-export function LmButton({colorVariant, themeName, loading, ...rest}: LmButtonProps) {
-
-    const Child = loading ? () => <Button {...rest} icon={<Spinner/>} disabled/> : () => <Button {...rest}/>
+export function LmInput({colorVariant, themeName, multiline, ...rest}: LmInputProps) {
+    const Child = () => multiline ? <TextArea {...rest} /> : <Input {...rest} />
 
     if (colorVariant || themeName) {
         return (

@@ -1,3 +1,3 @@
-[32m@my/ui:build[0m: cache hit, replaying output [2m5d43af77c4ac3843[0m
+[32m@my/ui:build[0m: cache hit, replaying output [2m88ababd2b581f481[0m
 [32m@my/ui:build: [0m$ tamagui-build src/index.tsx
-[32m@my/ui:build: [0mbuilt @my/ui in 2332 ms
+[32m@my/ui:build: [0mbuilt @my/ui in 5790 ms

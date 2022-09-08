@@ -1,4 +1,3 @@
-// import {TamaguiProvider, TamaguiProviderProps} from "@my/ui";
 import {TamaguiProvider, TamaguiProviderProps} from 'tamagui'
 import config from '../tamagui.config'
 

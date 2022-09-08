@@ -33,22 +33,19 @@ export function LmIcon({iconName, size, color, themeColor}: LmIconProps) {
 
     if (color && tokens.color[color]) {
         colorValue = tokens.color[color]?.val as string
-    } else if (color && typeof color === 'string') {
+    } else if (color) {
         colorValue = color
     }
 
     console.log(c, currentTheme, sizeInNumber, color, colorValue)
+
     return themeColor ? (
         <Theme name={themeColor}>
             <FontAwesomeIcon icon={iconName} size={sizeInNumber} color={colorValue}/>
         </Theme>
     ) : (
         <Theme name={currentTheme as any}>
-            <FontAwesomeIcon icon={iconName} size={sizeInNumber}
-                             color={Platform.OS === 'web' ? 'currentcolor' : 'inherit'}
-                // color={'currentColor'}
-                // secondaryColor={'currentColor'}
-            />
+            <FontAwesomeIcon icon={iconName} size={sizeInNumber} color={Platform.OS === 'web' ? 'currentColor' : c.val} />
         </Theme>
     )
 }
