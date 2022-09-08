@@ -35,8 +35,6 @@ const transform = withPlugins([
             if (path.includes('packages/app')) {
                 return true
             }
-
-            console.log(path)
         },
         // disableFontSupport: true,
         disableExtractInlineMedia: true,

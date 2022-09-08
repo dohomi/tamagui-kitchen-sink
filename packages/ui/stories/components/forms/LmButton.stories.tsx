@@ -2,6 +2,7 @@ import {LmButton} from "../../../src";
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {XStack, YStack} from "tamagui";
 import {LmIcon} from "../../../src/components/content/LmIcon";
+import {faSafari} from "@fortawesome/free-brands-svg-icons";
 
 export default {
     title: 'ui/forms/button',
@@ -56,16 +57,16 @@ export const Loading = () => (
 export const Icons = () => (
     <YStack space={'$4'}>
         <XStack space={'$4'}>
-            <LmButton size={'$2'} icon={<LmIcon iconName={'bug'}/>}>size 2</LmButton>
-            <LmButton size={'$4'} icon={<LmIcon iconName={'bug'}/>}>size 4</LmButton>
-            <LmButton size={'$6'} icon={<LmIcon iconName={'bug'}/>}>size 6</LmButton>
-            <LmButton size={'$8'} icon={<LmIcon iconName={'bug'}/>}>size 8</LmButton>
+            <LmButton size={'$2'} icon={<LmIcon iconName={faSafari}/>}>size 2</LmButton>
+            <LmButton size={'$4'} icon={<LmIcon iconName={faSafari}/>}>size 4</LmButton>
+            <LmButton size={'$6'} icon={<LmIcon iconName={faSafari}/>}>size 6</LmButton>
+            <LmButton size={'$8'} icon={<LmIcon iconName={faSafari}/>}>size 8</LmButton>
         </XStack>
         <XStack space={'$4'}>
-            <LmButton size={'$2'} iconAfter={<LmIcon iconName={'bug'}/>} colorVariant={'primary'}>size 2</LmButton>
-            <LmButton size={'$4'} iconAfter={<LmIcon iconName={'bug'}/>} colorVariant={'secondary'}>size 4</LmButton>
-            <LmButton size={'$6'} iconAfter={<LmIcon iconName={'bug'}/>} themeName={'dark_pink_alt1'}>size 6</LmButton>
-            <LmButton size={'$8'} iconAfter={<LmIcon iconName={'bug'}/>}>size 8</LmButton>
+            <LmButton size={'$2'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'primary'}>size 2</LmButton>
+            <LmButton size={'$4'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'secondary'}>size 4</LmButton>
+            <LmButton size={'$6'} iconAfter={<LmIcon iconName={faSafari}/>} themeName={'dark_pink_alt1'}>size 6</LmButton>
+            <LmButton size={'$8'} iconAfter={<LmIcon iconName={faSafari}/>}>size 8</LmButton>
         </XStack>
     </YStack>
 )
