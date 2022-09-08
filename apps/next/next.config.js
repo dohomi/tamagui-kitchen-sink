@@ -51,6 +51,7 @@ const config = {
                 return /node_modules/.test(m) && !/node_modules\/@expo\/vector-icons/.test(m)
             },
         })
+        console.log('Im here', config)
         return config
     },
     webpack5: true,
