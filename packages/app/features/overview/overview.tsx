@@ -11,8 +11,10 @@ export function OverviewScreen() {
 
     return (
         <ScrollView>
-            <YStack flex={1} justifyContent="flex-start" alignItems="center" padding="$4" space>
-                <YStack alignSelf="center">
+            <YStack flex={1} justifyContent="flex-start" alignItems="flex-start" padding="$4" space backgroundColor={'$blue1'} maxWidth={'100%'}>
+                <H2 alignSelf="center">Components Overview</H2>
+                <Separator/ >
+                <YStack>
                     <H1>Heading 1</H1>
                     <H2>Heading 2</H2>
                     <H3>Heading 3</H3>
@@ -20,35 +22,29 @@ export function OverviewScreen() {
                     <H5>Heading 5</H5>
                     <H6>Heading 6</H6>
                 </YStack>
-                <XStack space="$4">
-                    <H2 textAlign="center">Components Overview</H2>
-                </XStack>
-                <Separator/>
-                <XStack>
-                    <H3>Button Sizes</H3>
-                </XStack>
+                <H3>Button Sizes</H3>
                 <XStack space={'$4'} flexWrap={'wrap'}>
-                    <LmButton size={'$2'}>size 2</LmButton>
-                    <LmButton size={'$4'}>size 4</LmButton>
-                    <LmButton size={'$6'}>size 6</LmButton>
-                    <LmButton size={'$8'}>size 8</LmButton>
+                    <LmButton size={'$2'} themeName={'dark_yellow_alt1'}>size 2</LmButton>
+                    <LmButton size={'$4'} themeName={'dark_yellow_alt1'}>size 4</LmButton>
+                    <LmButton size={'$6'} themeName={'dark_yellow_alt1'}>size 6</LmButton>
+                    <LmButton size={'$8'} themeName={'dark_yellow_alt1'}>size 8</LmButton>
                 </XStack>
-                <XStack>
-                    <H3>Button Colors</H3>
-                </XStack>
-                <XStack space={'$4'} flexWrap={'wrap'}>
-                    <LmButton colorVariant={'primary'}>primary</LmButton>
-                    <LmButton colorVariant={'secondary'}>secondary</LmButton>
-                    <LmButton colorVariant={'success'}>success</LmButton>
-                    <LmButton colorVariant={'info'}>info</LmButton>
-                    <LmButton colorVariant={'warning'}>warning</LmButton>
-                    <LmButton colorVariant={'error'}>error</LmButton>
-                    <LmButton themeName={'dark_gray_alt2'}>dark gray alt</LmButton>
-                </XStack>
-                <XStack>
-                    <H3>Buttons Loading</H3>
-                </XStack>
-                <YStack space={'$4'}>
+                <H3>Button Colors</H3>
+                <YStack space={'$2'}>
+                    <XStack space={'$4'} flexWrap={'wrap'}>
+                        <LmButton colorVariant={'primary'}>primary</LmButton>
+                        <LmButton colorVariant={'secondary'}>secondary</LmButton>
+                        <LmButton colorVariant={'success'}>success</LmButton>
+                    </XStack>
+                    <XStack>
+                        <LmButton colorVariant={'info'}>info</LmButton>
+                        <LmButton colorVariant={'warning'}>warning</LmButton>
+                        <LmButton colorVariant={'error'}>error</LmButton>
+                        <LmButton themeName={'dark_gray_alt2'}>dark gray alt</LmButton>
+                    </XStack>
+                </YStack>
+                <H3>Buttons Loading</H3>
+                <YStack space={'$2'}>
                     <XStack space={'$4'} flexWrap={'wrap'}>
                         <LmButton size={'$2'} loading>size 2</LmButton>
                         <LmButton size={'$4'} loading>size 4</LmButton>
@@ -60,9 +56,7 @@ export function OverviewScreen() {
                         <LmButton size={'$6'} loading themeName={'dark_pink_alt1'}>size 6</LmButton>
                     </XStack>
                 </YStack>
-                <XStack>
-                    <H3>Buttons Icons</H3>
-                </XStack>
+                <H3>Buttons Icons</H3>
                 <YStack space={'$4'}>
                     <XStack space={'$4'} flexWrap={'wrap'}>
                         <LmButton size={'$2'} icon={<LmIcon iconName={faSafari}/>}>size 2</LmButton>
@@ -76,15 +70,12 @@ export function OverviewScreen() {
 
                     </XStack>
                 </YStack>
-                <XStack>
-                    <H3>Buttons Groups</H3>
-                </XStack>
+                <H3>Buttons Groups</H3>
                 <YStack space={'$4'}>
                     <XGroup>
                         <LmButton icon={<LmIcon iconName={faSafari}/>}>size 2</LmButton>
                         <LmButton icon={<LmIcon iconName={faSafari}/>}>size 4</LmButton>
                     </XGroup>
-                    <Separator />
                     <YGroup>
                         <LmButton iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'primary'}>size
                             2</LmButton>
@@ -93,36 +84,33 @@ export function OverviewScreen() {
 
                     </YGroup>
                 </YStack>
-                <XStack>
-                    <H3>Input sizes</H3>
-                </XStack>
+                <H3>Input sizes</H3>
                 <XStack space={'$4'} flexWrap={'wrap'}>
                     <LmInput size={'$2'}/>
                     <LmInput size={'$4'}/>
                     <LmInput size={'$6'}/>
                 </XStack>
-                <XStack>
-                    <H3>Input variants</H3>
-                </XStack>
-                <XStack space={'$4'} flexWrap={'wrap'}>
-                    <LmInput size={'$4'} colorVariant={'primary'}/>
-                    <LmInput size={'$4'} colorVariant={'secondary'}/>
-                    <LmInput size={'$4'} colorVariant={'success'}/>
-                    <LmInput size={'$4'} colorVariant={'error'}/>
-                    <LmInput size={'$4'} colorVariant={'warning'}/>
-                    <LmInput size={'$4'} colorVariant={'info'}/>
-                </XStack>
-                <XStack>
-                    <H3>Input multiline (TextArea)</H3>
-                </XStack>
+                <H3>Input variants</H3>
+                <YStack space={'$2'}>
+                    <XStack space={'$4'} flexWrap={'wrap'}>
+                        <LmInput size={'$4'} colorVariant={'primary'}/>
+                        <LmInput size={'$4'} colorVariant={'secondary'}/>
+                        <LmInput size={'$4'} colorVariant={'success'}/>
+                    </XStack>
+                    <XStack space={'$4'} flexWrap={'wrap'}>
+                        <LmInput size={'$4'} colorVariant={'error'}/>
+                        <LmInput size={'$4'} colorVariant={'warning'}/>
+                        <LmInput size={'$4'} colorVariant={'info'}/>
+                    </XStack>
+                </YStack>
+
+                <H3>Input multiline (TextArea)</H3>
                 <XStack space={'$4'} flexWrap={'wrap'}>
                     <LmInput size={'$4'} colorVariant={'primary'} multiline/>
                     <LmInput size={'$4'} colorVariant={'secondary'} multiline/>
                 </XStack>
-                <XStack>
-                    <H3>Input label / placeholder / value</H3>
-                </XStack>
-                <XStack space={'$4'} flexDirection={'column'} flexWrap={'wrap'}>
+                <H3>Input label / placeholder / value</H3>
+                <XStack space={'$4'} flexWrap={'wrap'}>
                     <LmInput size={'$4'} defaultValue={'With default value'}/>
                     <LmInput size={'$4'} placeholder={'With placeholder text'}/>
                 </XStack>
