@@ -1,4 +1,4 @@
-import {H2, H3, LmButton, LmIcon, Separator, LmInput, XStack, YStack, XGroup, YGroup} from '@my/ui'
+import {H2, H3, LmButton, LmIcon, Separator, LmInput, XStack, YStack, XGroup, YGroup, H1, H4, H5, H6} from '@my/ui'
 import React from 'react'
 import {faSafari} from "@fortawesome/free-brands-svg-icons/faSafari";
 import {ScrollView} from "react-native";
@@ -12,9 +12,17 @@ export function OverviewScreen() {
     return (
         <ScrollView>
             <YStack flex={1} justifyContent="flex-start" alignItems="center" padding="$4" space>
-                <YStack space="$4">
-                    <H2 textAlign="center">Components Overview</H2>
+                <YStack alignSelf="center">
+                    <H1>Heading 1</H1>
+                    <H2>Heading 2</H2>
+                    <H3>Heading 3</H3>
+                    <H4>Heading 4</H4>
+                    <H5>Heading 5</H5>
+                    <H6>Heading 6</H6>
                 </YStack>
+                <XStack space="$4">
+                    <H2 textAlign="center">Components Overview</H2>
+                </XStack>
                 <Separator/>
                 <XStack>
                     <H3>Button Sizes</H3>
