@@ -12,7 +12,7 @@ export function LmAvatar({color, src, letter, ...rest}: LmAvatarProps) {
                 backgroundColor={src ? undefined : color || '$gray10'}>
             {src ? (
                 <>
-                    <Avatar.Image src={src}/>
+                    <Avatar.Image src={{uri: src}}/>
                     <Avatar.Fallback backgroundColor={color || '$gray10'}/>
                 </>
             ) : (

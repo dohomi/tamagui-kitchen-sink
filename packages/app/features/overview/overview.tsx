@@ -8,7 +8,7 @@ import {
     LmAvatar,
     LmButton,
     LmIcon,
-    LmInput,
+    LmInput, LmSelect, Separator,
     SizableText,
     SpaceTokens,
     XGroup,
@@ -18,8 +18,9 @@ import {
 } from '@my/ui'
 import React from 'react'
 import {faSafari} from "@fortawesome/free-brands-svg-icons/faSafari";
-import {ScrollView} from "react-native";
-import {useTheme} from "tamagui";
+import {ScrollView, Image} from "react-native";
+import {Paragraph, useTheme} from "tamagui";
+import {fruitItems} from "@my/ui/fixtures/selectItems";
 
 
 export function OverviewScreen() {
@@ -32,6 +33,7 @@ export function OverviewScreen() {
         space: '$4',
         flexWrap: 'wrap'
     }
+    const items = fruitItems
 
     return (
         <ScrollView>
@@ -60,6 +62,14 @@ export function OverviewScreen() {
                         <SizableText theme="alt1" size="$6">Size 6</SizableText>
                         <SizableText theme="alt1" size="$8">Size 8</SizableText>
                     </YStack>
+                </XStack>
+                <XStack {...defaultSectionProps}>
+                    <Paragraph maxWidth={200} size={'$2'}>
+                        Paragraph, maxWidth 200 and size $2
+                    </Paragraph>
+                    <Paragraph maxWidth={200} size={'$4'} backgroundColor={'$green2'}>
+                        Paragraph, maxWidth 200 and size $2, backgroundColor $green2
+                    </Paragraph>
                 </XStack>
                 <H3>Button Sizes</H3>
                 <XStack {...defaultSectionProps}>
@@ -127,47 +137,95 @@ export function OverviewScreen() {
 
                 <H3>Input sizes</H3>
                 <XStack {...defaultSectionProps}>
-                    <LmInput size={'$2'}/>
-                    <LmInput size={'$4'}/>
-                    <LmInput size={'$6'}/>
+                    <LmInput id="1" size={'$2'}/>
+                    <LmInput id="2" size={'$4'}/>
+                    <LmInput id="3" size={'$6'}/>
                 </XStack>
                 <H3>Input variants</H3>
                 <YStack {...defaultSectionProps}>
                     <XStack {...defaultSectionProps}>
-                        <LmInput size={'$4'} colorVariant={'primary'}/>
-                        <LmInput size={'$4'} colorVariant={'secondary'}/>
-                        <LmInput size={'$4'} colorVariant={'success'}/>
+                        <LmInput id="4" size={'$4'} colorVariant={'primary'}/>
+                        <LmInput id="5" size={'$4'} colorVariant={'secondary'}/>
+                        <LmInput id="6" size={'$4'} colorVariant={'success'}/>
                     </XStack>
                     <XStack {...defaultSectionProps}>
-                        <LmInput size={'$4'} colorVariant={'error'}/>
-                        <LmInput size={'$4'} colorVariant={'warning'}/>
-                        <LmInput size={'$4'} colorVariant={'info'}/>
+                        <LmInput id="7" size={'$4'} colorVariant={'error'}/>
+                        <LmInput id="8" size={'$4'} colorVariant={'warning'}/>
+                        <LmInput id="9" size={'$4'} colorVariant={'info'}/>
                     </XStack>
                 </YStack>
 
                 <H3>Input multiline (TextArea)</H3>
                 <XStack {...defaultSectionProps}>
-                    <LmInput size={'$4'} colorVariant={'primary'} multiline/>
-                    <LmInput size={'$4'} colorVariant={'secondary'} multiline/>
+                    <LmInput id="10" size={'$4'} colorVariant={'primary'} multiline/>
+                    <LmInput id="11" size={'$4'} colorVariant={'secondary'} multiline/>
                 </XStack>
-
+                <Separator marginVertical={20}/>
                 <H3>Input label / placeholder / value</H3>
                 <XStack {...defaultSectionProps}>
-                    <LmInput size={'$4'} defaultValue={'With default value'}/>
-                    <LmInput size={'$4'} placeholder={'With placeholder text'}/>
+                    <LmInput id="12" size={'$4'} defaultValue={'With default value'}/>
+                    <LmInput id="13" size={'$4'} placeholder={'With placeholder text'}/>
                 </XStack>
                 <XStack>
-                    <LmInput size={'$4'} placeholder={'With label text'}
+                    <LmInput id="14" size={'$4'} placeholder={'With label text'}
                              labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
                 </XStack>
                 <YStack>
-                    <LmInput size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
+                    <LmInput id="15" size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
                              labelText={'Label Text'}/>
                 </YStack>
+                <XStack>
+                    <H3>Input label / placeholder / value</H3>
+                </XStack>
+                <XStack space={'$4'} flexDirection={'column'} flexWrap={'wrap'}>
+                    <LmInput id="16" size={'$4'} defaultValue={'With default value'}/>
+                    <LmInput id="17" size={'$4'} placeholder={'With placeholder text'}/>
+                </XStack>
+                <XStack>
+                    <LmInput id="18" size={'$4'} placeholder={'With label text'}
+                             labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
+                </XStack>
+                <YStack>
+                    <LmInput id="19" size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
+                             labelText={'Label Text'}/>
+                </YStack>
+                <H3>Single Select</H3>
+                <H4>Variants</H4>
+                <YStack {...defaultSectionProps}>
+                    <XStack {...defaultSectionProps}>
+                        <LmSelect items={items} colorVariant={'primary'}/>
+                        <LmSelect items={items} colorVariant={'secondary'}/>
+                        <LmSelect items={items} colorVariant={'success'}/>
+                    </XStack>
+                    <XStack {...defaultSectionProps}>
+                        <LmSelect items={items} colorVariant={'info'}/>
+                        <LmSelect items={items} colorVariant={'warning'}/>
+                        <LmSelect items={items} colorVariant={'error'}/>
+                        <LmSelect items={items} themeName={'dark_gray_alt2'}/>
+                    </XStack>
+                </YStack>
+                <H4>Themes</H4>
+                <XStack {...defaultSectionProps}>
+                    <LmSelect items={items} themeName={'blue_alt2'}/>
+                    <LmSelect items={items} themeName={'dark_yellow_alt1'}/>
+                    <LmSelect items={items} themeName={'gray'}/>
+                </XStack>
+                <H4>Sizes</H4>
+                <XStack {...defaultSectionProps}>
+                    <LmSelect items={items} colorVariant={'info'} size={'$2'}/>
+                    <LmSelect items={items} colorVariant={'info'} size={'$4'}/>
+                    <LmSelect items={items} colorVariant={'info'} size={'$6'}/>
+                </XStack>
+                <H4>Width</H4>
+                <XStack {...defaultSectionProps}>
+                    <LmSelect items={items} colorVariant={'info'} width={150}/>
+                    <LmSelect items={items} colorVariant={'info'} />
+                    <LmSelect items={items} colorVariant={'info'} width={300} />
+                </XStack>
                 <H3>Avatar Sizes</H3>
                 <H4>round</H4>
                 <XStack {...defaultSectionProps}>
-                    <LmAvatar size={'$2'} src={'https://placekitten.com/400/300'}/>
+                    <LmAvatar size={'$2'} src={'https://placekitten.com/400/300'} width={400} height={300}/>
                     <LmAvatar size={'$4'} src={'https://placekitten.com/400/300'}/>
                     <LmAvatar size={'$6'} src={'https://placekitten.com/400/300'}/>
                     <LmAvatar size={'$8'} src={'https://placekitten.com/400/300'}/>
@@ -179,21 +237,6 @@ export function OverviewScreen() {
                     <LmAvatar circular={false} size={'$6'} src={'https://placekitten.com/400/300'}/>
                     <LmAvatar circular={false} size={'$8'} src={'https://placekitten.com/400/300'}/>
                 </XStack>
-                <XStack>
-                    <H3>Input label / placeholder / value</H3>
-                </XStack>
-                <XStack space={'$4'} flexDirection={'column'} flexWrap={'wrap'}>
-                    <LmInput size={'$4'} defaultValue={'With default value'}/>
-                    <LmInput size={'$4'} placeholder={'With placeholder text'}/>
-                </XStack>
-                <XStack>
-                    <LmInput size={'$4'} placeholder={'With label text'}
-                             labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
-                </XStack>
-                <YStack>
-                    <LmInput size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
-                             labelText={'Label Text'}/>
-                </YStack>
             </YStack>
         </ScrollView>
     )
