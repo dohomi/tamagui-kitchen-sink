@@ -10,38 +10,98 @@ export default {
 const Template: ComponentStory<typeof LmInput> = (args) => <LmInput {...args} />
 export const Primary = Template.bind({})
 Primary.args = {
-    colorVariant: 'primary'
+    colorVariant: 'primary',
+    size: '$4',
+    placeholder: 'Basic Placeholder..'
 }
 
 export const Sizes = () => (
-    <XStack space={'$4'}>
-        <LmInput size={'$2'}/>
-        <LmInput size={'$4'} defaultValue={'With default value'}/>
-        <LmInput size={'$6'} placeholder={'With placeholder'}/>
-        <LmInput size={'$8'}/>
-        <LmInput size={'$10'}/>
-    </XStack>
-)
-
-export const Colors = () => (
-    <XStack space={'$4'}>
-        <LmInput colorVariant={'primary'}/>
-        <LmInput colorVariant={'secondary'}/>
-        <LmInput colorVariant={'success'}/>
-        <LmInput colorVariant={'info'}/>
-        <LmInput colorVariant={'warning'}/>
-        <LmInput colorVariant={'error'}/>
-        <LmInput themeName={'dark_gray_alt2'}/>
-    </XStack>
-)
-
-export const Labels = () => (
-    <>
+    <YStack space={'$4'}>
+        <h4>Placeholder:</h4>
         <XStack space={'$4'}>
-            <LmInput labelText={'Label Text XStack'} colorVariant={'success'} labelProps={{htmlFor: '123', marginRight: '$4'}}/>
+            <LmInput size={'$2'} placeholder={'With placeholder'}/>
+            <LmInput size={'$3'} placeholder={'With placeholder'}/>
+            <LmInput size={'$4'} placeholder={'With placeholder'}/>
         </XStack>
-        <YStack space={'$4'} maxWidth={600}>
-            <LmInput labelText={'Label Text YStack'} colorVariant={'success'} labelProps={{htmlFor: '123'}}/>
-        </YStack>
-    </>
+        <h4>Default value:</h4>
+        <XStack space={'$4'}>
+            <LmInput size={'$2'} defaultValue={'With default value'}/>
+            <LmInput size={'$3'} placeholder={'With placeholder'} defaultValue={'With default value'}/>
+            <LmInput size={'$4'} defaultValue={'With default value'}/>
+        </XStack>
+        <h4>With label:</h4>
+        <XStack space={'$4'}>
+            <LmInput size={'$2'} label={'With Label:'}/>
+            <LmInput size={'$3'} label={'With Label:'}/>
+            <LmInput size={'$4'} label={'With Label:'}/>
+        </XStack>
+        <h4>With inline label:</h4>
+        <XStack space={'$4'}>
+            <LmInput size={'$2'} label={'Inline Label:'} labelInline/>
+            <LmInput size={'$3'} label={'Inline Label:'} labelInline/>
+            <LmInput size={'$4'} label={'Inline Label:'} labelInline/>
+        </XStack>
+        <h4>With required:</h4>
+        <XStack space={'$4'}>
+            <LmInput size={'$2'} label={'Inline Label:'} labelInline required/>
+            <LmInput size={'$3'} label={'Inline Label:'} labelInline required/>
+            <LmInput size={'$4'} label={'Inline Label:'} labelInline required/>
+        </XStack>
+
+        <h4>With helper text:</h4>
+        <XStack space={'$4'}>
+            <LmInput size={'$2'} label={'Inline Label:'} helperText={'Helper text..'}/>
+            <LmInput size={'$3'} label={'Inline Label:'} helperText={'Helper text..'}/>
+            <LmInput size={'$4'} label={'Inline Label:'} helperText={'Helper text..'}/>
+        </XStack>
+
+        <h4>With error:</h4>
+        <XStack space={'$4'}>
+            <LmInput size={'$2'} label={'Inline Label:'} required error/>
+            <LmInput size={'$3'} label={'Inline Label:'} required error/>
+            <LmInput size={'$4'} label={'Inline Label:'} required error/>
+        </XStack>
+
+        <h4>With error inline:</h4>
+        <XStack space={'$4'}>
+            <LmInput size={'$2'} label={'Inline Label:'} labelInline required error/>
+            <LmInput size={'$3'} label={'Inline Label:'} labelInline required error/>
+            <LmInput size={'$4'} label={'Inline Label:'} labelInline required error/>
+        </XStack>
+
+
+        <h4>With helper text error:</h4>
+        <XStack space={'$4'}>
+            <LmInput size={'$2'} label={'Inline Label:'} required error helperText={'Some error occured'}/>
+            <LmInput size={'$3'} label={'Inline Label:'} required error helperText={'Some error occured'}/>
+            <LmInput size={'$4'} label={'Inline Label:'} required error helperText={'Some error occured'}/>
+        </XStack>
+
+        <h4>With helper text error inline:</h4>
+        <XStack space={'$4'}>
+            <LmInput size={'$2'} label={'Inline Label:'} labelInline required error helperText={'Some error occured'}/>
+            <LmInput size={'$3'} label={'Inline Label:'} labelInline required error helperText={'Some error occured'}/>
+            <LmInput size={'$4'} label={'Inline Label:'} labelInline required error helperText={'Some error occured'}/>
+        </XStack>
+    </YStack>
+)
+
+export const ThemeColors = () => (
+    <YStack space>
+        <XStack space={'$4'}>
+            <LmInput theme={'pink_alt1'} placeholder={'Placeholder..'}/>
+            <LmInput theme={'pink_alt2'} placeholder={'Placeholder..'}/>
+            <LmInput theme={'orange'} placeholder={'Placeholder..'}/>
+        </XStack>
+        <XStack space={'$4'}>
+            <LmInput theme={'pink_alt1'} label={'Some label'}/>
+            <LmInput theme={'pink_alt2'} label={'Some label'}/>
+            <LmInput theme={'orange'} label={'Some label'}/>
+        </XStack>
+        <XStack space={'$4'}>
+            <LmInput theme={'pink_alt1'} label={'Some label'} labelInline/>
+            <LmInput theme={'pink_alt2'} label={'Some label'} labelInline/>
+            <LmInput theme={'orange'} label={'Some label'} labelInline/>
+        </XStack>
+    </YStack>
 )
