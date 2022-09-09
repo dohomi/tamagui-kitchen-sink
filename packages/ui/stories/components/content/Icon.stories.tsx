@@ -28,7 +28,7 @@ export const Sizes = () => (
 export const Colors = () => (
     <XStack space={'$4'}>
         <LmIcon iconName={faSquareCheck}/>
-        <LmIcon iconName={faSquareCheck} size={'$2'} themeColor={'red_alt2'}/>
+        <LmIcon iconName={faSquareCheck} size={'$2'} themeColor={'red'}/>
         <LmIcon iconName={faSquareCheck} size={'$4'} themeColor={'light_pink_alt1'}/>
         <LmIcon iconName={faSquareCheck} size={'$6'} color={'red'}/>
         <LmIcon iconName={faSquareCheck} size={'$8'} color={'blue'}/>

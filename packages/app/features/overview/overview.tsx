@@ -37,8 +37,13 @@ export function OverviewScreen() {
 
     return (
         <ScrollView>
-            <YStack flex={1} justifyContent="flex-start" alignItems="flex-start" padding="$4" space
-                    backgroundColor={'$blue1'} maxWidth={'100%'}>
+            <YStack flex={1}
+                    theme={'light_pink_alt1'}
+                    justifyContent="flex-start"
+                    alignItems="flex-start"
+                    padding="$4"
+                    space
+                    maxWidth={'100%'}>
                 <H2 alignSelf="center">Components Overview</H2>
                 <XStack {...defaultSectionProps}>
                     <YStack>
