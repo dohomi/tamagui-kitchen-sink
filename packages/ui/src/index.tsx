@@ -6,6 +6,7 @@ export * from './components/content/LmAvatar'
 export * from './components/content/LmCard'
 export * from './components/forms/LmButton'
 export * from './components/forms/LmInput'
+export * from './components/forms/LmSelect'
 export {colormap} from "./themeMappings";
 export {ThemeColors} from "./themeMappings";
 // export * from './state/themeState'

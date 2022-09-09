@@ -8,7 +8,7 @@ import {
     LmAvatar,
     LmButton,
     LmIcon,
-    LmInput,
+    LmInput, LmSelect,
     SizableText,
     SpaceTokens,
     XGroup,
@@ -18,8 +18,9 @@ import {
 } from '@my/ui'
 import React from 'react'
 import {faSafari} from "@fortawesome/free-brands-svg-icons/faSafari";
-import {ScrollView} from "react-native";
-import {useTheme} from "tamagui";
+import {ScrollView, Image} from "react-native";
+import {Paragraph, useTheme} from "tamagui";
+import {fruitItems} from "@my/ui/fixtures/selectItems";
 
 
 export function OverviewScreen() {
@@ -32,6 +33,7 @@ export function OverviewScreen() {
         space: '$4',
         flexWrap: 'wrap'
     }
+    const items = fruitItems
 
     return (
         <ScrollView>
@@ -55,6 +57,14 @@ export function OverviewScreen() {
                         <SizableText theme="alt1" size="$6">Size 6</SizableText>
                         <SizableText theme="alt1" size="$8">Size 8</SizableText>
                     </YStack>
+                </XStack>
+                <XStack {...defaultSectionProps}>
+                    <Paragraph maxWidth={200} size={'$2'}>
+                        Paragraph, maxWidth 200 and size $2
+                    </Paragraph>
+                    <Paragraph maxWidth={200} size={'$4'} backgroundColor={'$green2'}>
+                        Paragraph, maxWidth 200 and size $2, backgroundColor $green2
+                    </Paragraph>
                 </XStack>
                 <H3>Button Sizes</H3>
                 <XStack {...defaultSectionProps}>
@@ -159,10 +169,43 @@ export function OverviewScreen() {
                     <LmInput size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
                              labelText={'Label Text'}/>
                 </YStack>
+                <H3>Single Select</H3>
+                <H4>Variants</H4>
+                <YStack {...defaultSectionProps}>
+                    <XStack {...defaultSectionProps}>
+                        <LmSelect items={items} colorVariant={'primary'}/>
+                        <LmSelect items={items} colorVariant={'secondary'}/>
+                        <LmSelect items={items} colorVariant={'success'}/>
+                    </XStack>
+                    <XStack {...defaultSectionProps}>
+                        <LmSelect items={items} colorVariant={'info'}/>
+                        <LmSelect items={items} colorVariant={'warning'}/>
+                        <LmSelect items={items} colorVariant={'error'}/>
+                        <LmSelect items={items} themeName={'dark_gray_alt2'}/>
+                    </XStack>
+                </YStack>
+                <H4>Themes</H4>
+                <XStack {...defaultSectionProps}>
+                    <LmSelect items={items} themeName={'blue_alt2'}/>
+                    <LmSelect items={items} themeName={'dark_yellow_alt1'}/>
+                    <LmSelect items={items} themeName={'gray'}/>
+                </XStack>
+                <H4>Sizes</H4>
+                <XStack {...defaultSectionProps}>
+                    <LmSelect items={items} colorVariant={'info'} size={'$2'}/>
+                    <LmSelect items={items} colorVariant={'info'} size={'$4'}/>
+                    <LmSelect items={items} colorVariant={'info'} size={'$6'}/>
+                </XStack>
+                <H4>Width</H4>
+                <XStack {...defaultSectionProps}>
+                    <LmSelect items={items} colorVariant={'info'} width={150}/>
+                    <LmSelect items={items} colorVariant={'info'} />
+                    <LmSelect items={items} colorVariant={'info'} width={300}/>
+                </XStack>
                 <H3>Avatar Sizes</H3>
                 <H4>round</H4>
                 <XStack {...defaultSectionProps}>
-                    <LmAvatar size={'$2'} src={'https://placekitten.com/400/300'}/>
+                    <LmAvatar size={'$2'} src={'https://placekitten.com/400/300'} width={400} height={300}/>
                     <LmAvatar size={'$4'} src={'https://placekitten.com/400/300'}/>
                     <LmAvatar size={'$6'} src={'https://placekitten.com/400/300'}/>
                     <LmAvatar size={'$8'} src={'https://placekitten.com/400/300'}/>

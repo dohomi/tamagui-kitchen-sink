@@ -16,12 +16,8 @@ export function HomeScreen() {
         <YStack flex={1} justifyContent="center" alignItems="center" padding="$4" space>
             <YStack space="$4" maxWidth={600}>
                 <H1 textAlign="center">Welcome to Tamagui.</H1>
-                <Paragraph textAlign="center">
-                    Here's a basic starter to show navigating from one screen to another. This screen uses the
-                    same code on Next.js and React Native.
-                </Paragraph>
                 <Separator/>
-                <Paragraph textAlign="center">
+                <Paragraph textAlign="center" size={'$2'}>
                     Tamagui is made by{' '}
                     <Anchor href="https://twitter.com/natebirdman" target="_blank">
                         Nate Wienert
