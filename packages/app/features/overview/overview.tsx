@@ -193,34 +193,34 @@ export function OverviewScreen() {
                 <H4>Variants</H4>
                 <YStack {...defaultSectionProps}>
                     <XStack {...defaultSectionProps}>
-                        <LmSelect items={items} colorVariant={'primary'}/>
-                        <LmSelect items={items} colorVariant={'secondary'}/>
-                        <LmSelect items={items} colorVariant={'success'}/>
+                        <LmSelect options={items} colorVariant={'primary'}/>
+                        <LmSelect options={items} colorVariant={'secondary'}/>
+                        <LmSelect options={items} colorVariant={'success'}/>
                     </XStack>
                     <XStack {...defaultSectionProps}>
-                        <LmSelect items={items} colorVariant={'info'}/>
-                        <LmSelect items={items} colorVariant={'warning'}/>
-                        <LmSelect items={items} colorVariant={'error'}/>
-                        <LmSelect items={items} themeName={'dark_gray_alt2'}/>
+                        <LmSelect options={items} colorVariant={'info'}/>
+                        <LmSelect options={items} colorVariant={'warning'}/>
+                        <LmSelect options={items} colorVariant={'error'}/>
+                        <LmSelect options={items} themeName={'dark_gray_alt2'}/>
                     </XStack>
                 </YStack>
                 <H4>Themes</H4>
                 <XStack {...defaultSectionProps}>
-                    <LmSelect items={items} themeName={'blue_alt2'}/>
-                    <LmSelect items={items} themeName={'dark_yellow_alt1'}/>
-                    <LmSelect items={items} themeName={'gray'}/>
+                    <LmSelect options={items} themeName={'blue_alt2'}/>
+                    <LmSelect options={items} themeName={'dark_yellow_alt1'}/>
+                    <LmSelect options={items} themeName={'gray'}/>
                 </XStack>
                 <H4>Sizes</H4>
                 <XStack {...defaultSectionProps}>
-                    <LmSelect items={items} colorVariant={'info'} size={'$2'}/>
-                    <LmSelect items={items} colorVariant={'info'} size={'$4'}/>
-                    <LmSelect items={items} colorVariant={'info'} size={'$6'}/>
+                    <LmSelect options={items} colorVariant={'info'} size={'$2'}/>
+                    <LmSelect options={items} colorVariant={'info'} size={'$4'}/>
+                    <LmSelect options={items} colorVariant={'info'} size={'$6'}/>
                 </XStack>
                 <H4>Width</H4>
                 <XStack {...defaultSectionProps}>
-                    <LmSelect items={items} colorVariant={'info'} width={150}/>
-                    <LmSelect items={items} colorVariant={'info'} />
-                    <LmSelect items={items} colorVariant={'info'} width={300} />
+                    <LmSelect options={items} colorVariant={'info'} width={150}/>
+                    <LmSelect options={items} colorVariant={'info'} />
+                    <LmSelect options={items} colorVariant={'info'} width={300} />
                 </XStack>
                 <H3>Avatar Sizes</H3>
                 <H4>round</H4>
