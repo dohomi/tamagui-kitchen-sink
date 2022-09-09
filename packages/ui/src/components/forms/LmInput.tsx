@@ -10,7 +10,7 @@ export type LmInputProps = InputProps & {
 }
 
 export function LmInput({colorVariant, themeName, multiline, labelText, labelProps, ...rest}: LmInputProps) {
-    const InputChild = () => multiline ? <TextArea {...rest} /> : <Input {...rest} />
+    const InputChild = multiline ? () => <TextArea {...rest} /> : () => <Input {...rest} />
     const LabelChild = () => labelText ? <Label {...labelProps}>{labelText}</Label> : null
 
     if (colorVariant || themeName) {
