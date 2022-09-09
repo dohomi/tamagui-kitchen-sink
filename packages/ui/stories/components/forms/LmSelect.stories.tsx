@@ -11,8 +11,8 @@ export default {
 const options = fruitItems
 
 const Template: ComponentStory<typeof LmSelect> = (args) => <LmSelect {...args} />
-export const Primary = Template.bind({})
-Primary.args = {
+export const Basic = Template.bind({})
+Basic.args = {
     colorVariant: 'primary',
     options,
     dropDownLabel: 'Fruits',
@@ -20,8 +20,8 @@ Primary.args = {
     scrollButtonGradient: ['$red10', '$yellow10']
 }
 
-export const Theme = Template.bind({})
-Theme.args = {
+export const LightBlue = Template.bind({})
+LightBlue.args = {
     themeName: 'light_blue',
     options,
     placeholder: "Doesn't show up"
