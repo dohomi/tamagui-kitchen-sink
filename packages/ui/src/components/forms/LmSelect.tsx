@@ -22,7 +22,6 @@ export type LmSelectProps = SelectProps & {
     width?: number
     placeholder?: string
     dropDownLabel?: string // above the items list
-    scrollButtonGradient?: string[]
 }
 
 export function LmSelect({
@@ -33,7 +32,6 @@ export function LmSelect({
                              width = 200,
                              placeholder = 'Placeholder...',
                              dropDownLabel,
-                             scrollButtonGradient,
                              ...rest
                          }: LmSelectProps) {
     const [val, setVal] = useState(value || items[0].name.toLowerCase())
@@ -66,7 +64,7 @@ export function LmSelect({
                         start={[0, 0]}
                         end={[0, 1]}
                         fullscreen
-                        colors={scrollButtonGradient || ['$background', '$backgroundTransparent']}
+                        colors={['$background', '$backgroundTransparent']}
                         borderRadius="$4"
                     />
                 </Select.ScrollUpButton>
@@ -96,7 +94,7 @@ export function LmSelect({
                         start={[0, 0]}
                         end={[0, 1]}
                         fullscreen
-                        colors={scrollButtonGradient || ['$backgroundTransparent', '$background']}
+                        colors={['$backgroundTransparent', '$background']}
                         borderRadius="$4"
                     />
                 </Select.ScrollDownButton>

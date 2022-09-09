@@ -174,6 +174,21 @@ export function OverviewScreen() {
                     <LmInput id="15" size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
                              labelText={'Label Text'}/>
                 </YStack>
+                <XStack>
+                    <H3>Input label / placeholder / value</H3>
+                </XStack>
+                <XStack space={'$4'} flexDirection={'column'} flexWrap={'wrap'}>
+                    <LmInput id="16" size={'$4'} defaultValue={'With default value'}/>
+                    <LmInput id="17" size={'$4'} placeholder={'With placeholder text'}/>
+                </XStack>
+                <XStack>
+                    <LmInput id="18" size={'$4'} placeholder={'With label text'}
+                             labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
+                </XStack>
+                <YStack>
+                    <LmInput id="19" size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
+                             labelText={'Label Text'}/>
+                </YStack>
                 <H3>Single Select</H3>
                 <H4>Variants</H4>
                 <YStack {...defaultSectionProps}>
@@ -222,21 +237,6 @@ export function OverviewScreen() {
                     <LmAvatar circular={false} size={'$6'} src={'https://placekitten.com/400/300'}/>
                     <LmAvatar circular={false} size={'$8'} src={'https://placekitten.com/400/300'}/>
                 </XStack>
-                <XStack>
-                    <H3>Input label / placeholder / value</H3>
-                </XStack>
-                <XStack space={'$4'} flexDirection={'column'} flexWrap={'wrap'}>
-                    <LmInput id="16" size={'$4'} defaultValue={'With default value'}/>
-                    <LmInput id="17" size={'$4'} placeholder={'With placeholder text'}/>
-                </XStack>
-                <XStack>
-                    <LmInput id="18" size={'$4'} placeholder={'With label text'}
-                             labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
-                </XStack>
-                <YStack>
-                    <LmInput id="19" size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
-                             labelText={'Label Text'}/>
-                </YStack>
             </YStack>
         </ScrollView>
     )
