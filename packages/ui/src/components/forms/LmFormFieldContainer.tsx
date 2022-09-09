@@ -26,18 +26,17 @@ const StackContainer = styled(ThemeableStack, {
     } as const
 })
 
-export function LmFormContainer({
-                                    label,
-                                    children,
-                                    helperText,
-                                    id,
-                                    size,
-                                    labelProps,
-                                    required,
-                                    error,
-                                    ...rest
-                                }: LmFormContainerProps) {
-    console.log(rest.labelInline)
+export function LmFormFieldContainer({
+                                         label,
+                                         children,
+                                         helperText,
+                                         id,
+                                         size,
+                                         labelProps,
+                                         required,
+                                         error,
+                                         ...rest
+                                     }: LmFormContainerProps) {
     return (
         <StackContainer {...rest}>
             {label && (

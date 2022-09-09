@@ -25,7 +25,8 @@
     "react-native-svg": "^12.4.4",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
-    "zustand": "^4.1.1"
+    "zustand": "^4.1.1",
+    "react-hook-form": "^7.34.2"
   },
   "devDependencies": {
     "@tamagui/build": "1.0.1-beta.163"

@@ -1,6 +1,6 @@
 import {Input, InputProps, TextArea, ThemeableStackProps} from "tamagui";
 import {useId} from "react";
-import {LmFormContainer} from "./LmFormContainer";
+import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {FormContainerProps} from "./formContainerProps";
 
 export type LmInputProps = InputProps & FormContainerProps & {
@@ -26,20 +26,21 @@ export function LmInput({
         styleProps.borderColor = error ? '$red10' : undefined
     }
 
-    const InputChild = multiline ? () => <TextArea id={id} {...rest} {...styleProps}/> : () => <Input
-        id={id} {...rest} {...styleProps} />
-
     return (
-        <LmFormContainer id={id}
-                         error={error}
-                         required={required}
-                         labelProps={labelProps}
-                         label={label}
-                         size={rest.size}
-                         labelInline={labelInline}
-                         helperText={helperText}
-                         {...containerProps}>
-            <InputChild/>
-        </LmFormContainer>
+        <LmFormFieldContainer id={id}
+                              error={error}
+                              required={required}
+                              labelProps={labelProps}
+                              label={label}
+                              size={rest.size}
+                              labelInline={labelInline}
+                              helperText={helperText}
+                              {...containerProps}>
+            {multiline ? (
+                <TextArea {...rest} {...styleProps}/>
+            ) : (
+                <Input {...rest} {...styleProps}/>
+            )}
+        </LmFormFieldContainer>
     )
 }
