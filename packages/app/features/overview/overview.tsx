@@ -8,7 +8,7 @@ import {
     LmAvatar,
     LmButton,
     LmIcon,
-    LmInput, LmSelect,
+    LmInput, LmSelect, Separator,
     SizableText,
     SpaceTokens,
     XGroup,
@@ -137,41 +137,41 @@ export function OverviewScreen() {
 
                 <H3>Input sizes</H3>
                 <XStack {...defaultSectionProps}>
-                    <LmInput size={'$2'}/>
-                    <LmInput size={'$4'}/>
-                    <LmInput size={'$6'}/>
+                    <LmInput id="1" size={'$2'}/>
+                    <LmInput id="2" size={'$4'}/>
+                    <LmInput id="3" size={'$6'}/>
                 </XStack>
                 <H3>Input variants</H3>
                 <YStack {...defaultSectionProps}>
                     <XStack {...defaultSectionProps}>
-                        <LmInput size={'$4'} colorVariant={'primary'}/>
-                        <LmInput size={'$4'} colorVariant={'secondary'}/>
-                        <LmInput size={'$4'} colorVariant={'success'}/>
+                        <LmInput id="4" size={'$4'} colorVariant={'primary'}/>
+                        <LmInput id="5" size={'$4'} colorVariant={'secondary'}/>
+                        <LmInput id="6" size={'$4'} colorVariant={'success'}/>
                     </XStack>
                     <XStack {...defaultSectionProps}>
-                        <LmInput size={'$4'} colorVariant={'error'}/>
-                        <LmInput size={'$4'} colorVariant={'warning'}/>
-                        <LmInput size={'$4'} colorVariant={'info'}/>
+                        <LmInput id="7" size={'$4'} colorVariant={'error'}/>
+                        <LmInput id="8" size={'$4'} colorVariant={'warning'}/>
+                        <LmInput id="9" size={'$4'} colorVariant={'info'}/>
                     </XStack>
                 </YStack>
 
                 <H3>Input multiline (TextArea)</H3>
                 <XStack {...defaultSectionProps}>
-                    <LmInput size={'$4'} colorVariant={'primary'} multiline/>
-                    <LmInput size={'$4'} colorVariant={'secondary'} multiline/>
+                    <LmInput id="10" size={'$4'} colorVariant={'primary'} multiline/>
+                    <LmInput id="11" size={'$4'} colorVariant={'secondary'} multiline/>
                 </XStack>
-
+                <Separator marginVertical={20}/>
                 <H3>Input label / placeholder / value</H3>
                 <XStack {...defaultSectionProps}>
-                    <LmInput size={'$4'} defaultValue={'With default value'}/>
-                    <LmInput size={'$4'} placeholder={'With placeholder text'}/>
+                    <LmInput id="12" size={'$4'} defaultValue={'With default value'}/>
+                    <LmInput id="13" size={'$4'} placeholder={'With placeholder text'}/>
                 </XStack>
                 <XStack>
-                    <LmInput size={'$4'} placeholder={'With label text'}
+                    <LmInput id="14" size={'$4'} placeholder={'With label text'}
                              labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
                 </XStack>
                 <YStack>
-                    <LmInput size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
+                    <LmInput id="15" size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
                              labelText={'Label Text'}/>
                 </YStack>
                 <H3>Single Select</H3>
@@ -205,7 +205,7 @@ export function OverviewScreen() {
                 <XStack {...defaultSectionProps}>
                     <LmSelect items={items} colorVariant={'info'} width={150}/>
                     <LmSelect items={items} colorVariant={'info'} />
-                    <LmSelect items={items} colorVariant={'info'} width={300}/>
+                    <LmSelect items={items} colorVariant={'info'} width={300} />
                 </XStack>
                 <H3>Avatar Sizes</H3>
                 <H4>round</H4>
@@ -226,15 +226,15 @@ export function OverviewScreen() {
                     <H3>Input label / placeholder / value</H3>
                 </XStack>
                 <XStack space={'$4'} flexDirection={'column'} flexWrap={'wrap'}>
-                    <LmInput size={'$4'} defaultValue={'With default value'}/>
-                    <LmInput size={'$4'} placeholder={'With placeholder text'}/>
+                    <LmInput id="16" size={'$4'} defaultValue={'With default value'}/>
+                    <LmInput id="17" size={'$4'} placeholder={'With placeholder text'}/>
                 </XStack>
                 <XStack>
-                    <LmInput size={'$4'} placeholder={'With label text'}
+                    <LmInput id="18" size={'$4'} placeholder={'With label text'}
                              labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
                 </XStack>
                 <YStack>
-                    <LmInput size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
+                    <LmInput id="19" size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
                              labelText={'Label Text'}/>
                 </YStack>
             </YStack>
