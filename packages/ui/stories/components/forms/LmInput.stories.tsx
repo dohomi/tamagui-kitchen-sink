@@ -8,11 +8,11 @@ export default {
 } as ComponentMeta<typeof LmInput>;
 
 const Template: ComponentStory<typeof LmInput> = (args) => <LmInput {...args} />
-export const Primary = Template.bind({})
-Primary.args = {
+export const Basic = Template.bind({})
+Basic.args = {
     colorVariant: 'primary',
     size: '$4',
-    placeholder: 'Basic Placeholder..'
+    placeholder: 'Placeholder..'
 }
 
 export const Sizes = () => (
@@ -48,13 +48,29 @@ export const Sizes = () => (
             <LmInput size={'$4'} label={'Inline Label:'} labelInline required/>
         </XStack>
 
+
+    </YStack>
+)
+
+export const WithHelperText = () => (
+    <YStack space>
         <h4>With helper text:</h4>
         <XStack space={'$4'}>
             <LmInput size={'$2'} label={'Inline Label:'} helperText={'Helper text..'}/>
             <LmInput size={'$3'} label={'Inline Label:'} helperText={'Helper text..'}/>
             <LmInput size={'$4'} label={'Inline Label:'} helperText={'Helper text..'}/>
         </XStack>
+        <h4>With helper text inline:</h4>
+        <XStack space={'$4'}>
+            <LmInput size={'$2'} label={'Inline Label:'} helperText={'Helper text..'} labelInline/>
+            <LmInput size={'$3'} label={'Inline Label:'} helperText={'Helper text..'} labelInline/>
+            <LmInput size={'$4'} label={'Inline Label:'} helperText={'Helper text..'} labelInline/>
+        </XStack>
+    </YStack>
+)
 
+export const WithError = () => (
+    <YStack space>
         <h4>With error:</h4>
         <XStack space={'$4'}>
             <LmInput size={'$2'} label={'Inline Label:'} required error/>
@@ -68,8 +84,11 @@ export const Sizes = () => (
             <LmInput size={'$3'} label={'Inline Label:'} labelInline required error/>
             <LmInput size={'$4'} label={'Inline Label:'} labelInline required error/>
         </XStack>
+    </YStack>
+)
 
-
+export const HelperError = () => (
+    <YStack space>
         <h4>With helper text error:</h4>
         <XStack space={'$4'}>
             <LmInput size={'$2'} label={'Inline Label:'} required error helperText={'Some error occured'}/>
