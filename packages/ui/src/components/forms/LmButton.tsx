@@ -9,11 +9,10 @@ export type LmButtonProps = ButtonProps & {
 
 export function LmButton({colorVariant, themeName, loading, ...rest}: LmButtonProps) {
 
-    let isCircular = rest.circular ?? !rest.children;
     const Child = loading ? () => {
-        return <Button circular={isCircular} {...rest} icon={<Spinner/>}
+        return <Button {...rest} icon={<Spinner/>}
                        disabled/>;
-    } : () => <Button circular={isCircular} {...rest}/>
+    } : () => <Button {...rest}/>
 
     if (colorVariant || themeName) {
         return (

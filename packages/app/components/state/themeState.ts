@@ -10,3 +10,4 @@ type Theme = {
 export const useThemeState = create<Theme>((set) => ({
     changeTheme: (name) => set({name})
 }))
+

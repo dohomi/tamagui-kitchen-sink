@@ -1,51 +1,48 @@
 import {getTokens, SizeTokens, Theme, ThemeProps, useTheme, useThemeName} from "tamagui";
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome'
+import {FontAwesomeIcon, Props} from '@fortawesome/react-native-fontawesome'
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
-import {Platform} from "react-native";
-
+import {variableToString} from '@tamagui/core'
 
 type colors = '$blue' | '$gray' | '$green'
 type saturation = '3' | '5' | '10'
 type mode = 'Dark' | 'Light'
 
-export type LmIconProps = {
+type ThemedIconProps = Omit<Props, 'size' | 'icon'> & {
+    size?: SizeTokens
     iconName: IconProp
-    size?: SizeTokens | number
-    color?: `${colors}${saturation}${mode}`
-    themeColor?: ThemeProps['name']
 }
 
-
-export function LmIcon({iconName, size, color, themeColor}: LmIconProps) {
+function ThemedIcon({iconName, size, ...props}: ThemedIconProps) {
     const tokens = getTokens()
-    const currentTheme = useThemeName()
-    const {color: c} = useTheme(currentTheme)
+    const themeName = useThemeName()
+    const theme = useTheme()
     let sizeInNumber: number = 24
-    let colorValue: string = 'inherit'
 
     if (typeof size === 'number') { // required for LmButton with LmIcon
         sizeInNumber = size
     } else if (size) {
         sizeInNumber = Number(tokens.size[size].val)
     }
+    const color = variableToString(props.color || theme.color || '#000')
+    console.log("color of icon", color, theme.color, themeName)
+    return (
+        <FontAwesomeIcon icon={iconName}
+                         size={sizeInNumber}
+                         color={color}/>
+    )
+}
 
-    if (color && tokens.color[color]) {
-        colorValue = tokens.color[color]?.val as string
-    } else if (color) {
-        colorValue = color
-    }
+export type LmIconProps = ThemedIconProps & {
+    themeColor?: ThemeProps['name']
+}
+
+export function LmIcon({themeColor, ...rest}: LmIconProps) {
 
     return themeColor ? (
         <Theme name={themeColor}>
-            <FontAwesomeIcon icon={iconName} size={sizeInNumber} color={colorValue}/>
+            <ThemedIcon {...rest}/>
         </Theme>
     ) : (
-        <Theme name={currentTheme as any}>
-            <FontAwesomeIcon icon={iconName} size={sizeInNumber}
-                             color={Platform.OS === 'web' ? 'currentcolor' : c.val}/>
-            <FontAwesomeIcon
-                icon={iconName} size={sizeInNumber}
-                color={Platform.OS === 'web' ? 'currentColor' : c.val}/>
-        </Theme>
+        <ThemedIcon {...rest}/>
     )
 }
