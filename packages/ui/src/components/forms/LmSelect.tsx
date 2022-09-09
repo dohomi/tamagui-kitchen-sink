@@ -1,22 +1,13 @@
-import {
-    Select,
-    SelectProps,
-    Theme,
-    YStack,
-    LinearGradient,
-    ThemeProps,
-    Stack
-} from "tamagui";
+import {LinearGradient, Select, SelectProps, Stack, ThemeProps, YStack} from "tamagui";
 import {colormap, ThemeColors} from "../../themeMappings";
 import {Check, ChevronDown, ChevronUp} from '@tamagui/feather-icons'
 import {useState} from "react";
-import {useThemeState} from "app/components/state/themeState";
 
 type GetAltThemeNames<S> = (S extends `${string}_${infer Alt}` ? GetAltThemeNames<Alt> : S) | S
 
 export type LmSelectProps = SelectProps & {
     value?: string,
-    items: { name: string }[]
+    options: { label: string, value: string | number }[]
     colorVariant?: ThemeColors
     themeName?: ThemeProps['name']
     width?: number
@@ -28,16 +19,16 @@ export function LmSelect({
                              value,
                              colorVariant,
                              themeName,
-                             items,
+                             options = [],
                              width = 200,
                              placeholder = 'Placeholder...',
                              dropDownLabel,
                              ...rest
                          }: LmSelectProps) {
-    const [val, setVal] = useState(value || items[0].name.toLowerCase())
+    const [val, setVal] = useState(value || options[0]?.value || '')
 
     const SelectComponent = () =>
-        <Select sheetBreakpoint="sm" value={val} onValueChange={setVal} {...rest}>
+        <Select sheetBreakpoint="sm" value={`${val}`} onValueChange={setVal} {...rest}>
             <Select.Trigger width={width} iconAfter={ChevronDown}>
                 <Select.Value placeholder={placeholder}/>
             </Select.Trigger>
@@ -72,10 +63,10 @@ export function LmSelect({
                 <Select.Viewport minWidth={width}>
                     <Select.Group>
                         {dropDownLabel && <Select.Label>{dropDownLabel}</Select.Label>}
-                        {items.map((item, i) => {
+                        {options.map((item, i) => {
                             return (
-                                <Select.Item index={i} key={item.name} value={item.name.toLowerCase()}>
-                                    <Select.ItemText>{item.name}</Select.ItemText>
+                                <Select.Item index={i} key={item.value} value={`${item.value}`}>
+                                    <Select.ItemText>{item.label}</Select.ItemText>
                                     <Select.ItemIndicator marginLeft="auto">
                                         <Check size={16}/>
                                     </Select.ItemIndicator>

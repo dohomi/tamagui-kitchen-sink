@@ -8,13 +8,13 @@ export default {
     component: LmSelect
 } as ComponentMeta<typeof LmSelect>;
 
-const items = fruitItems
+const options = fruitItems
 
 const Template: ComponentStory<typeof LmSelect> = (args) => <LmSelect {...args} />
 export const Primary = Template.bind({})
 Primary.args = {
     colorVariant: 'primary',
-    items: items,
+    options,
     dropDownLabel: 'Fruits',
     width: 300,
     scrollButtonGradient: ['$red10', '$yellow10']
@@ -23,40 +23,40 @@ Primary.args = {
 export const Theme = Template.bind({})
 Theme.args = {
     themeName: 'light_blue',
-    items,
+    options,
     placeholder: "Doesn't show up"
 }
 
 export const Sizes = () => (
     <XStack space={'$4'}>
-        <LmSelect items={items} colorVariant={'info'} size={'$1'}/>
-        <LmSelect items={items} colorVariant={'info'} size={'$2'}/>
-        <LmSelect items={items} colorVariant={'info'} size={'$4'}/>
-        <LmSelect items={items} colorVariant={'info'} size={'$6'}/>
+        <LmSelect options={options} colorVariant={'info'} size={'$1'}/>
+        <LmSelect options={options} colorVariant={'info'} size={'$2'}/>
+        <LmSelect options={options} colorVariant={'info'} size={'$4'}/>
+        <LmSelect options={options} colorVariant={'info'} size={'$6'}/>
     </XStack>
 )
 
 export const Width = () => (
     <XStack space={'$4'}>
-        <LmSelect items={items} colorVariant={'info'} width={150}/>
-        <LmSelect items={items} colorVariant={'info'} /> {/* default 200 */}
-        <LmSelect items={items} colorVariant={'info'} width={250}/>
-        <LmSelect items={items} colorVariant={'info'} width={300}/>
+        <LmSelect options={options} colorVariant={'info'} width={150}/>
+        <LmSelect options={options} colorVariant={'info'}/> {/* default 200 */}
+        <LmSelect options={options} colorVariant={'info'} width={250}/>
+        <LmSelect options={options} colorVariant={'info'} width={300}/>
     </XStack>
 )
 
 export const Colors = () => (
     <YStack space={'$4'}>
         <XStack space={'$4'}>
-            <LmSelect items={items} colorVariant={'primary'}/>
-            <LmSelect items={items} colorVariant={'secondary'}/>
-            <LmSelect items={items} colorVariant={'success'}/>
+            <LmSelect options={options} colorVariant={'primary'}/>
+            <LmSelect options={options} colorVariant={'secondary'}/>
+            <LmSelect options={options} colorVariant={'success'}/>
         </XStack>
         <XStack space={'$4'}>
-            <LmSelect items={items} colorVariant={'info'}/>
-            <LmSelect items={items} colorVariant={'warning'}/>
-            <LmSelect items={items} colorVariant={'error'}/>
-            <LmSelect items={items} themeName={'dark_gray_alt2'}/>
+            <LmSelect options={options} colorVariant={'info'}/>
+            <LmSelect options={options} colorVariant={'warning'}/>
+            <LmSelect options={options} colorVariant={'error'}/>
+            <LmSelect options={options} themeName={'dark_gray_alt2'}/>
         </XStack>
     </YStack>
 )
