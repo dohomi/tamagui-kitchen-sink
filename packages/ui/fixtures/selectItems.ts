@@ -1,5 +1,4 @@
-export const fruitItems = [
-    {label: ''},
+export const fruitItemsFixtures = [
     {label: 'Apple'},
     {label: 'Pear'},
     {label: 'Blackberry'},

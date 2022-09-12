@@ -4,7 +4,7 @@ import '@tamagui/font-inter/css/700.css'
 
 import {NextThemeProvider, useRootTheme} from '@tamagui/next-theme'
 import {Provider} from 'app/provider'
-import {useThemeState} from 'app/components/state/themeState'
+import {useThemeState} from 'app/state/themeState'
 import Head from 'next/head'
 import React, {useMemo} from 'react'
 import type {SolitoAppProps} from 'solito'

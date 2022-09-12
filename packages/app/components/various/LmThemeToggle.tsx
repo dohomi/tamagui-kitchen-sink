@@ -1,5 +1,5 @@
 import {LmButton, LmButtonProps} from "@my/ui";
-import {useThemeToggle} from "app/components/state/themeState";
+import {useThemeToggle} from "app/state/themeState";
 
 type LmThemeSwitchProps = LmButtonProps
 

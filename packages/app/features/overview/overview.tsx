@@ -22,7 +22,7 @@ import React from 'react'
 import {faSafari} from "@fortawesome/free-brands-svg-icons/faSafari";
 import {ScrollView} from "react-native";
 import {Paragraph, useTheme} from "tamagui";
-import {fruitItems} from "@my/ui/fixtures/selectItems";
+import {fruitItemsFixtures} from "@my/ui/fixtures/selectItems";
 import {LmThemeToggle} from "app/components/various/LmThemeToggle";
 import {Sun} from "@tamagui/feather-icons";
 
@@ -37,7 +37,7 @@ export function OverviewScreen() {
         space: '$4',
         flexWrap: 'wrap'
     }
-    const items = fruitItems
+    const items = fruitItemsFixtures
 
     return (
         <ScrollView>
@@ -151,21 +151,21 @@ export function OverviewScreen() {
                 <H3>Input variants</H3>
                 <YStack {...defaultSectionProps}>
                     <XStack {...defaultSectionProps} >
-                        <LmInput id="4" size={'$4'} colorVariant={'primary'}/>
-                        <LmInput id="5" size={'$4'} colorVariant={'secondary'}/>
-                        <LmInput id="6" size={'$4'} colorVariant={'success'}/>
+                        <LmInput id="4" size={'$4'}/>
+                        <LmInput id="5" size={'$4'}/>
+                        <LmInput id="6" size={'$4'}/>
                     </XStack>
                     <XStack {...defaultSectionProps}>
-                        <LmInput id="7" size={'$4'} colorVariant={'error'}/>
-                        <LmInput id="8" size={'$4'} colorVariant={'warning'}/>
-                        <LmInput id="9" size={'$4'} colorVariant={'info'}/>
+                        <LmInput id="7" size={'$4'}/>
+                        <LmInput id="8" size={'$4'}/>
+                        <LmInput id="9" size={'$4'}/>
                     </XStack>
                 </YStack>
 
                 <H3>Input multiline (TextArea)</H3>
                 <XStack {...defaultSectionProps}>
-                    <LmInput id="10" size={'$4'} colorVariant={'primary'} multiline/>
-                    <LmInput id="11" size={'$4'} colorVariant={'secondary'} multiline/>
+                    <LmInput id="10" size={'$4'} multiline/>
+                    <LmInput id="11" size={'$4'} multiline/>
                 </XStack>
                 <Separator marginVertical={20}/>
                 <H3>Input label / placeholder / value</H3>
@@ -175,12 +175,11 @@ export function OverviewScreen() {
                 </XStack>
                 <XStack>
                     <LmInput id="14" size={'$4'} placeholder={'With label text'}
-                             labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
+                             label={'Label Text'}/>
                 </XStack>
                 <YStack>
                     <LmInput id="15" size={'$4'} placeholder={'With label text, YStack'}
-                             labelProps={{htmlFor: 'labelInput'}}
-                             labelText={'Label Text'}/>
+                             label={'Label Text'}/>
                 </YStack>
                 <XStack>
                     <H3>Input label / placeholder / value</H3>
@@ -191,12 +190,11 @@ export function OverviewScreen() {
                 </XStack>
                 <XStack>
                     <LmInput id="18" size={'$4'} placeholder={'With label text'}
-                             labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
+                             label={'Label Text'}/>
                 </XStack>
                 <YStack>
                     <LmInput id="19" size={'$4'} placeholder={'With label text, YStack'}
-                             labelProps={{htmlFor: 'labelInput'}}
-                             labelText={'Label Text'}/>
+                             label={'Label Text'}/>
                 </YStack>
                 <H3>Single Select</H3>
                 <H4>Variants</H4>

@@ -1,17 +1,16 @@
 import {Controller} from "react-hook-form";
 import {LmInput, LmInputProps} from "../LmInput";
-import {RhfProps} from "./rhfProps";
-import {memo} from "react";
+import {LmRhfProps} from "./lmRhfProps";
 
-type LmInputRhfProps = LmInputProps & RhfProps & {}
+type LmInputRhfProps = LmInputProps & LmRhfProps & {}
 
-export const LmInputRhf = memo(function LmInputReactHookForm({
-                                                                 name,
-                                                                 control,
-                                                                 rules = {},
-                                                                 defaultValue,
-                                                                 ...inputProps
-                                                             }: LmInputRhfProps) {
+export function LmInputRhf({
+                               name,
+                               control,
+                               rules = {},
+                               defaultValue,
+                               ...inputProps
+                           }: LmInputRhfProps) {
     if (inputProps.required) {
         rules.required = 'This field is required'
     }
@@ -31,4 +30,4 @@ export const LmInputRhf = memo(function LmInputReactHookForm({
                     )}/>
 
     )
-})
+}

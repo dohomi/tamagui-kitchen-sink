@@ -38,7 +38,7 @@ export function LmFormFieldContainer({
                                          ...rest
                                      }: LmFormContainerProps) {
     return (
-        <StackContainer {...rest}>
+        <StackContainer {...rest} >
             {label && (
                 <Label htmlFor={id} size={size} {...labelProps}
                        color={error ? '$red10' : undefined}>{label} {required && ` *`}</Label>

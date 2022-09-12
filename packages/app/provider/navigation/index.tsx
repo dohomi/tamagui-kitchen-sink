@@ -1,7 +1,7 @@
 import {DarkTheme, DefaultTheme, NavigationContainer} from '@react-navigation/native'
 import * as Linking from 'expo-linking'
 import {ReactNode, useEffect, useMemo} from 'react'
-import {useThemeState} from "app/components/state/themeState";
+import {useThemeState} from "app/state/themeState";
 import {useColorScheme} from 'react-native'
 
 export function NavigationProvider({

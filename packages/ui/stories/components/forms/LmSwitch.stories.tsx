@@ -1,0 +1,28 @@
+import {LmSwitch} from "../../../src/components/forms/LmSwitch";
+import {YStack} from "tamagui";
+
+export default {
+    title: 'ui/forms/switch',
+    component: LmSwitch
+}
+
+const Template = (args) => <LmSwitch {...args}/>
+
+export const Basic = Template.bind({})
+Basic.args = {
+    labelLeft: 'Left Label'
+}
+
+export const LabelRight = Template.bind({})
+LabelRight.args = {
+    labelRight: 'Right Label'
+}
+
+export const Sizes = () => (
+    <YStack space>
+        <LmSwitch labelRight={'Some label on the right side'}/>
+        <LmSwitch labelRight={'Some label with size $2'} size={'$2'}/>
+        <LmSwitch labelRight={'Some label with size $3'} size={'$3'}/>
+        <LmSwitch labelRight={'Some label with size $4'} size={'$4'}/>
+    </YStack>
+)

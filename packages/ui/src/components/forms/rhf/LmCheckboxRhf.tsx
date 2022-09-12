@@ -1,8 +1,8 @@
 import {Controller} from "react-hook-form";
-import {RhfProps} from "./rhfProps";
+import {LmRhfProps} from "./lmRhfProps";
 import {LmCheckbox, LmCheckboxProps} from "../LmCheckbox";
 
-type LmCheckboxRhfProps = LmCheckboxProps & RhfProps
+type LmCheckboxRhfProps = LmCheckboxProps & LmRhfProps
 
 
 export function LmCheckboxRhf({name, rules = {}, control, defaultValue, ...inputProps}: LmCheckboxRhfProps) {

@@ -1,20 +1,33 @@
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {XStack, YStack} from "tamagui";
 import {LmSelect} from "../../../src";
-import {fruitItems} from "../../../fixtures/selectItems";
+import {fruitItemsFixtures} from "../../../fixtures/selectItems";
 
 export default {
     title: 'ui/forms/select',
     component: LmSelect
 } as ComponentMeta<typeof LmSelect>;
 
-const options = fruitItems
+const options = fruitItemsFixtures
 
 const Template: ComponentStory<typeof LmSelect> = (args) => <LmSelect {...args} />
 export const Basic = Template.bind({})
 Basic.args = {
     colorVariant: 'primary',
     options,
+    label: 'Select Fruits',
+    dropDownLabel: 'Fruits',
+    width: 300,
+    scrollButtonGradient: ['$red10', '$yellow10']
+}
+
+export const Inline = Template.bind({})
+Inline.args = {
+    colorVariant: 'primary',
+    options,
+    label: 'Select Fruits',
+    placeholder: 'fruits...',
+    labelInline: true,
     dropDownLabel: 'Fruits',
     width: 300,
     scrollButtonGradient: ['$red10', '$yellow10']

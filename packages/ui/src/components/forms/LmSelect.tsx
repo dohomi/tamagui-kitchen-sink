@@ -1,11 +1,13 @@
-import {LinearGradient, Select, SelectProps, Stack, ThemeProps, YStack} from "tamagui";
+import {LinearGradient, Select, SelectProps, ThemeProps, YStack} from "tamagui";
 import {colormap, ThemeColors} from "../../themeMappings";
 import {Check, ChevronDown, ChevronUp} from '@tamagui/feather-icons'
-import {useState} from "react";
+import {useId} from "react";
+import {LmFormFieldContainer} from "./LmFormFieldContainer";
+import {FormContainerProps} from "./formContainerProps";
 
 type GetAltThemeNames<S> = (S extends `${string}_${infer Alt}` ? GetAltThemeNames<Alt> : S) | S
 
-export type LmSelectProps = SelectProps & {
+export type LmSelectProps = SelectProps & FormContainerProps & {
     value?: string,
     options: { label: string, value: string | number }[]
     colorVariant?: ThemeColors
@@ -23,16 +25,27 @@ export function LmSelect({
                              width = 200,
                              placeholder = 'Placeholder...',
                              dropDownLabel,
+                             required, error, helperText, label, labelInline, labelProps,
                              ...rest
                          }: LmSelectProps) {
-    const [val, setVal] = useState(value || options[0]?.value || '')
+    const id = useId()
     rest.size = rest.size || '$3'
 
     return (
-        <Stack theme={colorVariant ? colormap[colorVariant] as any : (themeName || undefined)}>
-            <Select sheetBreakpoint="sm" value={`${val}`} onValueChange={setVal} {...rest}>
-                <Select.Trigger width={width} iconAfter={ChevronDown}>
-                    <Select.Value placeholder={placeholder}/>
+        <LmFormFieldContainer id={id}
+                              theme={colorVariant ? colormap[colorVariant] as any : (themeName || undefined)}
+                              error={error}
+                              required={required}
+                              labelProps={labelProps}
+                              label={label}
+                              size={rest.size}
+                              labelInline={labelInline}
+                              helperText={helperText}>
+            <Select sheetBreakpoint="sm"
+                    value={`${value}`}
+                    {...rest}>
+                <Select.Trigger width={width} iconAfter={ChevronDown} paddingVertical={0} minHeight={rest.size}>
+                    <Select.Value placeholder={placeholder} paddingVertical={0}/>
                 </Select.Trigger>
 
                 <Select.Sheet modal dismissOnSnapToBottom>
@@ -94,6 +107,6 @@ export function LmSelect({
                     </Select.ScrollDownButton>
                 </Select.Content>
             </Select>
-        </Stack>
+        </LmFormFieldContainer>
     )
 }
