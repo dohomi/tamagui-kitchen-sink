@@ -2,6 +2,9 @@
   "version": "0.0.0",
   "name": "app",
   "main": "index.ts",
+  "scripts": {
+    "codegen": "graphql-codegen --config graphql.config.yaml --errors-only"
+  },
   "dependencies": {
     "@my/config": "*",
     "@my/ui": "*",
@@ -19,6 +22,11 @@
     "graphql": "^16.6.0",
     "@tanstack/react-query": "^4.3.4",
     "@tanstack/react-query-devtools": "^4.3.5"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.8.1",
+    "@graphql-codegen/typescript-operations": "^2.5.1",
+    "@graphql-codegen/typescript-react-query": "^4.0.0"
   },
   "sideEffects": false
 }

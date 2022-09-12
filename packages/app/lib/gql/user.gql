@@ -1,0 +1,7 @@
+query user($id: uuid!){
+    user(id: $id){
+        id
+        email
+        emailVerified
+    }
+}
