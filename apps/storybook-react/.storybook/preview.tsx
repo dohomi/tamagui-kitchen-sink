@@ -33,7 +33,7 @@ export const parameters = {
 
 export const decorators = [
     (Story, args: any) => {
-        const {name} = useThemeState()
+        const name = useThemeState(state => state.name)
         let theme = args.globals.backgrounds?.value === '#151515' ? 'dark' : 'light'
         if (!args.globals.backgrounds && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             // dark mode
@@ -42,7 +42,7 @@ export const decorators = [
         return (
             <>
                 <LmTamaguiProvider defaultTheme={name || theme}>
-                    {Story()}
+                    <Story/>
                 </LmTamaguiProvider>
             </>
         )

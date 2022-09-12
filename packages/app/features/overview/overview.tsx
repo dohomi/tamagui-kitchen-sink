@@ -8,7 +8,9 @@ import {
     LmAvatar,
     LmButton,
     LmIcon,
-    LmInput, LmSelect, Separator,
+    LmInput,
+    LmSelect,
+    Separator,
     SizableText,
     SpaceTokens,
     XGroup,
@@ -18,9 +20,11 @@ import {
 } from '@my/ui'
 import React from 'react'
 import {faSafari} from "@fortawesome/free-brands-svg-icons/faSafari";
-import {ScrollView, Image} from "react-native";
+import {ScrollView} from "react-native";
 import {Paragraph, useTheme} from "tamagui";
 import {fruitItems} from "@my/ui/fixtures/selectItems";
+import {LmThemeToggle} from "app/components/various/LmThemeToggle";
+import {Sun} from "@tamagui/feather-icons";
 
 
 export function OverviewScreen() {
@@ -38,13 +42,16 @@ export function OverviewScreen() {
     return (
         <ScrollView>
             <YStack flex={1}
-                    theme={'light_pink_alt1'}
                     justifyContent="flex-start"
                     alignItems="flex-start"
                     padding="$4"
                     space
                     maxWidth={'100%'}>
-                <H2 alignSelf="center">Components Overview</H2>
+                <XStack justifyContent={'center'} space width={'100%'}>
+
+                    <H2 alignSelf="center">Components Overview</H2>
+                    <LmThemeToggle icon={<Sun/>} circular/>
+                </XStack>
                 <XStack {...defaultSectionProps}>
                     <YStack>
                         <H3>Headings</H3>
@@ -143,7 +150,7 @@ export function OverviewScreen() {
                 </XStack>
                 <H3>Input variants</H3>
                 <YStack {...defaultSectionProps}>
-                    <XStack {...defaultSectionProps}>
+                    <XStack {...defaultSectionProps} >
                         <LmInput id="4" size={'$4'} colorVariant={'primary'}/>
                         <LmInput id="5" size={'$4'} colorVariant={'secondary'}/>
                         <LmInput id="6" size={'$4'} colorVariant={'success'}/>
@@ -171,7 +178,8 @@ export function OverviewScreen() {
                              labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
                 </XStack>
                 <YStack>
-                    <LmInput id="15" size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
+                    <LmInput id="15" size={'$4'} placeholder={'With label text, YStack'}
+                             labelProps={{htmlFor: 'labelInput'}}
                              labelText={'Label Text'}/>
                 </YStack>
                 <XStack>
@@ -186,7 +194,8 @@ export function OverviewScreen() {
                              labelProps={{htmlFor: 'labelInput', marginRight: '$2'}} labelText={'Label Text'}/>
                 </XStack>
                 <YStack>
-                    <LmInput id="19" size={'$4'} placeholder={'With label text, YStack'} labelProps={{htmlFor: 'labelInput'}}
+                    <LmInput id="19" size={'$4'} placeholder={'With label text, YStack'}
+                             labelProps={{htmlFor: 'labelInput'}}
                              labelText={'Label Text'}/>
                 </YStack>
                 <H3>Single Select</H3>
@@ -219,8 +228,8 @@ export function OverviewScreen() {
                 <H4>Width</H4>
                 <XStack {...defaultSectionProps}>
                     <LmSelect options={items} colorVariant={'info'} width={150}/>
-                    <LmSelect options={items} colorVariant={'info'} />
-                    <LmSelect options={items} colorVariant={'info'} width={300} />
+                    <LmSelect options={items} colorVariant={'info'}/>
+                    <LmSelect options={items} colorVariant={'info'} width={300}/>
                 </XStack>
                 <H3>Avatar Sizes</H3>
                 <H4>round</H4>

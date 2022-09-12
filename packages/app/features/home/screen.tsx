@@ -60,14 +60,14 @@ function SheetDemo() {
                 modal
                 open={open}
                 onChangeOpen={setOpen}
-                snapPoints={[80]}
+                snapPoints={[80, 10]}
                 position={position}
                 onChangePosition={setPosition}
                 dismissOnSnapToBottom
             >
                 <Sheet.Overlay/>
+                <Sheet.Handle/>
                 <Sheet.Frame alignItems="center" justifyContent="center">
-                    <Sheet.Handle/>
                     <Button
                         size="$6"
                         circular

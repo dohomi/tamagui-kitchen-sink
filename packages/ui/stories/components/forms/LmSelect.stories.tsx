@@ -27,6 +27,13 @@ LightBlue.args = {
     placeholder: "Doesn't show up"
 }
 
+export const Multiple = Template.bind({})
+Multiple.args = {
+    options,
+    placeholder: "Multiple",
+    multiple: true
+}
+
 export const Sizes = () => (
     <XStack space={'$4'}>
         <LmSelect options={options} colorVariant={'info'} size={'$1'}/>
@@ -60,4 +67,6 @@ export const Colors = () => (
         </XStack>
     </YStack>
 )
+
+
 

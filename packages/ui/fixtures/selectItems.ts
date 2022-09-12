@@ -1,4 +1,5 @@
 export const fruitItems = [
+    {label: ''},
     {label: 'Apple'},
     {label: 'Pear'},
     {label: 'Blackberry'},
