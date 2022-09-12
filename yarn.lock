@@ -1962,7 +1962,7 @@
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
-"@graphql-codegen/cli@^2.8.1":
+"@graphql-codegen/cli@^2.12.0":
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-2.12.0.tgz#ae57ca66fac7b0b5b8cba5b26ca9ccb5885ae2d4"
   integrity sha512-esaMiiuypAtJNiZUhGdFmG0gTMEF5dYkqP/7I04egxSragwbIETU8gOl6/gHdLSAV5su7dgfIEZNdWmGCOWAbg==
@@ -2031,7 +2031,7 @@
     "@graphql-tools/utils" "^8.8.0"
     tslib "~2.4.0"
 
-"@graphql-codegen/typescript-operations@^2.5.1":
+"@graphql-codegen/typescript-operations@^2.5.3":
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.5.3.tgz#c6fd3f209e3482b86b08050685af8fa45ab14297"
   integrity sha512-s+pA+Erm0HeBb/D5cNrflwRM5KWhkiA5cbz4uA99l3fzFPveoQBPfRCBu0XAlJLP/kBDy64+o4B8Nfc7wdRtmA==
@@ -2042,7 +2042,7 @@
     auto-bind "~4.0.0"
     tslib "~2.4.0"
 
-"@graphql-codegen/typescript-react-query@^4.0.0":
+"@graphql-codegen/typescript-react-query@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-react-query/-/typescript-react-query-4.0.1.tgz#322e4639e7f29d4eba78439b4fa6c7b261abcc65"
   integrity sha512-vA8cZqlvBoQ+muNycAzWVq8Nthr+AM1OWIuGpYfE3QSe9sqbaXAuXJgm9ZmBQ/tq2M8z8pAwm/z5MOJ7GcUcgg==

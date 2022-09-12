@@ -40,8 +40,12 @@ export function LmFormFieldContainer({
     return (
         <StackContainer {...rest} >
             {label && (
-                <Label htmlFor={id} size={size} {...labelProps}
-                       color={error ? '$red10' : undefined}>{label} {required && ` *`}</Label>
+                <Label htmlFor={id} size={size}
+                       {...labelProps}
+                       color={error ? '$red10' : undefined}
+                       width={rest.labelInline ? '150px' : undefined}
+                       justifyContent={rest.labelInline ? 'flex-end' : undefined}
+                >{label} {required && ` *`}</Label>
             )}
             <YStack>
                 {children}

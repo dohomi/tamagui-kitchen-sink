@@ -1,4 +1,4 @@
-import {nhost} from './nhostClient'
+import {nhost} from '../lib/nhostClient'
 
 type AuthHeaderProps = {
     authorization: string

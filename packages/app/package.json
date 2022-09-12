@@ -24,9 +24,9 @@
     "@tanstack/react-query-devtools": "^4.3.5"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^2.8.1",
-    "@graphql-codegen/typescript-operations": "^2.5.1",
-    "@graphql-codegen/typescript-react-query": "^4.0.0"
+    "@graphql-codegen/cli": "^2.12.0",
+    "@graphql-codegen/typescript-operations": "^2.5.3",
+    "@graphql-codegen/typescript-react-query": "^4.0.1"
   },
   "sideEffects": false
 }

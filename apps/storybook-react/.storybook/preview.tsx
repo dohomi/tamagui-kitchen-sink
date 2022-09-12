@@ -1,6 +1,6 @@
 // import * as NextImage from 'next/image'
 import {LmTamaguiProvider} from "app/provider/LmTamaguiProvider";
-import {useThemeState} from "app/components/state/themeState";
+import {useThemeState} from "app/src/state/themeState";
 
 // const OriginalNextImage = NextImage.default
 //

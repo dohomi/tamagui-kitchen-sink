@@ -2,7 +2,7 @@ import {Anchor, Button, H1, LmButton, Paragraph, Separator, Sheet, XStack, YStac
 import {ChevronDown, ChevronUp} from '@tamagui/feather-icons'
 import React, {useState} from 'react'
 import {useLink} from 'solito/link'
-import {LmThemeToggle} from "app/components/various/LmThemeToggle";
+import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";
 
 export function HomeScreen() {
     const linkProps = useLink({

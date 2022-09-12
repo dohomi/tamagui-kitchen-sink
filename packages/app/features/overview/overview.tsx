@@ -23,7 +23,7 @@ import {faSafari} from "@fortawesome/free-brands-svg-icons/faSafari";
 import {ScrollView} from "react-native";
 import {Paragraph, useTheme} from "tamagui";
 import {fruitItemsFixtures} from "@my/ui/fixtures/selectItems";
-import {LmThemeToggle} from "app/components/various/LmThemeToggle";
+import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";
 import {Sun} from "@tamagui/feather-icons";
 
 

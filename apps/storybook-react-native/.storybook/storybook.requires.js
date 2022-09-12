@@ -27,7 +27,7 @@ try {
 
 const getStories = () => {
     return [
-        require("../../../packages/app/components/LmButton.stories.tsx"),
+        require("../../../packages/app/src/components/LmButton.stories.tsx"),
         require("@my/ui/stories/components/forms/LmButton.stories.tsx"),
         require("../../../packages/ui/stories/MyComponent.stories.tsx"),
     ];
