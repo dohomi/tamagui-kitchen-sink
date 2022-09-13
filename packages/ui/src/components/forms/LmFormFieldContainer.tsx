@@ -46,9 +46,10 @@ export function LmFormFieldContainer({
     return (
         <StackContainer {...rest} >
             {label && (
-                <Label htmlFor={id} size={size}
+                <Label htmlFor={id}
+                       size={size || '$3'}
                        {...labelProps}
-                       color={error ? '$red10' : undefined}
+                    // color={error ? '$red10' : undefined}
                        width={rest.labelInline ? 150 : undefined}
                        justifyContent={rest.labelInline ? 'flex-end' : undefined}
                 >{label} {required && ` *`}</Label>

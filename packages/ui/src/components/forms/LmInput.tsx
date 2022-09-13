@@ -32,7 +32,7 @@ export function LmInput({
         styleProps.borderColor = error ? '$red10' : undefined
     }
     if (fullWidth) {
-        styleProps.width = '100%'
+        styleProps.minWidth = '100%'
     }
 
     return (
@@ -45,7 +45,6 @@ export function LmInput({
                               size={rest.size}
                               labelInline={labelInline}
                               helperText={helperText}
-
                               {...containerProps}>
             {multiline ? (
                 <TextArea {...rest} {...styleProps}/>

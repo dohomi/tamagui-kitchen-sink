@@ -22,36 +22,39 @@ export function AuthScreen() {
         <AnonymousGuard>
             <LmFormRfhProvider>
                 <LmAnonymousShell>
+                    <YStack padding={'$4'} space>
+                        <H1 textAlign={'center'}>Welcome</H1>
+                        {err && (
+                            <LmAlert severity={'error'} text={err.message}/>
+                        )}
+                        <YStack alignItems={'center'}>
+                            <XGroup size={'$5'}>
+                                <LmButton
+                                    onPress={() => setLoginState('login')}
+                                    colorVariant={loginState === 'login' ? 'primary' : undefined}>Login</LmButton>
+                                <LmButton
+                                    onPress={() => setLoginState('register')}
+                                    colorVariant={loginState === 'register' ? 'primary' : undefined}>Register</LmButton>
+                            </XGroup>
+                        </YStack>
 
-                    <H1>Welcome</H1>
-                    {err && (
-                        <LmAlert severity={'error'} text={err.message}/>
-                    )}
-                    <YStack alignItems={'center'}>
-                        <XGroup size={'$5'}>
-                            <LmButton
-                                onPress={() => setLoginState('login')}
-                                colorVariant={loginState === 'login' ? 'primary' : undefined}>Login</LmButton>
-                            <LmButton
-                                onPress={() => setLoginState('register')}
-                                colorVariant={loginState === 'register' ? 'primary' : undefined}>Register</LmButton>
-                        </XGroup>
-                    </YStack>
-                    <LmInputRhf name={'email'} fullWidth placeholder={'Email'} labelInline required/>
-                    <LmInputRhf name={'password'} fullWidth placeholder={'Password'} labelInline required/>
-                    <LmSubmitButtonRhf
-                        loading={isLoading || isLoading2}
-                        onSubmit={async (data) => {
-                            if (loginState === 'login') {
-                                await signInEmailPassword(data.email, data.password)
-                            } else if (loginState === 'register') {
-                                if (process.env.STORYBOOK) {
-                                    console.log('not allowed in Storybook')
-                                    return
+                        <LmInputRhf name={'email'} fullWidth label={'Email'} required/>
+                        <LmInputRhf name={'password'} fullWidth label={'Password'} size={'$3'} required/>
+                        <LmSubmitButtonRhf
+                            loading={isLoading || isLoading2}
+                            onSubmit={async (data) => {
+                                if (loginState === 'login') {
+                                    await signInEmailPassword(data.email, data.password)
+                                } else if (loginState === 'register') {
+                                    if (process.env.STORYBOOK) {
+                                        console.log('not allowed in Storybook')
+                                        return
+                                    }
+                                    await signUpEmailPassword(data.email, data.password)
                                 }
-                                await signUpEmailPassword(data.email, data.password)
-                            }
-                        }}>Login</LmSubmitButtonRhf>
+                            }}>Login</LmSubmitButtonRhf>
+                    </YStack>
+
                 </LmAnonymousShell>
             </LmFormRfhProvider>
         </AnonymousGuard>
