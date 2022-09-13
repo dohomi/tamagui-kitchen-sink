@@ -43,7 +43,7 @@ export function LmFormFieldContainer({
                 <Label htmlFor={id} size={size}
                        {...labelProps}
                        color={error ? '$red10' : undefined}
-                       width={rest.labelInline ? '150px' : undefined}
+                       width={rest.labelInline ? 150 : undefined}
                        justifyContent={rest.labelInline ? 'flex-end' : undefined}
                 >{label} {required && ` *`}</Label>
             )}
