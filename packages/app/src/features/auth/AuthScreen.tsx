@@ -26,7 +26,7 @@ export function AuthScreen() {
                     {err && (
                         <LmAlert severity={'error'} text={err.message}/>
                     )}
-                    <XGroup>
+                    <XGroup space={0}>
                         <LmButton
                             onPress={() => setLoginState('login')}
                             colorVariant={loginState === 'login' ? 'primary' : undefined}>Login</LmButton>

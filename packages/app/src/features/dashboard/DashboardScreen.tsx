@@ -7,7 +7,7 @@ export function DashboardScreen() {
     return (
         <AuthenticatedGuard>
             <LmAppShell title={'Dashboard'}>
-                <XStack height={'200vh'}>
+                <XStack height={'200%'}>
                     <H1>Dashboard content...</H1>
                 </XStack>
             </LmAppShell>

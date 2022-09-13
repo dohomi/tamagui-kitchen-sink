@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator<RouterNavigationProps>()
 
 export function NativeNavigation() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator >
             <Stack.Screen
                 name="home"
                 component={HomeScreen}
