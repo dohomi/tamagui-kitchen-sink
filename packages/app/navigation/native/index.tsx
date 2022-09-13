@@ -4,14 +4,10 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import {HomeScreen} from '../../features/home/screen'
 import {UserDetailScreen} from '../../features/user/detail-screen'
 import {OverviewScreen} from "app/features/overview/overview";
+import {DashboardScreen} from "app/features/dashboard/DashboardScreen";
+import {RouterNavigationProps} from "app/src/routerConfig";
 
-const Stack = createNativeStackNavigator<{
-    home: undefined
-    overview: undefined
-    'user-detail': {
-        id: string
-    }
-}>()
+const Stack = createNativeStackNavigator<RouterNavigationProps>()
 
 export function NativeNavigation() {
     return (
@@ -36,6 +32,12 @@ export function NativeNavigation() {
                 options={{
                     title: 'User',
                 }}
+            />
+            <Stack.Screen name={'dashboard'}
+                          component={DashboardScreen}
+                          options={{
+                              title: 'Dashboard'
+                          }}
             />
         </Stack.Navigator>
     )

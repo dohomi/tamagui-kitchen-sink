@@ -3,7 +3,7 @@ import React from 'react'
 import {NativeNavigation} from 'app/navigation/native'
 import {Provider} from 'app/provider'
 import {useFonts} from 'expo-font'
-import {useThemeState} from "app/components/state/themeState";
+import {useThemeState} from "app/src/state/themeState";
 
 export default function App() {
     const [loaded] = useFonts({

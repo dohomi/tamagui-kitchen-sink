@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "cd ../.. && yarn build && cd next && next build",
     "start": "node_modules/.bin/next start",
-    "lint": "node_modules/.bin/next lint"
+    "lint": "node_modules/.bin/next lint",
+    "check-types": "tsc --noemit"
   },
   "dependencies": {
     "@expo/next-adapter": "^4.0.12",

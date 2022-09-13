@@ -1,14 +1,13 @@
 import {DarkTheme, DefaultTheme, NavigationContainer} from '@react-navigation/native'
 import * as Linking from 'expo-linking'
-import {ReactNode, useEffect, useMemo} from 'react'
+import {PropsWithChildren, useEffect, useMemo} from 'react'
 import {useThemeState} from "app/src/state/themeState";
 import {useColorScheme} from 'react-native'
+import {nativeScreens} from "app/src/routerConfig";
 
 export function NavigationProvider({
                                        children,
-                                   }: {
-    children: ReactNode
-}) {
+                                   }: PropsWithChildren) {
     const theme = useColorScheme()
     const {name, changeTheme} = useThemeState()
     useEffect(() => {
@@ -25,11 +24,7 @@ export function NavigationProvider({
                     prefixes: [Linking.createURL('/')],
                     config: {
                         initialRouteName: 'home',
-                        screens: {
-                            home: '',
-                            'user-detail': 'user/:id',
-                            overview: 'overview'
-                        },
+                        screens: nativeScreens,
                     },
                 }),
                 []

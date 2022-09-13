@@ -6,7 +6,8 @@
   "scripts": {
     "sb:build": "TAMAGUI_TARGET=web build-storybook -s public",
     "sb": "TAMAGUI_TARGET=web start-storybook -p 6006 -s ./public",
-    "chromatic": "npx chromatic --project-token=aa4fa9ec8af5"
+    "chromatic": "npx chromatic --project-token=aa4fa9ec8af5",
+    "check-types": "tsc --noemit"
   },
   "dependencies": {
     "app": "*",

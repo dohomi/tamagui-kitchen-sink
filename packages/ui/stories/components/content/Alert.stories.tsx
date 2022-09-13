@@ -29,3 +29,11 @@ Warning.args = {
     text: 'Some basic alert text.',
     severity: 'warning'
 }
+
+
+export const WarningOutlined = Template.bind({})
+WarningOutlined.args = {
+    text: 'Some basic alert text.',
+    severity: 'warning',
+    outlined: true
+}
