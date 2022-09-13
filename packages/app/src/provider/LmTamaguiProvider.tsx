@@ -1,5 +1,5 @@
 import {TamaguiProvider, TamaguiProviderProps} from 'tamagui'
-import config from '../tamagui.config'
+import config from '../../tamagui.config'
 
 type LmTamaguiProviderProps = Omit<TamaguiProviderProps, 'config'>
 

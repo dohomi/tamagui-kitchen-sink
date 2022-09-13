@@ -3,8 +3,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
 import {HomeScreen} from '../../features/home/screen'
 import {UserDetailScreen} from '../../features/user/detail-screen'
-import {OverviewScreen} from "app/features/overview/overview";
-import {DashboardScreen} from "app/features/dashboard/DashboardScreen";
+import {OverviewScreen} from "app/src/features/overview/overview";
+import {DashboardScreen} from "app/src/features/dashboard/DashboardScreen";
 import {RouterNavigationProps} from "app/src/routerConfig";
 
 const Stack = createNativeStackNavigator<RouterNavigationProps>()

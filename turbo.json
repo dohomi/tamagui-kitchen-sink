@@ -16,6 +16,9 @@
     },
     "check-types": {
       "cache": false
+    },
+    "codegen": {
+      "cache": false
     }
   }
 }

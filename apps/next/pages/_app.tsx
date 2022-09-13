@@ -3,7 +3,7 @@ import '@tamagui/font-inter/css/400.css'
 import '@tamagui/font-inter/css/700.css'
 
 import {NextThemeProvider, useRootTheme} from '@tamagui/next-theme'
-import {Provider} from 'app/provider'
+import {Provider} from 'app/src/provider'
 import {useThemeState} from 'app/src/state/themeState'
 import Head from 'next/head'
 import React, {useMemo} from 'react'

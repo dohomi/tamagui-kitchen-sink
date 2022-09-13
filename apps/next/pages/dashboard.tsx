@@ -1,3 +1,3 @@
-import {DashboardScreen} from "app/features/dashboard/DashboardScreen";
+import {DashboardScreen} from "app/src/features/dashboard/DashboardScreen";
 
 export default DashboardScreen

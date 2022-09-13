@@ -1,4 +1,4 @@
-import {OverviewScreen} from "app/features/overview/overview";
+import {OverviewScreen} from "app/src/features/overview/overview";
 
 export default {
     title: 'screen/overview',

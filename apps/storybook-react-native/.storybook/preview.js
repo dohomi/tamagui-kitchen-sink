@@ -1,5 +1,4 @@
-import {LmTamaguiProvider} from "app/provider/LmTamaguiProvider";
-import {useFonts} from "expo-font";
+import {LmTamaguiProvider} from "app/src/provider/LmTamaguiProvider";
 
 export const decorators = [
     (Story) => {

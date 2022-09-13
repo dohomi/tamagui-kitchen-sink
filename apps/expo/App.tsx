@@ -1,7 +1,7 @@
 import 'expo-dev-client'
 import React from 'react'
-import {NativeNavigation} from 'app/navigation/native'
-import {Provider} from 'app/provider'
+import {NativeNavigation} from 'app/src/navigation/native'
+import {Provider} from 'app/src/provider'
 import {useFonts} from 'expo-font'
 import {useThemeState} from "app/src/state/themeState";
 

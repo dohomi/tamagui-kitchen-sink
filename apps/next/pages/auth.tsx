@@ -1,3 +1,3 @@
-import {AuthScreen} from "app/features/auth/AuthScreen";
+import {AuthScreen} from "app/src/features/auth/AuthScreen";
 
 export default AuthScreen
