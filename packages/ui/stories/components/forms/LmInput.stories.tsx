@@ -15,6 +15,14 @@ Basic.args = {
     placeholder: 'Placeholder..'
 }
 
+export const Password = Template.bind({})
+Password.args = {
+    colorVariant: 'primary',
+    size: '$4',
+    placeholder: 'Password..',
+    isPassword: true
+}
+
 export const Sizes = () => (
     <YStack space={'$4'}>
         <h4>Placeholder:</h4>

@@ -1,11 +1,12 @@
 import {Input, InputProps, TextArea, ThemeableStackProps} from "tamagui";
-import {useId} from "react";
+import {useId, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {FormContainerProps} from "./formContainerProps";
 
 export type LmInputProps = InputProps & FormContainerProps & {
     containerProps?: ThemeableStackProps
     multiline?: boolean
+    isPassword?: boolean
 }
 
 export function LmInput({
@@ -17,9 +18,12 @@ export function LmInput({
                             labelProps,
                             containerProps,
                             labelInline,
+                            isPassword,
                             ...rest
                         }: LmInputProps) {
     const genId = useId()
+    //todo...
+    const [invertIsPassword, setInvertIsPassword] = useState<boolean>(false)
     const id = rest.id || genId
     const styleProps: InputProps = {}
     if (error) {
@@ -39,7 +43,7 @@ export function LmInput({
             {multiline ? (
                 <TextArea {...rest} {...styleProps}/>
             ) : (
-                <Input {...rest} {...styleProps}/>
+                <Input {...rest} {...styleProps} secureTextEntry={rest.secureTextEntry || isPassword}/>
             )}
         </LmFormFieldContainer>
     )

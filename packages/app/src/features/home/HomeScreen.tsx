@@ -12,6 +12,10 @@ export function HomeScreen() {
         href: '/overview',
     })
 
+    const dashboardProps = useLink({
+        href: '/dashboard',
+    })
+
     return (
         <YStack flex={1} justifyContent="center" alignItems="center" padding="$4" space>
             <YStack space="$4" maxWidth={600}>
@@ -35,6 +39,9 @@ export function HomeScreen() {
             </XStack>
             <XStack>
                 <LmButton {...overviewProps}>Overview</LmButton>
+            </XStack>
+            <XStack>
+                <LmButton {...dashboardProps}>Dashboard</LmButton>
             </XStack>
             <XStack>
                 <LmThemeToggle>Toggle theme</LmThemeToggle>

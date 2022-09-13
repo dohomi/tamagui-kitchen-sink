@@ -11,7 +11,7 @@ export function AnonymousGuard({children}: AuthenticatedGuardProps) {
 
     useIsomorphicLayoutEffect(
         () => {
-            if (!isLoading && isAuthenticated) {
+            if (!process.env.STORYBOOK && !isLoading && isAuthenticated) {
                 push('/dashboard')
             }
         }, [isAuthenticated, isLoading]

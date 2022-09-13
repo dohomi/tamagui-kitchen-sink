@@ -1,11 +1,12 @@
 import React from 'react'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
-import {HomeScreen} from '../../features/home/screen'
+import {HomeScreen} from '../../features/home/HomeScreen'
 import {UserDetailScreen} from '../../features/user/detail-screen'
 import {OverviewScreen} from "app/src/features/overview/overview";
 import {DashboardScreen} from "app/src/features/dashboard/DashboardScreen";
 import {RouterNavigationProps} from "app/src/routerConfig";
+import {AuthScreen} from "app/src/features/auth/AuthScreen";
 
 const Stack = createNativeStackNavigator<RouterNavigationProps>()
 
@@ -37,6 +38,12 @@ export function NativeNavigation() {
                           component={DashboardScreen}
                           options={{
                               title: 'Dashboard'
+                          }}
+            />
+            <Stack.Screen name={'auth'}
+                          component={AuthScreen}
+                          options={{
+                              title: 'Login'
                           }}
             />
         </Stack.Navigator>

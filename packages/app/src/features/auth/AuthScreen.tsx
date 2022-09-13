@@ -1,9 +1,8 @@
-import {ScrollView} from "react-native";
-import {LmAlert, LmButton, LmFormRfhProvider, LmInputRhf, LmSubmitButtonRhf, XGroup} from '@my/ui'
-import {XStack, YStack} from "tamagui";
+import {H1, LmAlert, LmButton, LmFormRfhProvider, LmInputRhf, LmSubmitButtonRhf, XGroup} from '@my/ui'
 import {useSignInEmailPassword, useSignUpEmailPassword} from '@nhost/react'
 import {useState} from "react";
 import {AnonymousGuard} from "app/src/components/guards/AnonymousGuard";
+import {LmAnonymousShell} from "app/src/components/layouts/LmAnonymousShell";
 
 export function AuthScreen() {
     const [loginState, setLoginState] = useState<'login' | 'register'>('login')
@@ -20,37 +19,37 @@ export function AuthScreen() {
     console.log(user)
     return (
         <AnonymousGuard>
-
             <LmFormRfhProvider>
-                <ScrollView>
-                    <XStack justifyContent={'center'}>
-                        <YStack space>
-                            <h1>Welcome</h1>
-                            {err && (
-                                <LmAlert severity={'error'} text={err.message}/>
-                            )}
-                            <XGroup>
-                                <LmButton
-                                    onPress={() => setLoginState('login')}
-                                    colorVariant={loginState === 'login' ? 'primary' : undefined}>Login</LmButton>
-                                <LmButton
-                                    onPress={() => setLoginState('register')}
-                                    colorVariant={loginState === 'register' ? 'primary' : undefined}>Register</LmButton>
-                            </XGroup>
-                            <LmInputRhf name={'email'} label={'Email'} labelInline required/>
-                            <LmInputRhf name={'password'} label={'Password'} labelInline required/>
-                            <LmSubmitButtonRhf
-                                loading={isLoading || isLoading2}
-                                onSubmit={async (data) => {
-                                    if (loginState === 'login') {
-                                        await signInEmailPassword(data.email, data.password)
-                                    } else if (loginState === 'register') {
-                                        await signUpEmailPassword(data.email, data.password)
-                                    }
-                                }}>Login</LmSubmitButtonRhf>
-                        </YStack>
-                    </XStack>
-                </ScrollView>
+                <LmAnonymousShell>
+
+                    <H1>Welcome</H1>
+                    {err && (
+                        <LmAlert severity={'error'} text={err.message}/>
+                    )}
+                    <XGroup>
+                        <LmButton
+                            onPress={() => setLoginState('login')}
+                            colorVariant={loginState === 'login' ? 'primary' : undefined}>Login</LmButton>
+                        <LmButton
+                            onPress={() => setLoginState('register')}
+                            colorVariant={loginState === 'register' ? 'primary' : undefined}>Register</LmButton>
+                    </XGroup>
+                    <LmInputRhf name={'email'} label={'Email'} labelInline required/>
+                    <LmInputRhf name={'password'} label={'Password'} labelInline required/>
+                    <LmSubmitButtonRhf
+                        loading={isLoading || isLoading2}
+                        onSubmit={async (data) => {
+                            if (loginState === 'login') {
+                                await signInEmailPassword(data.email, data.password)
+                            } else if (loginState === 'register') {
+                                if (process.env.STORYBOOK) {
+                                    console.log('not allowed in Storybook')
+                                    return
+                                }
+                                await signUpEmailPassword(data.email, data.password)
+                            }
+                        }}>Login</LmSubmitButtonRhf>
+                </LmAnonymousShell>
             </LmFormRfhProvider>
         </AnonymousGuard>
     )

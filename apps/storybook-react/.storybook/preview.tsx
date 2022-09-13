@@ -1,6 +1,6 @@
 // import * as NextImage from 'next/image'
-import {LmTamaguiProvider} from "app/provider/LmTamaguiProvider";
 import {useThemeState} from "app/src/state/themeState";
+import {Provider} from "app/src/provider";
 
 // const OriginalNextImage = NextImage.default
 //
@@ -41,9 +41,9 @@ export const decorators = [
         }
         return (
             <>
-                <LmTamaguiProvider defaultTheme={name || theme}>
+                <Provider defaultTheme={name || theme}>
                     <Story/>
-                </LmTamaguiProvider>
+                </Provider>
             </>
         )
     }

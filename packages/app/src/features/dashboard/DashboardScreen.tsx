@@ -1,13 +1,16 @@
-import {ScrollView} from "react-native";
 import {H1} from "@my/ui";
 import {AuthenticatedGuard} from "app/src/components/guards/AuthenticatedGuard";
+import {XStack} from "tamagui";
+import {LmAppShell} from "app/src/components/layouts/LmAppShell";
 
 export function DashboardScreen() {
     return (
         <AuthenticatedGuard>
-            <ScrollView>
-                <H1>Dashboard</H1>
-            </ScrollView>
+            <LmAppShell title={'Dashboard'}>
+                <XStack height={'200vh'}>
+                    <H1>Dashboard content...</H1>
+                </XStack>
+            </LmAppShell>
         </AuthenticatedGuard>
     )
 }

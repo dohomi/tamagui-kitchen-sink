@@ -1,4 +1,4 @@
-import {HomeScreen} from "app/src/features/home/screen";
+import {HomeScreen} from "./HomeScreen";
 
 export default {
     title: 'screen/HomeScreen',
