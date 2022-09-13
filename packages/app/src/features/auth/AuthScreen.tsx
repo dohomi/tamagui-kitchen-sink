@@ -3,6 +3,7 @@ import {useSignInEmailPassword, useSignUpEmailPassword} from '@nhost/react'
 import {useState} from "react";
 import {AnonymousGuard} from "app/src/components/guards/AnonymousGuard";
 import {LmAnonymousShell} from "app/src/components/layouts/LmAnonymousShell";
+import {YStack} from "tamagui";
 
 export function AuthScreen() {
     const [loginState, setLoginState] = useState<'login' | 'register'>('login')
@@ -26,14 +27,16 @@ export function AuthScreen() {
                     {err && (
                         <LmAlert severity={'error'} text={err.message}/>
                     )}
-                    <XGroup space={0}>
-                        <LmButton
-                            onPress={() => setLoginState('login')}
-                            colorVariant={loginState === 'login' ? 'primary' : undefined}>Login</LmButton>
-                        <LmButton
-                            onPress={() => setLoginState('register')}
-                            colorVariant={loginState === 'register' ? 'primary' : undefined}>Register</LmButton>
-                    </XGroup>
+                    <YStack alignItems={'center'}>
+                        <XGroup size={'$5'}>
+                            <LmButton
+                                onPress={() => setLoginState('login')}
+                                colorVariant={loginState === 'login' ? 'primary' : undefined}>Login</LmButton>
+                            <LmButton
+                                onPress={() => setLoginState('register')}
+                                colorVariant={loginState === 'register' ? 'primary' : undefined}>Register</LmButton>
+                        </XGroup>
+                    </YStack>
                     <LmInputRhf name={'email'} fullWidth placeholder={'Email'} labelInline required/>
                     <LmInputRhf name={'password'} fullWidth placeholder={'Password'} labelInline required/>
                     <LmSubmitButtonRhf
