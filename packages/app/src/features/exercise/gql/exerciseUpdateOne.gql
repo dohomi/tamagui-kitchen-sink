@@ -1,0 +1,5 @@
+mutation exerciseUpdate($id: String! $set: exercise_set_input!){
+    update_exercise_by_pk(_set: $set pk_columns: {id: $id}) {
+        ...exerciseDetailFragment
+    }
+}

@@ -15,15 +15,19 @@ export function LmAppBar({title, rightContent}: LmDashboardAppBarProps) {
                 elevation={'$5'} height={'64px'}
                 alignItems={'center'}
                 paddingHorizontal={'$2'}
+                justifyContent={'space-between'}
                 backgroundColor={'$background'}
                 space
         >
-            <LmButton icon={<Menu/>}
-                      circular
-                      onPress={() => {
-                          toggleMainDrawer()
-                      }}/>
-            <H3>{title}</H3>
+            <XStack alignItems={'center'} space>
+
+                <LmButton icon={<Menu/>}
+                          circular
+                          onPress={() => {
+                              toggleMainDrawer()
+                          }}/>
+                <H3>{title}</H3>
+            </XStack>
             {rightContent}
         </XStack>
     )

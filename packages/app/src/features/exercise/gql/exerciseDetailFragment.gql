@@ -1,0 +1,12 @@
+fragment exerciseDetailFragment on exercise{
+    id
+    title
+    user {
+        id
+        user_permissions{
+            id
+            role
+            club_id
+        }
+    }
+}

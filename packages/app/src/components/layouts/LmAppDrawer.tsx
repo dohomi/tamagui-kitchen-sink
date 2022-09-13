@@ -42,7 +42,7 @@ export function LmAppDrawer() {
                             <>
                                 <XStack space>
                                     <LmLinkButton link={{href: '/exercises'}}>Exercises</LmLinkButton>
-                                    <LmLinkButton link={{href: '/exercise/edit'}}>New Exercises</LmLinkButton>
+                                    <LmLinkButton link={{href: '/exercise-edit/'}}>New Exercises</LmLinkButton>
                                 </XStack>
                             </>
                         )}

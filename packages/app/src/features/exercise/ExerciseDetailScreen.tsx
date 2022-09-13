@@ -8,7 +8,7 @@ export function ExerciseDetailScreen() {
     const [id] = useParam('id')
 
     return (
-        <LmAppShell title={'Exercise Detail ' + id}>
+        <LmAppShell title={'Exercise Edit ' + id}>
             <H1>Exercise detail</H1>
         </LmAppShell>
     )

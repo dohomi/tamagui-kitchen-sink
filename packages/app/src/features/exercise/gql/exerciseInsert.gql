@@ -1,0 +1,6 @@
+mutation exerciseInsert($object: exercise_insert_input!){
+    insert_exercise_one(
+        object: $object){
+        ...exerciseDetailFragment
+    }
+}
