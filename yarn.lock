@@ -19121,6 +19121,11 @@ solito@^0.0.26:
   resolved "https://registry.yarnpkg.com/solito/-/solito-0.0.26.tgz#739102ad8ea4fd1dc0f4b002ff1a2a2c158d71a6"
   integrity sha512-Imxy26m4DTkeQXkh7XXmS3bH0JQl8L0y2R4R95heyft2l3yh0yYwLy+Qf7DA6SRCvAoQpQRxYOOjTjVrCsm0/A==
 
+solito@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/solito/-/solito-1.0.12.tgz#b3198071a47d67c1439d4fd77d4633821e56bec0"
+  integrity sha512-oPfg7dZ/IVDez9AZOq6u5C99UY1weQ2/HjXrds2QZByLX+z2suI1zlqsc5WfcAn0WPougX4iA47TWI+liSIM9w==
+
 sort-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/sort-keys/-/sort-keys-2.0.0.tgz#658535584861ec97d730d6cf41822e1f56684128"

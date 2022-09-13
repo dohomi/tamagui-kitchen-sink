@@ -1,4 +1,4 @@
-import {H1, LmAlert, LmButton, LmFormRfhProvider, LmInputRhf, LmSubmitButtonRhf, XGroup} from '@my/ui'
+import {H1, LmAlert, LmButton, LmFormRhfProvider, LmInputRhf, LmSubmitButtonRhf, XGroup} from '@my/ui'
 import {useSignInEmailPassword, useSignUpEmailPassword} from '@nhost/react'
 import {useState} from "react";
 import {AnonymousGuard} from "app/src/components/guards/AnonymousGuard";
@@ -20,7 +20,7 @@ export function AuthScreen() {
     console.log(user)
     return (
         <AnonymousGuard>
-            <LmFormRfhProvider>
+            <LmFormRhfProvider>
                 <LmAnonymousShell>
                     <YStack padding={'$4'} space>
                         <H1 textAlign={'center'}>Welcome</H1>
@@ -56,7 +56,7 @@ export function AuthScreen() {
                     </YStack>
 
                 </LmAnonymousShell>
-            </LmFormRfhProvider>
+            </LmFormRhfProvider>
         </AnonymousGuard>
     )
 }

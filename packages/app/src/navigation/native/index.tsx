@@ -12,9 +12,10 @@ import {LmButton} from "@my/ui";
 import {LmAppDrawer} from "app/src/components/layouts/LmAppDrawer";
 import {Settings} from "@tamagui/feather-icons";
 import {useAuthenticationStatus} from "@nhost/react";
-import {View} from "react-native";
-import {Text} from "tamagui";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
+import {ExerciseEditScreen} from "app/src/features/exercise/ExerciseEditScreen";
+import {ExerciseDetailScreen} from "app/src/features/exercise/ExerciseDetailScreen";
+import {ExerciseListScreen} from "app/src/features/exercise/ExerciseListScreen";
 
 const AppStack = createBottomTabNavigator<RouterNavigationProps>()
 
@@ -23,12 +24,12 @@ const ExerciseStack = createNativeStackNavigator()
 function ExerciseStackNavigation() {
     return (
         <ExerciseStack.Navigator>
-            <ExerciseStack.Screen name={'exercise-list'} component={() => (
-                <View><Text>exercise list</Text></View>
-            )}/>
-            <ExerciseStack.Screen name={'exercise-create'} component={() => (
-                <View><Text>exercise create</Text></View>
-            )}/>
+            <ExerciseStack.Screen name={'exercise-list'}
+                                  component={ExerciseListScreen}/>
+            <ExerciseStack.Screen name={'exercise-edit'}
+                                  component={ExerciseEditScreen}/>
+            <ExerciseStack.Screen name={'exercise-detail'}
+                                  component={ExerciseDetailScreen}/>
         </ExerciseStack.Navigator>
     )
 }

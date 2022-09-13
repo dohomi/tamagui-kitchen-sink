@@ -9,10 +9,11 @@ export type LmButtonProps = ButtonProps & {
 
 export function LmButton({colorVariant, themeName, loading, ...rest}: LmButtonProps) {
 
-    const Child = loading ? () => {
-        return <Button {...rest} icon={<Spinner/>}
-                       disabled/>;
-    } : () => <Button {...rest}/>
+    const Child = loading
+        ? () => <Button {...rest}
+                        icon={<Spinner/>}
+                        disabled/>
+        : () => <Button {...rest}/>
 
     if (colorVariant || themeName) {
         return (

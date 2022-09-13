@@ -1,9 +1,9 @@
 import {FormProvider, useForm} from "react-hook-form";
 import {PropsWithChildren} from "react";
 
-export type LmFormRfhProviderProps = PropsWithChildren<{}>
+export type LmFormRhfProviderProps = PropsWithChildren<{}>
 
-export function LmFormRfhProvider({children}: LmFormRfhProviderProps) {
+export function LmFormRhfProvider({children}: LmFormRhfProviderProps) {
     const methods = useForm()
     return (
         <FormProvider {...methods}>

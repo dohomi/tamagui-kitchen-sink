@@ -1,4 +1,4 @@
-import {Separator, Sheet, YStack} from '@my/ui'
+import {LmLinkButton, Separator, Sheet, YStack} from '@my/ui'
 import {LogOut, Sun} from "@tamagui/feather-icons";
 import {useAppState} from "app/src/state/appState";
 import {useState} from "react";
@@ -37,7 +37,15 @@ export function LmAppDrawer() {
 
                             <LmThemeToggle icon={<Sun/>} circular chromeless/>
                         </XStack>
-                        <Separator minWidth={'100%'}/>
+                        <Separator minWidth={'100%'} marginBottom={'$4'}/>
+                        {isAuthenticated && (
+                            <>
+                                <XStack space>
+                                    <LmLinkButton link={{href: '/exercises'}}>Exercises</LmLinkButton>
+                                    <LmLinkButton link={{href: '/exercise/edit'}}>New Exercises</LmLinkButton>
+                                </XStack>
+                            </>
+                        )}
                     </YStack>
                 </Sheet.ScrollView>
             </Sheet.Frame>
