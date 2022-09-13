@@ -7,6 +7,7 @@ export type LmInputProps = InputProps & FormContainerProps & {
     containerProps?: ThemeableStackProps
     multiline?: boolean
     isPassword?: boolean
+    fullWidth?: boolean
 }
 
 export function LmInput({
@@ -19,6 +20,7 @@ export function LmInput({
                             containerProps,
                             labelInline,
                             isPassword,
+                            fullWidth,
                             ...rest
                         }: LmInputProps) {
     const genId = useId()
@@ -29,6 +31,9 @@ export function LmInput({
     if (error) {
         styleProps.borderColor = error ? '$red10' : undefined
     }
+    if (fullWidth) {
+        styleProps.width = '100%'
+    }
 
     return (
         <LmFormFieldContainer id={id}
@@ -36,14 +41,18 @@ export function LmInput({
                               required={required}
                               labelProps={labelProps}
                               label={label}
+                              fullWidth={fullWidth}
                               size={rest.size}
                               labelInline={labelInline}
                               helperText={helperText}
+
                               {...containerProps}>
             {multiline ? (
                 <TextArea {...rest} {...styleProps}/>
             ) : (
-                <Input {...rest} {...styleProps} secureTextEntry={rest.secureTextEntry || isPassword}/>
+                <Input {...rest} {...styleProps}
+                       secureTextEntry={rest.secureTextEntry || isPassword}
+                       autoCapitalize='none'/>
             )}
         </LmFormFieldContainer>
     )

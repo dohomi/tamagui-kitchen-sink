@@ -34,8 +34,8 @@ export function AuthScreen() {
                             onPress={() => setLoginState('register')}
                             colorVariant={loginState === 'register' ? 'primary' : undefined}>Register</LmButton>
                     </XGroup>
-                    <LmInputRhf name={'email'} label={'Email'} labelInline required />
-                    <LmInputRhf name={'password'} label={'Password'} labelInline required/>
+                    <LmInputRhf name={'email'} fullWidth placeholder={'Email'} labelInline required/>
+                    <LmInputRhf name={'password'} fullWidth placeholder={'Password'} labelInline required/>
                     <LmSubmitButtonRhf
                         loading={isLoading || isLoading2}
                         onSubmit={async (data) => {

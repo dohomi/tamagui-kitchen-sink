@@ -13,10 +13,16 @@ import {FormContainerProps} from "./formContainerProps";
 type LmFormContainerProps = ThemeableStackProps & FormContainerProps & {
     id: string
     size?: SizeTokens
+    fullWidth?: boolean
 }
 
 const StackContainer = styled(ThemeableStack, {
     variants: {
+        fullWidth: {
+            true: {
+                width: '100%'
+            }
+        },
         labelInline: {
             true: {
                 flexDirection: 'row',

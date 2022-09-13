@@ -6,6 +6,7 @@ export type RouterNavigationProps = {
     },
     dashboard: undefined
     auth: undefined
+    settings: undefined
 };
 
 export type RouterScreenProps = {

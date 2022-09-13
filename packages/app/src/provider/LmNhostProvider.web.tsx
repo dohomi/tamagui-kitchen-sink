@@ -10,7 +10,9 @@ export function LmNhostProvider({children}: PropsWithChildren) {
         <NhostReactProvider nhost={nhost}>
             <QueryClientProvider client={queryClient}>
                 {children}
-                <ReactQueryDevtools initialIsOpen={false}/>
+                {!process.env.STORYBOOK && (
+                    <ReactQueryDevtools initialIsOpen={false}/>
+                )}
             </QueryClientProvider>
         </NhostReactProvider>
     )
