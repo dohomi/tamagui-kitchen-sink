@@ -13,7 +13,7 @@
     "sb": "cd apps/storybook-react && yarn sb",
     "web:prod": "yarn workspace next-app build",
     "watch": "yarn turbo run watch --filter=@my/ui",
-    "postinstall": "yarn build && yarn codegen",
+    "postinstall": "yarn build",
     "build": "yarn turbo run build --filter=@my/ui",
     "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader",
     "sync:tamagui": "${TAMAGUI_PATH:-$HOME/tamagui}/starters-sync.sh",

@@ -45,4 +45,3 @@ turbo-build.log
 graphql.config.yaml
 .graphqlconfig
 schema.graphql
-__generated__
