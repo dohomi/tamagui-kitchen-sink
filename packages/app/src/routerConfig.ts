@@ -10,8 +10,18 @@ export type RouterNavigationProps = {
     exerciseStack: undefined
 };
 
+export type RouterExerciseNavigationProps = {
+    exercise: {
+        id: string
+    }
+    'exercise-edit': {
+        id: string
+    }
+    exercises: undefined
+}
+
 export type RouterScreenProps = {
-    [K in keyof RouterNavigationProps]: string;
+    [K in keyof (RouterNavigationProps | RouterExerciseNavigationProps)]: string;
 };
 
 export const nativeScreens = {
@@ -19,5 +29,8 @@ export const nativeScreens = {
     'user-detail': 'user/:id',
     overview: 'overview',
     dashboard: 'dashboard',
-    auth: 'auth'
+    auth: 'auth',
+    exercises: 'exercises',
+    'exercise-edit': 'exercise-edit/:id',
+    'exercise': 'exercise/:id'
 } as RouterScreenProps

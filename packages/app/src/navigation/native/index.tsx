@@ -4,7 +4,7 @@ import {HomeScreen} from '../../features/home/HomeScreen'
 import {UserDetailScreen} from '../../features/user/detail-screen'
 import {OverviewScreen} from "app/src/features/overview/overview";
 import {DashboardScreen} from "app/src/features/dashboard/DashboardScreen";
-import {RouterNavigationProps} from "app/src/routerConfig";
+import {RouterExerciseNavigationProps, RouterNavigationProps} from "app/src/routerConfig";
 import {AuthScreen} from "app/src/features/auth/AuthScreen";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {useToggleMainDrawer} from "app/src/state/appState";
@@ -19,16 +19,16 @@ import {ExerciseListScreen} from "app/src/features/exercise/ExerciseListScreen";
 
 const AppStack = createBottomTabNavigator<RouterNavigationProps>()
 
-const ExerciseStack = createNativeStackNavigator()
+const ExerciseStack = createNativeStackNavigator<RouterExerciseNavigationProps>()
 
 function ExerciseStackNavigation() {
     return (
         <ExerciseStack.Navigator>
-            <ExerciseStack.Screen name={'exercise-list'}
+            <ExerciseStack.Screen name={'exercises'}
                                   component={ExerciseListScreen}/>
             <ExerciseStack.Screen name={'exercise-edit'}
                                   component={ExerciseEditScreen}/>
-            <ExerciseStack.Screen name={'exercise-detail'}
+            <ExerciseStack.Screen name={'exercise'}
                                   component={ExerciseDetailScreen}/>
         </ExerciseStack.Navigator>
     )
