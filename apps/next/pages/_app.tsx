@@ -20,7 +20,7 @@ function MyApp({Component, pageProps}: SolitoAppProps) {
     }, [name])
     const contents = useMemo(() => {
         return <Component {...pageProps} />
-    }, [pageProps])
+    }, [pageProps, Component])
 
     return (
         <>
