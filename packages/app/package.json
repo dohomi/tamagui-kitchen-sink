@@ -3,7 +3,7 @@
   "name": "app",
   "main": "index.ts",
   "scripts": {
-    "codegen": "graphql-codegen --config graphql.config.yaml --errors-only --watch"
+    "codegen": "graphql-codegen --config graphql.config.ts --errors-only --watch"
   },
   "dependencies": {
     "@my/config": "*",

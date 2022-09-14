@@ -42,6 +42,6 @@ thumbs.db
 
 .idea
 turbo-build.log
-graphql.config.yaml
+graphql.config.*
 .graphqlconfig
 schema.graphql

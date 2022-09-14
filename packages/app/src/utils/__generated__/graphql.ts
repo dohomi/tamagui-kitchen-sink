@@ -12444,9 +12444,7 @@ export const UserClubFragmentDoc = `
     ...userPermission
   }
 }
-    ${ClubFragmentDoc}
-${PaymentFragmentDoc}
-${UserPermissionFragmentDoc}`;
+    `;
 export const ExerciseContentMnsFragmentDoc = `
     fragment exerciseContentMns on exercise_content_media_mn {
   exercise_id
@@ -12489,7 +12487,7 @@ export const ExerciseContentMediaEditorFragmentDoc = `
     ...fileFragment
   }
 }
-    ${FileFragmentFragmentDoc}`;
+    `;
 export const ExerciseDetailFragmentDoc = `
     fragment exerciseDetail on exercise {
   id
@@ -12532,12 +12530,7 @@ export const ExerciseDetailFragmentDoc = `
     }
   }
 }
-    ${ExerciseClubMnsFragmentDoc}
-${UserClubFragmentDoc}
-${ExerciseContentMnsFragmentDoc}
-${ExerciseContentMediaFragmentDoc}
-${FileFragmentFragmentDoc}
-${ExerciseContentMediaEditorFragmentDoc}`;
+    `;
 export const ExerciseListFragmentDoc = `
     fragment exerciseList on exercise {
   id
@@ -12564,12 +12557,7 @@ export const ExerciseListFragmentDoc = `
     }
   }
 }
-    ${ExerciseClubMnsFragmentDoc}
-${UserClubFragmentDoc}
-${ExerciseContentMnsFragmentDoc}
-${ExerciseContentMediaFragmentDoc}
-${FileFragmentFragmentDoc}
-${ExerciseContentMediaEditorFragmentDoc}`;
+    `;
 export const ExerciseTaxonomyFragmentDoc = `
     fragment exerciseTaxonomy on exercise_taxonomy {
   id
@@ -12677,7 +12665,10 @@ export const UserClubPermissionsDocument = `
     ...userClub
   }
 }
-    ${UserClubFragmentDoc}`;
+    ${UserClubFragmentDoc}
+${ClubFragmentDoc}
+${PaymentFragmentDoc}
+${UserPermissionFragmentDoc}`;
 export const useUserClubPermissionsQuery = <
       TData = UserClubPermissionsQuery,
       TError = unknown
@@ -12696,7 +12687,16 @@ export const AllExercisesDocument = `
     ...exerciseList
   }
 }
-    ${ExerciseListFragmentDoc}`;
+    ${ExerciseListFragmentDoc}
+${ExerciseClubMnsFragmentDoc}
+${UserClubFragmentDoc}
+${ClubFragmentDoc}
+${PaymentFragmentDoc}
+${UserPermissionFragmentDoc}
+${ExerciseContentMnsFragmentDoc}
+${ExerciseContentMediaFragmentDoc}
+${FileFragmentFragmentDoc}
+${ExerciseContentMediaEditorFragmentDoc}`;
 export const useAllExercisesQuery = <
       TData = AllExercisesQuery,
       TError = unknown
@@ -12715,7 +12715,16 @@ export const CreateExerciseDocument = `
     ...exerciseDetail
   }
 }
-    ${ExerciseDetailFragmentDoc}`;
+    ${ExerciseDetailFragmentDoc}
+${ExerciseClubMnsFragmentDoc}
+${UserClubFragmentDoc}
+${ClubFragmentDoc}
+${PaymentFragmentDoc}
+${UserPermissionFragmentDoc}
+${ExerciseContentMnsFragmentDoc}
+${ExerciseContentMediaFragmentDoc}
+${FileFragmentFragmentDoc}
+${ExerciseContentMediaEditorFragmentDoc}`;
 export const useCreateExerciseMutation = <
       TError = unknown,
       TContext = unknown
@@ -12764,7 +12773,16 @@ export const ExerciseByPkDocument = `
     ...exerciseDetail
   }
 }
-    ${ExerciseDetailFragmentDoc}`;
+    ${ExerciseDetailFragmentDoc}
+${ExerciseClubMnsFragmentDoc}
+${UserClubFragmentDoc}
+${ClubFragmentDoc}
+${PaymentFragmentDoc}
+${UserPermissionFragmentDoc}
+${ExerciseContentMnsFragmentDoc}
+${ExerciseContentMediaFragmentDoc}
+${FileFragmentFragmentDoc}
+${ExerciseContentMediaEditorFragmentDoc}`;
 export const useExerciseByPkQuery = <
       TData = ExerciseByPkQuery,
       TError = unknown
@@ -12820,7 +12838,16 @@ export const UpdateExerciseDocument = `
     affected_rows
   }
 }
-    ${ExerciseDetailFragmentDoc}`;
+    ${ExerciseDetailFragmentDoc}
+${ExerciseClubMnsFragmentDoc}
+${UserClubFragmentDoc}
+${ClubFragmentDoc}
+${PaymentFragmentDoc}
+${UserPermissionFragmentDoc}
+${ExerciseContentMnsFragmentDoc}
+${ExerciseContentMediaFragmentDoc}
+${FileFragmentFragmentDoc}
+${ExerciseContentMediaEditorFragmentDoc}`;
 export const useUpdateExerciseMutation = <
       TError = unknown,
       TContext = unknown

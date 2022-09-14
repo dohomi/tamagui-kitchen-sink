@@ -17,7 +17,7 @@ function MyApp({Component, pageProps}: SolitoAppProps) {
         if (name) {
             setTheme(name)
         }
-    }, [name])
+    }, [name, setTheme])
     const contents = useMemo(() => {
         return <Component {...pageProps} />
     }, [pageProps, Component])
