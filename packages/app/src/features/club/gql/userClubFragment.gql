@@ -1,0 +1,9 @@
+fragment userClub on club {
+    ...club
+    payments{
+        ...payment
+    }
+    user_permissions{
+        ...userPermission
+    }
+}

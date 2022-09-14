@@ -1,0 +1,5 @@
+mutation deleteClubByPk($id: String!) {
+    delete_club_by_pk(id: $id){
+        id
+    }
+}

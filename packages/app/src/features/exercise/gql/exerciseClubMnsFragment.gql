@@ -1,0 +1,5 @@
+fragment exerciseClubMns on exercise_club_mn{
+    club_id
+    exercise_id
+    __typename
+}

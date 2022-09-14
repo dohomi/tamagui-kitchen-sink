@@ -1,0 +1,10 @@
+fragment exerciseContentMediaEditor on exercise_content_media_editor{
+    id
+    editor_data
+    file_image{
+        ...fileFragment
+    }
+    file_video{
+        ...fileFragment
+    }
+}

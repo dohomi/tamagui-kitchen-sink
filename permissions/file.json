@@ -1,0 +1,194 @@
+{
+  "_or": [
+    {
+      "exercise_content_media": {
+        "exercise_content_media_mns": {
+          "exercise": {
+            "_or": [
+              {
+                "owner_id_bak": {
+                  "_eq": "X-Hasura-User-Id"
+                }
+              },
+              {
+                "_and": [
+                  {
+                    "exercise_club_mns": {
+                      "club": {
+                        "_and": [
+                          {
+                            "user_permissions": {
+                              "_and": [
+                                {
+                                  "user_id_bak": {
+                                    "_eq": "X-Hasura-User-Id"
+                                  }
+                                },
+                                {
+                                  "role": {
+                                    "_in": [
+                                      "CLUB_EXERCISE_UPDATE",
+                                      "CLUB_EXERCISE_CREATE"
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "payments": {
+                              "_or": [
+                                {
+                                  "active": {
+                                    "_eq": true
+                                  }
+                                },
+                                {
+                                  "valid_until": {
+                                    "_gte": "now()"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "exercise_content_media_editor_image": {
+        "exercise_content_media": {
+          "exercise_content_media_mns": {
+            "exercise": {
+              "_or": [
+                {
+                  "owner_id_bak": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                },
+                {
+                  "_and": [
+                    {
+                      "exercise_club_mns": {
+                        "club": {
+                          "_and": [
+                            {
+                              "user_permissions": {
+                                "_and": [
+                                  {
+                                    "user_id_bak": {
+                                      "_eq": "X-Hasura-User-Id"
+                                    }
+                                  },
+                                  {
+                                    "role": {
+                                      "_in": [
+                                        "CLUB_EXERCISE_UPDATE",
+                                        "CLUB_EXERCISE_CREATE"
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "payments": {
+                                "_or": [
+                                  {
+                                    "active": {
+                                      "_eq": true
+                                    }
+                                  },
+                                  {
+                                    "valid_until": {
+                                      "_gte": "now()"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "exercise_content_media_editor_video": {
+        "exercise_content_media": {
+          "exercise_content_media_mns": {
+            "exercise": {
+              "_or": [
+                {
+                  "owner_id_bak": {
+                    "_eq": "X-Hasura-User-Id"
+                  }
+                },
+                {
+                  "_and": [
+                    {
+                      "exercise_club_mns": {
+                        "club": {
+                          "_and": [
+                            {
+                              "user_permissions": {
+                                "_and": [
+                                  {
+                                    "user_id_bak": {
+                                      "_eq": "X-Hasura-User-Id"
+                                    }
+                                  },
+                                  {
+                                    "role": {
+                                      "_in": [
+                                        "CLUB_EXERCISE_UPDATE",
+                                        "CLUB_EXERCISE_CREATE"
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "payments": {
+                                "_or": [
+                                  {
+                                    "active": {
+                                      "_eq": true
+                                    }
+                                  },
+                                  {
+                                    "valid_until": {
+                                      "_gte": "now()"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

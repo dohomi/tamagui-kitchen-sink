@@ -1,0 +1,10 @@
+fragment team on team {
+    id
+    name
+    club {
+        id
+        name
+    }
+    updated_at
+    created_at
+}

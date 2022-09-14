@@ -1,0 +1,6 @@
+fragment club on club{
+    id
+    name
+    sport
+    owner_id
+}

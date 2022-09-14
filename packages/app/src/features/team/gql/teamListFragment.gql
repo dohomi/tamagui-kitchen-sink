@@ -1,0 +1,11 @@
+fragment teamList on team {
+    created_at
+    updated_at
+    id
+    name
+    club_id
+    club {
+        id
+        name
+    }
+}

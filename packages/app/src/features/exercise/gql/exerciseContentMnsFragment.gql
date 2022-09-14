@@ -1,0 +1,10 @@
+fragment exerciseContentMns on exercise_content_media_mn{
+    exercise_id
+    exercise_content_media_id
+    exercise_content_media {
+        id
+        type
+    }
+    sort
+    __typename
+}

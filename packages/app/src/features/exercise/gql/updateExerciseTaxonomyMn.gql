@@ -1,0 +1,11 @@
+mutation updateExerciseTaxonomyMn(
+    $exerciseId: String!
+    $variables: [exercise_taxonomy_mn_insert_input!]!
+){
+    delete_exercise_taxonomy_mn(where: {exercise_id: {_eq: $exerciseId}}) {
+        affected_rows
+    }
+    insert_exercise_taxonomy_mn(objects: $variables) {
+        affected_rows
+    }
+}

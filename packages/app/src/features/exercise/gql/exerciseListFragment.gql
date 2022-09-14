@@ -1,20 +1,16 @@
-fragment exerciseDetail on exercise{
+fragment exerciseList on exercise{
     id
     created_at
     updated_at
     owner_id
     title
-    fitness_stars
-    technique_stars
-    tactics_stars
-    locale
     exercise_club_mns{
         ...exerciseClubMns
         club{
             ...userClub
         }
     }
-    exercise_content_media_mns(order_by: [{sort: asc}]){
+    exercise_content_media_mns(limit: 1 order_by: [{sort: asc}]){
         ...exerciseContentMns
         exercise_content_media{
             ...exerciseContentMedia
@@ -24,18 +20,6 @@ fragment exerciseDetail on exercise{
             exercise_content_media_editor{
                 ...exerciseContentMediaEditor
             }
-        }
-    }
-    exercise_taxonomy_mns {
-        exercise_id
-        taxonomy_id
-        exercise_taxonomy {
-            id
-            category
-            locale
-            translation_key
-            created_at
-            updated_at
         }
     }
 }

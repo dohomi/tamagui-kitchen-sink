@@ -1,0 +1,6 @@
+mutation createExercise($object:exercise_insert_input!){
+    insert_exercise_one(object: $object){
+        ...exerciseDetail
+    }
+
+}

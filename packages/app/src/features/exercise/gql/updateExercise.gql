@@ -1,0 +1,28 @@
+mutation updateExercise(
+    $id: String!,
+    $set: exercise_set_input!,
+    $exerciseClubMn: [exercise_club_mn_insert_input!]!
+    $exerciseTaxonomyMn: [exercise_taxonomy_mn_insert_input!]!
+){
+    update_exercise_by_pk(pk_columns: {
+        id: $id
+    }, _set: $set){
+        ...exerciseDetail
+    }
+    delete_exercise_club_mn(where: {
+        exercise_id: {_eq: $id}
+    }){
+        affected_rows
+    }
+    delete_exercise_taxonomy_mn(where: {
+        exercise_id: {_eq: $id}
+    }){
+        affected_rows
+    }
+    insert_exercise_club_mn(objects: $exerciseClubMn, on_conflict: {constraint: exercise_club_mn_pkey, update_columns: []}){
+        affected_rows
+    }
+    insert_exercise_taxonomy_mn(objects: $exerciseTaxonomyMn, on_conflict: {constraint: exercise_taxonomy_mn_pkey, update_columns: []}){
+        affected_rows
+    }
+}

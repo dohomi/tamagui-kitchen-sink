@@ -1,8 +1,11 @@
 import {nhost} from '../lib/nhostClient'
+import {GraphQLClient} from 'graphql-request'
 
 type AuthHeaderProps = {
     authorization: string
 }
+
+const gqlRequest = new GraphQLClient(nhost.graphql.getUrl())
 
 export const fetchData = <TData, TVariables>(
     query: string,
@@ -16,26 +19,32 @@ export const fetchData = <TData, TVariables>(
             authHeaders['authorization'] = `Bearer ${nhost.auth.getAccessToken()}`
         }
 
-        const res = await fetch(nhost.graphql.getUrl(), {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                ...authHeaders,
-                ...(options ?? {})
-            },
-            body: JSON.stringify({
-                query,
-                variables
-            })
+        console.log(authHeaders)
+        const res = await gqlRequest.request(query, variables, {
+            ...authHeaders
         })
+        // const res = await request(nhost.graphql.getUrl(), query, variables, {
+        //     ...authHeaders
+        // })
+        // const res = await fetch(nhost.graphql.getUrl(), {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         ...authHeaders,
+        //         ...(options ?? {})
+        //     },
+        //     body: JSON.stringify({
+        //         query,
+        //         variables
+        //     })
+        // })
 
-        const json = await res.json()
-
-        if (json.errors) {
-            const {message} = json.errors[0] || 'Error..'
+        // const json = await res.json()
+        if (res.errors) {
+            const {message} = res.errors[0] || 'Error..'
             throw new Error(message)
         }
 
-        return json.data
+        return res
     }
 }

@@ -1,0 +1,5 @@
+query exerciseByPk($id: String!){
+  exercise_by_pk(id: $id){
+    ...exerciseDetail
+  }
+}

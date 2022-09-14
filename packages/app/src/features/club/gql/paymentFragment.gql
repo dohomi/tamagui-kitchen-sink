@@ -1,0 +1,9 @@
+fragment payment on payment{
+    id
+    active
+    license
+    is_trial
+    valid_until
+    fastspring_id
+    club_id
+}
