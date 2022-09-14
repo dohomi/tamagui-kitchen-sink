@@ -1,8 +1,10 @@
-import {Anchor, Button, H1, LmButton, Paragraph, Separator, Sheet, XStack, YStack} from '@my/ui'
-import {ChevronDown, ChevronUp} from '@tamagui/feather-icons'
-import React, {useState} from 'react'
+import {Anchor, Button, H1, LmButton, Paragraph, Separator, XStack, YStack} from '@my/ui'
+import {ChevronDown} from '@tamagui/feather-icons'
+import React from 'react'
 import {useLink} from 'solito/link'
 import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";
+import {LmAppDrawer} from "app/src/components/layouts/LmAppDrawer";
+import {useToggleMainDrawer} from "app/src/state/appState";
 
 export function HomeScreen() {
     const linkProps = useLink({
@@ -46,45 +48,23 @@ export function HomeScreen() {
             <XStack>
                 <LmThemeToggle>Toggle theme</LmThemeToggle>
             </XStack>
-
             <SheetDemo/>
         </YStack>
     )
 }
 
 function SheetDemo() {
-    const [open, setOpen] = useState(false)
-    const [position, setPosition] = useState(0)
+    const toggleMainDrawer = useToggleMainDrawer()
+
     return (
         <>
             <Button
                 size="$6"
-                icon={open ? ChevronDown : ChevronUp}
+                icon={ChevronDown}
                 circular
-                onPress={() => setOpen((x) => !x)}
+                onPress={() => toggleMainDrawer()}
             />
-            <Sheet
-                modal
-                open={open}
-                onChangeOpen={setOpen}
-                snapPoints={[80, 10]}
-                position={position}
-                onChangePosition={setPosition}
-                dismissOnSnapToBottom
-            >
-                <Sheet.Overlay/>
-                <Sheet.Handle/>
-                <Sheet.Frame alignItems="center" justifyContent="center">
-                    <Button
-                        size="$6"
-                        circular
-                        icon={ChevronDown}
-                        onPress={() => {
-                            setOpen(false)
-                        }}
-                    />
-                </Sheet.Frame>
-            </Sheet>
+            <LmAppDrawer/>
         </>
     )
 }

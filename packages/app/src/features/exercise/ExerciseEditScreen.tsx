@@ -1,42 +1,48 @@
 import {LmAppShell} from "app/src/components/layouts/LmAppShell";
-import {createParam} from 'solito'
-import {LmAlert, LmFormRhfProvider, LmInputRhf, LmSubmitButtonRhf} from "@my/ui";
-import {Text, XStack, YStack} from "tamagui";
+import {LmAlert, LmFormRhfProvider, LmInputRhf, LmSubmitButtonRhf, useIsomorphicLayoutEffect} from "@my/ui";
+import {XStack, YStack} from "tamagui";
 import {useExerciseInsertMutation, useExerciseUpdateMutation} from "app/src/utils/__generated__/graphql";
 import {getUid} from "app/src/lib/createUid";
+import {useRouter} from "solito/router";
+import {useRouteParam} from "app/src/navigation/useParam";
 
-const {useParam} = createParam<{ id: string }>()
 
 export function ExerciseEditScreen() {
-    const [id] = useParam('id')
-    const {data, error, mutate: insert, isLoading} = useExerciseInsertMutation()
-    const {data: data2, error: error2, mutate: update, isLoading: isLoading2} = useExerciseUpdateMutation()
+    const [id] = useRouteParam('id', true)
+    const {data, error, mutate: insert, isLoading, isSuccess} = useExerciseInsertMutation()
+    const {data: dataUpdate, error: error2, mutate: update, isLoading: isLoading2} = useExerciseUpdateMutation()
+    console.log(id)
+    const {push} = useRouter()
+    let newExerciseId = data?.insert_exercise_one?.id;
+    useIsomorphicLayoutEffect(() => {
+        console.log(data)
+        if (newExerciseId && !id) {
+            push(`/exercise-edit/${newExerciseId}`) // forward to edit
+        }
+    }, [newExerciseId, push, id])
     const err: any = error || error2
-    if (error) {
-        console.log(error)
-        return (
-            <Text>error</Text>
-        )
+    const onSubmit = async (data) => {
+        const currentId = id || newExerciseId;
+        if (!currentId) {
+            console.log('data#', data, id)
+            await insert({
+                object: {
+                    ...data,
+                    id: getUid()
+                }
+            })
+        } else {
+            console.log(data, id)
+            await update({id: currentId, set: data})
+        }
     }
     return (
         <LmFormRhfProvider>
-            <LmAppShell title={'Edit your ' + id} rightContent={(
+            <LmAppShell title={id ? 'Edit your ' + id : 'New Excise'} rightContent={(
                 <>
                     <LmSubmitButtonRhf colorVariant={'primary'}
                                        loading={isLoading || isLoading2}
-                                       onSubmit={async (data) => {
-                                           if (!id) {
-                                               console.log('data#', data, id)
-                                               await insert({
-                                                   object: {
-                                                       ...data,
-                                                       id: getUid()
-                                                   }
-                                               })
-                                           } else {
-                                               await update({id, set: data})
-                                           }
-                                       }}>Save</LmSubmitButtonRhf>
+                                       onSubmit={onSubmit}>Save</LmSubmitButtonRhf>
                 </>
             )}>
                 <XStack padding={'$4'} space>
