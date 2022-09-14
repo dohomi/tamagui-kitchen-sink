@@ -3,7 +3,7 @@ import * as Linking from 'expo-linking'
 import {PropsWithChildren, useEffect, useMemo} from 'react'
 import {useThemeState} from "app/src/state/themeState";
 import {useColorScheme} from 'react-native'
-import {nativeScreens} from "app/src/routerConfig";
+import {nativeScreens} from "app/src/navigation/routerConfig";
 
 export function NavigationProvider({
                                        children,

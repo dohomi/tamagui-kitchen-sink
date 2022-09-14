@@ -7,7 +7,8 @@ type LmLinkButtonProps = LmButtonProps & {
 
 export function LmLinkButton({link, ...props}: LmLinkButtonProps) {
     const linkProps = useLink(link)
+
     return (
-        <LmButton  {...props} {...linkProps}/>
+        <LmButton {...props} {...linkProps} />
     )
 }

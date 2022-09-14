@@ -13,7 +13,6 @@ export function ExerciseListCards({exercises}: ExerciseListCardsProps) {
                 <View key={ex.id}>
                     <LmLinkButton link={{href: `/exercise/${ex.id}`}}>{ex.title}</LmLinkButton>
                     <LmLinkButton link={{href: `/exercise-edit/${ex.id}`}}>edit...</LmLinkButton>
-                    {ex.title}
                 </View>
             ))}
         </View>

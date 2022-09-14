@@ -4,7 +4,7 @@ import {HomeScreen} from '../../features/home/HomeScreen'
 import {UserDetailScreen} from '../../features/user/detail-screen'
 import {OverviewScreen} from "app/src/features/overview/overview";
 import {DashboardScreen} from "app/src/features/dashboard/DashboardScreen";
-import {RouterExerciseNavigationProps, RouterNavigationProps} from "app/src/routerConfig";
+import {RouterNavigationProps} from "app/src/navigation/routerConfig";
 import {AuthScreen} from "app/src/features/auth/AuthScreen";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {useToggleMainDrawer} from "app/src/state/appState";
@@ -12,27 +12,11 @@ import {LmButton} from "@my/ui";
 import {LmAppDrawer} from "app/src/components/layouts/LmAppDrawer";
 import {Settings} from "@tamagui/feather-icons";
 import {useAuthenticationStatus} from "@nhost/react";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {ExerciseEditScreen} from "app/src/features/exercise/ExerciseEditScreen";
 import {ExerciseDetailScreen} from "app/src/features/exercise/ExerciseDetailScreen";
 import {ExerciseListScreen} from "app/src/features/exercise/ExerciseListScreen";
 
 const AppStack = createBottomTabNavigator<RouterNavigationProps>()
-
-const ExerciseStack = createNativeStackNavigator<RouterExerciseNavigationProps>()
-
-function ExerciseStackNavigation() {
-    return (
-        <ExerciseStack.Navigator>
-            <ExerciseStack.Screen name={'exercises'}
-                                  component={ExerciseListScreen}/>
-            <ExerciseStack.Screen name={'exercise-edit'}
-                                  component={ExerciseEditScreen}/>
-            <ExerciseStack.Screen name={'exercise'}
-                                  component={ExerciseDetailScreen}/>
-        </ExerciseStack.Navigator>
-    )
-}
 
 export function NativeNavigation() {
     const toggleMainDrawer = useToggleMainDrawer()
@@ -81,12 +65,29 @@ export function NativeNavigation() {
                                      })
                                  }}
                 />
-                <AppStack.Screen name={'exerciseStack'}
-                                 options={{
-                                     headerShown: false
-                                 }}
-                                 component={ExerciseStackNavigation}
-                />
+
+                <AppStack.Group screenOptions={{
+                    tabBarButton: () => null
+                }}>
+                    <AppStack.Screen name={'exercises'}
+                                     component={ExerciseListScreen}/>
+                    <AppStack.Screen name={'exercise-edit'}
+                                     component={ExerciseEditScreen}/>
+                    <AppStack.Screen name={'exercise-new'}
+                                     component={ExerciseEditScreen}/>
+                    <AppStack.Screen name={'exercise'}
+                                     options={({navigation}) => ({
+                                         headerLeft: props => {
+                                             if (navigation.canGoBack()) {
+                                                 return <LmButton
+                                                     onPress={() => navigation.goBack()}>test</LmButton>
+                                             }
+                                             return null
+                                         }
+                                     })}
+                                     component={ExerciseDetailScreen}/>
+                </AppStack.Group>
+
                 <AppStack.Screen name={'settings'}
                                  component={() => null}
                                  options={{

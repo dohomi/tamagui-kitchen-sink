@@ -6,11 +6,16 @@ import {LmLogoutButton} from "app/src/components/various/LmLogoutButton";
 import {XStack} from "tamagui";
 import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";
 import {useAuthenticationStatus} from "@nhost/react";
+import {useOnRouteChange} from "app/src/navigation/useOnRouteChange";
 
 export function LmAppDrawer() {
     const {isMainDrawerOpen, setMainDrawer} = useAppState()
     const [position, setPosition] = useState(0)
     const {isAuthenticated, isLoading} = useAuthenticationStatus()
+    useOnRouteChange(
+        () =>
+            setMainDrawer(false)
+    )
 
     return (
         <Sheet
@@ -42,7 +47,7 @@ export function LmAppDrawer() {
                             <>
                                 <XStack space>
                                     <LmLinkButton link={{href: '/exercises'}}>Exercises</LmLinkButton>
-                                    <LmLinkButton link={{href: '/exercise-edit/'}}>New Exercises</LmLinkButton>
+                                    <LmLinkButton link={{href: '/exercise-new'}}>New Exercises</LmLinkButton>
                                 </XStack>
                             </>
                         )}
