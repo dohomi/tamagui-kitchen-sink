@@ -6,15 +6,14 @@ import {NextThemeProvider, useRootTheme} from '@tamagui/next-theme'
 import {Provider} from 'app/src/provider'
 import {useThemeState} from 'app/src/state/themeState'
 import Head from 'next/head'
-import React, {useMemo} from 'react'
+import React, {useEffect, useMemo} from 'react'
 import type {SolitoAppProps} from 'solito'
 import 'raf/polyfill'
-import {useIsomorphicLayoutEffect} from '@my/ui'
 
 function MyApp({Component, pageProps}: SolitoAppProps) {
     const [theme, setTheme] = useRootTheme()
     const {name} = useThemeState()
-    useIsomorphicLayoutEffect(() => {
+    useEffect(() => {
         if (name) {
             setTheme(name)
         }
