@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node_modules/.bin/next start",
-    "lint": "node_modules/.bin/next lint",
+    "start": "next start",
+    "lint": "next lint",
     "check-types": "tsc --noemit"
   },
   "dependencies": {

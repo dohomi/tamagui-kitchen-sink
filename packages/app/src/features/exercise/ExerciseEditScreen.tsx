@@ -11,6 +11,7 @@ export function ExerciseEditScreen() {
     const [id] = useParam('id')
     const {data, error, mutate: insert, isLoading} = useExerciseInsertMutation()
     const {data: data2, error: error2, mutate: update, isLoading: isLoading2} = useExerciseUpdateMutation()
+    const err: any = error || error2
     if (error) {
         console.log(error)
         return (
@@ -39,8 +40,8 @@ export function ExerciseEditScreen() {
                 </>
             )}>
                 <XStack padding={'$4'} space>
-                    {error || error2 && (
-                        <LmAlert severity={'error'} text={error?.message}/>
+                    {err && (
+                        <LmAlert severity={'error'} text={err}/>
                     )}
 
                     <YStack space>
