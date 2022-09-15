@@ -10,7 +10,9 @@ const withTM = require('next-transpile-modules')([
     'expo-modules-core',
     '@fortawesome/react-native-fontawesome',
     // '@expo/vector-icons',
-    '@my/config'])
+    '@my/config',
+    '@my/ui'
+])
 // const {withExpo} = require('@expo/next-adapter')
 
 process.env.IGNORE_TS_CONFIG_PATHS = 'true'
