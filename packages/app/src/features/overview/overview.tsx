@@ -25,6 +25,7 @@ import {Paragraph, useTheme} from "tamagui";
 import {fruitItemsFixtures} from "@my/ui/fixtures/selectItems";
 import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";
 import {Sun} from "@tamagui/feather-icons";
+import i18n from 'app/src/i18n/i18n';
 
 
 export function OverviewScreen() {
@@ -49,7 +50,7 @@ export function OverviewScreen() {
                     maxWidth={'100%'}>
                 <XStack justifyContent={'center'} space width={'100%'}>
 
-                    <H2 alignSelf="center">Components Overview</H2>
+                    <H2 alignSelf="center">{i18n('welcomeScreen.home')}</H2>
                     <LmThemeToggle icon={<Sun/>} circular/>
                 </XStack>
                 <XStack {...defaultSectionProps}>

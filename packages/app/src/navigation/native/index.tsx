@@ -15,6 +15,7 @@ import {useAuthenticationStatus} from "@nhost/react";
 import {ExerciseEditScreen} from "app/src/features/exercise/ExerciseEditScreen";
 import {ExerciseDetailScreen} from "app/src/features/exercise/ExerciseDetailScreen";
 import {ExerciseListScreen} from "app/src/features/exercise/ExerciseListScreen";
+import i18n from "app/src/i18n/i18n";
 
 const AppStack = createBottomTabNavigator<RouterNavigationProps>()
 
@@ -29,7 +30,7 @@ export function NativeNavigation() {
                     component={HomeScreen}
                     options={{
                         tabBarButton: () => null,
-                        title: 'Home'
+                        title: i18n('welcomeScreen.home')
                     }}
                 />
                 <AppStack.Screen
