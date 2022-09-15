@@ -2,13 +2,16 @@
   "test": "TestEN",
   "common": {
     "ok": "OK!",
-    "cancel": "Abbrechen",
-    "back": "Zurück"
+    "cancel": "Cancel",
+    "back": "Back"
   },
   "errors": {
-    "invalidEmail": "Ungültige E-Mail-Adresse."
+    "invalidEmail": "Invalid email address."
   },
   "welcomeScreen": {
     "home": "HomeEN"
+  },
+  "overviewScreen": {
+    "headline": "Overview"
   }
 }

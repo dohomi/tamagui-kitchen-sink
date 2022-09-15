@@ -16,6 +16,8 @@ const resources = {
     }
 };
 
+export const defaultNS = 'translation'
+
 i18n
     .use(initReactI18next)
     .init({
@@ -23,9 +25,12 @@ i18n
         lng: "de",
         interpolation: {
             escapeValue: false // react already safes from xss
-        }
+        },
+        defaultNS
     });
 
+
+/*
 type DefaultLocale = typeof en
 export type TxKeyPath = RecursiveKeyOf<DefaultLocale>
 
@@ -46,6 +51,13 @@ type RecursiveKeyOfHandleValue<TValue, Text extends string> = TValue extends any
     : TValue extends object
         ? Text | `${Text}${RecursiveKeyOfInner<TValue>}`
         : Text
-
 export const t = (key: TxKeyPath) =>  key ? i18n.t(key) : undefined
+
+ */
+
+export const changeLanguage = (str: string) => {
+    console.log(str, i18n)
+    return i18n.changeLanguage(str);
+}
+
 export default i18n;

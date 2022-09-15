@@ -25,11 +25,14 @@ import {Paragraph, useTheme} from "tamagui";
 import {fruitItemsFixtures} from "@my/ui/fixtures/selectItems";
 import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";
 import {Sun} from "@tamagui/feather-icons";
-import {t} from 'app/src/i18n/i18n';
+import { useTranslation } from 'react-i18next';
+import { changeLanguage } from 'app/src/i18n/i18n';
 
 export function OverviewScreen() {
+    const {t} = useTranslation()
 
     const {} = useTheme()
+
     const defaultSectionProps: {
         space?: SpaceTokens | null
         flexWrap: 'wrap' | 'nowrap' | 'wrap-reverse'
@@ -41,6 +44,8 @@ export function OverviewScreen() {
 
     return (
         <ScrollView>
+            <LmButton onPress={() => changeLanguage('de')}>DE</LmButton>
+            <LmButton onPress={() => changeLanguage('en')}>EN</LmButton>
             <YStack flex={1}
                     justifyContent="flex-start"
                     alignItems="flex-start"
@@ -48,9 +53,10 @@ export function OverviewScreen() {
                     space
                     maxWidth={'100%'}>
                 <XStack justifyContent={'center'} space width={'100%'}>
-                    <H2 alignSelf="center">{t("welcomeScreen.home")}</H2>
+                    <H2 alignSelf="center">{t("overviewScreen.headline")}</H2>
                     <LmThemeToggle icon={<Sun/>} circular/>
                 </XStack>
+
                 <XStack {...defaultSectionProps}>
                     <YStack>
                         <H3>Headings</H3>
