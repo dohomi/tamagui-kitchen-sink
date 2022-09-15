@@ -1,4 +1,5 @@
 {
+  "test": "TestDE",
   "common": {
     "ok": "OK!",
     "cancel": "Cancel",

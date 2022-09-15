@@ -9,6 +9,7 @@ const withTM = require('next-transpile-modules')([
     'expo-constants',
     'expo-modules-core',
     '@fortawesome/react-native-fontawesome',
+    'react-i18next',
     // '@expo/vector-icons',
     '@my/config',
     '@my/ui'

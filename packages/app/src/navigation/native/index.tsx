@@ -30,7 +30,7 @@ export function NativeNavigation() {
                     component={HomeScreen}
                     options={{
                         tabBarButton: () => null,
-                        title: i18n('welcomeScreen.home')
+                        title: i18n.t('welcome')
                     }}
                 />
                 <AppStack.Screen
