@@ -231,8 +231,8 @@ export function OverviewScreen() {
                 <H4>Width</H4>
                 <XStack {...defaultSectionProps}>
                     <LmSelect options={items} colorVariant={'info'} width={150}/>
-                    <LmSelect options={items} colorVariant={'info'}/>
-                    <LmSelect options={items} colorVariant={'info'} width={300}/>
+                    <LmSelect options={items} colorVariant={'info'} />
+                    <LmSelect options={items} colorVariant={'info'} width={300} />
                 </XStack>
                 <H3>Avatar Sizes</H3>
                 <H4>round</H4>

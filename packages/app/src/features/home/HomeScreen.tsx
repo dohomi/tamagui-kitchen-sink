@@ -18,6 +18,10 @@ export function HomeScreen() {
         href: '/dashboard',
     })
 
+    const playgroundProps = useLink({
+        href: '/playground',
+    })
+
     return (
         <YStack flex={1} justifyContent="center" alignItems="center" padding="$4" space>
             <YStack space="$4" maxWidth={600}>
@@ -46,6 +50,9 @@ export function HomeScreen() {
                 <LmButton {...dashboardProps}>Dashboard</LmButton>
             </XStack>
             <XStack>
+                <LmButton {...playgroundProps}>Playground</LmButton>
+            </XStack>
+            <XStack>
                 <LmThemeToggle>Toggle theme</LmThemeToggle>
             </XStack>
             <SheetDemo/>
@@ -64,7 +71,7 @@ function SheetDemo() {
                 circular
                 onPress={() => toggleMainDrawer()}
             />
-            <LmAppDrawer/>
+            {/*<LmAppDrawer/>*/}
         </>
     )
 }

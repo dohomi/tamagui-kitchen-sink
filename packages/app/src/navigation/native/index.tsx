@@ -16,6 +16,7 @@ import {ExerciseEditScreen} from "app/src/features/exercise/ExerciseEditScreen";
 import {ExerciseDetailScreen} from "app/src/features/exercise/ExerciseDetailScreen";
 import {ExerciseListScreen} from "app/src/features/exercise/ExerciseListScreen";
 import i18n from "app/src/i18n/i18n";
+import {PlaygroundScreen} from "app/src/features/Playground.tsx/playground";
 
 const AppStack = createBottomTabNavigator<RouterNavigationProps>()
 
@@ -38,6 +39,13 @@ export function NativeNavigation() {
                     component={OverviewScreen}
                     options={{
                         title: 'Overview',
+                    }}
+                />
+                <AppStack.Screen
+                    name="playground"
+                    component={PlaygroundScreen}
+                    options={{
+                        title: 'Playground',
                     }}
                 />
                 <AppStack.Screen

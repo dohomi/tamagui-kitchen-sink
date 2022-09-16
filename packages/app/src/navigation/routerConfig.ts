@@ -5,6 +5,7 @@ export type RouterNavigationProps = {
         id: string
     },
     dashboard: undefined
+    playground: undefined
     auth: undefined
     settings: undefined
     exerciseStack: undefined
@@ -27,6 +28,7 @@ export const nativeScreens = {
     'user-detail': 'user/:id',
     overview: 'overview',
     dashboard: 'dashboard',
+    playground: 'playground',
     auth: 'auth',
     exercises: 'exercises',
     'exercise-edit': 'exercise-edit/:id',

@@ -29,6 +29,7 @@ export function LmSelect({
                              ...rest
                          }: LmSelectProps) {
     const id = useId()
+    const id2 = useId()
     rest.size = rest.size || '$3'
 
     return (
@@ -42,6 +43,7 @@ export function LmSelect({
                               labelInline={labelInline}
                               helperText={helperText}>
             <Select sheetBreakpoint="sm"
+                    id={id2}
                     value={`${value}`}
                     {...rest}>
                 <Select.Trigger width={width} iconAfter={ChevronDown} paddingVertical={0} minHeight={rest.size}>
