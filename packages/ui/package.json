@@ -18,16 +18,17 @@
     "watch": "tamagui-build src/index.tsx --watch"
   },
   "dependencies": {
-    "@my/config": "*",
-    "tamagui": "1.0.1-beta.165",
-    "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
-    "react-native-svg": "^12.4.4",
-    "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
-    "zustand": "^4.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.0",
+    "@fortawesome/react-native-fontawesome": "^0.3.0",
+    "@my/config": "*",
+    "downshift": "^6.1.10",
+    "react-hook-form": "^7.34.2",
+    "react-native-svg": "^12.4.4",
     "solito": "^1.0.12",
-    "react-hook-form": "^7.34.2"
+    "tamagui": "1.0.1-beta.165",
+    "zustand": "^4.1.1"
   },
   "devDependencies": {
     "@tamagui/build": "1.0.1-beta.165"
