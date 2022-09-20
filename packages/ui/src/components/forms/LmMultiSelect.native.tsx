@@ -1,6 +1,6 @@
 import {MultiSelect, Dropdown} from 'react-native-element-dropdown';
 import {useState} from "react";
-import {View, Text, TouchableOpacity, Pressable, StyleSheet} from "react-native";
+import {View, Text, StyleSheet} from "react-native";
 import {faSquareCheck, faCircleXmark} from '@fortawesome/free-regular-svg-icons';
 import {LmButton} from "./LmButton";
 import {LmIcon} from "../content";
@@ -9,6 +9,7 @@ type LmMultiSelectProps = {
     options: { label: string, value: string }[]
     isMulti?: boolean,
     isSearchable?: boolean
+    isDisabled?: boolean
     placeholder?: string
 }
 
@@ -41,6 +42,7 @@ export function LmMultiSelect(props: LmMultiSelectProps) {
             setSelected(item);
         },
         renderLeftIcon: () => null,
+        disable: props.isDisabled,
         //      (
         // <LmIcon iconName={faSquareCheck}/>
         //    )

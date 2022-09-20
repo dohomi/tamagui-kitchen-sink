@@ -36,7 +36,8 @@ export function PlaygroundScreen() {
                 <LmMultiSelect options={options} placeholder={'Single select'}/>
                 <LmMultiSelect options={options} isSearchable={true} placeholder={'Single searchable select'}/>
                 <Separator marginVertical={'$2'} width={'100%'} />
-                <LmMultiSelect isMulti={true} options={options} placeholder={'Multi select'}/>
+                <LmMultiSelect isMulti={true} options={options} placeholder={'Multi select'} />
+                <LmMultiSelect isMulti={true} options={options} placeholder={'Multi select disabled'} isDisabled={true}/>
                 {/*<LmSelect options={items} colorVariant={'primary'}/>
                         <LmSelect options={items} colorVariant={'secondary'}/>*/}
 
