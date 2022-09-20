@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@my/config": "*",
-    "tamagui": "1.0.1-beta.165",
+    "tamagui": "1.0.1-beta.169",
     "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "react-native-svg": "^12.4.4",
@@ -30,6 +30,6 @@
     "react-hook-form": "^7.34.2"
   },
   "devDependencies": {
-    "@tamagui/build": "1.0.1-beta.165"
+    "@tamagui/build": "1.0.1-beta.169"
   }
 }
