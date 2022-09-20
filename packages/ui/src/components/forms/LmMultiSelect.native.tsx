@@ -6,23 +6,14 @@ import {LmButton} from "./LmButton";
 import {LmIcon} from "../content";
 
 type LmMultiSelectProps = {
-    isMulti?: boolean,
     options: { label: string, value: string }[]
+    isMulti?: boolean,
+    isSearchable?: boolean
+    placeholder?: string
 }
 
 export function LmMultiSelect(props: LmMultiSelectProps) {
     const [selected, setSelected] = useState([]);
-
-    const DATA = [
-        {label: 'React Naive', value: '1'},
-        {label: 'Javascript', value: '2'},
-        {label: 'Laravel', value: '3'},
-        {label: 'PHP', value: '4'},
-        {label: 'jQuery', value: '5'},
-        {label: 'Bootstrap', value: '6'},
-        {label: 'HTML', value: '7'},
-        {label: 'CSS', value: '8'},
-    ];
 
     const renderDataItem = (item) => {
         return (
@@ -42,9 +33,9 @@ export function LmMultiSelect(props: LmMultiSelectProps) {
         data: props.options,
         labelField: "label",
         valueField: "value",
-        placeholder: "Multi Select item",
+        placeholder: props.placeholder,
         value: selected,
-        search: false,
+        search: props.isSearchable,
         searchPlaceholder: "Search...",
         onChange: item => {
             setSelected(item);
@@ -64,7 +55,7 @@ export function LmMultiSelect(props: LmMultiSelectProps) {
     }
 
     return props.isMulti ?
-        <MultiSelect {...props} {...sharedProps}/> :
+        <MultiSelect {...props} {...sharedProps} /> :
         <Dropdown {...props} {...sharedProps} />
 }
 

@@ -32,10 +32,11 @@ export function PlaygroundScreen() {
                 padding="$4"
                 space
                 maxWidth={'100%'}>
-            <YStack {...defaultSectionProps}>
-                <LmMultiSelect options={options}/>
-                <Separator marginVertical={'$2'}/>
-                <LmMultiSelect isMulti={true} options={options}/>
+            <YStack {...defaultSectionProps} width={'100%'}>
+                <LmMultiSelect options={options} placeholder={'Single select'}/>
+                <LmMultiSelect options={options} isSearchable={true} placeholder={'Single searchable select'}/>
+                <Separator marginVertical={'$2'} width={'100%'} />
+                <LmMultiSelect isMulti={true} options={options} placeholder={'Multi select'}/>
                 {/*<LmSelect options={items} colorVariant={'primary'}/>
                         <LmSelect options={items} colorVariant={'secondary'}/>*/}
 
