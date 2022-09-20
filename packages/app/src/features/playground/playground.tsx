@@ -3,7 +3,6 @@ import {
     Separator,
     YStack
 } from '@my/ui'
-import { LmDsSelect } from '@my/ui/src/components/forms/LmDsSelect'
 import React, {useState} from 'react'
 import {LmMultiSelect} from "@my/ui/src";
 
@@ -34,10 +33,6 @@ export function PlaygroundScreen() {
                 space
                 maxWidth={'100%'}>
             <YStack {...defaultSectionProps}>
-                <LmDsSelect items={['', 'Apple', 'Pear', 'Blackberry', 'Peach', 'Orange']}/>
-                <Separator marginVertical={'$2'}/>
-                <LmDsSelect items={['', 'Apple', 'Pear', 'Blackberry', 'Peach', 'Orange']}/>
-                <Separator marginVertical={'$2'}/>
                 <LmMultiSelect options={options}/>
                 <Separator marginVertical={'$2'}/>
                 <LmMultiSelect isMulti={true} options={options}/>
