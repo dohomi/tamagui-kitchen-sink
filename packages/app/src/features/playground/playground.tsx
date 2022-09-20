@@ -1,19 +1,11 @@
 import {
-    LinearGradient,
-    LmSelect,
-    Select,
     SpaceTokens,
-    XStack,
-    YStack,
-    LmDsSelect,
-    Separator
+    Separator,
+    YStack
 } from '@my/ui'
+import { LmDsSelect } from '@my/ui/src/components/forms/LmDsSelect'
 import React, {useState} from 'react'
-import {View} from "react-native";
-import {fruitItemsFixtures} from "@my/ui/fixtures/selectItems";
-import {Check, ChevronDown, ChevronUp} from '@tamagui/feather-icons';
-import {LmInput} from "@my/ui/src";
-import {LmDsSMultiSelect} from "@my/ui/src/components/forms/LmDsMultiSelect";
+import {LmMultiSelect} from "@my/ui/src";
 
 export function PlaygroundScreen() {
 
@@ -27,16 +19,12 @@ export function PlaygroundScreen() {
         space: '$4',
         flexWrap: 'wrap'
     }
-    // const items = fruitItemsFixtures
 
-    /*const items = [
-        { name: 'Apple' },
-        { name: 'Pear' },
-        { name: 'Blackberry' },
-        { name: 'Peach' }
-    ]*/
-
-    const RootView = ({innerRef, ...rest}) => <View ref={innerRef} {...rest} />
+    const options = [
+        { value: '1', label: 'Chocolate' },
+        { value: '2', label: 'Strawberry' },
+        { value: '3', label: 'Vanilla' },
+    ]
 
     return (
         <YStack flex={1}
@@ -50,7 +38,9 @@ export function PlaygroundScreen() {
                 <Separator marginVertical={'$2'}/>
                 <LmDsSelect items={['', 'Apple', 'Pear', 'Blackberry', 'Peach', 'Orange']}/>
                 <Separator marginVertical={'$2'}/>
-                <LmDsSMultiSelect />
+                <LmMultiSelect options={options}/>
+                <Separator marginVertical={'$2'}/>
+                <LmMultiSelect isMulti={true} options={options}/>
                 {/*<LmSelect options={items} colorVariant={'primary'}/>
                         <LmSelect options={items} colorVariant={'secondary'}/>*/}
 

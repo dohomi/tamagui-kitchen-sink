@@ -16,7 +16,7 @@ import {ExerciseEditScreen} from "app/src/features/exercise/ExerciseEditScreen";
 import {ExerciseDetailScreen} from "app/src/features/exercise/ExerciseDetailScreen";
 import {ExerciseListScreen} from "app/src/features/exercise/ExerciseListScreen";
 import i18n from "app/src/i18n/i18n";
-import {PlaygroundScreen} from "app/src/features/Playground/playground";
+import {PlaygroundScreen} from "app/src/features/playground/playground";
 
 const AppStack = createBottomTabNavigator<RouterNavigationProps>()
 
