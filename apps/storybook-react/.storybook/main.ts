@@ -1,3 +1,5 @@
+import path from "path";
+
 const config = {
     stories: [
         "../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)",
@@ -43,9 +45,10 @@ const config = {
             // 'react-native-web$': require.resolve('react-native-web'),
             // @tamagui/rnw exports a couple internal hooks from react-native-web
             // resolve both to CommonJS so they match
-            '@tamagui/rnw': require.resolve('@tamagui/rnw'),
+            // '@tamagui/rnw': require.resolve('@tamagui/rnw'),
             // optional, for svg icons
             // 'react-native-svg': require.resolve('@tamagui/react-native-svg'),
+            '@my/ui': path.resolve('../../node_modules/@my/ui')
         }
         return {
             ...config,
