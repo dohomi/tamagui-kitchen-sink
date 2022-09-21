@@ -48,7 +48,7 @@ const config = {
             // '@tamagui/rnw': require.resolve('@tamagui/rnw'),
             // optional, for svg icons
             // 'react-native-svg': require.resolve('@tamagui/react-native-svg'),
-            '@my/ui': path.resolve('../../node_modules/@my/ui')
+            '@my/ui': path.resolve(__dirname, '../../node_modules/@my/ui')
         }
         return {
             ...config,
