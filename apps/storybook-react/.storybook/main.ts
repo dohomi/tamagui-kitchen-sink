@@ -15,7 +15,7 @@ const config = {
             options: {
                 modulesToTranspile: [
                     'app',
-                    // '@my/ui',
+                    '@my/ui',
                     '@my/config'
                 ],
                 babelPlugins: [
