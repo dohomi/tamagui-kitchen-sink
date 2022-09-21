@@ -58,7 +58,7 @@ export function ExerciseEditScreen() {
                     )}
 
                     <YStack space>
-                        <LmInputRhf name={'title'} label={'Title'} fullWidth />
+                        <LmInputRhf name={'title'} label={'Title'} fullWidth required/>
                     </YStack>
                 </XStack>
             </LmAppShell>

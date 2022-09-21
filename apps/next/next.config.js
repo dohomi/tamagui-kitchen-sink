@@ -12,7 +12,6 @@ const withTM = require('next-transpile-modules')([
     'react-i18next',
     // '@expo/vector-icons',
     '@my/config',
-    '@my/ui'
 ])
 // const {withExpo} = require('@expo/next-adapter')
 
@@ -41,7 +40,19 @@ const transform = withPlugins([
         },
         // disableFontSupport: true,
         disableExtractInlineMedia: true,
-        excludeReactNativeWebExports: ['Switch', 'ProgressBar', 'Picker', 'Modal', 'VirtualizedList', 'VirtualizedSectionList', 'AnimatedFlatList', 'FlatList', 'CheckBox', 'Touchable', 'SectionList'],
+        excludeReactNativeWebExports: [
+            'Switch',
+            'ProgressBar',
+            'Picker',
+            'Modal',
+            'VirtualizedList',
+            'VirtualizedSectionList',
+            'AnimatedFlatList',
+            'FlatList',
+            'CheckBox',
+            'Touchable',
+            'SectionList'
+        ],
     })])
 
 /** @type {import('next').NextConfig} */
@@ -60,7 +71,8 @@ const config = {
     webpack5: true,
     typescript: {
         ignoreBuildErrors: true
-    }, swcMinify: false,
+    },
+    // swcMinify: false,
     experimental: {
         plugins: true,
         scrollRestoration: true,

@@ -53,7 +53,9 @@ const config = {
     },
     env: (config) => ({
         ...config,
-        TAMAGUI_TARGET: 'web'
+        TAMAGUI_TARGET: 'web',
+        NEXT_PUBLIC_NHOST_SUBDOMAIN: 'estdxowxgohopvfcsipf',
+        NEXT_PUBLIC_NHOST_REGION: 'eu-central-1'
     })
 };
 export default config
