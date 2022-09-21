@@ -21,11 +21,11 @@ export function LmAppDrawer() {
         <Sheet
             modal
             open={isMainDrawerOpen}
-            onChangeOpen={setMainDrawer}
+            onOpenChange={setMainDrawer}
             snapPoints={[85, 50, 25]}
             dismissOnSnapToBottom
             position={position}
-            onChangePosition={setPosition}
+            onPositionChange={setPosition}
         >
             <Sheet.Overlay/>
             <Sheet.Handle/>
