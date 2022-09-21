@@ -1,5 +1,4 @@
 import {ComponentMeta, ComponentStory} from "@storybook/react";
-import {XStack, YStack} from "tamagui";
 import {LmMultiSelect, LmMultiSelectProps} from "../../../src";
 import {fruitItemsFixtures} from "../../../fixtures/selectItems";
 
@@ -10,12 +9,14 @@ export default {
 
 const options = fruitItemsFixtures
 
-const Template: ComponentStory<typeof LmMultiSelect> = (args) => <LmMultiSelect {...args} />
+const Template: ComponentStory<typeof LmMultiSelect> = (args: LmMultiSelectProps) => <LmMultiSelect {...args} />
 export const Basic = Template.bind({})
 Basic.args = {
     options,
-    placeholder: "Multiple",
+    placeholder: "Multi Select",
     isMulti: true,
-} as LmMultiSelectProps
+    isSearchable: true,
+    isDisabled: false
+}
 
 

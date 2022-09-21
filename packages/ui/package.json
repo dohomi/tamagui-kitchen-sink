@@ -23,7 +23,6 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@my/config": "*",
-    "downshift": "6.1.11",
     "react-hook-form": "^7.34.2",
     "react-native-element-dropdown": "^2.3.0",
     "react-native-svg": "^12.4.4",
