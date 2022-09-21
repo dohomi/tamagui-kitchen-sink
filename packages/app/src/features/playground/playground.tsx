@@ -1,7 +1,8 @@
 import {
     SpaceTokens,
     Separator,
-    YStack
+    YStack,
+    LmSelect
 } from '@my/ui'
 import React, {useState} from 'react'
 import {LmMultiSelect} from "@my/ui/src";
@@ -38,8 +39,8 @@ export function PlaygroundScreen() {
                 <Separator marginVertical={'$2'} width={'100%'} />
                 <LmMultiSelect isMulti={true} options={options} placeholder={'Multi select'} />
                 <LmMultiSelect isMulti={true} options={options} placeholder={'Multi select disabled'} isDisabled={true}/>
-                {/*<LmSelect options={items} colorVariant={'primary'}/>
-                        <LmSelect options={items} colorVariant={'secondary'}/>*/}
+                <LmSelect options={options} colorVariant={'primary'}/>
+                <LmSelect options={options} colorVariant={'secondary'}/>
 
                 {/*<Select id="foodFirst" sheetBreakpoint="sm" value={val} onValueChange={setVal} key={'main1'}>
                             <Select.Trigger width={240} iconAfter={ChevronDown} id={'select1'}>
