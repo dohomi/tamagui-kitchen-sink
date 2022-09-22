@@ -1,1 +1,1 @@
-export * from './components/forms/LmMultiSelect.native'
+export * from './components/forms/LmMultiSelect2.native'
