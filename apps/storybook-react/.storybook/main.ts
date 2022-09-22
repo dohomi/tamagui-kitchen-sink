@@ -1,5 +1,3 @@
-import path from "path";
-
 const config = {
     stories: [
         "../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)",
@@ -48,7 +46,7 @@ const config = {
             // '@tamagui/rnw': require.resolve('@tamagui/rnw'),
             // optional, for svg icons
             // 'react-native-svg': require.resolve('@tamagui/react-native-svg'),
-            '@my/ui': path.resolve(__dirname, '../../node_modules/@my/ui')
+            // '@my/ui': path.resolve(__dirname, '../../node_modules/@my/ui')
         }
         return {
             ...config,

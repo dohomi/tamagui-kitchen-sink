@@ -1,10 +1,10 @@
 import React from 'react';
-import {MyComponent} from '@my/ui';
+import {LmButton} from '@my/ui';
 import {renderUi} from "../../src";
 
 describe('<MyComponet />', () => {
     it('has 1 child', () => {
-        const {type, children} = renderUi(<MyComponent>hello</MyComponent>).toJSON();
+        const {type, children} = renderUi(<LmButton>hello</LmButton>).toJSON();
         expect(type).toBe('View')
         expect(children.length).toBe(1)
     });

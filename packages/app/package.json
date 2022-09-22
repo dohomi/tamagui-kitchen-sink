@@ -3,7 +3,8 @@
   "name": "app",
   "main": "index.ts",
   "scripts": {
-    "codegen": "graphql-codegen --config graphql.config.ts --errors-only --watch"
+    "codegen": "graphql-codegen --config graphql.config.ts --errors-only --watch",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
