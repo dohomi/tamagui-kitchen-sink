@@ -15,7 +15,7 @@ function ThemedIcon({iconName, size, ...props}: ThemedIconProps) {
     if (typeof size === 'number') { // required for LmButton with LmIcon
         sizeInNumber = size
     } else if (size) {
-        sizeInNumber = Number(tokens.size[size].val)
+        sizeInNumber = Number(tokens.size[size]?.val)
     }
     return (
         <FontAwesomeIcon icon={iconName}
