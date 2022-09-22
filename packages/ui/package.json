@@ -15,7 +15,8 @@
   ],
   "scripts": {
     "build": "tamagui-build src/index.tsx",
-    "watch": "tamagui-build src/index.tsx --watch"
+    "watch": "tamagui-build src/index.tsx --watch",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@my/config": "*",

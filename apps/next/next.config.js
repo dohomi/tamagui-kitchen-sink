@@ -22,6 +22,7 @@ const transform = withPlugins([
         '@fortawesome/react-native-fontawesome',
         'react-i18next',
         '@my/config',
+        '@my/ui'
         // '@expo/vector-icons',
     ]),
     withTamagui({
@@ -35,6 +36,7 @@ const transform = withPlugins([
                 return true
             }
         },
+
         // aliasReactPackages: true,
         // disableFontSupport: true,
         disableExtractInlineMedia: true,
@@ -55,16 +57,16 @@ const transform = withPlugins([
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    webpack: (config, options) => {
-
-        console.log('Im here', config)
-        config.resolve.alias = {
-            ...config.resolve.alias,
-            // your aliases
-            '@my/ui': 'node_modules/@my/ui'
-        }
-        return config
-    },
+    // webpack: (config, options) => {
+    //
+    //     console.log('Im here', config)
+    //     config.resolve.alias = {
+    //         ...config.resolve.alias,
+    //         // your aliases
+    //         '@my/ui': 'node_modules/@my/ui'
+    //     }
+    //     return config
+    // },
     webpack5: true,
     reactStrictMode: true,
     typescript: {
