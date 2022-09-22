@@ -5,7 +5,7 @@ import {useTheme} from 'tamagui';
 
 export type LmMultiSelectProps = {} & Props
 
-export function LmMultiSelectWeb(props: LmMultiSelectProps) {
+export function LmMultiSelect(props: LmMultiSelectProps) {
     const [selectedOption, setSelectedOption] = useState(null);
     const {background, backgroundHover} = useTheme()
 

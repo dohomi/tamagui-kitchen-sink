@@ -13,7 +13,7 @@ type LmMultiSelectProps = {
     placeholder?: string
 }
 
-export function LmMultiSelectNative(props: LmMultiSelectProps) {
+export function LmMultiSelect(props: LmMultiSelectProps) {
     const [selected, setSelected] = useState([]);
 
     const renderDataItem = (item) => {
