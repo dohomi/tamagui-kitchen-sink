@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import Select, { Props, OptionProps } from 'react-select';
-import { useTheme } from 'tamagui';
+import {useState} from 'react';
+import Select, {Props} from 'react-select';
+import {useTheme} from 'tamagui';
 
 
 export type LmMultiSelectProps = {} & Props
 
-export function LmMultiSelect(props: LmMultiSelectProps) {
+export function LmMultiSelectWeb(props: LmMultiSelectProps) {
     const [selectedOption, setSelectedOption] = useState(null);
-    const { background, backgroundHover } = useTheme()
+    const {background, backgroundHover} = useTheme()
 
     // console.log(background, color, borderColor)
     return (

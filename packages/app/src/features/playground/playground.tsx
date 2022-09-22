@@ -1,11 +1,6 @@
-import {
-    SpaceTokens,
-    Separator,
-    YStack,
-    LmSelect
-} from '@my/ui'
+import {LmSelect, Separator, SpaceTokens, YStack} from '@my/ui'
 import React, {useState} from 'react'
-import {LmMultiSelect} from "@my/ui/src";
+import {LmMultiSelectWeb} from "@my/ui/src";
 
 export function PlaygroundScreen() {
 
@@ -21,9 +16,9 @@ export function PlaygroundScreen() {
     }
 
     const options = [
-        { value: '1', label: 'Chocolate' },
-        { value: '2', label: 'Strawberry' },
-        { value: '3', label: 'Vanilla' },
+        {value: '1', label: 'Chocolate'},
+        {value: '2', label: 'Strawberry'},
+        {value: '3', label: 'Vanilla'},
     ]
 
     return (
@@ -34,11 +29,12 @@ export function PlaygroundScreen() {
                 space
                 maxWidth={'100%'}>
             <YStack {...defaultSectionProps} width={'100%'}>
-                <LmMultiSelect options={options} placeholder={'Single select'}/>
-                <LmMultiSelect options={options} isSearchable={true} placeholder={'Single searchable select'}/>
-                <Separator marginVertical={'$2'} width={'100%'} />
-                <LmMultiSelect isMulti={true} options={options} placeholder={'Multi select'} />
-                <LmMultiSelect isMulti={true} options={options} placeholder={'Multi select disabled'} isDisabled={true}/>
+                <LmMultiSelectWeb options={options} placeholder={'Single select'}/>
+                <LmMultiSelectWeb options={options} isSearchable={true} placeholder={'Single searchable select'}/>
+                <Separator marginVertical={'$2'} width={'100%'}/>
+                <LmMultiSelectWeb isMulti={true} options={options} placeholder={'Multi select'}/>
+                <LmMultiSelectWeb isMulti={true} options={options} placeholder={'Multi select disabled'}
+                                  isDisabled={true}/>
                 <LmSelect options={options} colorVariant={'primary'}/>
                 <LmSelect options={options} colorVariant={'secondary'}/>
 

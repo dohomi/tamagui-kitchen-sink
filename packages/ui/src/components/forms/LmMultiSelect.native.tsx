@@ -1,7 +1,7 @@
-import {MultiSelect, Dropdown} from 'react-native-element-dropdown';
+import {Dropdown, MultiSelect} from 'react-native-element-dropdown';
 import {useState} from "react";
-import {View, Text, StyleSheet} from "react-native";
-import {faSquareCheck, faCircleXmark} from '@fortawesome/free-regular-svg-icons';
+import {StyleSheet, Text, View} from "react-native";
+import {faCircleXmark, faSquareCheck} from '@fortawesome/free-regular-svg-icons';
 import {LmButton} from "./LmButton";
 import {LmIcon} from "../content";
 
@@ -13,7 +13,7 @@ type LmMultiSelectProps = {
     placeholder?: string
 }
 
-export function LmMultiSelect(props: LmMultiSelectProps) {
+export function LmMultiSelectNative(props: LmMultiSelectProps) {
     const [selected, setSelected] = useState([]);
 
     const renderDataItem = (item) => {
