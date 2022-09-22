@@ -80,7 +80,6 @@ const nextConfig = {
 }
 
 module.exports = function (name, {defaultConfig}) {
-    defaultConfig.typescript.ignoreBuildErrors = true
 
     let currentConfig = {
         ...defaultConfig,

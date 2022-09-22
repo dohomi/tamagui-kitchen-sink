@@ -16,6 +16,7 @@
     "postinstall": "yarn build",
     "build": "yarn turbo run build --filter=@my/ui",
     "build:all": "yarn turbo run build --filter=...@my/ui",
+    "build:web": "yarn turbo run build --filter=next-app",
     "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader",
     "sync:tamagui": "${TAMAGUI_PATH:-$HOME/tamagui}/starters-sync.sh",
     "eas:dev:ios": "cd apps/expo && yarn eas:dev:ios",
@@ -26,6 +27,7 @@
     "rm:nodemodule": "rm -rf node_modules apps/expo/node_modules apps/next/node_modules packages/ui/node_modules yarn.lock apps/storybook-react/node_modules apps/storybook-react-native/node_modules"
   },
   "resolutions": {
+    "esbuild": "0.15.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-refresh": "^0.14.0",
