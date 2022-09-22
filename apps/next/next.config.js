@@ -35,6 +35,7 @@ const transform = withPlugins([
                 return true
             }
         },
+        // aliasReactPackages: true,
         // disableFontSupport: true,
         disableExtractInlineMedia: true,
         excludeReactNativeWebExports: [
@@ -60,7 +61,7 @@ const nextConfig = {
         config.resolve.alias = {
             ...config.resolve.alias,
             // your aliases
-            '@my/ui': path.resolve(__dirname, '../../node_modules/@my/ui')
+            '@my/ui': 'node_modules/@my/ui'
         }
         return config
     },
@@ -79,8 +80,11 @@ const nextConfig = {
 
 module.exports = function (name, {defaultConfig}) {
     defaultConfig.typescript.ignoreBuildErrors = true
-    return transform(name, {
+
+    let currentConfig = {
         ...defaultConfig,
         ...nextConfig
-    })
+    };
+    // console.log(currentConfig)
+    return transform(name, currentConfig)
 }
