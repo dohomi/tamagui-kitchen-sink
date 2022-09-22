@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "sb:build": "TAMAGUI_TARGET=web build-storybook -s public",
+    "build": "TAMAGUI_TARGET=web build-storybook -s public -o dist",
     "sb": "TAMAGUI_TARGET=web start-storybook -p 6006 -s ./public",
     "chromatic": "npx chromatic --project-token=aa4fa9ec8af5",
     "check-types": "tsc --noemit"
@@ -12,20 +12,20 @@
   "dependencies": {
     "app": "*",
     "@my/ui": "*",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-native-web": "0.18.7",
     "react-native-web-lite": "^1.0.1-beta.153"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
-    "@storybook/addon-actions": "~6.5.10",
-    "@storybook/addon-essentials": "~6.5.10",
-    "@storybook/addon-links": "~6.5.10",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
     "@storybook/addon-react-native-web": "^0.0.18",
-    "@storybook/react": "~6.5.10",
-    "@storybook/builder-webpack5": "^6.5.10",
-    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/react": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
     "@types/node": "16.11.9",
     "@types/react": "^18.0.17",
     "babel-loader": "^8.2.3",

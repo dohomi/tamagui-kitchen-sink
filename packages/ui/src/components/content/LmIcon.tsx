@@ -1,7 +1,6 @@
-import {getTokens, SizeTokens, Theme, ThemeProps, useTheme} from "tamagui";
+import {getTokens, getVariable, SizeTokens, Theme, ThemeProps, useTheme} from "tamagui";
 import {FontAwesomeIcon, Props} from '@fortawesome/react-native-fontawesome'
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
-import {variableToString} from '@tamagui/core'
 
 type ThemedIconProps = Omit<Props, 'size' | 'icon'> & {
     size?: SizeTokens
@@ -16,13 +15,12 @@ function ThemedIcon({iconName, size, ...props}: ThemedIconProps) {
     if (typeof size === 'number') { // required for LmButton with LmIcon
         sizeInNumber = size
     } else if (size) {
-        sizeInNumber = Number(tokens.size[size].val)
+        sizeInNumber = Number(tokens.size[size]?.val)
     }
-    const color = variableToString(props.color || theme.color || '#000')
     return (
         <FontAwesomeIcon icon={iconName}
                          size={sizeInNumber}
-                         color={color}/>
+                         color={getVariable(props.color || theme.color || '#000')}/>
     )
 }
 
