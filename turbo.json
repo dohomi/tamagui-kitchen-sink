@@ -5,7 +5,11 @@
         "^build"
       ],
       "outputs": [
-        ".next/**"
+        "dist/**",
+        ".next/**",
+        "build/**",
+        "api/**",
+        "public/build/**"
       ]
     },
     "watch": {
