@@ -17,3 +17,10 @@ export const Colors = () => (
         <LmSlider color={'$red10'}/>
     </YStack>
 )
+
+export const ColorsActiveOnly = () => (
+    <YStack space={'$4'}>
+        <LmSlider color={'$blue10'} colorActiveOnly/>
+        <LmSlider color={'$red10'} colorActiveOnly/>
+    </YStack>
+)
