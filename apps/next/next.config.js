@@ -1,19 +1,7 @@
 const withPlugins = require('next-compose-plugins')
 const {withTamagui} = require('@tamagui/next-plugin')
-const withFonts = require('next-fonts')
-
-const withTM = require('next-transpile-modules')([
-    'solito',
-    'react-native-web',
-    'expo-linking',
-    'expo-constants',
-    'expo-modules-core',
-    '@fortawesome/react-native-fontawesome',
-    'react-i18next',
-    // '@expo/vector-icons',
-    '@my/config',
-])
-// const {withExpo} = require('@expo/next-adapter')
+const withTM = require('next-transpile-modules')
+const path = require("path");
 
 process.env.IGNORE_TS_CONFIG_PATHS = 'true'
 process.env.TAMAGUI_TARGET = 'web'
@@ -25,11 +13,20 @@ if (disableExtraction) {
 
 
 const transform = withPlugins([
-    withTM, // withExpo,
-    withFonts,
+    withTM([
+        'solito',
+        'react-native-web',
+        'expo-linking',
+        'expo-constants',
+        'expo-modules-core',
+        '@fortawesome/react-native-fontawesome',
+        'react-i18next',
+        '@my/config',
+        // '@expo/vector-icons',
+    ]),
     withTamagui({
         config: './tamagui.config.ts',
-        components: ['tamagui', '@my/ui'],
+        components: ['@my/ui', 'tamagui'],
         importsWhitelist: ['constants.js', 'colors.js'],
         logTimings: true,
         disableExtraction,
@@ -56,23 +53,22 @@ const transform = withPlugins([
     })])
 
 /** @type {import('next').NextConfig} */
-const config = {
+const nextConfig = {
     webpack: (config, options) => {
-        config.module.rules.push({
-            test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
-            type: 'asset/resource',
-            exclude: (m) => {
-                return /node_modules/.test(m) && !/node_modules\/@expo\/vector-icons/.test(m)
-            },
-        })
+
         console.log('Im here', config)
+        config.resolve.alias = {
+            ...config.resolve.alias,
+            // your aliases
+            '@my/ui': path.resolve(__dirname, '../../node_modules/@my/ui')
+        }
         return config
     },
     webpack5: true,
+    reactStrictMode: true,
     typescript: {
         ignoreBuildErrors: true
     },
-    // swcMinify: false,
     experimental: {
         plugins: true,
         scrollRestoration: true,
@@ -84,6 +80,6 @@ const config = {
 module.exports = function (name, {defaultConfig}) {
     return transform(name, {
         ...defaultConfig,
-        ...config
+        ...nextConfig
     })
 }
