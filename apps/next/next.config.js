@@ -22,6 +22,7 @@ const transform = withPlugins([
         '@fortawesome/react-native-fontawesome',
         'react-i18next',
         '@my/config',
+        '@my/ui'
         // '@expo/vector-icons',
     ]),
     withTamagui({
