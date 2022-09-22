@@ -67,7 +67,7 @@ const nextConfig = {
     webpack5: true,
     reactStrictMode: true,
     typescript: {
-        ignoreBuildErrors: true
+        ignoreBuildErrors: false
     },
     experimental: {
         plugins: true,
@@ -78,6 +78,7 @@ const nextConfig = {
 }
 
 module.exports = function (name, {defaultConfig}) {
+    defaultConfig.typescript.ignoreBuildErrors = true
     return transform(name, {
         ...defaultConfig,
         ...nextConfig
