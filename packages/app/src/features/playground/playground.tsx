@@ -29,11 +29,23 @@ export function PlaygroundScreen() {
                 space
                 maxWidth={'100%'}>
             <YStack {...defaultSectionProps} width={'100%'}>
-                <LmMultiSelect options={options} placeholder={'Single select'}/>
-                <LmMultiSelect options={options} isSearchable={true} placeholder={'Single searchable select'}/>
+                <LmMultiSelect
+                    zIndex={3000}
+                    zIndexInverse={1000}
+                    options={options} placeholder={'Single select'}/>
+                <LmMultiSelect
+                    zIndex={2999}
+                    zIndexInverse={1001}
+                    options={options} isSearchable={true} placeholder={'Single searchable select'}/>
                 <Separator marginVertical={'$2'} width={'100%'}/>
-                <LmMultiSelect isMulti={true} options={options} placeholder={'Multi select'}/>
-                <LmMultiSelect isMulti={true} options={options} placeholder={'Multi select disabled'}
+                <LmMultiSelect
+                    zIndex={2998}
+                    zIndexInverse={1002}
+                    isMulti={true} options={options} placeholder={'Multi select'}/>
+                <LmMultiSelect
+                    zIndex={2997}
+                    zIndexInverse={1003}
+                    isMulti={true} options={options} placeholder={'Multi select disabled'}
                                   isDisabled={true}/>
                 <LmSelect options={options} colorVariant={'primary'}/>
                 <LmSelect options={options} colorVariant={'secondary'}/>

@@ -237,11 +237,24 @@ export function OverviewScreen() {
                 </XStack>
                 <H3>LmMultiSelect</H3>
                 <YStack {...defaultSectionProps} width={'100%'}>
-                    <LmMultiSelect options={items} placeholder={'Single select'} />
-                    <LmMultiSelect options={items} isSearchable={true} placeholder={'Single searchable select'} />
-                    <Separator marginVertical={'$2'} width={'100%'} />
-                    <LmMultiSelect isMulti={true} options={items} placeholder={'Multi select'} />
-                    <LmMultiSelect isMulti={true} options={items} placeholder={'Multi select disabled'} isDisabled={true} />
+                    <LmMultiSelect
+                        zIndex={3000}
+                        zIndexInverse={1000}
+                        options={items} placeholder={'Single select'}/>
+                    <LmMultiSelect
+                        zIndex={2999}
+                        zIndexInverse={1001}
+                        options={items} isSearchable={true} placeholder={'Single searchable select'}/>
+                    <Separator marginVertical={'$2'} width={'100%'}/>
+                    <LmMultiSelect
+                        zIndex={2998}
+                        zIndexInverse={1002}
+                        isMulti={true} options={items} placeholder={'Multi select'}/>
+                    <LmMultiSelect
+                        zIndex={2997}
+                        zIndexInverse={1003}
+                        isMulti={true} options={items} placeholder={'Multi select disabled'}
+                        isDisabled={true}/>
                 </YStack>
                 <H3>Avatar Sizes</H3>
                 <H4>round</H4>
