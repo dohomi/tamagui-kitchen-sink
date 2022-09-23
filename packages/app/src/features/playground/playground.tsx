@@ -57,8 +57,8 @@ export function PlaygroundScreen() {
                     label={'Label:'}
                     />
                 <LmMultiSelect
-                    zIndex={2996}
-                    zIndexInverse={1004}
+                    zIndex={2995}
+                    zIndexInverse={1005}
                     isMulti={true} options={options} placeholder={'Multi select, label, helper text and error'}
                     helperText={'helper text here'}
                     required error

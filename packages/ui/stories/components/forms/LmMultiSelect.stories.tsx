@@ -33,11 +33,11 @@ export const WithFormContainer = () => (
         </XStack>
         <h4>With error:</h4>
         <XStack space={'$4'}>
-            <LmMultiSelect label={'Label:'} required error/>
+            <LmMultiSelect label={'Label:'} required error options={options} isMulti/>
         </XStack>
         <h4>With helper text error:</h4>
         <XStack space={'$4'}>
-            <LmMultiSelect label={'Label:'} helperText={'Helper text..'} required error/>
+            <LmMultiSelect label={'Label:'} helperText={'Helper text..'} required error options={options} isMulti/>
         </XStack>
     </YStack>
 )

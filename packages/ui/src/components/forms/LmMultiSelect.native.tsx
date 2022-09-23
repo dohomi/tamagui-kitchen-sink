@@ -31,7 +31,7 @@ export function LmMultiSelect({
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(rest.isMulti ? [] : null);
     const [items, setItems] = useState(rest.options);
-    const {background, backgroundHover, color} = useTheme()
+    const {background, backgroundHover, color,} = useTheme()
     const {name} = useThemeState()
     const genId = useId()
     const id = rest.id || genId

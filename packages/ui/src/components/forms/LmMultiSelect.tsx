@@ -1,6 +1,6 @@
 import {useId, useState} from 'react';
 import Select, {Props} from 'react-select';
-import {useTheme} from 'tamagui';
+import {Separator, useTheme} from 'tamagui';
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {FormContainerProps} from "./formContainerProps";
 
@@ -38,13 +38,15 @@ export function LmMultiSelect({
                               labelProps={labelProps}
                               label={label}
                               labelInline={labelInline}
-                              helperText={helperText}>
+                              helperText={helperText}
+        >
             <Select
                 {...rest}
                 styles={{
                     container: (provided) => ({
                         ...provided,
-                        backgroundColor: 'inherit'
+                        backgroundColor: 'inherit',
+                        minWidth: '200px'
                     }),
                     control: (provided) => ({
                         ...provided,
