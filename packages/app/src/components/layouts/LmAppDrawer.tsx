@@ -46,6 +46,7 @@ export function LmAppDrawer() {
                         {isAuthenticated && (
                             <>
                                 <XStack space>
+                                    <LmLinkButton link={{href: '/clubs'}}>Clubs</LmLinkButton>
                                     <LmLinkButton link={{href: '/exercises'}}>Exercises</LmLinkButton>
                                     <LmLinkButton link={{href: '/exercise-new'}}>New Exercises</LmLinkButton>
                                 </XStack>

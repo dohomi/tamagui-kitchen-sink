@@ -1,9 +1,6 @@
 export type RouterNavigationProps = {
     home: undefined
     overview: undefined
-    'user-detail': {
-        id: string
-    },
     dashboard: undefined
     playground: undefined
     auth: undefined
@@ -17,6 +14,8 @@ export type RouterNavigationProps = {
     }
     'exercise-new': undefined
     exercises: undefined
+    clubs: undefined
+    profile: undefined
 };
 
 export type RouterScreenProps = {
@@ -25,12 +24,13 @@ export type RouterScreenProps = {
 
 export const nativeScreens = {
     home: '',
-    'user-detail': 'user/:id',
     overview: 'overview',
     dashboard: 'dashboard',
     playground: 'playground',
     auth: 'auth',
+    clubs: 'clubs',
     exercises: 'exercises',
+    profile: 'profile',
     'exercise-edit': 'exercise-edit/:id',
     'exercise-new': 'exercise-new',
     'exercise': 'exercise/:id'
