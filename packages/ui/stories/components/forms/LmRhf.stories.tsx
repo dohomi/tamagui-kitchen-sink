@@ -8,6 +8,7 @@ import {LmCheckboxRhf} from "../../../src/components/forms/rhf/LmCheckboxRhf";
 import {LmSelectRhf} from "../../../src/components/forms/rhf/LmSelectRhf";
 import {fruitItemsFixtures} from "../../../fixtures/selectItems";
 import {LmSwitchRhf} from "../../../src";
+import {LmSliderRhf} from "../../../src/components/forms/rhf/LmSliderRhf";
 
 export default {
     title: 'ui/forms/form',
@@ -25,6 +26,7 @@ export const Basic = () => {
 
             <LmCheckboxRhf name={'check_this'} required label={'Do you agree to our T&C?'}/>
             <LmSwitchRhf name={'switch'} labelRight={'Some switch'}/>
+            <LmSliderRhf name={'slider'}/>
             <XStack space>
                 <LmResetButtonRhf onPress={() => setData({})}>Reset</LmResetButtonRhf>
                 <LmSubmitButtonRhf onSubmit={(data) => {
