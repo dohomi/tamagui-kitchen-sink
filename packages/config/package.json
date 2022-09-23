@@ -3,7 +3,7 @@
   "name": "@my/config",
   "main": "tamagui.config.ts",
   "dependencies": {
-    "@tamagui/config-base": "1.0.1-beta.171"
+    "@tamagui/config-base": "1.0.1-beta.174"
   },
   "sideEffects": false
 }
