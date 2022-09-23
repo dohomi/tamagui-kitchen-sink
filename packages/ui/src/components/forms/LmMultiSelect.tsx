@@ -3,13 +3,22 @@ import Select, {Props} from 'react-select';
 import {useTheme} from 'tamagui';
 
 
-export type LmMultiSelectProps = {} & Props
+export type LmMultiSelectProps = {
+    zIndex?: number // for native
+    zIndexInverse?: number // for native
+} & Props
 
 export function LmMultiSelect(props: LmMultiSelectProps) {
     const [selectedOption, setSelectedOption] = useState(null);
     const {background, backgroundHover} = useTheme()
 
-    // console.log(background, color, borderColor)
+    const handleChange = (v, actionMeta) => {
+        setSelectedOption(v)
+        if(typeof props.onChange === 'function') {
+            const returnVal = props.isMulti ? v.map(e => e.value) : v.value
+            props.onChange(returnVal, actionMeta)
+        }
+    }
     return (
         <Select
             {...props}
@@ -20,7 +29,7 @@ export function LmMultiSelect(props: LmMultiSelectProps) {
                 })
             }}
             defaultValue={selectedOption}
-            onChange={setSelectedOption}
+            onChange={handleChange}
             options={props.options}
             theme={(theme) => {
                 // console.log(theme)
