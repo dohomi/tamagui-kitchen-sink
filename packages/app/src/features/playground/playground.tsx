@@ -32,6 +32,7 @@ export function PlaygroundScreen() {
                 <LmMultiSelect
                     zIndex={3000}
                     zIndexInverse={1000}
+                    onChange={(value) => console.log('!!', value) }
                     options={options} placeholder={'Single select'}/>
                 <LmMultiSelect
                     zIndex={2999}
