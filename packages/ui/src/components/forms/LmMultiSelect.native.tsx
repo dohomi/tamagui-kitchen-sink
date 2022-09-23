@@ -1,11 +1,14 @@
-import {useEffect, useState} from "react";
+import {useEffect, useId, useState} from "react";
 import DropDownPicker, {DropDownPickerProps} from 'react-native-dropdown-picker';
 import {useTheme} from 'tamagui';
 import {useThemeState} from "app/src/state/themeState";
 import {ColorValue} from "react-native";
+import {LmFormFieldContainer} from "./LmFormFieldContainer";
+import {FormContainerProps} from "./formContainerProps";
 
 type LmMultiSelectProps = {
     options: { label: string, value: string }[]
+    id?: string
     isMulti?: boolean,
     isSearchable?: boolean
     isDisabled?: boolean
@@ -13,41 +16,60 @@ type LmMultiSelectProps = {
     zIndex?: number
     zIndexInverse?: number
     onChange: (any) => void
-} & DropDownPickerProps<any>
+} & DropDownPickerProps<any> & Pick<FormContainerProps, 'required' | 'error' | 'helperText' | 'label' | 'labelProps' | 'labelInline'>
 
-export function LmMultiSelect(props: LmMultiSelectProps) {
+export function LmMultiSelect({
+                                  required,
+                                  error,
+                                  helperText,
+                                  label,
+                                  labelProps,
+                                  containerProps,
+                                  labelInline,
+                                  ...rest
+}: LmMultiSelectProps) {
     const [open, setOpen] = useState(false);
-    const [value, setValue] = useState(props.isMulti ? [] : null);
-    const [items, setItems] = useState(props.options);
+    const [value, setValue] = useState(rest.isMulti ? [] : null);
+    const [items, setItems] = useState(rest.options);
     const {background, backgroundHover, color} = useTheme()
     const {name} = useThemeState()
+    const genId = useId()
+    const id = rest.id || genId
 
     const handleChange = (v) => {
-        if(typeof props.onChange === 'function') {
-            props.onChange(v)
+        if (typeof rest.onChange === 'function') {
+            rest.onChange(v)
         }
     }
 
     return (
-        <DropDownPicker
-            open={open}
-            value={value}
-            items={items}
-            setOpen={setOpen}
-            setValue={setValue}
-            setItems={setItems}
-            multiple={props.isMulti as true}
-            placeholder={props.placeholder}
-            searchable={props.isSearchable}
-            disabled={props.isDisabled}
-            zIndex={props.zIndex}
-            zIndexInverse={props.zIndexInverse}
-            style={{
-                backgroundColor: background.val as ColorValue
-            }}
-            dropDownContainerStyle={{backgroundColor: background.val as ColorValue}}
-            theme={(name?.toUpperCase() || 'DEFAULT') as 'LIGHT' | 'DARK' | 'DEFAULT'}
-            onChangeValue={handleChange}
-        />
+        <LmFormFieldContainer id={id}
+                              error={error}
+                              required={required}
+                              labelProps={labelProps}
+                              label={label}
+                              labelInline={labelInline}
+                              helperText={helperText}>
+            <DropDownPicker
+                open={open}
+                value={value}
+                items={items}
+                setOpen={setOpen}
+                setValue={setValue}
+                setItems={setItems}
+                multiple={rest.isMulti as true}
+                placeholder={rest.placeholder}
+                searchable={rest.isSearchable}
+                disabled={rest.isDisabled}
+                zIndex={rest.zIndex}
+                zIndexInverse={rest.zIndexInverse}
+                style={{
+                    backgroundColor: background.val as ColorValue
+                }}
+                dropDownContainerStyle={{backgroundColor: background.val as ColorValue}}
+                theme={(name?.toUpperCase() || 'DEFAULT') as 'LIGHT' | 'DARK' | 'DEFAULT'}
+                onChangeValue={handleChange}
+            />
+        </LmFormFieldContainer>
     );
 }
