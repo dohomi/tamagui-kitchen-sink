@@ -49,8 +49,21 @@ export function PlaygroundScreen() {
                     zIndexInverse={1003}
                     isMulti={true} options={options} placeholder={'Multi select disabled'}
                                   isDisabled={true}/>
-                <LmSelect options={options} colorVariant={'primary'}/>
-                <LmSelect options={options} colorVariant={'secondary'}/>
+                <LmMultiSelect
+                    zIndex={2996}
+                    zIndexInverse={1004}
+                    isMulti={true} options={options} placeholder={'Multi select, label and helper text'}
+                    helperText={'helper text here'}
+                    label={'Label:'}
+                    />
+                <LmMultiSelect
+                    zIndex={2996}
+                    zIndexInverse={1004}
+                    isMulti={true} options={options} placeholder={'Multi select, label, helper text and error'}
+                    helperText={'helper text here'}
+                    required error
+                    label={'Label:'}
+                />
 
                 {/*<Select id="foodFirst" sheetBreakpoint="sm" value={val} onValueChange={setVal} key={'main1'}>
                             <Select.Trigger width={240} iconAfter={ChevronDown} id={'select1'}>

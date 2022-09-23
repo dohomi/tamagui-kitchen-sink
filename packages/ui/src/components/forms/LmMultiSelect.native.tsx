@@ -44,6 +44,8 @@ export function LmMultiSelect({
 
     return (
         <LmFormFieldContainer id={id}
+                              maxWidth={'100%'}
+                              zIndex={rest.zIndex}
                               error={error}
                               required={required}
                               labelProps={labelProps}
@@ -64,9 +66,13 @@ export function LmMultiSelect({
                 zIndex={rest.zIndex}
                 zIndexInverse={rest.zIndexInverse}
                 style={{
-                    backgroundColor: background.val as ColorValue
+                    backgroundColor: background.val as ColorValue,
+                    borderColor: error? 'red' : undefined
                 }}
-                dropDownContainerStyle={{backgroundColor: background.val as ColorValue}}
+                dropDownContainerStyle={{
+                    backgroundColor: background.val as ColorValue,
+                    borderColor: error? 'red' : undefined
+                }}
                 theme={(name?.toUpperCase() || 'DEFAULT') as 'LIGHT' | 'DARK' | 'DEFAULT'}
                 onChangeValue={handleChange}
             />

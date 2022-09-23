@@ -58,7 +58,7 @@ export function LmMultiSelect({
                     // console.log(theme)
                     return {
                         ...theme,
-                        // borderRadius: 0,
+                        borderRadius: 9,
                         colors: {
                             ...theme.colors,
                             neutral0: background.val as string,
