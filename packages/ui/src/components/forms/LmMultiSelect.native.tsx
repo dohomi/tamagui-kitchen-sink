@@ -1,63 +1,81 @@
-import {Dropdown, MultiSelect} from 'react-native-element-dropdown';
-import {ListItem, useTheme, XStack, YStack} from 'tamagui'
-import {useState} from "react";
-import {StyleSheet, Text, View} from "react-native";
-import {faCircleXmark, faSquareCheck} from '@fortawesome/free-regular-svg-icons';
-import {LmButton} from "./LmButton";
-import {LmIcon} from "../content";
-import {LmInput} from "./LmInput";
-import { styled } from '@tamagui/core'
+import {useEffect, useId, useState} from "react";
+import DropDownPicker, {DropDownPickerProps} from 'react-native-dropdown-picker';
+import {useTheme} from 'tamagui';
+import {useThemeState} from "app/src/state/themeState";
+import {ColorValue} from "react-native";
+import {LmFormFieldContainer} from "./LmFormFieldContainer";
+import {FormContainerProps} from "./formContainerProps";
 
 type LmMultiSelectProps = {
     options: { label: string, value: string }[]
+    id?: string
     isMulti?: boolean,
     isSearchable?: boolean
     isDisabled?: boolean
     placeholder?: string
-}
+    zIndex?: number
+    zIndexInverse?: number
+    onChange: (any) => void
+} & DropDownPickerProps<any> & Pick<FormContainerProps, 'required' | 'error' | 'helperText' | 'label' | 'labelProps' | 'labelInline'>
 
-export function LmMultiSelect(props: LmMultiSelectProps) {
-    const [selected, setSelected] = useState([]);
-    const {background, backgroundHover, color} = useTheme()
+export function LmMultiSelect({
+                                  required,
+                                  error,
+                                  helperText,
+                                  label,
+                                  labelProps,
+                                  containerProps,
+                                  labelInline,
+                                  ...rest
+}: LmMultiSelectProps) {
+    const [open, setOpen] = useState(false);
+    const [value, setValue] = useState(rest.isMulti ? [] : null);
+    const [items, setItems] = useState(rest.options);
+    const {background, backgroundHover, color,} = useTheme()
+    const {name} = useThemeState()
+    const genId = useId()
+    const id = rest.id || genId
 
-    const sharedProps = {
-        data: props.options,
-        labelField: "label",
-        valueField: "value",
-        placeholder: props.placeholder,
-        value: selected,
-        search: props.isSearchable,
-        searchPlaceholder: "Search...",
-        onChange: item => {
-            setSelected(item);
-        },
-        renderLeftIcon: () => null,
-        disable: props.isDisabled,
-        //      (
-        // <LmIcon iconName={faSquareCheck}/>
-        //    )
-        renderItem: (item, selected) => {
-            return(
-                <ListItem width={'100%'} backgroundColor={background}>{item.label}</ListItem>
-            )
-        },
-        renderSelectedItem: (item, unSelect) => (
-            <LmButton
-                iconAfter={<LmIcon iconName={faCircleXmark}/>}
-                onPress={() => unSelect && unSelect(item)}>
-                {item.label}
-            </LmButton>
-        ),
-        renderInputSearch: ((onSearch: (text:string) => void) => {
-            return <LmInput></LmInput>
-        })
+    const handleChange = (v) => {
+        if (typeof rest.onChange === 'function') {
+            rest.onChange(v)
+        }
     }
 
     return (
-        <View style={{width: '100%'}}>
-            {props.isMulti ?
-                <MultiSelect {...props} {...sharedProps} /> :
-                <Dropdown {...props} {...sharedProps} />}
-        </View>
-    )
+        <LmFormFieldContainer id={id}
+                              maxWidth={'100%'}
+                              zIndex={rest.zIndex}
+                              error={error}
+                              required={required}
+                              labelProps={labelProps}
+                              label={label}
+                              labelInline={labelInline}
+                              helperText={helperText}>
+            <DropDownPicker
+                open={open}
+                value={value}
+                items={items}
+                setOpen={setOpen}
+                setValue={setValue}
+                setItems={setItems}
+                multiple={rest.isMulti as true}
+                placeholder={rest.placeholder}
+                searchable={rest.isSearchable}
+                disabled={rest.isDisabled}
+                zIndex={rest.zIndex}
+                zIndexInverse={rest.zIndexInverse}
+                style={{
+                    backgroundColor: background.val as ColorValue,
+                    borderColor: error? 'red' : undefined
+                }}
+                dropDownContainerStyle={{
+                    backgroundColor: background.val as ColorValue,
+                    borderColor: error? 'red' : undefined
+                }}
+                theme={(name?.toUpperCase() || 'DEFAULT') as 'LIGHT' | 'DARK' | 'DEFAULT'}
+                onChangeValue={handleChange}
+            />
+        </LmFormFieldContainer>
+    );
 }

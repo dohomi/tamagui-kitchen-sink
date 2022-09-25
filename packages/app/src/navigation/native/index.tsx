@@ -1,7 +1,5 @@
 import React from 'react'
-
 import {HomeScreen} from '../../features/home/HomeScreen'
-import {UserDetailScreen} from '../../features/user/detail-screen'
 import {OverviewScreen} from "app/src/features/overview/overview";
 import {DashboardScreen} from "app/src/features/dashboard/DashboardScreen";
 import {RouterNavigationProps} from "app/src/navigation/routerConfig";
@@ -17,6 +15,8 @@ import {ExerciseDetailScreen} from "app/src/features/exercise/ExerciseDetailScre
 import {ExerciseListScreen} from "app/src/features/exercise/ExerciseListScreen";
 import i18n from "app/src/i18n/i18n";
 import {PlaygroundScreen} from "app/src/features/playground/playground";
+import {ClubScreen} from "app/src/features/club/ClubScreen";
+import {ProfileScreen} from "app/src/features/user/ProfileScreen";
 
 const AppStack = createBottomTabNavigator<RouterNavigationProps>()
 
@@ -49,11 +49,13 @@ export function NativeNavigation() {
                     }}
                 />
                 <AppStack.Screen
-                    name="user-detail"
-                    component={UserDetailScreen}
+                    name="profile"
+                    component={ProfileScreen}
                     options={{
-                        tabBarButton: () => null,
                         title: 'User',
+                        ...(!isAuthenticated && {
+                            tabBarButton: () => null
+                        })
                     }}
                 />
                 <AppStack.Screen name={'dashboard'}
@@ -80,6 +82,8 @@ export function NativeNavigation() {
                 }}>
                     <AppStack.Screen name={'exercises'}
                                      component={ExerciseListScreen}/>
+                    <AppStack.Screen name={'clubs'}
+                                     component={ClubScreen}/>
                     <AppStack.Screen name={'exercise-edit'}
                                      component={ExerciseEditScreen}/>
                     <AppStack.Screen name={'exercise-new'}

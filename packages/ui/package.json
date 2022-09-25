@@ -26,14 +26,13 @@
     "@my/config": "*",
     "react-hook-form": "^7.34.2",
     "react-native-dropdown-picker": "^5.4.2",
-    "react-native-element-dropdown": "^2.3.0",
     "react-native-svg": "^12.4.4",
     "react-select": "^5.4.0",
     "solito": "^1.0.12",
-    "tamagui": "1.0.1-beta.171",
+    "tamagui": "1.0.1-beta.174",
     "zustand": "^4.1.1"
   },
   "devDependencies": {
-    "@tamagui/build": "1.0.1-beta.171"
+    "@tamagui/build": "1.0.1-beta.174"
   }
 }

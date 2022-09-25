@@ -32,6 +32,7 @@ export function PlaygroundScreen() {
                 <LmMultiSelect
                     zIndex={3000}
                     zIndexInverse={1000}
+                    onChange={(value) => console.log('!!', value) }
                     options={options} placeholder={'Single select'}/>
                 <LmMultiSelect
                     zIndex={2999}
@@ -41,14 +42,28 @@ export function PlaygroundScreen() {
                 <LmMultiSelect
                     zIndex={2998}
                     zIndexInverse={1002}
+                    onChange={(value) => console.log('!!', value) }
                     isMulti={true} options={options} placeholder={'Multi select'}/>
                 <LmMultiSelect
                     zIndex={2997}
                     zIndexInverse={1003}
                     isMulti={true} options={options} placeholder={'Multi select disabled'}
                                   isDisabled={true}/>
-                <LmSelect options={options} colorVariant={'primary'}/>
-                <LmSelect options={options} colorVariant={'secondary'}/>
+                <LmMultiSelect
+                    zIndex={2996}
+                    zIndexInverse={1004}
+                    isMulti={true} options={options} placeholder={'Multi select, label and helper text'}
+                    helperText={'helper text here'}
+                    label={'Label:'}
+                    />
+                <LmMultiSelect
+                    zIndex={2995}
+                    zIndexInverse={1005}
+                    isMulti={true} options={options} placeholder={'Multi select, label, helper text and error'}
+                    helperText={'helper text here'}
+                    required error
+                    label={'Label:'}
+                />
 
                 {/*<Select id="foodFirst" sheetBreakpoint="sm" value={val} onValueChange={setVal} key={'main1'}>
                             <Select.Trigger width={240} iconAfter={ChevronDown} id={'select1'}>

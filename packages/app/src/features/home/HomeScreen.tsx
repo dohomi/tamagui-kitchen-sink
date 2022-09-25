@@ -8,7 +8,7 @@ import {useToggleMainDrawer} from "app/src/state/appState";
 
 export function HomeScreen() {
     const linkProps = useLink({
-        href: '/user/nate',
+        href: '/profile',
     })
     const overviewProps = useLink({
         href: '/overview',

@@ -3,5 +3,8 @@ query user($id: uuid!){
         id
         email
         emailVerified
+        clubs {
+            ...userClub
+        }
     }
 }
