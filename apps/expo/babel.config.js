@@ -6,19 +6,24 @@ module.exports = function (api) {
             'inline-dotenv',
             // if you want reanimated support
             // 'react-native-reanimated/plugin',
-            [
-                '@tamagui/babel-plugin',
-                {
-                    components: ['tamagui', '@my/ui'],
-                    config: './tamagui.config.ts',
-                },
-            ],
+            // fix android
+            ...(process.env.EAS_BUILD_PLATFORM === 'android'
+                ? []
+                : [
+                    [
+                        '@tamagui/babel-plugin',
+                        {
+                            components: ['@my/ui', 'tamagui'],
+                            config: './tamagui.config.ts',
+                        },
+                    ],
+                ]),
             [
                 'transform-inline-environment-variables',
                 {
                     include: 'TAMAGUI_TARGET',
                 },
             ],
-        ],
+        ]
     }
 }
