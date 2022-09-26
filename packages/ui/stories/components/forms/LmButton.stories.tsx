@@ -33,7 +33,7 @@ export const Colors = () => (
         <LmButton colorVariant={'info'}>info</LmButton>
         <LmButton colorVariant={'warning'}>warning</LmButton>
         <LmButton colorVariant={'error'}>error</LmButton>
-        <LmButton themeName={'dark_gray_alt2'}>dark gray alt</LmButton>
+        <LmButton theme={'gray_alt2'}>blue</LmButton>
     </XStack>
 )
 
@@ -48,7 +48,7 @@ export const Loading = () => (
         <XStack space={'$4'}>
             <LmButton size={'$2'} loading colorVariant={'primary'}>size 2</LmButton>
             <LmButton size={'$4'} loading colorVariant={'secondary'}>size 4</LmButton>
-            <LmButton size={'$6'} loading themeName={'dark_pink_alt1'}>size 6</LmButton>
+            <LmButton size={'$6'} loading theme={'pink_alt1'}>size 6</LmButton>
             <LmButton size={'$8'} loading>size 8</LmButton>
         </XStack>
     </YStack>
@@ -65,7 +65,7 @@ export const Icons = () => (
         <XStack space={'$4'}>
             <LmButton size={'$2'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'primary'}>size 2</LmButton>
             <LmButton size={'$4'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'secondary'}>size 4</LmButton>
-            <LmButton size={'$6'} iconAfter={<LmIcon iconName={faSafari}/>} themeName={'dark_pink_alt1'}>size
+            <LmButton size={'$6'} iconAfter={<LmIcon iconName={faSafari}/>} theme={'pink_alt1'}>size
                 6</LmButton>
             <LmButton size={'$8'} iconAfter={<LmIcon iconName={faSafari}/>}>size 8</LmButton>
         </XStack>
@@ -86,7 +86,7 @@ export const IconButton = () => (
             <LmButton size={'$2'} icon={<LmIcon iconName={faSafari} size={'$1'}/>} colorVariant={'primary'} circular/>
             <LmButton size={'$4'} icon={<LmIcon iconName={faSafari} size={'$1.5'}/>} colorVariant={'secondary'}
                       circular/>
-            <LmButton size={'$6'} icon={<LmIcon iconName={faSafari} size={'$3'}/>} themeName={'dark_pink_alt1'}
+            <LmButton size={'$6'} icon={<LmIcon iconName={faSafari} size={'$3'}/>} theme={'pink_alt1'}
                       circular/>
             <LmButton size={'$8'} icon={<LmIcon iconName={faSafari} size={'$4.5'}/>} circular/>
         </XStack>

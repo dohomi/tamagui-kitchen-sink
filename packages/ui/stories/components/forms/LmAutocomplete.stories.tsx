@@ -11,7 +11,15 @@ const options = fruitItemsFixtures
 const Template: ComponentStory<typeof LmAutocomplete> = (args) => <LmAutocomplete {...args} />
 export const Single = Template.bind({})
 Single.args = {
-    options
+    options,
+    label: 'Autocomplete Label'
+}
+
+export const SingleInline = Template.bind({})
+SingleInline.args = {
+    options,
+    labelInline: true,
+    label: 'Autocomplete Label'
 }
 
 export const Multiple = Template.bind({})
