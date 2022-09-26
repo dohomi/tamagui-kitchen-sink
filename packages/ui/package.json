@@ -30,7 +30,8 @@
     "react-select": "^5.4.0",
     "solito": "^1.0.12",
     "tamagui": "1.0.1-beta.178",
-    "zustand": "^4.1.1"
+    "zustand": "^4.1.1",
+    "rooks": "^7.4.0"
   },
   "devDependencies": {
     "@tamagui/build": "1.0.1-beta.178"

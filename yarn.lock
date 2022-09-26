@@ -18664,6 +18664,14 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   optionalDependencies:
     fsevents "~2.3.2"
 
+rooks@^7.4.0:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/rooks/-/rooks-7.4.0.tgz#2174c4e705916179790fa2d2c91d3ea989245907"
+  integrity sha512-k9gOJid4/BRcznOSkce+sPlVulLj7ZuM9iEXKYk9Js4TplFULs8K/I8x1N9c0z/YkF9MHjmpe1JYVKpUJrNqVg==
+  dependencies:
+    lodash.debounce "^4.0.8"
+    raf "^3.4.1"
+
 rsvp@^4.8.4:
   version "4.8.5"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.8.5.tgz#c8f155311d167f68f21e168df71ec5b083113734"
