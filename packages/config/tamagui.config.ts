@@ -1,6 +1,6 @@
 import {createTamagui} from '@my/ui'
 import {createInterFont} from '@tamagui/font-inter'
-// import { shorthands } from '@tamagui/shorthands'
+import {shorthands} from '@tamagui/shorthands'
 import {themes, tokens} from '@tamagui/theme-base'
 
 import {animations} from './animations'
@@ -49,17 +49,13 @@ const bodyFont = createInterFont(
     }
 )
 
+
 export const config = createTamagui({
     animations,
     defaultTheme: 'light',
     shouldAddPrefersColorThemes: true,
     themeClassNameOnRoot: true,
-    shorthands: {
-        mx: 'marginHorizontal',
-        my: 'marginVertical',
-        px: 'paddingHorizontal',
-        py: 'paddingVertical',
-    },
+    shorthands,
     fonts: {
         heading: headingFont,
         body: bodyFont,

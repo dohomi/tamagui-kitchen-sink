@@ -1,26 +1,57 @@
 import {ColorTokens, Slider, SliderProps, SliderThumbProps, Text, XStack} from "tamagui";
-import {useState} from "react";
+import {useId, useState} from "react";
+import {LmFormFieldContainer} from "./LmFormFieldContainer";
+import {FormContainerProps} from "./formContainerProps";
 
-export type LmSliderProps = SliderProps & {
+export type LmSliderProps = SliderProps & FormContainerProps & {
     defaultValue?: number[]
     color?: ColorTokens | string
     colorActiveOnly?: boolean
     thumbProps?: SliderThumbProps
 }
 
-export function LmSlider({thumbProps, color, defaultValue = [0], colorActiveOnly, ...sliderProps}: LmSliderProps) {
+export function LmSlider({
+                             thumbProps,
+                             color,
+                             defaultValue = [0],
+                             label,
+                             labelProps,
+                             error,
+                             required,
+                             helperText,
+                             labelInline,
+                             colorActiveOnly,
+                             ...sliderProps
+                         }: LmSliderProps) {
+    const id = useId()
     const [value, setValue] = useState<number[]>(defaultValue)
     const trackColor = color ? `${color}Dark` : undefined;
     return (
-        <XStack space alignItems={'center'}>
-            <Slider size="$2" width={150} defaultValue={value} max={5} step={1} {...sliderProps}
-                    onValueChange={setValue}>
-                <Slider.Track backgroundColor={!colorActiveOnly ? trackColor : undefined}>
-                    <Slider.TrackActive backgroundColor={trackColor}/>
-                </Slider.Track>
-                <Slider.Thumb circular size={'$2'} index={0} backgroundColor={color} {...thumbProps}/>
-            </Slider>
-            <Text>{value[0]}</Text>
-        </XStack>
+        <LmFormFieldContainer id={id}
+                              label={label}
+                              error={error}
+                              required={required}
+                              labelProps={labelProps}
+                              size={sliderProps.size}
+                              labelInline={labelInline}
+                              helperText={helperText}
+                              alignItems={labelInline ? 'center' : undefined}
+        >
+            <XStack space alignItems={'center'}>
+                <Slider size="$2" width={150} defaultValue={value} max={5} step={1} {...sliderProps}
+                        onValueChange={v => {
+                            setValue(v)
+                            if (typeof sliderProps.onValueChange === 'function') {
+                                sliderProps.onValueChange(v)
+                            }
+                        }}>
+                    <Slider.Track backgroundColor={!colorActiveOnly ? trackColor : undefined}>
+                        <Slider.TrackActive backgroundColor={trackColor}/>
+                    </Slider.Track>
+                    <Slider.Thumb circular size={'$2'} index={0} backgroundColor={color} {...thumbProps}/>
+                </Slider>
+                <Text>{value[0]}</Text>
+            </XStack>
+        </LmFormFieldContainer>
     )
 }

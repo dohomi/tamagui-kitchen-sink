@@ -24,3 +24,12 @@ export const ColorsActiveOnly = () => (
         <LmSlider color={'$red10'} colorActiveOnly/>
     </YStack>
 )
+
+export const WithLabel = () => (
+    <YStack space={'$4'}>
+        <LmSlider color={'$blue10'} label={'First Slider'} colorActiveOnly/>
+        <LmSlider color={'$red10'} label={'Second Slider'} colorActiveOnly/>
+        <LmSlider color={'$blue10'} label={'First Slider'} colorActiveOnly labelInline/>
+        <LmSlider color={'$red10'} label={'Second Slider'} colorActiveOnly labelInline/>
+    </YStack>
+)
