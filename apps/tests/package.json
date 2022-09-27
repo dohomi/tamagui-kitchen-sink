@@ -7,7 +7,7 @@
     "test": "jest /__tests__"
   },
   "dependencies": {
-    "@my/ui": "*",
+    "@tamagui-extras/ui": "*",
     "app": "*"
   },
   "devDependencies": {

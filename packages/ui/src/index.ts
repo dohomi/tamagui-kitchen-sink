@@ -10,4 +10,3 @@ export * from './components/forms'
 export * from "./themeMappings";
 
 // files where native differs from web
-export * from './indexNativeWeb'

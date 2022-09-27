@@ -1,8 +1,0 @@
-mutation insertTeamOne($data: team_insert_input!) {
-    insert_team_one(object: $data){
-        ...team
-        user_permissions{
-            ...userPermission
-        }
-    }
-}

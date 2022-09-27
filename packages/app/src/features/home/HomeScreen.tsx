@@ -1,22 +1,16 @@
-import {Anchor, Button, H1, LmButton, Paragraph, Separator, XStack, YStack} from '@my/ui'
+import {Anchor, Button, H1, LmButton, Paragraph, Separator, XStack, YStack} from '@tamagui-extras/ui'
 import {ChevronDown} from '@tamagui/feather-icons'
 import React from 'react'
 import {useLink} from 'solito/link'
 import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";
-import {LmAppDrawer} from "app/src/components/layouts/LmAppDrawer";
 import {useToggleMainDrawer} from "app/src/state/appState";
 
 export function HomeScreen() {
-    const linkProps = useLink({
-        href: '/profile',
-    })
+
     const overviewProps = useLink({
         href: '/overview',
     })
 
-    const dashboardProps = useLink({
-        href: '/dashboard',
-    })
 
     const playgroundProps = useLink({
         href: '/playground',
@@ -41,13 +35,7 @@ export function HomeScreen() {
             </YStack>
 
             <XStack>
-                <Button {...linkProps}>Link to user</Button>
-            </XStack>
-            <XStack>
                 <LmButton {...overviewProps}>Overview</LmButton>
-            </XStack>
-            <XStack>
-                <LmButton {...dashboardProps}>Dashboard</LmButton>
             </XStack>
             <XStack>
                 <LmButton {...playgroundProps}>Playground</LmButton>

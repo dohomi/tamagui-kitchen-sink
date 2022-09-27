@@ -1,5 +1,0 @@
-query exerciseTaxonomiesBySport($sport: enum_sport_enum!, $category: enum_exercise_categories_enum) {
-    exercise_taxonomy (where: {sport: {_eq: $sport}}) {
-        ...exerciseTaxonomy
-    }
-}

@@ -38,7 +38,7 @@ export function LmAutocomplete({
     }] = useSelectableList(options, !multiple && !Array.isArray(value) ? options.findIndex(i => i.value === value?.value) : -1, true)
 
 
-    let selectionMultiple = selection[1];
+    let selectionMultiple = selection?.[1] ?? [];
     useEffect(() => {
         if (!multiple && onChange) {
             onChange(selectionSingle[1])
@@ -54,7 +54,7 @@ export function LmAutocomplete({
 
     const inputValue = multiple ? selectionMultiple
         .map((option) => option?.label)
-        .join(', ') : selectionSingle[1]?.label
+        .join(', ') : selectionSingle?.[1]?.label
 
 
     return (

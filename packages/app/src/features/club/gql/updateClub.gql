@@ -1,5 +1,0 @@
-mutation updateClub($data: club_set_input!, $id: String!) {
-    update_club_by_pk(_set: $data, pk_columns: {id: $id}){
-        ...club
-    }
-}

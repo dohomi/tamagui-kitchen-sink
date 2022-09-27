@@ -1,7 +1,6 @@
-import {LmAutocomplete} from "../../../src";
+import {LmAutocomplete, LmFormRhfProvider} from "../../../src";
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {fruitItemsFixtures} from "../../../fixtures/selectItems";
-import {LmFormRhfProvider} from "@my/ui";
 import {LmAutocompleteRhf} from "../../../src/components/forms/rhf/LmAutocompleteRhf";
 
 export default {

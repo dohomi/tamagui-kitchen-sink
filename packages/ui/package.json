@@ -1,5 +1,5 @@
 {
-  "name": "@my/ui",
+  "name": "@tamagui-extras/ui",
   "version": "0.0.1",
   "sideEffects": [
     "*.css"
@@ -30,10 +30,10 @@
     "react-select": "^5.4.0",
     "rooks": "^7.4.0",
     "solito": "^1.0.12",
-    "tamagui": "1.0.1-beta.178",
-    "zustand": "^4.1.1"
+    "tamagui": "1.0.1-beta.178"
   },
   "devDependencies": {
+    "@storybook/react": "^6.5.12",
     "@tamagui/build": "1.0.1-beta.178"
   }
 }

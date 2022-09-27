@@ -1,14 +1,14 @@
 module.exports = function (api) {
     api.cache(true)
     return {
-        presets: [['babel-preset-expo', { jsxRuntime: 'automatic' }]],
+        presets: [['babel-preset-expo', {jsxRuntime: 'automatic'}]],
         plugins: [
             // if you want reanimated support
             // 'react-native-reanimated/plugin',
             [
                 '@tamagui/babel-plugin',
                 {
-                    components: ['tamagui', '@my/ui'],
+                    components: ['tamagui', '@tamagui-extras/ui'],
                     config: './tamagui.config.ts',
                 },
             ],

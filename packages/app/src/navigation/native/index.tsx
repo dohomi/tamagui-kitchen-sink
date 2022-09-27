@@ -1,28 +1,19 @@
 import React from 'react'
 import {HomeScreen} from '../../features/home/HomeScreen'
 import {OverviewScreen} from "app/src/features/overview/overview";
-import {DashboardScreen} from "app/src/features/dashboard/DashboardScreen";
 import {RouterNavigationProps} from "app/src/navigation/routerConfig";
-import {AuthScreen} from "app/src/features/auth/AuthScreen";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {useToggleMainDrawer} from "app/src/state/appState";
-import {LmButton} from "@my/ui";
+import {LmButton} from "@tamagui-extras/ui";
 import {LmAppDrawer} from "app/src/components/layouts/LmAppDrawer";
 import {Settings} from "@tamagui/feather-icons";
-import {useAuthenticationStatus} from "@nhost/react";
-import {ExerciseEditScreen} from "app/src/features/exercise/ExerciseEditScreen";
-import {ExerciseDetailScreen} from "app/src/features/exercise/ExerciseDetailScreen";
-import {ExerciseListScreen} from "app/src/features/exercise/ExerciseListScreen";
 import i18n from "app/src/i18n/i18n";
 import {PlaygroundScreen} from "app/src/features/playground/playground";
-import {ClubScreen} from "app/src/features/club/ClubScreen";
-import {ProfileScreen} from "app/src/features/user/ProfileScreen";
 
 const AppStack = createBottomTabNavigator<RouterNavigationProps>()
 
 export function NativeNavigation() {
     const toggleMainDrawer = useToggleMainDrawer()
-    const {isAuthenticated} = useAuthenticationStatus()
     return (
         <>
             <AppStack.Navigator>
@@ -48,58 +39,7 @@ export function NativeNavigation() {
                         title: 'Playground',
                     }}
                 />
-                <AppStack.Screen
-                    name="profile"
-                    component={ProfileScreen}
-                    options={{
-                        title: 'User',
-                        ...(!isAuthenticated && {
-                            tabBarButton: () => null
-                        })
-                    }}
-                />
-                <AppStack.Screen name={'dashboard'}
-                                 component={DashboardScreen}
-                                 options={{
-                                     title: 'Dashboard',
-                                     ...(!isAuthenticated && {
-                                         tabBarButton: () => null
-                                     })
-                                 }}
-                />
-                <AppStack.Screen name={'auth'}
-                                 component={AuthScreen}
-                                 options={{
-                                     title: 'Login',
-                                     ...(isAuthenticated && {
-                                         tabBarButton: () => null
-                                     })
-                                 }}
-                />
 
-                <AppStack.Group screenOptions={{
-                    tabBarButton: () => null
-                }}>
-                    <AppStack.Screen name={'exercises'}
-                                     component={ExerciseListScreen}/>
-                    <AppStack.Screen name={'clubs'}
-                                     component={ClubScreen}/>
-                    <AppStack.Screen name={'exercise-edit'}
-                                     component={ExerciseEditScreen}/>
-                    <AppStack.Screen name={'exercise-new'}
-                                     component={ExerciseEditScreen}/>
-                    <AppStack.Screen name={'exercise'}
-                                     options={({navigation}) => ({
-                                         headerLeft: props => {
-                                             if (navigation.canGoBack()) {
-                                                 return <LmButton
-                                                     onPress={() => navigation.goBack()}>test</LmButton>
-                                             }
-                                             return null
-                                         }
-                                     })}
-                                     component={ExerciseDetailScreen}/>
-                </AppStack.Group>
 
                 <AppStack.Screen name={'settings'}
                                  component={() => null}

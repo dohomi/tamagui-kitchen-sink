@@ -22,12 +22,12 @@ const transform = withPlugins([
         '@fortawesome/react-native-fontawesome',
         'react-i18next',
         '@my/config',
-        '@my/ui'
+        '@tamagui-extras/ui'
         // '@expo/vector-icons',
     ]),
     withTamagui({
         config: './tamagui.config.ts',
-        components: ['@my/ui', 'tamagui'],
+        components: ['@tamagui-extras/ui', 'tamagui'],
         importsWhitelist: ['constants.js', 'colors.js'],
         logTimings: true,
         disableExtraction,
@@ -63,7 +63,7 @@ const nextConfig = {
     //     config.resolve.alias = {
     //         ...config.resolve.alias,
     //         // your aliases
-    //         '@my/ui': 'node_modules/@my/ui'
+    //         '@tamagui-extras/ui': 'node_modules/@tamagui-extras/ui'
     //     }
     //     return config
     // },

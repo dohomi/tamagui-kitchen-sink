@@ -1,6 +1,0 @@
-fragment fileFragment on files{
-    name
-    id
-    size
-    mimeType
-}

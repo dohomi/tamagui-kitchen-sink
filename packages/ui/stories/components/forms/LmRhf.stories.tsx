@@ -3,7 +3,6 @@ import {
     LmCheckboxRhf,
     LmFormRhfProvider,
     LmInputRhf,
-    LmMultiSelectRhf,
     LmResetButtonRhf,
     LmSelectRhf,
     LmSliderRhf,
@@ -29,10 +28,7 @@ export const Basic = () => {
                 <LmInputRhf name={'description'} label={'Description'} placeholder={'A long description...'} labelInline
                             multiline/>
                 <LmSelectRhf name={'fruit'} options={fruitItemsFixtures} label={'Select fruit'} labelInline required/>
-                <LmMultiSelectRhf
-                    name={'multi'}
-                    options={fruitItemsFixtures}
-                    label={'Select some fruits'} labelInline required isMulti/>
+                
                 <LmCheckboxRhf name={'check_this'} required label={'Do you agree to our T&C?'}/>
                 <LmSwitchRhf name={'switch'} labelRight={'Some switch'}/>
                 <LmSliderRhf name={'slider'}/>

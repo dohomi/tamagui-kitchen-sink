@@ -28,7 +28,7 @@ try {
 const getStories = () => {
     return [
         require("../../../packages/app/src/components/LmButton.stories.tsx"),
-        require("@my/ui/stories/components/forms/LmButton.stories.tsx"),
+        require("@tamagui-extras/ui/stories/components/forms/LmButton.stories.tsx"),
         require("../../../packages/ui/stories/MyComponent.stories.tsx"),
     ];
 };

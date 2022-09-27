@@ -5,7 +5,7 @@ import {mergeConfig, loadEnv} from 'vite'
 const tamaguiConfig = {
     config: './tamagui.config.ts',
     components: [
-        /*'app', '@my/ui', '@my/config',*/ 'tamagui', '@tamagui/core'
+        /*'app', '@tamagui-extras/ui', '@my/config',*/ 'tamagui', '@tamagui/core'
     ],
     logTimings: true,
     importsWhitelist: ['constants.js', 'colors.js'],

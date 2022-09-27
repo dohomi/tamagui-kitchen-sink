@@ -48,7 +48,7 @@ export function LmCheckbox({
             return !prevState
         })
         if (typeof onChange === 'function') {
-            onChange(val)
+            onChange(!!val)
         }
     }
 
