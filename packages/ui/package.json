@@ -14,7 +14,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tamagui-build src/index.tsx",
+    "build": "rm -rf dist types && tamagui-build src/index.tsx",
     "watch": "tamagui-build src/index.tsx --watch",
     "check-types": "tsc --noEmit"
   },
