@@ -17,9 +17,9 @@
     "build": "rm -rf dist types && tamagui-build src/index.tsx",
     "watch": "tamagui-build src/index.tsx --watch",
     "check-types": "tsc --noEmit",
-    "release-minor": "yarn build && npx release minor",
-    "release-patch": "yarn build && npx release patch",
-    "release-major": "yarn build && npx release major"
+    "release-minor": "yarn build && npx release-it minor",
+    "release-patch": "yarn build && npx release-it patch",
+    "release-major": "yarn build && npx release-it major"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
