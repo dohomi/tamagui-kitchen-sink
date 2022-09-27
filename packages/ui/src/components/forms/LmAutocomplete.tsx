@@ -81,19 +81,28 @@ export function LmAutocomplete({
                 </Popover.Sheet>
 
                 <Popover.Content
-                    bw={1}
-                    p={0}
-                    boc="$borderColor"
-                    enterStyle={{x: 0, y: -10, o: 0}}
-                    exitStyle={{x: 0, y: -10, o: 0}}
+                    borderWidth={1}
+                    padding={0}
+                    borderColor="$borderColor"
+                    enterStyle={{
+                        x: 0,
+                        y: -10,
+                        opacity: 0
+                    }}
+                    exitStyle={{
+                        x: 0, y: -10, opacity: 0
+                    }}
                     x={0}
                     y={0}
-                    o={1}
+                    opacity={1}
                     animation="bouncy"
                     elevate
                 >
-                    <Popover.Arrow bw={1} boc="$borderColor" display={'none'} $gtSm={{display: 'block'}}/>
-                    <XStack space="$3" p={'$4'}>
+                    <Popover.Arrow borderWidth={1}
+                                   borderColor="$borderColor"
+                                   display={'none'}
+                                   $gtSm={{display: 'block'}}/>
+                    <XStack space="$3" padding={'$4'}>
                         <Input size="$3"
                                id="name"
                                placeholder={'Search...'}
