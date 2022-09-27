@@ -3216,7 +3216,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@my/config@workspace:packages/config"
   dependencies:
+    "@tamagui/animations-react-native": 1.0.1-beta.178
     "@tamagui/config-base": 1.0.1-beta.178
+    "@tamagui/font-inter": 1.0.1-beta.178
+    "@tamagui/shorthands": 1.0.1-beta.178
+    "@tamagui/theme-base": 1.0.1-beta.178
   languageName: unknown
   linkType: soft
 
@@ -5972,7 +5976,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/font-inter@npm:^1.0.1-beta.178":
+"@tamagui/font-inter@npm:1.0.1-beta.178, @tamagui/font-inter@npm:^1.0.1-beta.178":
   version: 1.0.1-beta.178
   resolution: "@tamagui/font-inter@npm:1.0.1-beta.178"
   dependencies:
@@ -6356,7 +6360,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/shorthands@npm:^1.0.1-beta.178":
+"@tamagui/shorthands@npm:1.0.1-beta.178, @tamagui/shorthands@npm:^1.0.1-beta.178":
   version: 1.0.1-beta.178
   resolution: "@tamagui/shorthands@npm:1.0.1-beta.178"
   checksum: abd5f0e3d82778b16572c30d13d256db7ed2513b7ed4b2f85f14e6d01ed614ccea829120f249b0a19d52f6a2043e91d09ee553b1a01a68b9e64f69c7fc1e46f5
@@ -6478,7 +6482,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/theme-base@npm:^1.0.1-beta.178":
+"@tamagui/theme-base@npm:1.0.1-beta.178, @tamagui/theme-base@npm:^1.0.1-beta.178":
   version: 1.0.1-beta.178
   resolution: "@tamagui/theme-base@npm:1.0.1-beta.178"
   dependencies:
