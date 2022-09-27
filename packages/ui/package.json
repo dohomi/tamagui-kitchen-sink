@@ -1,10 +1,20 @@
 {
   "name": "@tamagui-extras/ui",
-  "version": "0.0.2",
+  "license": "MIT",
+  "author": "Dominic Garms",
+  "version": "0.0.3",
+  "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
+  "homepage": "https://tamagui-extras.vercel.app",
   "sideEffects": [
     "*.css"
   ],
-  "private": true,
+  "keywords": [
+    "react",
+    "react-native",
+    "@tamagui/core",
+    "tamagui",
+    "react-hook-form"
+  ],
   "types": "./types/index",
   "main": "dist/cjs",
   "module": "dist/esm",
@@ -36,5 +46,8 @@
   "devDependencies": {
     "@storybook/react": "^6.5.12",
     "@tamagui/build": "1.0.1-beta.178"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

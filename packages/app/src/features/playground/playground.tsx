@@ -1,11 +1,9 @@
 import {LmAutocompleteRhf, LmFormRhfProvider, SpaceTokens, YStack} from '@tamagui-extras/ui'
-import React, {useState} from 'react'
+import React from 'react'
 import {fruitItemsFixtures} from "@tamagui-extras/ui/fixtures/selectItems";
 
 export function PlaygroundScreen() {
 
-    const [val, setVal] = useState('apple')
-    const [val2, setVal2] = useState('pear')
 
     const defaultSectionProps: {
         space?: SpaceTokens | null
@@ -15,11 +13,6 @@ export function PlaygroundScreen() {
         flexWrap: 'wrap'
     }
 
-    const options = [
-        {value: '1', label: 'Chocolate'},
-        {value: '2', label: 'Strawberry'},
-        {value: '3', label: 'Vanilla'},
-    ]
 
     return (
         <LmFormRhfProvider>
@@ -32,7 +25,8 @@ export function PlaygroundScreen() {
                     maxWidth={'100%'}>
                 <YStack {...defaultSectionProps} width={'100%'}>
                     <LmAutocompleteRhf name={'autocomplete'} label={'Autocomplete'} options={fruitItemsFixtures}/>
-                    <LmAutocompleteRhf name={'autocomplete'} label={'Multi'} multiple options={fruitItemsFixtures}/>
+                    <LmAutocompleteRhf name={'autocomplete-multi'} label={'Multi'} multiple
+                                       options={fruitItemsFixtures}/>
                 </YStack>
             </YStack>
         </LmFormRhfProvider>

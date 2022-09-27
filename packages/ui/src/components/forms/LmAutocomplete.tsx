@@ -1,4 +1,4 @@
-import {Input, ListItem, Popover, XStack} from "tamagui";
+import {Input, ListItem, Popover, ScrollView, Stack, styled, Text, ThemeableStack, XStack} from "tamagui";
 import {useMultiSelectableList, useSelectableList} from "rooks";
 import {CheckSquare, Square} from "@tamagui/feather-icons";
 import {useEffect, useId, useState} from "react";
@@ -13,6 +13,17 @@ export type LmAutocompleteProps = FormContainerProps & {
     onChange?: (v: null | Option | Option[]) => void
 }
 
+const InputTrigger = styled(ThemeableStack, {
+    hoverTheme: true,
+    pressTheme: true,
+    focusTheme: true,
+    bordered: true,
+    minHeight: '$4',
+    borderRadius: '$4',
+    display: 'flex',
+    justifyContent: 'center',
+    padding: '$4'
+})
 
 export function LmAutocomplete({
                                    options,
@@ -67,14 +78,15 @@ export function LmAutocomplete({
                               helperText={helperText}>
             <Popover sheetBreakpoint="sm" size="$5" allowFlip>
                 <Popover.Trigger asChild>
-                    <Input value={inputValue ?? ''}
-                           textOverflow="ellipsis"
-                           whiteSpace="nowrap"
-                           overflow="hidden"/>
+                    <InputTrigger>
+                        <Text textOverflow="ellipsis"
+                              whiteSpace="nowrap"
+                              overflow="hidden">{inputValue ?? ''}</Text>
+                    </InputTrigger>
                 </Popover.Trigger>
 
                 <Popover.Sheet modal dismissOnSnapToBottom>
-                    <Popover.Sheet.Frame padding="$4">
+                    <Popover.Sheet.Frame padding={0}>
                         <Popover.SheetContents/>
                     </Popover.Sheet.Frame>
                     <Popover.Sheet.Overlay/>
@@ -98,10 +110,8 @@ export function LmAutocomplete({
                     animation="bouncy"
                     elevate
                 >
-                    <Popover.Arrow borderWidth={1}
-                                   borderColor="$borderColor"
-                                   display={'none'}
-                                   $gtSm={{display: 'block'}}/>
+                    <Popover.Arrow borderWidth={1} borderColor="$borderColor"/>
+
                     <XStack space="$3" padding={'$4'}>
                         <Input size="$3"
                                id="name"
@@ -113,26 +123,32 @@ export function LmAutocomplete({
                                }}
                         />
                     </XStack>
-                    <Popover.ScrollView style={{maxHeight: '50vh'}} keyboardShouldPersistTaps={true}>
-                        {filteredOptions.map((item, index) => {
-                            let selected = multiple ?
-                                matchSelection({index}) :
-                                matchSelectionSingle({index})
-                            return (
-                                <ListItem hoverTheme
-                                          key={item.value}
-                                          icon={selected ? <CheckSquare/> : <Square/>}
-                                          title={item.label}
-                                          onPress={() => {
-                                              if (multiple) {
-                                                  toggleSelection({value: item})()
-                                              } else {
-                                                  toggleSelectionSingle({value: item})()
-                                              }
-                                          }}/>
-                            )
-                        })}
-                    </Popover.ScrollView>
+                    <Stack maxHeight={'40%'}>
+
+                        <ScrollView flexGrow={0}>
+
+                            {filteredOptions.map((item, index) => {
+                                let selected = multiple ?
+                                    matchSelection({index}) :
+                                    matchSelectionSingle({index})
+                                return (
+                                    <ListItem hoverTheme
+                                              key={item.value}
+                                              icon={selected ? <CheckSquare/> : <Square/>}
+                                              title={item.label}
+                                              onPress={() => {
+                                                  if (multiple) {
+                                                      toggleSelection({value: item})()
+                                                  } else {
+                                                      toggleSelectionSingle({value: item})()
+                                                  }
+                                              }}/>
+                                )
+                            })}
+
+                        </ScrollView>
+                    </Stack>
+
                 </Popover.Content>
             </Popover>
         </LmFormFieldContainer>
