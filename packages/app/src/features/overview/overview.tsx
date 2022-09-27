@@ -5,7 +5,6 @@ import {
     H4,
     H5,
     H6,
-    LmAutocomplete,
     LmAvatar,
     LmButton,
     LmIcon,
@@ -235,8 +234,7 @@ export function OverviewScreen() {
                     <LmSelect options={items} colorVariant={'info'}/>
                     <LmSelect options={items} colorVariant={'info'} width={300}/>
                 </XStack>
-                <H3>LmMultiSelect</H3>
-                <LmAutocomplete options={fruitItemsFixtures} multiple/>
+
                 <H3>Avatar Sizes</H3>
                 <H4>round</H4>
                 <XStack {...defaultSectionProps}>

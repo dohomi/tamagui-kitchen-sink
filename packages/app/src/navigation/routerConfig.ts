@@ -3,6 +3,7 @@ export type RouterNavigationProps = {
     overview: undefined
     dashboard: undefined
     playground: undefined
+    settings: undefined
 };
 
 export type RouterScreenProps = {

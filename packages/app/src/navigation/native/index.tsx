@@ -11,6 +11,7 @@ import i18n from "app/src/i18n/i18n";
 import {PlaygroundScreen} from "app/src/features/playground/playground";
 
 const AppStack = createBottomTabNavigator<RouterNavigationProps>()
+const SettingsScreen = () => null;
 
 export function NativeNavigation() {
     const toggleMainDrawer = useToggleMainDrawer()
@@ -42,7 +43,7 @@ export function NativeNavigation() {
 
 
                 <AppStack.Screen name={'settings'}
-                                 component={() => null}
+                                 component={SettingsScreen}
                                  options={{
                                      tabBarButton: () => (
                                          <LmButton
