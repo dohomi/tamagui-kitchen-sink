@@ -25,9 +25,7 @@
     "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@my/config": "*",
     "react-hook-form": "^7.34.2",
-    "react-native-dropdown-picker": "^5.4.2",
     "react-native-svg": "^12.4.4",
-    "react-select": "^5.4.0",
     "rooks": "^7.4.0",
     "solito": "^1.0.12",
     "tamagui": "1.0.1-beta.178"
