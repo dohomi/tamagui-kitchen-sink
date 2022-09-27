@@ -13,7 +13,6 @@
     "sb": "cd apps/storybook-react && yarn sb",
     "web:prod": "yarn workspace next-app build",
     "watch": "yarn turbo run watch --filter=@tamagui-extras/ui",
-    "postinstall": "yarn build",
     "build": "yarn turbo run build --filter=@tamagui-extras/ui",
     "build:all": "yarn turbo run build --filter=...@tamagui-extras/ui",
     "build:web": "yarn turbo run build --filter=next-app",
