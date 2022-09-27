@@ -1,13 +1,16 @@
 import {Input, ListItem, Popover, XStack} from "tamagui";
 import {useMultiSelectableList, useSelectableList} from "rooks";
 import {CheckSquare, Square} from "@tamagui/feather-icons";
-import {useId, useState} from "react";
+import {useEffect, useId, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {FormContainerProps} from "./formContainerProps";
 
+type Option = { label: string, value: string | number };
 export type LmAutocompleteProps = FormContainerProps & {
-    options: { label: string, value: string | number }[]
+    options: Option[]
     multiple?: boolean
+    value?: null | Option | Option[]
+    onChange?: (v: null | Option | Option[]) => void
 }
 
 
@@ -19,6 +22,8 @@ export function LmAutocomplete({
                                    helperText,
                                    required,
                                    label,
+                                   value,
+                                   onChange,
                                    error
                                }: LmAutocompleteProps) {
     const id = useId()
@@ -26,14 +31,32 @@ export function LmAutocomplete({
     const [
         selection,
         {matchSelection, toggleSelection},
-    ] = useMultiSelectableList(options, [], true)
+    ] = useMultiSelectableList(options, multiple ? (value || []).map(i => options.findIndex(k => k.value === i.value)) : [], true)
     const [selectionSingle, {
         matchSelection: matchSelectionSingle,
         toggleSelection: toggleSelectionSingle
-    }] = useSelectableList(options, -1, true)
-    const inputValue = multiple ? selection[1]
+    }] = useSelectableList(options, !multiple ? options.findIndex(i => i.value === value?.value) : -1, true)
+
+
+    let selectionMultiple = selection[1];
+    useEffect(() => {
+        if (!multiple && onChange) {
+            onChange(selectionSingle[1])
+        }
+    }, [selectionSingle[1], multiple])
+
+    useEffect(() => {
+        if (multiple && onChange) {
+            onChange(selectionMultiple as any)
+        }
+    }, [JSON.stringify(selectionMultiple), multiple])
+
+
+    const inputValue = multiple ? selectionMultiple
         .map((option) => option?.label)
         .join(', ') : selectionSingle[1]?.label
+
+
     return (
         <LmFormFieldContainer id={id}
                               error={error}
@@ -69,7 +92,7 @@ export function LmAutocomplete({
                     animation="bouncy"
                     elevate
                 >
-                    <Popover.Arrow bw={1} boc="$borderColor"/>
+                    <Popover.Arrow bw={1} boc="$borderColor" display={'none'} $gtSm={{display: 'block'}}/>
                     <XStack space="$3" p={'$4'}>
                         <Input size="$3"
                                id="name"
