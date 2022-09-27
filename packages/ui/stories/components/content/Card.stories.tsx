@@ -1,4 +1,4 @@
-import {LmCard, LmCardProps} from "../../../src/components/content/LmCard";
+import {LmCard, LmCardProps} from "../../../src";
 import {ComponentMeta, ComponentStory} from '@storybook/react'
 
 export default {

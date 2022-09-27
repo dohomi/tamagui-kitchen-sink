@@ -1,7 +1,6 @@
-import {LmButton} from "../../../src";
+import {LmButton, LmIcon} from "../../../src";
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {XStack, YStack} from "tamagui";
-import {LmIcon} from "../../../src/components/content/LmIcon";
 import {faSafari} from "@fortawesome/free-brands-svg-icons";
 
 export default {

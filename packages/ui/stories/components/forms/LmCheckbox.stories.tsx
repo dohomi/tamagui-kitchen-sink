@@ -1,4 +1,4 @@
-import {LmCheckbox} from "../../../src/components/forms/LmCheckbox";
+import {LmCheckbox} from "../../../src";
 import {YStack} from "tamagui";
 
 export default {

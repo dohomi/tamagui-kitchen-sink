@@ -1,4 +1,4 @@
-import {LmImage} from "../../../src/components/content/LmImage";
+import {LmImage} from "../../../src";
 
 export default {
     title: 'ui/content/image',

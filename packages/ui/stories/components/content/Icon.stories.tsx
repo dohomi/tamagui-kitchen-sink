@@ -1,4 +1,4 @@
-import {LmIcon} from "../../../src/components/content/LmIcon";
+import {LmIcon} from "../../../src";
 import {XStack} from "tamagui";
 import {faSquareCheck} from "@fortawesome/free-regular-svg-icons/faSquareCheck";
 

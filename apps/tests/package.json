@@ -7,8 +7,8 @@
     "test": "jest /__tests__"
   },
   "dependencies": {
-    "app": "*",
-    "@my/ui": "*"
+    "@my/ui": "*",
+    "app": "*"
   },
   "devDependencies": {
     "@testing-library/jest-native": "^4.0.11",

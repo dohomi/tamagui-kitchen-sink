@@ -1,4 +1,4 @@
-import {LmAvatar} from "../../../src/components/content/LmAvatar";
+import {LmAvatar} from "../../../src";
 import {XStack} from "tamagui";
 
 export default {
@@ -26,9 +26,9 @@ Square.args = {
 
 export const Sizes = () => (
     <XStack space={'$2'}>
-        <LmAvatar size={'$2'} src={'https://placekitten.com/400/300'} />
-        <LmAvatar size={'$4'} src={'https://placekitten.com/400/300'} />
-        <LmAvatar size={'$6'} src={'https://placekitten.com/400/300'} />
-        <LmAvatar size={'$8'} src={'https://placekitten.com/400/300'} />
+        <LmAvatar size={'$2'} src={'https://placekitten.com/400/300'}/>
+        <LmAvatar size={'$4'} src={'https://placekitten.com/400/300'}/>
+        <LmAvatar size={'$6'} src={'https://placekitten.com/400/300'}/>
+        <LmAvatar size={'$8'} src={'https://placekitten.com/400/300'}/>
     </XStack>
 )
