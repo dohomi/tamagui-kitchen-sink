@@ -1,4 +1,4 @@
-import {Input, ListItem, Popover, ScrollView, Stack, styled, Text, ThemeableStack, XStack} from "tamagui";
+import {Input, ListItem, Popover, styled, Text, ThemeableStack, XStack} from "tamagui";
 import {useMultiSelectableList, useSelectableList} from "rooks";
 import {CheckSquare, Square} from "@tamagui/feather-icons";
 import {useEffect, useId, useState} from "react";
@@ -11,6 +11,7 @@ export type LmAutocompleteProps = FormContainerProps & {
     multiple?: boolean
     value?: null | Option | Option[]
     onChange?: (v: null | Option | Option[]) => void
+    placeholderSearch?: string
 }
 
 const InputTrigger = styled(ThemeableStack, {
@@ -33,6 +34,7 @@ export function LmAutocomplete({
                                    helperText,
                                    required,
                                    label,
+                                   placeholderSearch,
                                    value,
                                    onChange,
                                    error
@@ -114,8 +116,7 @@ export function LmAutocomplete({
 
                     <XStack space="$3" padding={'$4'}>
                         <Input size="$3"
-                               id="name"
-                               placeholder={'Search...'}
+                               placeholder={placeholderSearch}
                                width={'100%'}
                                onChangeText={text => {
                                    const filtered = options.filter(i => i.label.toLowerCase().indexOf(text.toLowerCase()) > -1)
@@ -123,31 +124,29 @@ export function LmAutocomplete({
                                }}
                         />
                     </XStack>
-                    <Stack maxHeight={'40%'}>
 
-                        <ScrollView flexGrow={0}>
+                    <Popover.ScrollView keyboardShouldPersistTaps={true} style={{maxHeight: 300, width: '100%'}}>
 
-                            {filteredOptions.map((item, index) => {
-                                let selected = multiple ?
-                                    matchSelection({index}) :
-                                    matchSelectionSingle({index})
-                                return (
-                                    <ListItem hoverTheme
-                                              key={item.value}
-                                              icon={selected ? <CheckSquare/> : <Square/>}
-                                              title={item.label}
-                                              onPress={() => {
-                                                  if (multiple) {
-                                                      toggleSelection({value: item})()
-                                                  } else {
-                                                      toggleSelectionSingle({value: item})()
-                                                  }
-                                              }}/>
-                                )
-                            })}
+                        {filteredOptions.map((item, index) => {
+                            let selected = multiple ?
+                                matchSelection({index}) :
+                                matchSelectionSingle({index})
+                            return (
+                                <ListItem hoverTheme
+                                          key={item.value}
+                                          icon={selected ? <CheckSquare/> : <Square/>}
+                                          title={item.label}
+                                          onPress={() => {
+                                              if (multiple) {
+                                                  toggleSelection({value: item})()
+                                              } else {
+                                                  toggleSelectionSingle({value: item})()
+                                              }
+                                          }}/>
+                            )
+                        })}
 
-                        </ScrollView>
-                    </Stack>
+                    </Popover.ScrollView>
 
                 </Popover.Content>
             </Popover>
