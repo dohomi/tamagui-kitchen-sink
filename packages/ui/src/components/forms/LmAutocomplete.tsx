@@ -31,11 +31,11 @@ export function LmAutocomplete({
     const [
         selection,
         {matchSelection, toggleSelection},
-    ] = useMultiSelectableList(options, multiple ? (value || []).map(i => options.findIndex(k => k.value === i.value)) : [], true)
+    ] = useMultiSelectableList(options, multiple && Array.isArray(value) ? (value || []).map(i => options.findIndex(k => k.value === i.value)) : [], true)
     const [selectionSingle, {
         matchSelection: matchSelectionSingle,
         toggleSelection: toggleSelectionSingle
-    }] = useSelectableList(options, !multiple ? options.findIndex(i => i.value === value?.value) : -1, true)
+    }] = useSelectableList(options, !multiple && !Array.isArray(value) ? options.findIndex(i => i.value === value?.value) : -1, true)
 
 
     let selectionMultiple = selection[1];
