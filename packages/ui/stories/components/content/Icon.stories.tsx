@@ -3,7 +3,7 @@ import {XStack} from "tamagui";
 import {faSquareCheck} from "@fortawesome/free-regular-svg-icons/faSquareCheck";
 
 export default {
-    title: 'ui/content/icon',
+    title: 'ui/Content/Icon',
     component: LmIcon
 }
 

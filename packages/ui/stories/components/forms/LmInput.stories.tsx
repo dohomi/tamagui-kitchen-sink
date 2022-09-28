@@ -3,7 +3,7 @@ import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {XStack, YStack} from "tamagui";
 
 export default {
-    title: 'ui/forms/input',
+    title: 'ui/Forms/Input',
     component: LmInput
 } as ComponentMeta<typeof LmInput>;
 

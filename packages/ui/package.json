@@ -32,6 +32,7 @@
     "release-major": "yarn build && npx release-it major"
   },
   "dependencies": {
+    "@datepicker-react/hooks": "^2.8.4",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-regular-svg-icons": "^6.2.0",

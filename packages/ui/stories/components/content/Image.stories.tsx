@@ -1,7 +1,7 @@
 import {LmImage} from "../../../src";
 
 export default {
-    title: 'ui/content/image',
+    title: 'ui/Content/Image',
     component: LmImage
 }
 

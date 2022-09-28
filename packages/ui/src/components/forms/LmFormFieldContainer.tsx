@@ -26,7 +26,8 @@ const StackContainer = styled(ThemeableStack, {
         labelInline: {
             true: {
                 flexDirection: 'row',
-                space: true
+                space: true,
+                alignItems: 'center'
             }
         }
     } as const

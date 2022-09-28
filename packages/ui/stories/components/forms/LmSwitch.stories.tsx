@@ -2,7 +2,7 @@ import {LmSwitch} from "../../../src";
 import {YStack} from "tamagui";
 
 export default {
-    title: 'ui/forms/switch',
+    title: 'ui/Forms/Switch',
     component: LmSwitch
 }
 

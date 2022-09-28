@@ -13,10 +13,10 @@ import React, {useState} from "react";
 import {fruitItemsFixtures} from "../../../fixtures/selectItems";
 
 export default {
-    title: 'ui/forms/form',
+    title: 'ui/Forms/ReactHookForm',
 }
 
-export const Basic = () => {
+export const ReactHookForm = () => {
     const [data, setData] = useState<any>({message: 'not submitted...'})
 
     return (
@@ -28,7 +28,7 @@ export const Basic = () => {
                 <LmInputRhf name={'description'} label={'Description'} placeholder={'A long description...'} labelInline
                             multiline/>
                 <LmSelectRhf name={'fruit'} options={fruitItemsFixtures} label={'Select fruit'} labelInline required/>
-                
+
                 <LmCheckboxRhf name={'check_this'} required label={'Do you agree to our T&C?'}/>
                 <LmSwitchRhf name={'switch'} labelRight={'Some switch'}/>
                 <LmSliderRhf name={'slider'}/>

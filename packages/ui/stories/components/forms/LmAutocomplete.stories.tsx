@@ -4,7 +4,7 @@ import {fruitItemsFixtures} from "../../../fixtures/selectItems";
 import {LmAutocompleteRhf} from "../../../src/components/forms/rhf/LmAutocompleteRhf";
 
 export default {
-    title: 'ui/forms/autocomplete',
+    title: 'ui/Forms/Autocomplete',
     component: LmAutocomplete
 } as ComponentMeta<typeof LmAutocomplete>;
 const options = fruitItemsFixtures

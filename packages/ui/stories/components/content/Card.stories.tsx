@@ -2,7 +2,7 @@ import {LmCard, LmCardProps} from "../../../src";
 import {ComponentMeta, ComponentStory} from '@storybook/react'
 
 export default {
-    title: 'ui/content/card',
+    title: 'ui/Content/Card',
     component: LmCard
 } as ComponentMeta<typeof LmCard>
 

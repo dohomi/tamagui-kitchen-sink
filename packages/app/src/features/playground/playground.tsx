@@ -3,8 +3,7 @@ import React from 'react'
 import {fruitItemsFixtures} from "@tamagui-extras/ui/fixtures/selectItems";
 
 export function PlaygroundScreen() {
-
-
+    
     const defaultSectionProps: {
         space?: SpaceTokens | null
         flexWrap: 'wrap' | 'nowrap' | 'wrap-reverse'

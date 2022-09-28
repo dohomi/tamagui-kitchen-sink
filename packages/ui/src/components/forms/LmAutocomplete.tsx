@@ -1,9 +1,11 @@
-import {Input, ListItem, Popover, styled, Text, ThemeableStack, XStack} from "tamagui";
+import {Input, ListItem, Popover, Text, XStack} from "tamagui";
 import {useMultiSelectableList, useSelectableList} from "rooks";
 import {CheckSquare, Square} from "@tamagui/feather-icons";
 import {useEffect, useId, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {FormContainerProps} from "./formContainerProps";
+import {LmPopover} from "../panels/LmPopover";
+import {LmInputTrigger} from "./LmInputTrigger";
 
 type Option = { label: string, value: string | number };
 export type LmAutocompleteProps = FormContainerProps & {
@@ -14,17 +16,6 @@ export type LmAutocompleteProps = FormContainerProps & {
     placeholderSearch?: string
 }
 
-const InputTrigger = styled(ThemeableStack, {
-    hoverTheme: true,
-    pressTheme: true,
-    focusTheme: true,
-    bordered: true,
-    minHeight: '$4',
-    borderRadius: '$4',
-    display: 'flex',
-    justifyContent: 'center',
-    padding: '$4'
-})
 
 export function LmAutocomplete({
                                    options,
@@ -78,78 +69,45 @@ export function LmAutocomplete({
                               label={label}
                               labelInline={labelInline}
                               helperText={helperText}>
-            <Popover sheetBreakpoint="sm" size="$5" allowFlip>
-                <Popover.Trigger asChild>
-                    <InputTrigger>
-                        <Text textOverflow="ellipsis"
-                              whiteSpace="nowrap"
-                              overflow="hidden">{inputValue ?? ''}</Text>
-                    </InputTrigger>
-                </Popover.Trigger>
+            <LmPopover trigger={(
+                <LmInputTrigger>
+                    <Text textOverflow="ellipsis"
+                          whiteSpace="nowrap"
+                          overflow="hidden">{inputValue ?? ''}</Text>
+                </LmInputTrigger>
+            )}>
+                <XStack space="$3" padding={'$4'}>
+                    <Input size="$3"
+                           placeholder={placeholderSearch}
+                           width={'100%'}
+                           onChangeText={text => {
+                               const filtered = options.filter(i => i.label.toLowerCase().indexOf(text.toLowerCase()) > -1)
+                               setOptions(filtered)
+                           }}
+                    />
+                </XStack>
 
-                <Popover.Sheet modal dismissOnSnapToBottom>
-                    <Popover.Sheet.Frame padding={0}>
-                        <Popover.SheetContents/>
-                    </Popover.Sheet.Frame>
-                    <Popover.Sheet.Overlay/>
-                </Popover.Sheet>
-
-                <Popover.Content
-                    borderWidth={1}
-                    padding={0}
-                    borderColor="$borderColor"
-                    enterStyle={{
-                        x: 0,
-                        y: -10,
-                        opacity: 0
-                    }}
-                    exitStyle={{
-                        x: 0, y: -10, opacity: 0
-                    }}
-                    x={0}
-                    y={0}
-                    opacity={1}
-                    animation="bouncy"
-                    elevate
-                >
-                    <Popover.Arrow borderWidth={1} borderColor="$borderColor"/>
-
-                    <XStack space="$3" padding={'$4'}>
-                        <Input size="$3"
-                               placeholder={placeholderSearch}
-                               width={'100%'}
-                               onChangeText={text => {
-                                   const filtered = options.filter(i => i.label.toLowerCase().indexOf(text.toLowerCase()) > -1)
-                                   setOptions(filtered)
-                               }}
-                        />
-                    </XStack>
-
-                    <Popover.ScrollView keyboardShouldPersistTaps={true} style={{maxHeight: 300, width: '100%'}}>
-
-                        {filteredOptions.map((item, index) => {
-                            let selected = multiple ?
-                                matchSelection({index}) :
-                                matchSelectionSingle({index})
-                            return (
-                                <ListItem hoverTheme
-                                          key={item.value}
-                                          icon={selected ? <CheckSquare/> : <Square/>}
-                                          title={item.label}
-                                          onPress={() => {
-                                              if (multiple) {
-                                                  toggleSelection({value: item})()
-                                              } else {
-                                                  toggleSelectionSingle({value: item})()
-                                              }
-                                          }}/>
-                            )
-                        })}
-
-                    </Popover.ScrollView>
-
-                </Popover.Content>
-            </Popover>
+                <Popover.ScrollView keyboardShouldPersistTaps={true} style={{maxHeight: 300, width: '100%'}}>
+                    {filteredOptions.map((item, index) => {
+                        let selected = multiple ?
+                            matchSelection({index}) :
+                            matchSelectionSingle({index})
+                        return (
+                            <ListItem hoverTheme
+                                      key={item.value}
+                                      icon={selected ? <CheckSquare/> : <Square/>}
+                                      title={item.label}
+                                      onPress={() => {
+                                          if (multiple) {
+                                              toggleSelection({value: item})()
+                                          } else {
+                                              toggleSelectionSingle({value: item})()
+                                          }
+                                      }}/>
+                        )
+                    })}
+                </Popover.ScrollView>
+            </LmPopover>
         </LmFormFieldContainer>
     )
 }

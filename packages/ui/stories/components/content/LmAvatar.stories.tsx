@@ -2,7 +2,7 @@ import {LmAvatar} from "../../../src";
 import {XStack} from "tamagui";
 
 export default {
-    title: 'ui/content/avatar',
+    title: 'ui/Content/Avatar',
     component: LmAvatar
 }
 

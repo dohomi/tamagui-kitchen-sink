@@ -3,7 +3,7 @@ import {LmSlider} from "../../../src";
 import {YStack} from "tamagui";
 
 export default {
-    title: 'ui/forms/slider',
+    title: 'ui/Forms/Slider',
     component: LmSlider
 } as ComponentMeta<typeof LmSlider>;
 

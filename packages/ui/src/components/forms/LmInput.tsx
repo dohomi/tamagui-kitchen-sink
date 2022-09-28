@@ -14,11 +14,11 @@ export function LmInput({
                             required,
                             error,
                             helperText,
-                            multiline,
                             label,
                             labelProps,
-                            containerProps,
                             labelInline,
+                            multiline,
+                            containerProps,
                             isPassword,
                             fullWidth,
                             ...rest

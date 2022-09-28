@@ -4,7 +4,7 @@ import {XStack, YStack} from "tamagui";
 import {faSafari} from "@fortawesome/free-brands-svg-icons";
 
 export default {
-    title: 'ui/forms/button',
+    title: 'ui/Forms/Button',
     component: LmButton
 } as ComponentMeta<typeof LmButton>;
 

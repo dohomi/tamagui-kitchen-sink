@@ -2,7 +2,7 @@ import {LmCheckbox} from "../../../src";
 import {YStack} from "tamagui";
 
 export default {
-    title: 'ui/forms/Checkbox',
+    title: 'ui/Forms/Checkbox',
     component: LmCheckbox
 }
 
@@ -16,7 +16,7 @@ Basic.args = {
 export const Blue = Template.bind({})
 Blue.args = {
     label: 'Orange theme',
-    theme: 'orange_alt2'
+    theme: 'blue'
 }
 
 export const Sizes = () => (

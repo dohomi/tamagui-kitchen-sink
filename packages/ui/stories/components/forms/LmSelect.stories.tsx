@@ -4,7 +4,7 @@ import {LmSelect} from "../../../src";
 import {fruitItemsFixtures} from "../../../fixtures/selectItems";
 
 export default {
-    title: 'ui/forms/select',
+    title: 'ui/Forms/Select',
     component: LmSelect
 } as ComponentMeta<typeof LmSelect>;
 
