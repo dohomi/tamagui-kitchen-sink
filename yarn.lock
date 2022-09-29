@@ -4868,7 +4868,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui-extras/mdi-icons@*, @tamagui-extras/mdi-icons@workspace:packages/mdi-icons":
+"@tamagui-extras/mdi-icons@^0.5.0, @tamagui-extras/mdi-icons@workspace:packages/mdi-icons":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/mdi-icons@workspace:packages/mdi-icons"
   dependencies:
@@ -4900,7 +4900,7 @@ __metadata:
     "@fortawesome/react-native-fontawesome": ^0.3.0
     "@my/config": "*"
     "@storybook/react": ^6.5.12
-    "@tamagui-extras/mdi-icons": "*"
+    "@tamagui-extras/mdi-icons": ^0.5.0
     "@tamagui/build": 1.0.1-beta.178
     react-hook-form: ^7.34.2
     react-native-svg: ^12.4.4
