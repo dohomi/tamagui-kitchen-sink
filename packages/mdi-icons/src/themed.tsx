@@ -1,12 +1,14 @@
-import {getVariable, useTheme} from '@tamagui/core'
+import {getSize, getVariable, useTheme} from '@tamagui/core'
 import React from 'react'
 
 export function themed<A extends React.FC>(Component: A) {
     const wrapped = (props: any) => {
         const theme = useTheme()
+        const size = typeof props.size === 'string' ? getSize(props.size) : (props.size || 24)
         return (
             <Component
                 {...props}
+                size={size?.val || size}
                 color={getVariable(
                     theme[props.color] || props.color || (!props.disableTheme ? theme.color : null) || '#000'
                 )}

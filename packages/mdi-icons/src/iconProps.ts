@@ -1,6 +1,7 @@
 import {SvgProps} from 'react-native-svg'
+import {SizeTokens} from "@tamagui/core";
 
 export type IconProps = SvgProps & {
-    size?: number
+    size?: SizeTokens | number
     color?: string
 }

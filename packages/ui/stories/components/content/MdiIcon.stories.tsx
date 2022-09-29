@@ -1,4 +1,4 @@
-import {Alert} from "@tamagui-extras/mdi-icons";
+import {MdiAlert} from "@tamagui-extras/mdi-icons/src";
 import {YStack} from "tamagui";
 
 export default {
@@ -6,16 +6,17 @@ export default {
 }
 export const Basic = () => (
     <YStack space>
-        <Alert/>
-        <Alert color={'$blue10'}/>
-        <Alert color={'$red10'}/>
+        <MdiAlert size={'$2'}/>
+        <MdiAlert size={'$2'} color={'$blue10'}/>
+        <MdiAlert size={'$2'} color={'$red10'}/>
     </YStack>
 )
 
 export const Sizes = () => (
     <YStack space>
-        <Alert/>
-        <Alert color={'$blue10'} size={60}/>
-        <Alert color={'$red10'} size={80}/>
+        <MdiAlert size={'$2'}/>
+        <MdiAlert color={'$blue10'} size={60}/>
+        <MdiAlert color={'$red10'} size={80}/>
+        <MdiAlert size={'$10'}/>
     </YStack>
 )

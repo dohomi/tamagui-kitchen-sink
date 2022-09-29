@@ -26,9 +26,9 @@ meta.forEach((i) => {
       } from 'react-native-svg'
       import { themed } from '../themed'
       const Icon = (props) => {
-        const { color = 'black', size = 24, ...otherProps } = props
+        const { color = 'black', size, ...otherProps } = props
         return (
-          <Svg id="${id}" viewBox="0 0 24 24" fill={color} {...otherProps}><Path d="${i.path}"/></Svg>
+          <Svg id="${id}" viewBox="0 0 24 24" width={size} height={size} fill={color} {...otherProps}><Path d="${i.path}"/></Svg>
         )
       }
       Icon.displayName = '${cname}'
