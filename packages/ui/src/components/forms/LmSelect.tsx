@@ -3,11 +3,11 @@ import {colormap, ThemeColors} from "../../themeMappings";
 import {Check, ChevronDown, ChevronUp} from '@tamagui/feather-icons'
 import {useId} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
-import {LmFormContainerProps} from "./lmFormContainerProps";
+import {LmFormContainerBaseTypes} from "./formContainerTypes";
 
 type GetAltThemeNames<S> = (S extends `${string}_${infer Alt}` ? GetAltThemeNames<Alt> : S) | S
 
-export type LmSelectProps = SelectProps & LmFormContainerProps & {
+export type LmSelectProps = SelectProps & LmFormContainerBaseTypes & {
     value?: string,
     options: { label: string, value: string | number }[]
     colorVariant?: ThemeColors

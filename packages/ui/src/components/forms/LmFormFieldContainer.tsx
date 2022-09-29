@@ -8,9 +8,9 @@ import {
     ThemeableStackProps,
     YStack
 } from "tamagui";
-import {LmFormContainerProps} from "./lmFormContainerProps";
+import {LmFormContainerBaseTypes} from "./formContainerTypes";
 
-type LmFormContainerProps = ThemeableStackProps & LmFormContainerProps & {
+type LmFormContainerProps = ThemeableStackProps & LmFormContainerBaseTypes & {
     id: string
     size?: SizeTokens
     fullWidth?: boolean

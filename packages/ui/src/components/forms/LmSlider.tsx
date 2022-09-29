@@ -1,9 +1,9 @@
 import {ColorTokens, Slider, SliderProps, SliderThumbProps, Text, XStack} from "tamagui";
 import {useId, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
-import {LmFormContainerProps} from "./lmFormContainerProps";
+import {LmFormContainerBaseTypes} from "./formContainerTypes";
 
-export type LmSliderProps = SliderProps & LmFormContainerProps & {
+export type LmSliderProps = SliderProps & LmFormContainerBaseTypes & {
     defaultValue?: number[]
     color?: ColorTokens | string
     colorActiveOnly?: boolean

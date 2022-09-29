@@ -1,9 +1,9 @@
 import {Input, InputProps, TextArea, ThemeableStackProps} from "tamagui";
 import {useId, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
-import {LmFormContainerProps} from "./lmFormContainerProps";
+import {LmFormContainerBaseTypes} from "./formContainerTypes";
 
-export type LmInputProps = InputProps & LmFormContainerProps & {
+export type LmInputProps = InputProps & LmFormContainerBaseTypes & {
     containerProps?: ThemeableStackProps
     multiline?: boolean
     isPassword?: boolean

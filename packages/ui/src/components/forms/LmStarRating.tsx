@@ -2,7 +2,7 @@ import {Button, ButtonProps, ColorTokens, SizeTokens, XStack} from "tamagui";
 import {useId, useState} from "react";
 import {Star, StarOutline} from "@tamagui-extras/mdi-icons"
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
-import {LmFormContainerProps} from "./lmFormContainerProps";
+import {LmFormContainerBaseTypes} from "./formContainerTypes";
 
 type StarProps = Omit<ButtonProps, 'color' | 'size'> & {
     filled: boolean
@@ -23,7 +23,7 @@ function StarIcon({filled, color, size = '$2', ...props}: StarProps) {
     )
 }
 
-export type LmStarRatingProps = LmFormContainerProps & {
+export type LmStarRatingProps = LmFormContainerBaseTypes & {
     count?: number
     onChange?: (rating: number | null) => void
     value?: number | null

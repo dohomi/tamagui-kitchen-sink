@@ -1,7 +1,7 @@
 const fs = require('fs')
 const uppercamelcase = require('uppercamelcase')
 const path = require('path')
-
+const prettier = require('prettier')
 const util = require('@mdi/util')
 const meta = util.getMeta(true);
 
@@ -10,7 +10,7 @@ const rootDir = path.join(__dirname, '..')
 fs.writeFileSync(path.join(rootDir, 'src', 'index.ts'), '', 'utf-8')
 
 meta.forEach((i) => {
-    const id = i.name
+    const id = `mdi-${i.name}`
 
     const fileName = id + '.tsx'
     const location = path.join(rootDir, 'src/icons', fileName)
@@ -18,8 +18,7 @@ meta.forEach((i) => {
     const cname = uppercamelcase(id)
 
     const element = `
-      import React, { memo } from 'react'
-      import PropTypes from 'prop-types'
+      import { memo } from 'react'
       import { IconProps } from '../IconProps'
       import {
         Svg,
@@ -29,7 +28,7 @@ meta.forEach((i) => {
       const Icon = (props) => {
         const { color = 'black', size = 24, ...otherProps } = props
         return (
-          <Svg id="${id}" viewBox="0 0 24 24" fill={color} width={size} height={size} {...otherProps}><Path d="${i.path}"/></Svg>
+          <Svg id="${id}" viewBox="0 0 24 24" fill={color} {...otherProps}><Path d="${i.path}"/></Svg>
         )
       }
       Icon.displayName = '${cname}'
@@ -37,7 +36,7 @@ meta.forEach((i) => {
     `
 
     const component = element
-    // prettier.format(element, {
+    //     prettier.format(element, {
     //     singleQuote: true,
     //     trailingComma: 'es5',
     //     arrowParens: 'always',

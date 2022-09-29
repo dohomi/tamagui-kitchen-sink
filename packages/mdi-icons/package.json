@@ -1,6 +1,6 @@
 {
   "name": "@tamagui-extras/mdi-icons",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "sideEffects": false,
   "description": "React Native components for MDI Icons - native and web",
   "source": "src/index.ts",
@@ -8,12 +8,11 @@
   "main": "dist/cjs",
   "module": "dist/esm",
   "files": [
-    "src",
     "types",
     "dist"
   ],
   "scripts": {
-    "build": "tamagui-build",
+    "build": "rm -rf dist && rm -rf types && tamagui-build",
     "watch": "tamagui-build --watch",
     "clean": "tamagui-build clean",
     "clean:build": "tamagui-build clean:build",
@@ -28,6 +27,7 @@
     "react-native-svg": "^12.4.3"
   },
   "devDependencies": {
+    "@mdi/svg": "^7.0.96",
     "@mdi/util": "^0.3.2",
     "@tamagui/build": "^1.0.1-beta.180",
     "camelcase": "^6.0.0",

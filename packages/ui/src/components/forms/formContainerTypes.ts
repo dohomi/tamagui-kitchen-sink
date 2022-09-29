@@ -1,6 +1,6 @@
 import {LabelProps} from "tamagui";
 
-export type LmFormContainerProps = {
+export type LmFormContainerBaseTypes = {
     label?: string
     labelProps?: Omit<LabelProps, 'htmlFor'>
     labelInline?: boolean
