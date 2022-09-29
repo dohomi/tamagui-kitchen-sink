@@ -1,40 +1,79 @@
-import {Button, ButtonProps, XStack} from "tamagui";
-import {useState} from "react";
-import {Star} from "@tamagui-extras/mdi-icons"
+import {Button, ButtonProps, ColorTokens, SizeTokens, XStack} from "tamagui";
+import {useId, useState} from "react";
+import {Star, StarOutline} from "@tamagui-extras/mdi-icons"
+import {LmFormFieldContainer} from "./LmFormFieldContainer";
+import {LmFormContainerProps} from "./lmFormContainerProps";
 
-type StarProps = ButtonProps & {
+type StarProps = Omit<ButtonProps, 'color' | 'size'> & {
     filled: boolean
+    color?: ColorTokens
+    size?: SizeTokens
 }
 
-function StarIcon({filled, ...props}: StarProps) {
-    console.log(filled)
+function StarIcon({filled, color, size = '$2', ...props}: StarProps) {
     return (
         <Button
             {...props}
+            size={size}
             chromeless
             circular
-            icon={<Star color={'red'}/>}
-            color={filled ? '' : ''}
+            icon={filled ? <Star color={color} size={size as number}/> :
+                <StarOutline color={color} size={size as number}/>}
         />
     )
 }
 
-type LmStarRatingProps = {
+export type LmStarRatingProps = LmFormContainerProps & {
     count?: number
+    onChange?: (rating: number | null) => void
+    value?: number | null
+    color?: ColorTokens
+    size?: SizeTokens
+    disabled?: boolean
 }
 
-export function LmStarRating({count = 5}: LmStarRatingProps) {
-    const [rating, setRating] = useState<number>(0);
+export function LmStarRating({
+                                 count = 5,
+                                 onChange,
+                                 value = null,
+                                 disabled,
+                                 required, error, helperText, label, labelInline, labelProps,
+                                 ...iconProps
+                             }: LmStarRatingProps) {
+    const id = useId()
+    const [rating, setRating] = useState<number | null>(value);
     const arr = Array.from(Array(count).keys())
-    console.log(rating, arr)
     return (
-        <XStack>
-            {arr.map(value => (
-                <StarIcon key={value + 1} filled={value + 1 <= rating}
-                          onPress={() => {
-                              setRating(value + 1)
-                          }}/>
-            ))}
-        </XStack>
+        <LmFormFieldContainer id={id}
+                              required={required}
+                              error={error}
+                              helperText={helperText}
+                              label={label}
+                              labelInline={labelInline}
+                              labelProps={labelProps}
+        >
+
+            <XStack>
+                {arr.map(value => {
+                    const currentRating = value + 1;
+                    return (
+                        <StarIcon key={currentRating}
+                                  {...iconProps}
+                                  filled={currentRating <= (rating || 0)}
+                                  onPress={() => {
+                                      if (disabled) {
+                                          return
+                                      }
+                                      let newRating = rating === currentRating ? null : currentRating;
+                                      setRating(newRating)
+                                      if (typeof onChange === 'function') {
+                                          onChange(newRating)
+                                      }
+                                  }}
+                        />
+                    )
+                })}
+            </XStack>
+        </LmFormFieldContainer>
     )
 }

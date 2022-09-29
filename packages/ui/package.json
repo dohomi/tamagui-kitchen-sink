@@ -39,7 +39,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@my/config": "*",
-    "@tamagui-extras/mdi-icons": "*",
+    "@tamagui-extras/mdi-icons": "^0.3.0",
     "react-hook-form": "^7.34.2",
     "react-native-svg": "^12.4.4",
     "rooks": "^7.4.0",

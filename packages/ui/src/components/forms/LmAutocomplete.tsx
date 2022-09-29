@@ -3,12 +3,12 @@ import {useMultiSelectableList, useSelectableList} from "rooks";
 import {CheckSquare, Square} from "@tamagui/feather-icons";
 import {useEffect, useId, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
-import {FormContainerProps} from "./formContainerProps";
+import {LmFormContainerProps} from "./lmFormContainerProps";
 import {LmPopover} from "../panels/LmPopover";
 import {LmInputTrigger} from "./LmInputTrigger";
 
 type Option = { label: string, value: string | number };
-export type LmAutocompleteProps = FormContainerProps & {
+export type LmAutocompleteProps = LmFormContainerProps & {
     options: Option[]
     multiple?: boolean
     value?: null | Option | Option[]

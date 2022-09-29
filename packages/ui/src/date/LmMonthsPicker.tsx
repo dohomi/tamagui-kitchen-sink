@@ -5,9 +5,9 @@ import {getMonthOptions} from "./dateHelper";
 import {useId, useState} from "react";
 import {usePopoverState} from "../hooks";
 import {LmFormFieldContainer} from "../components/forms";
-import {FormContainerProps} from "../components/forms/formContainerProps";
+import {LmFormContainerProps} from "../components/forms/lmFormContainerProps";
 
-export type LmMonthsPickerProps = FormContainerProps & {
+export type LmMonthsPickerProps = LmFormContainerProps & {
     placeholder?: string
     size?: SizeTokens
 }
