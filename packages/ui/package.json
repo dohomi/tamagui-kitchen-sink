@@ -40,11 +40,11 @@
     "react-native-svg": "^12.4.4",
     "rooks": "^7.4.0",
     "solito": "^1.0.12",
-    "tamagui": "1.0.1-beta.178"
+    "tamagui": "1.0.1-beta.181"
   },
   "devDependencies": {
     "@storybook/react": "^6.5.12",
-    "@tamagui/build": "1.0.1-beta.178"
+    "@tamagui/build": "1.0.1-beta.181"
   },
   "publishConfig": {
     "access": "public"
