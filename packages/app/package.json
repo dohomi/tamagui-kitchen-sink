@@ -7,9 +7,6 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.2.0",
-    "@fortawesome/free-regular-svg-icons": "^6.2.0",
-    "@mdi/js": "^7.0.96",
     "@my/config": "*",
     "@react-navigation/bottom-tabs": "^6.3.3",
     "@react-navigation/native": "^6.0.11",
