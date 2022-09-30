@@ -22,7 +22,7 @@ export function LmMdiIcon({size, color = '$color', name}: LmMdiIcon) {
              height={sized}
              viewBox={'0 0 24 24'}
              fill={calculatedColor}>
-            <Path d={require('@mdi/js')[name]}/>
+            <Path d={require('@mdi/js')[name].default}/>
         </Svg>
     )
 }

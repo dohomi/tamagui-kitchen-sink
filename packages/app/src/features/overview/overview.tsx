@@ -21,11 +21,11 @@ import {
 import React from 'react'
 import {ScrollView} from "react-native";
 import {Paragraph, useTheme} from "tamagui";
-import {fruitItemsFixtures} from "@tamagui-extras/ui/fixtures/selectItems";
 import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";
 import {Sun} from "@tamagui/feather-icons";
 import {useTranslation} from 'react-i18next';
 import {changeLanguage} from 'app/src/i18n/i18n';
+import {fruitItemsFixtures} from "app/src/lib/fixtures/selectItems";
 
 export function OverviewScreen() {
     const {t} = useTranslation()
