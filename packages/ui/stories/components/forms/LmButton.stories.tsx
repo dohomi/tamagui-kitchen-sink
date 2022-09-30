@@ -1,7 +1,6 @@
-import {LmButton, LmIcon} from "../../../src";
+import {LmButton, LmMdiIcon} from "../../../src";
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {XStack, YStack} from "tamagui";
-import {faSafari} from "@fortawesome/free-brands-svg-icons";
 
 export default {
     title: 'ui/Forms/Button',
@@ -56,17 +55,17 @@ export const Loading = () => (
 export const Icons = () => (
     <YStack space={'$4'}>
         <XStack space={'$4'}>
-            <LmButton size={'$2'} icon={<LmIcon iconName={faSafari}/>}>size 2</LmButton>
-            <LmButton size={'$4'} icon={<LmIcon iconName={faSafari}/>}>size 4</LmButton>
-            <LmButton size={'$6'} icon={<LmIcon iconName={faSafari}/>}>size 6</LmButton>
-            <LmButton size={'$8'} icon={<LmIcon iconName={faSafari}/>}>size 8</LmButton>
+            <LmButton size={'$2'} icon={<LmMdiIcon name="mdiStar"/>}>size 2</LmButton>
+            <LmButton size={'$4'} icon={<LmMdiIcon name="mdiStar"/>}>size 4</LmButton>
+            <LmButton size={'$6'} icon={<LmMdiIcon name="mdiStar"/>}>size 6</LmButton>
+            <LmButton size={'$8'} icon={<LmMdiIcon name="mdiStar"/>}>size 8</LmButton>
         </XStack>
         <XStack space={'$4'}>
-            <LmButton size={'$2'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'primary'}>size 2</LmButton>
-            <LmButton size={'$4'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'secondary'}>size 4</LmButton>
-            <LmButton size={'$6'} iconAfter={<LmIcon iconName={faSafari}/>} theme={'pink_alt1'}>size
+            <LmButton size={'$2'} iconAfter={<LmMdiIcon name="mdiStar"/>} colorVariant={'primary'}>size 2</LmButton>
+            <LmButton size={'$4'} iconAfter={<LmMdiIcon name="mdiStar"/>} colorVariant={'secondary'}>size 4</LmButton>
+            <LmButton size={'$6'} iconAfter={<LmMdiIcon name="mdiStar"/>} theme={'pink_alt1'}>size
                 6</LmButton>
-            <LmButton size={'$8'} iconAfter={<LmIcon iconName={faSafari}/>}>size 8</LmButton>
+            <LmButton size={'$8'} iconAfter={<LmMdiIcon name="mdiStar"/>}>size 8</LmButton>
         </XStack>
     </YStack>
 )
@@ -75,19 +74,19 @@ export const IconButton = () => (
     <YStack space={'$4'}>
         <h3>Standard Icon Buttons:</h3>
         <XStack space={'$4'}>
-            <LmButton size={'$2'} icon={<LmIcon iconName={faSafari} size={'$1'}/>}/>
-            <LmButton size={'$4'} icon={<LmIcon iconName={faSafari} size={'$1.5'}/>}/>
-            <LmButton size={'$6'} icon={<LmIcon iconName={faSafari} size={'$3'}/>}/>
-            <LmButton size={'$8'} icon={<LmIcon iconName={faSafari} size={'$5'}/>}/>
+            <LmButton size={'$2'} icon={<LmMdiIcon name="mdiStar" size={'$1'}/>}/>
+            <LmButton size={'$4'} icon={<LmMdiIcon name="mdiStar" size={'$1.5'}/>}/>
+            <LmButton size={'$6'} icon={<LmMdiIcon name="mdiStar" size={'$3'}/>}/>
+            <LmButton size={'$8'} icon={<LmMdiIcon name="mdiStar" size={'$5'}/>}/>
         </XStack>
         <h3>Circle Icon Buttons:</h3>
         <XStack space={'$4'}>
-            <LmButton size={'$2'} icon={<LmIcon iconName={faSafari} size={'$1'}/>} colorVariant={'primary'} circular/>
-            <LmButton size={'$4'} icon={<LmIcon iconName={faSafari} size={'$1.5'}/>} colorVariant={'secondary'}
+            <LmButton size={'$2'} icon={<LmMdiIcon name="mdiStar" size={'$1'}/>} colorVariant={'primary'} circular/>
+            <LmButton size={'$4'} icon={<LmMdiIcon name="mdiStar" size={'$1.5'}/>} colorVariant={'secondary'}
                       circular/>
-            <LmButton size={'$6'} icon={<LmIcon iconName={faSafari} size={'$3'}/>} theme={'pink_alt1'}
+            <LmButton size={'$6'} icon={<LmMdiIcon name="mdiStar" size={'$3'}/>} theme={'pink_alt1'}
                       circular/>
-            <LmButton size={'$8'} icon={<LmIcon iconName={faSafari} size={'$4.5'}/>} circular/>
+            <LmButton size={'$8'} icon={<LmMdiIcon name="mdiStar" size={'$4.5'}/>} circular/>
         </XStack>
     </YStack>
 )

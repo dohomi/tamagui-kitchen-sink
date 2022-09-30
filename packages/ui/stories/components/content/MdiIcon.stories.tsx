@@ -1,22 +1,32 @@
-import {MdiAlert} from "@tamagui-extras/mdi-icons/src";
-import {YStack} from "tamagui";
+import {XStack, YStack} from "tamagui";
+import {LmMdiIcon} from "../../../src";
 
 export default {
-    title: 'ui/Content/MdiIcon',
+    title: 'ui/Content/Material Design Icons',
+    component: LmMdiIcon
 }
-export const Basic = () => (
-    <YStack space>
-        <MdiAlert size={'$2'}/>
-        <MdiAlert size={'$2'} color={'$blue10'}/>
-        <MdiAlert size={'$2'} color={'$red10'}/>
-    </YStack>
-)
+
+const Template = (args) => <LmMdiIcon {...args}/>
+
+export const Basic = Template.bind({})
+Basic.args = {
+    name: 'mdiAbTesting'
+}
 
 export const Sizes = () => (
     <YStack space>
-        <MdiAlert size={'$2'}/>
-        <MdiAlert color={'$blue10'} size={60}/>
-        <MdiAlert color={'$red10'} size={80}/>
-        <MdiAlert size={'$10'}/>
+        <LmMdiIcon name={'mdiAbTesting'}/>
+        <LmMdiIcon name={'mdiAbTesting'} size={'$6'}/>
+        <LmMdiIcon name={'mdiAbTesting'} size={'$8'}/>
+        <LmMdiIcon name={'mdiAbTesting'} size={'$10'}/>
     </YStack>
+)
+
+export const Colors = () => (
+    <XStack space>
+        <LmMdiIcon name={'mdiAbTesting'} color={'$red10'}/>
+        <LmMdiIcon name={'mdiAbTesting'} color={'$green10'}/>
+        <LmMdiIcon name={'mdiAbTesting'} color={'$blue10'}/>
+        <LmMdiIcon name={'mdiAbTesting'} color={'$yellow10'}/>
+    </XStack>
 )

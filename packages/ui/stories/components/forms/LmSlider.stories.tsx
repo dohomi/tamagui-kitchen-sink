@@ -11,6 +11,11 @@ const Template: ComponentStory<typeof LmSlider> = (args) => <LmSlider {...args} 
 export const Basic = Template.bind({})
 Basic.args = {}
 
+export const ShowValue = Template.bind({})
+ShowValue.args = {
+    showValue: true
+}
+
 export const Colors = () => (
     <YStack space={'$4'}>
         <LmSlider color={'$blue10'}/>

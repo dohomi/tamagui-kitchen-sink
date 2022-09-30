@@ -7,8 +7,8 @@ import {
     H6,
     LmAvatar,
     LmButton,
-    LmIcon,
     LmInput,
+    LmMdiIcon,
     LmSelect,
     Separator,
     SizableText,
@@ -19,7 +19,6 @@ import {
     YStack
 } from '@tamagui-extras/ui'
 import React from 'react'
-import {faSafari} from "@fortawesome/free-brands-svg-icons/faSafari";
 import {ScrollView} from "react-native";
 import {Paragraph, useTheme} from "tamagui";
 import {fruitItemsFixtures} from "@tamagui-extras/ui/fixtures/selectItems";
@@ -120,13 +119,13 @@ export function OverviewScreen() {
                 <H3>Buttons Icons</H3>
                 <YStack space={'$4'}>
                     <XStack {...defaultSectionProps}>
-                        <LmButton size={'$2'} icon={<LmIcon iconName={faSafari}/>}>size 2</LmButton>
-                        <LmButton size={'$4'} icon={<LmIcon iconName={faSafari}/>}>size 4</LmButton>
+                        <LmButton size={'$2'} icon={<LmMdiIcon name={'mdiStar'}/>}>size 2</LmButton>
+                        <LmButton size={'$4'} icon={<LmMdiIcon name={'mdiStar'}/>}>size 4</LmButton>
                     </XStack>
                     <XStack {...defaultSectionProps}>
-                        <LmButton size={'$2'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'primary'}>size
+                        <LmButton size={'$2'} iconAfter={<LmMdiIcon name={'mdiStar'}/>} colorVariant={'primary'}>size
                             2</LmButton>
-                        <LmButton size={'$4'} iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'secondary'}>size
+                        <LmButton size={'$4'} iconAfter={<LmMdiIcon name={'mdiStar'}/>} colorVariant={'secondary'}>size
                             4</LmButton>
 
                     </XStack>
@@ -135,13 +134,13 @@ export function OverviewScreen() {
                 <H3>Buttons Groups</H3>
                 <YStack {...defaultSectionProps}>
                     <XGroup>
-                        <LmButton icon={<LmIcon iconName={faSafari}/>}>size 2</LmButton>
-                        <LmButton icon={<LmIcon iconName={faSafari}/>}>size 4</LmButton>
+                        <LmButton icon={<LmMdiIcon name={'mdiStar'}/>}>size 2</LmButton>
+                        <LmButton icon={<LmMdiIcon name={'mdiStar'}/>}>size 4</LmButton>
                     </XGroup>
                     <YGroup>
-                        <LmButton iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'primary'}>size
+                        <LmButton iconAfter={<LmMdiIcon name={'mdiStar'}/>} colorVariant={'primary'}>size
                             2</LmButton>
-                        <LmButton iconAfter={<LmIcon iconName={faSafari}/>} colorVariant={'secondary'}>size
+                        <LmButton iconAfter={<LmMdiIcon name={'mdiStar'}/>} colorVariant={'secondary'}>size
                             4</LmButton>
 
                     </YGroup>

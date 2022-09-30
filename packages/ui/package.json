@@ -33,11 +33,7 @@
   },
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",
-    "@fortawesome/fontawesome-svg-core": "^6.2.0",
-    "@fortawesome/free-brands-svg-icons": "^6.2.0",
-    "@fortawesome/free-regular-svg-icons": "^6.2.0",
-    "@fortawesome/free-solid-svg-icons": "^6.2.0",
-    "@fortawesome/react-native-fontawesome": "^0.3.0",
+    "@mdi/js": "^7.0.96",
     "@my/config": "*",
     "@tamagui-extras/mdi-icons": "^0.5.0",
     "react-hook-form": "^7.34.2",

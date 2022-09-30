@@ -8,6 +8,7 @@ export type LmSliderProps = SliderProps & LmFormContainerBaseTypes & {
     color?: ColorTokens | string
     colorActiveOnly?: boolean
     thumbProps?: SliderThumbProps
+    showValue?: boolean
 }
 
 export function LmSlider({
@@ -21,6 +22,7 @@ export function LmSlider({
                              helperText,
                              labelInline,
                              colorActiveOnly,
+                             showValue,
                              ...sliderProps
                          }: LmSliderProps) {
     const id = useId()
@@ -50,7 +52,9 @@ export function LmSlider({
                     </Slider.Track>
                     <Slider.Thumb circular size={'$2'} index={0} backgroundColor={color} {...thumbProps}/>
                 </Slider>
-                <Text>{value[0]}</Text>
+                {showValue && (
+                    <Text>{value[0]}</Text>
+                )}
             </XStack>
         </LmFormFieldContainer>
     )

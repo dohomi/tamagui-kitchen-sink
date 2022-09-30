@@ -1,8 +1,8 @@
 import {Button, ButtonProps, ColorTokens, SizeTokens, XStack} from "tamagui";
 import {useId, useState} from "react";
-import {MdiStar, MdiStarOutline} from "@tamagui-extras/mdi-icons"
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {LmFormContainerBaseTypes} from "./formContainerTypes";
+import {LmMdiIcon} from "../content/LmMdiIcon";
 
 type StarProps = Omit<ButtonProps, 'color' | 'size'> & {
     filled: boolean
@@ -17,8 +17,8 @@ function StarIcon({filled, color, size = '$2', ...props}: StarProps) {
             size={size}
             chromeless
             circular
-            icon={filled ? <MdiStar color={color} size={size as number}/> :
-                <MdiStarOutline color={color} size={size as number}/>}
+            icon={filled ? <LmMdiIcon name={'mdiStar'} color={color} size={size as number}/> :
+                <LmMdiIcon name={'mdiStarOutline'} color={color} size={size as number}/>}
         />
     )
 }
