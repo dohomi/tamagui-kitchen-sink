@@ -19,7 +19,6 @@ const transform = withPlugins([
         'expo-linking',
         'expo-constants',
         'expo-modules-core',
-        '@fortawesome/react-native-fontawesome',
         'react-i18next',
         '@my/config',
         '@tamagui-extras/ui'
