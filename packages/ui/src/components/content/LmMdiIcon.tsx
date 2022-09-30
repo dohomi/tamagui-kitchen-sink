@@ -1,6 +1,6 @@
 import {ColorTokens, SizeTokens, useTheme} from "tamagui";
 import {getSize, getVariable} from "@tamagui/core";
-import {Svg, Path} from "react-native-svg";
+import {Path, Svg} from "react-native-svg";
 import type * as MDI from '@mdi/js'
 
 export type LmMdiIcon = {
@@ -22,7 +22,7 @@ export function LmMdiIcon({size, color = '$color', name}: LmMdiIcon) {
              height={sized}
              viewBox={'0 0 24 24'}
              fill={calculatedColor}>
-            <Path d={require('@mdi/js')[name].default}/>
+            <Path d={require('@mdi/js')[name]}/>
         </Svg>
     )
 }

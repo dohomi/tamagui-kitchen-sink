@@ -45,7 +45,7 @@ export function LmFormFieldContainer({
                                          ...rest
                                      }: LmFormContainerProps) {
     return (
-        <StackContainer {...rest} >
+        <StackContainer {...rest}>
             {label && (
                 <Label htmlFor={id}
                        size={size || '$3'}

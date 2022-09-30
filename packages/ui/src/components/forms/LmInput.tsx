@@ -1,7 +1,8 @@
-import {Input, InputProps, TextArea, ThemeableStackProps} from "tamagui";
+import {Button, Input, InputProps, Stack, TextArea, ThemeableStackProps} from "tamagui";
 import {useId, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {LmFormContainerBaseTypes} from "./formContainerTypes";
+import {Eye, EyeOff} from "@tamagui/feather-icons";
 
 export type LmInputProps = InputProps & LmFormContainerBaseTypes & {
     containerProps?: ThemeableStackProps
@@ -24,8 +25,7 @@ export function LmInput({
                             ...rest
                         }: LmInputProps) {
     const genId = useId()
-    //todo...
-    const [invertIsPassword, setInvertIsPassword] = useState<boolean>(false)
+    const [show, setShow] = useState<boolean>(false)
     const id = rest.id || genId
     const styleProps: InputProps = {}
     if (error) {
@@ -35,6 +35,7 @@ export function LmInput({
         styleProps.minWidth = '100%'
     }
 
+    let secureTextEntry = rest.secureTextEntry || isPassword;
     return (
         <LmFormFieldContainer id={id}
                               error={error}
@@ -48,9 +49,24 @@ export function LmInput({
                               {...containerProps}>
             {multiline ? (
                 <TextArea {...rest} {...styleProps}/>
+            ) : secureTextEntry ? (
+                <Stack position={'relative'} width={'fit-content'}>
+                    <Input {...rest}
+                           {...styleProps}
+                           secureTextEntry={show ? false : true}
+                           autoCapitalize='none'/>
+
+                    <Button icon={show ? EyeOff : Eye}
+                            circular
+                            chromeless
+                            position={'absolute'} right={'$1'} top={'$1'}
+                            onPress={() => {
+                                setShow(state => !state)
+                            }}/>
+                </Stack>
             ) : (
-                <Input {...rest} {...styleProps}
-                       secureTextEntry={rest.secureTextEntry || isPassword}
+                <Input {...rest}
+                       {...styleProps}
                        autoCapitalize='none'/>
             )}
         </LmFormFieldContainer>
