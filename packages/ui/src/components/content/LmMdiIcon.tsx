@@ -1,6 +1,6 @@
 import {ColorTokens, SizeTokens, useTheme} from "tamagui";
 import {getSize, getVariable} from "@tamagui/core";
-import Svg, {Path} from "react-native-svg";
+import {Svg, Path} from "react-native-svg";
 import type * as MDI from '@mdi/js'
 
 export type LmMdiIcon = {
