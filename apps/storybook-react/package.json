@@ -10,7 +10,7 @@
     "check-types": "tsc --noemit"
   },
   "dependencies": {
-    "@tamagui-extras/ui": "0.0.9",
+    "@tamagui-extras/ui": "*",
     "app": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -127,7 +127,6 @@ export function OverviewScreen() {
                             2</LmButton>
                         <LmButton size={'$4'} iconAfter={<LmMdiIcon name={'mdiStar'}/>} colorVariant={'secondary'}>size
                             4</LmButton>
-
                     </XStack>
                 </YStack>
 
