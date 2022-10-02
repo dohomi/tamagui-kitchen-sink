@@ -1,6 +1,6 @@
 import {LmRhfProps} from "./lmRhfProps";
 import {Controller} from "react-hook-form";
-import {LmRichText, LmRichTextProps} from "../LmRichText";
+import {LmRichText, LmRichTextProps} from "../richText/LmRichText";
 
 type LmSelectRhfProps = LmRichTextProps & LmRhfProps & {}
 

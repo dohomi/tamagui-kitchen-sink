@@ -1,6 +1,6 @@
 import {useQuill} from "react-quilljs";
 import {Button, Stack, StackPropsBase, XStack} from "tamagui";
-import 'quill/dist/quill.snow.css';
+import './quill.css';
 import {QuillOptionsStatic} from "quill";
 import {useEffect} from "react";
 
@@ -39,16 +39,16 @@ export function LmRichText({options, value = '', onChange, toolbarId = 'toolbar'
     }, [quill]) // important: dont add value to dependencies
 
     return (
-        <Stack width={'100%'} height={200} {...containerProps}>
+        <Stack width={'100%'} height={200} {...containerProps} borderColor={'$borderColor'}>
             {!options?.modules?.toolbar && (
-                <XStack id={toolbarId}>
-                    <Button className={'ql-bold'} circular size={'$2'} chromeless/>
-                    <Button className={'ql-italic'} circular size={'$2'} chromeless/>
-                    <Button className={'ql-list'} value={'ordered'} circular size={'$2'} chromeless/>
-                    <Button className={'ql-list'} value={'bullet'} circular size={'$2'} chromeless/>
+                <XStack id={toolbarId} space borderColor={'$borderColor'}>
+                    <Button className={'ql-bold'} circular size={'$3'} chromeless/>
+                    <Button className={'ql-italic'} circular size={'$3'} chromeless/>
+                    <Button className={'ql-list'} value={'ordered'} circular size={'$3'} chromeless/>
+                    <Button className={'ql-list'} value={'bullet'} circular size={'$3'} chromeless/>
                 </XStack>
             )}
-            <Stack ref={quillRef}/>
+            <Stack ref={quillRef} borderColor={'$borderColor'}/>
         </Stack>
     );
 }
