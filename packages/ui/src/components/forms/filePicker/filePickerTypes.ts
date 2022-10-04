@@ -16,6 +16,6 @@ export type LmFileProps = {
         label?: string
     }
     pickerProps: LmFilePickerProps
-    onUpload: (files: DocumentResult) => Promise<void>
+    onUpload: (files: DocumentResult) => Promise<void> | void
 }
 
