@@ -4831,7 +4831,6 @@ __metadata:
     rooks: ^7.4.0
     solito: ^1.0.12
     tamagui: 1.0.1-beta.190
-    use-file-picker: ^1.5.1
   languageName: unknown
   linkType: soft
 
@@ -6866,7 +6865,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"abbrev@npm:1":
+"abbrev@npm:^1.0.0":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
   checksum: a4a97ec07d7ea112c517036882b2ac22f3109b7b19077dc656316d07d308438aac28e4d9746dc4d84bf6b1e75b4a7b0a5f3cb30592419f128ca9a8cee3bcfa17
@@ -12692,15 +12691,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-selector@npm:0.2.4":
-  version: 0.2.4
-  resolution: "file-selector@npm:0.2.4"
-  dependencies:
-    tslib: ^2.0.3
-  checksum: 83341e7416352c7de0caf433b33c8d007d3c298c17d6ba0e70168af82bb045d905ddd6f4bc3ca764a2035c6f18eae7f52223dc6a784056f61b8391c351f88323
-  languageName: node
-  linkType: hard
-
 "file-system-cache@npm:^1.0.5":
   version: 1.1.0
   resolution: "file-system-cache@npm:1.1.0"
@@ -18224,14 +18214,14 @@ __metadata:
   linkType: hard
 
 "node-gyp@npm:latest":
-  version: 9.1.0
-  resolution: "node-gyp@npm:9.1.0"
+  version: 9.2.0
+  resolution: "node-gyp@npm:9.2.0"
   dependencies:
     env-paths: ^2.2.0
     glob: ^7.1.4
     graceful-fs: ^4.2.6
     make-fetch-happen: ^10.0.3
-    nopt: ^5.0.0
+    nopt: ^6.0.0
     npmlog: ^6.0.0
     rimraf: ^3.0.2
     semver: ^7.3.5
@@ -18239,7 +18229,7 @@ __metadata:
     which: ^2.0.2
   bin:
     node-gyp: bin/node-gyp.js
-  checksum: 1437fa4a879b5b9010604128e8da8609b57c66034262087539ee04a8b764b8436af2be01bab66f8fc729a3adba2dcc21b10a32b9f552696c3fa8cd657d134fc4
+  checksum: 91f0589eabbd37f0d4e3fe9918f1f9e25afc707f6e107f0133be19c5aac62e731d92abdc2b106258665a4487b18cc2878d3fcd3dc2c6cffd68da1cb2a5ccf450
   languageName: node
   linkType: hard
 
@@ -18311,14 +18301,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nopt@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "nopt@npm:5.0.0"
+"nopt@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "nopt@npm:6.0.0"
   dependencies:
-    abbrev: 1
+    abbrev: ^1.0.0
   bin:
     nopt: bin/nopt.js
-  checksum: d35fdec187269503843924e0114c0c6533fb54bbf1620d0f28b4b60ba01712d6687f62565c55cc20a504eff0fbe5c63e22340c3fad549ad40469ffb611b04f2f
+  checksum: 82149371f8be0c4b9ec2f863cc6509a7fd0fa729929c009f3a58e4eb0c9e4cae9920e8f1f8eb46e7d032fec8fb01bede7f0f41a67eb3553b7b8e14fa53de1dac
   languageName: node
   linkType: hard
 
@@ -21048,15 +21038,15 @@ __metadata:
   linkType: hard
 
 "react-native-screens@npm:^3.15.0":
-  version: 3.17.0
-  resolution: "react-native-screens@npm:3.17.0"
+  version: 3.18.0
+  resolution: "react-native-screens@npm:3.18.0"
   dependencies:
     react-freeze: ^1.0.0
     warn-once: ^0.1.0
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: c3523d56113c182ac13e487d09c04f2991f8151578cbbea34cf0abc9c5fbe9ee19664cfcb84b9620607791ae38fc61efcd72870534513a4afbd5b5da9a248b48
+  checksum: 33dca1c6089e79f679eeb988d0a22672086a1ac4d33d33d482fa4b542e27d26928fb65c91abe6c13301aed367c76ac0d94a2da54173b1214dbd9997aa998c690
   languageName: node
   linkType: hard
 
@@ -24954,17 +24944,6 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 7913df383a5a6fcb399212eedefaac2e0c6f843555202d4e3010bac3848afe38ecaa3d0d6500ad1d936fbeffd637e6c517e68edb024af5e6beca7f27f3ce7b21
-  languageName: node
-  linkType: hard
-
-"use-file-picker@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "use-file-picker@npm:1.5.1"
-  dependencies:
-    file-selector: 0.2.4
-  peerDependencies:
-    react: ">=16"
-  checksum: 4f4c5f1aa1dcec2d8acf47506c1047a2dfa18713f31bb3468d3d1be0d6347c60f1a0937025fbe115dbd306f6ae8b87189c5b23f9b7422695ab9a2b9e0b8aeed4
   languageName: node
   linkType: hard
 
