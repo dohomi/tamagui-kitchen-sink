@@ -4829,7 +4829,7 @@ __metadata:
     react-quilljs: ^1.3.3
     rooks: ^7.4.0
     solito: ^1.0.12
-    tamagui: 1.0.1-beta.188
+    tamagui: 1.0.1-beta.190
   languageName: unknown
   linkType: soft
 
@@ -4849,7 +4849,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/alert-dialog@npm:^1.0.1-beta.181, @tamagui/alert-dialog@npm:^1.0.1-beta.188, @tamagui/alert-dialog@npm:^1.0.1-beta.190":
+"@tamagui/alert-dialog@npm:^1.0.1-beta.181, @tamagui/alert-dialog@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/alert-dialog@npm:1.0.1-beta.190"
   dependencies:
@@ -4876,7 +4876,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/animate-presence@npm:^1.0.1-beta.181, @tamagui/animate-presence@npm:^1.0.1-beta.188, @tamagui/animate-presence@npm:^1.0.1-beta.190":
+"@tamagui/animate-presence@npm:^1.0.1-beta.181, @tamagui/animate-presence@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/animate-presence@npm:1.0.1-beta.190"
   dependencies:
@@ -4936,7 +4936,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/avatar@npm:^1.0.1-beta.181, @tamagui/avatar@npm:^1.0.1-beta.188, @tamagui/avatar@npm:^1.0.1-beta.190":
+"@tamagui/avatar@npm:^1.0.1-beta.181, @tamagui/avatar@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/avatar@npm:1.0.1-beta.190"
   dependencies:
@@ -5001,7 +5001,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/button@npm:^1.0.1-beta.181, @tamagui/button@npm:^1.0.1-beta.188, @tamagui/button@npm:^1.0.1-beta.190":
+"@tamagui/button@npm:^1.0.1-beta.181, @tamagui/button@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/button@npm:1.0.1-beta.190"
   dependencies:
@@ -5015,7 +5015,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/card@npm:^1.0.1-beta.181, @tamagui/card@npm:^1.0.1-beta.188, @tamagui/card@npm:^1.0.1-beta.190":
+"@tamagui/card@npm:^1.0.1-beta.181, @tamagui/card@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/card@npm:1.0.1-beta.190"
   dependencies:
@@ -5044,7 +5044,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/compose-refs@npm:^1.0.1-beta.181, @tamagui/compose-refs@npm:^1.0.1-beta.188, @tamagui/compose-refs@npm:^1.0.1-beta.190":
+"@tamagui/compose-refs@npm:^1.0.1-beta.181, @tamagui/compose-refs@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/compose-refs@npm:1.0.1-beta.190"
   peerDependencies:
@@ -5100,7 +5100,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/core@npm:^1.0.1-beta.181, @tamagui/core@npm:^1.0.1-beta.188, @tamagui/core@npm:^1.0.1-beta.190":
+"@tamagui/core@npm:^1.0.1-beta.181, @tamagui/core@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/core@npm:1.0.1-beta.190"
   dependencies:
@@ -5123,7 +5123,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/create-context@npm:^1.0.1-beta.181, @tamagui/create-context@npm:^1.0.1-beta.188, @tamagui/create-context@npm:^1.0.1-beta.190":
+"@tamagui/create-context@npm:^1.0.1-beta.181, @tamagui/create-context@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/create-context@npm:1.0.1-beta.190"
   peerDependencies:
@@ -5132,7 +5132,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/dialog@npm:^1.0.1-beta.181, @tamagui/dialog@npm:^1.0.1-beta.188, @tamagui/dialog@npm:^1.0.1-beta.190":
+"@tamagui/dialog@npm:^1.0.1-beta.181, @tamagui/dialog@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/dialog@npm:1.0.1-beta.190"
   dependencies:
@@ -5174,7 +5174,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/fake-react-native@npm:^1.0.1-beta.181, @tamagui/fake-react-native@npm:^1.0.1-beta.188, @tamagui/fake-react-native@npm:^1.0.1-beta.190":
+"@tamagui/fake-react-native@npm:^1.0.1-beta.181, @tamagui/fake-react-native@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/fake-react-native@npm:1.0.1-beta.190"
   checksum: 3281657aec473f1f7aabd139bbac5c30f5ac11243d7e4c730ea29e52ede3c4ffc85a5c7f2c5ed98dfa95588dd864d24c1ba0d114c0f760832fd56e24b0ae5853
@@ -5246,7 +5246,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/font-size@npm:^1.0.1-beta.181, @tamagui/font-size@npm:^1.0.1-beta.188, @tamagui/font-size@npm:^1.0.1-beta.190":
+"@tamagui/font-size@npm:^1.0.1-beta.181, @tamagui/font-size@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/font-size@npm:1.0.1-beta.190"
   dependencies:
@@ -5265,7 +5265,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/helpers-tamagui@npm:^1.0.1-beta.181, @tamagui/helpers-tamagui@npm:^1.0.1-beta.188, @tamagui/helpers-tamagui@npm:^1.0.1-beta.190":
+"@tamagui/helpers-tamagui@npm:^1.0.1-beta.181, @tamagui/helpers-tamagui@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/helpers-tamagui@npm:1.0.1-beta.190"
   dependencies:
@@ -5278,7 +5278,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/helpers@npm:^1.0.1-beta.181, @tamagui/helpers@npm:^1.0.1-beta.188, @tamagui/helpers@npm:^1.0.1-beta.190":
+"@tamagui/helpers@npm:^1.0.1-beta.181, @tamagui/helpers@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/helpers@npm:1.0.1-beta.190"
   dependencies:
@@ -5290,7 +5290,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/image@npm:^1.0.1-beta.181, @tamagui/image@npm:^1.0.1-beta.188, @tamagui/image@npm:^1.0.1-beta.190":
+"@tamagui/image@npm:^1.0.1-beta.181, @tamagui/image@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/image@npm:1.0.1-beta.190"
   dependencies:
@@ -5302,7 +5302,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/label@npm:^1.0.1-beta.181, @tamagui/label@npm:^1.0.1-beta.188, @tamagui/label@npm:^1.0.1-beta.190":
+"@tamagui/label@npm:^1.0.1-beta.181, @tamagui/label@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/label@npm:1.0.1-beta.190"
   dependencies:
@@ -5319,7 +5319,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/list-item@npm:^1.0.1-beta.181, @tamagui/list-item@npm:^1.0.1-beta.188, @tamagui/list-item@npm:^1.0.1-beta.190":
+"@tamagui/list-item@npm:^1.0.1-beta.181, @tamagui/list-item@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/list-item@npm:1.0.1-beta.190"
   dependencies:
@@ -5400,7 +5400,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/popover@npm:^1.0.1-beta.181, @tamagui/popover@npm:^1.0.1-beta.188, @tamagui/popover@npm:^1.0.1-beta.190":
+"@tamagui/popover@npm:^1.0.1-beta.181, @tamagui/popover@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/popover@npm:1.0.1-beta.190"
   dependencies:
@@ -5427,7 +5427,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/popper@npm:^1.0.1-beta.181, @tamagui/popper@npm:^1.0.1-beta.188, @tamagui/popper@npm:^1.0.1-beta.190":
+"@tamagui/popper@npm:^1.0.1-beta.181, @tamagui/popper@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/popper@npm:1.0.1-beta.190"
   dependencies:
@@ -5446,7 +5446,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/portal@npm:^1.0.1-beta.181, @tamagui/portal@npm:^1.0.1-beta.188, @tamagui/portal@npm:^1.0.1-beta.190":
+"@tamagui/portal@npm:^1.0.1-beta.181, @tamagui/portal@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/portal@npm:1.0.1-beta.190"
   dependencies:
@@ -5460,7 +5460,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/progress@npm:^1.0.1-beta.181, @tamagui/progress@npm:^1.0.1-beta.188, @tamagui/progress@npm:^1.0.1-beta.190":
+"@tamagui/progress@npm:^1.0.1-beta.181, @tamagui/progress@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/progress@npm:1.0.1-beta.190"
   dependencies:
@@ -5521,7 +5521,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/scroll-view@npm:^1.0.1-beta.181, @tamagui/scroll-view@npm:^1.0.1-beta.188, @tamagui/scroll-view@npm:^1.0.1-beta.190":
+"@tamagui/scroll-view@npm:^1.0.1-beta.181, @tamagui/scroll-view@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/scroll-view@npm:1.0.1-beta.190"
   dependencies:
@@ -5533,7 +5533,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/select@npm:^1.0.1-beta.181, @tamagui/select@npm:^1.0.1-beta.188, @tamagui/select@npm:^1.0.1-beta.190":
+"@tamagui/select@npm:^1.0.1-beta.181, @tamagui/select@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/select@npm:1.0.1-beta.190"
   dependencies:
@@ -5561,7 +5561,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/separator@npm:^1.0.1-beta.181, @tamagui/separator@npm:^1.0.1-beta.188, @tamagui/separator@npm:^1.0.1-beta.190":
+"@tamagui/separator@npm:^1.0.1-beta.181, @tamagui/separator@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/separator@npm:1.0.1-beta.190"
   dependencies:
@@ -5573,7 +5573,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/shapes@npm:^1.0.1-beta.181, @tamagui/shapes@npm:^1.0.1-beta.188, @tamagui/shapes@npm:^1.0.1-beta.190":
+"@tamagui/shapes@npm:^1.0.1-beta.181, @tamagui/shapes@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/shapes@npm:1.0.1-beta.190"
   dependencies:
@@ -5585,7 +5585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/sheet@npm:^1.0.1-beta.181, @tamagui/sheet@npm:^1.0.1-beta.188, @tamagui/sheet@npm:^1.0.1-beta.190":
+"@tamagui/sheet@npm:^1.0.1-beta.181, @tamagui/sheet@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/sheet@npm:1.0.1-beta.190"
   dependencies:
@@ -5626,7 +5626,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/slider@npm:^1.0.1-beta.181, @tamagui/slider@npm:^1.0.1-beta.188, @tamagui/slider@npm:^1.0.1-beta.190":
+"@tamagui/slider@npm:^1.0.1-beta.181, @tamagui/slider@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/slider@npm:1.0.1-beta.190"
   dependencies:
@@ -5644,7 +5644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/stacks@npm:^1.0.1-beta.181, @tamagui/stacks@npm:^1.0.1-beta.188, @tamagui/stacks@npm:^1.0.1-beta.190":
+"@tamagui/stacks@npm:^1.0.1-beta.181, @tamagui/stacks@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/stacks@npm:1.0.1-beta.190"
   dependencies:
@@ -5694,7 +5694,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/switch@npm:^1.0.1-beta.181, @tamagui/switch@npm:^1.0.1-beta.188, @tamagui/switch@npm:^1.0.1-beta.190":
+"@tamagui/switch@npm:^1.0.1-beta.181, @tamagui/switch@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/switch@npm:1.0.1-beta.190"
   dependencies:
@@ -5714,7 +5714,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/text@npm:^1.0.1-beta.181, @tamagui/text@npm:^1.0.1-beta.188, @tamagui/text@npm:^1.0.1-beta.190":
+"@tamagui/text@npm:^1.0.1-beta.181, @tamagui/text@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/text@npm:1.0.1-beta.190"
   dependencies:
@@ -5747,7 +5747,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/tooltip@npm:^1.0.1-beta.181, @tamagui/tooltip@npm:^1.0.1-beta.188, @tamagui/tooltip@npm:^1.0.1-beta.190":
+"@tamagui/tooltip@npm:^1.0.1-beta.181, @tamagui/tooltip@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/tooltip@npm:1.0.1-beta.190"
   dependencies:
@@ -5769,7 +5769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/use-controllable-state@npm:^1.0.1-beta.181, @tamagui/use-controllable-state@npm:^1.0.1-beta.188, @tamagui/use-controllable-state@npm:^1.0.1-beta.190":
+"@tamagui/use-controllable-state@npm:^1.0.1-beta.181, @tamagui/use-controllable-state@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/use-controllable-state@npm:1.0.1-beta.190"
   dependencies:
@@ -5781,7 +5781,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/use-debounce@npm:^1.0.1-beta.181, @tamagui/use-debounce@npm:^1.0.1-beta.188, @tamagui/use-debounce@npm:^1.0.1-beta.190":
+"@tamagui/use-debounce@npm:^1.0.1-beta.181, @tamagui/use-debounce@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/use-debounce@npm:1.0.1-beta.190"
   peerDependencies:
@@ -5790,7 +5790,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/use-did-finish-ssr@npm:^1.0.1-beta.188, @tamagui/use-did-finish-ssr@npm:^1.0.1-beta.190":
+"@tamagui/use-did-finish-ssr@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/use-did-finish-ssr@npm:1.0.1-beta.190"
   dependencies:
@@ -5810,7 +5810,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/use-event@npm:^1.0.1-beta.181, @tamagui/use-event@npm:^1.0.1-beta.188, @tamagui/use-event@npm:^1.0.1-beta.190":
+"@tamagui/use-event@npm:^1.0.1-beta.181, @tamagui/use-event@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/use-event@npm:1.0.1-beta.190"
   peerDependencies:
@@ -5819,7 +5819,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/use-force-update@npm:^1.0.1-beta.181, @tamagui/use-force-update@npm:^1.0.1-beta.188, @tamagui/use-force-update@npm:^1.0.1-beta.190":
+"@tamagui/use-force-update@npm:^1.0.1-beta.181, @tamagui/use-force-update@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/use-force-update@npm:1.0.1-beta.190"
   peerDependencies:
@@ -5828,7 +5828,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/use-window-dimensions@npm:^1.0.1-beta.188, @tamagui/use-window-dimensions@npm:^1.0.1-beta.190":
+"@tamagui/use-window-dimensions@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/use-window-dimensions@npm:1.0.1-beta.190"
   dependencies:
@@ -5840,7 +5840,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/visually-hidden@npm:^1.0.1-beta.181, @tamagui/visually-hidden@npm:^1.0.1-beta.188, @tamagui/visually-hidden@npm:^1.0.1-beta.190":
+"@tamagui/visually-hidden@npm:^1.0.1-beta.181, @tamagui/visually-hidden@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "@tamagui/visually-hidden@npm:1.0.1-beta.190"
   dependencies:
@@ -23673,58 +23673,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tamagui@npm:1.0.1-beta.188":
-  version: 1.0.1-beta.188
-  resolution: "tamagui@npm:1.0.1-beta.188"
-  dependencies:
-    "@tamagui/alert-dialog": ^1.0.1-beta.188
-    "@tamagui/animate-presence": ^1.0.1-beta.188
-    "@tamagui/avatar": ^1.0.1-beta.188
-    "@tamagui/button": ^1.0.1-beta.188
-    "@tamagui/card": ^1.0.1-beta.188
-    "@tamagui/compose-refs": ^1.0.1-beta.188
-    "@tamagui/core": ^1.0.1-beta.188
-    "@tamagui/create-context": ^1.0.1-beta.188
-    "@tamagui/dialog": ^1.0.1-beta.188
-    "@tamagui/fake-react-native": ^1.0.1-beta.188
-    "@tamagui/font-size": ^1.0.1-beta.188
-    "@tamagui/helpers": ^1.0.1-beta.188
-    "@tamagui/helpers-tamagui": ^1.0.1-beta.188
-    "@tamagui/image": ^1.0.1-beta.188
-    "@tamagui/label": ^1.0.1-beta.188
-    "@tamagui/list-item": ^1.0.1-beta.188
-    "@tamagui/popover": ^1.0.1-beta.188
-    "@tamagui/popper": ^1.0.1-beta.188
-    "@tamagui/portal": ^1.0.1-beta.188
-    "@tamagui/progress": ^1.0.1-beta.188
-    "@tamagui/scroll-view": ^1.0.1-beta.188
-    "@tamagui/select": ^1.0.1-beta.188
-    "@tamagui/separator": ^1.0.1-beta.188
-    "@tamagui/shapes": ^1.0.1-beta.188
-    "@tamagui/sheet": ^1.0.1-beta.188
-    "@tamagui/slider": ^1.0.1-beta.188
-    "@tamagui/stacks": ^1.0.1-beta.188
-    "@tamagui/switch": ^1.0.1-beta.188
-    "@tamagui/text": ^1.0.1-beta.188
-    "@tamagui/tooltip": ^1.0.1-beta.188
-    "@tamagui/use-controllable-state": ^1.0.1-beta.188
-    "@tamagui/use-debounce": ^1.0.1-beta.188
-    "@tamagui/use-did-finish-ssr": ^1.0.1-beta.188
-    "@tamagui/use-event": ^1.0.1-beta.188
-    "@tamagui/use-force-update": ^1.0.1-beta.188
-    "@tamagui/use-window-dimensions": ^1.0.1-beta.188
-    "@tamagui/visually-hidden": ^1.0.1-beta.188
-    expo-linear-gradient: ^11.4.0
-    expo-screen-orientation: ^4.3.0
-    react: "*"
-    react-dom: "*"
-  peerDependencies:
-    react-native-web: "*"
-  checksum: 7de89b1d99a4d30f0a85cc5c34b64db838cd54a82cecafaafaf1b28e76b4442876323e69fe19bd0d9bb61506154385c992a463e2f2f6b67a83ec91873e862a4d
-  languageName: node
-  linkType: hard
-
-"tamagui@npm:^1.0.1-beta.190":
+"tamagui@npm:1.0.1-beta.190, tamagui@npm:^1.0.1-beta.190":
   version: 1.0.1-beta.190
   resolution: "tamagui@npm:1.0.1-beta.190"
   dependencies:

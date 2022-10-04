@@ -1,7 +1,8 @@
-import {LmAutocomplete, LmFormRhfProvider} from "../../../src";
+import {LmAutocomplete, LmFormRhfProvider, LmSubmitButtonRhf} from "../../../src";
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {fruitItemsFixtures} from "../../../fixtures/selectItems";
 import {LmAutocompleteRhf} from "../../../src/components/forms/rhf/LmAutocompleteRhf";
+import {useState} from "react";
 
 export default {
     title: 'ui/Forms/Autocomplete',
@@ -40,13 +41,21 @@ export const SingleRhf = () => (
     </LmFormRhfProvider>
 )
 
-export const MultipleRhf = () => (
-    <LmFormRhfProvider defaultValues={{
+export const MultipleRhf = () => {
+    const [form, setForm] = useState<any>({
         pre: [{value: 'Pear'}],
         pre_matched: ['Pear']
-    }}>
-        <LmAutocompleteRhf label={'Multiple'} name={'autocomplete'} options={options} multiple/>
-        <LmAutocompleteRhf label={'Multiple Preselected'} name={'pre'} options={options} multiple/>
-        <LmAutocompleteRhf label={'Multiple Preselected'} name={'pre_matched'} matchId options={options} multiple/>
-    </LmFormRhfProvider>
-)
+    })
+    return (
+        <LmFormRhfProvider defaultValues={{
+            ...form
+        }}>
+            <LmAutocompleteRhf label={'Multiple'} name={'autocomplete'} options={options} multiple/>
+            <LmAutocompleteRhf label={'Multiple Preselected'} name={'pre'} options={options} multiple/>
+            <LmAutocompleteRhf label={'Multiple Match ID'} name={'pre_matched'} matchId options={options} multiple/>
+            <LmSubmitButtonRhf onSubmit={(data) => {
+                setForm(data)
+            }}>Submit</LmSubmitButtonRhf>
+        </LmFormRhfProvider>
+    )
+}

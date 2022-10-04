@@ -1,17 +1,21 @@
 import {LmButton, LmButtonProps} from "../LmButton";
-import {FieldValues, useFormContext} from "react-hook-form";
+import {FieldValues, useFormContext, UseFormReturn} from "react-hook-form";
 
-export type LmButtonRhfProps<T> = LmButtonProps & {
-    onSubmit: (data: T) => void | Promise<void>
+export type LmButtonRhfProps<T extends FieldValues> = LmButtonProps & {
+    onSubmit: (data: T, context: UseFormReturn<T, any>) => void | Promise<void>
 }
 
 export function LmSubmitButtonRhf<TFieldValues extends FieldValues = FieldValues>({
                                                                                       onSubmit,
                                                                                       ...props
                                                                                   }: LmButtonRhfProps<TFieldValues>) {
-    const {handleSubmit, formState} = useFormContext()
-
+    const formContext = useFormContext<TFieldValues>()
+    const {handleSubmit, formState} = formContext
     return (
-        <LmButton {...props} onPress={(handleSubmit(onSubmit))} loading={formState.isValidating || props.loading}/>
+        <LmButton {...props}
+                  onPress={(handleSubmit((data) => {
+                      onSubmit(data, formContext)
+                  }))}
+                  loading={formState.isValidating || props.loading}/>
     )
 }

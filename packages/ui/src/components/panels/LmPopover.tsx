@@ -17,11 +17,11 @@ export function LmPopover({
                               popoverProps,
                               contentPadding = 0,
                               contentSize
-                          }: LmPopoverProps, ref
+                          }: LmPopoverProps
 ) {
 
     return (
-        <Popover sheetBreakpoint="sm" size="$5" allowFlip {...popoverProps}>
+        <Popover sheetBreakpoint="sm" size="$5" {...popoverProps}>
             <Popover.Trigger asChild>
                 {trigger}
             </Popover.Trigger>
