@@ -4821,10 +4821,10 @@ __metadata:
     "@storybook/react": ^6.5.12
     "@tamagui/build": 1.0.1-beta.181
     "@types/quill": ^2.0.9
+    expo-document-picker: ^10.3.0
     quill: ^2.0.0-dev.4
     react-hook-form: ^7.34.2
     react-native-cn-quill: ^0.7.17
-    react-native-document-picker: ^8.1.1
     react-native-svg: ^12.4.4
     react-native-webview: ^11.23.1
     react-quilljs: ^1.3.3
@@ -12171,6 +12171,18 @@ __metadata:
   peerDependencies:
     expo: "*"
   checksum: f4e7c2d5c0e5eb84622c6736698c508ab68d3109eb5cadb5befd2d7ddace6bdb16b384d4bc0926608667654cd2f9eeb2ee1b978555faba00e3034f610beccebc
+  languageName: node
+  linkType: hard
+
+"expo-document-picker@npm:^10.3.0":
+  version: 10.3.0
+  resolution: "expo-document-picker@npm:10.3.0"
+  dependencies:
+    "@expo/config-plugins": ~5.0.0
+    uuid: ^3.3.2
+  peerDependencies:
+    expo: "*"
+  checksum: 7c5173b4ca21453702705a099679c68a9def089202733ce64dc5e10197d92f874f59e91d4def8fafa77e24e01cad448062591c926ed280a3fc968fd9bd8efa76
   languageName: node
   linkType: hard
 
@@ -20980,22 +20992,6 @@ __metadata:
     jscodeshift: ^0.13.1
     nullthrows: ^1.1.1
   checksum: 73dc9464a90fde727a19ad4f002f3bc4ec948a948cd95b5f3bfbef24ff7cf2ca7282830fd99e6b1772804c1e0f172e64097190021b3a00ba27a1f9777e58cf77
-  languageName: node
-  linkType: hard
-
-"react-native-document-picker@npm:^8.1.1":
-  version: 8.1.1
-  resolution: "react-native-document-picker@npm:8.1.1"
-  dependencies:
-    invariant: ^2.2.4
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-    react-native-windows: "*"
-  peerDependenciesMeta:
-    react-native-windows:
-      optional: true
-  checksum: d47cc8d7422a19e62ce971c4f44bd122b85e83be44f8f126550632fc6ca320f68c941cd11cf009d11f7c5ac97b296270a565c3b3083e107bbe8ec9e10f4aafd8
   languageName: node
   linkType: hard
 

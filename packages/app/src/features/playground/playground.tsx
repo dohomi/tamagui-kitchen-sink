@@ -1,4 +1,5 @@
-import {LmAutocompleteRhf, LmFormRhfProvider, LmRichTextRhf, SpaceTokens, YStack} from '@tamagui-extras/ui'
+import {LmAutocompleteRhf, LmFormRhfProvider, SpaceTokens, YStack} from '@tamagui-extras/ui'
+import {LmFile} from '@tamagui-extras/ui/src'
 import React from 'react'
 import {fruitItemsFixtures} from "app/src/lib/fixtures/selectItems";
 
@@ -26,7 +27,13 @@ export function PlaygroundScreen() {
                     <LmAutocompleteRhf name={'autocomplete'} label={'Autocomplete'} options={fruitItemsFixtures}/>
                     <LmAutocompleteRhf name={'autocomplete-multi'} label={'Multi'} multiple
                                        options={fruitItemsFixtures}/>
-                    <LmRichTextRhf name={'rich-text'}/>
+                    <LmFile pickerProps={{label: 'Pick Files'}}
+                            onUpload={(files) => {
+
+                            }}
+                            uploadButtonProps={{
+                                label: 'Upload'
+                            }}/>
                 </YStack>
             </YStack>
         </LmFormRhfProvider>

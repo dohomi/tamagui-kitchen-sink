@@ -10,9 +10,9 @@ const Template = (args) => <LmFile {...args}/>
 export const Basic = Template.bind({})
 Basic.args = {
     pickerProps: {
-        children: 'Pick file'
+        label: 'Pick file'
     },
     uploadButtonProps: {
-        children: 'Upload file'
+        label: 'Upload file'
     }
 }

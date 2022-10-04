@@ -1,31 +1,33 @@
-import {useFilePicker} from "use-file-picker";
+import {getDocumentAsync} from 'expo-document-picker'
+
 import {LmButton} from "../LmButton";
 import {LmFilePickerProps} from "./filePickerTypes";
-import {useEffect} from "react";
 
-export function LmFilePicker({nativePickerOptions, webPickerOptions, onChange, ...buttonProps}: LmFilePickerProps) {
 
-    const [openFileSelector, {plainFiles, loading, errors}] = useFilePicker({
-        readAs: 'DataURL',
-        ...webPickerOptions
-    });
-
-    useEffect(() => {
-        if (onChange) {
-            onChange(plainFiles)
-        }
-    }, [plainFiles])
-
-    if (errors.length) {
-        return <div>Error...</div>;
-    }
+export function LmFilePicker({
+                                 nativePickerOptions,
+                                 webPickerOptions,
+                                 label,
+                                 onChange,
+                                 ...buttonProps
+                             }: LmFilePickerProps) {
     return (
         <LmButton
             {...buttonProps}
-            loading={buttonProps.loading || loading}
-            onPress={() => {
-                openFileSelector()
+            onPress={async () => {
+                try {
+                    const docs = await getDocumentAsync({
+                        ...nativePickerOptions
+                    })
+                    if (docs && onChange) {
+                        onChange(docs)
+                    } else {
+                        console.log(docs)
+                    }
+                } catch (e) {
+                    console.log(e)
+                }
             }}
-        />
+        >{label}</LmButton>
     )
 }

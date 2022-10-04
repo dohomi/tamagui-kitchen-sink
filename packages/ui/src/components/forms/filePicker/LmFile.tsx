@@ -1,33 +1,33 @@
 import {ListItem, Stack} from "tamagui";
-import {LmFilePicker} from "./LmFilePicker";
 import {useState} from "react";
 import {LmFileProps} from "./filePickerTypes";
 import {LmButton} from "../LmButton";
+import {LmFilePicker} from "./LmFilePicker";
+import {DocumentResult} from "expo-document-picker";
 
 export {LmFileProps}
 
-export function LmFile({pickerProps, uploadButtonProps, onUpload}: LmFileProps) {
-    const [files, setFiles] = useState<File[]>([])
+export function LmFile({pickerProps, uploadButtonProps, onUpload, containerProps}: LmFileProps) {
+    const [result, setFiles] = useState<DocumentResult>()
     const [isUploading, setUploading] = useState(false)
-    console.log(files)
     return (
-        <Stack>
-            {files.map(file => (
+        <Stack {...containerProps}>
+            {result?.type === 'success' && Array.from(result.output ?? []).map((file: File) => (
                 <ListItem title={file.name} subTitle={file.type} key={file.name + file.size}/>
             ))}
-            {files.length > 0 ? (
+            {result?.type === 'success' ? (
                 <LmButton {...uploadButtonProps}
                           loading={isUploading}
                           onPress={async () => {
                               setUploading(true)
                               try {
-                                  await onUpload(files)
+                                  await onUpload(result)
                               } catch (e) {
                                   console.error(e)
                               }
                               setUploading(false)
                           }}
-                />
+                >{uploadButtonProps.label}</LmButton>
             ) : (
                 <LmFilePicker
                     {...pickerProps}

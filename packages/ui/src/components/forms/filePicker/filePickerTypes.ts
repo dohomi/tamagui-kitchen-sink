@@ -1,16 +1,21 @@
-import {DocumentPickerOptions} from "react-native-document-picker";
+import {DocumentPickerOptions, DocumentResult} from "expo-document-picker";
 import {UseFilePickerConfig} from "use-file-picker";
 import {LmButtonProps} from "../LmButton";
+import {StackPropsBase} from "tamagui";
 
 export type LmFilePickerProps = LmButtonProps & {
-    nativePickerOptions?: DocumentPickerOptions<any>
+    label?: string
+    nativePickerOptions?: DocumentPickerOptions
     webPickerOptions?: UseFilePickerConfig
-    onChange?: (files: File[]) => Promise<void> | void
+    onChange?: (files: DocumentResult) => Promise<void> | void
 }
 
 export type LmFileProps = {
-    uploadButtonProps: LmButtonProps
+    containerProps?: StackPropsBase
+    uploadButtonProps: LmButtonProps & {
+        label?: string
+    }
     pickerProps: LmFilePickerProps
-    onUpload: (files: File[]) => Promise<void>
+    onUpload: (files: DocumentResult) => Promise<void>
 }
 
