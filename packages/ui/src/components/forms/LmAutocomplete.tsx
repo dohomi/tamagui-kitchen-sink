@@ -1,11 +1,13 @@
 import {Input, ListItem, Popover, Text, XStack} from "tamagui";
-import {useMultiSelectableList, useSelectableList} from "rooks";
 import {CheckSquare, Square} from "@tamagui/feather-icons";
 import {useEffect, useId, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {LmFormContainerBaseTypes} from "./formContainerTypes";
 import {LmPopover} from "../panels/LmPopover";
 import {LmInputTrigger} from "./LmInputTrigger";
+// import {useMultiSelectableList} from "../../hooks/useMultiSelectableList";
+// import {useSelectableList} from "../../hooks/useSelectableList";
+import {useMultiSelectableList, useSelectableList} from 'rooks'
 
 type Option = { label: string, value: string | number };
 export type LmAutocompleteProps = LmFormContainerBaseTypes & {
@@ -38,7 +40,7 @@ export function LmAutocomplete({
     ] = useMultiSelectableList(
         options,
         multiple && Array.isArray(value) ? (value || []).map(i => options.findIndex(k => k.value === i?.value ?? i)) : [],
-        true
+        true,
     )
     const [selectionSingle, {
         matchSelection: matchSelectionSingle,
@@ -46,7 +48,7 @@ export function LmAutocomplete({
     }] = useSelectableList(
         options,
         !multiple && !Array.isArray(value) ? options.findIndex(i => i.value === value?.value ?? value) : -1,
-        true
+        true,
     )
 
 
@@ -97,10 +99,10 @@ export function LmAutocomplete({
 
                 <Popover.ScrollView keyboardShouldPersistTaps={true} style={{maxHeight: 300, width: '100%'}}>
 
-                    {filteredOptions.map((item, index) => {
+                    {filteredOptions.map((item) => {
                         let selected = multiple ?
-                            matchSelection({index}) :
-                            matchSelectionSingle({index})
+                            matchSelection({value: item}) :
+                            matchSelectionSingle({value: item})
 
                         return (
                             <ListItem hoverTheme
