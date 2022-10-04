@@ -5,8 +5,7 @@ import {LmFilePickerProps} from "./filePickerTypes";
 
 
 export function LmFilePicker({
-                                 nativePickerOptions,
-                                 webPickerOptions,
+                                 documentPickerOptions,
                                  label,
                                  onChange,
                                  ...buttonProps
@@ -17,7 +16,7 @@ export function LmFilePicker({
             onPress={async () => {
                 try {
                     const docs = await getDocumentAsync({
-                        ...nativePickerOptions
+                        ...documentPickerOptions
                     })
                     if (docs && onChange) {
                         onChange(docs)
