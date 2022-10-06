@@ -10,12 +10,11 @@
     "check-types": "tsc --noemit"
   },
   "dependencies": {
-    "@tamagui-extras/ui": "*",
     "app": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-native-web": "0.18.7",
-    "react-native-web-lite": "^1.0.1-beta.153"
+    "react-native-web": "0.18.9",
+    "react-native-web-lite": "^1.0.1-beta.191"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

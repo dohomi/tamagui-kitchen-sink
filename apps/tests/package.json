@@ -7,7 +7,6 @@
     "test": "jest /__tests__"
   },
   "dependencies": {
-    "@tamagui-extras/ui": "0.0.10",
     "app": "*"
   },
   "devDependencies": {
