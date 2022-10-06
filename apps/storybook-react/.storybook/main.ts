@@ -12,9 +12,15 @@ const config = {
             name: "@storybook/addon-react-native-web",
             options: {
                 modulesToTranspile: [
-                    'app',
-                    'tamagui-extras',
-                    '@my/config'
+                    'solito',
+                    'react-native-web',
+                    'expo-linking',
+                    'expo-constants',
+                    'expo-modules-core',
+                    'react-i18next',
+                    'expo-document-picker',
+                    '@my/config',
+                    'tamagui-extras'
                 ],
                 babelPlugins: [
                     "react-native-reanimated/plugin",

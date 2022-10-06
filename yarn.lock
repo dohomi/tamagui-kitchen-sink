@@ -4999,6 +4999,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tamagui/colors@npm:1.0.1-beta.184":
+  version: 1.0.1-beta.184
+  resolution: "@tamagui/colors@npm:1.0.1-beta.184"
+  checksum: c61b7dcc4952bec3fa932aa2d99567a242fb106c919c7c2c3ba3ff400a46a6287cc94b1b8142225e68254e3b7bef91856ffbcc6c9780ed4ed6f71b240838287f
+  languageName: node
+  linkType: hard
+
 "@tamagui/colors@npm:^1.0.1-beta.184, @tamagui/colors@npm:^1.0.1-beta.191":
   version: 1.0.1-beta.191
   resolution: "@tamagui/colors@npm:1.0.1-beta.191"
@@ -6104,9 +6111,9 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^18.6.4":
-  version: 18.8.1
-  resolution: "@types/node@npm:18.8.1"
-  checksum: 6168dbdc42cbedff20fd16ed7c775038d6de52fe1458a9a3be07e39805c75d107f185908a8cdfe0b271f8f391a0c99fde27859975cf6b5a8fee385b3f5cfb42a
+  version: 18.8.2
+  resolution: "@types/node@npm:18.8.2"
+  checksum: b7c74dea0e835fb7faf69b4a2e87d43c1d228d88adacdff464d9e92d18a0b43bec6147b9eb3287650ac75fe5af730c53391869d02175e6b032dcb99ae2f54c92
   languageName: node
   linkType: hard
 
@@ -7241,7 +7248,11 @@ __metadata:
     "@react-navigation/native": ^6.0.11
     "@react-navigation/native-stack": ^6.7.0
     "@tamagui/animations-react-native": 1.0.1-beta.184
+    "@tamagui/colors": 1.0.1-beta.184
     "@tamagui/feather-icons": 1.0.1-beta.184
+    "@tamagui/font-inter": 1.0.1-beta.184
+    "@tamagui/shorthands": 1.0.1-beta.184
+    "@tamagui/theme-base": 1.0.1-beta.184
     expo-linking: ^3.2.2
     expo-localization: ~13.1.0
     i18n-js: ^4.1.1
@@ -8809,9 +8820,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001125, caniuse-lite@npm:^1.0.30001400, caniuse-lite@npm:^1.0.30001406":
-  version: 1.0.30001415
-  resolution: "caniuse-lite@npm:1.0.30001415"
-  checksum: cd7ca55243a2d556aed2c2da4638643b032f88bbbd745ba7cdaf72fb2131812c63816f615dec704762ab385364387ce885953fa3a4d7555ea219336303dcc06f
+  version: 1.0.30001416
+  resolution: "caniuse-lite@npm:1.0.30001416"
+  checksum: 4d93f449aeb3527877892647beb53a01b71eef6d63907b65ed2f6d07b2fb2a9b739ebbb60adc02baa16df26fba81be9f207312159a1cf864251ad79b884db0a3
   languageName: node
   linkType: hard
 
@@ -10874,9 +10885,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.3.564, electron-to-chromium@npm:^1.4.251":
-  version: 1.4.271
-  resolution: "electron-to-chromium@npm:1.4.271"
-  checksum: 8fcba3bb2001694f3a3d8639247866d05fbf1017fd48b294606b722e1e3379999e663163685ac1332d7c1a2b291950f46e4aba06e5c61b8300dce509ae06c6c7
+  version: 1.4.274
+  resolution: "electron-to-chromium@npm:1.4.274"
+  checksum: 5ada070407c93a500300b8c699a493f3fb29ca9f7c1b01bcbe6f74191ace09adf8baf137591daedd47f9207a9818195be2ae4dd17099ff3ae60f16bcd624dda7
   languageName: node
   linkType: hard
 
@@ -12841,9 +12852,9 @@ __metadata:
   linkType: hard
 
 "flow-parser@npm:0.*":
-  version: 0.188.1
-  resolution: "flow-parser@npm:0.188.1"
-  checksum: 0f5eba840f8328736df26d00bf22dc81cdc1641da7a512ddcd30d9918da80e00974e4d477645e9ce3c3e7c28a6ea88ec3233c10bb0e5ba61c30aa3c70773afcb
+  version: 0.188.2
+  resolution: "flow-parser@npm:0.188.2"
+  checksum: b320784943486c82bcfaf31d90f1f6097394cfa3522cff76d618e505d66c3aa71b58d1a5033d0e656693537a8574019533556ff9c667bcb1202390348c47f5d2
   languageName: node
   linkType: hard
 
@@ -15311,15 +15322,15 @@ __metadata:
   linkType: hard
 
 "istanbul-lib-instrument@npm:^5.0.4, istanbul-lib-instrument@npm:^5.1.0":
-  version: 5.2.0
-  resolution: "istanbul-lib-instrument@npm:5.2.0"
+  version: 5.2.1
+  resolution: "istanbul-lib-instrument@npm:5.2.1"
   dependencies:
     "@babel/core": ^7.12.3
     "@babel/parser": ^7.14.7
     "@istanbuljs/schema": ^0.1.2
     istanbul-lib-coverage: ^3.2.0
     semver: ^6.3.0
-  checksum: 7c242ed782b6bf7b655656576afae8b6bd23dcc020e5fdc1472cca3dfb6ddb196a478385206d0df5219b9babf46ac4f21fea5d8ea9a431848b6cca6007012353
+  checksum: bf16f1803ba5e51b28bbd49ed955a736488381e09375d830e42ddeb403855b2006f850711d95ad726f2ba3f1ae8e7366de7e51d2b9ac67dc4d80191ef7ddf272
   languageName: node
   linkType: hard
 
@@ -21084,9 +21095,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-web@npm:0.18.9":
-  version: 0.18.9
-  resolution: "react-native-web@npm:0.18.9"
+"react-native-web@npm:0.18.6":
+  version: 0.18.6
+  resolution: "react-native-web@npm:0.18.6"
   dependencies:
     "@babel/runtime": ^7.18.6
     create-react-class: ^15.7.0
@@ -21096,9 +21107,9 @@ __metadata:
     postcss-value-parser: ^4.2.0
     styleq: ^0.1.2
   peerDependencies:
-    react: ^17.0.2 || ^18.0.0
-    react-dom: ^17.0.2 || ^18.0.0
-  checksum: 2cd2c08d8ff92bf969a54124d21f101e8d4645b1eb0625aeabccc70ba55b05c0d1fc6ab570b237417be674346d140edc387c5deac403050a9e1f1d87b15b2253
+    react: ^17.0.2
+    react-dom: ^17.0.2
+  checksum: 6d12e5cc69bc9350519840ba661fc0e66a55834e3e3e43bdb76295e23ef6421064e9dfe4d6921144eb071be3657e3646b218093d5d6baccde10e082c1f138838
   languageName: node
   linkType: hard
 
@@ -22199,7 +22210,6 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-native-web: 0.18.9
-    react-native-web-lite: 1.0.1-beta.184
     storybook-addon-next: ^1.6.7
     typescript: 4.7.4
   languageName: unknown
@@ -22333,13 +22343,13 @@ __metadata:
   linkType: hard
 
 "semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:~7.3.2":
-  version: 7.3.7
-  resolution: "semver@npm:7.3.7"
+  version: 7.3.8
+  resolution: "semver@npm:7.3.8"
   dependencies:
     lru-cache: ^6.0.0
   bin:
     semver: bin/semver.js
-  checksum: 2fa3e877568cd6ce769c75c211beaed1f9fce80b28338cadd9d0b6c40f2e2862bafd62c19a6cff42f3d54292b7c623277bcab8816a2b5521cf15210d43e75232
+  checksum: ba9c7cbbf2b7884696523450a61fee1a09930d888b7a8d7579025ad93d459b2d1949ee5bbfeb188b2be5f4ac163544c5e98491ad6152df34154feebc2cc337c1
   languageName: node
   linkType: hard
 
@@ -23432,8 +23442,8 @@ __metadata:
   linkType: hard
 
 "sucrase@npm:^3.20.0":
-  version: 3.27.0
-  resolution: "sucrase@npm:3.27.0"
+  version: 3.28.0
+  resolution: "sucrase@npm:3.28.0"
   dependencies:
     commander: ^4.0.0
     glob: 7.1.6
@@ -23444,7 +23454,7 @@ __metadata:
   bin:
     sucrase: bin/sucrase
     sucrase-node: bin/sucrase-node
-  checksum: a834c3fec170600a7bad84320f3d1b2bc52aacfeacd77970c98e56faad71ff1248bea91203878637adb647cf0fc70dd1a7d81c7a542f64dd37cca79c4398056f
+  checksum: 6a2369c140cee674988ebcf83538f38b11270e47ebaffc811baabe1db3fc586f1a357d4bbc66388a6b99054ba06a08f31b44b764e777abbd457b9e29332b12d0
   languageName: node
   linkType: hard
 
@@ -23946,8 +23956,8 @@ __metadata:
   linkType: hard
 
 "terser@npm:^5.10.0, terser@npm:^5.14.1, terser@npm:^5.3.4":
-  version: 5.15.0
-  resolution: "terser@npm:5.15.0"
+  version: 5.15.1
+  resolution: "terser@npm:5.15.1"
   dependencies:
     "@jridgewell/source-map": ^0.3.2
     acorn: ^8.5.0
@@ -23955,7 +23965,7 @@ __metadata:
     source-map-support: ~0.5.20
   bin:
     terser: bin/terser
-  checksum: b2358c989fcb76b4a1c265f60e175c950d3f776e5f619a9f58f54e8d2d792cd6b4cca86071834075f3b9943556d695357bafdd4ee2390de2fc9fd96ba3efa8c8
+  checksum: 9880a1e0956983a1ce5de204ea35121c0009fa41d582a6904ae850e1953a1a2cc021168439565280c5a8eee67c85a874175627e24989b046c7a72589b81c3979
   languageName: node
   linkType: hard
 
@@ -24542,11 +24552,11 @@ __metadata:
   linkType: hard
 
 "uglify-js@npm:^3.1.4":
-  version: 3.17.2
-  resolution: "uglify-js@npm:3.17.2"
+  version: 3.17.3
+  resolution: "uglify-js@npm:3.17.3"
   bin:
     uglifyjs: bin/uglifyjs
-  checksum: 128233638176abe6cc0ec0f1dbae7bcb3f02edd78eb5c7752b4f379ec9d29032cd2edf06b2522dbeba0a1f05afb25f6eaffe638581da6d8554bd4c060d6622b1
+  checksum: 2650b2e0385fe6bf68bc0b7746028fd004bbe839447c28a59f8a9e458187e897a5057900cb715b3be4cf7cf3f1d10217198210c5c23c0bffcb20feca2de5bb17
   languageName: node
   linkType: hard
 
@@ -24842,8 +24852,8 @@ __metadata:
   linkType: hard
 
 "update-browserslist-db@npm:^1.0.9":
-  version: 1.0.9
-  resolution: "update-browserslist-db@npm:1.0.9"
+  version: 1.0.10
+  resolution: "update-browserslist-db@npm:1.0.10"
   dependencies:
     escalade: ^3.1.1
     picocolors: ^1.0.0
@@ -24851,7 +24861,7 @@ __metadata:
     browserslist: ">= 4.21.0"
   bin:
     browserslist-lint: cli.js
-  checksum: f625899b236f6a4d7f62b56be1b8da230c5563d1fef84d3ef148f2e1a3f11a5a4b3be4fd7e3703e51274c116194017775b10afb4de09eb2c0d09d36b90f1f578
+  checksum: 12db73b4f63029ac407b153732e7cd69a1ea8206c9100b482b7d12859cd3cd0bc59c602d7ae31e652706189f1acb90d42c53ab24a5ba563ed13aebdddc5561a0
   languageName: node
   linkType: hard
 

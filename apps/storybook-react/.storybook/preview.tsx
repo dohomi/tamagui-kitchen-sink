@@ -1,7 +1,10 @@
 // import * as NextImage from 'next/image'
 import {useThemeState} from "app/src/state/themeState";
 import {Provider} from "app/src/provider";
-
+import '@tamagui/core/reset.css'
+import '@tamagui/font-inter/css/400.css'
+import '@tamagui/font-inter/css/700.css'
+import 'raf/polyfill'
 // const OriginalNextImage = NextImage.default
 //
 // Object.defineProperty(NextImage, 'default', {
