@@ -1,5 +1,5 @@
-import {LmAutocompleteRhf, LmFormRhfProvider, SpaceTokens, YStack} from '@tamagui-extras/ui'
-import {LmFile} from '@tamagui-extras/ui/src'
+import {LmAutocompleteRhf, LmFormRhfProvider, SpaceTokens, YStack} from 'tamagui-extras'
+import {LmFile} from 'tamagui-extras/src'
 import React from 'react'
 import {fruitItemsFixtures} from "app/src/lib/fixtures/selectItems";
 

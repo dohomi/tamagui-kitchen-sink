@@ -17,7 +17,7 @@ import {
     XStack,
     YGroup,
     YStack
-} from '@tamagui-extras/ui'
+} from 'tamagui-extras'
 import React from 'react'
 import {ScrollView} from "react-native";
 import {Paragraph, useTheme} from "tamagui";

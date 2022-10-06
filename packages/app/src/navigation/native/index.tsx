@@ -4,7 +4,7 @@ import {OverviewScreen} from "app/src/features/overview/overview";
 import {RouterNavigationProps} from "app/src/navigation/routerConfig";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {useToggleMainDrawer} from "app/src/state/appState";
-import {LmButton} from "@tamagui-extras/ui";
+import {LmButton} from "tamagui-extras";
 import {LmAppDrawer} from "app/src/components/layouts/LmAppDrawer";
 import {Settings} from "@tamagui/feather-icons";
 import i18n from "app/src/i18n/i18n";

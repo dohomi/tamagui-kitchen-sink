@@ -1,5 +1,5 @@
 {
-  "name": "@tamagui-extras/ui",
+  "name": "tamagui-extras",
   "license": "MIT",
   "author": "Dominic Garms",
   "version": "0.0.16",
@@ -44,11 +44,11 @@
     "react-quilljs": "^1.3.3",
     "rooks": "^7.4.0",
     "solito": "^1.0.12",
-    "tamagui": "1.0.1-beta.190"
+    "tamagui": "1.0.1-beta.185"
   },
   "devDependencies": {
     "@storybook/react": "^6.5.12",
-    "@tamagui/build": "1.0.1-beta.181",
+    "@tamagui/build": "1.0.1-beta.185",
     "@types/quill": "^2.0.9"
   },
   "publishConfig": {

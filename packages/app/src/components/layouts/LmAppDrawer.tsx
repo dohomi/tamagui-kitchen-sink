@@ -1,4 +1,4 @@
-import {Separator, Sheet, YStack} from '@tamagui-extras/ui'
+import {Separator, Sheet, YStack} from 'tamagui-extras'
 import {Sun} from "@tamagui/feather-icons";
 import {useAppState} from "app/src/state/appState";
 import {useState} from "react";

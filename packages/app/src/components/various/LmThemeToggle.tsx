@@ -1,4 +1,4 @@
-import {LmButton, LmButtonProps} from "@tamagui-extras/ui";
+import {LmButton, LmButtonProps} from "tamagui-extras";
 import {useThemeToggle} from "app/src/state/themeState";
 
 type LmThemeSwitchProps = LmButtonProps

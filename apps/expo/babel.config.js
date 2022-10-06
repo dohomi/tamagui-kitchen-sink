@@ -13,7 +13,7 @@ module.exports = function (api) {
                     [
                         '@tamagui/babel-plugin',
                         {
-                            components: ['@tamagui-extras/ui', 'tamagui'],
+                            components: ['tamagui-extras', 'tamagui'],
                             config: './tamagui.config.ts',
                         },
                     ],

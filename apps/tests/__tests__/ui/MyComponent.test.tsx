@@ -1,5 +1,5 @@
 import React from 'react';
-import {LmButton} from '@tamagui-extras/ui';
+import {LmButton} from 'tamagui-extras';
 import {renderUi} from "../../src";
 
 describe('<MyComponet />', () => {

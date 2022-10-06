@@ -2,7 +2,7 @@ import {config} from '@my/config'
 
 export type Conf = typeof config
 
-declare module '@tamagui-extras/ui' {
+declare module 'tamagui-extras' {
     interface TamaguiCustomConfig extends Conf {
     }
 }

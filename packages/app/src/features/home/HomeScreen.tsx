@@ -1,4 +1,4 @@
-import {Anchor, Button, H1, LmButton, Paragraph, Separator, XStack, YStack} from '@tamagui-extras/ui'
+import {Anchor, Button, H1, LmButton, Paragraph, Separator, XStack, YStack} from 'tamagui-extras'
 import {ChevronDown} from '@tamagui/feather-icons'
 import React from 'react'
 import {useLink} from 'solito/link'

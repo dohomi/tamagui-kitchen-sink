@@ -11,15 +11,15 @@
     "@react-navigation/bottom-tabs": "^6.3.3",
     "@react-navigation/native": "^6.0.11",
     "@react-navigation/native-stack": "^6.7.0",
-    "@tamagui-extras/ui": "*",
-    "@tamagui/animations-react-native": "1.0.1-beta.181",
-    "@tamagui/feather-icons": "1.0.1-beta.181",
+    "@tamagui/animations-react-native": "1.0.1-beta.185",
+    "@tamagui/feather-icons": "1.0.1-beta.185",
     "expo-linking": "^3.2.2",
     "expo-localization": "~13.1.0",
     "i18n-js": "^4.1.1",
     "i18next": "^21.9.1",
     "react-i18next": "^11.18.6",
     "solito": "^0.0.26",
+    "tamagui-extras": "*",
     "zustand": "^4.1.1"
   },
   "sideEffects": false

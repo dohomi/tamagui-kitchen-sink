@@ -22,12 +22,12 @@ const transform = withPlugins([
         'react-i18next',
         'expo-document-picker',
         '@my/config',
-        '@tamagui-extras/ui'
+        'tamagui-extras'
         // '@expo/vector-icons',
     ]),
     withTamagui({
         config: './tamagui.config.ts',
-        components: ['@tamagui-extras/ui', 'tamagui'],
+        components: ['tamagui-extras', 'tamagui'],
         importsWhitelist: ['constants.js', 'colors.js'],
         logTimings: true,
         disableExtraction,
@@ -63,7 +63,7 @@ const nextConfig = {
     //     config.resolve.alias = {
     //         ...config.resolve.alias,
     //         // your aliases
-    //         '@tamagui-extras/ui': 'node_modules/@tamagui-extras/ui'
+    //         'tamagui-extras': 'node_modules/tamagui-extras'
     //     }
     //     return config
     // },

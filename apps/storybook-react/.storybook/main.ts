@@ -13,7 +13,7 @@ const config = {
             options: {
                 modulesToTranspile: [
                     'app',
-                    '@tamagui-extras/ui',
+                    'tamagui-extras',
                     '@my/config'
                 ],
                 babelPlugins: [
@@ -46,7 +46,7 @@ const config = {
             // '@tamagui/rnw': require.resolve('@tamagui/rnw'),
             // optional, for svg icons
             // 'react-native-svg': require.resolve('@tamagui/react-native-svg'),
-            // '@tamagui-extras/ui': path.resolve(__dirname, '../../node_modules/@tamagui-extras/ui')
+            // 'tamagui-extras': path.resolve(__dirname, '../../node_modules/tamagui-extras')
         }
         return {
             ...config,
