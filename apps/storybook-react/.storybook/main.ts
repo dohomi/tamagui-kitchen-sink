@@ -41,6 +41,10 @@ const config = {
             propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
         },
     },
+    // managerWebpack: (config, options) => {
+    //     options.cache.set = () => Promise.resolve();
+    //     return config;
+    // },
     webpackFinal: async (config, {configType}) => {
         config.resolve.alias = {
             ...config.resolve.alias,
@@ -54,9 +58,17 @@ const config = {
             // 'react-native-svg': require.resolve('@tamagui/react-native-svg'),
             // 'tamagui-extras': path.resolve(__dirname, '../../node_modules/tamagui-extras')
         }
-        return {
-            ...config,
-        }
+        // config.resolve = {
+        //     ...config.resolve,
+        //     fallback: {
+        //         ...(config.resolve || {}).fallback,
+        //         fs: false,
+        //         stream: false,
+        //         os: false,
+        //     },
+        // }
+        // config.cache = {type: 'memory'}
+        return config
     },
     env: (config) => ({
         ...config,

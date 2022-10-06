@@ -19,8 +19,10 @@ const transform = withPlugins([
         'expo-linking',
         'expo-constants',
         'expo-modules-core',
-        'react-i18next',
         'expo-document-picker',
+        'expo-asset',
+        'expo-av',
+        'react-i18next',
         '@my/config',
         'tamagui-extras'
         // '@expo/vector-icons',

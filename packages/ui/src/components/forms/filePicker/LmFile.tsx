@@ -1,14 +1,20 @@
-import {ListItem, Stack} from "tamagui";
+import {ListItem, Stack, XStack} from "tamagui";
 import {useState} from "react";
 import {LmFileProps} from "./filePickerTypes";
 import {LmButton} from "../LmButton";
-import {LmFilePicker} from "./LmFilePicker";
 import {DocumentResult} from "expo-document-picker";
+import {LmFilePicker} from "./LmFilePicker";
 
 export {LmFileProps}
 
-export function LmFile({pickerProps, uploadButtonProps, onUpload, containerProps}: LmFileProps) {
-    const [result, setFiles] = useState<DocumentResult>()
+export function LmFile({
+                           pickerButtonProps,
+                           uploadButtonProps,
+                           onUpload,
+                           containerProps,
+                           cancelButtonProps
+                       }: LmFileProps) {
+    const [result, setFiles] = useState<DocumentResult | null>(null)
     const [isUploading, setUploading] = useState(false)
     return (
         <Stack {...containerProps}>
@@ -16,21 +22,29 @@ export function LmFile({pickerProps, uploadButtonProps, onUpload, containerProps
                 <ListItem title={file.name} subTitle={file.type} key={file.name + file.size}/>
             ))}
             {result?.type === 'success' ? (
-                <LmButton {...uploadButtonProps}
-                          loading={isUploading}
-                          onPress={async () => {
-                              setUploading(true)
-                              try {
-                                  await onUpload(result)
-                              } catch (e) {
-                                  console.error(e)
-                              }
-                              setUploading(false)
-                          }}
-                >{uploadButtonProps.label}</LmButton>
+                <XStack space={1}>
+                    <LmButton {...cancelButtonProps}
+                              onPress={() => {
+                                  setFiles(null)
+                              }}>
+                        {cancelButtonProps?.label}
+                    </LmButton>
+                    <LmButton {...uploadButtonProps}
+                              loading={isUploading}
+                              onPress={async () => {
+                                  setUploading(true)
+                                  try {
+                                      await onUpload(result)
+                                  } catch (e) {
+                                      console.error(e)
+                                  }
+                                  setUploading(false)
+                              }}
+                    >{uploadButtonProps.label}</LmButton>
+                </XStack>
             ) : (
                 <LmFilePicker
-                    {...pickerProps}
+                    {...pickerButtonProps}
                     onChange={files => {
                         setFiles(files)
                     }}/>

@@ -2,6 +2,7 @@ import {DocumentPickerOptions, DocumentResult} from "expo-document-picker";
 import {LmButtonProps} from "../LmButton";
 import {StackPropsBase} from "tamagui";
 
+
 export type LmFilePickerProps = LmButtonProps & {
     label?: string
     documentPickerOptions?: DocumentPickerOptions
@@ -13,7 +14,10 @@ export type LmFileProps = {
     uploadButtonProps: LmButtonProps & {
         label?: string
     }
-    pickerProps: LmFilePickerProps
+    cancelButtonProps: LmButtonProps & {
+        label?: string
+    }
+    pickerButtonProps: LmFilePickerProps
     onUpload: (files: DocumentResult) => Promise<void> | void
 }
 

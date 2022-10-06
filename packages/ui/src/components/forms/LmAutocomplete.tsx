@@ -1,6 +1,6 @@
 import {Input, ListItem, Popover, Text, XStack} from "tamagui";
 import {CheckSquare, Square} from "@tamagui/feather-icons";
-import {useEffect, useId, useState} from "react";
+import {useEffect, useId, useMemo, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {LmFormContainerBaseTypes} from "./formContainerTypes";
 import {LmPopover} from "../panels/LmPopover";
@@ -33,21 +33,24 @@ export function LmAutocomplete({
                                    error
                                }: LmAutocompleteProps) {
     const id = useId()
-    const [filteredOptions, setOptions] = useState(options)
+    const memOptions = useMemo(() => {
+        return options
+    }, [options])
+    const [filteredOptions, setOptions] = useState(memOptions)
     const [
         selection,
         {matchSelection, toggleSelection},
     ] = useMultiSelectableList(
-        options,
-        multiple && Array.isArray(value) ? (value || []).map(i => options.findIndex(k => k.value === i?.value ?? i)) : [],
+        memOptions,
+        multiple && Array.isArray(value) ? (value || []).map(i => memOptions.findIndex(k => k.value === i?.value ?? i)) : [],
         true,
     )
     const [selectionSingle, {
         matchSelection: matchSelectionSingle,
         toggleSelection: toggleSelectionSingle
     }] = useSelectableList(
-        options,
-        !multiple && !Array.isArray(value) ? options.findIndex(i => i.value === value?.value ?? value) : -1,
+        memOptions,
+        !multiple && !Array.isArray(value) ? memOptions.findIndex(i => i.value === value?.value ?? value) : -1,
         true,
     )
 
@@ -91,7 +94,7 @@ export function LmAutocomplete({
                            placeholder={placeholderSearch}
                            width={'100%'}
                            onChangeText={text => {
-                               const filtered = options.filter(i => i.label.toLowerCase().indexOf(text.toLowerCase()) > -1)
+                               const filtered = memOptions.filter(i => i.label.toLowerCase().indexOf(text.toLowerCase()) > -1)
                                setOptions(filtered)
                            }}
                     />
