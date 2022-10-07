@@ -1,16 +1,29 @@
 import {LmVideoEmbedProps} from "./videoEmbedTypes";
 import {Stack} from "tamagui";
+import {useState} from "react";
+import {LmSkeleton} from "../LmSkeleton";
 
 
-export function LmVideoEmbed({youtubeId = 'JxS5E-kZc2s', height = 250, ratio = 16 / 9}: LmVideoEmbedProps) {
+export function LmVideoEmbed({
+                                 youtubeId = 'JxS5E-kZc2s',
+                                 aspectRatio = 16 / 9,
+                                 width = '100%',
+                                 ...stackProps
+                             }: LmVideoEmbedProps) {
+    const [loaded, setLoaded] = useState(false)
     return (
-        <Stack height={height} width={height * ratio}>
+        <Stack {...stackProps} width={width} aspectRatio={aspectRatio} position={'relative'}>
+            {!loaded && (
+                <LmSkeleton/>
+            )}
             <iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}?controls=1`}
                     frameBorder="0"
                     width={'100%'}
                     height={'100%'}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen/>
+                    allowFullScreen
+                    onLoad={() => setLoaded(true)}
+            />
         </Stack>
     )
 }

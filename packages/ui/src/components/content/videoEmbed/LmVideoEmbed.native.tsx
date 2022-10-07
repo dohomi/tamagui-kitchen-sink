@@ -1,37 +1,49 @@
 import {WebView} from 'react-native-webview';
 import {useState} from "react";
 import {LmVideoEmbedProps} from "./videoEmbedTypes";
+import {Platform} from "react-native";
+import {Stack} from "tamagui";
+import {LmSkeleton} from "../LmSkeleton";
 
-
-export function LmVideoEmbed({youtubeId = 'JxS5E-kZc2s', height = 250, ratio = 16 / 9}: LmVideoEmbedProps) {
+export function LmVideoEmbed({
+                                 youtubeId = 'JxS5E-kZc2s',
+                                 aspectRatio = 16 / 9,
+                                 width = '100%',
+                                 ...stackProps
+                             }: LmVideoEmbedProps) {
     const [state, setState] = useState<any>()
     return (
-        <WebView
-            source={{
-                uri: `https://www.youtube-nocookie.com/embed/${youtubeId}?controls=1`,
-            }}
-            style={{height: height, width: height * ratio}}
-            androidLayerType={'hardware'}
-            allowsFullscreenVideo={true}
-            mediaPlaybackRequiresUserAction
-            useNativeResumeAndPauseLifecycleEvents
-            javaScriptEnabled
-            allowsInlineMediaPlayback
-            useWebKit={true}
-            originWhitelist={['*']}
-            automaticallyAdjustContentInsets
-            onError={(e: any) => {
-                setState({
-                    ...state,
-                    error: e.error,
-                });
-            }}
-            onLoadEnd={() =>
-                setState({
-                    ...state,
-                    isReady: true,
-                })
-            }
-        />
+        <Stack {...stackProps} width={width} aspectRatio={aspectRatio} position={'relative'}>
+            {!state.isReady && (
+                <LmSkeleton/>
+            )}
+            <WebView
+                source={{
+                    uri: `https://www.youtube-nocookie.com/embed/${youtubeId}?controls=1`,
+                }}
+                style={{height: '100%', width: '100%'}}
+                androidLayerType={Platform.OS === 'android' && Platform.Version <= 22 ? 'hardware' : 'none'}
+                allowsFullscreenVideo={true}
+                mediaPlaybackRequiresUserAction
+                useNativeResumeAndPauseLifecycleEvents
+                javaScriptEnabled
+                allowsInlineMediaPlayback
+                useWebKit={true}
+                originWhitelist={['*']}
+                automaticallyAdjustContentInsets
+                onError={(e: any) => {
+                    setState({
+                        ...state,
+                        error: e.error,
+                    });
+                }}
+                onLoadEnd={() =>
+                    setState({
+                        ...state,
+                        isReady: true,
+                    })
+                }
+            />
+        </Stack>
     )
 }
