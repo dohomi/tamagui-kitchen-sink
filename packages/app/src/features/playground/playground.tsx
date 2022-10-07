@@ -1,5 +1,13 @@
-import {LmAutocompleteRhf, LmFormRhfProvider, SpaceTokens, YStack} from 'tamagui-extras'
-import {LmFile, LmVideo, LmVideoEmbed} from 'tamagui-extras/src'
+import {
+    LmAutocompleteRhf,
+    LmDatepicker,
+    LmFile,
+    LmFormRhfProvider,
+    LmVideo,
+    LmVideoEmbed,
+    SpaceTokens,
+    YStack
+} from 'tamagui-extras'
 import React from 'react'
 import {fruitItemsFixtures} from "app/src/lib/fixtures/selectItems";
 import {ScrollView} from "tamagui";
@@ -29,6 +37,7 @@ export function PlaygroundScreen() {
                         <LmAutocompleteRhf name={'autocomplete'} label={'Autocomplete'} options={fruitItemsFixtures}/>
                         <LmAutocompleteRhf name={'autocomplete-multi'} label={'Multi'} multiple
                                            options={fruitItemsFixtures}/>
+                        <LmDatepicker/>
                         <LmFile pickerButtonProps={{label: 'Pick Files'}}
                                 onUpload={(files) => {
 

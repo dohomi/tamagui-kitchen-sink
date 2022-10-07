@@ -32,9 +32,6 @@ export function LmDatepicker({numberOfMonths, isRangePicker, onChange, labelFunc
         startDate: state.startDate,
         endDate: state.endDate,
         focusedInput: state.focusedInput as FocusedInput,
-        //     dayLabelFormat={(date: Date) => format(date, 'dd', {locale})}
-        // weekdayLabelFormat={(date: Date) => format(date, 'eeeeee', {locale})}
-        // monthLabelFormat={(date: Date) => format(date, 'MMMM yyyy', {locale})}
         onDatesChange: (data) => {
             if (!data.focusedInput) {
                 setState({...data, focusedInput: START_DATE});
