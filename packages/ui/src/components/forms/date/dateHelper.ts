@@ -13,3 +13,11 @@ export function getMonthNames(props?: MonthNamesProps) {
 
 export const getMonthOptions = (props?: MonthNamesProps) =>
     getMonthNames(props).map((name, index) => ({value: index + 1, label: name}))
+
+export const getLocaleDate = ({localeName, options, date}: MonthNamesProps & { date: Date }) => {
+    return date ? new Intl.DateTimeFormat(localeName, options ?? {
+        month: '2-digit',
+        year: 'numeric',
+        day: '2-digit'
+    }).format(date) : null
+}

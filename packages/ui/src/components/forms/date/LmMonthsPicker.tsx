@@ -1,5 +1,5 @@
 import {getMonthOptions} from "./dateHelper";
-import {LmSelect, LmSelectProps} from "../components/forms";
+import {LmSelect, LmSelectProps} from "../index";
 import {useMemo} from "react";
 
 export type LmMonthsPickerProps = Omit<LmSelectProps, 'options'>

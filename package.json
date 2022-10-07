@@ -17,7 +17,7 @@
     "build": "yarn workspaces foreach --exclude next-app --exclude sb-react -pi run build",
     "build:all": "yarn turbo run build --filter=...tamagui-extras",
     "build:web": "yarn turbo run build --filter=next-app",
-    "upgrade:tamagui": "manypkg upgrade tamagui 1.0.1-beta.181 && manypkg upgrade @tamagui 1.0.1-beta.181 && manypkg upgrade tamagui-loader 1.0.1-beta.181 && manypkg upgrade react-native-web-lite 1.0.1-beta.181",
+    "upgrade:tamagui": "manypkg upgrade tamagui 1.0.1-beta.184 && manypkg upgrade @tamagui 1.0.1-beta.184 && manypkg upgrade tamagui-loader 1.0.1-beta.184 && manypkg upgrade react-native-web-lite 1.0.1-beta.184",
     "upgrade:rnw": "manypkg upgrade react-native-web",
     "sync:tamagui": "${TAMAGUI_PATH:-$HOME/tamagui}/starters-sync.sh",
     "eas:dev:ios": "cd apps/expo && yarn eas:dev:ios",

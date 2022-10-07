@@ -14,11 +14,11 @@ export function LmMonth({onPrevious, onNext, ...props}: LmMonthProps) {
         <Stack width={250}>
             <XStack justifyContent={'space-between'} alignItems={'center'} height={40}>
                 {onPrevious ? (
-                    <Button onPress={() => onPrevious()} icon={ArrowLeft} circular chromeless/>
+                    <Button focusable={false} onPress={() => onPrevious()} icon={ArrowLeft} circular chromeless/>
                 ) : <Text/>}
                 <h3>{monthLabel}</h3>
                 {onNext ? (
-                    <Button onPress={() => onNext()} icon={ArrowRight} circular chromeless/>
+                    <Button focusable={false} onPress={() => onNext()} icon={ArrowRight} circular chromeless/>
                 ) : <Text/>}
             </XStack>
             <XStack flex={7} width={250}>
