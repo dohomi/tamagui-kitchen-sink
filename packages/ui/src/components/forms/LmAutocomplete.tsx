@@ -35,7 +35,7 @@ export function LmAutocomplete({
     const id = useId()
     const memOptions = useMemo(() => {
         return options
-    }, [options])
+    }, [])
     const [filteredOptions, setOptions] = useState(memOptions)
     const [
         selection,
