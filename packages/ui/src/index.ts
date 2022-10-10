@@ -14,5 +14,3 @@ export * from './components/panels'
 
 // hooks
 export * from './hooks'
-
-export * from './components/forms/date'

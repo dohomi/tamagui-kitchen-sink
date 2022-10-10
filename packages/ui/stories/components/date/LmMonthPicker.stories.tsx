@@ -1,7 +1,7 @@
 import {LmMonthsPicker} from "../../../src";
 
 export default {
-    title: 'ui/Date/MonthPicker',
+    title: 'ui/Date/Months Picker',
     component: LmMonthsPicker
 }
 

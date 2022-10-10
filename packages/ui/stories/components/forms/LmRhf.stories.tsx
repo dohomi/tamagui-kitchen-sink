@@ -1,4 +1,4 @@
-import {Text, XStack, YStack} from "tamagui";
+import {XStack, YStack} from "tamagui";
 import {
     LmCheckboxRhf,
     LmFormRhfProvider,
@@ -9,16 +9,15 @@ import {
     LmSubmitButtonRhf,
     LmSwitchRhf
 } from "../../../src";
-import React, {useState} from "react";
+import React from "react";
 import {fruitItemsFixtures} from "../../../fixtures/selectItems";
+import {action} from '@storybook/addon-actions';
 
 export default {
     title: 'ui/Forms/ReactHookForm',
 }
 
 export const ReactHookForm = () => {
-    const [data, setData] = useState<any>({message: 'not submitted...'})
-
     return (
         <LmFormRhfProvider defaultValues={{
             slider_pre: 2
@@ -34,17 +33,9 @@ export const ReactHookForm = () => {
                 <LmSliderRhf name={'slider'}/>
                 <LmSliderRhf name={'slider_pre'}/>
                 <XStack space>
-                    <LmResetButtonRhf onPress={() => setData({})}>Reset</LmResetButtonRhf>
-                    <LmSubmitButtonRhf onSubmit={(data) => {
-                        setData(data)
-                    }}>Submit</LmSubmitButtonRhf>
+                    <LmResetButtonRhf>Reset</LmResetButtonRhf>
+                    <LmSubmitButtonRhf onSubmit={action('submit')}>Submit</LmSubmitButtonRhf>
                 </XStack>
-
-                <YStack marginTop={'$3'}>
-                    <Text>
-                        {JSON.stringify(data)}
-                    </Text>
-                </YStack>
             </YStack>
         </LmFormRhfProvider>
     )

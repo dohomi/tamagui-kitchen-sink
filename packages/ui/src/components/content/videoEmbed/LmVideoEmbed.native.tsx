@@ -11,10 +11,10 @@ export function LmVideoEmbed({
                                  width = '100%',
                                  ...stackProps
                              }: LmVideoEmbedProps) {
-    const [state, setState] = useState<any>()
+    const [state, setState] = useState<any>({})
     return (
         <Stack {...stackProps} width={width} aspectRatio={aspectRatio} position={'relative'}>
-            {!state.isReady && (
+            {!state?.isReady && (
                 <LmSkeleton/>
             )}
             <WebView
@@ -32,16 +32,17 @@ export function LmVideoEmbed({
                 originWhitelist={['*']}
                 automaticallyAdjustContentInsets
                 onError={(e: any) => {
-                    setState({
-                        ...state,
+                    setState(s => ({
+                        ...s,
+                        isReady: false,
                         error: e.error,
-                    });
+                    }));
                 }}
                 onLoadEnd={() =>
-                    setState({
-                        ...state,
+                    setState(s => ({
+                        ...s,
                         isReady: true,
-                    })
+                    }))
                 }
             />
         </Stack>

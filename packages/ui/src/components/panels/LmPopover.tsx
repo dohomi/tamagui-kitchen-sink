@@ -28,7 +28,9 @@ export function LmPopover({
 
             <Popover.Sheet modal dismissOnSnapToBottom>
                 <Popover.Sheet.Frame padding={'$4'}>
-                    <Popover.SheetContents/>
+                    <Popover.Sheet.ScrollView>
+                        <Popover.SheetContents/>
+                    </Popover.Sheet.ScrollView>
                 </Popover.Sheet.Frame>
                 <Popover.Sheet.Overlay/>
             </Popover.Sheet>

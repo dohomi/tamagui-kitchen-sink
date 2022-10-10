@@ -19,5 +19,5 @@ export const getLocaleDate = ({localeName, options, date}: MonthNamesProps & { d
         month: '2-digit',
         year: 'numeric',
         day: '2-digit'
-    }).format(date) : null
+    }).format(date) : ''
 }

@@ -1,4 +1,4 @@
-import {Separator, Sheet, YStack} from 'tamagui-extras'
+import {Button, Separator, Sheet, YStack} from 'tamagui-extras'
 import {Sun} from "@tamagui/feather-icons";
 import {useAppState} from "app/src/state/appState";
 import {useState} from "react";
@@ -33,7 +33,7 @@ export function LmAppDrawer() {
                             <LmThemeToggle icon={<Sun/>} circular chromeless/>
                         </XStack>
                         <Separator minWidth={'100%'} marginBottom={'$4'}/>
-
+                        <Button onPress={() => setMainDrawer(false)}>Close</Button>
                     </YStack>
                 </Sheet.ScrollView>
             </Sheet.Frame>

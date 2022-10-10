@@ -4,6 +4,7 @@ import React from 'react'
 import {useLink} from 'solito/link'
 import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";
 import {useToggleMainDrawer} from "app/src/state/appState";
+import {LmAppDrawer} from "app/src/components/layouts/LmAppDrawer";
 
 export function HomeScreen() {
 
@@ -59,7 +60,7 @@ function SheetDemo() {
                 circular
                 onPress={() => toggleMainDrawer()}
             />
-            {/*<LmAppDrawer/>*/}
+            <LmAppDrawer/>
         </>
     )
 }

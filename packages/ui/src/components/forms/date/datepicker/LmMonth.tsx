@@ -1,4 +1,4 @@
-import {Button, Stack, Text, XStack} from "tamagui";
+import {Button, H5, Stack, Text, XStack} from "tamagui";
 import {ArrowLeft, ArrowRight} from '@tamagui/feather-icons'
 import {useMonth, UseMonthProps} from "@datepicker-react/hooks";
 import {LmDay} from "./LmDay";
@@ -16,7 +16,7 @@ export function LmMonth({onPrevious, onNext, ...props}: LmMonthProps) {
                 {onPrevious ? (
                     <Button focusable={false} onPress={() => onPrevious()} icon={ArrowLeft} circular chromeless/>
                 ) : <Text/>}
-                <h3>{monthLabel}</h3>
+                <H5>{monthLabel}</H5>
                 {onNext ? (
                     <Button focusable={false} onPress={() => onNext()} icon={ArrowRight} circular chromeless/>
                 ) : <Text/>}

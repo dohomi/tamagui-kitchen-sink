@@ -1,6 +1,6 @@
 import {
     LmAutocompleteRhf,
-    LmDatepicker,
+    LmDatepickerRhf,
     LmFile,
     LmFormRhfProvider,
     LmVideo,
@@ -37,7 +37,7 @@ export function PlaygroundScreen() {
                         <LmAutocompleteRhf name={'autocomplete'} label={'Autocomplete'} options={fruitItemsFixtures}/>
                         <LmAutocompleteRhf name={'autocomplete-multi'} label={'Multi'} multiple
                                            options={fruitItemsFixtures}/>
-                        <LmDatepicker/>
+                        <LmDatepickerRhf start={'date'} label={'Date'}/>
                         <LmFile pickerButtonProps={{label: 'Pick Files'}}
                                 onUpload={(files) => {
 

@@ -6211,7 +6211,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:^0.69.5":
+"@types/react-native@npm:^0.69, @types/react-native@npm:^0.69.5":
   version: 0.69.13
   resolution: "@types/react-native@npm:0.69.13"
   dependencies:
@@ -6220,7 +6220,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.0.15, @types/react@npm:^18.0.17":
+"@types/react@npm:^18.0.15":
   version: 18.0.21
   resolution: "@types/react@npm:18.0.21"
   dependencies:
@@ -23656,12 +23656,12 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.18.9
     "@manypkg/cli": ^0.19.1
-    "@types/react": ^18.0.15
-    "@types/react-native": ^0.69.5
+    "@types/react": ^18.0.21
+    "@types/react-native": ^0.69
     eslint: ^8.21.0
     prettier: ^2.7.1
     turbo: ^1.4.2
-    typescript: ^4.7.4
+    typescript: ^4.8.4
   languageName: unknown
   linkType: soft
 
@@ -24514,7 +24514,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.7.4":
+"typescript@npm:^4.7.4, typescript@npm:^4.8.4":
   version: 4.8.4
   resolution: "typescript@npm:4.8.4"
   bin:
@@ -24534,7 +24534,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.8.4#~builtin<compat/typescript>":
   version: 4.8.4
   resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=a1c5e5"
   bin:

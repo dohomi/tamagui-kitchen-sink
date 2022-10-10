@@ -1,4 +1,4 @@
-import {Card, CardProps, ColorTokens, getTokens, Text, XStack} from "tamagui";
+import {Card, CardProps, ColorTokens, Text, XStack} from "tamagui";
 import {AlertCircle, AlertTriangle, CheckCircle, Info} from '@tamagui/feather-icons'
 
 type Severity = 'default' | 'error' | 'info' | 'warning' | 'success';
@@ -10,11 +10,11 @@ export type LmAlertProps = CardProps & {
 }
 
 const severityColor: { [k in Severity]: ColorTokens } = {
-    default: '$gray3Dark',
-    error: '$red10Dark',
-    info: '$blue10Dark',
-    warning: '$orange10Dark',
-    success: '$green10Dark'
+    default: '$gray3',
+    error: '$red10',
+    info: '$blue10',
+    warning: '$orange10',
+    success: '$green10'
 }
 
 type AlertIconProps = {
@@ -23,16 +23,15 @@ type AlertIconProps = {
 }
 
 function AlertIcon({severity = 'default', outlined}: AlertIconProps) {
-    const {color} = getTokens()
-    const props: { color?: string } = {}
+    const props: { color?: ColorTokens } = {}
     if (outlined) {
-        props.color = color[severityColor[severity]]?.val as string
+        props.color = severityColor[severity]
     }
     return {
         default: <Info {...props} />,
         error: <AlertCircle {...props}/>,
         info: <Info {...props}/>,
-        warning: <AlertTriangle {...props}/>,
+        warning: <AlertTriangle {...props} />,
         success: <CheckCircle {...props}/>
     }[severity]
 }
