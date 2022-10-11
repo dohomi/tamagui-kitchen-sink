@@ -11,17 +11,17 @@
   },
   "dependencies": {
     "@expo/next-adapter": "^4.0.12",
-    "@tamagui/next-theme": "1.0.1-beta.184",
+    "@tamagui/next-theme": "1.0.1-beta.191",
     "app": "*",
     "next": "^12.3.1",
     "raf": "^3.4.1",
     "react-native": "0.0.0",
     "react-native-web": "^0.18.9",
     "react-native-web-linear-gradient": "^1.1.2",
-    "react-native-web-lite": "1.0.1-beta.184"
+    "react-native-web-lite": "1.0.1-beta.191"
   },
   "devDependencies": {
-    "@tamagui/next-plugin": "1.0.1-beta.184",
+    "@tamagui/next-plugin": "1.0.1-beta.191",
     "@types/node": "^18.6.4",
     "eslint-config-next": "^12.3.1",
     "file-loader": "^6.2.0",
