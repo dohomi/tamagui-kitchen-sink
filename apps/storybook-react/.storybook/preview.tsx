@@ -21,25 +21,36 @@ export const parameters = {
             date: /Date$/
         }
     },
+    // backgrounds: false
     backgrounds: {
-        values: [
-            {
-                name: 'dark',
-                value: '#151515',
-            },
-            {
-                name: 'light',
-                value: 'hsl(0, 0%, 99.0%)',
-            },
-        ],
+        values: [],
     },
 }
 
+export const globalTypes = {
+    theme: {
+        name: "Theme",
+        title: "Theme",
+        description: "Theme for your components",
+        defaultValue: "light",
+        toolbar: {
+            icon: "paintbrush",
+            dynamicTitle: true,
+            items: [
+                {value: "light", left: "☀️", title: "Light Mode"},
+                {value: "dark", left: "🌙", title: "Dark Mode"},
+            ],
+        },
+    },
+};
+
 export const decorators = [
     (Story, args: any) => {
+        // The theme global we just declared
+        const {theme: themeKey} = args.globals;
         const name = useThemeState(state => state.name)
-        let theme = args.globals.backgrounds?.value === '#151515' ? 'dark' : 'light'
-        if (!args.globals.backgrounds && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        let theme = themeKey
+        if (!theme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             // dark mode
             theme = 'dark'
         }
