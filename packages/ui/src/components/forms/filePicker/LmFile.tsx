@@ -8,14 +8,20 @@ import {LmFilePicker} from "./LmFilePicker";
 export {LmFileProps}
 
 export function LmFile({
-                           pickerButtonProps,
-                           uploadButtonProps,
+                           pickerButtonProps = {label: 'Pick File'},
+                           uploadButtonProps = {label: 'Upload'},
                            onUpload,
                            containerProps,
-                           cancelButtonProps
+                           directUpload,
+                           cancelButtonProps = {label: 'Cancel'}
                        }: LmFileProps) {
     const [result, setFiles] = useState<DocumentResult | null>(null)
     const [isUploading, setUploading] = useState(false)
+    const upload = async (res: DocumentResult) => {
+        setUploading(true)
+        await onUpload(res)
+        setUploading(false)
+    }
     return (
         <Stack {...containerProps}>
             {result?.type === 'success' && Array.from(result.output ?? []).map((file: File) => (
@@ -31,22 +37,18 @@ export function LmFile({
                     </LmButton>
                     <LmButton {...uploadButtonProps}
                               loading={isUploading}
-                              onPress={async () => {
-                                  setUploading(true)
-                                  try {
-                                      await onUpload(result)
-                                  } catch (e) {
-                                      console.error(e)
-                                  }
-                                  setUploading(false)
-                              }}
+                              onPress={() => upload(result)}
                     >{uploadButtonProps.label}</LmButton>
                 </XStack>
             ) : (
                 <LmFilePicker
                     {...pickerButtonProps}
                     onChange={files => {
-                        setFiles(files)
+                        if (directUpload) {
+                            return upload(files)
+                        } else {
+                            setFiles(files)
+                        }
                     }}/>
             )}
         </Stack>

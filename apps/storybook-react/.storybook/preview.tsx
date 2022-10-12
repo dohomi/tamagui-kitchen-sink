@@ -1,6 +1,5 @@
 // import * as NextImage from 'next/image'
-import {useThemeState} from "app/src/state/themeState";
-import {Provider} from "app/src/provider";
+// import {Provider} from "app/src/provider";
 import '@tamagui/core/reset.css'
 import '@tamagui/font-inter/css/400.css'
 import '@tamagui/font-inter/css/700.css'
@@ -11,6 +10,8 @@ import 'raf/polyfill'
 //   configurable: true,
 //   value: (props) => <OriginalNextImage {...props} unoptimized />
 // })
+import {useThemeState} from "app/src/state/themeState";
+import {Provider} from "app/src/provider";
 
 export const parameters = {
     actions: {argTypesRegex: '^on[A-Z].*'},

@@ -1,18 +1,23 @@
 import {LmFile} from "../../../src";
+import {action} from "@storybook/addon-actions";
 
 export default {
     title: 'ui/Forms/File',
+    component: LmFile
 }
 
-export const Basic = () => (
-    <LmFile uploadButtonProps={{
-        label: 'Upload File'
-    }}
-            pickerButtonProps={{
-                label: 'Pick File'
-            }}
-            onUpload={(files) => {
-                console.log(files)
-            }}
-    />
-)
+const Template = (args) => <LmFile {...args}/>
+
+export const Basic = Template.bind({})
+Basic.args = {
+    onUpload: action('upload')
+}
+
+export const DirectUpload = Template.bind({})
+DirectUpload.args = {
+    pickerButtonProps: {
+        label: 'Choose Avatar'
+    },
+    directUpload: true,
+    onUpload: action('upload')
+}

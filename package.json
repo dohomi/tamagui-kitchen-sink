@@ -8,16 +8,16 @@
   "scripts": {
     "native": "yarn build && cd apps/expo && yarn start",
     "web": "yarn build && cd apps/next && yarn next",
-    "sb:vite": "cd apps/storybook-vite && yarn sb",
+    "sb:vite": "cd apps/vite && yarn storybook",
     "sb:native": "cd apps/storybook-react-native && yarn start",
     "sb": "cd apps/storybook-react && yarn sb",
     "web:prod": "yarn workspace next-app build",
     "watch": "yarn turbo run watch --filter=tamagui-extras",
     "postinstall": "yarn build",
-    "build": "yarn workspaces foreach --exclude next-app --exclude sb-react -pi run build",
+    "build": "yarn workspaces foreach --exclude next-app --exclude sb-react --exclude vite -pi run build",
     "build:all": "yarn turbo run build --filter=...tamagui-extras",
     "build:web": "yarn turbo run build --filter=next-app",
-    "upgrade:tamagui": "manypkg upgrade tamagui@1.0.1-beta.191 && manypkg upgrade @tamagui@1.0.1-beta.191 && manypkg upgrade tamagui-loader@1.0.1-beta.191 && manypkg upgrade react-native-web-lite@1.0.1-beta.191",
+    "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader && manypkg upgrade react-native-web-lite",
     "upgrade:rnw": "manypkg upgrade react-native-web",
     "sync:tamagui": "${TAMAGUI_PATH:-$HOME/tamagui}/starters-sync.sh",
     "eas:dev:ios": "cd apps/expo && yarn eas:dev:ios",
@@ -32,19 +32,21 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-refresh": "^0.14.0",
-    "react-native-web": "0.18.9"
+    "typescript": "4.7.4",
+    "react-native-web": "0.18.9",
+    "webpack": "^5.74.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9"
   },
   "devDependencies": {
-    "@manypkg/cli": "^0.19.1",
+    "@manypkg/cli": "^0.19.2",
     "@types/react": "^18.0.21",
     "@types/react-native": "^0.69",
     "eslint": "^8.21.0",
     "prettier": "^2.7.1",
     "turbo": "^1.4.2",
-    "typescript": "^4.8.4"
+    "typescript": "^4.7.4"
   },
   "packageManager": "yarn@3.2.3"
 }

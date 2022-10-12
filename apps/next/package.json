@@ -13,7 +13,7 @@
     "@expo/next-adapter": "^4.0.12",
     "@tamagui/next-theme": "1.0.1-beta.191",
     "app": "*",
-    "next": "^12.3.1",
+    "next": "12.1.6",
     "raf": "^3.4.1",
     "react-native": "0.0.0",
     "react-native-web": "^0.18.9",

@@ -36,20 +36,20 @@ export function LmPopover({
             </Popover.Sheet>
 
             <Popover.Content
-                bw={1}
-                boc="$borderColor"
-                enterStyle={{x: 0, y: -10, o: 0}}
-                exitStyle={{x: 0, y: -10, o: 0}}
+                borderWidth={1}
+                borderColor="$borderColor"
+                enterStyle={{x: 0, y: -10, opacity: 0}}
+                exitStyle={{x: 0, y: -10, opacity: 0}}
                 x={0}
                 y={0}
-                o={1}
+                opacity={1}
                 animation="bouncy"
                 elevate
                 size={contentSize}
                 padding={contentPadding}
             >
                 {!hideArrow && (
-                    <Popover.Arrow bw={1} boc="$borderColor"/>
+                    <Popover.Arrow borderWidth={1} borderColor="$borderColor"/>
                 )}
                 {children}
             </Popover.Content>

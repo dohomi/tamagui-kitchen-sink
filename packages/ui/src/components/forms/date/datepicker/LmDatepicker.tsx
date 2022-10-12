@@ -43,7 +43,8 @@ export function LmDatepicker({
         endDate: endDate,
         focusedInput: START_DATE
     });
-    numberOfMonths = (isRangePicker ? (numberOfMonths ?? 2) : 1) as number
+    const monthsCount: number = isRangePicker ? (numberOfMonths ?? 2) : 1
+
     const {
         activeMonths,
         firstDayOfWeek,
@@ -69,7 +70,7 @@ export function LmDatepicker({
                 onOpenChange(false)
             }
         },
-        numberOfMonths,
+        numberOfMonths: monthsCount,
         ...(!isRangePicker && {
             minBookingDays: 1,
             exactMinBookingDays: true
@@ -115,8 +116,8 @@ export function LmDatepicker({
                                      year={month.year}
                                      month={month.month}
                                      firstDayOfWeek={firstDayOfWeek}
-                                     onPrevious={numberOfMonths > 1 ? (index === 0 ? goToPreviousMonths : undefined) : goToPreviousMonthsByOneMonth}
-                                     onNext={numberOfMonths > 1 ? (index === numberOfMonths - 1 ? goToNextMonths : undefined) : goToNextMonthsByOneMonth}
+                                     onPrevious={monthsCount > 1 ? (index === 0 ? goToPreviousMonths : undefined) : goToPreviousMonthsByOneMonth}
+                                     onNext={monthsCount > 1 ? (index === monthsCount - 1 ? goToNextMonths : undefined) : goToNextMonthsByOneMonth}
                                      {...labelFunctions}
                             />
                         ))}

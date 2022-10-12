@@ -2,7 +2,7 @@ import {LmVideo} from "../../../src";
 
 export default {
     title: 'ui/Content/Video',
-    component: LmVideo
+    // component: LmVideo // can not parse ...
 }
 
 const Template = (args) => <LmVideo {...args}/>

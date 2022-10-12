@@ -50,10 +50,10 @@
     "@storybook/react": "^6.5.12",
     "@tamagui/build": "1.0.1-beta.191",
     "@types/quill": "^2.0.9",
-    "tamagui": "1.0.1-beta.184"
+    "tamagui": "1.0.1-beta.191"
   },
   "peerDependencies": {
-    "tamagui": "^1.0.1-beta.184"
+    "tamagui": "1.0.1-beta.191"
   },
   "publishConfig": {
     "access": "public"

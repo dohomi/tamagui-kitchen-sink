@@ -44,8 +44,8 @@ export function LmRichText({options, value = '', onChange, toolbarId = 'toolbar'
                 <XStack id={toolbarId} space borderColor={'$borderColor'}>
                     <Button className={'ql-bold'} circular size={'$3'} chromeless/>
                     <Button className={'ql-italic'} circular size={'$3'} chromeless/>
-                    <Button className={'ql-list'} value={'ordered'} circular size={'$3'} chromeless/>
-                    <Button className={'ql-list'} value={'bullet'} circular size={'$3'} chromeless/>
+                    <button className={'ql-list'} value={'ordered'}/>
+                    <button className={'ql-list'} value={'bullet'}/>
                 </XStack>
             )}
             <Stack ref={quillRef} borderColor={'$borderColor'}/>

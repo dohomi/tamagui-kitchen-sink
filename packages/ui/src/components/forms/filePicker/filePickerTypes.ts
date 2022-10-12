@@ -11,13 +11,14 @@ export type LmFilePickerProps = LmButtonProps & {
 
 export type LmFileProps = {
     containerProps?: StackPropsBase
-    uploadButtonProps: LmButtonProps & {
+    uploadButtonProps?: LmButtonProps & {
         label?: string
     }
-    cancelButtonProps: LmButtonProps & {
+    cancelButtonProps?: LmButtonProps & {
         label?: string
     }
-    pickerButtonProps: LmFilePickerProps
+    pickerButtonProps?: LmFilePickerProps
     onUpload: (files: DocumentResult) => Promise<void> | void
+    directUpload?: boolean
 }
 
