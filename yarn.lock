@@ -2394,6 +2394,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/inter@npm:^4.5.13":
+  version: 4.5.13
+  resolution: "@fontsource/inter@npm:4.5.13"
+  checksum: 427ff437d6b46c008537d2b09e324e6dc542220c72b1dcdecc6c3efd7a3f56ab99c9bf6ecdd6592c8409d53b8400c0b3c59c07bf5fbf17b44521f3f76b41fc13
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.0.1, @gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -17908,6 +17915,7 @@ __metadata:
   resolution: "next-app@workspace:apps/next"
   dependencies:
     "@expo/next-adapter": ^4.0.12
+    "@fontsource/inter": ^4.5.13
     "@tamagui/next-plugin": 1.0.1-beta.191
     "@tamagui/next-theme": 1.0.1-beta.191
     "@types/node": ^18.6.4
@@ -21937,6 +21945,7 @@ __metadata:
   resolution: "sb-react@workspace:apps/storybook-react"
   dependencies:
     "@babel/core": ^7.16.0
+    "@fontsource/inter": ^4.5.13
     "@storybook/addon-actions": ^6.5.12
     "@storybook/addon-essentials": ^6.5.12
     "@storybook/addon-links": ^6.5.12

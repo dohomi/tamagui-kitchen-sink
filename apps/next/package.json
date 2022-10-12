@@ -21,6 +21,7 @@
     "react-native-web-lite": "1.0.1-beta.191"
   },
   "devDependencies": {
+    "@fontsource/inter": "^4.5.13",
     "@tamagui/next-plugin": "1.0.1-beta.191",
     "@types/node": "^18.6.4",
     "eslint-config-next": "^12.3.1",

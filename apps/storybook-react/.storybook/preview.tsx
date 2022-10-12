@@ -1,8 +1,8 @@
 // import * as NextImage from 'next/image'
 // import {Provider} from "app/src/provider";
 import '@tamagui/core/reset.css'
-import '@tamagui/font-inter/css/400.css'
-import '@tamagui/font-inter/css/700.css'
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/700.css';
 import 'raf/polyfill'
 // const OriginalNextImage = NextImage.default
 //

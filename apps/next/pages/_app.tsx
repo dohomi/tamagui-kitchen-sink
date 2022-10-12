@@ -1,13 +1,15 @@
 import '@tamagui/core/reset.css'
-import '@tamagui/font-inter/css/400.css'
-import '@tamagui/font-inter/css/700.css'
-
+// import '@tamagui/font-inter/css/400.css'
+// import '@tamagui/font-inter/css/700.css'
 import {NextThemeProvider, useRootTheme} from '@tamagui/next-theme'
 import {Provider} from 'app/src/provider'
 import {useThemeState} from 'app/src/state/themeState'
 import Head from 'next/head'
 import React, {useEffect, useMemo} from 'react'
 import type {SolitoAppProps} from 'solito'
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/700.css';
+
 import 'raf/polyfill'
 
 function MyApp({Component, pageProps}: SolitoAppProps) {
