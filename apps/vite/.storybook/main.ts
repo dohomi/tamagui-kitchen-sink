@@ -3,7 +3,7 @@ import {tamaguiExtractPlugin, tamaguiPlugin} from "@tamagui/vite-plugin"
 
 const tamaguiConfig = {
     config: './tamagui.config.ts',
-    components: ['tamagui', 'tamagui-extras'],
+    components: ['tamagui'],
 }
 
 const config = {
@@ -36,7 +36,8 @@ const config = {
             plugins: [
                 tamaguiPlugin({
                     ...tamaguiConfig,
-                    useReactNativeWebLite: true,
+                    useReactNativeWebLite: false,
+
                 }),
                 tamaguiExtractPlugin(tamaguiConfig),
             ],

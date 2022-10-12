@@ -42,7 +42,7 @@ export function PlaygroundScreen() {
 
 
                         {/*<LmVideoEmbed youtubeId={'JxS5E-kZc2s'} aspectRatio={4 / 3}/>*/}
-                        {/*<LmVideo source={{uri: 'https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'}}/>*/}
+                        {/*<LmVideoNative source={{uri: 'https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'}}/>*/}
                     </YStack>
                 </YStack>
             </LmFormRhfProvider>

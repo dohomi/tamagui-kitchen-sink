@@ -1,4 +1,4 @@
-import {Popover, PopoverProps, SizeTokens} from "tamagui";
+import {Popover, PopoverProps, SizeTokens, useDidFinishSSR} from "tamagui";
 import {PropsWithChildren, ReactNode} from "react";
 
 export type LmPopoverProps = PropsWithChildren<{
@@ -19,8 +19,9 @@ export function LmPopover({
                               contentSize
                           }: LmPopoverProps
 ) {
+    const isReady = useDidFinishSSR()
 
-    return (
+    return isReady ? (
         <Popover sheetBreakpoint="sm" size="$5" {...popoverProps}>
             <Popover.Trigger asChild>
                 {trigger}
@@ -54,5 +55,5 @@ export function LmPopover({
                 {children}
             </Popover.Content>
         </Popover>
-    )
+    ) : null
 }
