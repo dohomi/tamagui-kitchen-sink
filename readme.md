@@ -56,7 +56,7 @@ web.
 
 All components are prefixed with `Lm` to have an easy identifier which component belongs to this package.
 
-#### Forms
+### Integration of `react-hook-form`
 
 Form components have a trailing `Rhf` component name for an easy integration with `react-hook-form` library.
 
@@ -66,14 +66,18 @@ Wrap any form component with `LmFormRhfProvider` and add a `LmSubmitButtonRhf` t
 import {LmFormRhfProviderProps} from "./LmFormRhfProvider";
 
 function MyForm() {
+    const [mutate, {isLoading}] = useMutation()
     return (
         <LmFormRhfProvider>
             <YStack space>
                 <LmInputRhf name={'name'} label="Name"/>
                 <LmSliderRhf name={'slider'} label="Slider"/>
-                <LmSubmitButtonRhf onSubmit={(formData) => {
-                    console.log(formData)
-                }}>Submit
+                <LmSubmitButtonRhf
+                    onSubmit={(formData) => {
+                        mutate(formData)
+                    }}
+                    loading={isLoading}
+                >Submit
                 </LmSubmitButtonRhf>
             </YStack>
         </LmFormRhfProvider>
