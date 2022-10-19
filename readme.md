@@ -23,6 +23,35 @@ Fully functional [Demo](https://tamagui-extras.vercel.app/) to see all component
 
 Follow the installation [instructions](https://tamagui.dev/docs/intro/installation) of the tamagui framework.
 
+#### Important NextJS config
+
+Due to external dependencies`tamagui-extras`utilizes some components which needs to be transpiled before you are able to
+start.
+
+Currently following components must be
+transpiled ([see example](https://github.com/dohomi/tamagui-kitchen-sink/blob/master/apps/next/next.config.js#L16)):
+
+```ts
+require('next-transpile-modules')(
+    [
+        'solito',
+        'react-native-web',
+        'expo-linking',
+        'expo-constants',
+        'expo-modules-core',
+        'expo-document-picker',
+        'expo-asset',
+        'expo-av',
+        '@my/config',
+        'tamagui-extras'
+    ]
+)
+```
+
+Everytime you face the situation that an error message appears similar
+to `SyntaxError: Cannot use import statement outside a module` you might use an node module which is not transpiled for
+web.
+
 ### Components
 
 All components are prefixed with `Lm` to have an easy identifier which component belongs to this package.
