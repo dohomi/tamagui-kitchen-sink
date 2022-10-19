@@ -1,3 +1,4 @@
+import React from "react";
 import {LmInput} from "../../../src";
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 import {XStack, YStack} from "tamagui";
@@ -22,6 +23,14 @@ Password.args = {
     placeholder: 'Password..',
     isPassword: true
 }
+
+export const PasswordFullWidth = () => (
+    <YStack width={'50%'}>
+        <LmInput fullWidth placeholder={'normal input'}/>
+        <LmInput isPassword fullWidth placeholder={'normal input'}/>
+    </YStack>
+)
+
 
 export const Sizes = () => (
     <YStack space={'$4'}>

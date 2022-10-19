@@ -50,7 +50,7 @@ export function LmInput({
             {multiline ? (
                 <TextArea {...rest} {...styleProps}/>
             ) : secureTextEntry ? (
-                <Stack position={'relative'} width={'fit-content'}>
+                <Stack position={'relative'} width={fullWidth ? '100%' : 'fit-content'}>
                     <Input {...rest}
                            {...styleProps}
                            secureTextEntry={show ? false : true}
