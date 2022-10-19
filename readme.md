@@ -63,7 +63,8 @@ Form components have a trailing `Rhf` component name for an easy integration wit
 Wrap any form component with `LmFormRhfProvider` and add a `LmSubmitButtonRhf` to validate and receive all form values.
 
 ```js
-import {LmFormRhfProviderProps} from "./LmFormRhfProvider";
+import {LmFormRhfProvider, LmInputRhf, LmSliderRhf, LmSubmitButtonRhf} from "tamagui-extras";
+import {YStack} from 'tamagui'
 
 function MyForm() {
     const [mutate, {isLoading}] = useMutation()
