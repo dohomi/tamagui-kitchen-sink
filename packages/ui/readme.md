@@ -23,28 +23,62 @@ Fully functional [Demo](https://tamagui-extras.vercel.app/) to see all component
 
 Follow the installation [instructions](https://tamagui.dev/docs/intro/installation) of the tamagui framework.
 
+#### Important NextJS config
+
+Due to external dependencies`tamagui-extras`utilizes some components which needs to be transpiled before you are able to
+start.
+
+Currently following components must be
+transpiled ([see example](https://github.com/dohomi/tamagui-kitchen-sink/blob/master/apps/next/next.config.js#L16)):
+
+```ts
+require('next-transpile-modules')(
+    [
+        'solito',
+        'react-native-web',
+        'expo-linking',
+        'expo-constants',
+        'expo-modules-core',
+        'expo-document-picker',
+        'expo-asset',
+        'expo-av',
+        '@my/config',
+        'tamagui-extras'
+    ]
+)
+```
+
+Everytime you face the situation that an error message appears similar
+to `SyntaxError: Cannot use import statement outside a module` you might use an node module which is not transpiled for
+web.
+
 ### Components
 
 All components are prefixed with `Lm` to have an easy identifier which component belongs to this package.
 
-#### Forms
+### Integration of `react-hook-form`
 
 Form components have a trailing `Rhf` component name for an easy integration with `react-hook-form` library.
 
 Wrap any form component with `LmFormRhfProvider` and add a `LmSubmitButtonRhf` to validate and receive all form values.
 
 ```js
-import {LmFormRhfProviderProps} from "./LmFormRhfProvider";
+import {LmFormRhfProvider, LmInputRhf, LmSliderRhf, LmSubmitButtonRhf} from "tamagui-extras";
+import {YStack} from 'tamagui'
 
 function MyForm() {
+    const [mutate, {isLoading}] = useMutation()
     return (
         <LmFormRhfProvider>
             <YStack space>
                 <LmInputRhf name={'name'} label="Name"/>
                 <LmSliderRhf name={'slider'} label="Slider"/>
-                <LmSubmitButtonRhf onSubmit={(formData) => {
-                    console.log(formData)
-                }}>Submit
+                <LmSubmitButtonRhf
+                    onSubmit={(formData) => {
+                        mutate(formData)
+                    }}
+                    loading={isLoading}
+                >Submit
                 </LmSubmitButtonRhf>
             </YStack>
         </LmFormRhfProvider>
