@@ -7404,7 +7404,6 @@ __metadata:
     "@tamagui/theme-base": 1.0.1-beta.194
     expo-linking: ^3.2.2
     expo-localization: ~13.1.0
-    i18n-js: ^4.1.1
     i18next: ^21.9.1
     react-i18next: ^11.18.6
     solito: ^0.0.26
@@ -8263,13 +8262,6 @@ __metadata:
   version: 5.2.2
   resolution: "big.js@npm:5.2.2"
   checksum: b89b6e8419b097a8fb4ed2399a1931a68c612bce3cfd5ca8c214b2d017531191070f990598de2fc6f3f993d91c0f08aa82697717f6b3b8732c9731866d233c9e
-  languageName: node
-  linkType: hard
-
-"bignumber.js@npm:*":
-  version: 9.1.0
-  resolution: "bignumber.js@npm:9.1.0"
-  checksum: 52ec2bb5a3874d7dc1a1018f28f8f7aff4683515ffd09d6c2d93191343c76567ae0ee32cc45149d53afb2b904bc62ed471a307b35764beea7e9db78e56bef6c6
   languageName: node
   linkType: hard
 
@@ -14270,16 +14262,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18n-js@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "i18n-js@npm:4.1.1"
-  dependencies:
-    bignumber.js: "*"
-    lodash: "*"
-  checksum: fea70d32d30811b802b29812fe83cd57da0b65a51c52dd3a48fc5811378efdc6aad7760832e6a6071e6641e6dfa5bd474aa8f9faae2870014bd73724f942f2e2
-  languageName: node
-  linkType: hard
-
 "i18next@npm:^21.9.1":
   version: 21.10.0
   resolution: "i18next@npm:21.10.0"
@@ -16674,7 +16656,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:*, lodash@npm:>=3.5 <5, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.17.5":
+"lodash@npm:>=3.5 <5, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.17.4, lodash@npm:^4.17.5":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -20866,16 +20848,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-svg@npm:^12.4.3":
-  version: 12.4.4
-  resolution: "react-native-svg@npm:12.4.4"
+"react-native-svg@npm:12.4.3":
+  version: 12.4.3
+  resolution: "react-native-svg@npm:12.4.3"
   dependencies:
     css-select: ^5.1.0
     css-tree: ^1.1.3
   peerDependencies:
     react: "*"
     react-native: ">=0.50.0"
-  checksum: a98d9180dc3434e9993b5028e351c2aa5004fa3b1f5131e5f263fd43a95a43d330f0d435bc7ea498784bdbfcf6ece0e777cdd2bb568cd1337c30623a5aa02fd7
+  checksum: 2dd74bf377ebac3e08dadc6016f7b827d59e1066a62d00d476ae40665988149f08cf7b6e673ea433bd7677f1bc1a454bd33f6bf8e2bc2758aeec830fc1dadc03
   languageName: node
   linkType: hard
 

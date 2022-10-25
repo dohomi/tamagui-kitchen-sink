@@ -1,7 +1,7 @@
 const withPlugins = require('next-compose-plugins')
 const {withTamagui} = require('@tamagui/next-plugin')
 const withTM = require('next-transpile-modules')
-const path = require("path");
+const {join} = require('path')
 
 process.env.IGNORE_TS_CONFIG_PATHS = 'true'
 process.env.TAMAGUI_TARGET = 'web'
@@ -24,7 +24,7 @@ const transform = withPlugins([
         'expo-av',
         'react-i18next',
         '@my/config',
-        'tamagui-extras'
+        // 'tamagui-extras'
         // '@expo/vector-icons',
     ]),
     withTamagui({
@@ -34,7 +34,7 @@ const transform = withPlugins([
         logTimings: true,
         disableExtraction,
         shouldExtract: (path) => {
-            if (path.includes('packages/app')) {
+            if (path.includes(join('packages', 'app'))) {
                 return true
             }
         },
@@ -42,20 +42,20 @@ const transform = withPlugins([
         // aliasReactPackages: true,
         // disableFontSupport: true,
         disableExtractInlineMedia: true,
-        useReactNativeWebLite: true, // if enabled dont need excludeReactNativeWebExports
-        // excludeReactNativeWebExports: [
-        //     'Switch',
-        //     'ProgressBar',
-        //     'Picker',
-        //     'Modal',
-        //     'VirtualizedList',
-        //     'VirtualizedSectionList',
-        //     'AnimatedFlatList',
-        //     'FlatList',
-        //     'CheckBox',
-        //     'Touchable',
-        //     'SectionList'
-        // ],
+        useReactNativeWebLite: false, // if enabled dont need excludeReactNativeWebExports
+        excludeReactNativeWebExports: [
+            'Switch',
+            'ProgressBar',
+            'Picker',
+            'Modal',
+            'VirtualizedList',
+            'VirtualizedSectionList',
+            'AnimatedFlatList',
+            'FlatList',
+            'CheckBox',
+            'Touchable',
+            'SectionList'
+        ],
     })])
 
 /** @type {import('next').NextConfig} */

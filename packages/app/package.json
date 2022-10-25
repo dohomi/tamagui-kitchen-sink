@@ -18,7 +18,6 @@
     "@tamagui/theme-base": "1.0.1-beta.194",
     "expo-linking": "^3.2.2",
     "expo-localization": "~13.1.0",
-    "i18n-js": "^4.1.1",
     "i18next": "^21.9.1",
     "react-i18next": "^11.18.6",
     "solito": "^0.0.26",
