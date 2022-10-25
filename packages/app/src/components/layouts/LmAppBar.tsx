@@ -1,7 +1,7 @@
 import {XStack} from "tamagui";
 import {H3, LmButton} from "tamagui-extras";
 import {LmDashboardShellProps} from "app/src/components/layouts/layoutTypes";
-import {Menu} from "@tamagui/feather-icons";
+import {Menu} from "@tamagui/lucide-icons";
 import {useToggleMainDrawer} from "app/src/state/appState";
 
 type LmDashboardAppBarProps = Pick<LmDashboardShellProps, 'rightContent' | 'title'>

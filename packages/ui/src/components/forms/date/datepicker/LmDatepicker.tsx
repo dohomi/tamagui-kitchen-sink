@@ -3,7 +3,7 @@ import {FocusedInput, OnDatesChangeProps, START_DATE, useDatepicker, UseMonthPro
 import {useId, useState} from "react";
 import {LmMonth} from "./LmMonth";
 import {Button, Input, XGroup, XStack} from "tamagui";
-import {Calendar} from '@tamagui/feather-icons'
+import {Calendar} from '@tamagui/lucide-icons'
 import {LmPopover} from "../../../panels";
 import {usePopoverState} from "../../../../hooks";
 import {getLocaleDate} from "../dateHelper";

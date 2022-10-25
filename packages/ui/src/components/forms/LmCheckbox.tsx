@@ -1,6 +1,6 @@
 import {ReactNode, useState} from "react";
 import {LmButton} from "./LmButton";
-import {CheckSquare, Square} from "@tamagui/feather-icons";
+import {CheckSquare, Square} from "@tamagui/lucide-icons";
 import {
     FontSizeTokens,
     Label,

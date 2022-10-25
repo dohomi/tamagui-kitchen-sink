@@ -1,5 +1,5 @@
 import {Anchor, Button, H1, LmButton, Paragraph, Separator, XStack, YStack} from 'tamagui-extras'
-import {ChevronDown} from '@tamagui/feather-icons'
+import {ChevronDown} from '@tamagui/lucide-icons'
 import React from 'react'
 import {useLink} from 'solito/link'
 import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";

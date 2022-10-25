@@ -33,7 +33,6 @@ const transform = withPlugins([
         importsWhitelist: ['constants.js', 'colors.js'],
         logTimings: true,
         disableExtraction,
-        useReactNativeWebLite: false,
         shouldExtract: (path) => {
             if (path.includes('packages/app')) {
                 return true
@@ -43,19 +42,20 @@ const transform = withPlugins([
         // aliasReactPackages: true,
         // disableFontSupport: true,
         disableExtractInlineMedia: true,
-        excludeReactNativeWebExports: [
-            'Switch',
-            'ProgressBar',
-            'Picker',
-            'Modal',
-            'VirtualizedList',
-            'VirtualizedSectionList',
-            'AnimatedFlatList',
-            'FlatList',
-            'CheckBox',
-            'Touchable',
-            'SectionList'
-        ],
+        useReactNativeWebLite: true, // if enabled dont need excludeReactNativeWebExports
+        // excludeReactNativeWebExports: [
+        //     'Switch',
+        //     'ProgressBar',
+        //     'Picker',
+        //     'Modal',
+        //     'VirtualizedList',
+        //     'VirtualizedSectionList',
+        //     'AnimatedFlatList',
+        //     'FlatList',
+        //     'CheckBox',
+        //     'Touchable',
+        //     'SectionList'
+        // ],
     })])
 
 /** @type {import('next').NextConfig} */

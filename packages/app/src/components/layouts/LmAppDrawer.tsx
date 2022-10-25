@@ -1,5 +1,5 @@
 import {Button, Separator, Sheet, YStack} from 'tamagui-extras'
-import {Sun} from "@tamagui/feather-icons";
+import {Sun} from "@tamagui/lucide-icons";
 import {useAppState} from "app/src/state/appState";
 import {useState} from "react";
 import {XStack} from "tamagui";

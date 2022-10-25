@@ -8,7 +8,6 @@ import {
     LmAvatar,
     LmButton,
     LmInput,
-    LmMdiIcon,
     LmSelect,
     Separator,
     SizableText,
@@ -22,7 +21,7 @@ import React from 'react'
 import {ScrollView} from "react-native";
 import {Paragraph, useTheme} from "tamagui";
 import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";
-import {Sun} from "@tamagui/feather-icons";
+import {Star, Sun} from "@tamagui/lucide-icons";
 import {useTranslation} from 'react-i18next';
 import {changeLanguage} from 'app/src/i18n/i18n';
 import {fruitItemsFixtures} from "app/src/lib/fixtures/selectItems";
@@ -119,13 +118,13 @@ export function OverviewScreen() {
                 <H3>Buttons Icons</H3>
                 <YStack space={'$4'}>
                     <XStack {...defaultSectionProps}>
-                        <LmButton size={'$2'} icon={<LmMdiIcon name={'mdiStar'}/>}>size 2</LmButton>
-                        <LmButton size={'$4'} icon={<LmMdiIcon name={'mdiStar'}/>}>size 4</LmButton>
+                        <LmButton size={'$2'} icon={<Star/>}>size 2</LmButton>
+                        <LmButton size={'$4'} icon={<Star/>}>size 4</LmButton>
                     </XStack>
                     <XStack {...defaultSectionProps}>
-                        <LmButton size={'$2'} iconAfter={<LmMdiIcon name={'mdiStar'}/>} colorVariant={'primary'}>size
+                        <LmButton size={'$2'} iconAfter={<Star/>} colorVariant={'primary'}>size
                             2</LmButton>
-                        <LmButton size={'$4'} iconAfter={<LmMdiIcon name={'mdiStar'}/>} colorVariant={'secondary'}>size
+                        <LmButton size={'$4'} iconAfter={<Star/>} colorVariant={'secondary'}>size
                             4</LmButton>
                     </XStack>
                 </YStack>
@@ -133,13 +132,13 @@ export function OverviewScreen() {
                 <H3>Buttons Groups</H3>
                 <YStack {...defaultSectionProps}>
                     <XGroup>
-                        <LmButton icon={<LmMdiIcon name={'mdiStar'}/>}>size 2</LmButton>
-                        <LmButton icon={<LmMdiIcon name={'mdiStar'}/>}>size 4</LmButton>
+                        <LmButton icon={<Star/>}>size 2</LmButton>
+                        <LmButton icon={<Star/>}>size 4</LmButton>
                     </XGroup>
                     <YGroup>
-                        <LmButton iconAfter={<LmMdiIcon name={'mdiStar'}/>} colorVariant={'primary'}>size
+                        <LmButton iconAfter={<Star/>} colorVariant={'primary'}>size
                             2</LmButton>
-                        <LmButton iconAfter={<LmMdiIcon name={'mdiStar'}/>} colorVariant={'secondary'}>size
+                        <LmButton iconAfter={<Star/>} colorVariant={'secondary'}>size
                             4</LmButton>
 
                     </YGroup>

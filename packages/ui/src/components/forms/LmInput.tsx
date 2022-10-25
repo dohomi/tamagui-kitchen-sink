@@ -2,7 +2,7 @@ import {Button, Input, InputProps, Stack, TextArea, ThemeableStackProps} from "t
 import {useId, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {LmFormContainerBaseTypes} from "./formContainerTypes";
-import {Eye, EyeOff} from "@tamagui/feather-icons";
+import {Eye, EyeOff} from "@tamagui/lucide-icons";
 
 export type LmInputProps = InputProps & LmFormContainerBaseTypes & {
     containerProps?: ThemeableStackProps

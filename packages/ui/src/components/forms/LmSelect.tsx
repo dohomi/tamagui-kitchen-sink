@@ -1,6 +1,6 @@
 import {LinearGradient, Select, SelectProps, ThemeProps, YStack} from "tamagui";
 import {colormap, ThemeColors} from "../../themeMappings";
-import {Check, ChevronDown, ChevronUp} from '@tamagui/feather-icons'
+import {Check, ChevronDown, ChevronUp} from '@tamagui/lucide-icons'
 import {useId} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {LmFormContainerBaseTypes} from "./formContainerTypes";

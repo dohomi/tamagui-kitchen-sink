@@ -1,5 +1,5 @@
 import {Input, ListItem, Popover, Text, XStack} from "tamagui";
-import {CheckSquare, Square} from "@tamagui/feather-icons";
+import {CheckSquare, Square} from "@tamagui/lucide-icons";
 import {useEffect, useId, useMemo, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {LmFormContainerBaseTypes} from "./formContainerTypes";

@@ -45,3 +45,4 @@ turbo-build.log
 graphql.config.*
 .graphqlconfig
 schema.graphql
+.tamagui

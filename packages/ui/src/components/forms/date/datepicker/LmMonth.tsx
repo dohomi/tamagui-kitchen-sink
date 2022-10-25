@@ -1,5 +1,5 @@
 import {Button, H5, Stack, Text, XStack} from "tamagui";
-import {ArrowLeft, ArrowRight} from '@tamagui/feather-icons'
+import {ArrowLeft, ArrowRight} from '@tamagui/lucide-icons'
 import {useMonth, UseMonthProps} from "@datepicker-react/hooks";
 import {LmDay} from "./LmDay";
 

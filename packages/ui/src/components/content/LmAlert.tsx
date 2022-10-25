@@ -1,5 +1,5 @@
 import {Card, CardProps, ColorTokens, Text, XStack} from "tamagui";
-import {AlertCircle, AlertTriangle, CheckCircle, Info} from '@tamagui/feather-icons'
+import {AlertCircle, AlertTriangle, CheckCircle, Info} from '@tamagui/lucide-icons'
 
 type Severity = 'default' | 'error' | 'info' | 'warning' | 'success';
 export type LmAlertProps = CardProps & {
