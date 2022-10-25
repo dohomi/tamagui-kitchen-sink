@@ -39,7 +39,7 @@ export function LmRichText({options, value = '', onChange, toolbarId = 'toolbar'
     }, [quill]) // important: dont add value to dependencies
 
     return (
-        <Stack width={'100%'} height={200} {...containerProps} borderColor={'$borderColor'}>
+        <Stack width={'100%'} height={200}  marginBottom={54} {...containerProps} borderColor={'$borderColor'}>
             {!options?.modules?.toolbar && (
                 <XStack id={toolbarId} space borderColor={'$borderColor'}>
                     <Button className={'ql-bold'} circular size={'$3'} chromeless/>

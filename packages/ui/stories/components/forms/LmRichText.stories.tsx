@@ -1,4 +1,5 @@
-import {LmFormRhfProvider, LmRichTextRhf} from "../../../src";
+import React from "react";
+import {LmFormRhfProvider, LmRichTextRhf, YStack} from "../../../src";
 import {ComponentMeta} from "@storybook/react";
 
 export default {
@@ -9,5 +10,12 @@ export default {
 export const Basic = () => (
     <LmFormRhfProvider>
         <LmRichTextRhf name={'rich-text'}/>
+    </LmFormRhfProvider>
+)
+
+export const Multiple = () => (
+    <LmFormRhfProvider>
+            <LmRichTextRhf toolbarId="first" name={'rich-text'}/>
+            <LmRichTextRhf toolbarId="test" name={'rich-text2'}/>
     </LmFormRhfProvider>
 )
