@@ -1878,9 +1878,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@expo/cli@npm:0.3.1":
-  version: 0.3.1
-  resolution: "@expo/cli@npm:0.3.1"
+"@expo/cli@npm:0.3.2":
+  version: 0.3.2
+  resolution: "@expo/cli@npm:0.3.2"
   dependencies:
     "@babel/runtime": ^7.14.0
     "@expo/code-signing-certificates": ^0.0.2
@@ -1944,7 +1944,7 @@ __metadata:
     wrap-ansi: ^7.0.0
   bin:
     expo-internal: build/bin/cli
-  checksum: c2b75359bd0437992e4a0693ac1deff48e731acfdfc7ac9c70dbfe648f78baed763a9e7bf694a1027e302f4d969a43c82ef2bdd10e86262da17e686a465489a2
+  checksum: e70b387eb359cbe09be0be43811cb63840508d3eb3a101a28c66302bef5b3551c344483455c3c8185860cb524e8238c0aa12ea1be21663de782f3787aeaeac80
   languageName: node
   linkType: hard
 
@@ -11976,7 +11976,7 @@ __metadata:
     app: "*"
     babel-plugin-inline-dotenv: ^1.7.0
     babel-plugin-transform-inline-environment-variables: ^0.4.4
-    expo: ~46.0.15
+    expo: ~46.0.16
     expo-constants: ^13.2.3
     expo-dev-client: ^1.2.1
     expo-font: ^10.2.0
@@ -12020,14 +12020,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-av@npm:^12.0.4":
-  version: 12.0.4
-  resolution: "expo-av@npm:12.0.4"
-  dependencies:
-    "@expo/config-plugins": ~5.0.0
+"expo-av@npm:^13.0.0-beta.1":
+  version: 13.0.0-beta.1
+  resolution: "expo-av@npm:13.0.0-beta.1"
   peerDependencies:
     expo: "*"
-  checksum: 5d985ab18159f45e1a2857af8b671285d940c457797eef489888c019fb1a760e1dcc01ea7eaff6f06cd80d4d9b17f2573568cd4c01799e6f054df76f89e312ec
+  checksum: 84247002fd52786de5c45f8e84e1b74ae98347ffca3dfd026ac0715ad98cb2826f6ffb8a8d7d8ae35d50658f5f8ab3ca342150a26763cb4f1b74d647210a3eac
   languageName: node
   linkType: hard
 
@@ -12219,13 +12217,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-modules-core@npm:0.11.7":
-  version: 0.11.7
-  resolution: "expo-modules-core@npm:0.11.7"
+"expo-modules-core@npm:0.11.8":
+  version: 0.11.8
+  resolution: "expo-modules-core@npm:0.11.8"
   dependencies:
     compare-versions: ^3.4.0
     invariant: ^2.2.4
-  checksum: 2d1896af256579fdab0d5721ce1c437206ac5c8702b978899b3d4f303f2f31c053cc65469a21db421bfd31adaea1f6dff9ffdd447c01c82057a764209d9c8dc8
+  checksum: 43dda30d3a533d38ad5a2e9a8a09bd5aef02e7a715a7e4d51aa148993d76a8dee516d868061bad35b7c7f4552c1b9948c2588be7d4e38da181384c22b75b7141
   languageName: node
   linkType: hard
 
@@ -12315,12 +12313,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo@npm:~46.0.15":
-  version: 46.0.15
-  resolution: "expo@npm:46.0.15"
+"expo@npm:~46.0.16":
+  version: 46.0.16
+  resolution: "expo@npm:46.0.16"
   dependencies:
     "@babel/runtime": ^7.14.0
-    "@expo/cli": 0.3.1
+    "@expo/cli": 0.3.2
     "@expo/vector-icons": ^13.0.0
     babel-preset-expo: ~9.2.0
     cross-spawn: ^6.0.5
@@ -12332,7 +12330,7 @@ __metadata:
     expo-font: ~10.2.1
     expo-keep-awake: ~10.2.0
     expo-modules-autolinking: 0.10.3
-    expo-modules-core: 0.11.7
+    expo-modules-core: 0.11.8
     fbemitter: ^3.0.0
     getenv: ^1.0.0
     invariant: ^2.2.4
@@ -12345,7 +12343,7 @@ __metadata:
       optional: true
   bin:
     expo: bin/cli.js
-  checksum: 89088fd1d031fe08d16161dc44ecee1b748cf0145dd78304f743f1c360a5199d9dcf6a45719d9d79ed86733b0d25ddf59ff96d205866f883242f674206ca2a22
+  checksum: bddf54f4e0fdd72fb4f6dcf257a1494d02a484d4b161912d69125c0dc4eb90858cd08aa6b1ec0b8d32b34323edd64ccaeae4f251f95f46e90c3684c52a3c098b
   languageName: node
   linkType: hard
 
@@ -23324,7 +23322,7 @@ __metadata:
     "@storybook/react": ^6.5.12
     "@tamagui/build": 1.0.1-beta.191
     "@types/quill": ^2.0.9
-    expo-av: ^12.0.4
+    expo-av: ^13.0.0-beta.1
     expo-document-picker: ^10.3.0
     quill: ^2.0.0-dev.4
     react-hook-form: ^7.34.2

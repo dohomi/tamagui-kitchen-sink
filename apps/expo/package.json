@@ -3,7 +3,7 @@
     "@babel/runtime": "^7.18.9",
     "app": "*",
     "babel-plugin-inline-dotenv": "^1.7.0",
-    "expo": "~46.0.15",
+    "expo": "~46.0.16",
     "expo-constants": "^13.2.3",
     "expo-dev-client": "^1.2.1",
     "expo-font": "^10.2.0",

@@ -33,6 +33,7 @@ const transform = withPlugins([
         importsWhitelist: ['constants.js', 'colors.js'],
         logTimings: true,
         disableExtraction,
+        useReactNativeWebLite: false,
         shouldExtract: (path) => {
             if (path.includes('packages/app')) {
                 return true
