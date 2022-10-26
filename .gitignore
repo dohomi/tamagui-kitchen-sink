@@ -41,6 +41,7 @@ THUMBS_DB
 thumbs.db
 
 .idea
+.vscode
 turbo-build.log
 graphql.config.*
 .graphqlconfig
