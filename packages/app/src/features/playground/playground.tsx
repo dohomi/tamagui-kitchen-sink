@@ -1,4 +1,4 @@
-import {LmAutocompleteRhf, LmFormRhfProvider, SpaceTokens, YStack} from 'tamagui-extras'
+import {LmAutocompleteRhf, LmDatepicker, LmFormRhfProvider, SpaceTokens, YStack} from 'tamagui-extras'
 import React from 'react'
 import {ScrollView} from "tamagui";
 import {fruitItemsFixtures} from "tamagui-extras/fixtures/selectItems";
@@ -25,7 +25,8 @@ export function PlaygroundScreen() {
                         space
                         maxWidth={'100%'}>
                     <YStack {...defaultSectionProps} width={'100%'}>
-                        <LmAutocompleteRhf name={'autocomplete'} label={'Autocomplete'} options={fruitItemsFixtures}/>
+                        <LmDatepicker startDate={new Date('2022-03-01')}/>
+                        {/* <LmAutocompleteRhf name={'autocomplete'} label={'Autocomplete'} options={fruitItemsFixtures}/> */}
                         {/*<LmAutocompleteRhf name={'autocomplete-multi'} label={'Multi'} multiple*/}
                         {/*                   options={fruitItemsFixtures}/>*/}
                         {/*<LmDatepickerRhf start={'date'} label={'Date'}/>*/}

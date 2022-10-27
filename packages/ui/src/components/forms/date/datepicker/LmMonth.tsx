@@ -27,7 +27,7 @@ export function LmMonth({onPrevious, onNext, ...props}: LmMonthProps) {
                           paddingVertical={'$2'}>{dayLabel}</Text>
                 ))}
             </XStack>
-            <Stack display={'flex'} flexWrap={'wrap'} width={250}>
+            <XStack display={'flex'} flexWrap={'wrap'} width={250}>
                 {days.map((day, index) => {
                     if (typeof day === 'object') {
                         return (
@@ -38,7 +38,7 @@ export function LmMonth({onPrevious, onNext, ...props}: LmMonthProps) {
                         <Stack key={index} width={`${100 / 7}%`}/>
                     )
                 })}
-            </Stack>
+            </XStack>
         </Stack>
     )
 }
