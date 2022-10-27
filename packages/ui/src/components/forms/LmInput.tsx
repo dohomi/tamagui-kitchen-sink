@@ -35,7 +35,7 @@ export function LmInput({
         styleProps.minWidth = '100%'
     }
 
-    let secureTextEntry = rest.secureTextEntry || isPassword;
+    let secureTextEntry = !!(rest.secureTextEntry || isPassword);
     return (
         <LmFormFieldContainer id={id}
                               error={error}
@@ -53,9 +53,8 @@ export function LmInput({
                 <Stack position={'relative'} width={fullWidth ? '100%' : 'fit-content'}>
                     <Input {...rest}
                            {...styleProps}
-                           secureTextEntry={show ? false : true}
+                           secureTextEntry={!show}
                            autoCapitalize='none'/>
-
                     <Button icon={show ? EyeOff : Eye}
                             circular
                             chromeless

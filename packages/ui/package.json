@@ -35,7 +35,7 @@
     "@datepicker-react/hooks": "^2.8.4",
     "@mdi/js": "^7.0.96",
     "@my/config": "*",
-    "@tamagui/lucide-icons": "1.0.1-beta.195",
+    "@tamagui/lucide-icons": "1.0.1-beta.197",
     "expo-av": "^13.0.0-beta.1",
     "expo-document-picker": "^10.3.0",
     "quill": "^2.0.0-dev.4",
@@ -48,12 +48,12 @@
   },
   "devDependencies": {
     "@storybook/react": "^6.5.12",
-    "@tamagui/build": "1.0.1-beta.195",
+    "@tamagui/build": "1.0.1-beta.197",
     "@types/quill": "^2.0.9",
-    "tamagui": "1.0.1-beta.195"
+    "tamagui": "1.0.1-beta.197"
   },
   "peerDependencies": {
-    "tamagui": "1.0.1-beta.195"
+    "tamagui": "1.0.1-beta.197"
   },
   "publishConfig": {
     "access": "public"

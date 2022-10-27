@@ -23,13 +23,12 @@ export function LmSelect({
                              themeName,
                              options = [],
                              width = 200,
-                             placeholder = 'Placeholder...',
+                             placeholder = '',
                              dropDownLabel,
                              required, error, helperText, label, labelInline, labelProps,
                              ...rest
                          }: LmSelectProps) {
     const id = useId()
-    const id2 = useId()
     rest.size = rest.size || '$3'
 
     return (
@@ -43,7 +42,7 @@ export function LmSelect({
                               labelInline={labelInline}
                               helperText={helperText}>
             <Select sheetBreakpoint="sm"
-                    id={id2}
+                    id={id}
                     value={`${value}`}
                     {...rest}>
                 <Select.Trigger width={width} iconAfter={ChevronDown} paddingVertical={0} minHeight={rest.size}>
@@ -80,16 +79,14 @@ export function LmSelect({
                     <Select.Viewport minWidth={width}>
                         <Select.Group>
                             {dropDownLabel && <Select.Label>{dropDownLabel}</Select.Label>}
-                            {options.map((item, i) => {
-                                return (
-                                    <Select.Item index={i} key={item.value} value={`${item.value}`}>
-                                        <Select.ItemText>{item.label}</Select.ItemText>
-                                        <Select.ItemIndicator marginLeft="auto">
-                                            <Check size={16}/>
-                                        </Select.ItemIndicator>
-                                    </Select.Item>
-                                )
-                            })}
+                            {options.map((item, i) => (
+                                <Select.Item index={i} key={item.value} value={`${item.value}`}>
+                                    <Select.ItemText>{item.label}</Select.ItemText>
+                                    <Select.ItemIndicator marginLeft="auto">
+                                        <Check size={16}/>
+                                    </Select.ItemIndicator>
+                                </Select.Item>
+                            ))}
                         </Select.Group>
                     </Select.Viewport>
 
