@@ -1,4 +1,4 @@
-# Tamagui + Solito + Next + Expo Kitchen-Sink
+# tamagui-extras component addon for Tamagui
 
 This repo is a mono-repo where `tamagui-extras` will be developed to add missing components and functionalities into the
 UI framework `tamagui`
