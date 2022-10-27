@@ -87,31 +87,34 @@ export function LmDatepicker({
                                   label={label}
                                   labelInline={labelInline}
                                   helperText={helperText}>
+                <XStack space width={Platform.OS === 'web' ? 'fit-content' : undefined}>
+                    <XGroup>
+                        <Input
+                            width={'$12'}
+                            value={state.startDate ? getLocaleDate({date: state.startDate}) : ''}></Input>
+                        <Button onPress={() => onOpenChange(true)} icon={Calendar}/>
+                    </XGroup>
+                    {isRangePicker && (
+                        <XGroup>
+                            <Input
+                                width={'$12'}
+                                value={state.endDate ? getLocaleDate({date: state.endDate}) : ''}/>
+                            <Button onPress={() => onOpenChange(true)} icon={Calendar}/>
+                        </XGroup>
+                    )}
+                </XStack>
                 <LmPopover
+                    isBouncy={false}
                     trigger={(
-                        <XStack space width={Platform.OS === 'web' ? 'fit-content' : undefined}>
-                            <XGroup>
-                                <Input
-                                    width={'$12'}
-                                    value={state.startDate ? getLocaleDate({date: state.startDate}) : ''}></Input>
-                                <Button onPress={() => onOpenChange(true)} icon={Calendar}/>
-                            </XGroup>
-                            {isRangePicker && (
-                                <XGroup>
-                                    <Input
-                                        width={'$12'}
-                                        value={state.endDate ? getLocaleDate({date: state.endDate}) : ''}/>
-                                    <Button onPress={() => onOpenChange(true)} icon={Calendar}/>
-                                </XGroup>
-                            )}
-                        </XStack>
+                        <XStack maxWidth={100}/>
                     )}
                     popoverProps={{
                         open, onOpenChange
                     }}
                     contentPadding={'$3'}>
                     <XStack space alignItems={'flex-start'}>
-                        {activeMonths.map((month, index) => (
+
+                        {open && activeMonths.map((month, index) => (
                             <LmMonth key={`${month.year}-${month.month}`}
                                      year={month.year}
                                      month={month.month}

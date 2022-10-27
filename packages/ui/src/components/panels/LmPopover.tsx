@@ -7,6 +7,7 @@ export type LmPopoverProps = PropsWithChildren<{
     popoverProps?: PopoverProps
     contentPadding?: SizeTokens
     contentSize?: SizeTokens
+    isBouncy?: boolean
 }>
 
 
@@ -16,7 +17,8 @@ export function LmPopover({
                               hideArrow,
                               popoverProps,
                               contentPadding = 0,
-                              contentSize
+                              contentSize,
+                              isBouncy = true,
                           }: LmPopoverProps
 ) {
     const isReady = useDidFinishSSR()
@@ -39,12 +41,14 @@ export function LmPopover({
             <Popover.Content
                 borderWidth={1}
                 borderColor="$borderColor"
-                enterStyle={{x: 0, y: -10, opacity: 0}}
-                exitStyle={{x: 0, y: -10, opacity: 0}}
-                x={0}
-                y={0}
-                opacity={1}
-                animation="bouncy"
+                {...(isBouncy && {
+                    enterStyle: {x: 0, y: -10, opacity: 0},
+                    exitStyle: {x: 0, y: -10, opacity: 0},
+                    x: 0,
+                    y: 0,
+                    opacity: 1,
+                    animation: "bouncy"
+                })}
                 elevate
                 size={contentSize}
                 padding={contentPadding}
