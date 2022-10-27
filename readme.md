@@ -1,11 +1,11 @@
 # tamagui-extras component addon for Tamagui
 
-This repo is a mono-repo where `tamagui-extras` will be developed to add missing components and functionalities into the
-UI framework `tamagui`
+
 
 ## 🔦 About
 
-This monorepo is a kitchen sink for an Expo + Next.js + Tamagui + Solito + Storybook app.
+This repo is a mono-repo where `tamagui-extras` will be developed to add missing components and functionalities into the
+UI framework `tamagui`
 
 Many thanks to  [@FernandoTheRojo](https://twitter.com/fernandotherojo) for the Solito starter monorepo which this was
 forked from. Check out
