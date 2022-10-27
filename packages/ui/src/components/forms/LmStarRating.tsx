@@ -2,7 +2,7 @@ import {Button, ButtonProps, ColorTokens, SizeTokens, XStack} from "tamagui";
 import {useId, useState} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {LmFormContainerBaseTypes} from "./formContainerTypes";
-import {Star} from "@tamagui/lucide-icons"
+import {LmMdiIcon} from "../content/LmMdiIcon";
 
 type StarProps = Omit<ButtonProps, 'color' | 'size'> & {
     filled: boolean
@@ -11,16 +11,14 @@ type StarProps = Omit<ButtonProps, 'color' | 'size'> & {
 }
 
 function StarIcon({filled, color, size = '$2', ...props}: StarProps) {
-    // todo waiting for fill property on lucide icons
     return (
         <Button
             {...props}
             size={size}
             chromeless
             circular
-            icon={filled
-                ? <Star color={color || 'red'} size={size as number} fillRule={'nonzero'} fill={color || 'red'}/>
-                : <Star color={color} size={size as number}/>}
+            icon={filled ? <LmMdiIcon name={'mdiStar'} color={color} size={size as number}/> :
+                <LmMdiIcon name={'mdiStarOutline'} color={color} size={size as number}/>}
         />
     )
 }
