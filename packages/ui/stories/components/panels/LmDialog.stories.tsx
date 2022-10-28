@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button, Text, XStack, YStack} from "tamagui";
-import {LmDialog, usePopoverState} from "../../../src";
-import {X} from "@tamagui/lucide-icons";
+import {LmDialog, LmInputRhf, LmSelectRhf, LmSubmitButtonRhf, usePopoverState} from "../../../src";
+import {AlertCircle, X} from "@tamagui/lucide-icons";
+import {LmButton, LmFormRhfProvider} from "tamagui-extras";
 
 export default {
     title: 'ui/Panels/Dialog',
@@ -60,6 +61,49 @@ export const ControlledState = () => {
                     <Button onPress={() => onOpenChange(false)} chromeless circular icon={X}/>
                 </XStack>
                 <Text>Some other content follows. You have full control of the opening state of the dialog.</Text>
+            </LmDialog>
+        </YStack>
+    )
+}
+
+export const FormInsideDialog = () => {
+    const {open, onOpenChange} = usePopoverState()
+    const [loading, setLoading] = useState(false)
+
+    const fakeSubmit = async (data) => {
+        setLoading(true)
+        setTimeout(
+            () => {
+                setLoading(false)
+                onOpenChange(false)
+                console.log(data)
+            },
+            3000
+        )
+    }
+    return (
+        <YStack>
+            <Button onPress={() => onOpenChange(true)}>Open Dialog</Button>
+            <LmDialog onOpenChange={onOpenChange}
+                      open={open}
+                      title={'Contact data'}
+            >
+                <LmFormRhfProvider>
+                    <YStack space>
+                        <LmSelectRhf name={'title'}
+                                     label={'Title'}
+                                     required
+                                     options={[{value: 'mrs', label: 'Mrs.'}, {value: 'mr', label: 'Mr.'}]}/>
+                        <LmInputRhf name={'firstName'} label={'First Name'} required/>
+                        <LmInputRhf name={'lastName'} label={'Last Name'} required/>
+                        <LmSubmitButtonRhf onSubmit={fakeSubmit} loading={loading}>Submit</LmSubmitButtonRhf>
+                        <LmDialog title={'Some Info'}
+                                  description={'This is a nested dialog'}
+                                  trigger={<LmButton icon={AlertCircle}/>}>
+                        </LmDialog>
+                    </YStack>
+                </LmFormRhfProvider>
+
             </LmDialog>
         </YStack>
     )

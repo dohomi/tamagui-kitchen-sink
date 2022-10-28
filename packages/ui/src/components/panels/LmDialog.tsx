@@ -1,4 +1,4 @@
-import {Button, Dialog, DialogProps, VisuallyHidden} from "tamagui";
+import {Button, Dialog, DialogProps, VisuallyHidden, XStack} from "tamagui";
 import {PropsWithChildren, ReactNode} from "react";
 import {X} from "@tamagui/lucide-icons";
 
@@ -38,9 +38,9 @@ export function LmDialog({
                 <Dialog.Overlay
                     key="overlay"
                     animation="quick"
-                    o={0.5}
-                    enterStyle={{o: 0}}
-                    exitStyle={{o: 0}}
+                    opacity={0.5}
+                    enterStyle={{opacity: 0}}
+                    exitStyle={{opacity: 0}}
                 />
                 <Dialog.Content
                     bordered
@@ -65,14 +65,20 @@ export function LmDialog({
                         height: '100%'
                     })}
                 >
-
-                    {title ? (
-                        <Dialog.Title>{title}</Dialog.Title>
-                    ) : (
-                        <VisuallyHidden>
-                            <Dialog.Title></Dialog.Title>
-                        </VisuallyHidden>
-                    )}
+                    <XStack space justifyContent={'space-between'}>
+                        {title ? (
+                            <Dialog.Title>{title}</Dialog.Title>
+                        ) : (
+                            <VisuallyHidden>
+                                <Dialog.Title></Dialog.Title>
+                            </VisuallyHidden>
+                        )}
+                        {!hideCloseButton && (
+                            <Dialog.Close asChild>
+                                <Button size="$3" circular chromeless icon={X}/>
+                            </Dialog.Close>
+                        )}
+                    </XStack>
 
                     {description ? (
                         <Dialog.Description>{description}</Dialog.Description>
@@ -83,11 +89,7 @@ export function LmDialog({
                     )}
 
                     {children}
-                    {!hideCloseButton && (
-                        <Dialog.Close asChild>
-                            <Button position="absolute" t="$4" r="$4" size="$3" circular chromeless icon={X}/>
-                        </Dialog.Close>
-                    )}
+
                 </Dialog.Content>
             </Dialog.Portal>
         </Dialog>

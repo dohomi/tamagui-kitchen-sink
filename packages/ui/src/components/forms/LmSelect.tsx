@@ -12,7 +12,7 @@ export type LmSelectProps = SelectProps & LmFormContainerBaseTypes & {
     options: { label: string, value: string | number }[]
     colorVariant?: ThemeColors
     themeName?: ThemeProps['name']
-    width?: number
+    width?: number | string
     placeholder?: string
     dropDownLabel?: string // above the items list
 }
@@ -22,7 +22,7 @@ export function LmSelect({
                              colorVariant,
                              themeName,
                              options = [],
-                             width = 200,
+                             width = '100%',
                              placeholder = '',
                              dropDownLabel,
                              required, error, helperText, label, labelInline, labelProps,
@@ -76,7 +76,7 @@ export function LmSelect({
                         />
                     </Select.ScrollUpButton>
 
-                    <Select.Viewport minWidth={width}>
+                    <Select.Viewport>
                         <Select.Group>
                             {dropDownLabel && <Select.Label>{dropDownLabel}</Select.Label>}
                             {options.map((item, i) => (
