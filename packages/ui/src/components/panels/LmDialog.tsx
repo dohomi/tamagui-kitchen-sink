@@ -6,7 +6,6 @@ type LmDialogProps = PropsWithChildren<DialogProps & {
     trigger?: ReactNode
     title?: string
     description?: string
-    isFullscreen?: boolean
     hideCloseButton?: boolean
 }>
 
@@ -15,7 +14,6 @@ export function LmDialog({
                              trigger,
                              title,
                              description,
-                             isFullscreen,
                              hideCloseButton,
                              ...dialogProps
                          }: LmDialogProps) {
@@ -43,9 +41,9 @@ export function LmDialog({
                     exitStyle={{opacity: 0}}
                 />
                 <Dialog.Content
+                    key="content"
                     bordered
                     elevate
-                    key="content"
                     animation={[
                         'quick',
                         {
@@ -60,10 +58,6 @@ export function LmDialog({
                     scale={1}
                     opacity={1}
                     y={0}
-                    {...isFullscreen && ({
-                        width: '100%',
-                        height: '100%'
-                    })}
                 >
                     <XStack space justifyContent={'space-between'}>
                         {title ? (
