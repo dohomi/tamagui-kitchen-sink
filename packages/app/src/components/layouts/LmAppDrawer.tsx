@@ -16,7 +16,6 @@ export function LmAppDrawer() {
 
     return (
         <>
-
             <Sheet
                 modal
                 open={isMainDrawerOpen}

@@ -1,25 +1,38 @@
+import {Video} from 'expo-av';
+import {createRef} from "react";
 import {LmVideoProps} from "./videoTypes";
-import {Stack} from "tamagui";
+
 
 export function LmVideo({
                             aspectRatio = 16 / 9,
-                            resizeMode,
                             src,
-                            isLooping,
-                            useNativeControls = true,
                             posterSource,
+                            isLooping,
+                            resizeMode,
                             autoplay,
-                            width,
-                            height
+                            useNativeControls = true
                         }: LmVideoProps) {
+    const videoRef = createRef<Video>()
     return (
-        <Stack aspectRatio={aspectRatio} width={width} height={height}>
-            <video width={'100%'} height={'100%'} loop={isLooping} autoPlay={autoplay} controls={useNativeControls}
-                   style={{
-                       aspectRatio: resizeMode
-                   }}>
-                <source src={src}/>
-            </video>
-        </Stack>
+        <Video
+            source={{
+                uri: src
+            }}
+            posterSource={posterSource}
+            style={{
+                width: '100%', // currently not working well..
+                aspectRatio,
+                // @ts-ignore
+                ...props?.style
+            }}
+            shouldPlay={autoplay}
+            // videoStyle={{
+            //
+            // }} // todo: waiting for new expo-av release to get videoStyle released
+            ref={videoRef}
+            useNativeControls={useNativeControls}
+            resizeMode={resizeMode}
+            isLooping={isLooping}
+        />
     )
 }

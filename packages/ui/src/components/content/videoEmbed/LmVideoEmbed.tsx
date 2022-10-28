@@ -1,8 +1,9 @@
-import {LmVideoEmbedProps} from "./videoEmbedTypes";
-import {Stack} from "tamagui";
+import {WebView} from 'react-native-webview';
 import {useState} from "react";
+import {LmVideoEmbedProps} from "./videoEmbedTypes";
+import {Platform} from "react-native";
+import {Stack} from "tamagui";
 import {LmSkeleton} from "../LmSkeleton";
-
 
 export function LmVideoEmbed({
                                  youtubeId = 'JxS5E-kZc2s',
@@ -10,19 +11,39 @@ export function LmVideoEmbed({
                                  width = '100%',
                                  ...stackProps
                              }: LmVideoEmbedProps) {
-    const [loaded, setLoaded] = useState(false)
+    const [state, setState] = useState<any>({})
     return (
         <Stack {...stackProps} width={width} aspectRatio={aspectRatio} position={'relative'}>
-            {!loaded && (
+            {!state?.isReady && (
                 <LmSkeleton/>
             )}
-            <iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}?controls=1`}
-                    frameBorder="0"
-                    width={'100%'}
-                    height={'100%'}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    onLoad={() => setLoaded(true)}
+            <WebView
+                source={{
+                    uri: `https://www.youtube-nocookie.com/embed/${youtubeId}?controls=1`,
+                }}
+                style={{height: '100%', width: '100%'}}
+                androidLayerType={Platform.OS === 'android' && Platform.Version <= 22 ? 'hardware' : 'none'}
+                allowsFullscreenVideo={true}
+                mediaPlaybackRequiresUserAction
+                useNativeResumeAndPauseLifecycleEvents
+                javaScriptEnabled
+                allowsInlineMediaPlayback
+                useWebKit={true}
+                originWhitelist={['*']}
+                automaticallyAdjustContentInsets
+                onError={(e: any) => {
+                    setState(s => ({
+                        ...s,
+                        isReady: false,
+                        error: e.error,
+                    }));
+                }}
+                onLoadEnd={() =>
+                    setState(s => ({
+                        ...s,
+                        isReady: true,
+                    }))
+                }
             />
         </Stack>
     )

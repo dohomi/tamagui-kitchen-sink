@@ -15,7 +15,7 @@ export const Basic = () => (
 
 export const Multiple = () => (
     <LmFormRhfProvider>
-            <LmRichTextRhf toolbarId="first" name={'rich-text'}/>
-            <LmRichTextRhf toolbarId="test" name={'rich-text2'}/>
+        {/*<LmRichTextRhf toolbarId="first" name={'rich-text'}/>
+        <LmRichTextRhf toolbarId="test" name={'rich-text2'}/>*/}
     </LmFormRhfProvider>
 )
