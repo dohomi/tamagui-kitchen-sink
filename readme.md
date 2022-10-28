@@ -18,7 +18,7 @@ Fully functional [Demo](https://tamagui-extras.vercel.app/) to see all component
 ### Installation
 
 ```
-# yarn install tamagui tamagui-extras
+# yarn add tamagui tamagui-extras
 ```
 
 Follow the installation [instructions](https://tamagui.dev/docs/intro/installation) of the tamagui framework.
