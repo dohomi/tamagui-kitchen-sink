@@ -2,7 +2,7 @@
   "name": "tamagui-extras",
   "license": "MIT",
   "author": "Dominic Garms",
-  "version": "0.0.33",
+  "version": "0.0.35",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",
   "sideEffects": [
@@ -36,7 +36,7 @@
     "@mdi/js": "^7.0.96",
     "@my/config": "*",
     "@tamagui/lucide-icons": "1.0.1-beta.202",
-    "expo-av": "^13.0.0-beta.1",
+    "expo-av": "^13.0.1",
     "expo-document-picker": "^10.3.0",
     "quill": "^2.0.0-dev.4",
     "react-hook-form": "^7.34.2",

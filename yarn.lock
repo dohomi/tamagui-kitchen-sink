@@ -13202,12 +13202,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-av@npm:^13.0.0-beta.1":
-  version: 13.0.0-beta.1
-  resolution: "expo-av@npm:13.0.0-beta.1"
+"expo-av@npm:^13.0.1":
+  version: 13.0.1
+  resolution: "expo-av@npm:13.0.1"
   peerDependencies:
     expo: "*"
-  checksum: 84247002fd52786de5c45f8e84e1b74ae98347ffca3dfd026ac0715ad98cb2826f6ffb8a8d7d8ae35d50658f5f8ab3ca342150a26763cb4f1b74d647210a3eac
+  checksum: fb0469784b31a31561912df917008e22779f20c7bde34d15481bf94bd501b007c59e63f8bde026d974b0d939d3f523f72f5741668d962929be08106817f719be
   languageName: node
   linkType: hard
 
@@ -24504,7 +24504,7 @@ __metadata:
     "@tamagui/build": 1.0.1-beta.202
     "@tamagui/lucide-icons": 1.0.1-beta.202
     "@types/quill": ^2.0.9
-    expo-av: ^13.0.0-beta.1
+    expo-av: ^13.0.1
     expo-document-picker: ^10.3.0
     quill: ^2.0.0-dev.4
     react-hook-form: ^7.34.2

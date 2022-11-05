@@ -9,5 +9,5 @@ export type LmVideoProps = Pick<StackPropsBase, 'width' | 'height' | 'aspectRati
     isLooping?: boolean
     resizeMode?: ResizeMode
     useNativeControls?: boolean
-    autoplay: boolean
+    autoplay?: boolean
 }
