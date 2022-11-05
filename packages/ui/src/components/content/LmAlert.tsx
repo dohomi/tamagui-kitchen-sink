@@ -1,4 +1,4 @@
-import {Card, CardProps, ColorTokens, Text, XStack} from "tamagui";
+import {Card, CardProps, ColorProp, ColorTokens, Text, useThemeName, XStack} from "tamagui";
 import {AlertCircle, AlertTriangle, CheckCircle, Info} from '@tamagui/lucide-icons'
 
 type Severity = 'default' | 'error' | 'info' | 'warning' | 'success';
@@ -9,7 +9,7 @@ export type LmAlertProps = CardProps & {
     hideIcon?: boolean
 }
 
-const severityColor: { [k in Severity]: ColorTokens } = {
+const severityColor: { [k in Severity]: ColorProp } = {
     default: '$gray3',
     error: '$red10',
     info: '$blue10',
@@ -25,10 +25,10 @@ type AlertIconProps = {
 function AlertIcon({severity = 'default', outlined}: AlertIconProps) {
     const props: { color?: ColorTokens } = {}
     if (outlined) {
-        props.color = severityColor[severity]
+        props.color = severityColor[severity] as ColorTokens
     }
     return {
-        default: <Info {...props} />,
+        default: <Info {...props}/>,
         error: <AlertCircle {...props}/>,
         info: <Info {...props}/>,
         warning: <AlertTriangle {...props} />,
@@ -38,8 +38,11 @@ function AlertIcon({severity = 'default', outlined}: AlertIconProps) {
 
 
 export function LmAlert({severity = 'default', text, hideIcon, outlined, children, ...rest}: LmAlertProps) {
+    const theme = useThemeName()
+    let shouldInverse = theme === 'light' && severity !== 'default' && !outlined;
     return (
         <Card
+            themeInverse={shouldInverse}
             bordered={outlined}
             {...(outlined ? {
                 // border: `1px solid ${severityColor[severity]}`,
