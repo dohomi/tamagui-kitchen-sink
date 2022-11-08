@@ -31,9 +31,9 @@
   },
   "scripts": {
     "start": "expo start -c",
-    "android": "TAMAGUI_TARGET=native yarn expo run:android",
-    "ios": "TAMAGUI_TARGET=native yarn expo run:ios",
-    "web": "TAMAGUI_TARGET=web yarn expo start --web",
+    "android": "TAMAGUI_TARGET=native npx expo run:android",
+    "ios": "TAMAGUI_TARGET=native npx expo run:ios",
+    "web": "TAMAGUI_TARGET=web npx expo start --web",
     "eas:dev:ios": "eas build --profile development --platform ios",
     "doc": "expo-cli doctor --fix-dependencies",
     "eas:dev:local": "npx eas build --profile development --platform android",

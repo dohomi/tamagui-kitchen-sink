@@ -1,3 +1,4 @@
+import React from "react";
 import {LmVideo} from "../../../src";
 
 export default {
