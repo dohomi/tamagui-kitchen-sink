@@ -39,10 +39,11 @@ function AlertIcon({severity = 'default', outlined}: AlertIconProps) {
 
 export function LmAlert({severity = 'default', text, hideIcon, outlined, children, ...rest}: LmAlertProps) {
     const theme = useThemeName()
-    let shouldInverse = theme === 'light' && severity !== 'default' && !outlined;
+    // @TODO - themeInverse removed, see tamagui release beta 221
+    // let shouldInverse = theme === 'light' && severity !== 'default' && !outlined;
     return (
         <Card
-            themeInverse={shouldInverse}
+            // themeInverse={shouldInverse}
             bordered={outlined}
             {...(outlined ? {
                 // border: `1px solid ${severityColor[severity]}`,
