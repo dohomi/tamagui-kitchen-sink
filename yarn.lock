@@ -24166,8 +24166,6 @@ __metadata:
     rooks: ^7.4.0
     solito: ^2.0.6
     tamagui: 1.0.1-beta.226
-  peerDependencies:
-    tamagui: 1.0.1-beta.226
   languageName: unknown
   linkType: soft
 
