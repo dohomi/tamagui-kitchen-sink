@@ -11,7 +11,6 @@ if (disableExtraction) {
     console.log('Disabling static extraction in development mode for better HMR')
 }
 
-
 const transform = withPlugins([
     withTM([
         'solito',
@@ -58,37 +57,24 @@ const transform = withPlugins([
         ],
     })])
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    // webpack: (config, options) => {
-    //
-    //     console.log('Im here', config)
-    //     config.resolve.alias = {
-    //         ...config.resolve.alias,
-    //         // your aliases
-    //         'tamagui-extras': 'node_modules/tamagui-extras'
-    //     }
-    //     return config
-    // },
-    webpack5: true,
-    reactStrictMode: true,
-    typescript: {
-        ignoreBuildErrors: false
-    },
-    experimental: {
-        plugins: true,
-        scrollRestoration: true,
-        legacyBrowsers: false,
-        browsersListForSwc: true,
-    }
-}
-
 module.exports = function (name, {defaultConfig}) {
-
-    let currentConfig = {
+    defaultConfig.webpack5 = true
+    // defaultConfig.experimental.reactRoot = 'concurrent'
+    defaultConfig.typescript.ignoreBuildErrors = true
+    /** @type {import('next').NextConfig} */
+    const currentConfig = {
         ...defaultConfig,
-        ...nextConfig
+        webpack5: true,
+        i18n: {
+            defaultLocale: 'en',
+            locales: ['en', 'de', 'fr']
+        },
+        experimental: {
+            plugins: true,
+            scrollRestoration: true,
+            legacyBrowsers: false,
+            browsersListForSwc: true,
+        }
     };
-    // console.log(currentConfig)
     return transform(name, currentConfig)
 }

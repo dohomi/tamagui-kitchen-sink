@@ -1,8 +1,8 @@
 import {Card, CardProps, H2, Paragraph} from "tamagui";
-import {ReactNode} from "react";
+import {PropsWithChildren, ReactNode} from "react";
 import {LmImage} from "./LmImage";
 
-export type LmCardProps = CardProps & {
+export type LmCardProps = PropsWithChildren<CardProps & {
     bouncy?: boolean
     title?: string
     subTitle?: string
@@ -12,9 +12,9 @@ export type LmCardProps = CardProps & {
         height: number
         src: string
     }
-}
+}>
 
-export const LmCard = ({bouncy, title, subTitle, footer, image, ...cardProps}: LmCardProps) => {
+export const LmCard = ({bouncy, title, subTitle, footer, image, children, ...cardProps}: LmCardProps) => {
     return (
         <Card elevate
               size="$4"
@@ -40,6 +40,7 @@ export const LmCard = ({bouncy, title, subTitle, footer, image, ...cardProps}: L
                     )}
                 </Card.Header>
             )}
+            {children}
             {footer && (
                 <Card.Footer padded>
                     {footer}
