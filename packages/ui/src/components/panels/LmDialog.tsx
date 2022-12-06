@@ -18,20 +18,20 @@ export function LmDialog({
                              ...dialogProps
                          }: LmDialogProps) {
     return (
-        <Dialog sheetBreakpoint="sm" modal {...dialogProps}>
+        <Dialog modal {...dialogProps}>
             {trigger && (
                 <Dialog.Trigger asChild>
                     {trigger}
                 </Dialog.Trigger>
             )}
-
-            <Dialog.Sheet zIndex={200_000} modal dismissOnSnapToBottom>
-                <Dialog.Sheet.Frame padding="$4">
-                    <Dialog.SheetContents/>
-                </Dialog.Sheet.Frame>
-                <Dialog.Sheet.Overlay/>
-            </Dialog.Sheet>
-
+            <Dialog.Adapt when="sm">
+                <Dialog.Sheet zIndex={200_000} modal dismissOnSnapToBottom>
+                    <Dialog.Sheet.Frame padding="$4">
+                        <Dialog.Adapt.Contents />
+                    </Dialog.Sheet.Frame>
+                    <Dialog.Sheet.Overlay/>
+                </Dialog.Sheet>
+            </Dialog.Adapt>
             <Dialog.Portal>
                 <Dialog.Overlay
                     key="overlay"

@@ -24,19 +24,21 @@ export function LmPopover({
     const isReady = useDidFinishSSR()
 
     return isReady ? (
-        <Popover sheetBreakpoint="sm" size="$5" {...popoverProps}>
+        <Popover size="$5" {...popoverProps}>
             <Popover.Trigger asChild>
                 {trigger}
             </Popover.Trigger>
 
-            <Popover.Sheet modal dismissOnSnapToBottom>
-                <Popover.Sheet.Frame padding={'$4'}>
-                    <Popover.Sheet.ScrollView>
-                        <Popover.SheetContents/>
-                    </Popover.Sheet.ScrollView>
-                </Popover.Sheet.Frame>
-                <Popover.Sheet.Overlay/>
-            </Popover.Sheet>
+            <Popover.Adapt when="sm">
+                <Popover.Sheet modal dismissOnSnapToBottom>
+                    <Popover.Sheet.Frame padding={'$4'}>
+                        <Popover.Sheet.ScrollView>
+                            <Popover.Adapt.Contents/>
+                        </Popover.Sheet.ScrollView>
+                    </Popover.Sheet.Frame>
+                    <Popover.Sheet.Overlay/>
+                </Popover.Sheet>
+            </Popover.Adapt>
 
             <Popover.Content
                 borderWidth={1}
