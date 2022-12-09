@@ -2,6 +2,7 @@ import {XStack, YStack} from "tamagui";
 import {
     LmCard,
     LmCheckboxRhf,
+    LmDatepickerRhf,
     LmFormRhfProvider,
     LmInputRhf,
     LmResetButtonRhf,
@@ -37,6 +38,7 @@ export const ReactHookForm = () => {
 
                         <LmCheckboxRhf name={'check_this'} required label={'Do you agree to our T&C?'}/>
                         <LmSwitchRhf name={'switch'} labelRight={'Some switch'}/>
+                        <LmDatepickerRhf start='datepicker' label={'Choose a date'} />
                         <LmSliderRhf name={'slider'}/>
                         <LmSliderRhf name={'slider_pre'}/>
                         <XStack space>

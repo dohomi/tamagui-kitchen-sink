@@ -49,14 +49,16 @@ export function LmSelect({
                     <Select.Value placeholder={placeholder} paddingVertical={0}/>
                 </Select.Trigger>
 
-                <Select.Sheet modal dismissOnSnapToBottom>
-                    <Select.Sheet.Frame>
-                        <Select.Sheet.ScrollView>
-                            <Select.SheetContents/>
-                        </Select.Sheet.ScrollView>
-                    </Select.Sheet.Frame>
-                    <Select.Sheet.Overlay/>
-                </Select.Sheet>
+                <Select.Adapt when="sm">
+                    <Select.Sheet modal dismissOnSnapToBottom>
+                        <Select.Sheet.Frame>
+                            <Select.Sheet.ScrollView>
+                                <Select.Adapt.Contents/>
+                            </Select.Sheet.ScrollView>
+                        </Select.Sheet.Frame>
+                        <Select.Sheet.Overlay/>
+                    </Select.Sheet>
+                </Select.Adapt>
 
                 <Select.Content>
                     <Select.ScrollUpButton alignItems="center"
