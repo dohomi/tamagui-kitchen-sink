@@ -1,4 +1,4 @@
-import {Popover, PopoverProps, SizeTokens, useDidFinishSSR} from "tamagui";
+import {Adapt, Popover, PopoverProps, SizeTokens, useDidFinishSSR} from "tamagui";
 import {PropsWithChildren, ReactNode} from "react";
 
 export type LmPopoverProps = PropsWithChildren<{
@@ -24,19 +24,21 @@ export function LmPopover({
     const isReady = useDidFinishSSR()
 
     return isReady ? (
-        <Popover sheetBreakpoint="sm" size="$5" {...popoverProps}>
+        <Popover size="$5" {...popoverProps}>
             <Popover.Trigger asChild>
                 {trigger}
             </Popover.Trigger>
 
-            <Popover.Sheet modal dismissOnSnapToBottom>
-                <Popover.Sheet.Frame padding={'$4'}>
-                    <Popover.Sheet.ScrollView>
-                        <Popover.SheetContents/>
-                    </Popover.Sheet.ScrollView>
-                </Popover.Sheet.Frame>
-                <Popover.Sheet.Overlay/>
-            </Popover.Sheet>
+            <Adapt when="sm" platform="touch">
+                <Popover.Sheet modal dismissOnSnapToBottom>
+                    <Popover.Sheet.Frame padding={'$4'}>
+                        <Popover.Sheet.ScrollView>
+                            <Adapt.Contents/>
+                        </Popover.Sheet.ScrollView>
+                    </Popover.Sheet.Frame>
+                    <Popover.Sheet.Overlay/>
+                </Popover.Sheet>
+            </Adapt>
 
             <Popover.Content
                 borderWidth={1}
@@ -47,7 +49,14 @@ export function LmPopover({
                     x: 0,
                     y: 0,
                     opacity: 1,
-                    animation: "bouncy"
+                    animation: [
+                        'quick',
+                        {
+                            opacity: {
+                                overshootClamping: true,
+                            },
+                        },
+                    ]
                 })}
                 elevate
                 size={contentSize}

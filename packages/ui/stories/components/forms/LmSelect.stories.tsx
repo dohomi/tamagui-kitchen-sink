@@ -76,7 +76,7 @@ export const Colors = () => (
             <LmSelect options={options} colorVariant={'info'}/>
             <LmSelect options={options} colorVariant={'warning'}/>
             <LmSelect options={options} colorVariant={'error'}/>
-            <LmSelect options={options} themeName={'dark_gray_alt2'}/>
+            <LmSelect options={options} themeName={'gray_alt2'}/>
         </XStack>
     </YStack>
 )

@@ -41,10 +41,10 @@ export function LmSelect({
                               size={rest.size}
                               labelInline={labelInline}
                               helperText={helperText}>
-            <Select sheetBreakpoint="sm"
-                    id={id}
-                    value={`${value}`}
-                    {...rest}>
+            <Select
+                id={id}
+                value={`${value}`}
+                {...rest}>
                 <Select.Trigger width={width} iconAfter={ChevronDown} paddingVertical={0} minHeight={rest.size}>
                     <Select.Value placeholder={placeholder} paddingVertical={0}/>
                 </Select.Trigger>
