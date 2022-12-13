@@ -83,10 +83,10 @@ export function OverviewScreen() {
                 </XStack>
                 <H3>Button Sizes</H3>
                 <XStack {...defaultSectionProps}>
-                    <LmButton size={'$2'} theme={'dark_yellow_alt1'}>size 2</LmButton>
-                    <LmButton size={'$4'} theme={'dark_yellow_alt1'}>size 4</LmButton>
-                    <LmButton size={'$6'} theme={'dark_yellow_alt1'}>size 6</LmButton>
-                    <LmButton size={'$8'} theme={'dark_yellow_alt1'}>size 8</LmButton>
+                    <LmButton size={'$2'} theme={'yellow'}>size 2</LmButton>
+                    <LmButton size={'$4'} theme={'yellow'}>size 4</LmButton>
+                    <LmButton size={'$6'} theme={'yellow'}>size 6</LmButton>
+                    <LmButton size={'$8'} theme={'yellow'}>size 8</LmButton>
                 </XStack>
                 <H3>Button Colors</H3>
                 <YStack {...defaultSectionProps}>
@@ -112,7 +112,7 @@ export function OverviewScreen() {
                     <XStack {...defaultSectionProps}>
                         <LmButton size={'$2'} loading colorVariant={'primary'}>size 2</LmButton>
                         <LmButton size={'$4'} loading colorVariant={'secondary'}>size 4</LmButton>
-                        <LmButton size={'$6'} loading theme={'dark_pink_alt1'}>size 6</LmButton>
+                        <LmButton size={'$6'} loading theme={'pink'}>size 6</LmButton>
                     </XStack>
                 </YStack>
                 <H3>Buttons Icons</H3>
@@ -210,13 +210,13 @@ export function OverviewScreen() {
                         <LmSelect options={items} colorVariant={'info'}/>
                         <LmSelect options={items} colorVariant={'warning'}/>
                         <LmSelect options={items} colorVariant={'error'}/>
-                        <LmSelect options={items} themeName={'dark_gray_alt2'}/>
+                        <LmSelect options={items} themeName={'gray'}/>
                     </XStack>
                 </YStack>
                 <H4>Themes</H4>
                 <XStack {...defaultSectionProps}>
                     <LmSelect options={items} themeName={'blue_alt2'}/>
-                    <LmSelect options={items} themeName={'dark_yellow_alt1'}/>
+                    <LmSelect options={items} themeName={'yellow_alt1'}/>
                     <LmSelect options={items} themeName={'gray'}/>
                 </XStack>
                 <H4>Sizes</H4>

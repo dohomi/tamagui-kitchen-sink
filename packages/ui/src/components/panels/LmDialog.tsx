@@ -1,4 +1,4 @@
-import {Button, Dialog, DialogProps, VisuallyHidden, XStack} from "tamagui";
+import {Adapt, Button, Dialog, DialogProps, Sheet, VisuallyHidden, XStack} from "tamagui";
 import {PropsWithChildren, ReactNode} from "react";
 import {X} from "@tamagui/lucide-icons";
 
@@ -24,14 +24,14 @@ export function LmDialog({
                     {trigger}
                 </Dialog.Trigger>
             )}
-            <Dialog.Adapt when="sm">
-                <Dialog.Sheet zIndex={200_000} modal dismissOnSnapToBottom>
-                    <Dialog.Sheet.Frame padding="$4">
-                        <Dialog.Adapt.Contents />
-                    </Dialog.Sheet.Frame>
+            <Adapt when="sm" platform="touch">
+                <Sheet zIndex={200_000} modal dismissOnSnapToBottom>
+                    <Sheet.Frame padding="$4">
+                        <Adapt.Contents/>
+                    </Sheet.Frame>
                     <Dialog.Sheet.Overlay/>
-                </Dialog.Sheet>
-            </Dialog.Adapt>
+                </Sheet>
+            </Adapt>
             <Dialog.Portal>
                 <Dialog.Overlay
                     key="overlay"
