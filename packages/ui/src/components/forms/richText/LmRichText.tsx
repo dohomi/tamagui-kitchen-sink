@@ -1,6 +1,5 @@
 import {useQuill} from "react-quilljs";
 import {Stack, StackPropsBase, XStack} from "tamagui";
-import './quill.css';
 import {QuillOptionsStatic} from "quill";
 import {useEffect} from "react";
 
@@ -39,7 +38,9 @@ export function LmRichText({options, value = '', onChange, toolbarId = 'toolbar'
     }, [quill]) // important: dont add value to dependencies
 
     return (
-        <Stack width={'100%'} height={200}  marginBottom={54} {...containerProps} borderColor={'$borderColor'}>
+        <Stack width={'100%'} height={200} marginBottom={54}
+               {...containerProps}
+               borderColor={'$borderColor'}>
             {!options?.modules?.toolbar && (
                 <XStack id={toolbarId} space borderColor={'$borderColor'}>
                     <button className={'ql-bold'}/>
