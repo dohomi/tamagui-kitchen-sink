@@ -1,13 +1,16 @@
 import {Adapt, Button, Dialog, DialogProps, Sheet, VisuallyHidden, XStack} from "tamagui";
 import {PropsWithChildren, ReactNode} from "react";
 import {X} from "@tamagui/lucide-icons";
+import {useWindowDimensions} from "react-native";
 
 type LmDialogProps = PropsWithChildren<DialogProps & {
     trigger?: ReactNode
     title?: string
     description?: string
     hideCloseButton?: boolean
+    fullScreen?: boolean
 }>
+
 
 export function LmDialog({
                              children,
@@ -15,8 +18,10 @@ export function LmDialog({
                              title,
                              description,
                              hideCloseButton,
+                             fullScreen,
                              ...dialogProps
                          }: LmDialogProps) {
+    const {width, height} = useWindowDimensions()
     return (
         <Dialog modal {...dialogProps}>
             {trigger && (
@@ -26,7 +31,7 @@ export function LmDialog({
             )}
             <Adapt when="sm" platform="touch">
                 <Sheet zIndex={200_000} modal dismissOnSnapToBottom>
-                    <Sheet.Frame padding="$4">
+                    <Sheet.Frame padding="$10">
                         <Adapt.Contents/>
                     </Sheet.Frame>
                     <Dialog.Sheet.Overlay/>
@@ -42,6 +47,7 @@ export function LmDialog({
                 />
                 <Dialog.Content
                     key="content"
+                    padding={'$0'}
                     bordered
                     elevate
                     animation={[
@@ -58,24 +64,37 @@ export function LmDialog({
                     scale={1}
                     opacity={1}
                     y={0}
+                    {...fullScreen ? {
+                        width, height
+                    } : {
+                        maxHeight: height * 0.85,
+                        maxWidth: width * 0.85
+                    }}
                 >
-                    <XStack space justifyContent={'space-between'}>
-                        {title ? (
-                            <Dialog.Title>{title}</Dialog.Title>
-                        ) : (
-                            <VisuallyHidden>
-                                <Dialog.Title></Dialog.Title>
-                            </VisuallyHidden>
-                        )}
-                        {!hideCloseButton && (
-                            <Dialog.Close asChild>
-                                <Button size="$3" circular chromeless icon={X}/>
-                            </Dialog.Close>
-                        )}
-                    </XStack>
+                    {(!hideCloseButton || title) && (
+                        <XStack space justifyContent={'space-between'}
+                                paddingRight={'$4'}
+                                paddingLeft={'$4'}
+                                paddingTop={'$4'}
+                        >
+                            {title ? (
+                                <Dialog.Title>{title}</Dialog.Title>
+                            ) : (
+                                <VisuallyHidden>
+                                    <Dialog.Title></Dialog.Title>
+                                </VisuallyHidden>
+                            )}
+                            {!hideCloseButton && (
+                                <Dialog.Close asChild>
+                                    <Button size="$3" circular chromeless icon={X}/>
+                                </Dialog.Close>
+                            )}
+                        </XStack>
+                    )}
+
 
                     {description ? (
-                        <Dialog.Description>{description}</Dialog.Description>
+                        <Dialog.Description paddingRight={'$4'} paddingLeft={'$4'}>{description}</Dialog.Description>
                     ) : (
                         <VisuallyHidden>
                             <Dialog.Description/>
@@ -89,3 +108,4 @@ export function LmDialog({
         </Dialog>
     )
 }
+

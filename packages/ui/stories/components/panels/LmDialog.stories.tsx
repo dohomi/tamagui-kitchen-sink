@@ -3,6 +3,8 @@ import {Button, Text, XStack, YStack} from "tamagui";
 import {LmDialog, LmInputRhf, LmSelectRhf, LmSubmitButtonRhf, usePopoverState} from "../../../src";
 import {AlertCircle, X} from "@tamagui/lucide-icons";
 import {LmButton, LmFormRhfProvider} from "tamagui-extras";
+import {LmDialogActions} from "../../../src/components/panels/LmDialogActions";
+import {LmDialogContent} from "../../../src/components/panels/LmDialogContent";
 
 export default {
     title: 'ui/Panels/Dialog',
@@ -31,9 +33,11 @@ FullScreen.args = {
         <Text>Open Dialog</Text>
     ),
     children: (
-        <Text padding={'$4'}>Dialog content</Text>
+        <LmDialogContent>
+            <Text>Dialog content</Text>
+        </LmDialogContent>
     ),
-    isFullscreen: true
+    fullScreen: true
 }
 
 export const OnlyContent = Template.bind({})
@@ -56,11 +60,13 @@ export const ControlledState = () => {
                       open={open}
                       hideCloseButton={true}
             >
-                <XStack space alignItems={'center'} justifyContent={'space-between'} marginBottom={'$2'}>
-                    <Text>This is some Content.</Text>
-                    <Button onPress={() => onOpenChange(false)} chromeless circular icon={X}/>
-                </XStack>
-                <Text>Some other content follows. You have full control of the opening state of the dialog.</Text>
+                <LmDialogContent>
+                    <XStack space alignItems={'center'} justifyContent={'space-between'} marginBottom={'$2'}>
+                        <Text>This is some Content.</Text>
+                        <Button onPress={() => onOpenChange(false)} chromeless circular icon={X}/>
+                    </XStack>
+                    <Text>Some other content follows. You have full control of the opening state of the dialog.</Text>
+                </LmDialogContent>
             </LmDialog>
         </YStack>
     )
@@ -89,19 +95,25 @@ export const FormInsideDialog = () => {
                       title={'Contact data'}
             >
                 <LmFormRhfProvider>
-                    <YStack space>
+                    <LmDialogContent>
+
                         <LmSelectRhf name={'title'}
                                      label={'Title'}
                                      required
                                      options={[{value: 'mrs', label: 'Mrs.'}, {value: 'mr', label: 'Mr.'}]}/>
                         <LmInputRhf name={'firstName'} label={'First Name'} required/>
                         <LmInputRhf name={'lastName'} label={'Last Name'} required/>
-                        <LmSubmitButtonRhf onSubmit={fakeSubmit} loading={loading}>Submit</LmSubmitButtonRhf>
+
                         <LmDialog title={'Some Info'}
                                   description={'This is a nested dialog'}
                                   trigger={<LmButton icon={AlertCircle}/>}>
                         </LmDialog>
-                    </YStack>
+                    </LmDialogContent>
+
+                    <LmDialogActions>
+                        <LmSubmitButtonRhf
+                            onSubmit={fakeSubmit} loading={loading}>Submit</LmSubmitButtonRhf>
+                    </LmDialogActions>
                 </LmFormRhfProvider>
 
             </LmDialog>
