@@ -2,7 +2,7 @@
   "name": "tamagui-extras",
   "license": "MIT",
   "author": "Dominic Garms",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",
   "sideEffects": [
