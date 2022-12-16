@@ -23,6 +23,9 @@
     },
     "codegen": {
       "cache": false
+    },
+    "start": {
+      "cache": false
     }
   }
 }

@@ -5,12 +5,8 @@ export function useOnRouteChange(func: () => void) {
     const routeIndex = useNavigationState(state => state?.index);
     useEffect(
         () => {
-            let isActive = true
-            if (Number.isInteger(routeIndex) && isActive) {
+            if (Number.isInteger(routeIndex)) {
                 func()
-            }
-            return () => {
-                isActive = false
             }
         },
         [routeIndex]
