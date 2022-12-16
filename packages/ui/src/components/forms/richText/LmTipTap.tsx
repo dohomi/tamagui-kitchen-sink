@@ -17,6 +17,11 @@ export function LmRichText({containerProps, value = '<p>Please start typing..', 
             StarterKit,
         ],
         content: value,
+        editorProps: {
+            attributes: {
+                style: 'outline: none;'
+            }
+        },
         onUpdate: ({editor}) => {
             if (onChange) {
                 onChange(editor.getHTML())
