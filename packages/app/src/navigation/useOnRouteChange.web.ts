@@ -5,12 +5,8 @@ export function useOnRouteChange(func: () => void) {
     const {asPath} = useRouter() || {}
     useEffect(
         () => {
-            let isActive = true
-            if (isActive) {
+            if (asPath) {
                 func()
-            }
-            return () => {
-                isActive = false
             }
         },
         [asPath]
