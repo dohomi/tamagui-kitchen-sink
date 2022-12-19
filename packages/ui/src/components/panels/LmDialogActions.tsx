@@ -1,13 +1,24 @@
-import {XStack, XStackProps} from "tamagui";
+import { SizeTokens, XStack, XStackProps } from 'tamagui'
 
-export type LmDialogActionsProps = XStackProps
+export type LmDialogActionsProps = XStackProps & {
+  contentPadding?: SizeTokens
+}
 
-export function LmDialogActions({children, ...rest}: LmDialogActionsProps) {
-    return (
-        <XStack justifyContent={'flex-end'} alignItems={'center'}
-                paddingLeft={'$4'}
-                paddingRight={'$4'}
-                paddingBottom={'$4'}
-                {...rest}>{children}</XStack>
-    )
+export function LmDialogActions({
+  children,
+  contentPadding = '$4',
+  ...rest
+}: LmDialogActionsProps) {
+  return (
+    <XStack
+      justifyContent={'flex-end'}
+      alignItems={'center'}
+      paddingLeft={contentPadding}
+      paddingRight={contentPadding}
+      paddingBottom={contentPadding}
+      {...rest}
+    >
+      {children}
+    </XStack>
+  )
 }

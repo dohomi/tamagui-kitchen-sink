@@ -105,7 +105,10 @@ export function LmDatepicker({
             open,
             onOpenChange,
           }}
-          contentPadding={'$3'}
+          contentProps={{
+            padding: '$4',
+            elevation: '$5',
+          }}
         >
           <XStack space alignItems={'flex-start'}>
             {open &&

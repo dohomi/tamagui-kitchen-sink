@@ -1,11 +1,19 @@
-import {ScrollView, YStack, YStackProps} from "tamagui";
+import { ScrollView, SizeTokens, YStack, YStackProps } from 'tamagui'
 
-export type LmDialogContentProps = YStackProps
+export type LmDialogContentProps = YStackProps & {
+  contentPadding?: SizeTokens
+}
 
-export function LmDialogContent({children}: LmDialogContentProps) {
-    return (
-        <ScrollView padding={'$4'}>
-            <YStack space>{children}</YStack>
-        </ScrollView>
-    )
+export function LmDialogContent({
+  children,
+  contentPadding = '$4',
+  ...rest
+}: LmDialogContentProps) {
+  return (
+    <ScrollView padding={contentPadding}>
+      <YStack space {...rest}>
+        {children}
+      </YStack>
+    </ScrollView>
+  )
 }

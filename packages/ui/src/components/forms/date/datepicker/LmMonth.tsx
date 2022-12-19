@@ -46,7 +46,7 @@ export function LmMonth({
 
   return (
     <Stack width={250}>
-      <XStack space={'$2'} justifyContent={'flex-end'} alignItems={'center'}>
+      <XStack space={'$2'} justifyContent={'center'} alignItems={'center'}>
         <Button
           size={'$2'}
           chromeless
@@ -83,31 +83,27 @@ export function LmMonth({
       </XStack>
 
       <XStack justifyContent={'space-between'} alignItems={'center'} height={40}>
-        {isFirst ? (
-          <Button
-            focusable={false}
-            onPress={monthsCount > 1 ? goToPreviousMonths : goToPreviousMonthsByOneMonth}
-            icon={ArrowLeft}
-            circular
-            chromeless
-          />
-        ) : (
-          <Text> </Text>
-        )}
+        <Button
+          focusable={false}
+          opacity={isFirst ? undefined : 0}
+          disabled={isFirst ? false : true}
+          onPress={monthsCount > 1 ? goToPreviousMonths : goToPreviousMonthsByOneMonth}
+          icon={ArrowLeft}
+          circular
+          chromeless
+        />
 
         <H5>{monthLabel}</H5>
 
-        {isLast ? (
-          <Button
-            focusable={false}
-            onPress={monthsCount > 1 ? goToNextMonths : goToNextMonthsByOneMonth}
-            icon={ArrowRight}
-            circular
-            chromeless
-          />
-        ) : (
-          <Text> </Text>
-        )}
+        <Button
+          focusable={false}
+          opacity={isLast ? undefined : 0}
+          disabled={isLast ? false : true}
+          onPress={monthsCount > 1 ? goToNextMonths : goToNextMonthsByOneMonth}
+          icon={ArrowRight}
+          circular
+          chromeless
+        />
       </XStack>
       <XStack flex={7} width={250}>
         {weekdayLabels.map((dayLabel) => (
