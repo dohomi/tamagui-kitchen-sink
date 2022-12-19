@@ -1,5 +1,12 @@
 import { Button, H5, H6, Stack, Text, XStack } from 'tamagui'
-import { ArrowLeft, ArrowRight, ChevronsLeft, ChevronsRight } from '@tamagui/lucide-icons'
+import {
+  ArrowLeft,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
+} from '@tamagui/lucide-icons'
 import { useMonth, UseMonthProps } from '@datepicker-react/hooks'
 import { LmDay } from './LmDay'
 import { useDatepickerContext } from './DatepickerProvider'
@@ -39,13 +46,22 @@ export function LmMonth({
 
   return (
     <Stack width={250}>
-      <XStack space justifyContent={'flex-end'} alignItems={'center'}>
+      <XStack space={'$2'} justifyContent={'flex-end'} alignItems={'center'}>
         <Button
           size={'$2'}
           chromeless
           focusable={false}
-          onPress={() => goToPreviousYear(1)}
+          circular
+          onPress={() => goToPreviousYear(10)}
           icon={ChevronsLeft}
+        />
+        <Button
+          size={'$2'}
+          chromeless
+          circular
+          focusable={false}
+          onPress={() => goToPreviousYear(1)}
+          icon={ChevronLeft}
         />
         <H6>{year}</H6>
         <Button
@@ -53,6 +69,15 @@ export function LmMonth({
           chromeless
           focusable={false}
           onPress={() => goToNextYear(1)}
+          icon={ChevronRight}
+          circular
+        />
+        <Button
+          size={'$2'}
+          chromeless
+          circular
+          focusable={false}
+          onPress={() => goToNextYear(10)}
           icon={ChevronsRight}
         />
       </XStack>
