@@ -1,26 +1,65 @@
-import {Stack, StackPropsBase} from "tamagui";
+import { useState } from 'react'
+import { RichTextEditor, RichTextViewer } from '@siposdani87/expo-rich-text-editor'
+import { StyleSheet } from 'react-native'
 
-import {QuillOptionsStatic} from "quill";
-import QuillEditor, {QuillToolbar} from "react-native-cn-quill";
-import {createRef} from "react";
+const htmlStr = '<p><i><u>Underline italic text</u></i> <b>bold word</b> normal words</p>'
 
-export type LmRichTextProps = {
-    options?: QuillOptionsStatic
-    onChange?: (text: string) => void
-    value?: string
-    containerProps?: StackPropsBase
+export const LmRichText = () => {
+  const [value, setValue] = useState('')
+
+  const getColor = (selected: boolean): string => {
+    return selected ? 'red' : 'black'
+  }
+
+  // const getActionMap = (): ActionMap => {
+  //   return {
+  //     [ActionKey.bold]: ({ selected }) => (
+  //       <MaterialIcons name="format-bold" size={14} color={getColor(selected)} />
+  //     ),
+  //   }
+  // }
+
+  const onValueChange = (v: string): void => {
+    console.log('onValueChange', v)
+    setValue(v)
+  }
+
+  return (
+    <>
+      <RichTextEditor
+        minHeight={150}
+        value={value}
+        selectionColor="green"
+        // actionMap={getActionMap()}
+        onValueChange={onValueChange}
+        toolbarStyle={styles.toolbar}
+        editorStyle={styles.editor}
+      />
+
+      <RichTextViewer value={htmlStr} editorStyle={styles.viewer} linkStyle={styles.link} />
+    </>
+  )
 }
 
-export function LmRichText({options, containerProps}: LmRichTextProps) {
-
-    const _editor = createRef<QuillEditor>()
-    return (
-        <Stack {...containerProps}>
-            <QuillEditor
-                ref={_editor}
-                initialHtml="<h1>Quill Editor for react-native</h1>"
-            />
-            <QuillToolbar editor={_editor} options="full" theme="light"/>
-        </Stack>
-    )
-}
+const styles = StyleSheet.create({
+  viewer: {
+    borderColor: 'green',
+    borderWidth: 1,
+    padding: 5,
+    // fontFamily: 'Oswald_400Regular',
+  },
+  editor: {
+    borderColor: 'blue',
+    borderWidth: 1,
+    padding: 5,
+    // fontFamily: 'Inter_500Medium',
+    fontSize: 18,
+  },
+  toolbar: {
+    borderColor: 'red',
+    borderWidth: 1,
+  },
+  link: {
+    color: 'green',
+  },
+})
