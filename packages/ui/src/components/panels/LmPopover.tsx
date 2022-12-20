@@ -56,7 +56,7 @@ export function LmPopover({
         padding={contentProps?.padding || 0}
         {...contentProps}
       >
-        {!hideArrow && <Popover.Arrow bw={1} boc="$borderColor" />}
+        {!hideArrow && <Popover.Arrow borderWidth={1} borderColor="$borderColor" />}
         {children}
       </Popover.Content>
     </Popover>
