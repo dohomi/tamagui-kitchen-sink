@@ -14,3 +14,6 @@ export * from './components/panels'
 
 // hooks
 export * from './hooks'
+
+// config
+export {config} from './tamagui.config'

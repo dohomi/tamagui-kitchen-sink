@@ -34,9 +34,9 @@
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",
     "@mdi/js": "^7.1.96",
-    "@my/config": "*",
     "@siposdani87/expo-rich-text-editor": "^0.9.1",
-    "@tamagui/lucide-icons": "1.0.1-rc.3.1",
+    "@tamagui/config-base": "1.0.1-rc.5",
+    "@tamagui/lucide-icons": "1.0.1-rc.5",
     "@tiptap/core": "^2.0.0-beta.209",
     "@tiptap/react": "^2.0.0-beta.209",
     "@tiptap/starter-kit": "^2.0.0-beta.209",
@@ -49,14 +49,15 @@
     "prosemirror-keymap": "^1.2.0",
     "prosemirror-schema-list": "^1.2.2",
     "react-hook-form": "^7.34.2",
+    "react-native-svg": "^13.6.0",
     "react-native-webview": "^11.26.0",
     "rooks": "^7.4.2",
     "solito": "^2.1.2",
-    "tamagui": "1.0.1-rc.3.1"
+    "tamagui": "1.0.1-rc.5"
   },
   "devDependencies": {
     "@storybook/react": "^6.5.12",
-    "@tamagui/build": "1.0.1-rc.3.1",
+    "@tamagui/build": "1.0.1-rc.5",
     "@types/quill": "^2.0.9"
   },
   "publishConfig": {
