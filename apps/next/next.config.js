@@ -65,10 +65,10 @@ module.exports = function () {
     images: {
       disableStaticImages: true,
     },
+    // transpilePackages: transpilePackages,
     experimental: {
       scrollRestoration: true,
       legacyBrowsers: false,
-      // transpilePackages: transpilePackages
     },
   }
   for (const plugin of plugins) {
