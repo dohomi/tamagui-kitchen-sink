@@ -12935,7 +12935,7 @@ __metadata:
     react-native-safe-area-context: ^4.4.1
     react-native-screens: ^3.18.2
     react-native-web: ~0.18.9
-    typescript: ^4.7.4
+    typescript: ^4.9.4
   languageName: unknown
   linkType: soft
 
@@ -20283,7 +20283,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-svg@npm:^13.6.0":
+"react-native-svg@npm:^13.4.0":
   version: 13.6.0
   resolution: "react-native-svg@npm:13.6.0"
   dependencies:
@@ -21377,7 +21377,7 @@ __metadata:
     react-dom: ^18.2.0
     react-native: 0.0.0
     react-native-web: 0.18.9
-    typescript: 4.7.4
+    typescript: 4.9.4
   languageName: unknown
   linkType: soft
 
@@ -22536,7 +22536,7 @@ __metadata:
     prosemirror-keymap: ^1.2.0
     prosemirror-schema-list: ^1.2.2
     react-hook-form: ^7.34.2
-    react-native-svg: ^13.6.0
+    react-native-svg: ^13.4.0
     react-native-webview: ^11.26.0
     rooks: ^7.4.2
     solito: ^2.1.2
@@ -22567,8 +22567,8 @@ __metadata:
     "@types/react-native": ^0.69
     eslint: ^8.21.0
     prettier: ^2.7.1
-    turbo: ^1.4.2
-    typescript: ^4.7.4
+    turbo: ^1.6.3
+    typescript: ^4.9.4
   languageName: unknown
   linkType: soft
 
@@ -22829,7 +22829,7 @@ __metadata:
     babel-jest: ^28.1.3
     jest: ^28.1.3
     jest-expo: ^46.0.1
-    typescript: ^4.7.4
+    typescript: ^4.9.4
   languageName: unknown
   linkType: soft
 
@@ -23128,58 +23128,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:1.5.6":
-  version: 1.5.6
-  resolution: "turbo-darwin-64@npm:1.5.6"
+"turbo-darwin-64@npm:1.6.3":
+  version: 1.6.3
+  resolution: "turbo-darwin-64@npm:1.6.3"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:1.5.6":
-  version: 1.5.6
-  resolution: "turbo-darwin-arm64@npm:1.5.6"
+"turbo-darwin-arm64@npm:1.6.3":
+  version: 1.6.3
+  resolution: "turbo-darwin-arm64@npm:1.6.3"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:1.5.6":
-  version: 1.5.6
-  resolution: "turbo-linux-64@npm:1.5.6"
+"turbo-linux-64@npm:1.6.3":
+  version: 1.6.3
+  resolution: "turbo-linux-64@npm:1.6.3"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:1.5.6":
-  version: 1.5.6
-  resolution: "turbo-linux-arm64@npm:1.5.6"
+"turbo-linux-arm64@npm:1.6.3":
+  version: 1.6.3
+  resolution: "turbo-linux-arm64@npm:1.6.3"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:1.5.6":
-  version: 1.5.6
-  resolution: "turbo-windows-64@npm:1.5.6"
+"turbo-windows-64@npm:1.6.3":
+  version: 1.6.3
+  resolution: "turbo-windows-64@npm:1.6.3"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:1.5.6":
-  version: 1.5.6
-  resolution: "turbo-windows-arm64@npm:1.5.6"
+"turbo-windows-arm64@npm:1.6.3":
+  version: 1.6.3
+  resolution: "turbo-windows-arm64@npm:1.6.3"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:^1.4.2":
-  version: 1.5.6
-  resolution: "turbo@npm:1.5.6"
+"turbo@npm:^1.6.3":
+  version: 1.6.3
+  resolution: "turbo@npm:1.6.3"
   dependencies:
-    turbo-darwin-64: 1.5.6
-    turbo-darwin-arm64: 1.5.6
-    turbo-linux-64: 1.5.6
-    turbo-linux-arm64: 1.5.6
-    turbo-windows-64: 1.5.6
-    turbo-windows-arm64: 1.5.6
+    turbo-darwin-64: 1.6.3
+    turbo-darwin-arm64: 1.6.3
+    turbo-linux-64: 1.6.3
+    turbo-linux-arm64: 1.6.3
+    turbo-windows-64: 1.6.3
+    turbo-windows-arm64: 1.6.3
   dependenciesMeta:
     turbo-darwin-64:
       optional: true
@@ -23195,7 +23195,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: 5a243f0113fb886c90e8d7b4e94b590acef9813b1cfb13330b3d62c2b09e89647b5aabbe3ecf80d5fe3d8c1ee74ad4eb81f25de30ef62eb1c8a15c23383bd943
+  checksum: 35195f4b7623014c25ba152c11a8cb23e51cbd75dc9266d0656692665f85b28faf3496dea8cecacf52795a917410668124186ffbdcf276325ccc3e11df9e9623
   languageName: node
   linkType: hard
 
@@ -23306,23 +23306,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.7.4":
-  version: 4.7.4
-  resolution: "typescript@npm:4.7.4"
+"typescript@npm:4.9.4":
+  version: 4.9.4
+  resolution: "typescript@npm:4.9.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 5750181b1cd7e6482c4195825547e70f944114fb47e58e4aa7553e62f11b3f3173766aef9c281783edfd881f7b8299cf35e3ca8caebe73d8464528c907a164df
+  checksum: e782fb9e0031cb258a80000f6c13530288c6d63f1177ed43f770533fdc15740d271554cdae86701c1dd2c83b082cea808b07e97fd68b38a172a83dbf9e0d0ef9
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>":
-  version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=a1c5e5"
+"typescript@patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>":
+  version: 4.9.4
+  resolution: "typescript@patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=a1c5e5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 9096d8f6c16cb80ef3bf96fcbbd055bf1c4a43bd14f3b7be45a9fbe7ada46ec977f604d5feed3263b4f2aa7d4c7477ce5f9cd87de0d6feedec69a983f3a4f93e
+  checksum: 37f6e2c3c5e2aa5934b85b0fddbf32eeac8b1bacf3a5b51d01946936d03f5377fe86255d4e5a4ae628fd0cd553386355ad362c57f13b4635064400f3e8e05b9d
   languageName: node
   linkType: hard
 
@@ -23965,7 +23965,7 @@ __metadata:
     babel-loader: ^8.2.5
     react: ^18.2.0
     react-dom: ^18.2.0
-    typescript: ^4.6.4
+    typescript: ^4.9.4
     vite: ^3.1.0
   languageName: unknown
   linkType: soft
