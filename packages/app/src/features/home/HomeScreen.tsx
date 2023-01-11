@@ -1,10 +1,10 @@
-import {Anchor, Button, H1, LmButton, Paragraph, Separator, XStack, YStack} from 'tamagui-extras'
-import {ChevronDown} from '@tamagui/lucide-icons'
 import React from 'react'
-import {useLink} from 'solito/link'
-import {LmThemeToggle} from "app/src/components/various/LmThemeToggle";
-import {useToggleMainDrawer} from "app/src/state/appState";
-import {LmAppDrawer} from "app/src/components/layouts/LmAppDrawer";
+import { Anchor, Button, H1, LmButton, Paragraph, Separator, XStack, YStack } from 'tamagui-extras'
+import { ChevronDown } from '@tamagui/lucide-icons'
+import { useLink } from 'solito/link'
+import { LmThemeToggle } from "app/src/components/various/LmThemeToggle";
+import { useToggleMainDrawer } from "app/src/state/appState";
+import { LmAppDrawer } from "app/src/components/layouts/LmAppDrawer";
 
 export function HomeScreen() {
 
@@ -21,7 +21,7 @@ export function HomeScreen() {
         <YStack flex={1} justifyContent="center" alignItems="center" padding="$4" space>
             <YStack space="$4" maxWidth={600}>
                 <H1 textAlign="center">Welcome to Tamagui.</H1>
-                <Separator/>
+                <Separator />
                 <Paragraph textAlign="center" size={'$2'}>
                     Tamagui is made by{' '}
                     <Anchor href="https://twitter.com/natebirdman" target="_blank">
@@ -44,7 +44,7 @@ export function HomeScreen() {
             <XStack>
                 <LmThemeToggle>Toggle theme</LmThemeToggle>
             </XStack>
-            <SheetDemo/>
+            <SheetDemo />
         </YStack>
     )
 }
@@ -60,7 +60,7 @@ function SheetDemo() {
                 circular
                 onPress={() => toggleMainDrawer()}
             />
-            <LmAppDrawer/>
+            <LmAppDrawer />
         </>
     )
 }

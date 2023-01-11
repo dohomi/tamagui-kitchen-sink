@@ -6,6 +6,5 @@ export default {
 };
 
 export const Primary = () => (
-
     <HomeScreen/>
 )
