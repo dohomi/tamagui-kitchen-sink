@@ -9,12 +9,18 @@
       "ios": {
         "simulator": true,
         "image": "latest"
+      },
+      "env": {
+        "TAMAGUI_TARGET": "native"
       }
     },
     "production": {
       "distribution": "store",
       "android": {
         "buildType": "app-bundle"
+      },
+      "env": {
+        "TAMAGUI_TARGET": "native"
       }
     },
     "simulator": {
@@ -26,7 +32,8 @@
         "image": "latest"
       },
       "env": {
-        "STAGE": "staging"
+        "STAGE": "staging",
+        "TAMAGUI_TARGET": "native"
       },
       "node": "16.16.0",
       "yarn": "2.4.3",
