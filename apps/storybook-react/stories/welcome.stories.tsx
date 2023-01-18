@@ -1,4 +1,4 @@
-import {Anchor, H1, H3, H5, Paragraph, YStack} from 'tamagui'
+import { YStack, H1, Paragraph, Anchor, H3, H5 } from "tamagui-extras"
 
 export default {
     title: 'Welcome/Installation'
@@ -9,8 +9,8 @@ export const Installation = () => (
         <H1 textAlign={'center'}>Welcome to tamagui-extras</H1>
         <Paragraph maxWidth={600} textAlign={'center'} alignSelf={'center'}>This is a package which adds missing
             components from the core
-            package of <a
-                href={'https://tamagui.dev'} target={'_blank'} rel="noreferrer"> Tamagui</a>. As the project is in early
+            package of <Anchor
+                href={'https://tamagui.dev'} target={'_blank'} rel="noreferrer"> Tamagui</Anchor>. As the project is in early
             phase please be assure that it can contain bugs and unexpected behaviour.</Paragraph>
 
         <Paragraph paddingRight={'$3'}>The main focus are form components with an easy integration of
