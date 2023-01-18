@@ -1,7 +1,6 @@
 import React from 'react'
-import { Anchor, Button, H1, LmButton, Paragraph, Separator, XStack, YStack } from 'tamagui-extras'
+import { Anchor, Button, H1, Paragraph, Separator, XStack, YStack } from 'tamagui-extras'
 import { ChevronDown } from '@tamagui/lucide-icons'
-import { useLink } from 'solito/link'
 import { LmThemeToggle } from 'app/src/components/various/LmThemeToggle'
 import { useToggleMainDrawer } from 'app/src/state/appState'
 import { LmAppDrawer } from 'app/src/components/layouts/LmAppDrawer'
@@ -16,7 +15,14 @@ export function HomeScreen() {
   // })
 
   return (
-    <YStack flex={1} justifyContent="center" alignItems="center" padding="$4" space>
+    <YStack
+      bc={'$backgroundStrong'}
+      flex={1}
+      justifyContent="center"
+      alignItems="center"
+      padding="$4"
+      space
+    >
       <YStack space="$4" maxWidth={600}>
         <H1 textAlign="center">Welcome to Tamagui.</H1>
         <Separator />

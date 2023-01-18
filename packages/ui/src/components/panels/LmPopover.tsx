@@ -1,4 +1,4 @@
-import { Adapt, Popover, PopoverContentProps, PopoverProps } from 'tamagui'
+import { Popover, PopoverContentProps, PopoverProps } from 'tamagui'
 import { PropsWithChildren, ReactNode } from 'react'
 
 export type LmPopoverProps = PropsWithChildren<{
@@ -23,26 +23,26 @@ export function LmPopover({
     <Popover size="$5" {...popoverProps}>
       <Popover.Trigger asChild>{trigger}</Popover.Trigger>
 
-      <Adapt when="sm" platform="touch">
+      <Popover.Adapt when="sm" platform="touch">
         <Popover.Sheet modal dismissOnSnapToBottom>
           <Popover.Sheet.Frame padding={'$4'}>
             <Popover.Sheet.ScrollView>
-              <Adapt.Contents />
+              <Popover.Adapt.Contents />
             </Popover.Sheet.ScrollView>
           </Popover.Sheet.Frame>
           <Popover.Sheet.Overlay />
         </Popover.Sheet>
-      </Adapt>
+      </Popover.Adapt>
 
       <Popover.Content
-        borderWidth={1}
-        borderColor="$borderColor"
+        bw={1}
+        boc="$borderColor"
         {...(isBouncy && {
           enterStyle: { x: 0, y: -10, opacity: 0 },
           exitStyle: { x: 0, y: -10, opacity: 0 },
           x: 0,
           y: 0,
-          opacity: 1,
+          o: 1,
           animation: [
             'quick',
             {
@@ -56,7 +56,7 @@ export function LmPopover({
         padding={contentProps?.padding || 0}
         {...contentProps}
       >
-        {!hideArrow && <Popover.Arrow borderWidth={1} borderColor="$borderColor" />}
+        {!hideArrow && <Popover.Arrow bw={1} boc="$borderColor" />}
         {children}
       </Popover.Content>
     </Popover>
