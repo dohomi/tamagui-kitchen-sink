@@ -1,5 +1,6 @@
 import { LmPopover, LmPopoverProps } from '../../../src'
-import { Text } from 'tamagui'
+import { Button, Text, XStack } from 'tamagui'
+import { LmButton } from 'tamagui-extras'
 
 export default {
   title: 'ui/Panels/Popover',
@@ -25,3 +26,14 @@ SquarePopover.args = {
     borderRadius: 0,
   },
 } as LmPopoverProps
+
+export const CustomPosition = () => (
+  <XStack space>
+    <LmPopover trigger={<Button>Open Tamagui Button</Button>}>
+      <XStack p={'$4'}>Some content</XStack>
+    </LmPopover>
+    <LmPopover trigger={<LmButton>Open LmButton</LmButton>}>
+      <XStack p={'$4'}>Some content</XStack>
+    </LmPopover>
+  </XStack>
+)
