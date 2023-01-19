@@ -19,6 +19,8 @@ type LmDialogProps = DialogProps & {
   hideCloseButton?: boolean
   fullScreen?: boolean
   contentPadding?: SizeTokens
+  dialogHeight?: string | number
+  dialogWidth?: string | number
 }
 
 export function LmDialog({
@@ -29,6 +31,8 @@ export function LmDialog({
   hideCloseButton,
   fullScreen,
   contentPadding = '$4',
+  dialogWidth,
+  dialogHeight,
   ...dialogProps
 }: LmDialogProps) {
   const { width, height } = useWindowDimensions()
@@ -76,8 +80,10 @@ export function LmDialog({
                 height,
               }
             : {
-                maxHeight: height * 0.85,
-                maxWidth: width * 0.85,
+                maxHeight: '90%',
+                maxWidth: '90%',
+                width: dialogWidth,
+                height: dialogHeight,
               })}
         >
           {(!hideCloseButton || title) && (

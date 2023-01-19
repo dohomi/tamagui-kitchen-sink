@@ -29,7 +29,8 @@
     "check-types": "tsc --noEmit",
     "release-minor": "yarn build && npx release minor",
     "release-patch": "yarn build && npx release patch",
-    "release-major": "yarn build && npx release major"
+    "release-major": "yarn build && npx release major",
+    "npmPublish": "npm publish"
   },
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",

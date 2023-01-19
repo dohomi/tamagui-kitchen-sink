@@ -47,6 +47,15 @@ OnlyContent.args = {
   hideCloseButton: true,
 }
 
+export const FixedWidthHeight = Template.bind({})
+FixedWidthHeight.args = {
+  trigger: <Text>Open Dialog</Text>,
+  children: <Text padding={'$4'}>Dialog content</Text>,
+  hideCloseButton: true,
+  dialogWidth: 600,
+  dialogHeight: 400,
+}
+
 export const ControlledState = () => {
   const { open, onOpenChange } = usePopoverState()
   return (
