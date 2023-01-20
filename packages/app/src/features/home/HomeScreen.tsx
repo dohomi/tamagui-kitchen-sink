@@ -1,18 +1,11 @@
 import React from 'react'
-import { Anchor, Button, H1, Paragraph, Separator, XStack, YStack } from 'tamagui-extras'
+import { Anchor, Button, H1, Paragraph, Separator, XStack, YStack, LmLinkButton } from 'tamagui-extras'
 import { ChevronDown } from '@tamagui/lucide-icons'
 import { LmThemeToggle } from 'app/src/components/various/LmThemeToggle'
 import { useToggleMainDrawer } from 'app/src/state/appState'
 import { LmAppDrawer } from 'app/src/components/layouts/LmAppDrawer'
 
 export function HomeScreen() {
-  // const overviewProps = useLink({
-  //     href: '/overview',
-  // })
-
-  // const playgroundProps = useLink({
-  //     href: '/playground',
-  // })
 
   return (
     <YStack
