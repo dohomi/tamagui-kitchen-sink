@@ -3142,13 +3142,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdi/js@npm:^7.1.96":
-  version: 7.1.96
-  resolution: "@mdi/js@npm:7.1.96"
-  checksum: cd3102a0120c06b4af7a153e30ee964807746ce55f84a35479d382841d0ab1a10f986059e0c6af0c240444393679b7330d306d0688e1193a23fc03bb8cee0b82
-  languageName: node
-  linkType: hard
-
 "@mdx-js/mdx@npm:^1.6.22":
   version: 1.6.22
   resolution: "@mdx-js/mdx@npm:1.6.22"
@@ -22523,7 +22516,6 @@ __metadata:
   resolution: "tamagui-extras@workspace:packages/ui"
   dependencies:
     "@datepicker-react/hooks": ^2.8.4
-    "@mdi/js": ^7.1.96
     "@siposdani87/expo-rich-text-editor": ^0.9.1
     "@storybook/react": ^6.5.12
     "@tamagui/build": 1.0.17
@@ -22547,7 +22539,7 @@ __metadata:
     rooks: ^7.4.2
     solito: ^2.1.2
     tamagui: 1.0.17
-    tamagui-phosphor-icons: ^0.1.1
+    tamagui-phosphor-icons: ^0.1.3
   languageName: unknown
   linkType: soft
 
@@ -22589,6 +22581,19 @@ __metadata:
     react-dom: "*"
     react-native-svg: ">=12"
   checksum: b18fbcb5f27c0a69443566b51905df0d0f40ba1c13c7ccae393965873da5b9bc818e617aa2894545ab87a939b2b09d9b01115bf4730ab03c1130f6510d66c923
+  languageName: node
+  linkType: hard
+
+"tamagui-phosphor-icons@npm:^0.1.3":
+  version: 0.1.3
+  resolution: "tamagui-phosphor-icons@npm:0.1.3"
+  dependencies:
+    "@tamagui/core": ^1.0.4
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+    react-native-svg: ">=12"
+  checksum: b424802c8bd4718c0fb6cb5fff07981cd43eb42e987a972479b90c8bf7f4dabea22cd17a6689d9683cdc040a27f52cfd2b3d72b1e5042053eb51ea6dca21237e
   languageName: node
   linkType: hard
 
