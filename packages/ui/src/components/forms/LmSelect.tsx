@@ -60,7 +60,7 @@ export function LmSelect({
                     </Select.Sheet>
                 </Select.Adapt>
 
-                <Select.Content>
+                <Select.Content zIndex={200000}>
                     <Select.ScrollUpButton alignItems="center"
                                            justifyContent="center"
                                            position="relative"

@@ -10,7 +10,7 @@ import {
   XStackProps,
   YStack,
 } from 'tamagui'
-import { CheckSquare, Square } from 'tamagui-phosphor-icons'
+import { CheckSquare, Square } from '@tamagui/lucide-icons'
 
 export type LmCheckboxProps = XStackProps & {
   label?: ReactNode

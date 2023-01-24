@@ -40,7 +40,7 @@ export function LmDialog({
     <Dialog modal {...dialogProps}>
       {trigger && <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>}
       <Adapt when="sm" platform="touch">
-        <Sheet zIndex={200_000} modal dismissOnSnapToBottom>
+        <Sheet zIndex={200000} modal dismissOnSnapToBottom>
           <Sheet.Frame padding="$10">
             <Adapt.Contents />
           </Sheet.Frame>
