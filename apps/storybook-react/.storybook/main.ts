@@ -7,6 +7,7 @@ const config = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
+    'storybook-addon-next-router',
     // "storybook-addon-next",
     {
       name: '@storybook/addon-react-native-web',

@@ -5,7 +5,7 @@ import { LmFormContainerBaseTypes } from './formContainerTypes'
 
 const CustomSliderTrack = styled(Slider.Track, {
   variants: {
-    color: {
+    colorCustom: {
       ':string': (color) => {
         return {
           backgroundColor: color,
@@ -16,7 +16,7 @@ const CustomSliderTrack = styled(Slider.Track, {
 })
 const CustomSliderTrackActive = styled(Slider.TrackActive, {
   variants: {
-    color: {
+    colorCustom: {
       ':string': (color) => {
         return {
           backgroundColor: color,
@@ -79,8 +79,8 @@ export function LmSlider({
             }
           }}
         >
-          <CustomSliderTrack color={!colorActiveOnly ? trackColor : undefined}>
-            <CustomSliderTrackActive color={trackColor} />
+          <CustomSliderTrack colorCustom={!colorActiveOnly ? trackColor : undefined}>
+            <CustomSliderTrackActive colorCustom={trackColor} />
           </CustomSliderTrack>
           <Slider.Thumb
             bordered={false}
