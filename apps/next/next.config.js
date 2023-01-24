@@ -22,6 +22,7 @@ if (disableExtraction) {
 const transpilePackages = [
   'solito',
   'react-native-web',
+  'react-native',
   'expo-linking',
   'expo-constants',
   'expo-modules-core',
@@ -64,6 +65,16 @@ module.exports = function () {
     },
     images: {
       disableStaticImages: true,
+    },
+    modularizeImports: {
+      '@tamagui/lucide-icons': {
+        transform: `@tamagui/lucide-icons/dist/esm/icons/{{kebabCase member}}`,
+        skipDefaultConversion: true,
+      },
+      'tamagui-phosphor-icons': {
+        transform: 'tamagui-phosphor-icons/dist/jsx/icons/icons/{{member}}',
+        skipDefaultConversion: true,
+      },
     },
     // transpilePackages: transpilePackages,
     experimental: {
