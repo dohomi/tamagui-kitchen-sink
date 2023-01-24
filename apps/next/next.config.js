@@ -27,9 +27,7 @@ const transpilePackages = [
   'expo-constants',
   'expo-modules-core',
   'expo-document-picker',
-  'expo-asset',
   'expo-av',
-  'react-i18next',
   // 'tamagui-extras'
   // '@expo/vector-icons',
 ]
