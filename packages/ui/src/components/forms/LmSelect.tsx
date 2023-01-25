@@ -1,4 +1,5 @@
-import {LinearGradient, Select, SelectProps, ThemeProps, YStack} from "tamagui";
+import {Select, SelectProps, ThemeProps, YStack} from "tamagui";
+import {LinearGradient} from "@tamagui/linear-gradient";
 import {colormap, ThemeColors} from "../../themeMappings";
 import {Check, ChevronDown, ChevronUp} from '@tamagui/lucide-icons'
 import {useId} from "react";
