@@ -47,3 +47,4 @@ graphql.config.*
 .graphqlconfig
 schema.graphql
 .tamagui
+.turbo
