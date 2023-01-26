@@ -8271,7 +8271,6 @@ __metadata:
     react-i18next: ^11.18.6
     solito: ^2.1.2
     tamagui-extras: "*"
-    tamagui-phosphor-icons: ^0.1.1
     zustand: ^4.1.1
   languageName: unknown
   linkType: soft
@@ -21476,19 +21475,6 @@ __metadata:
     typescript: ^4.9.4
   languageName: unknown
   linkType: soft
-
-"tamagui-phosphor-icons@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "tamagui-phosphor-icons@npm:0.1.1"
-  dependencies:
-    "@tamagui/core": ^1.0.4
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-    react-native-svg: ">=12"
-  checksum: b18fbcb5f27c0a69443566b51905df0d0f40ba1c13c7ccae393965873da5b9bc818e617aa2894545ab87a939b2b09d9b01115bf4730ab03c1130f6510d66c923
-  languageName: node
-  linkType: hard
 
 "tamagui-phosphor-icons@npm:^0.1.5":
   version: 0.1.5
