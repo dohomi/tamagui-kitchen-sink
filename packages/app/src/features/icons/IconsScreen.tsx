@@ -1,19 +1,22 @@
-import { Text, YStack } from 'tamagui-extras'
-import { Star } from '@tamagui/lucide-icons'
+import { Text } from 'tamagui-extras'
+import { Quote, Star } from '@tamagui/lucide-icons'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
-import { Warning } from 'tamagui-phosphor-icons'
+import { Activity, Warning } from 'tamagui-phosphor-icons'
+import { XStack } from 'tamagui'
 
 export default function IconsScreen() {
   return (
     <LmAppShell title={'Icons'}>
       <Text>Lucide icons</Text>
-      <YStack>
+      <XStack space>
         <Star />
-      </YStack>
+        <Quote />
+      </XStack>
       <Text>Phosphor icons</Text>
-      <YStack>
+      <XStack space>
         <Warning />
-      </YStack>
+        <Activity />
+      </XStack>
     </LmAppShell>
   )
 }
