@@ -1,12 +1,13 @@
-import { Button, LmLinkButton, Separator, Sheet, YStack } from 'tamagui-extras'
-import { Sun } from '@tamagui/lucide-icons'
+import { Button, LmButton, LmLinkButton, Sheet, YStack } from 'tamagui-extras'
 import { useAppState } from 'app/src/state/appState'
 import React, { useState } from 'react'
 import { XStack } from 'tamagui'
-import { LmThemeToggle } from 'app/src/components/various/LmThemeToggle'
 import { useOnRouteChange } from 'app/src/navigation/useOnRouteChange'
+import { changeLanguage } from 'app/src/i18n/i18n'
+import { useTranslation } from 'react-i18next'
 
 export function LmAppDrawer() {
+  const { t } = useTranslation()
   const { isMainDrawerOpen, setMainDrawer } = useAppState()
   const [position, setPosition] = useState(0)
   useOnRouteChange(() => setMainDrawer(false))
@@ -28,14 +29,19 @@ export function LmAppDrawer() {
         <Sheet.Frame alignItems="center" justifyContent="center">
           <Sheet.ScrollView>
             <YStack padding="$4" justifyContent="center" alignItems="center">
-              <XStack marginBottom={'$4'} justifyContent={'space-between'} space>
-                <LmThemeToggle icon={<Sun />} circular chromeless />
-              </XStack>
               <XStack space>
-                <LmLinkButton link={{ href: '/playground' }}>Playground</LmLinkButton>
+                <LmLinkButton link={{ href: '/' }}>{t('home')}</LmLinkButton>
+                <LmLinkButton link={{ href: '/icons' }}>{t('icons')}</LmLinkButton>
+                <LmLinkButton link={{ href: '/playground' }}>{t('playground')}</LmLinkButton>
+                <LmLinkButton link={{ href: '/overview' }}>
+                  {t('overviewScreen.headline')}
+                </LmLinkButton>
               </XStack>
-              <Separator minWidth={'100%'} marginBottom={'$4'} />
-              <Button onPress={() => setMainDrawer(false)}>Close</Button>
+              <XStack space my={'$4'}>
+                <LmButton onPress={() => changeLanguage('de')}>DE</LmButton>
+                <LmButton onPress={() => changeLanguage('en')}>EN</LmButton>
+              </XStack>
+              <Button onPress={() => setMainDrawer(false)}>{t('close')}</Button>
             </YStack>
           </Sheet.ScrollView>
         </Sheet.Frame>

@@ -5,9 +5,13 @@
     "cancel": "Cancel",
     "back": "Back"
   },
+  "home": "Home",
+  "playground": "Playground",
   "errors": {
     "invalidEmail": "Invalid email address."
   },
+  "icons": "Icons",
+  "close": "Close",
   "welcomeScreen": {
     "home": "HomeEN"
   },

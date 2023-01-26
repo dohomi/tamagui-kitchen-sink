@@ -28,6 +28,7 @@ const transpilePackages = [
   'expo-modules-core',
   'expo-document-picker',
   'expo-av',
+  'tamagui-phosphor-icons',
   // 'tamagui-extras'
   // '@expo/vector-icons',
 ]

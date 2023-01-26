@@ -5,13 +5,13 @@ import {
   LmInputRhf,
   LmRichTextRhf,
   LmSelectRhf,
-  SpaceTokens,
   LmStarRatingRhf,
+  SpaceTokens,
   YStack,
 } from 'tamagui-extras'
 import React from 'react'
-import { ScrollView } from 'tamagui'
 import { fruitItemsFixtures } from 'tamagui-extras/fixtures/selectItems'
+import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
 
 export function PlaygroundScreen() {
   const defaultSectionProps: {
@@ -23,7 +23,7 @@ export function PlaygroundScreen() {
   }
 
   return (
-    <ScrollView>
+    <LmAppShell title={'Playground'}>
       <LmFormRhfProvider>
         <YStack
           flex={1}
@@ -57,6 +57,6 @@ export function PlaygroundScreen() {
           </YStack>
         </YStack>
       </LmFormRhfProvider>
-    </ScrollView>
+    </LmAppShell>
   )
 }
