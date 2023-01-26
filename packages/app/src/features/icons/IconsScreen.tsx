@@ -1,7 +1,7 @@
 import { Text } from 'tamagui-extras'
 import { Quote, Star } from '@tamagui/lucide-icons'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
-import { Activity, Warning } from 'tamagui-phosphor-icons'
+import { Activity, Airplane } from 'tamagui-phosphor-icons'
 import { XStack } from 'tamagui'
 
 export default function IconsScreen() {
@@ -14,7 +14,7 @@ export default function IconsScreen() {
       </XStack>
       <Text>Phosphor icons</Text>
       <XStack space>
-        <Warning />
+        <Airplane />
         <Activity />
       </XStack>
     </LmAppShell>
