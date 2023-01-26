@@ -1,5 +1,4 @@
-import { YStack } from 'tamagui-extras'
-import { Text } from 'tamagui'
+import { Text, YStack } from 'tamagui-extras'
 import { Star } from '@tamagui/lucide-icons'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
 import { Warning } from 'tamagui-phosphor-icons'
