@@ -18,7 +18,7 @@ Fully functional [Demo](https://tamagui-extras.vercel.app/) to see all component
 ### Installation
 
 ```
-# yarn add tamagui tamagui-extras
+# yarn add tamagui @tamagui/config-base @tamagui/linear-gradient @tamagui/lucide-icons tamagui-phosphor-icons
 ```
 
 Follow the installation [instructions](https://tamagui.dev/docs/intro/installation) of the tamagui framework.
