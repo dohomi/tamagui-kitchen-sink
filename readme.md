@@ -29,24 +29,7 @@ Due to external dependencies`tamagui-extras`utilizes some components which needs
 start.
 
 Currently following components must be
-transpiled ([see example](https://github.com/dohomi/tamagui-kitchen-sink/blob/master/apps/next/next.config.js#L16)):
-
-```ts
-require('next-transpile-modules')(
-    [
-        'solito',
-        'react-native-web',
-        'expo-linking',
-        'expo-constants',
-        'expo-modules-core',
-        'expo-document-picker',
-        'expo-asset',
-        'expo-av',
-        '@my/config',
-        'tamagui-extras'
-    ]
-)
-```
+transpiled as you can see in the [NextJS app](https://github.com/dohomi/tamagui-kitchen-sink/blob/master/apps/next/next.config.js#L16).
 
 Everytime you face the situation that an error message appears similar
 to `SyntaxError: Cannot use import statement outside a module` you might use an node module which is not transpiled for
