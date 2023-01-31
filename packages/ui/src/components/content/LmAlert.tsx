@@ -1,4 +1,4 @@
-import { Card, CardProps, ColorProp, ColorTokens, Text, useThemeName, XStack } from 'tamagui'
+import { Card, CardProps, ColorProp, ColorTokens, Paragraph, useThemeName, XStack } from 'tamagui'
 import { CheckCircle, Info, Warning, WarningCircle } from 'tamagui-phosphor-icons'
 
 type Severity = 'default' | 'error' | 'info' | 'warning' | 'success'
@@ -68,12 +68,12 @@ export function LmAlert({
       <XStack space alignItems={'center'}>
         <AlertIcon shouldInvert={shouldInverse} severity={severity} outlined={outlined} />
         {text && (
-          <Text
+          <Paragraph
             fontWeight={outlined ? 'bold' : undefined}
             color={outlined ? severityColor[severity] : shouldInverse ? 'white' : undefined}
           >
             {text}
-          </Text>
+          </Paragraph>
         )}
         {children}
       </XStack>
