@@ -94,7 +94,7 @@ export function LmDatepicker({
                 width={'$12'}
                 value={state.endDate ? getLocaleDate({ date: state.endDate }) : ''}
               />
-              <Button onPress={() => onOpenChange(true)} icon={Calendar} />
+              <Button onPress={() => onOpenChange(true)} icon={<Calendar />} />
             </XGroup>
           )}
         </XStack>

@@ -97,7 +97,7 @@ export function LmSelect({
                                              width="100%"
                                              height="$3">
                         <YStack zIndex={10}>
-                            <ChevronDown size={20}/>
+                            <CaretDown size={20}/>
                         </YStack>
                         <LinearGradient
                             start={[0, 0]}

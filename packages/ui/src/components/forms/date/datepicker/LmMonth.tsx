@@ -4,8 +4,8 @@ import {
   ArrowRight,
   CaretLeft,
   CaretRight,
-  CaretLeft,
-  CaretRight,
+  CaretDoubleLeft,
+  CaretDoubleRight,
 } from 'tamagui-phosphor-icons'
 import { useMonth, UseMonthProps } from '@datepicker-react/hooks'
 import { LmDay } from './LmDay'
@@ -53,7 +53,7 @@ export function LmMonth({
           focusable={false}
           circular
           onPress={() => goToPreviousYear(10)}
-          icon={<CaretLeft />}
+          icon={<CaretDoubleLeft />}
         />
         <Button
           size={'$2'}
@@ -78,7 +78,7 @@ export function LmMonth({
           circular
           focusable={false}
           onPress={() => goToNextYear(10)}
-          icon={<CaretRight />}
+          icon={<CaretDoubleRight />}
         />
       </XStack>
 
