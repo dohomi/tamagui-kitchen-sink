@@ -19,14 +19,12 @@ import {
 } from 'tamagui-extras'
 import React from 'react'
 import { Paragraph, useTheme } from 'tamagui'
-import { Star } from '@tamagui/lucide-icons'
+import { Star } from 'tamagui-phosphor-icons'
 import { useTranslation } from 'react-i18next'
 import { fruitItemsFixtures } from 'app/src/lib/fixtures/selectItems'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
 
 export function OverviewScreen() {
-  const { t } = useTranslation()
-
   const {} = useTheme()
 
   const defaultSectionProps: {

@@ -3,7 +3,7 @@ import {FocusedInput, OnDatesChangeProps, START_DATE, useDatepicker, UseMonthPro
 import {useId, useState} from 'react'
 import {LmMonth} from './LmMonth'
 import {Button, Input, XGroup, XStack} from 'tamagui'
-import {Calendar} from '@tamagui/lucide-icons'
+import {Calendar} from 'tamagui-phosphor-icons'
 import {LmPopover} from '../../../panels'
 import {usePopoverState} from '../../../../hooks'
 import {getLocaleDate} from '../dateHelper'
@@ -86,7 +86,7 @@ export function LmDatepicker({
               width={'$12'}
               value={state.startDate ? getLocaleDate({ date: state.startDate }) : ''}
             ></Input>
-            <Button onPress={() => onOpenChange(true)} icon={Calendar} />
+            <Button onPress={() => onOpenChange(true)} icon={<Calendar />} />
           </XGroup>
           {isRangePicker && (
             <XGroup>

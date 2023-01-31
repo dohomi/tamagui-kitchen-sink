@@ -56,7 +56,6 @@
     "@tamagui/build": "1.1.12",
     "@tamagui/config-base": "1.1.12",
     "@tamagui/linear-gradient": "1.1.12",
-    "@tamagui/lucide-icons": "1.1.12",
     "@types/quill": "^2.0.9",
     "solito": "^2.1.3",
     "tamagui": "1.1.12",
@@ -65,7 +64,6 @@
   "peerDependencies": {
     "@tamagui/config-base": "1.1.12",
     "@tamagui/linear-gradient": "1.1.12",
-    "@tamagui/lucide-icons": "1.1.12",
     "solito": "^2.1.3",
     "tamagui": "1.1.12",
     "tamagui-phosphor-icons": ">=0.2"

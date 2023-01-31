@@ -1,6 +1,6 @@
 import React from 'react'
 import { Anchor, Button, H1, Paragraph, Separator, XStack, YStack } from 'tamagui-extras'
-import { ChevronDown } from '@tamagui/lucide-icons'
+import { CaretDown } from 'tamagui-phosphor-icons'
 import { LmThemeToggle } from 'app/src/components/various/LmThemeToggle'
 import { useToggleMainDrawer } from 'app/src/state/appState'
 import { LmAppDrawer } from 'app/src/components/layouts/LmAppDrawer'
@@ -37,7 +37,7 @@ function SheetDemo() {
 
   return (
     <>
-      <Button size="$6" icon={ChevronDown} circular onPress={() => toggleMainDrawer()} />
+      <Button size="$6" icon={<CaretDown />} circular onPress={() => toggleMainDrawer()} />
       <LmAppDrawer />
     </>
   )

@@ -2,7 +2,7 @@ import { Button, Input, InputProps, Stack, TextArea, ThemeableStackProps } from 
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { Eye, EyeOff } from '@tamagui/lucide-icons'
+import { Eye, EyeSlash } from 'tamagui-phosphor-icons'
 
 export type LmInputProps = InputProps &
   LmFormContainerBaseTypes & {
@@ -56,7 +56,7 @@ export function LmInput({
         <Stack position={'relative'} width={fullWidth ? '100%' : 'fit-content'}>
           <Input {...rest} {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
           <Button
-            icon={show ? EyeOff : Eye}
+            icon={show ? <EyeSlash /> : <Eye />}
             circular
             chromeless
             hoverTheme={false}

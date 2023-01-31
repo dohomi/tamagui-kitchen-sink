@@ -66,10 +66,6 @@ module.exports = function () {
       disableStaticImages: true,
     },
     modularizeImports: {
-      '@tamagui/lucide-icons': {
-        transform: `@tamagui/lucide-icons/dist/esm/icons/{{kebabCase member}}`,
-        skipDefaultConversion: true,
-      },
       'tamagui-phosphor-icons': {
         transform: 'tamagui-phosphor-icons/dist/jsx/icons/icons/{{member}}',
         skipDefaultConversion: true,

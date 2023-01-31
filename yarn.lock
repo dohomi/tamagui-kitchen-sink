@@ -5407,19 +5407,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/lucide-icons@npm:1.1.12":
-  version: 1.1.12
-  resolution: "@tamagui/lucide-icons@npm:1.1.12"
-  dependencies:
-    "@tamagui/core": ^1.1.12
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-    react-native-svg: ">=12"
-  checksum: fca36458ed9e5198b2aa23b7fd9208b3df3ec899e5ac10e013ebf75f7f3c12f91d05c68daf0984c5bd796c2a953f2be3259c4d9723aa12e68012a9d539d8993a
-  languageName: node
-  linkType: hard
-
 "@tamagui/next-plugin@npm:1.1.12":
   version: 1.1.12
   resolution: "@tamagui/next-plugin@npm:1.1.12"
@@ -21204,7 +21191,6 @@ __metadata:
     "@tamagui/build": 1.1.12
     "@tamagui/config-base": 1.1.12
     "@tamagui/linear-gradient": 1.1.12
-    "@tamagui/lucide-icons": 1.1.12
     "@tiptap/core": ^2.0.0-beta.209
     "@tiptap/react": ^2.0.0-beta.209
     "@tiptap/starter-kit": ^2.0.0-beta.209
@@ -21227,7 +21213,6 @@ __metadata:
   peerDependencies:
     "@tamagui/config-base": 1.1.12
     "@tamagui/linear-gradient": 1.1.12
-    "@tamagui/lucide-icons": 1.1.12
     solito: ^2.1.3
     tamagui: 1.1.12
     tamagui-phosphor-icons: ">=0.2"

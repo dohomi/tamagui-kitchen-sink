@@ -9,7 +9,7 @@ import {
   XStack,
 } from 'tamagui'
 import { ReactNode } from 'react'
-import { X } from '@tamagui/lucide-icons'
+import { X } from 'tamagui-phosphor-icons'
 import { useWindowDimensions } from 'react-native'
 
 type LmDialogProps = DialogProps & {
@@ -103,7 +103,7 @@ export function LmDialog({
               )}
               {!hideCloseButton && (
                 <Dialog.Close asChild>
-                  <Button size="$3" circular chromeless icon={X} />
+                  <Button size="$3" circular chromeless icon={<X />} />
                 </Dialog.Close>
               )}
             </XStack>

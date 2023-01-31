@@ -1,7 +1,7 @@
 import {Select, SelectProps, ThemeProps, YStack} from "tamagui";
 import {LinearGradient} from "@tamagui/linear-gradient";
 import {colormap, ThemeColors} from "../../themeMappings";
-import {Check, ChevronDown, ChevronUp} from '@tamagui/lucide-icons'
+import {Check, CaretDown, CaretUp} from 'tamagui-phosphor-icons'
 import {useId} from "react";
 import {LmFormFieldContainer} from "./LmFormFieldContainer";
 import {LmFormContainerBaseTypes} from "./formContainerTypes";
@@ -46,7 +46,7 @@ export function LmSelect({
                 id={id}
                 value={`${value}`}
                 {...rest}>
-                <Select.Trigger width={width} iconAfter={ChevronDown} paddingVertical={0} minHeight={rest.size}>
+                <Select.Trigger width={width} iconAfter={<CaretDown />} paddingVertical={0} minHeight={rest.size}>
                     <Select.Value placeholder={placeholder} paddingVertical={0}/>
                 </Select.Trigger>
 
@@ -68,7 +68,7 @@ export function LmSelect({
                                            width="100%"
                                            height="$3">
                         <YStack zIndex={10}>
-                            <ChevronUp size={20}/>
+                            <CaretUp size={20}/>
                         </YStack>
                         <LinearGradient
                             start={[0, 0]}

@@ -9,7 +9,7 @@ import {
   LmSubmitButtonRhf,
   usePopoverState,
 } from '../../../src'
-import { AlertCircle, X } from '@tamagui/lucide-icons'
+import { WarningCircle, X } from 'tamagui-phosphor-icons'
 import { LmButton, LmFormRhfProvider } from 'tamagui-extras'
 
 export default {
@@ -65,7 +65,7 @@ export const ControlledState = () => {
         <LmDialogContent>
           <XStack space alignItems={'center'} justifyContent={'space-between'} marginBottom={'$2'}>
             <Text>This is some Content.</Text>
-            <Button onPress={() => onOpenChange(false)} chromeless circular icon={X} />
+            <Button onPress={() => onOpenChange(false)} chromeless circular icon={<X />} />
           </XStack>
           <Text>
             Some other content follows. You have full control of the opening state of the dialog.
@@ -109,7 +109,7 @@ export const FormInsideDialog = () => {
             <LmDialog
               title={'Some Info'}
               description={'This is a nested dialog'}
-              trigger={<LmButton icon={AlertCircle} />}
+              trigger={<LmButton icon={<WarningCircle />} />}
             ></LmDialog>
           </LmDialogContent>
 

@@ -1,5 +1,6 @@
+import React from 'react'
 import { Text } from 'tamagui-extras'
-import { Quote, Star } from '@tamagui/lucide-icons'
+import { Quotes, Star } from 'tamagui-phosphor-icons'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
 import { Activity, Airplane } from 'tamagui-phosphor-icons'
 import { XStack } from 'tamagui'
@@ -10,7 +11,7 @@ export default function IconsScreen() {
       <Text>Lucide icons</Text>
       <XStack space>
         <Star />
-        <Quote />
+        <Quotes />
       </XStack>
       <Text>Phosphor icons</Text>
       <XStack space>
