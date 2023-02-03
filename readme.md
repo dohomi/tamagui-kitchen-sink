@@ -19,7 +19,7 @@ Fully functional [Demo](https://tamagui-extras.vercel.app/) to see all component
 
 Install peer dependencies
 ```
-# yarn add tamagui @tamagui/config-base @tamagui/linear-gradient tamagui-phosphor-icons
+# yarn add tamagui @tamagui/config-base tamagui-phosphor-icons
 ```
 
 Follow the installation [instructions](https://tamagui.dev/docs/intro/installation) of the tamagui framework.

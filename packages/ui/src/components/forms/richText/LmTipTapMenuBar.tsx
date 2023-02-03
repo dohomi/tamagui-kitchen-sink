@@ -18,6 +18,7 @@ export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
   }
 
   const activeThemeColor: ThemeName = 'blue_active'
+
   return (
     <XStack alignItems={'center'} borderBottomColor={'$borderColor'} borderBottomWidth={1}>
       <Button
@@ -27,7 +28,7 @@ export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
         theme={editor.isActive('bold') ? activeThemeColor : undefined}
         icon={<TextBolder />}
       />
-      <Button
+       <Button
         chromeless
         onPress={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
@@ -98,7 +99,7 @@ export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
         icon={<ArrowClockwise />}
         onPress={() => editor.chain().focus().redo().run()}
         disabled={!editor.can().chain().focus().redo().run()}
-      />
+      /> 
     </XStack>
   )
 }

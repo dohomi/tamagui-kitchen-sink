@@ -35,17 +35,12 @@
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",
     "@siposdani87/expo-rich-text-editor": "^0.9.1",
-    "@tiptap/core": "^2.0.0-beta.209",
-    "@tiptap/react": "^2.0.0-beta.209",
-    "@tiptap/starter-kit": "^2.0.0-beta.209",
+    "@tiptap/core": "2.0.0-beta.212",
+    "@tiptap/pm": "2.0.0-beta.212",
+    "@tiptap/react": "2.0.0-beta.212",
+    "@tiptap/starter-kit": "2.0.0-beta.212",
     "expo-av": "^13.0.2",
     "expo-document-picker": "^11.0.1",
-    "prosemirror-commands": "^1.5.0",
-    "prosemirror-dropcursor": "^1.6.1",
-    "prosemirror-gapcursor": "^1.3.1",
-    "prosemirror-history": "^1.3.0",
-    "prosemirror-keymap": "^1.2.0",
-    "prosemirror-schema-list": "^1.2.2",
     "react-hook-form": "^7.34.2",
     "react-native-svg": "^13.4.0",
     "react-native-webview": "^11.26.0",
@@ -53,20 +48,18 @@
   },
   "devDependencies": {
     "@storybook/react": "^6.5.12",
-    "@tamagui/build": "1.1.12",
-    "@tamagui/config-base": "1.1.12",
-    "@tamagui/linear-gradient": "1.1.12",
+    "@tamagui/build": "1.2.3",
+    "@tamagui/config-base": "1.2.3",
     "@types/quill": "^2.0.9",
     "solito": "^2.1.3",
-    "tamagui": "1.1.12",
-    "tamagui-phosphor-icons": ">=0.2"
+    "tamagui": "1.2.3",
+    "tamagui-phosphor-icons": "0.2.0"
   },
   "peerDependencies": {
-    "@tamagui/config-base": "1.1.12",
-    "@tamagui/linear-gradient": "1.1.12",
+    "@tamagui/config-base": "1.2.3",
     "solito": "^2.1.3",
-    "tamagui": "1.1.12",
-    "tamagui-phosphor-icons": ">=0.2"
+    "tamagui": "1.2.3",
+    "tamagui-phosphor-icons": "0.2.0"
   },
   "publishConfig": {
     "access": "public"

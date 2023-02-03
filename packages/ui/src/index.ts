@@ -3,13 +3,13 @@ export * from 'tamagui'
 // content
 export * from './components/content'
 
-// forms
+// // forms
 export * from './components/forms'
 
-// theme
-export * from "./themeMappings";
+// // theme
+export * from "./themeMappings"
 
-// panels
+// // panels
 export * from './components/panels'
 
 // hooks
