@@ -4,7 +4,6 @@ import { LmDashboardShellProps } from 'app/src/components/layouts/layoutTypes'
 import { List, Sun } from 'tamagui-phosphor-icons'
 import { useToggleMainDrawer } from 'app/src/state/appState'
 import { LmThemeToggle } from 'app/src/components/various/LmThemeToggle'
-import React = require('react')
 
 type LmDashboardAppBarProps = Pick<LmDashboardShellProps, 'rightContent' | 'title'>
 
