@@ -35,10 +35,9 @@
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",
     "@siposdani87/expo-rich-text-editor": "^0.9.1",
-    "@tiptap/core": "2.0.0-beta.212",
-    "@tiptap/pm": "2.0.0-beta.212",
-    "@tiptap/react": "2.0.0-beta.212",
-    "@tiptap/starter-kit": "2.0.0-beta.212",
+    "@tiptap/pm": "2.0.0-beta.216",
+    "@tiptap/react": "2.0.0-beta.216",
+    "@tiptap/starter-kit": "2.0.0-beta.216",
     "expo-av": "^13.0.2",
     "expo-document-picker": "^11.0.1",
     "react-hook-form": "^7.34.2",
