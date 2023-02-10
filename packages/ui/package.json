@@ -47,17 +47,17 @@
   },
   "devDependencies": {
     "@storybook/react": "^6.5.12",
-    "@tamagui/build": "1.2.14",
-    "@tamagui/config-base": "1.2.14",
+    "@tamagui/build": "1.2.15",
+    "@tamagui/config-base": "1.2.15",
     "@types/quill": "^2.0.9",
     "solito": "^2.1.3",
-    "tamagui": "1.2.14",
+    "tamagui": "1.2.15",
     "tamagui-phosphor-icons": "0.2.0"
   },
   "peerDependencies": {
-    "@tamagui/config-base": "1.2.14",
+    "@tamagui/config-base": "1.2.15",
     "solito": "^2.1.3",
-    "tamagui": "1.2.14",
+    "tamagui": "1.2.15",
     "tamagui-phosphor-icons": "0.2.0"
   },
   "publishConfig": {
