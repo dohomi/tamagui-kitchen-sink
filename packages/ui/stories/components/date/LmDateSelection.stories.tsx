@@ -1,6 +1,6 @@
-import { LmDateSelection, LmSubmitButtonRhf } from '../../../src'
+import { LmDateSelection, LmDateSelectionRhf, LmSubmitButtonRhf } from '../../../src'
 import { LmFormRhfProvider, YStack } from 'tamagui-extras'
-import { LmDateSelectionRhf } from '../../../src/components/forms/rhf/LmDateSelectionRhf'
+import React from 'react'
 
 export default {
   title: 'ui/Date/DateSelection',

@@ -1,16 +1,15 @@
-import { ReactNode, useState } from 'react'
-import { LmButton } from './LmButton'
+import { ReactNode, useId } from 'react'
 import {
+  Checkbox,
   FontSizeTokens,
   Label,
   Paragraph,
   SizeTokens,
-  useIsomorphicLayoutEffect,
   XStack,
   XStackProps,
   YStack,
 } from 'tamagui'
-import { CheckSquare, Square } from 'tamagui-phosphor-icons'
+import { Check } from 'tamagui-phosphor-icons'
 
 export type LmCheckboxProps = XStackProps & {
   label?: ReactNode
@@ -32,38 +31,28 @@ export function LmCheckbox({
   required,
   ...stackProps
 }: LmCheckboxProps) {
-  const [isChecked, setChecked] = useState<boolean>(!!value)
-  useIsomorphicLayoutEffect(() => {
-    if (typeof value === 'boolean') {
-      setChecked(value)
-    }
-  }, [value])
-  const toggle = () => {
-    let val
-    setChecked((prevState) => {
-      val = !prevState
-      return !prevState
-    })
-    if (typeof onChange === 'function') {
-      onChange(!!val)
-    }
-  }
+  const id = useId()
 
   return (
-    <XStack space {...stackProps}>
-      <LmButton
-        icon={isChecked ? <CheckSquare scale={1.3} /> : <Square scale={1.3} />}
-        chromeless
-        hoverTheme={false}
-        focusTheme={false}
+    <XStack space ai={'center'} {...stackProps}>
+      <Checkbox
+        id={id}
         size={size}
-        color={error ? '$red10' : undefined}
-        circular
-        onPress={toggle}
-      />
+        defaultChecked={value}
+        onCheckedChange={(checked) => {
+          if (typeof onChange === 'function') {
+            onChange(!!checked)
+          }
+        }}
+        borderColor={error ? '$red10' : undefined}
+      >
+        <Checkbox.Indicator>
+          <Check />
+        </Checkbox.Indicator>
+      </Checkbox>
       {label && (
         <YStack>
-          <Label onPress={toggle} size={size}>
+          <Label size={size} htmlFor={id}>
             {required ? '* ' : ''}
             {label}
           </Label>
