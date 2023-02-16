@@ -9,10 +9,10 @@ import 'raf/polyfill' // const OriginalNextImage = NextImage.default
 //   configurable: true,
 //   value: (props) => <OriginalNextImage {...props} unoptimized />
 // })
-import { useThemeState } from 'app/src/state/themeState'
-import { Provider } from 'app/src/provider'
-import { YStack } from 'tamagui-extras'
-import { RouterContext } from "next/dist/shared/lib/router-context";
+import {useThemeState} from 'app/src/state/themeState'
+import {Provider} from 'app/src/provider'
+import {YStack} from 'tamagui-extras'
+import {RouterContext} from 'next/dist/shared/lib/router-context'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -27,8 +27,9 @@ export const parameters = {
     values: [],
   },
   nextRouter: {
-    Provider: RouterContext.Provider
+    Provider: RouterContext.Provider,
   },
+  layout: 'fullscreen',
 }
 
 export const globalTypes = {
@@ -61,9 +62,9 @@ export const decorators = [
     return (
       <>
         <Provider defaultTheme={name || theme}>
-            <YStack bc={'$backgroundStrong'}>
-              <Story />
-            </YStack>
+          <YStack bc={'$backgroundStrong'} padding={'$4'} flexGrow={1}>
+            <Story />
+          </YStack>
         </Provider>
       </>
     )

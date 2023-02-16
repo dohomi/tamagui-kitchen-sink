@@ -12,7 +12,7 @@ import { LmFormContainerBaseTypes } from './formContainerTypes'
 
 type LmFormContainerProps = ThemeableStackProps &
   LmFormContainerBaseTypes & {
-    id: string
+    id?: string
     size?: SizeTokens
     fullWidth?: boolean
   }
@@ -52,7 +52,7 @@ export function LmFormFieldContainer({
           htmlFor={id}
           size={size || '$3'}
           {...labelProps}
-          // color={error ? '$red10' : undefined}
+          color={error ? '$red10' : undefined}
           width={rest.labelInline ? 150 : undefined}
           justifyContent={rest.labelInline ? 'flex-end' : undefined}
         >
