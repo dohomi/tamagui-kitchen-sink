@@ -23,14 +23,18 @@ export function LmInput({
   containerProps,
   isPassword,
   fullWidth,
+  theme = 'gray',
   ...rest
 }: LmInputProps) {
   const genId = useId()
   const [show, setShow] = useState<boolean>(false)
   const id = rest.id || genId
-  const styleProps: InputProps = {}
+  const styleProps: InputProps = {
+    theme: theme,
+  }
   if (error) {
-    styleProps.borderColor = error ? '$red10' : undefined
+    styleProps.theme = 'red'
+    styleProps.borderColor = error ? '$red8' : undefined
   }
   if (fullWidth) {
     styleProps.minWidth = '100%'

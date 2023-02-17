@@ -29,14 +29,15 @@ export function LmCheckbox({
   size = '$3',
   value,
   required,
+  theme = 'gray',
   ...stackProps
 }: LmCheckboxProps) {
   const id = useId()
-
   return (
     <XStack space ai={'center'} {...stackProps}>
       <Checkbox
         id={id}
+        theme={error ? 'red' : theme}
         size={size}
         defaultChecked={value}
         onCheckedChange={(checked) => {
@@ -44,7 +45,7 @@ export function LmCheckbox({
             onChange(!!checked)
           }
         }}
-        borderColor={error ? '$red10' : undefined}
+        borderColor={error ? '$red8' : '$borderColor'}
       >
         <Checkbox.Indicator>
           <Check />
