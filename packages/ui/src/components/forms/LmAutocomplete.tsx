@@ -1,11 +1,12 @@
-import { Input, ListItem, Popover, ThemeName, XStack } from 'tamagui'
-import { CheckSquare, Square } from 'tamagui-phosphor-icons'
+import { Button, Input, ListItem, Popover, ThemeName, XStack } from 'tamagui'
+import { CheckSquare, FloppyDisk, ListPlus, Square, X } from 'tamagui-phosphor-icons'
 import { useEffect, useId, useMemo, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
 import { LmPopover } from '../panels/LmPopover' // import {useMultiSelectableList} from "../../hooks/useMultiSelectableList";
-// import {useSelectableList} from "../../hooks/useSelectableList";
 import { useMultiSelectableList, useSelectableList } from 'rooks'
+import { usePopoverState } from '../../hooks'
+import { LmInput } from './LmInput'
 
 type Option = { label: string; value: string | number }
 export type LmAutocompleteProps = LmFormContainerBaseTypes & {
@@ -16,6 +17,7 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
   placeholderSearch?: string
   disableSearch?: boolean
   theme?: ThemeName
+  allowNew?: boolean
 }
 
 export function LmAutocomplete({
@@ -31,6 +33,7 @@ export function LmAutocomplete({
   onChange,
   error,
   disableSearch,
+  allowNew,
   theme = 'gray',
 }: LmAutocompleteProps) {
   const id = useId()
@@ -127,7 +130,50 @@ export function LmAutocomplete({
             )
           })}
         </Popover.ScrollView>
+        {allowNew && (
+          <AllowNewComponent
+            onSave={(str) => {
+              // todo set value to selected options
+              console.log(str)
+              setOptions([{ label: str, value: str }, ...filteredOptions])
+            }}
+          />
+        )}
       </LmPopover>
     </LmFormFieldContainer>
+  )
+}
+
+type AllowNewComponentProps = {
+  onSave: (str: string) => void
+}
+
+function AllowNewComponent({ onSave }: AllowNewComponentProps) {
+  const { open, onOpenChange } = usePopoverState()
+  const [input, setInput] = useState<string | null>(null)
+  return (
+    <XStack>
+      <LmInput onChangeText={(st) => setInput(st)} display={open ? 'block' : 'none'} />
+      <Button
+        circular
+        onPress={() => {
+          if (input && open) {
+            onSave(input)
+          }
+          onOpenChange(!open)
+        }}
+        icon={open ? <FloppyDisk /> : <ListPlus />}
+      />
+      {open && (
+        <Button
+          circular
+          onPress={() => {
+            setInput(null)
+            onOpenChange(false)
+          }}
+          icon={<X />}
+        />
+      )}
+    </XStack>
   )
 }

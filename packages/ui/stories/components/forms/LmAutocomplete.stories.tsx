@@ -40,6 +40,12 @@ WithoutSearch.args = {
   disableSearch: true,
 }
 
+export const AllowNew = Template.bind({})
+AllowNew.args = {
+  options,
+  allowNew: true,
+}
+
 export const SingleRhf = () => (
   <LmFormRhfProvider
     defaultValues={{
