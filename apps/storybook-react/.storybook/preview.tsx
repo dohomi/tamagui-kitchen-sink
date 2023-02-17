@@ -13,6 +13,24 @@ import {useThemeState} from 'app/src/state/themeState'
 import {Provider} from 'app/src/provider'
 import {YStack} from 'tamagui-extras'
 import {RouterContext} from 'next/dist/shared/lib/router-context'
+import * as NextImage from 'next/image'
+
+const OriginalNextFutureImage = NextImage.default
+Object.defineProperty(NextImage, 'default', {
+  configurable: true,
+  value: (props: any) => (
+    <OriginalNextFutureImage
+      {...props}
+      loader={
+        props.loader
+          ? props.loader
+          : ({ src }) => {
+              return src
+            }
+      }
+    />
+  ),
+})
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
