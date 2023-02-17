@@ -14,7 +14,7 @@ export type LmCardProps = PropsWithChildren<CardProps & {
     }
 }>
 
-export const LmCard = ({bouncy, title, subTitle, footer, image, children, ...cardProps}: LmCardProps) => {
+export const LmCard = ({bouncy, title, subTitle, footer, image, children, theme='gray', ...cardProps}: LmCardProps) => {
     return (
         <Card elevate
               size="$4"
@@ -29,6 +29,7 @@ export const LmCard = ({bouncy, title, subTitle, footer, image, children, ...car
                       scale: 0.875
                   }
               }}
+              theme={theme}
               {...cardProps}>
             {(title || subTitle) && (
                 <Card.Header padded>
