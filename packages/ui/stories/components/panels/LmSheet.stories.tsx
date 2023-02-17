@@ -1,6 +1,7 @@
 import { Text, YStack } from 'tamagui'
 import { LmSheet, usePopoverState } from '../../../src'
 import { LmButton } from 'tamagui-extras'
+import { X } from 'tamagui-phosphor-icons'
 
 export default {
   title: 'ui/Panels/Sheet',
@@ -27,7 +28,9 @@ export const FullScreen = () => {
       <LmSheet {...props} fullScreen>
         <YStack justifyContent={'center'} flex={1} alignItems={'center'}>
           <Text padding={'$4'}>Some Sheet content</Text>
-          <LmButton onPress={() => props.onOpenChange(false)}>Close</LmButton>
+          <LmButton icon={<X />} onPress={() => props.onOpenChange(false)}>
+            Close
+          </LmButton>
         </YStack>
       </LmSheet>
     </YStack>

@@ -1,11 +1,9 @@
-import { Input, ListItem, Popover, Text, XStack } from 'tamagui'
+import { Input, ListItem, Popover, ThemeName, XStack } from 'tamagui'
 import { CheckSquare, Square } from 'tamagui-phosphor-icons'
 import { useEffect, useId, useMemo, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { LmPopover } from '../panels/LmPopover'
-import { LmInputTrigger } from './LmInputTrigger'
-// import {useMultiSelectableList} from "../../hooks/useMultiSelectableList";
+import { LmPopover } from '../panels/LmPopover' // import {useMultiSelectableList} from "../../hooks/useMultiSelectableList";
 // import {useSelectableList} from "../../hooks/useSelectableList";
 import { useMultiSelectableList, useSelectableList } from 'rooks'
 
@@ -17,6 +15,7 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
   onChange?: (v: null | Option | Option[]) => void
   placeholderSearch?: string
   disableSearch?: boolean
+  theme?: ThemeName
 }
 
 export function LmAutocomplete({
@@ -32,6 +31,7 @@ export function LmAutocomplete({
   onChange,
   error,
   disableSearch,
+  theme = 'gray',
 }: LmAutocompleteProps) {
   const id = useId()
   const memOptions = useMemo(() => {
@@ -83,19 +83,12 @@ export function LmAutocomplete({
       labelInline={labelInline}
       helperText={helperText}
     >
-      <LmPopover
-        trigger={
-          <LmInputTrigger>
-            <Text textOverflow="ellipsis" whiteSpace="nowrap" overflow="hidden">
-              {inputValue ?? ''}
-            </Text>
-          </LmInputTrigger>
-        }
-      >
+      <LmPopover trigger={<Input value={inputValue} theme={theme} textOverflow={'ellipsis'} />}>
         {!disableSearch && (
           <XStack space="$3" padding={'$4'}>
             <Input
               size="$3"
+              theme={theme}
               placeholder={placeholderSearch}
               width={'100%'}
               onChangeText={(text) => {

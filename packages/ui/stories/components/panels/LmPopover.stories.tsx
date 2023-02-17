@@ -1,6 +1,7 @@
 import { LmPopover, LmPopoverProps } from '../../../src'
 import { Button, Text, XStack } from 'tamagui'
 import { LmButton } from 'tamagui-extras'
+import { Smiley } from 'tamagui-phosphor-icons'
 
 export default {
   title: 'ui/Panels/Popover',
@@ -13,7 +14,12 @@ export const Basic = Template.bind({})
 Basic.args = {
   showArrow: true,
   trigger: <Text>Open Popover</Text>,
-  children: <Text padding={'$4'}>Some Popover content</Text>,
+  children: (
+    <XStack space alignItems={'center'}>
+      <Smiley />
+      <Text padding={'$4'}>Some Popover content</Text>
+    </XStack>
+  ),
 } as LmPopoverProps
 
 export const SquarePopover = Template.bind({})
