@@ -42,8 +42,7 @@
     "expo-document-picker": "^11.0.1",
     "react-hook-form": "^7.34.2",
     "react-native-svg": "^13.4.0",
-    "react-native-webview": "^11.26.0",
-    "rooks": "^7.4.2"
+    "react-native-webview": "^11.26.0"
   },
   "devDependencies": {
     "@storybook/react": "^6.5.12",
