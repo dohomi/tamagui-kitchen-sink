@@ -7,6 +7,7 @@ import {
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { useState } from 'react'
+import { action } from '@storybook/addon-actions'
 
 export default {
   title: 'ui/Forms/Autocomplete',
@@ -66,7 +67,7 @@ export const SingleRhf = () => (
 
 export const MultipleRhf = () => {
   const [form, setForm] = useState<any>({
-    pre: [{ value: 'Pear' }],
+    pre: [{ value: 'Pear', label: 'Pear' }],
     pre_matched: ['Pear'],
   })
   return (
@@ -84,13 +85,7 @@ export const MultipleRhf = () => {
         options={options}
         multiple
       />
-      <LmSubmitButtonRhf
-        onSubmit={(data) => {
-          setForm(data)
-        }}
-      >
-        Submit
-      </LmSubmitButtonRhf>
+      <LmSubmitButtonRhf onSubmit={action('formData')}>Submit</LmSubmitButtonRhf>
     </LmFormRhfProvider>
   )
 }

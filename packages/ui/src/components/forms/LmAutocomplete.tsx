@@ -1,12 +1,11 @@
 import { Button, Input, ListItem, Popover, ThemeName, XStack } from 'tamagui'
 import { CheckSquare, FloppyDisk, ListPlus, Square, X } from 'tamagui-phosphor-icons'
-import { useEffect, useId, useMemo, useState } from 'react'
+import { useEffect, useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { LmPopover } from '../panels/LmPopover' // import {useMultiSelectableList} from "../../hooks/useMultiSelectableList";
-import { useMultiSelectableList, useSelectableList } from 'rooks'
-import { usePopoverState } from '../../hooks'
+import { LmPopover } from '../panels'
 import { LmInput } from './LmInput'
+import { usePopoverState } from '../../hooks'
 
 type Option = { label: string; value: string | number }
 export type LmAutocompleteProps = LmFormContainerBaseTypes & {
@@ -22,59 +21,30 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
 
 export function LmAutocomplete({
   options,
-  multiple,
   labelInline,
   labelProps,
   helperText,
   required,
   label,
-  placeholderSearch,
   value,
   onChange,
   error,
-  disableSearch,
-  allowNew,
   theme = 'gray',
+  ...rest
 }: LmAutocompleteProps) {
   const id = useId()
-  const memOptions = useMemo(() => {
-    return options
-  }, [])
-  const [filteredOptions, setOptions] = useState(memOptions)
-  const [selection, { matchSelection, toggleSelection }] = useMultiSelectableList(
-    memOptions,
-    multiple && Array.isArray(value)
-      ? (value || []).map((i) => memOptions.findIndex((k) => k.value === i?.value ?? i))
-      : [],
-    true
-  )
-  const [
-    selectionSingle,
-    { matchSelection: matchSelectionSingle, toggleSelection: toggleSelectionSingle },
-  ] = useSelectableList(
-    memOptions,
-    !multiple && !Array.isArray(value)
-      ? memOptions.findIndex((i) => i.value === value?.value ?? value)
-      : -1,
-    true
-  )
-
-  let selectionMultiple = selection?.[1] ?? []
-  useEffect(() => {
-    if (!multiple && onChange) {
-      onChange(selectionSingle[1])
-    }
-  }, [selectionSingle[1], multiple])
+  const [opts, setOpts] = useState(options)
+  const [selection, setSelection] = useState<Option | Option[] | null>(value || null)
 
   useEffect(() => {
-    if (multiple && onChange) {
-      onChange(selectionMultiple as any)
+    if (typeof onChange === 'function') {
+      onChange(selection)
     }
-  }, [JSON.stringify(selectionMultiple), multiple])
+  }, [selection])
 
-  const inputValue = multiple
-    ? selectionMultiple.map((option) => option?.label).join(', ')
-    : selectionSingle?.[1]?.label
+  const inputValue = Array.isArray(selection)
+    ? selection.map((option) => option?.label).join(', ')
+    : selection?.label || ''
 
   return (
     <LmFormFieldContainer
@@ -87,72 +57,107 @@ export function LmAutocomplete({
       helperText={helperText}
     >
       <LmPopover trigger={<Input value={inputValue} theme={theme} textOverflow={'ellipsis'} />}>
-        {!disableSearch && (
-          <XStack space="$3" padding={'$4'}>
-            <Input
-              size="$3"
-              theme={theme}
-              placeholder={placeholderSearch}
-              width={'100%'}
-              onChangeText={(text) => {
-                const filtered = memOptions.filter(
-                  (i) => i.label.toLowerCase().indexOf(text.toLowerCase()) > -1
-                )
-                setOptions(filtered)
-              }}
-            />
-          </XStack>
-        )}
-
-        <Popover.ScrollView
-          keyboardShouldPersistTaps={true}
-          style={{ maxHeight: 300, width: '100%' }}
-        >
-          {filteredOptions.map((item) => {
-            let selected = multiple
-              ? matchSelection({ value: item })
-              : matchSelectionSingle({ value: item })
-
-            return (
-              <ListItem
-                hoverTheme
-                key={item.value}
-                icon={selected ? <CheckSquare /> : <Square />}
-                title={item.label}
-                onPress={() => {
-                  if (multiple) {
-                    toggleSelection({ value: item })()
-                  } else {
-                    toggleSelectionSingle({ value: item })()
-                  }
-                }}
-              />
-            )
-          })}
-        </Popover.ScrollView>
-        {allowNew && (
-          <AllowNewComponent
-            onSave={(str) => {
-              // todo set value to selected options
-              console.log(str)
-              setOptions([{ label: str, value: str }, ...filteredOptions])
-            }}
-          />
-        )}
+        <LmAutocompleteInputContent
+          theme={theme}
+          options={opts}
+          onSelectionChange={(sel) => {
+            if (sel !== selection) {
+              setSelection(sel || null)
+            }
+          }}
+          value={selection}
+          onAddNew={(newVal) => {
+            if (newVal) {
+              setOpts((oldVal) => [{ value: newVal, label: newVal }, ...oldVal])
+            }
+          }}
+          {...rest}
+        />
       </LmPopover>
     </LmFormFieldContainer>
   )
 }
 
-type AllowNewComponentProps = {
+type LmAutocompleteInputContentProps = LmAutocompleteProps & {
+  onSelectionChange: (selection?: Option | Option[]) => void
+  onAddNew: (str: string) => void
+}
+
+function LmAutocompleteInputContent({
+  disableSearch,
+  theme,
+  placeholderSearch,
+  multiple,
+  options,
+  allowNew,
+  onAddNew,
+  onSelectionChange,
+  value,
+}: LmAutocompleteInputContentProps) {
+  // const [filtered, setFiltered] = useState(options)
+  const [searchTerm, setSearchTerm] = useState<string>()
+  return (
+    <>
+      {(!disableSearch || allowNew) && (
+        <XStack padding={'$4'} width={'100%'}>
+          <Input
+            theme={theme}
+            placeholder={placeholderSearch}
+            width={'100%'}
+            onChangeText={(text) => {
+              if (text) {
+                setSearchTerm(text.toLowerCase())
+              }
+            }}
+          />
+        </XStack>
+      )}
+
+      <Popover.ScrollView
+        keyboardShouldPersistTaps={true}
+        style={{ maxHeight: 300, width: '100%' }}
+      >
+        {multiple ? (
+          <LmAutocompleteMultiSelection
+            value={value as Option[]}
+            options={options}
+            searchTerm={searchTerm}
+            onSelectionChange={onSelectionChange}
+          />
+        ) : (
+          <LmAutocompleteSingleSelection
+            value={value as Option}
+            options={options}
+            searchTerm={searchTerm}
+            onSelectionChange={onSelectionChange}
+          />
+        )}
+      </Popover.ScrollView>
+      {allowNew && <LmAutocompleteAddNew onSave={onAddNew} />}
+    </>
+  )
+}
+
+type LmAutocompleteAddNewProps = {
   onSave: (str: string) => void
 }
 
-function AllowNewComponent({ onSave }: AllowNewComponentProps) {
+function LmAutocompleteAddNew({ onSave }: LmAutocompleteAddNewProps) {
   const { open, onOpenChange } = usePopoverState()
   const [input, setInput] = useState<string | null>(null)
   return (
-    <XStack>
+    <XStack width={'100%'} gap={'$2'} padding={'$2'} borderTopColor={'$borderColor'}>
+      {open && (
+        <Button
+          circular
+          chromeless
+          onPress={() => {
+            setInput(null)
+            onOpenChange(false)
+          }}
+          icon={<X />}
+        />
+      )}
       <LmInput onChangeText={(st) => setInput(st)} display={open ? 'block' : 'none'} />
       <Button
         circular
@@ -164,16 +169,94 @@ function AllowNewComponent({ onSave }: AllowNewComponentProps) {
         }}
         icon={open ? <FloppyDisk /> : <ListPlus />}
       />
-      {open && (
-        <Button
-          circular
-          onPress={() => {
-            setInput(null)
-            onOpenChange(false)
-          }}
-          icon={<X />}
-        />
-      )}
     </XStack>
+  )
+}
+
+type LmAutocompleteSingleSelectionProps = {
+  options: LmAutocompleteProps['options']
+  value?: Option
+  onSelectionChange: (option?: Option) => void
+  searchTerm?: string
+}
+
+function LmAutocompleteSingleSelection({
+  options,
+  value,
+  onSelectionChange,
+  searchTerm,
+}: LmAutocompleteSingleSelectionProps) {
+  const [currentVal, setCurrentVal] = useState<Option | undefined>(value)
+  const searchActive = searchTerm?.length
+
+  useEffect(() => {
+    onSelectionChange(currentVal)
+  }, [currentVal])
+  return (
+    <>
+      {options.map((item) => {
+        if (searchActive && !item.label.toLowerCase().includes(searchTerm)) {
+          return null
+        }
+        return (
+          <ListItem
+            hoverTheme
+            key={item.value}
+            icon={currentVal?.value === item.value ? <CheckSquare /> : <Square />}
+            title={item.label}
+            onPress={() => {
+              setCurrentVal((old) => (item === old ? undefined : item))
+            }}
+          />
+        )
+      })}
+    </>
+  )
+}
+
+type LmAutocompleteMultiSelectionProps = {
+  options: LmAutocompleteProps['options']
+  value?: Option[]
+  onSelectionChange: (options?: Option[]) => void
+  searchTerm?: string
+}
+
+function LmAutocompleteMultiSelection({
+  options,
+  value,
+  onSelectionChange,
+  searchTerm,
+}: LmAutocompleteMultiSelectionProps) {
+  const [currentVal, setCurrentVal] = useState<Option[] | undefined>(value)
+  const searchActive = searchTerm?.length
+  useEffect(() => {
+    onSelectionChange(currentVal)
+  }, [currentVal])
+  return (
+    <>
+      {options.map((item, i) => {
+        let isSelected = currentVal
+          ? currentVal.findIndex((i) => i.value === item.value) >= 0
+          : false
+        if (searchActive && !item.label.toLowerCase().includes(searchTerm)) {
+          return null
+        }
+        return (
+          <ListItem
+            hoverTheme
+            key={item.value}
+            icon={isSelected ? <CheckSquare /> : <Square />}
+            title={item.label}
+            onPress={() => {
+              setCurrentVal((old) =>
+                isSelected
+                  ? old?.filter((i) => i.value !== item.value) ?? []
+                  : [...(old || []), item]
+              )
+            }}
+          />
+        )
+      })}
+    </>
   )
 }
