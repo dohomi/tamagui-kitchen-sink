@@ -1,11 +1,12 @@
 import { Button, Input, ListItem, Popover, ThemeName, XStack } from 'tamagui'
 import { CheckSquare, FloppyDisk, ListPlus, Square, X } from 'tamagui-phosphor-icons'
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
 import { LmPopover } from '../panels'
 import { LmInput } from './LmInput'
 import { usePopoverState } from '../../hooks'
+import { useWindowDimensions } from 'react-native'
 
 type Option = { label: string; value: string | number }
 export type LmAutocompleteProps = LmFormContainerBaseTypes & {
@@ -29,18 +30,26 @@ export function LmAutocomplete({
   value,
   onChange,
   error,
-  theme = 'gray',
+  theme,
   ...rest
 }: LmAutocompleteProps) {
   const id = useId()
   const [opts, setOpts] = useState(options)
   const [selection, setSelection] = useState<Option | Option[] | null>(value || null)
-
+  const { width } = useWindowDimensions()
+  const [popoverWidth, setPopoverWidth] = useState<number>(0)
+  const inputRef = useRef<HTMLInputElement>(null)
   useEffect(() => {
     if (typeof onChange === 'function') {
       onChange(selection)
     }
   }, [selection])
+  useEffect(() => {
+    const elWidth = inputRef.current?.offsetWidth
+    if (elWidth) {
+      setPopoverWidth(elWidth)
+    }
+  }, [width])
 
   const inputValue = Array.isArray(selection)
     ? selection.map((option) => option?.label).join(', ')
@@ -56,7 +65,15 @@ export function LmAutocomplete({
       labelInline={labelInline}
       helperText={helperText}
     >
-      <LmPopover trigger={<Input value={inputValue} theme={theme} textOverflow={'ellipsis'} />}>
+      <LmPopover
+        contentProps={{
+          minWidth: popoverWidth ? popoverWidth : undefined,
+          maxWidth: '100%',
+        }}
+        trigger={
+          <Input ref={inputRef} value={inputValue} theme={theme} textOverflow={'ellipsis'} />
+        }
+      >
         <LmAutocompleteInputContent
           theme={theme}
           options={opts}
@@ -94,7 +111,6 @@ function LmAutocompleteInputContent({
   onSelectionChange,
   value,
 }: LmAutocompleteInputContentProps) {
-  // const [filtered, setFiltered] = useState(options)
   const [searchTerm, setSearchTerm] = useState<string>()
   return (
     <>
@@ -192,6 +208,7 @@ function LmAutocompleteSingleSelection({
   useEffect(() => {
     onSelectionChange(currentVal)
   }, [currentVal])
+
   return (
     <>
       {options.map((item) => {

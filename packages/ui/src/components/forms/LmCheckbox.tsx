@@ -29,7 +29,7 @@ export function LmCheckbox({
   size = '$3',
   value,
   required,
-  theme = 'gray',
+  theme,
   ...stackProps
 }: LmCheckboxProps) {
   const id = useId()

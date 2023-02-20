@@ -50,14 +50,14 @@ AllowNew.args = {
 export const SingleRhf = () => (
   <LmFormRhfProvider
     defaultValues={{
-      pre: { value: 'Pear' },
+      pre: { value: 'Pear', label: 'Pear' },
       pre_matched: 'Pear',
     }}
   >
     <LmAutocompleteRhf label={'Single'} name={'autocomplete'} options={options} />
     <LmAutocompleteRhf label={'Single Preselected'} name={'pre'} options={options} />
     <LmAutocompleteRhf
-      label={'Single Preselected'}
+      label={'Single Preselected - Match ID'}
       name={'pre_matched'}
       matchId={true}
       options={options}
@@ -79,7 +79,7 @@ export const MultipleRhf = () => {
       <LmAutocompleteRhf label={'Multiple'} name={'autocomplete'} options={options} multiple />
       <LmAutocompleteRhf label={'Multiple Preselected'} name={'pre'} options={options} multiple />
       <LmAutocompleteRhf
-        label={'Multiple Match ID'}
+        label={'Multiple - Match ID'}
         name={'pre_matched'}
         matchId
         options={options}

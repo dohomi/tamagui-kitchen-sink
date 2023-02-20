@@ -23,14 +23,13 @@ export function LmInput({
   containerProps,
   isPassword,
   fullWidth,
-  theme = 'gray',
   ...rest
 }: LmInputProps) {
   const genId = useId()
   const [show, setShow] = useState<boolean>(false)
   const id = rest.id || genId
   const styleProps: InputProps = {
-    theme: theme,
+    ...rest,
   }
   if (error) {
     styleProps.theme = 'red'
@@ -55,27 +54,24 @@ export function LmInput({
       {...containerProps}
     >
       {multiline ? (
-        <TextArea {...rest} {...styleProps} />
+        <TextArea {...styleProps} />
       ) : secureTextEntry ? (
         <Stack position={'relative'} width={fullWidth ? '100%' : 'fit-content'}>
-          <Input {...rest} {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
+          <Input {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
           <Button
             icon={show ? <EyeSlash /> : <Eye />}
             circular
-            chromeless
-            hoverTheme={false}
-            focusTheme={false}
-            pressTheme={false}
+            unstyled
+            hoverStyle={{ backgroundColor: '$background' }}
             position={'absolute'}
             right={'$1'}
-            top={'$1'}
             onPress={() => {
               setShow((state) => !state)
             }}
           />
         </Stack>
       ) : (
-        <Input {...rest} {...styleProps} autoCapitalize="none" />
+        <Input {...styleProps} autoCapitalize="none" />
       )}
     </LmFormFieldContainer>
   )

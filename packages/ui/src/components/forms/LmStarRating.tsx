@@ -1,23 +1,22 @@
-import { Button, ButtonProps, ColorTokens, SizeTokens, XStack } from 'tamagui'
+import { Button, ButtonProps, SizeTokens, XStack } from 'tamagui'
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
 import { Star } from 'tamagui-phosphor-icons'
 
-type StarProps = Omit<ButtonProps, 'color' | 'size'> & {
+type StarProps = Omit<ButtonProps, 'size'> & {
   filled: boolean
-  color?: ColorTokens
   size?: SizeTokens
 }
 
-function StarIcon({ filled, color, size = '$2', ...props }: StarProps) {
+function StarIcon({ filled, size = '$2', ...props }: StarProps) {
   return (
     <Button
       {...props}
       size={size}
-      chromeless
       circular
-      icon={<Star size={size} weight={filled ? 'fill' : 'regular'} color={color} />}
+      unstyled
+      icon={<Star size={size} weight={filled ? 'fill' : 'regular'} />}
     />
   )
 }
@@ -26,7 +25,6 @@ export type LmStarRatingProps = LmFormContainerBaseTypes & {
   count?: number
   onChange?: (rating: number | null) => void
   value?: number | null
-  color?: ColorTokens
   size?: SizeTokens
   disabled?: boolean
 }
