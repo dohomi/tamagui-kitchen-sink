@@ -18,6 +18,7 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
   disableSearch?: boolean
   theme?: ThemeName
   allowNew?: boolean
+  allowNewHook?: (newValue: string) => Option
 }
 
 export function LmAutocomplete({
@@ -31,6 +32,7 @@ export function LmAutocomplete({
   onChange,
   error,
   theme,
+  allowNewHook,
   ...rest
 }: LmAutocompleteProps) {
   const id = useId()
@@ -85,7 +87,14 @@ export function LmAutocomplete({
           value={selection}
           onAddNew={(newVal) => {
             if (newVal) {
-              setOpts((oldVal) => [{ value: newVal, label: newVal }, ...oldVal])
+              const newItem =
+                typeof allowNewHook === 'function'
+                  ? allowNewHook(newVal)
+                  : {
+                      value: newVal,
+                      label: newVal,
+                    }
+              setOpts((oldVal) => [newItem, ...oldVal])
             }
           }}
           {...rest}
