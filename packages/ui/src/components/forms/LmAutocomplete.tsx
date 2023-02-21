@@ -9,16 +9,16 @@ import { usePopoverState } from '../../hooks'
 import { useWindowDimensions } from 'react-native'
 
 type Option = { label: string; value: string | number }
-export type LmAutocompleteProps<T = Option> = LmFormContainerBaseTypes & {
-  options: T[]
+export type LmAutocompleteProps = LmFormContainerBaseTypes & {
+  options: Option[]
   multiple?: boolean
-  value?: null | T | T[]
-  onChange?: (v: null | T | T[]) => void
+  value?: null | Option | Option[]
+  onChange?: (v: null | Option | Option[]) => void
   placeholderSearch?: string
   disableSearch?: boolean
   theme?: ThemeName
   allowNew?: boolean
-  allowNewHook?: (newValue: string) => T
+  allowNewHook?: (newValue: string) => Option
 }
 
 export function LmAutocomplete({
