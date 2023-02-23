@@ -9,7 +9,7 @@ import {usePopoverState} from '../../../../hooks'
 import {getLocaleDate} from '../dateHelper'
 import {LmFormFieldContainer} from '../../LmFormFieldContainer'
 import {LmFormContainerBaseTypes} from '../../formContainerTypes'
-import {Platform} from 'react-native'
+import {Platform} from 'react-native' // change language see: https://github.com/tomgreenwood1/react-datepicker/blob/master/packages/styled/src/components/DateRangeInput/DateRangeInput.stories.tsx#L228
 
 // change language see: https://github.com/tomgreenwood1/react-datepicker/blob/master/packages/styled/src/components/DateRangeInput/DateRangeInput.stories.tsx#L228
 
@@ -80,31 +80,30 @@ export function LmDatepicker({
         labelInline={labelInline}
         helperText={helperText}
       >
-        <XStack space width={Platform.OS === 'web' ? 'fit-content' : undefined}>
-          <XGroup>
-            <Input
-              width={'$12'}
-              value={state.startDate ? getLocaleDate({ date: state.startDate }) : ''}
-            ></Input>
-            <Button onPress={() => onOpenChange(true)} icon={<Calendar />} />
-          </XGroup>
-          {isRangePicker && (
-            <XGroup>
-              <Input
-                width={'$12'}
-                value={state.endDate ? getLocaleDate({ date: state.endDate }) : ''}
-              />
-              <Button onPress={() => onOpenChange(true)} icon={<Calendar />} />
-            </XGroup>
-          )}
-        </XStack>
         <LmPopover
           isBouncy={false}
-          trigger={<XStack maxWidth={100} />}
-          popoverProps={{
-            open,
-            onOpenChange,
-          }}
+          trigger={
+            <XStack space width={Platform.OS === 'web' ? 'fit-content' : undefined}>
+              <XGroup>
+                <Input
+                  width={'$12'}
+                  value={state.startDate ? getLocaleDate({ date: state.startDate }) : ''}
+                ></Input>
+                <Button icon={<Calendar />} />
+              </XGroup>
+              {isRangePicker && (
+                <XGroup>
+                  <Input
+                    width={'$12'}
+                    value={state.endDate ? getLocaleDate({ date: state.endDate }) : ''}
+                  />
+                  <Button onPress={() => onOpenChange(true)} icon={<Calendar />} />
+                </XGroup>
+              )}
+            </XStack>
+          }
+          open={open}
+          onOpenChange={onOpenChange}
           contentProps={{
             padding: '$4',
             elevation: '$5',

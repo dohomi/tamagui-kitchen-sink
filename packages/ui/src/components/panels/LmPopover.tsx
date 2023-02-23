@@ -1,24 +1,21 @@
 import { Popover, PopoverContentProps, PopoverProps } from 'tamagui'
-import { PropsWithChildren, ReactNode } from 'react'
+import { ReactNode } from 'react'
 
-export type LmPopoverProps = PropsWithChildren<{
+export type LmPopoverProps = PopoverProps & {
   trigger?: ReactNode
   hideArrow?: boolean
-  popoverProps?: PopoverProps
   contentProps?: PopoverContentProps
   isBouncy?: boolean
-}>
+}
 
 export function LmPopover({
   trigger,
   children,
   hideArrow,
-  popoverProps,
   contentProps,
   isBouncy = true,
+  ...popoverProps
 }: LmPopoverProps) {
-  // const isReady = useDidFinishSSR()
-
   return (
     <Popover size="$5" {...popoverProps}>
       <Popover.Trigger asChild>{trigger}</Popover.Trigger>
@@ -61,5 +58,4 @@ export function LmPopover({
       </Popover.Content>
     </Popover>
   )
-  // : null
 }

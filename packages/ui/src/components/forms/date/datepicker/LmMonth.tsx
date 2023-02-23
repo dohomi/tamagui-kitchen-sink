@@ -1,11 +1,11 @@
-import { Button, H5, H6, Stack, Text, XStack } from 'tamagui'
+import { Button, H5, H6, SizableText, Stack, XStack } from 'tamagui'
 import {
   ArrowLeft,
   ArrowRight,
-  CaretLeft,
-  CaretRight,
   CaretDoubleLeft,
   CaretDoubleRight,
+  CaretLeft,
+  CaretRight,
 } from 'tamagui-phosphor-icons'
 import { useMonth, UseMonthProps } from '@datepicker-react/hooks'
 import { LmDay } from './LmDay'
@@ -107,9 +107,14 @@ export function LmMonth({
       </XStack>
       <XStack flex={7} width={250}>
         {weekdayLabels.map((dayLabel) => (
-          <Text width={`${100 / 7}%`} key={dayLabel} textAlign={'center'} paddingVertical={'$2'}>
+          <SizableText
+            width={`${100 / 7}%`}
+            key={dayLabel}
+            textAlign={'center'}
+            paddingVertical={'$2'}
+          >
             {dayLabel}
-          </Text>
+          </SizableText>
         ))}
       </XStack>
       <XStack display={'flex'} flexWrap={'wrap'} width={250}>

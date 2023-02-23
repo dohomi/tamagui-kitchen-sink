@@ -1,5 +1,12 @@
-import { LmPopover, LmPopoverProps } from '../../../src'
-import { Button, Text, XStack } from 'tamagui'
+import {
+  LmCard,
+  LmDialog,
+  LmDialogContent,
+  LmPopover,
+  LmPopoverProps,
+  usePopoverState,
+} from '../../../src'
+import { Button, ListItem, Text, XStack } from 'tamagui'
 import { LmButton } from 'tamagui-extras'
 import { Smiley } from 'tamagui-phosphor-icons'
 
@@ -36,10 +43,37 @@ SquarePopover.args = {
 export const CustomPosition = () => (
   <XStack space>
     <LmPopover trigger={<Button>Open Tamagui Button</Button>}>
-      <XStack p={'$4'}>Some content</XStack>
+      <XStack padding={'$4'}>Some content</XStack>
     </LmPopover>
     <LmPopover trigger={<LmButton>Open LmButton</LmButton>}>
-      <XStack p={'$4'}>Some content</XStack>
+      <XStack padding={'$4'}>Some content</XStack>
     </LmPopover>
   </XStack>
 )
+
+export const OpenDialog = () => {
+  const popoverState = usePopoverState()
+  const dialogState = usePopoverState()
+  return (
+    <>
+      <LmCard title={'Complex Popover'} subTitle={'Open Dialog inside Popover'}>
+        <LmPopover
+          {...popoverState}
+          trigger={<Button onPress={() => popoverState.onOpenChange(true)}>Open Popover</Button>}
+        >
+          <ListItem
+            onPress={() => {
+              popoverState.onOpenChange(false)
+              dialogState.onOpenChange(true)
+            }}
+          >
+            Open Dialog
+          </ListItem>
+        </LmPopover>
+      </LmCard>
+      <LmDialog {...dialogState}>
+        <LmDialogContent>Some Content</LmDialogContent>
+      </LmDialog>
+    </>
+  )
+}

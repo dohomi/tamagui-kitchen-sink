@@ -57,15 +57,20 @@ FixedWidthHeight.args = {
 }
 
 export const ControlledState = () => {
-  const { open, onOpenChange } = usePopoverState()
+  const dialogState = usePopoverState()
   return (
     <YStack>
-      <Button onPress={() => onOpenChange(true)}>Open Dialog</Button>
-      <LmDialog onOpenChange={onOpenChange} open={open} hideCloseButton={true}>
+      <Button onPress={() => dialogState.onOpenChange(true)}>Open Dialog</Button>
+      <LmDialog {...dialogState} hideCloseButton={true}>
         <LmDialogContent>
           <XStack space alignItems={'center'} justifyContent={'space-between'} marginBottom={'$2'}>
             <Text>This is some Content.</Text>
-            <Button onPress={() => onOpenChange(false)} chromeless circular icon={<X />} />
+            <Button
+              onPress={() => dialogState.onOpenChange(false)}
+              chromeless
+              circular
+              icon={<X />}
+            />
           </XStack>
           <Text>
             Some other content follows. You have full control of the opening state of the dialog.
