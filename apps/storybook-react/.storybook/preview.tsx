@@ -12,62 +12,27 @@ import 'raf/polyfill' // const OriginalNextImage = NextImage.default
 import {useThemeState} from 'app/src/state/themeState'
 import {Provider} from 'app/src/provider'
 import {YStack} from 'tamagui-extras'
-import {RouterContext} from 'next/dist/shared/lib/router-context'
-import * as NextImage from 'next/image'
+import {Preview} from '@storybook/react'
+// import * as NextImage from 'next/image'
 
-const OriginalNextFutureImage = NextImage.default
-Object.defineProperty(NextImage, 'default', {
-  configurable: true,
-  value: (props: any) => (
-    <OriginalNextFutureImage
-      {...props}
-      loader={
-        props.loader
-          ? props.loader
-          : ({ src }) => {
-              return src
-            }
-      }
-    />
-  ),
-})
+// const OriginalNextFutureImage = NextImage.default
+// Object.defineProperty(NextImage, 'default', {
+//   configurable: true,
+//   value: (props: any) => (
+//     <OriginalNextFutureImage
+//       {...props}
+//       loader={
+//         props.loader
+//           ? props.loader
+//           : ({ src }) => {
+//               return src
+//             }
+//       }
+//     />
+//   ),
+// })
 
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
-  // backgrounds: false
-  backgrounds: {
-    values: [],
-  },
-  nextRouter: {
-    Provider: RouterContext.Provider,
-  },
-  layout: 'fullscreen',
-}
-
-export const globalTypes = {
-  theme: {
-    name: 'Theme',
-    title: 'Theme',
-    description: 'Theme for your components',
-    defaultValue: 'light',
-    toolbar: {
-      icon: 'paintbrush',
-      dynamicTitle: true,
-      items: [
-        { value: 'light', left: '☀️', title: 'Light Mode' },
-        { value: 'dark', left: '🌙', title: 'Dark Mode' },
-      ],
-    },
-  },
-}
-
-export const decorators = [
+const decorators = [
   (Story, args: any) => {
     // The theme global we just declared
     const { theme: themeKey } = args.globals
@@ -88,3 +53,25 @@ export const decorators = [
     )
   },
 ]
+
+const preview: Preview = {
+  globalTypes: {
+    theme: {
+      name: 'Theme',
+      title: 'Theme',
+      description: 'Theme for your components',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'paintbrush',
+        dynamicTitle: true,
+        items: [
+          { value: 'light', left: '☀️', title: 'Light Mode' },
+          { value: 'dark', left: '🌙', title: 'Dark Mode' },
+        ],
+      },
+    },
+  },
+  decorators,
+}
+
+export default preview

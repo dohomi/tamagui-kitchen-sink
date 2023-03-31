@@ -20,6 +20,7 @@
     "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader && manypkg upgrade react-native-web-lite && manypkg upgrade tamagui-phosphor-icons",
     "upgrade:rnw": "manypkg upgrade react-native-web",
     "upgrade:next": "manypkg upgrade next && manypkg upgrade eslint-config-next",
+    "upgrade:sb": "manypkg upgrade @storybook",
     "sync:tamagui": "${TAMAGUI_PATH:-$HOME/tamagui}/starters-sync.sh",
     "eas:dev:ios": "cd apps/expo && yarn eas:dev:ios",
     "doctor": "yarn turbo run doc",
