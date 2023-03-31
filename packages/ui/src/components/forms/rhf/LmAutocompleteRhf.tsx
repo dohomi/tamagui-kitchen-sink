@@ -1,13 +1,13 @@
-import { Controller } from 'react-hook-form'
+import { Controller, FieldValues } from 'react-hook-form'
 import { LmRhfProps } from './lmRhfProps'
 import { LmAutocomplete, LmAutocompleteProps } from '../LmAutocomplete'
 
-export type LmAutocompleteRhfProps = LmRhfProps &
+export type LmAutocompleteRhfProps<T extends FieldValues> = LmRhfProps<T> &
   LmAutocompleteProps & {
     matchId?: boolean
   }
 
-export function LmAutocompleteRhf({
+export function LmAutocompleteRhf<T extends FieldValues = FieldValues>({
   name,
   rules,
   control,
@@ -16,7 +16,7 @@ export function LmAutocompleteRhf({
   options,
   multiple,
   ...inputProps
-}: LmAutocompleteRhfProps) {
+}: LmAutocompleteRhfProps<T>) {
   return (
     <Controller
       name={name}
@@ -26,6 +26,7 @@ export function LmAutocompleteRhf({
       render={({ field: { onChange, value }, fieldState: { error } }) => {
         let currentValue = multiple ? value || [] : value || null
         if (matchId) {
+          // @ts-ignore
           currentValue = multiple
             ? (value || []).map((i: any) => options.find((j) => (j.value || j) === i))
             : options.find((i) => (i.value || i) === value) || null
