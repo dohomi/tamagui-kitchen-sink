@@ -3,13 +3,6 @@
     "build": {
       "dependsOn": [
         "^build"
-      ],
-      "outputs": [
-        "dist/**",
-        ".next/**",
-        "build/**",
-        "api/**",
-        "public/build/**"
       ]
     },
     "watch": {
