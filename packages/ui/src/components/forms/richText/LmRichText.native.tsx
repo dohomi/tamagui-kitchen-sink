@@ -36,7 +36,7 @@ export const LmRichText = () => {
         editorStyle={styles.editor}
       />
 
-      <RichTextViewer value={htmlStr} editorStyle={styles.viewer} linkStyle={styles.link} />
+      <RichTextViewer value={htmlStr} linkStyle={styles.link} />
     </>
   )
 }
