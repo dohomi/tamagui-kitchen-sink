@@ -4,7 +4,6 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
 import { LmPopover } from '../panels'
-import { LmInput } from './LmInput'
 import { usePopoverState } from '../../hooks'
 import { useWindowDimensions } from 'react-native'
 
@@ -183,7 +182,7 @@ function LmAutocompleteAddNew({ onSave }: LmAutocompleteAddNewProps) {
           icon={<X />}
         />
       )}
-      <LmInput onChangeText={(st) => setInput(st)} display={open ? 'block' : 'none'} />
+      <Input onChangeText={(st) => setInput(st)} display={open ? 'flex' : 'none'} flex={1} />
       <Button
         circular
         onPress={() => {
