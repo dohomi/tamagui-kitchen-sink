@@ -1,17 +1,21 @@
-import { Form, Paragraph, XStack, YStack } from 'tamagui/src'
-
-import { LmAlert } from '../../../src/components/content/LmAlert'
-import { LmCard } from '../../../src/components/content/LmCard'
-import { LmCheckboxRhf } from '../../../src/components/forms/rhf/LmCheckboxRhf'
-import { LmDatepickerRhf } from '../../../src/components/forms/rhf/LmDatepickerRhf'
-import { LmFormRhfProvider } from '../../../src/components/forms/rhf/LmFormRhfProvider'
-import { LmInputRhf } from '../../../src/components/forms/rhf/LmInputRhf'
-import { LmResetButtonRhf } from '../../../src/components/forms/rhf/LmResetButtonRhf'
-import { LmSelectRhf } from '../../../src/components/forms/rhf/LmSelectRhf'
-import { LmSliderRhf } from '../../../src/components/forms/rhf/LmSliderRhf'
-import { LmSubmitButtonRhf } from '../../../src/components/forms/rhf/LmSubmitButtonRhf'
-import { LmSwitchRhf } from '../../../src/components/forms/rhf/LmSwitchRhf'
-import { LmButton } from 'tamagui-extras/src/components/forms/LmButton'
+import {
+  Form,
+  LmAlert,
+  LmCard,
+  LmCheckboxRhf,
+  LmDatepickerRhf,
+  LmFormRhfProvider,
+  LmInputRhf,
+  LmResetButtonRhf,
+  LmSelectRhf,
+  LmSliderRhf,
+  LmSubmitButtonRhf,
+  LmSwitchRhf,
+  Paragraph,
+  XStack,
+  YStack,
+} from '../../../src'
+import { LmButton } from '../../../src/'
 
 import React from 'react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
@@ -166,46 +170,48 @@ export const WithTamaguiForm_1 = () => {
   )
 }
 
-export const WithTamaguiForm_2 = () => {
-  const { control, handleSubmit, reset } = useForm({
-    defaultValues: {
-      name: '',
-      email: undefined,
-    },
-  })
-  return (
-    <Form
-      gap={'$3'}
-      onSubmit={handleSubmit((data) => {
-        console.log(data)
-      })}
-    >
-      <LmAlert severity={'info'} outlined>
-        <Paragraph>
-          For best experience use render function as child of LmFormRhfProvider.
-        </Paragraph>
-      </LmAlert>
-      <LmInputRhf
-        name={'name'}
-        control={control}
-        label={'Name'}
-        placeholder={'Type your name...'}
-        labelInline
-        required
-      />
-      <LmInputRhf
-        name={'email'}
-        control={control}
-        label={'Name'}
-        placeholder={'Type your email...'}
-        labelInline
-      />
-      <XStack gap={'$3'}>
-        <LmButton onPress={() => reset()}>Reset</LmButton>
-        <Form.Trigger asChild>
-          <LmButton colorVariant={'primary'}>Submit</LmButton>
-        </Form.Trigger>
-      </XStack>
-    </Form>
-  )
+export const WithTamaguiForm_2: StoryObj = {
+  render: () => {
+    const { control, handleSubmit, reset } = useForm({
+      defaultValues: {
+        name: '',
+        email: undefined,
+      },
+    })
+    return (
+      <Form
+        gap={'$3'}
+        onSubmit={handleSubmit((data) => {
+          console.log(data)
+        })}
+      >
+        <LmAlert severity={'info'} outlined>
+          <Paragraph>
+            For best experience use render function as child of LmFormRhfProvider.
+          </Paragraph>
+        </LmAlert>
+        <LmInputRhf
+          name={'name'}
+          control={control}
+          label={'Name'}
+          placeholder={'Type your name...'}
+          labelInline
+          required
+        />
+        <LmInputRhf
+          name={'email'}
+          control={control}
+          label={'Name'}
+          placeholder={'Type your email...'}
+          labelInline
+        />
+        <XStack gap={'$3'}>
+          <LmButton onPress={() => reset()}>Reset</LmButton>
+          <Form.Trigger asChild>
+            <LmButton colorVariant={'primary'}>Submit</LmButton>
+          </Form.Trigger>
+        </XStack>
+      </Form>
+    )
+  },
 }

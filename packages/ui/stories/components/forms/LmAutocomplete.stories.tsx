@@ -6,7 +6,7 @@ import { Meta } from '@storybook/react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import { YStack } from 'tamagui-extras'
+import { YStack } from 'tamagui'
 
 export default {
   title: 'ui/Forms/Autocomplete',
@@ -92,7 +92,7 @@ export const MultipleRhf = () => {
         ...form,
       }}
     >
-      <YStack space>
+      <div>
         <LmAutocompleteRhf label={'Multiple'} name={'autocomplete'} options={options} multiple />
         <LmAutocompleteRhf label={'Multiple Preselected'} name={'pre'} options={options} multiple />
         <LmAutocompleteRhf
@@ -103,7 +103,7 @@ export const MultipleRhf = () => {
           multiple
         />
         <LmSubmitButtonRhf onSubmit={action('formData')}>Submit</LmSubmitButtonRhf>
-      </YStack>
+      </div>
     </LmFormRhfProvider>
   )
 }
