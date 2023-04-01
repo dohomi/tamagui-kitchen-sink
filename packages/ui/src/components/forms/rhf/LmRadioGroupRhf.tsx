@@ -1,16 +1,16 @@
 import { LmRhfProps } from './lmRhfProps'
 import { LmRadioGroup, LmRadioGroupProps } from '../LmRadioGroup'
-import { Controller } from 'react-hook-form'
+import { Controller, FieldValues } from 'react-hook-form'
 
-export type LmRadioGroupRhfProps = LmRadioGroupProps & LmRhfProps & {}
+export type LmRadioGroupRhfProps<T extends FieldValues> = LmRadioGroupProps & LmRhfProps<T> & {}
 
-export function LmRadioGroupRhf({
+export function LmRadioGroupRhf<T extends FieldValues>({
   name,
   control,
   rules = {},
   defaultValue,
   ...rest
-}: LmRadioGroupRhfProps) {
+}: LmRadioGroupRhfProps<T>) {
   if (rest.required) {
     rules.required = 'This field is required'
   }

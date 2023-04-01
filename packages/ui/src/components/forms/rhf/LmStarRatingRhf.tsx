@@ -1,16 +1,16 @@
-import { Controller } from 'react-hook-form'
+import { Controller, FieldValues } from 'react-hook-form'
 import { LmRhfProps } from './lmRhfProps'
 import { LmStarRating, LmStarRatingProps } from '../LmStarRating'
 
-export type LmStarRatingRhfProps = LmStarRatingProps & LmRhfProps & {}
+export type LmStarRatingRhfProps<T extends FieldValues> = LmStarRatingProps & LmRhfProps<T> & {}
 
-export function LmStarRatingRhf({
+export function LmStarRatingRhf<T extends FieldValues>({
   name,
   control,
   rules = {},
   defaultValue,
   ...inputProps
-}: LmStarRatingRhfProps) {
+}: LmStarRatingRhfProps<T>) {
   return (
     <Controller
       name={name}

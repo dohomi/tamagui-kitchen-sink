@@ -1,16 +1,16 @@
 import { LmSelect, LmSelectProps } from '../LmSelect'
-import { Controller } from 'react-hook-form'
+import { Controller, FieldValues } from 'react-hook-form'
 import { LmRhfProps } from './lmRhfProps'
 
-export type LmSelectRhfProps = LmSelectProps & LmRhfProps & {}
+export type LmSelectRhfProps<T extends FieldValues> = LmSelectProps & LmRhfProps<T> & {}
 
-export function LmSelectRhf({
+export function LmSelectRhf<T extends FieldValues>({
   name,
   control,
   rules = {},
   defaultValue,
   ...inputProps
-}: LmSelectRhfProps) {
+}: LmSelectRhfProps<T>) {
   if (inputProps.required) {
     rules.required = 'This field is required'
   }

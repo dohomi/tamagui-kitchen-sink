@@ -1,16 +1,16 @@
 import { LmRhfProps } from './lmRhfProps'
 import { LmSlider, LmSliderProps } from '../LmSlider'
-import { Controller } from 'react-hook-form'
+import { Controller, FieldValues } from 'react-hook-form'
 
-export type LmSliderRhfProps = LmSliderProps & LmRhfProps & {}
+export type LmSliderRhfProps<T extends FieldValues> = LmSliderProps & LmRhfProps<T> & {}
 
-export function LmSliderRhf({
+export function LmSliderRhf<T extends FieldValues>({
   name,
   control,
   rules = {},
   defaultValue,
   ...sliderProps
-}: LmSliderRhfProps) {
+}: LmSliderRhfProps<T>) {
   return (
     <Controller
       name={name}

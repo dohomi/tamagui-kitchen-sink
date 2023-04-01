@@ -1,16 +1,16 @@
-import { Controller } from 'react-hook-form'
+import { Controller, FieldValues } from 'react-hook-form'
 import { LmDateSelection, LmDateSelectionProps } from '../date'
 import { LmRhfProps } from './lmRhfProps'
 
-export type LmDateSelectionRhfProps = LmRhfProps & LmDateSelectionProps
+export type LmDateSelectionRhfProps<T extends FieldValues> = LmRhfProps<T> & LmDateSelectionProps
 
-export function LmDateSelectionRhf({
+export function LmDateSelectionRhf<T extends FieldValues>({
   name,
   defaultValue,
   control,
   rules = {},
   ...rest
-}: LmDateSelectionRhfProps) {
+}: LmDateSelectionRhfProps<T>) {
   if (rest.required) {
     rules.required = 'This field is required'
   }
