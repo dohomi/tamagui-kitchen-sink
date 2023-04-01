@@ -17,13 +17,14 @@ import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { action } from '@storybook/addon-actions'
 import { LmButton } from 'tamagui-extras'
 import { useForm } from 'react-hook-form'
+import { StoryObj } from '@storybook/react'
 
 export default {
   title: 'ui/Forms/ReactHookForm',
 }
 
-export const ReactHookForm = () => {
-  return (
+export const ReactHookForm: StoryObj = {
+  render: () => (
     <XStack padding={'$3'}>
       <LmFormRhfProvider
         defaultValues={{
@@ -67,7 +68,7 @@ export const ReactHookForm = () => {
         </LmCard>
       </LmFormRhfProvider>
     </XStack>
-  )
+  ),
 }
 
 export const FormAsRenderFunction = () => {
