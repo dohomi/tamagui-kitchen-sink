@@ -4,6 +4,7 @@ export default {
   title: 'ui/Content/Image',
   component: LmImage,
 }
+const imageSrc = 'https://placekitten.com/400/300'
 
 export const Basic = {
   args: {
@@ -12,5 +13,3 @@ export const Basic = {
     src: imageSrc,
   },
 }
-
-const imageSrc = 'https://placekitten.com/400/300'
