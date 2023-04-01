@@ -85,19 +85,27 @@ export function LmDatepicker({
           trigger={
             <XStack space width={Platform.OS === 'web' ? 'fit-content' : undefined}>
               <XGroup>
-                <Input
-                  width={'$12'}
-                  value={state.startDate ? getLocaleDate({ date: state.startDate }) : ''}
-                ></Input>
-                <Button icon={<Calendar />} />
+                <XGroup.Item>
+                  <Input
+                    width={'$12'}
+                    value={state.startDate ? getLocaleDate({ date: state.startDate }) : ''}
+                  ></Input>
+                </XGroup.Item>
+                <XGroup.Item>
+                  <Button icon={<Calendar />} />
+                </XGroup.Item>
               </XGroup>
               {isRangePicker && (
                 <XGroup>
-                  <Input
-                    width={'$12'}
-                    value={state.endDate ? getLocaleDate({ date: state.endDate }) : ''}
-                  />
-                  <Button onPress={() => onOpenChange(true)} icon={<Calendar />} />
+                  <XGroup.Item>
+                    <Input
+                      width={'$12'}
+                      value={state.endDate ? getLocaleDate({ date: state.endDate }) : ''}
+                    />
+                  </XGroup.Item>
+                  <XGroup.Item>
+                    <Button onPress={() => onOpenChange(true)} icon={<Calendar />} />
+                  </XGroup.Item>
                 </XGroup>
               )}
             </XStack>

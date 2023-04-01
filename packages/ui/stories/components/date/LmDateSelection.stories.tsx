@@ -7,17 +7,17 @@ export default {
   component: LmDateSelection,
 }
 
-const Template = (args) => <LmDateSelection {...args} />
-
-export const Single = Template.bind({})
-Single.args = {
-  label: 'Pick a date',
+export const Single = {
+  args: {
+    label: 'Pick a date',
+  },
 }
 
-export const German = Template.bind({})
-German.args = {
-  label: 'Geburtstag',
-  locale: 'de',
+export const German = {
+  args: {
+    label: 'Geburtstag',
+    locale: 'de',
+  },
 }
 
 export const ReactHookForm = () => {

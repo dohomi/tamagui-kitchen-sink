@@ -9,17 +9,17 @@ export default {
   component: LmCheckbox,
 }
 
-const Template = (args) => <LmCheckbox {...args} />
-
-export const Basic = Template.bind({})
-Basic.args = {
-  label: 'Please check this out',
+export const Basic = {
+  args: {
+    label: 'Please check this out',
+  },
 }
 
-export const Blue = Template.bind({})
-Blue.args = {
-  label: 'Blue theme',
-  theme: 'blue',
+export const Blue = {
+  args: {
+    label: 'Blue theme',
+    theme: 'blue',
+  },
 }
 
 export const Sizes = () => (

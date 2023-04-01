@@ -7,22 +7,23 @@ export default {
   component: LmAvatar,
 }
 
-const Template = (args) => <LmAvatar {...args} />
-
-export const Basic = Template.bind({})
-Basic.args = {
-  src: 'https://placekitten.com/400/300',
+export const Basic = {
+  args: {
+    src: 'https://placekitten.com/400/300',
+  },
 }
 
-export const Letter = Template.bind({})
-Letter.args = {
-  letter: 'DM',
+export const Letter = {
+  args: {
+    letter: 'DM',
+  },
 }
 
-export const Square = Template.bind({})
-Square.args = {
-  letter: 'DM',
-  circular: false,
+export const Square = {
+  args: {
+    letter: 'DM',
+    circular: false,
+  },
 }
 
 export const Sizes = () => (

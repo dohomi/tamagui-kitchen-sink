@@ -1,4 +1,4 @@
-import { XStack, YStack } from 'tamagui'
+import { Form, Paragraph, XStack, YStack } from 'tamagui'
 import {
   LmAlert,
   LmCard,
@@ -16,6 +16,7 @@ import React from 'react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { action } from '@storybook/addon-actions'
 import { LmButton } from 'tamagui-extras'
+import { useForm } from 'react-hook-form'
 
 export default {
   title: 'ui/Forms/ReactHookForm',
@@ -80,8 +81,10 @@ export const FormAsRenderFunction = () => {
       {({ control, handleSubmit, reset }) => (
         <YStack gap={'$3'}>
           <LmAlert severity={'info'} outlined>
-            If you use a render function you enable stronger typings by forwarding "control". You
-            are responsible to pass "control" to all form elements, otherwise an error is thrown.
+            <Paragraph>
+              If you use a render function you enable stronger typings by forwarding "control". You
+              are responsible to pass "control" to all form elements, otherwise an error is thrown.
+            </Paragraph>
           </LmAlert>
           <LmInputRhf
             name={'name'}
@@ -98,15 +101,110 @@ export const FormAsRenderFunction = () => {
             placeholder={'Type your email...'}
             labelInline
           />
-          <LmButton
-            onPress={handleSubmit(({ name, email }) => {
-              console.log(name, email)
-            })}
-          >
-            Submit
-          </LmButton>
+          <XStack gap={'$3'}>
+            <LmButton onPress={() => reset()}>Reset</LmButton>
+            <LmButton
+              colorVariant={'primary'}
+              onPress={handleSubmit(({ name, email }) => {
+                console.log(name, email)
+              })}
+            >
+              Submit
+            </LmButton>
+          </XStack>
         </YStack>
       )}
     </LmFormRhfProvider>
+  )
+}
+
+export const WithTamaguiForm_1 = () => {
+  return (
+    <LmFormRhfProvider
+      defaultValues={{
+        name: '',
+        email: undefined,
+      }}
+    >
+      {({ control, handleSubmit, reset }) => (
+        <Form
+          gap={'$3'}
+          onSubmit={handleSubmit((data) => {
+            console.log(data)
+          })}
+        >
+          <LmAlert severity={'info'} outlined>
+            <Paragraph>
+              For best experience use render function as child of LmFormRhfProvider.
+            </Paragraph>
+          </LmAlert>
+          <LmInputRhf
+            name={'name'}
+            control={control}
+            label={'Name'}
+            placeholder={'Type your name...'}
+            labelInline
+            required
+          />
+          <LmInputRhf
+            name={'email'}
+            control={control}
+            label={'Name'}
+            placeholder={'Type your email...'}
+            labelInline
+          />
+          <XStack gap={'$3'}>
+            <LmButton onPress={() => reset()}>Reset</LmButton>
+            <Form.Trigger asChild>
+              <LmButton colorVariant={'primary'}>Submit</LmButton>
+            </Form.Trigger>
+          </XStack>
+        </Form>
+      )}
+    </LmFormRhfProvider>
+  )
+}
+
+export const WithTamaguiForm_2 = () => {
+  const { control, handleSubmit, reset } = useForm({
+    defaultValues: {
+      name: '',
+      email: undefined,
+    },
+  })
+  return (
+    <Form
+      gap={'$3'}
+      onSubmit={handleSubmit((data) => {
+        console.log(data)
+      })}
+    >
+      <LmAlert severity={'info'} outlined>
+        <Paragraph>
+          For best experience use render function as child of LmFormRhfProvider.
+        </Paragraph>
+      </LmAlert>
+      <LmInputRhf
+        name={'name'}
+        control={control}
+        label={'Name'}
+        placeholder={'Type your name...'}
+        labelInline
+        required
+      />
+      <LmInputRhf
+        name={'email'}
+        control={control}
+        label={'Name'}
+        placeholder={'Type your email...'}
+        labelInline
+      />
+      <XStack gap={'$3'}>
+        <LmButton onPress={() => reset()}>Reset</LmButton>
+        <Form.Trigger asChild>
+          <LmButton colorVariant={'primary'}>Submit</LmButton>
+        </Form.Trigger>
+      </XStack>
+    </Form>
   )
 }

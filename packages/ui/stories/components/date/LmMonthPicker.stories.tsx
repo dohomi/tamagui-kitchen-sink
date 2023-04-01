@@ -1,19 +1,19 @@
-import {LmMonthsPicker} from "../../../src";
+import { LmMonthsPicker } from '../../../src'
 
 export default {
-    title: 'ui/Date/Months Picker',
-    component: LmMonthsPicker
+  title: 'ui/Date/Months Picker',
+  component: LmMonthsPicker,
 }
 
-const Template = (args) => <LmMonthsPicker {...args}/>
-
-export const Basic = Template.bind({})
-Basic.args = {
-    label: 'Month Picker'
-}
-
-export const BasicInline = Template.bind({})
-BasicInline.args = {
+export const Basic = {
+  args: {
     label: 'Month Picker',
-    labelInline: true
+  },
+}
+
+export const BasicInline = {
+  args: {
+    label: 'Month Picker',
+    labelInline: true,
+  },
 }

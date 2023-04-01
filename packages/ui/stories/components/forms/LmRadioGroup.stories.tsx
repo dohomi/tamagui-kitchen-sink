@@ -10,38 +10,40 @@ export default {
 
 const options = fruitItemsFixtures.slice(0, 8)
 
-const Template = (args) => <LmRadioGroup {...args} />
-
-export const Basic = Template.bind({})
-Basic.args = {
-  label: 'Radio Group Label',
-  name: 'radio',
-  options,
+export const Basic = {
+  args: {
+    label: 'Radio Group Label',
+    name: 'radio',
+    options,
+  },
 }
 
-export const Required = Template.bind({})
-Required.args = {
-  label: 'Radio Group Label',
-  name: 'radio',
-  required: true,
-  options,
+export const Required = {
+  args: {
+    label: 'Radio Group Label',
+    name: 'radio',
+    required: true,
+    options,
+  },
 }
 
-export const Inline = Template.bind({})
-Inline.args = {
-  label: 'Radio Group Label',
-  name: 'radio',
-  flexDirection: 'row',
-  options,
+export const Inline = {
+  args: {
+    label: 'Radio Group Label',
+    name: 'radio',
+    flexDirection: 'row',
+    options,
+  },
 }
 
-export const LargeSize = Template.bind({})
-LargeSize.args = {
-  label: 'Radio Group Label',
-  name: 'radio',
-  size: '$5',
-  spaceItem: '$4',
-  options,
+export const LargeSize = {
+  args: {
+    label: 'Radio Group Label',
+    name: 'radio',
+    size: '$5',
+    spaceItem: '$4',
+    options,
+  },
 }
 
 export const ReactHookForm = () => (

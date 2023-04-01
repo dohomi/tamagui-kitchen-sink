@@ -48,7 +48,6 @@ export function LmAlert({
   ...rest
 }: LmAlertProps) {
   const theme = useThemeName()
-  // @TODO - themeInverse removed, see tamagui release beta 221
   let shouldInverse = theme === 'light' && severity !== 'default' && !outlined
   return (
     <Card

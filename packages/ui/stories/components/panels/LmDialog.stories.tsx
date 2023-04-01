@@ -17,43 +17,45 @@ export default {
   component: LmDialog,
 }
 
-const Template = (args) => <LmDialog {...args} />
-
-export const Basic = Template.bind({})
-Basic.args = {
-  title: 'Some Title',
-  description: 'This is the description of the Dialog',
-  trigger: <Text>Open Dialog</Text>,
-  children: <Text padding={'$4'}>Dialog content</Text>,
+export const Basic = {
+  args: {
+    title: 'Some Title',
+    description: 'This is the description of the Dialog',
+    trigger: <Text>Open Dialog</Text>,
+    children: <Text padding={'$4'}>Dialog content</Text>,
+  },
 }
 
-export const FullScreen = Template.bind({})
-FullScreen.args = {
-  title: 'Some Title',
-  description: 'This is the description of the Dialog',
-  trigger: <Text>Open Dialog</Text>,
-  children: (
-    <LmDialogContent>
-      <Text>Dialog content</Text>
-    </LmDialogContent>
-  ),
-  fullScreen: true,
+export const FullScreen = {
+  args: {
+    title: 'Some Title',
+    description: 'This is the description of the Dialog',
+    trigger: <Text>Open Dialog</Text>,
+    children: (
+      <LmDialogContent>
+        <Text>Dialog content</Text>
+      </LmDialogContent>
+    ),
+    fullScreen: true,
+  },
 }
 
-export const OnlyContent = Template.bind({})
-OnlyContent.args = {
-  trigger: <Text>Open Dialog</Text>,
-  children: <Text padding={'$4'}>Dialog content</Text>,
-  hideCloseButton: true,
+export const OnlyContent = {
+  args: {
+    trigger: <Text>Open Dialog</Text>,
+    children: <Text padding={'$4'}>Dialog content</Text>,
+    hideCloseButton: true,
+  },
 }
 
-export const FixedWidthHeight = Template.bind({})
-FixedWidthHeight.args = {
-  trigger: <Text>Open Dialog</Text>,
-  children: <Text padding={'$4'}>Dialog content</Text>,
-  hideCloseButton: true,
-  dialogWidth: 600,
-  dialogHeight: 400,
+export const FixedWidthHeight = {
+  args: {
+    trigger: <Text>Open Dialog</Text>,
+    children: <Text padding={'$4'}>Dialog content</Text>,
+    hideCloseButton: true,
+    dialogWidth: 600,
+    dialogHeight: 400,
+  },
 }
 
 export const ControlledState = () => {

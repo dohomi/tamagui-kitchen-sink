@@ -1,17 +1,17 @@
 import { LmButton } from '../../../src'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import { XStack, YStack } from 'tamagui'
 import { Star } from 'tamagui-phosphor-icons'
 
 export default {
   title: 'ui/Forms/Button',
   component: LmButton,
-} as ComponentMeta<typeof LmButton>
+} as Meta<typeof LmButton>
 
-const Template: ComponentStory<typeof LmButton> = (args) => <LmButton {...args} />
-export const Primary = Template.bind({})
-Primary.args = {
-  children: 'Standard Button',
+export const Primary = {
+  args: {
+    children: 'Standard Button',
+  },
 }
 
 export const Sizes = () => (

@@ -4,7 +4,7 @@ import {
   LmFormRhfProvider,
   LmSubmitButtonRhf,
 } from '../../../src'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { useState } from 'react'
 import { action } from '@storybook/addon-actions'
@@ -13,39 +13,43 @@ import { YStack } from 'tamagui-extras'
 export default {
   title: 'ui/Forms/Autocomplete',
   component: LmAutocomplete,
-} as ComponentMeta<typeof LmAutocomplete>
+} as Meta<typeof LmAutocomplete>
 const options = fruitItemsFixtures
 
-const Template: ComponentStory<typeof LmAutocomplete> = (args) => <LmAutocomplete {...args} />
-export const Single = Template.bind({})
-Single.args = {
-  options,
-  label: 'Autocomplete Label',
+export const Single = {
+  args: {
+    options,
+    label: 'Autocomplete Label',
+  },
 }
 
-export const SingleInline = Template.bind({})
-SingleInline.args = {
-  options,
-  labelInline: true,
-  label: 'Autocomplete Label',
+export const SingleInline = {
+  args: {
+    options,
+    labelInline: true,
+    label: 'Autocomplete Label',
+  },
 }
 
-export const Multiple = Template.bind({})
-Multiple.args = {
-  options,
-  multiple: true,
+export const Multiple = {
+  args: {
+    options,
+    multiple: true,
+  },
 }
 
-export const WithoutSearch = Template.bind({})
-WithoutSearch.args = {
-  options,
-  disableSearch: true,
+export const WithoutSearch = {
+  args: {
+    options,
+    disableSearch: true,
+  },
 }
 
-export const AllowNew = Template.bind({})
-AllowNew.args = {
-  options,
-  allowNew: true,
+export const AllowNew = {
+  args: {
+    options,
+    allowNew: true,
+  },
 }
 
 export const SingleRhf = () => (

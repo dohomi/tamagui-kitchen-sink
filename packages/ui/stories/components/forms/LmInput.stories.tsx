@@ -1,32 +1,34 @@
 import React from 'react'
 import { LmInput } from '../../../src'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import { XStack, YStack } from 'tamagui'
 
 export default {
   title: 'ui/Forms/Input',
   component: LmInput,
-} as ComponentMeta<typeof LmInput>
+} as Meta<typeof LmInput>
 
-const Template: ComponentStory<typeof LmInput> = (args) => <LmInput {...args} />
-export const Basic = Template.bind({})
-Basic.args = {
-  size: '$4',
-  placeholder: 'Placeholder..',
+export const Basic = {
+  args: {
+    size: '$4',
+    placeholder: 'Placeholder..',
+  },
 }
 
-export const Textarea = Template.bind({})
-Textarea.args = {
-  size: '$4',
-  multiline: true,
-  placeholder: 'Placeholder..',
+export const Textarea = {
+  args: {
+    size: '$4',
+    multiline: true,
+    placeholder: 'Placeholder..',
+  },
 }
 
-export const Password = Template.bind({})
-Password.args = {
-  size: '$4',
-  placeholder: 'Password..',
-  isPassword: true,
+export const Password = {
+  args: {
+    size: '$4',
+    placeholder: 'Password..',
+    isPassword: true,
+  },
 }
 
 export const PasswordFullWidth = () => (

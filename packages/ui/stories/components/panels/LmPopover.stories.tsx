@@ -15,30 +15,30 @@ export default {
   component: LmPopover,
 }
 
-const Template = (args) => <LmPopover {...args} />
+export const Basic = {
+  args: {
+    showArrow: true,
+    trigger: <Text>Open Popover</Text>,
+    children: (
+      <XStack space alignItems={'center'}>
+        <Smiley />
+        <Text padding={'$4'}>Some Popover content</Text>
+      </XStack>
+    ),
+  } as LmPopoverProps,
+}
 
-export const Basic = Template.bind({})
-Basic.args = {
-  showArrow: true,
-  trigger: <Text>Open Popover</Text>,
-  children: (
-    <XStack space alignItems={'center'}>
-      <Smiley />
-      <Text padding={'$4'}>Some Popover content</Text>
-    </XStack>
-  ),
-} as LmPopoverProps
-
-export const SquarePopover = Template.bind({})
-SquarePopover.args = {
-  showArrow: true,
-  trigger: <Text>Open Popover</Text>,
-  children: <Text padding={'$4'}>Some Popover content</Text>,
-  contentProps: {
-    elevation: '$4',
-    borderRadius: 0,
-  },
-} as LmPopoverProps
+export const SquarePopover = {
+  args: {
+    showArrow: true,
+    trigger: <Text>Open Popover</Text>,
+    children: <Text padding={'$4'}>Some Popover content</Text>,
+    contentProps: {
+      elevation: '$4',
+      borderRadius: 0,
+    },
+  } as LmPopoverProps,
+}
 
 export const CustomPosition = () => (
   <XStack space>

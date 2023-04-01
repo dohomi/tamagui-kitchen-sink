@@ -6,22 +6,23 @@ export default {
   component: LmSwitch,
 }
 
-const Template = (args) => <LmSwitch {...args} />
-
-export const Basic = Template.bind({})
-Basic.args = {
-  labelLeft: 'Left Label',
+export const Basic = {
+  args: {
+    labelLeft: 'Left Label',
+  },
 }
 
-export const LabelRight = Template.bind({})
-LabelRight.args = {
-  labelRight: 'Right Label',
+export const LabelRight = {
+  args: {
+    labelRight: 'Right Label',
+  },
 }
 
-export const LabelBothSides = Template.bind({})
-LabelBothSides.args = {
-  labelLeft: 'Left Label',
-  labelRight: 'Right Label',
+export const LabelBothSides = {
+  args: {
+    labelLeft: 'Left Label',
+    labelRight: 'Right Label',
+  },
 }
 
 export const Sizes = () => (

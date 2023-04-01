@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react'
 import { XStack, YStack } from 'tamagui'
 import { LmSelect } from '../../../src'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
@@ -6,52 +6,56 @@ import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 export default {
   title: 'ui/Forms/Select',
   component: LmSelect,
-} as ComponentMeta<typeof LmSelect>
+} as Meta<typeof LmSelect>
 
 const options = fruitItemsFixtures
 
-const Template: ComponentStory<typeof LmSelect> = (args) => <LmSelect {...args} />
-export const Basic = Template.bind({})
-Basic.args = {
-  colorVariant: 'primary',
-  options,
-  label: 'Select Fruits',
-  dropDownLabel: 'Fruits',
-  width: 300,
-  scrollButtonGradient: ['$red10', '$yellow10'],
+export const Basic = {
+  args: {
+    colorVariant: 'primary',
+    options,
+    label: 'Select Fruits',
+    dropDownLabel: 'Fruits',
+    width: 300,
+    scrollButtonGradient: ['$red10', '$yellow10'],
+  },
 }
 
-export const Inline = Template.bind({})
-Inline.args = {
-  colorVariant: 'primary',
-  options,
-  label: 'Select Fruits',
-  placeholder: 'fruits...',
-  labelInline: true,
-  dropDownLabel: 'Fruits',
-  width: 300,
-  scrollButtonGradient: ['$red10', '$yellow10'],
+export const Inline = {
+  args: {
+    colorVariant: 'primary',
+    options,
+    label: 'Select Fruits',
+    placeholder: 'fruits...',
+    labelInline: true,
+    dropDownLabel: 'Fruits',
+    width: 300,
+    scrollButtonGradient: ['$red10', '$yellow10'],
+  },
 }
 
-export const LightBlue = Template.bind({})
-LightBlue.args = {
-  themeName: 'light_blue',
-  options,
-  placeholder: "Doesn't show up",
+export const LightBlue = {
+  args: {
+    themeName: 'light_blue',
+    options,
+    placeholder: "Doesn't show up",
+  },
 }
 
-export const Multiple = Template.bind({})
-Multiple.args = {
-  options,
-  placeholder: 'Multiple',
-  multiple: true,
+export const Multiple = {
+  args: {
+    options,
+    placeholder: 'Multiple',
+    multiple: true,
+  },
 }
 
-export const FullWidth = Template.bind({})
-FullWidth.args = {
-  options,
-  placeholder: 'Full Width',
-  fullWidth: true,
+export const FullWidth = {
+  args: {
+    options,
+    placeholder: 'Full Width',
+    fullWidth: true,
+  },
 }
 
 export const Sizes = () => (

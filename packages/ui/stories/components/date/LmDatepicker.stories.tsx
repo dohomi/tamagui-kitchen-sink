@@ -7,37 +7,41 @@ export default {
   component: LmDatepicker,
 }
 
-const Template = (args) => <LmDatepicker {...args} />
-
-export const Single = Template.bind({})
-Single.args = {
-  label: 'Pick a date',
-}
-export const SinglePreselect = Template.bind({})
-SinglePreselect.args = {
-  label: 'Preselected date',
-  startDate: new Date('2022-03-01'),
+export const Single = {
+  args: {
+    label: 'Pick a date',
+  },
 }
 
-export const RangePicker = Template.bind({})
-RangePicker.args = {
-  label: 'Pick a range',
-  isRangePicker: true,
+export const SinglePreselect = {
+  args: {
+    label: 'Preselected date',
+    startDate: new Date('2022-03-01'),
+  },
 }
 
-export const RangePickerPreselect = Template.bind({})
-RangePickerPreselect.args = {
-  isRangePicker: true,
-  label: 'Range preselected',
-  startDate: new Date('2022-03-01'),
-  endDate: new Date('2022-03-15'),
+export const RangePicker = {
+  args: {
+    label: 'Pick a range',
+    isRangePicker: true,
+  },
 }
 
-export const ThreeMonths = Template.bind({})
-ThreeMonths.args = {
-  label: 'Range with 3 months',
-  isRangePicker: true,
-  numberOfMonths: 3,
+export const RangePickerPreselect = {
+  args: {
+    isRangePicker: true,
+    label: 'Range preselected',
+    startDate: new Date('2022-03-01'),
+    endDate: new Date('2022-03-15'),
+  },
+}
+
+export const ThreeMonths = {
+  args: {
+    label: 'Range with 3 months',
+    isRangePicker: true,
+    numberOfMonths: 3,
+  },
 }
 
 export const ReactHookForm = () => (

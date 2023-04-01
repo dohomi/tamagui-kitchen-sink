@@ -1,8 +1,8 @@
-import {OverviewScreen} from "app/src/features/overview/overview";
+import { OverviewScreen } from './overview'
 
 export default {
-    title: 'screen/overview',
-    component: OverviewScreen
+  title: 'screen/overview',
+  component: OverviewScreen,
 }
 
-export const Overview = <OverviewScreen/>
+export const Overview = () => <OverviewScreen />
