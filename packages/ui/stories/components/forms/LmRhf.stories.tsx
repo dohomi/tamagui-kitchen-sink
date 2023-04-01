@@ -1,17 +1,17 @@
 import { Form, Paragraph, XStack, YStack } from 'tamagui'
-import {
-  LmAlert,
-  LmCard,
-  LmCheckboxRhf,
-  LmDatepickerRhf,
-  LmFormRhfProvider,
-  LmInputRhf,
-  LmResetButtonRhf,
-  LmSelectRhf,
-  LmSliderRhf,
-  LmSubmitButtonRhf,
-  LmSwitchRhf,
-} from '../../../src'
+
+import { LmAlert } from '../../../src/components/content/LmAlert'
+import { LmCard } from '../../../src/components/content/LmCard'
+import { LmCheckboxRhf } from '../../../src/components/forms/rhf/LmCheckboxRhf'
+import { LmDatepickerRhf } from '../../../src/components/forms/rhf/LmDatepickerRhf'
+import { LmFormRhfProvider } from '../../../src/components/forms/rhf/LmFormRhfProvider'
+import { LmInputRhf } from '../../../src/components/forms/rhf/LmInputRhf'
+import { LmResetButtonRhf } from '../../../src/components/forms/rhf/LmResetButtonRhf'
+import { LmSelectRhf } from '../../../src/components/forms/rhf/LmSelectRhf'
+import { LmSliderRhf } from '../../../src/components/forms/rhf/LmSliderRhf'
+import { LmSubmitButtonRhf } from '../../../src/components/forms/rhf/LmSubmitButtonRhf'
+import { LmSwitchRhf } from '../../../src/components/forms/rhf/LmSwitchRhf'
+
 import React from 'react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { action } from '@storybook/addon-actions'

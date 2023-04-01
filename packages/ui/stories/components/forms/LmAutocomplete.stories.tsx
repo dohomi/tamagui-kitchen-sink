@@ -1,10 +1,8 @@
-import {
-  LmAutocomplete,
-  LmAutocompleteRhf,
-  LmFormRhfProvider,
-  LmSubmitButtonRhf,
-} from '../../../src'
-import { Meta, StoryFn } from '@storybook/react'
+import { LmAutocomplete } from '../../../src/components/forms/LmAutocomplete'
+import { LmAutocompleteRhf } from '../../../src/components/forms/rhf/LmAutocompleteRhf'
+import { LmFormRhfProvider } from '../../../src/components/forms/rhf/LmFormRhfProvider'
+import { LmSubmitButtonRhf } from '../../../src/components/forms/rhf/LmSubmitButtonRhf'
+import { Meta } from '@storybook/react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { useState } from 'react'
 import { action } from '@storybook/addon-actions'

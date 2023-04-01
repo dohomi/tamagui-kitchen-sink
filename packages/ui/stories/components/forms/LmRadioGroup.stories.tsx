@@ -1,7 +1,10 @@
-import { LmRadioGroup, LmRadioGroupRhf, LmSubmitButtonRhf } from '../../../src'
+import { LmRadioGroup } from '../../../src/components/forms/LmRadioGroup'
+import { LmRadioGroupRhf } from '../../../src/components/forms/rhf/LmRadioGroupRhf'
+import { LmSubmitButtonRhf } from '../../../src/components/forms/rhf/LmSubmitButtonRhf'
+import { LmFormRhfProvider } from '../../../src/components/forms/rhf/LmFormRhfProvider'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
-import { LmFormRhfProvider, YStack } from 'tamagui-extras'
 import { action } from '@storybook/addon-actions'
+import { YStack } from 'tamagui-extras'
 
 export default {
   title: 'ui/Forms/RadioGroup',

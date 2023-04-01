@@ -1,5 +1,5 @@
-import { LmButton } from '../../../src'
-import { Meta, StoryFn } from '@storybook/react'
+import { LmButton } from '../../../src/components/forms/LmButton'
+import { Meta } from '@storybook/react'
 import { XStack, YStack } from 'tamagui'
 import { Star } from 'tamagui-phosphor-icons'
 
