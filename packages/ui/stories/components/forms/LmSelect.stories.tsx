@@ -1,6 +1,6 @@
-import { Meta, StoryFn } from '@storybook/react'
+import { Meta } from '@storybook/react'
 import { XStack, YStack } from 'tamagui'
-import { LmSelect } from '../../../src'
+import { LmSelect } from '../../../src/components/forms/LmSelect'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 
 export default {
