@@ -1,4 +1,4 @@
-import { Form, Paragraph, XStack, YStack } from 'tamagui'
+import { Form, Paragraph, XStack, YStack } from 'tamagui/src'
 
 import { LmAlert } from '../../../src/components/content/LmAlert'
 import { LmCard } from '../../../src/components/content/LmCard'
@@ -11,11 +11,11 @@ import { LmSelectRhf } from '../../../src/components/forms/rhf/LmSelectRhf'
 import { LmSliderRhf } from '../../../src/components/forms/rhf/LmSliderRhf'
 import { LmSubmitButtonRhf } from '../../../src/components/forms/rhf/LmSubmitButtonRhf'
 import { LmSwitchRhf } from '../../../src/components/forms/rhf/LmSwitchRhf'
+import { LmButton } from 'tamagui-extras/src/components/forms/LmButton'
 
 import React from 'react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { action } from '@storybook/addon-actions'
-import { LmButton } from 'tamagui-extras'
 import { useForm } from 'react-hook-form'
 import { StoryObj } from '@storybook/react'
 
