@@ -19,7 +19,7 @@
     "expo-localization": "~14.0.0",
     "i18next": "^21.9.1",
     "react-i18next": "^11.18.6",
-    "solito": "^2.1.2",
+    "solito": "^3.0.0",
     "tamagui-extras": "*",
     "zustand": "^4.3.3"
   },

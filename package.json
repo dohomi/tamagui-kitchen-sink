@@ -19,6 +19,7 @@
     "build:web": "yarn turbo run build --filter=next-app && yarn turbo run start --filter=next-app",
     "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader && manypkg upgrade react-native-web-lite && manypkg upgrade tamagui-phosphor-icons",
     "upgrade:rnw": "manypkg upgrade react-native-web",
+    "upgrade:solito": "manypkg upgrade solito",
     "upgrade:next": "manypkg upgrade next && manypkg upgrade eslint-config-next",
     "upgrade:sb": "manypkg upgrade @storybook",
     "sync:tamagui": "${TAMAGUI_PATH:-$HOME/tamagui}/starters-sync.sh",
