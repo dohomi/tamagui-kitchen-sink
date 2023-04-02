@@ -1,6 +1,7 @@
 import {
   Form,
   LmAlert,
+  LmButton,
   LmCard,
   LmCheckboxRhf,
   LmDatepickerRhf,
@@ -15,7 +16,6 @@ import {
   XStack,
   YStack,
 } from '../../../src'
-import { LmButton } from '../../../src/'
 
 import React from 'react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'

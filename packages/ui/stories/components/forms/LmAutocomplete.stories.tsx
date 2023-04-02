@@ -1,8 +1,10 @@
-import { LmAutocomplete } from '../../../src/components/forms/LmAutocomplete'
-import { LmAutocompleteRhf } from '../../../src/components/forms/rhf/LmAutocompleteRhf'
-import { LmFormRhfProvider } from '../../../src/components/forms/rhf/LmFormRhfProvider'
-import { LmSubmitButtonRhf } from '../../../src/components/forms/rhf/LmSubmitButtonRhf'
-import { Meta } from '@storybook/react'
+import {
+  LmAutocomplete,
+  LmAutocompleteRhf,
+  LmFormRhfProvider,
+  LmSubmitButtonRhf,
+} from '../../../src'
+import { Meta, StoryObj } from '@storybook/react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { useState } from 'react'
 import { action } from '@storybook/addon-actions'
@@ -50,37 +52,43 @@ export const AllowNew = {
   },
 }
 
-export const SingleRhf = () => (
-  <LmFormRhfProvider
-    defaultValues={{
-      pre: { value: 'Pear', label: 'Pear' },
-      pre_matched: 'Pear',
-    }}
-  >
-    <YStack space>
-      <LmAutocompleteRhf label={'Single'} name={'autocomplete'} options={options} />
-      <LmAutocompleteRhf label={'Single Preselected'} name={'pre'} options={options} />
-      <LmAutocompleteRhf
-        label={'Single Preselected - Match ID'}
-        name={'pre_matched'}
-        matchId={true}
-        options={options}
-      />
-      <LmAutocompleteRhf
-        label={'With Allow New Hook'}
-        name={'with-hook'}
-        options={options.map((i) => ({ ...i, otherVal: i.value }))}
-        allowNew
-        allowNewHook={(newValue) => ({
-          label: newValue,
-          value: (Math.random() + 1).toString(36).substring(7),
-        })}
-      />
-      <LmSubmitButtonRhf onSubmit={action('formData')}>Submit</LmSubmitButtonRhf>
-    </YStack>
-  </LmFormRhfProvider>
-)
-
+export const SingleRhf: StoryObj = {
+  parameters: {
+    docs: {
+      source: {},
+    },
+  },
+  render: () => (
+    <LmFormRhfProvider
+      defaultValues={{
+        pre: { value: 'Pear', label: 'Pear' },
+        pre_matched: 'Pear',
+      }}
+    >
+      <YStack space>
+        <LmAutocompleteRhf label={'Single'} name={'autocomplete'} options={options} />
+        <LmAutocompleteRhf label={'Single Preselected'} name={'pre'} options={options} />
+        <LmAutocompleteRhf
+          label={'Single Preselected - Match ID'}
+          name={'pre_matched'}
+          matchId={true}
+          options={options}
+        />
+        <LmAutocompleteRhf
+          label={'With Allow New Hook'}
+          name={'with-hook'}
+          options={options.map((i) => ({ ...i, otherVal: i.value }))}
+          allowNew
+          allowNewHook={(newValue) => ({
+            label: newValue,
+            value: (Math.random() + 1).toString(36).substring(7),
+          })}
+        />
+        <LmSubmitButtonRhf onSubmit={action('formData')}>Submit</LmSubmitButtonRhf>
+      </YStack>
+    </LmFormRhfProvider>
+  ),
+}
 export const MultipleRhf = () => {
   const [form, setForm] = useState<any>({
     pre: [{ value: 'Pear', label: 'Pear' }],

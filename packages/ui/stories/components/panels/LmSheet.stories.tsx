@@ -1,6 +1,5 @@
 import { Text, YStack } from 'tamagui'
-import { LmSheet, usePopoverState } from '../../../src'
-import { LmButton } from 'tamagui-extras'
+import { LmButton, LmSheet, usePopoverState } from '../../../src'
 import { X } from 'tamagui-phosphor-icons'
 
 export default {

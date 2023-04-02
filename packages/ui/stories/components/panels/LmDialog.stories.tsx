@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import { Button, Text, XStack, YStack } from 'tamagui'
 import {
+  LmButton,
   LmDialog,
   LmDialogActions,
   LmDialogContent,
+  LmFormRhfProvider,
   LmInputRhf,
   LmSelectRhf,
   LmSubmitButtonRhf,
   usePopoverState,
 } from '../../../src'
 import { WarningCircle, X } from 'tamagui-phosphor-icons'
-import { LmButton, LmFormRhfProvider } from 'tamagui-extras'
 
 export default {
   title: 'ui/Panels/Dialog',

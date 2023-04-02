@@ -1,5 +1,5 @@
 import { LmCard, LmCardProps } from '../../../src'
-import { Meta, StoryFn } from '@storybook/react'
+import { Meta } from '@storybook/react'
 
 export default {
   title: 'ui/Content/Card',

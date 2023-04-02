@@ -1,7 +1,4 @@
-import { LmCheckbox } from '../../../src/components/forms/LmCheckbox'
-import { LmCheckboxRhf } from '../../../src/components/forms/rhf/LmCheckboxRhf'
-import { LmSubmitButtonRhf } from '../../../src/components/forms/rhf/LmSubmitButtonRhf'
-import { LmFormRhfProvider } from '../../../src/components/forms/rhf/LmFormRhfProvider'
+import { LmCheckbox, LmCheckboxRhf, LmFormRhfProvider, LmSubmitButtonRhf } from '../../../src'
 import { YStack } from 'tamagui'
 import React from 'react'
 import { action } from '@storybook/addon-actions'

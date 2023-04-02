@@ -48,6 +48,7 @@
     "@storybook/react": "^6.5.16",
     "@tamagui/build": "1.9.22",
     "@tamagui/themes": "1.9.22",
+    "prettier": "^2.8.7",
     "solito": "^3.0.0",
     "tamagui": "1.9.22",
     "tamagui-phosphor-icons": "0.2.0"

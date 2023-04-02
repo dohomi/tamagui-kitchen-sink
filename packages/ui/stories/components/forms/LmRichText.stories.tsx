@@ -1,8 +1,6 @@
 import React from 'react'
 import { Meta } from '@storybook/react'
-import { LmRichTextRhf } from '../../../src/components/forms/rhf/LmRichTextRhf'
-import { LmFormRhfProvider } from '../../../src/components/forms/rhf/LmFormRhfProvider'
-import { LmSubmitButtonRhf } from '../../../src/components/forms/rhf/LmSubmitButtonRhf'
+import { LmFormRhfProvider, LmRichTextRhf, LmSubmitButtonRhf } from '../../../src'
 
 export default {
   title: 'ui/Forms/Rich Text Editor',

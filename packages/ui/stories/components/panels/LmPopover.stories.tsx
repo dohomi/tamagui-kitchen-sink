@@ -1,4 +1,5 @@
 import {
+  LmButton,
   LmCard,
   LmDialog,
   LmDialogContent,
@@ -7,7 +8,6 @@ import {
   usePopoverState,
 } from '../../../src'
 import { Button, ListItem, Text, XStack } from 'tamagui'
-import { LmButton } from 'tamagui-extras'
 import { Smiley } from 'tamagui-phosphor-icons'
 
 export default {

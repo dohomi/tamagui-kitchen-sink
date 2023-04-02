@@ -1,6 +1,6 @@
 import { LmStarRating } from '../../../src/components/forms/LmStarRating'
 import { LmStarRatingRhf } from '../../../src/components/forms/rhf/LmStarRatingRhf'
-import { LmFormRhfProvider } from '../../../src/components/forms/rhf/LmFormRhfProvider'
+import { LmFormRhfProvider } from '../../../src'
 import { YStack } from 'tamagui'
 
 export default {

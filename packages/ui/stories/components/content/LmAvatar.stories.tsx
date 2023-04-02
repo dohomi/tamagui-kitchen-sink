@@ -44,9 +44,7 @@ export const WithSolitoImage = () => (
         style={{}}
         sizes={`40px`}
         resizeMode={'cover'}
-        loader={({ src }) => {
-          return `${src}`
-        }}
+        unoptimized
         src={`https://placekitten.com/400/300`}
       />
     </Circle>
