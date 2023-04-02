@@ -29,7 +29,8 @@
     "check-types": "yarn turbo run check-types",
     "codegen": "yarn turbo run codegen",
     "rm:nodemodule": "rm -rf node_modules apps/expo/node_modules apps/next/node_modules packages/ui/node_modules yarn.lock apps/storybook-react/node_modules apps/storybook-react-native/node_modules apps/storybook-react/dist",
-    "release:patch": "turbo-version -t tamagui-extras -b patch"
+    "version:patch": "turbo-version -t tamagui-extras -b patch",
+    "release:ui": "turbo-release -t tamagui-extras"
   },
   "resolutions": {
     "esbuild": "0.15.6",
