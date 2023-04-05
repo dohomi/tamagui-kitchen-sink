@@ -17,10 +17,13 @@
   ],
   "types": "./types/index",
   "main": "src/index.ts",
-  "module:jsx": "dist",
   "files": [
     "types/**/*",
-    "link/**/*"
+    "link/**/*",
+    "youtube/**/*",
+    "richText/**/*",
+    "video/**/*",
+    "form/**/*"
   ],
   "scripts": {
     "build": "rm -rf dist types && tamagui-build src/index.tsx",
