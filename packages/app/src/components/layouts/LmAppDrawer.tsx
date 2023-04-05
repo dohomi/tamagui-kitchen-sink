@@ -1,5 +1,4 @@
-import {Button, LmButton, Sheet, YStack} from 'tamagui-extras'
-import {LmLinkButton} from 'tamagui-extras/link'
+import {Button, LmButton, LmLinkButton, Sheet, YStack} from 'tamagui-extras'
 import {useAppState} from 'app/src/state/appState'
 import React, {useState} from 'react'
 import {XStack} from 'tamagui'

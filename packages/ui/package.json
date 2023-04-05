@@ -16,27 +16,12 @@
     "react-hook-form"
   ],
   "types": "./types/index",
-  "main": "dist/cjs",
-  "module": "dist/esm",
-  "module:jsx": "dist/jsx",
+  "main": "src/index.ts",
+  "module:jsx": "dist",
   "files": [
-    "types",
-    "dist",
-    "link"
+    "types/**/*",
+    "link/**/*"
   ],
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
-    },
-    "./*": {
-      "types": "./types/*.d.ts",
-      "import": "./dist/esm/*.js",
-      "require": "./dist/cjs/*.js"
-    }
-  },
   "scripts": {
     "build": "rm -rf dist types && tamagui-build src/index.tsx",
     "watch": "tamagui-build src/index.tsx --watch",
