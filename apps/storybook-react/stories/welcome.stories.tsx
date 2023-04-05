@@ -1,4 +1,4 @@
-import { Anchor, H1, H3, H5, Paragraph, YStack } from 'tamagui-extras'
+import { Anchor, H1, H3, H5, Paragraph, YStack } from 'tamagui'
 
 const meta = {
   title: 'Installation',

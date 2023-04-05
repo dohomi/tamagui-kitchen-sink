@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react'
-import { YStack } from 'tamagui-extras'
+import { YStack } from 'tamagui'
 import { LmAppDrawer } from 'app/src/components/layouts/LmAppDrawer'
 import { LmAppBar } from 'app/src/components/layouts/LmAppBar'
 
@@ -8,7 +8,7 @@ export function LmAppShell({ children, title }: PropsWithChildren<{ title?: stri
     <YStack>
       <LmAppBar title={title || 'Demo'} />
       <YStack
-        bc={'$backgroundStrong'}
+        backgroundColor={'$backgroundStrong'}
         flex={1}
         justifyContent="center"
         alignItems="center"

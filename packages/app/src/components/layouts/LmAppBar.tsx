@@ -2,8 +2,8 @@ import React from 'react'
 import { LmDashboardShellProps } from 'app/src/components/layouts/layoutTypes'
 import { LmThemeToggle } from 'app/src/components/various/LmThemeToggle'
 import { useToggleMainDrawer } from 'app/src/state/appState'
-import { XStack } from 'tamagui'
-import { H3, LmButton } from 'tamagui-extras'
+import { H3, XStack } from 'tamagui'
+import { LmButton } from 'tamagui-extras'
 import { List, Sun } from 'tamagui-phosphor-icons'
 
 type LmDashboardAppBarProps = Pick<LmDashboardShellProps, 'rightContent' | 'title'>
