@@ -1,6 +1,6 @@
 import { Button, Input, ListItem, Popover, ThemeName, XStack } from 'tamagui'
 import { CheckSquare, FloppyDisk, ListPlus, Square, X } from 'tamagui-phosphor-icons'
-import { useEffect, useId, useRef, useState } from 'react'
+import {createContext, useContext, useDeferredValue, useEffect, useId, useRef, useState} from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
 import { LmPopover } from '../panels'
@@ -19,6 +19,15 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
   allowNew?: boolean
   allowNewHook?: (newValue: string) => Option
 }
+
+type AutocompleteContext = {
+  selection: Option | Option[] | null
+  setSelection: () => void
+}
+
+const AutocompleteContext = createContext({
+
+})
 
 export function LmAutocomplete({
   options,
@@ -52,6 +61,7 @@ export function LmAutocomplete({
     }
   }, [width])
 
+  console.log('render',selection)
   const inputValue = Array.isArray(selection)
     ? selection.map((option) => option?.label).join(', ')
     : selection?.label || ''
@@ -80,6 +90,7 @@ export function LmAutocomplete({
           options={opts}
           onSelectionChange={(sel) => {
             if (sel !== selection) {
+              console.log("hier", sel, selection)
               setSelection(sel || null)
             }
           }}
@@ -120,6 +131,7 @@ function LmAutocompleteInputContent({
   value,
 }: LmAutocompleteInputContentProps) {
   const [searchTerm, setSearchTerm] = useState<string>()
+  const deferred = useDeferredValue(searchTerm)
   return (
     <>
       {(!disableSearch || allowNew) && (
@@ -145,14 +157,14 @@ function LmAutocompleteInputContent({
           <LmAutocompleteMultiSelection
             value={value as Option[]}
             options={options}
-            searchTerm={searchTerm}
+            searchTerm={deferred}
             onSelectionChange={onSelectionChange}
           />
         ) : (
           <LmAutocompleteSingleSelection
             value={value as Option}
             options={options}
-            searchTerm={searchTerm}
+            searchTerm={deferred}
             onSelectionChange={onSelectionChange}
           />
         )}

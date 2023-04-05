@@ -75,12 +75,13 @@ export const ReactHookForm: StoryObj = {
   ),
 }
 
+
 export const FormAsRenderFunction = () => {
   return (
     <LmFormRhfProvider
       defaultValues={{
         name: '',
-        email: undefined,
+        email: null
       }}
     >
       {({ control, handleSubmit, reset }) => (

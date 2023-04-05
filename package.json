@@ -22,6 +22,7 @@
     "upgrade:solito": "manypkg upgrade solito",
     "upgrade:next": "manypkg upgrade next && manypkg upgrade eslint-config-next",
     "upgrade:sb": "manypkg upgrade @storybook",
+    "upgrade:ts": "manypkg upgrade typescript",
     "sync:tamagui": "${TAMAGUI_PATH:-$HOME/tamagui}/starters-sync.sh",
     "eas:dev:ios": "cd apps/expo && yarn eas:dev:ios",
     "doctor": "yarn turbo run doc",
@@ -37,7 +38,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-refresh": "^0.14.0",
-    "typescript": "4.9.4",
     "react-native-web": "0.18.9",
     "webpack": "^5.74.0",
     "@tiptap/extension-bubble-menu": "2.0.0-beta.213"
@@ -54,7 +54,7 @@
     "eslint": "^8.21.0",
     "prettier": "^2.7.1",
     "turbo": "^1.8.8",
-    "typescript": "^4.9.4"
+    "typescript": "^5.0.3"
   },
   "packageManager": "yarn@3.2.3"
 }
