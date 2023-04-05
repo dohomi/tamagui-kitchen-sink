@@ -1,1 +1,1 @@
-export * from './components/forms/LmLinkButton'
+export * from './components/link'

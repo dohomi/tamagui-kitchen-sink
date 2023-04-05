@@ -1,4 +1,4 @@
-import { LmSwitch } from '../../../src'
+import { LmSwitch } from '../../../src/form'
 import { YStack } from 'tamagui'
 
 export default {

@@ -1,4 +1,5 @@
-import { LmDatepicker, LmDatepickerRhf, LmFormRhfProvider, LmSubmitButtonRhf } from '../../../src'
+import { LmDatepicker, LmDatepickerRhf } from '../../../src/date'
+import { LmFormRhfProvider, LmSubmitButtonRhf } from '../../../src/form'
 import { YStack } from 'tamagui'
 import { action } from '@storybook/addon-actions'
 

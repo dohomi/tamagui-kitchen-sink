@@ -1,12 +1,12 @@
-import { LmAspectRatio } from '../../../src/components/content/LmAspectRatio'
-import { Card, H2, Stack, XStack, YStack } from 'tamagui'
-import { H3, Paragraph } from 'tamagui-extras'
-import { LmImage, LmVideo, LmVideoEmbed } from '../../../src'
+import { LmAspectRatio } from '../../../src/components/core/content/LmAspectRatio'
+import { Card, H2, H3, Paragraph, Stack, XStack, YStack } from 'tamagui'
+import { LmImage } from '../../../src'
+import { LmVideo } from '../../../src/video'
+import { LmYoutubeEmbed } from '../../../src/youtube'
 
 export default {
   title: 'ui/Content/Aspect Ratio',
 }
-
 export const RatioStack = () => (
   <Stack backgroundColor={'red'} aspectRatio={16 / 9} width={200}></Stack>
 )
@@ -56,7 +56,7 @@ export const VideoAspectRatio = () => (
 export const YoutubeEmbedRatio = () => (
   <YStack width={300} backgroundColor={'$green5'} height={600} space>
     <H3 paddingBottom={'$4'}>Parent Container: 300x600</H3>
-    <LmVideoEmbed youtubeId={'JxS5E-kZc2s'} aspectRatio={4 / 3} />
-    <LmVideoEmbed youtubeId={'JxS5E-kZc2s'} aspectRatio={2 / 3} />
+    <LmYoutubeEmbed youtubeId={'JxS5E-kZc2s'} aspectRatio={4 / 3} />
+    <LmYoutubeEmbed youtubeId={'JxS5E-kZc2s'} aspectRatio={2 / 3} />
   </YStack>
 )

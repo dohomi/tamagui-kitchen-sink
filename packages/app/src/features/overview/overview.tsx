@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   H1,
   H2,
@@ -5,23 +6,21 @@ import {
   H4,
   H5,
   H6,
-  LmAvatar,
-  LmButton,
-  LmInput,
-  LmSelect,
+  Paragraph,
   Separator,
   SizableText,
   SpaceTokens,
+  useTheme,
   XGroup,
   XStack,
   YGroup,
   YStack,
-} from 'tamagui-extras'
-import React from 'react'
-import { Paragraph, useTheme } from 'tamagui'
+} from 'tamagui'
 import { Star } from 'tamagui-phosphor-icons'
 import { fruitItemsFixtures } from 'app/src/lib/fixtures/selectItems'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
+import { LmInput, LmSelect } from 'tamagui-extras/form'
+import { LmAvatar, LmButton } from 'tamagui-extras'
 
 export function OverviewScreen() {
   const {} = useTheme()
@@ -54,8 +53,7 @@ export function OverviewScreen() {
             <H4>Heading 4</H4>
             <H5>Heading 5</H5>
             <H6>Heading 6</H6>
-          </YStack>
-          <YStack>
+
             <H3>Sizeable Text</H3>
             <SizableText theme="alt1" size="$2">
               Size 2

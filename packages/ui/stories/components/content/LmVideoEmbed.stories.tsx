@@ -1,8 +1,8 @@
-import { LmVideoEmbed } from '../../../src'
+import { LmYoutubeEmbed } from '../../../src/youtube'
 
 export default {
-  title: 'ui/Content/Video Embed',
-  component: LmVideoEmbed,
+  title: 'ui/Content/Youtube Embed',
+  component: LmYoutubeEmbed,
 }
 
 export const Youtube = {

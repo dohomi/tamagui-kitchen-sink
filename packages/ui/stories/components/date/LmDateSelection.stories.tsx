@@ -1,9 +1,6 @@
-import {
-  LmDateSelection,
-  LmDateSelectionRhf,
-  LmFormRhfProvider,
-  LmSubmitButtonRhf,
-} from '../../../src'
+import { LmFormRhfProvider, LmSubmitButtonRhf } from '../../../src/form'
+import { LmDateSelection, LmDateSelectionRhf } from '../../../src/date'
+
 import { YStack } from 'tamagui'
 import React from 'react'
 

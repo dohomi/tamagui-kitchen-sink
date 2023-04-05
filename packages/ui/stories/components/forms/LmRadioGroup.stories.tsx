@@ -1,4 +1,4 @@
-import { LmFormRhfProvider, LmRadioGroup, LmRadioGroupRhf, LmSubmitButtonRhf } from '../../../src'
+import { LmFormRhfProvider, LmRadioGroup, LmRadioGroupRhf, LmSubmitButtonRhf } from '../../../src/form'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { action } from '@storybook/addon-actions'
 import { YStack } from 'tamagui'

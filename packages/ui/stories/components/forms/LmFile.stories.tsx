@@ -1,4 +1,4 @@
-// import { LmFile } from '../../../src/components/forms/filePicker/LmFile'
+// import { LmFile } from '../../../src/components/form/file/LmFile'
 // import { action } from '@storybook/addon-actions'
 
 export default {

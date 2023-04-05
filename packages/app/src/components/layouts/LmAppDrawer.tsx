@@ -1,10 +1,12 @@
-import {Button, LmButton, LmLinkButton, Sheet, YStack} from 'tamagui-extras'
+import {Button, LmButton, Sheet, YStack} from 'tamagui-extras'
+
 import {useAppState} from 'app/src/state/appState'
 import React, {useState} from 'react'
 import {XStack} from 'tamagui'
 import {useOnRouteChange} from 'app/src/navigation/useOnRouteChange'
 import {changeLanguage} from 'app/src/i18n/i18n'
 import {useTranslation} from 'react-i18next'
+import {LmLinkButton} from "tamagui-extras/link";
 
 export function LmAppDrawer() {
     const {t} = useTranslation()

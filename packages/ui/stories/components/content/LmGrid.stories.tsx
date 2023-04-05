@@ -1,7 +1,6 @@
 import React from 'react'
-import { Paragraph, Stack } from 'tamagui'
+import { H3, Paragraph, Stack } from 'tamagui'
 import { LmCard, LmGrid } from '../../../src'
-import { H3 } from 'tamagui-extras'
 
 export default {
   title: 'ui/Content/Grid',

@@ -1,4 +1,4 @@
-import { LmMonthsPicker } from '../../../src'
+import { LmMonthsPicker } from '../../../src/date'
 
 export default {
   title: 'ui/Date/Months Picker',

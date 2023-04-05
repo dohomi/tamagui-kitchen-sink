@@ -1,5 +1,5 @@
 import React from 'react'
-import { LmInput } from '../../../src'
+import { LmInput } from '../../../src/form'
 import { Meta } from '@storybook/react'
 import { XStack, YStack } from 'tamagui'
 

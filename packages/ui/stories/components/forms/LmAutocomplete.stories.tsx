@@ -3,7 +3,7 @@ import {
   LmAutocompleteRhf,
   LmFormRhfProvider,
   LmSubmitButtonRhf,
-} from '../../../src'
+} from '../../../src/form'
 import { Meta, StoryObj } from '@storybook/react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { useState } from 'react'

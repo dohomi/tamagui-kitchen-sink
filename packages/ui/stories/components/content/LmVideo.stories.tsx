@@ -1,5 +1,5 @@
 import React from 'react'
-import { LmVideo } from '../../../src'
+import { LmVideo } from '../../../src/video'
 
 export default {
   title: 'ui/Content/Video',

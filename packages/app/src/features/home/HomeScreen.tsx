@@ -1,5 +1,5 @@
 import React from 'react'
-import { Anchor, Button, H1, Paragraph, Separator, XStack, YStack } from 'tamagui-extras'
+import { Anchor, Button, H1, Paragraph, Separator, XStack, YStack } from 'tamagui'
 import { CaretDown } from 'tamagui-phosphor-icons'
 import { LmThemeToggle } from 'app/src/components/various/LmThemeToggle'
 import { useToggleMainDrawer } from 'app/src/state/appState'

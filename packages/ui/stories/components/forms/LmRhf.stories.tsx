@@ -1,10 +1,7 @@
+import { LmAlert, LmButton, LmCard } from '../../../src'
+import { Form, Paragraph, XStack, YStack } from 'tamagui'
 import {
-  Form,
-  LmAlert,
-  LmButton,
-  LmCard,
   LmCheckboxRhf,
-  LmDatepickerRhf,
   LmFormRhfProvider,
   LmInputRhf,
   LmResetButtonRhf,
@@ -12,11 +9,8 @@ import {
   LmSliderRhf,
   LmSubmitButtonRhf,
   LmSwitchRhf,
-  Paragraph,
-  XStack,
-  YStack,
-} from '../../../src'
-
+} from '../../../src/form'
+import { LmDatepickerRhf } from '../../../src/date'
 import React from 'react'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { action } from '@storybook/addon-actions'
@@ -75,13 +69,12 @@ export const ReactHookForm: StoryObj = {
   ),
 }
 
-
 export const FormAsRenderFunction = () => {
   return (
     <LmFormRhfProvider
       defaultValues={{
         name: '',
-        email: null
+        email: null,
       }}
     >
       {({ control, handleSubmit, reset }) => (
