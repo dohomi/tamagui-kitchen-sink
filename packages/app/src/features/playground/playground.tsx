@@ -6,12 +6,12 @@ import {
   LmStarRatingRhf,
 } from 'tamagui-extras/form'
 import { LmDatepickerRhf } from 'tamagui-extras/date'
-import { LmRichTextRhf } from 'tamagui-extras/richText'
 
 import React from 'react'
 import { fruitItemsFixtures } from './util'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
 import { SpaceTokens, YStack } from 'tamagui'
+import { LmRichTextRhf } from 'tamagui-extras/richText'
 
 export function PlaygroundScreen() {
   const defaultSectionProps: {
