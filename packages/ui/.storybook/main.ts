@@ -11,6 +11,7 @@ const config = {
       name: '@storybook/addon-react-native-web',
       options: {
         modulesToTranspile: [
+          'tamagui',
           'solito',
           'react-native',
           'react-native-web',
@@ -21,12 +22,6 @@ const config = {
           'expo-document-picker',
           'expo-av',
           'expo-asset',
-          'tamagui',
-          'tamagui-phosphor-icons',
-          '@tamagui/react-native-media-driver',
-          '@tamagui/themes',
-          '@tamagui/shorthands',
-          '@tamagui/animations-react-native',
         ],
 
         babelPlugins: [

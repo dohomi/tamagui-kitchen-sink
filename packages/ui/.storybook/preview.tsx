@@ -2,30 +2,10 @@ import '@tamagui/core/reset.css'
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/700.css'
 import 'raf/polyfill' // const OriginalNextImage = NextImage.default
-//
-// import { useThemeState } from 'app/src/state/themeState'
 import { TamaguiProvider, YStack } from 'tamagui'
 import { Preview } from '@storybook/react'
 import { IconContextProvider } from 'tamagui-phosphor-icons'
 import config from '../src/global'
-// import * as NextImage from 'next/image'
-
-// const OriginalNextFutureImage = NextImage.default
-// Object.defineProperty(NextImage, 'default', {
-//   configurable: true,
-//   value: (props: any) => (
-//     <OriginalNextFutureImage
-//       {...props}
-//       loader={
-//         props.loader
-//           ? props.loader
-//           : ({ src }) => {
-//               return src
-//             }
-//       }
-//     />
-//   ),
-// })
 
 const decorators = [
   (Story, args: any) => {
