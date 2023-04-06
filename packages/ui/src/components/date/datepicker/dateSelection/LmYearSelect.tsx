@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { LmSelect } from '../../../form/LmSelect'
+import { LmSelect } from '../../../form'
 import { InputSelectorProps } from './dateSelectionTypes'
 
 export function LmYearSelect(props: InputSelectorProps) {

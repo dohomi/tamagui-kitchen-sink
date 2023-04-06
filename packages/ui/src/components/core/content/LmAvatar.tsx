@@ -1,4 +1,4 @@
-import { Avatar, AvatarProps, Text, TextProps } from 'tamagui'
+import { Avatar, AvatarProps, SizableText, TextProps } from 'tamagui'
 
 export type LmAvatarProps = AvatarProps & {
   color?: AvatarProps['backgroundColor']
@@ -20,9 +20,9 @@ export function LmAvatar({ color, src, letter, letterProps, ...rest }: LmAvatarP
           <Avatar.Fallback backgroundColor={color || '$gray10'} />
         </>
       ) : (
-        <Text fontSize={'$8'} color={'white'} backgroundColor={'$gray10'} {...letterProps}>
+        <SizableText fontSize={'$8'} color={'white'} backgroundColor={'$gray10'} {...letterProps}>
           {letter}
-        </Text>
+        </SizableText>
       )}
     </Avatar>
   )

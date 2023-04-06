@@ -10,7 +10,7 @@
     "web": "yarn build && cd apps/next && yarn next",
     "sb:vite": "cd apps/vite && yarn storybook",
     "sb:native": "cd apps/storybook-react-native && yarn start",
-    "sb": "cd apps/storybook-react && yarn sb",
+    "sb": "cd packages/ui && yarn sb",
     "web:prod": "yarn workspace next-app build",
     "watch": "yarn turbo run watch --filter=tamagui-extras",
     "postinstall": "yarn build",
@@ -39,12 +39,14 @@
     "react-dom": "18.2.0",
     "react-refresh": "^0.14.0",
     "react-native-web": "0.18.9",
+    "react-native": "0.71.6",
     "webpack": "^5.74.0",
     "typescript": "4.9.5",
     "@tiptap/extension-bubble-menu": "2.0.0-beta.213"
   },
   "dependencies": {
-    "@babel/runtime": "^7.18.9"
+    "@babel/runtime": "^7.18.9",
+    "expo": "^48.0.10"
   },
   "devDependencies": {
     "@manypkg/cli": "^0.19.2",
