@@ -21,7 +21,7 @@
   "module:jsx": "src",
   "files": [
     "dist",
-    "types/index.d.ts",
+    "types",
     "link",
     "youtube",
     "richText",
