@@ -1,13 +1,13 @@
 import { Editor } from '@tiptap/react'
 import {
-  TextBolder,
-  TextItalic,
+  ArrowClockwise,
+  ArrowCounterClockwise,
   List,
   ListNumbers,
   Quotes,
-  ArrowClockwise,
+  TextBolder,
+  TextItalic,
   TextStrikethrough,
-  ArrowCounterClockwise,
 } from 'tamagui-phosphor-icons'
 import { Button, ThemeName, XStack } from 'tamagui'
 import { LmSelect } from '../form/LmSelect'
@@ -28,7 +28,7 @@ export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
         theme={editor.isActive('bold') ? activeThemeColor : undefined}
         icon={<TextBolder />}
       />
-       <Button
+      <Button
         chromeless
         onPress={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
@@ -99,7 +99,7 @@ export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
         icon={<ArrowClockwise />}
         onPress={() => editor.chain().focus().redo().run()}
         disabled={!editor.can().chain().focus().redo().run()}
-      /> 
+      />
     </XStack>
   )
 }

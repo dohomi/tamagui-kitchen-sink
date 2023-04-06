@@ -1,15 +1,21 @@
-import {LmDatepickerProvider} from './DatepickerProvider'
-import {FocusedInput, OnDatesChangeProps, START_DATE, useDatepicker, UseMonthProps,} from '@datepicker-react/hooks'
-import {useId, useState} from 'react'
-import {LmMonth} from './LmMonth'
-import {Button, Input, XGroup, XStack} from 'tamagui'
-import {Calendar} from 'tamagui-phosphor-icons'
-import {LmPopover} from '../../core/panels'
-import {usePopoverState} from '../../../hooks'
-import {getLocaleDate} from '../dateHelper'
-import {LmFormFieldContainer} from '../../form/LmFormFieldContainer'
-import {LmFormContainerBaseTypes} from '../../form/formContainerTypes'
-import {Platform} from 'react-native' // change language see: https://github.com/tomgreenwood1/react-datepicker/blob/master/packages/styled/src/components/DateRangeInput/DateRangeInput.stories.tsx#L228
+import { LmDatepickerProvider } from './DatepickerProvider'
+import {
+  FocusedInput,
+  OnDatesChangeProps,
+  START_DATE,
+  useDatepicker,
+  UseMonthProps,
+} from '@datepicker-react/hooks'
+import { useId, useState } from 'react'
+import { LmMonth } from './LmMonth'
+import { Button, Input, XGroup, XStack } from 'tamagui'
+import { Calendar } from 'tamagui-phosphor-icons'
+import { LmPopover } from '../../components/core/panels'
+import { usePopoverState } from '../../hooks'
+import { getLocaleDate } from '../dateHelper'
+import { LmFormFieldContainer } from '../../form/LmFormFieldContainer'
+import { LmFormContainerBaseTypes } from '../../form/formContainerTypes'
+import { Platform } from 'react-native' // change language see: https://github.com/tomgreenwood1/react-datepicker/blob/master/packages/styled/src/components/DateRangeInput/DateRangeInput.stories.tsx#L228
 
 // change language see: https://github.com/tomgreenwood1/react-datepicker/blob/master/packages/styled/src/components/DateRangeInput/DateRangeInput.stories.tsx#L228
 

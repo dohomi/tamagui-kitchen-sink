@@ -1,10 +1,10 @@
 import { Button, Input, ListItem, Popover, ThemeName, XStack } from 'tamagui'
 import { CheckSquare, FloppyDisk, ListPlus, Square, X } from 'tamagui-phosphor-icons'
-import {createContext, useContext, useDeferredValue, useEffect, useId, useRef, useState} from 'react'
+import { createContext, useDeferredValue, useEffect, useId, useRef, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { LmPopover } from '../core/panels'
-import { usePopoverState } from '../../hooks'
+import { LmPopover } from '../components/core/panels'
+import { usePopoverState } from '../hooks'
 import { useWindowDimensions } from 'react-native'
 
 type Option = { label: string; value: string | number }
@@ -25,9 +25,7 @@ type AutocompleteContext = {
   setSelection: () => void
 }
 
-const AutocompleteContext = createContext({
-
-})
+const AutocompleteContext = createContext({})
 
 export function LmAutocomplete({
   options,
@@ -61,7 +59,7 @@ export function LmAutocomplete({
     }
   }, [width])
 
-  console.log('render',selection)
+  console.log('render', selection)
   const inputValue = Array.isArray(selection)
     ? selection.map((option) => option?.label).join(', ')
     : selection?.label || ''
@@ -90,7 +88,7 @@ export function LmAutocomplete({
           options={opts}
           onSelectionChange={(sel) => {
             if (sel !== selection) {
-              console.log("hier", sel, selection)
+              console.log('hier', sel, selection)
               setSelection(sel || null)
             }
           }}

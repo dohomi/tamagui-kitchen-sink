@@ -1,7 +1,7 @@
-import {LmFormRhfProvider} from "../../../src/components/form";
+import { LmFormRhfProvider } from '../../../src/form'
 
 export const StorybookRhfDecorator = (Story) => (
-    <LmFormRhfProvider>
-        <Story/>
-    </LmFormRhfProvider>
+  <LmFormRhfProvider>
+    <Story />
+  </LmFormRhfProvider>
 )

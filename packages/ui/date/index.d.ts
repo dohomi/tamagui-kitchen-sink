@@ -1,1 +1,1 @@
-export * from '../types/date'
+export * from '../types/date/index'

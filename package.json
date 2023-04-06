@@ -40,7 +40,6 @@
     "react-refresh": "^0.14.0",
     "react-native-web": "0.18.9",
     "webpack": "^5.74.0",
-    "typescript": "4.9.5",
     "@tiptap/extension-bubble-menu": "2.0.0-beta.213"
   },
   "dependencies": {

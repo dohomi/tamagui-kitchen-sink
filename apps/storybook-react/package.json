@@ -38,7 +38,7 @@
     "eslint-config-next": "13.2.4",
     "eslint-plugin-storybook": "^0.6.4",
     "path-browserify": "^1.0.1",
-    "storybook": "^7.0.0",
+    "storybook": "^7.0.2",
     "storybook-addon-next-router": "^4.0.2",
     "typescript": "5.0.3",
     "util": "^0.12.5"

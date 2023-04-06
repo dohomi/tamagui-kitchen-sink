@@ -1,1 +1,1 @@
-export * from '../types/richText'
+export * from '../types/richText/index'

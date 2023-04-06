@@ -1,1 +1,1 @@
-export * from '../types/youtube'
+export * from '../types/youtube/index'
