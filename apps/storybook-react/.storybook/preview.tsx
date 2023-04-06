@@ -9,10 +9,10 @@ import 'raf/polyfill' // const OriginalNextImage = NextImage.default
 //   configurable: true,
 //   value: (props) => <OriginalNextImage {...props} unoptimized />
 // })
-import {useThemeState} from 'app/src/state/themeState'
-import {Provider} from 'app/src/provider'
-import {YStack} from 'tamagui-extras'
-import {Preview} from '@storybook/react'
+import { useThemeState } from 'app/src/state/themeState'
+import { LmTamaguiProvider } from 'app/src/provider/LmTamaguiProvider'
+import { YStack } from 'tamagui-extras'
+import { Preview } from '@storybook/react'
 // import * as NextImage from 'next/image'
 
 // const OriginalNextFutureImage = NextImage.default
@@ -44,11 +44,11 @@ const decorators = [
     }
     return (
       <>
-        <Provider defaultTheme={name || theme}>
+        <LmTamaguiProvider defaultTheme={name || theme}>
           <YStack bc={'$backgroundStrong'} padding={'$4'} flexGrow={1}>
             <Story />
           </YStack>
-        </Provider>
+        </LmTamaguiProvider>
       </>
     )
   },

@@ -1,6 +1,5 @@
 const { withTamagui } = require('@tamagui/next-plugin')
 const { join } = require('path')
-const withImages = require('next-images')
 const withTM = require('next-transpile-modules') // pass the modules you would like to see transpiled
 
 process.env.IGNORE_TS_CONFIG_PATHS = 'true'
@@ -35,7 +34,6 @@ const transpilePackages = [
 
 const plugins = [
   withTM(transpilePackages),
-  withImages,
   withTamagui({
     config: './tamagui.config.ts',
     components: ['tamagui-extras', 'tamagui'],
@@ -62,9 +60,7 @@ module.exports = function () {
     typescript: {
       ignoreBuildErrors: true,
     },
-    images: {
-      disableStaticImages: true,
-    },
+    images: {},
     modularizeImports: {
       'tamagui-phosphor-icons': {
         transform: 'tamagui-phosphor-icons/dist/jsx/icons/icons/{{member}}',

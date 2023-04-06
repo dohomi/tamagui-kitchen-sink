@@ -5,7 +5,6 @@ import { LmThemeToggle } from 'app/src/components/various/LmThemeToggle'
 import { useToggleMainDrawer } from 'app/src/state/appState'
 import { LmAppDrawer } from 'app/src/components/layouts/LmAppDrawer'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
-import {LmSelect} from "tamagui-extras/types/components/form";
 
 export function HomeScreen() {
   return (
