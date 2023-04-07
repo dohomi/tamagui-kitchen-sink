@@ -3,7 +3,7 @@ import { H3, Paragraph, Stack } from 'tamagui'
 import { LmCard, LmGrid } from '../../../src'
 
 export default {
-  title: 'ui/Content/Grid',
+  title: 'core/Content/Grid',
   component: LmGrid,
 }
 

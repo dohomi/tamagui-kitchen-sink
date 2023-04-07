@@ -3,7 +3,7 @@ import { Circle, XStack } from 'tamagui'
 import { SolitoImage } from 'solito/image'
 
 export default {
-  title: 'ui/Content/Avatar',
+  title: 'core/Content/Avatar',
   component: LmAvatar,
 }
 

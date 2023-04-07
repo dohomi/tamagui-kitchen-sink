@@ -4,7 +4,7 @@ import { XStack, YStack } from 'tamagui'
 import { Star } from 'tamagui-phosphor-icons'
 
 export default {
-  title: 'ui/Forms/Button',
+  title: 'core/Content/Button',
   component: LmButton,
 } as Meta<typeof LmButton>
 

@@ -1,7 +1,5 @@
 # tamagui-extras component addon for Tamagui
 
-
-
 ## 🔦 About
 
 This repo is a mono-repo where `tamagui-extras` will be developed to add missing components and functionalities into the
@@ -18,6 +16,7 @@ Fully functional [Demo](https://tamagui-extras.vercel.app/) to see all component
 ### Installation
 
 Install peer dependencies
+
 ```
 # yarn add tamagui @tamagui/themes tamagui-phosphor-icons solito
 # yarn add tamagui-extras
@@ -31,7 +30,8 @@ Due to external dependencies`tamagui-extras`utilizes some components which needs
 start.
 
 Currently following components must be
-transpiled as you can see in the [NextJS app](https://github.com/dohomi/tamagui-kitchen-sink/blob/master/apps/next/next.config.js#L16).
+transpiled as you can see in
+the [NextJS app](https://github.com/dohomi/tamagui-kitchen-sink/blob/master/apps/next/next.config.js#L16).
 
 Everytime you face the situation that an error message appears similar
 to `SyntaxError: Cannot use import statement outside a module` you might use an node module which is not transpiled for
@@ -48,7 +48,7 @@ Form components have a trailing `Rhf` component name for an easy integration wit
 Wrap any form component with `LmFormRhfProvider` and add a `LmSubmitButtonRhf` to validate and receive all form values.
 
 ```js
-import {LmFormRhfProvider, LmInputRhf, LmSliderRhf, LmSubmitButtonRhf} from "tamagui-extras";
+import {LmFormRhfProvider, LmInputRhf, LmSliderRhf, LmSubmitButtonRhf} from "tamagui-extras/form";
 import {YStack} from 'tamagui'
 
 function MyForm() {
@@ -69,6 +69,25 @@ function MyForm() {
         </LmFormRhfProvider>
     )
 }
+```
+
+### Upgrade Guide >= 0.12
+
+For better code split experience `tamagui-extras` only exports core components of `Tamagui`. From 0.12 onwards this is a
+breaking change. All external dependency are grouped inside of folder based entry points.
+
+Following paths are exported and should be picked from your IDE. To migrate simply remove the imports and re-import them
+via your IDE.
+
+```ts
+import {LmGrid} from "tamagui";
+import {LmInputRhf, LmFormRhfProvider} from "tamagui/form"; // depends on react-hook-form
+import {LmLinkButton} from "tamagui/link"; // depends on solito
+import {LmFile} from "tamagui/file"; // depends on expo file picker
+import {LmYoutubeEmbed} from "tamagui-extras/youtube"; // depends on expo
+import {LmVideo} from "tamagui-extras/video"; // depneds on expo/av
+import {LmRichTextRhf} from "tamagui-extras/richText"; // depends on tiptap
+import {LmDateSelectionRhf, LmDatepickerRhf} from "tamagui-extras/date"; // depends on react-hook-form
 ```
 
 #### Links

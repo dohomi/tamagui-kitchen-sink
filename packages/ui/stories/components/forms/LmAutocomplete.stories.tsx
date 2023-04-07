@@ -11,7 +11,7 @@ import { action } from '@storybook/addon-actions'
 import { YStack } from 'tamagui'
 
 export default {
-  title: 'ui/Forms/Autocomplete',
+  title: 'form/Autocomplete',
   component: LmAutocomplete,
 } as Meta<typeof LmAutocomplete>
 const options = fruitItemsFixtures

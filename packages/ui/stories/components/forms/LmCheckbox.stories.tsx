@@ -4,7 +4,7 @@ import React from 'react'
 import { action } from '@storybook/addon-actions'
 
 export default {
-  title: 'ui/Forms/Checkbox',
+  title: 'form/Checkbox',
   component: LmCheckbox,
 }
 

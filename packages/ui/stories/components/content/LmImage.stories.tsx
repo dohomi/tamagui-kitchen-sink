@@ -1,7 +1,7 @@
 import { LmImage } from '../../../src'
 
 export default {
-  title: 'ui/Content/Image',
+  title: 'core/Content/Image',
   component: LmImage,
 }
 const imageSrc = 'https://placekitten.com/400/300'

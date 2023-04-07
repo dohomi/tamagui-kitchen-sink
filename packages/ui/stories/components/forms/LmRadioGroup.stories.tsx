@@ -1,10 +1,15 @@
-import { LmFormRhfProvider, LmRadioGroup, LmRadioGroupRhf, LmSubmitButtonRhf } from '../../../src/form'
+import {
+  LmFormRhfProvider,
+  LmRadioGroup,
+  LmRadioGroupRhf,
+  LmSubmitButtonRhf,
+} from '../../../src/form'
 import { fruitItemsFixtures } from '../../../fixtures/selectItems'
 import { action } from '@storybook/addon-actions'
 import { YStack } from 'tamagui'
 
 export default {
-  title: 'ui/Forms/RadioGroup',
+  title: 'form/RadioGroup',
   component: LmRadioGroup,
 }
 

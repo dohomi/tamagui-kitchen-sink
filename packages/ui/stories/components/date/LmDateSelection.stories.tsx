@@ -5,7 +5,7 @@ import { YStack } from 'tamagui'
 import React from 'react'
 
 export default {
-  title: 'ui/Date/DateSelection',
+  title: 'date/Date Selection',
   component: LmDateSelection,
 }
 

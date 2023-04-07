@@ -18,7 +18,7 @@ import { useForm } from 'react-hook-form'
 import { StoryObj } from '@storybook/react'
 
 export default {
-  title: 'ui/Forms/ReactHookForm',
+  title: 'form/React Hook Form',
 }
 
 export const ReactHookForm: StoryObj = {
@@ -134,7 +134,8 @@ export const WithTamaguiForm_1 = () => {
         >
           <LmAlert severity={'info'} outlined>
             <Paragraph>
-              For best experience use render function as child of LmFormRhfProvider.
+              To be type safe use render function as child of LmFormRhfProvider and pass `control`
+              to all form components.
             </Paragraph>
           </LmAlert>
           <LmInputRhf
@@ -180,9 +181,7 @@ export const WithTamaguiForm_2: StoryObj = {
         })}
       >
         <LmAlert severity={'info'} outlined>
-          <Paragraph>
-            For best experience use render function as child of LmFormRhfProvider.
-          </Paragraph>
+          <Paragraph>You can use `useForm` directly from "react-hook-form".</Paragraph>
         </LmAlert>
         <LmInputRhf
           name={'name'}

@@ -1,7 +1,7 @@
 import { LmAlert } from '../../../src'
 
 export default {
-  title: 'ui/Content/Alert',
+  title: 'core/Content/Alert',
   component: LmAlert,
 }
 

@@ -3,7 +3,7 @@ import { LmButton, LmSheet, usePopoverState } from '../../../src'
 import { X } from 'tamagui-phosphor-icons'
 
 export default {
-  title: 'ui/Panels/Sheet',
+  title: 'core/Panels/Sheet',
   component: LmSheet,
 }
 

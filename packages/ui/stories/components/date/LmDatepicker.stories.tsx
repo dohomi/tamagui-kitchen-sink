@@ -4,7 +4,7 @@ import { YStack } from 'tamagui'
 import { action } from '@storybook/addon-actions'
 
 export default {
-  title: 'ui/Date/Datepicker',
+  title: 'date/Datepicker',
   component: LmDatepicker,
 }
 

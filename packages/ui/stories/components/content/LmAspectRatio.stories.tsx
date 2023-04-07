@@ -5,7 +5,7 @@ import { LmVideo } from '../../../src/video'
 import { LmYoutubeEmbed } from '../../../src/youtube'
 
 export default {
-  title: 'ui/Content/Aspect Ratio',
+  title: 'core/Content/Aspect Ratio',
 }
 export const RatioStack = () => (
   <Stack backgroundColor={'red'} aspectRatio={16 / 9} width={200}></Stack>

@@ -4,7 +4,7 @@ import { Meta } from '@storybook/react'
 import { XStack, YStack } from 'tamagui'
 
 export default {
-  title: 'ui/Forms/Input',
+  title: 'form/Input',
   component: LmInput,
 } as Meta<typeof LmInput>
 

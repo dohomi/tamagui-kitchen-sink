@@ -1,7 +1,7 @@
 import { OverviewScreen } from './overview'
 
 export default {
-  title: 'screen/overview',
+  title: 'demo/overview',
   component: OverviewScreen,
 }
 

@@ -4,7 +4,7 @@ import { LmFormRhfProvider, LmSubmitButtonRhf } from '../../../src/form'
 import { LmRichTextRhf } from '../../../src/richText'
 
 export default {
-  title: 'ui/Forms/Rich Text Editor',
+  title: 'richText/Rich Text Editor',
   component: LmRichTextRhf,
 } as Meta<typeof LmRichTextRhf>
 

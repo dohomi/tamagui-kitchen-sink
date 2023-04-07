@@ -2,7 +2,7 @@ import { LmFormRhfProvider, LmStarRating, LmStarRatingRhf } from '../../../src/f
 import { YStack } from 'tamagui'
 
 export default {
-  title: 'ui/Forms/StarRating',
+  title: 'form/StarRating',
   component: LmStarRating,
 }
 

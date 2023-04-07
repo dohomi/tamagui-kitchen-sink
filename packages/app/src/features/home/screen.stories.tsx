@@ -1,7 +1,7 @@
 import { HomeScreen } from './HomeScreen'
 
 export default {
-  title: 'screen/HomeScreen',
+  title: 'demo/HomeScreen',
   component: HomeScreen,
 }
 

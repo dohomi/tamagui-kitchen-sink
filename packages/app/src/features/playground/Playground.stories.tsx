@@ -1,7 +1,7 @@
 import { PlaygroundScreen } from 'app/src/features/playground/playground'
 
 export default {
-  title: 'screen/playground',
+  title: 'demo/playground',
 }
 
 export const Playground = () => <PlaygroundScreen />
