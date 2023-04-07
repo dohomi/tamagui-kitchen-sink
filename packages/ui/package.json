@@ -47,6 +47,7 @@
     "watch": "tamagui-build src/index.tsx --watch",
     "check-types": "tsc --noEmit",
     "ts:form": "tsc --baseUrl . --outDir ./form --rootDir src/form --emitDeclarationOnly --declarationMap",
+    "ts": "tsc --emitDeclarationOnly --declarationDir ./ --outDir ./typings --rootDir ./src --composite true --tsBuildInfoFile ./tsconfig.tsbuildinfo --declarationMap",
     "release-minor": "yarn build && npx release minor",
     "release-patch": "yarn build && npx release patch",
     "release-major": "yarn build && npx release major",
