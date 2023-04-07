@@ -17,7 +17,7 @@ Fully functional [Demo](https://tamagui-extras.vercel.app/) to see all component
 
 Install peer dependencies
 
-```
+```sh
 # yarn add tamagui @tamagui/themes tamagui-phosphor-icons solito
 # yarn add tamagui-extras
 ```
