@@ -3,3 +3,13 @@ dist/
 THUMBS_DB
 node_modules/
 types/
+*.d.ts
+*.d.ts.map
+youtube
+video
+richText
+link
+form
+file
+date
+core

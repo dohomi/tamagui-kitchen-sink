@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { LmFileProps } from './filePickerTypes'
 import { DocumentResult } from 'expo-document-picker'
 import { LmFilePicker } from './LmFilePicker'
-import { LmButton } from '../components/core/form'
+import { LmButton } from '../core/form'
 
 export function LmFile({
   pickerButtonProps = { label: 'Pick File' },

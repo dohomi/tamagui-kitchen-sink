@@ -1,5 +1,5 @@
 import { getDocumentAsync } from 'expo-document-picker'
-import { LmButton } from '../components/core/form'
+import { LmButton } from '../core/form'
 import { LmFilePickerProps } from './filePickerTypes'
 
 export function LmFilePicker({

@@ -22678,6 +22678,7 @@ __metadata:
     solito: ^3.0.0
     tamagui: 1.11.2
     tamagui-phosphor-icons: 0.2.0
+    typescript: 5.0.3
   peerDependencies:
     solito: ">=3.0.0"
     tamagui: 1.11.2

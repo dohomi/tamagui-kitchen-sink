@@ -3,8 +3,8 @@ import { CheckSquare, FloppyDisk, ListPlus, Square, X } from 'tamagui-phosphor-i
 import { createContext, useDeferredValue, useEffect, useId, useRef, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { LmPopover } from '../components/core/panels'
-import { usePopoverState } from '../hooks'
+import { LmPopover } from '../core/panels'
+import { usePopoverState } from '../core/hooks'
 import { useWindowDimensions } from 'react-native'
 
 type Option = { label: string; value: string | number }

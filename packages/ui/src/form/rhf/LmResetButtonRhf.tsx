@@ -1,4 +1,4 @@
-import { LmButton, LmButtonProps } from '../../components/core/form/LmButton'
+import { LmButton, LmButtonProps } from '../../core/form/LmButton'
 import { useFormContext } from 'react-hook-form'
 
 export function LmResetButtonRhf(props: LmButtonProps) {

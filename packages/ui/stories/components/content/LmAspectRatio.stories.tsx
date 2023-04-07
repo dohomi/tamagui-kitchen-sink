@@ -1,4 +1,4 @@
-import { LmAspectRatio } from '../../../src/components/core/content/LmAspectRatio'
+import { LmAspectRatio } from '../../../src/core/content/LmAspectRatio'
 import { Card, H2, H3, Paragraph, Stack, XStack, YStack } from 'tamagui'
 import { LmImage } from '../../../src'
 import { LmVideo } from '../../../src/video'

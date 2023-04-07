@@ -20,8 +20,13 @@
   "module": "dist/esm",
   "module:jsx": "src",
   "files": [
+    "src/animations.ts",
+    "src/global.ts",
+    "src/tamagui.config.ts",
     "dist",
-    "types",
+    "types/index.d.ts",
+    "types/core",
+    "tamagui.config.ts",
     "link",
     "youtube",
     "richText",
@@ -43,11 +48,11 @@
     }
   },
   "scripts": {
-    "build": "rm -rf dist types && tamagui-build src/index.tsx",
+    "build": "rm -rf dist types && tamagui-build src/index.tsx && yarn ts",
     "watch": "tamagui-build src/index.tsx --watch",
     "check-types": "tsc --noEmit",
-    "ts:form": "tsc --baseUrl . --outDir ./form --rootDir src/form --emitDeclarationOnly --declarationMap",
-    "ts": "tsc --emitDeclarationOnly --declarationDir ./ --outDir ./typings --rootDir ./src --composite true --tsBuildInfoFile ./tsconfig.tsbuildinfo --declarationMap",
+    "ts": "rm tsconfig.tsbuildinfo && tsc --emitDeclarationOnly --declarationDir ./ --outDir ./typings --rootDir ./src --tsBuildInfoFile ./tsconfig.tsbuildinfo --declarationMap",
+    "ts:clean": "tsc --build --clean && rm -f $(find . -type f -name \"*.d.ts\" -o -name \"*.d.ts.map\") && rm -rf core file form link richText video youtube",
     "release-minor": "yarn build && npx release minor",
     "release-patch": "yarn build && npx release patch",
     "release-major": "yarn build && npx release major",
@@ -72,7 +77,8 @@
     "prettier": "^2.8.7",
     "solito": "^3.0.0",
     "tamagui": "1.11.2",
-    "tamagui-phosphor-icons": "0.2.0"
+    "tamagui-phosphor-icons": "0.2.0",
+    "typescript": "5.0.3"
   },
   "peerDependencies": {
     "solito": ">=3.0.0",

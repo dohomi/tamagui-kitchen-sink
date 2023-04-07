@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { LmYoutubeEmbedProps } from './videoEmbedTypes'
 import { Platform } from 'react-native'
 import { Stack } from 'tamagui'
-import { LmSkeleton } from '../components/core/content'
+import { LmSkeleton } from '../core/content'
 
 export function LmYoutubeEmbed({
   youtubeId = 'JxS5E-kZc2s',

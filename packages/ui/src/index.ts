@@ -1,17 +1,10 @@
 export * from 'tamagui'
 
-// content
-export * from './components/core/content'
-
-// // theme
-export * from './components/themeMappings'
-
-// // panels
-export * from './components/core/panels'
-export * from './components/core/form'
-
-// hooks
-export * from './hooks'
+export * from './core/themeMappings'
+export * from './core/panels'
+export * from './core/hooks'
+export * from './core/form'
+export * from './core/content'
 
 // config
 export { config } from './tamagui.config'

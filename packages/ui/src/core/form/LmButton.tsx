@@ -1,5 +1,5 @@
 import { Button, ButtonProps, Spinner, TamaguiComponent } from 'tamagui'
-import { colormap, ThemeColors } from '../../themeMappings'
+import { colormap, ThemeColors } from '../themeMappings'
 import { forwardRef } from 'react'
 
 export type LmButtonProps = ButtonProps & {
