@@ -39,12 +39,42 @@
     ".": {
       "types": "./types/index.d.ts",
       "require": "./dist/esm/index.js",
-      "import": "./dist/esm/index.js"
+      "import": "./dist/esm/index.mjs"
     },
-    "./*": {
-      "types": "./*/index.d.ts",
-      "require": "./dist/esm/*/index.js",
-      "import": "./dist/esm/*/index.js"
+    "./date": {
+      "types": "./date/index.d.ts",
+      "require": "./dist/esm/date/index.js",
+      "import": "./dist/esm/date/index.mjs"
+    },
+    "./file": {
+      "types": "./file/index.d.ts",
+      "require": "./dist/esm/file/index.js",
+      "import": "./dist/esm/file/index.mjs"
+    },
+    "./form": {
+      "types": "./form/index.d.ts",
+      "require": "./dist/esm/form/index.js",
+      "import": "./dist/esm/form/index.mjs"
+    },
+    "./link": {
+      "types": "./link/index.d.ts",
+      "require": "./dist/esm/link/index.js",
+      "import": "./dist/esm/link/index.mjs"
+    },
+    "./richText": {
+      "types": "./richText/index.d.ts",
+      "require": "./dist/esm/richText/index.js",
+      "import": "./dist/esm/richText/index.mjs"
+    },
+    "./video": {
+      "types": "./video/index.d.ts",
+      "require": "./dist/esm/video/index.js",
+      "import": "./dist/esm/video/index.mjs"
+    },
+    "./youtube": {
+      "types": "./youtube/index.d.ts",
+      "require": "./dist/esm/youtube/index.js",
+      "import": "./dist/esm/youtube/index.mjs"
     }
   },
   "scripts": {
