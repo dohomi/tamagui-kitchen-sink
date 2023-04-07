@@ -80,10 +80,10 @@ Following paths are exported and should be picked from your IDE. To migrate simp
 via your IDE.
 
 ```ts
-import {LmGrid} from "tamagui";
-import {LmInputRhf, LmFormRhfProvider} from "tamagui/form"; // depends on react-hook-form
-import {LmLinkButton} from "tamagui/link"; // depends on solito
-import {LmFile} from "tamagui/file"; // depends on expo file picker
+import {LmGrid} from "tamagui-extras";
+import {LmInputRhf, LmFormRhfProvider} from "tamagui-extras/form"; // depends on react-hook-form
+import {LmLinkButton} from "tamagui-extras/link"; // depends on solito
+import {LmFile} from "tamagui-extras/file"; // depends on expo file picker
 import {LmYoutubeEmbed} from "tamagui-extras/youtube"; // depends on expo
 import {LmVideo} from "tamagui-extras/video"; // depneds on expo/av
 import {LmRichTextRhf} from "tamagui-extras/richText"; // depends on tiptap

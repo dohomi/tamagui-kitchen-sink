@@ -1,6 +1,7 @@
 import path from 'path'
+import { StorybookConfig } from '@storybook/nextjs'
 
-const config = {
+const config: StorybookConfig = {
   stories: [
     // '../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../../../packages/app/**/*.stories.@(js|jsx|ts|tsx|mdx)',
@@ -22,7 +23,7 @@ const config = {
           'expo-document-picker',
           'expo-av',
           'expo-asset',
-          // 'tamagui-extras'
+          'tamagui-extras',
         ],
 
         babelPlugins: [
