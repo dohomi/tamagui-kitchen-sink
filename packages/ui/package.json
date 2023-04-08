@@ -34,42 +34,42 @@
     "./package.json": "./package.json",
     ".": {
       "types": "./types/index.d.ts",
-      "require": "./dist/cjs/index.js",
+      "require": "./dist/esm/index.js",
       "import": "./dist/esm/index.mjs"
     },
     "./date": {
       "types": "./date/index.d.ts",
-      "require": "./dist/cjs/date/index.js",
+      "require": "./dist/esm/date/index.js",
       "import": "./dist/esm/date/index.mjs"
     },
     "./file": {
       "types": "./file/index.d.ts",
-      "require": "./dist/cjs/file/index.js",
+      "require": "./dist/ems/file/index.js",
       "import": "./dist/esm/file/index.mjs"
     },
     "./form": {
       "types": "./form/index.d.ts",
-      "require": "./dist/cjs/form/index.js",
+      "require": "./dist/esm/form/index.js",
       "import": "./dist/esm/form/index.mjs"
     },
     "./link": {
       "types": "./link/index.d.ts",
-      "require": "./dist/cjs/link/index.js",
+      "require": "./dist/esm/link/index.js",
       "import": "./dist/esm/link/index.mjs"
     },
     "./richText": {
       "types": "./richText/index.d.ts",
-      "require": "./dist/cjs/richText/index.js",
+      "require": "./dist/esm/richText/index.js",
       "import": "./dist/esm/richText/index.mjs"
     },
     "./video": {
       "types": "./video/index.d.ts",
-      "require": "./dist/cjs/video/index.js",
+      "require": "./dist/esm/video/index.js",
       "import": "./dist/esm/video/index.mjs"
     },
     "./youtube": {
       "types": "./youtube/index.d.ts",
-      "require": "./dist/cjs/youtube/index.js",
+      "require": "./dist/esm/youtube/index.js",
       "import": "./dist/esm/youtube/index.mjs"
     }
   },
