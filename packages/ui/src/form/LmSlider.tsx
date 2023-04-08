@@ -44,6 +44,7 @@ export function LmSlider({
   error,
   required,
   helperText,
+  helperTextProps,
   labelInline,
   colorActiveOnly,
   showValue,
@@ -62,6 +63,7 @@ export function LmSlider({
       size={sliderProps.size}
       labelInline={labelInline}
       helperText={helperText}
+      helperTextProps={helperTextProps}
       alignItems={labelInline ? 'center' : undefined}
     >
       <XStack space alignItems={'center'}>

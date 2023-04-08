@@ -37,6 +37,7 @@ export function LmStarRating({
   required,
   error,
   helperText,
+  helperTextProps,
   label,
   labelInline,
   labelProps,
@@ -51,6 +52,7 @@ export function LmStarRating({
       required={required}
       error={error}
       helperText={helperText}
+      helperTextProps={helperTextProps}
       label={label}
       labelInline={labelInline}
       labelProps={labelProps}

@@ -4,6 +4,7 @@ import {
   FontSizeTokens,
   Label,
   Paragraph,
+  ParagraphProps,
   SizeTokens,
   XStack,
   XStackProps,
@@ -17,6 +18,7 @@ export type LmCheckboxProps = XStackProps & {
   value?: boolean
   error?: boolean
   helperText?: ReactNode
+  helperTextProps?: ParagraphProps
   size?: SizeTokens
   required?: boolean
 }
@@ -30,6 +32,7 @@ export function LmCheckbox({
   value,
   required,
   theme,
+  helperTextProps,
   ...stackProps
 }: LmCheckboxProps) {
   const id = useId()
@@ -62,7 +65,8 @@ export function LmCheckbox({
               paddingLeft={'$2'}
               marginTop={0}
               size={size as FontSizeTokens}
-              color={error ? '$red10' : undefined}
+              {...helperTextProps}
+              color={error ? '$red10' : helperTextProps?.color}
             >
               {helperText}
             </Paragraph>

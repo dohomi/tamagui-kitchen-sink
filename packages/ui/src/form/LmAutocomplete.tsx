@@ -32,6 +32,7 @@ export function LmAutocomplete({
   labelInline,
   labelProps,
   helperText,
+  helperTextProps,
   required,
   label,
   value,
@@ -59,7 +60,6 @@ export function LmAutocomplete({
     }
   }, [width])
 
-  console.log('render', selection)
   const inputValue = Array.isArray(selection)
     ? selection.map((option) => option?.label).join(', ')
     : selection?.label || ''
@@ -73,6 +73,7 @@ export function LmAutocomplete({
       label={label}
       labelInline={labelInline}
       helperText={helperText}
+      helperTextProps={helperTextProps}
     >
       <LmPopover
         contentProps={{

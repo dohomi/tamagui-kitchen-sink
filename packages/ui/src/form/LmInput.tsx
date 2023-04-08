@@ -2,7 +2,7 @@ import { Button, Input, InputProps, Stack, TextArea, ThemeableStackProps } from 
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { Eye, EyeSlash } from 'tamagui-phosphor-icons'
+import { Eye, EyeSlash, IconProps } from 'tamagui-phosphor-icons'
 
 export type LmInputProps = InputProps &
   LmFormContainerBaseTypes & {
@@ -10,18 +10,21 @@ export type LmInputProps = InputProps &
     multiline?: boolean
     isPassword?: boolean
     fullWidth?: boolean
+    passwordIconProps?: IconProps
   }
 
 export function LmInput({
   required,
   error,
   helperText,
+  helperTextProps,
   label,
   labelProps,
   labelInline,
   multiline,
   containerProps,
   isPassword,
+  passwordIconProps,
   fullWidth,
   ...rest
 }: LmInputProps) {
@@ -51,6 +54,7 @@ export function LmInput({
       size={rest.size}
       labelInline={labelInline}
       helperText={helperText}
+      helperTextProps={helperTextProps}
       {...containerProps}
     >
       {multiline ? (
@@ -59,7 +63,7 @@ export function LmInput({
         <Stack position={'relative'} width={fullWidth ? '100%' : 'fit-content'}>
           <Input {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
           <Button
-            icon={show ? <EyeSlash /> : <Eye />}
+            icon={show ? <EyeSlash {...passwordIconProps} /> : <Eye {...passwordIconProps} />}
             circular
             unstyled
             hoverStyle={{ backgroundColor: '$background' }}

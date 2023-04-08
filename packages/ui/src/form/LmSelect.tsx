@@ -31,6 +31,7 @@ export function LmSelect({
   required,
   error,
   helperText,
+  helperTextProps,
   label,
   labelInline,
   labelProps,
@@ -52,6 +53,7 @@ export function LmSelect({
       fullWidth={fullWidth}
       labelInline={labelInline}
       helperText={helperText}
+      helperTextProps={helperTextProps}
     >
       <Select id={id} value={`${value}`} {...rest}>
         <Select.Trigger

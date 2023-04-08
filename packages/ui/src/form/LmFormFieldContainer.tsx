@@ -43,6 +43,7 @@ export function LmFormFieldContainer({
   labelProps,
   required,
   error,
+  helperTextProps,
   ...rest
 }: LmFormContainerProps) {
   return (
@@ -65,6 +66,7 @@ export function LmFormFieldContainer({
           <Paragraph
             paddingLeft={'$2'}
             size={size as FontSizeTokens}
+            {...helperTextProps}
             color={error ? '$red10' : undefined}
           >
             {helperText}
