@@ -71,12 +71,12 @@ const config: StorybookConfig = {
     //     },
     // }
     // config.cache = {type: 'memory'}
-    config.module.rules.push({
-      test: /\.(js|mjs|jsx)$/,
-      resolve: {
-        fullySpecified: false,
-      },
-    })
+    // config.module.rules.push({
+    //   test: /\.(js|mjs|jsx)$/,
+    //   resolve: {
+    //     fullySpecified: false,
+    //   },
+    // })
     return config
   },
   env: (config) => ({

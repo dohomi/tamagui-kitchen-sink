@@ -16,8 +16,7 @@
     "react-hook-form"
   ],
   "types": "./index.d.ts",
-  "main": "dist/esm/index.js",
-  "module": "dist/esm/index.mjs",
+  "module": "dist/index.js",
   "files": [
     "dist",
     "index.d.ts",
@@ -32,49 +31,17 @@
   ],
   "exports": {
     "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "require": "./dist/esm/index.js",
-      "import": "./dist/esm/index.mjs"
-    },
-    "./date": {
-      "types": "./date/index.d.ts",
-      "require": "./dist/esm/date/index.js",
-      "import": "./dist/esm/date/index.mjs"
-    },
-    "./file": {
-      "types": "./file/index.d.ts",
-      "require": "./dist/ems/file/index.js",
-      "import": "./dist/esm/file/index.mjs"
-    },
-    "./form": {
-      "types": "./form/index.d.ts",
-      "require": "./dist/esm/form/index.js",
-      "import": "./dist/esm/form/index.mjs"
-    },
-    "./link": {
-      "types": "./link/index.d.ts",
-      "require": "./dist/esm/link/index.js",
-      "import": "./dist/esm/link/index.mjs"
-    },
-    "./richText": {
-      "types": "./richText/index.d.ts",
-      "require": "./dist/esm/richText/index.js",
-      "import": "./dist/esm/richText/index.mjs"
-    },
-    "./video": {
-      "types": "./video/index.d.ts",
-      "require": "./dist/esm/video/index.js",
-      "import": "./dist/esm/video/index.mjs"
-    },
-    "./youtube": {
-      "types": "./youtube/index.d.ts",
-      "require": "./dist/esm/youtube/index.js",
-      "import": "./dist/esm/youtube/index.mjs"
-    }
+    ".": "./dist/index.js",
+    "./date": "./dist/date/index.js",
+    "./file": "./dist/file/index.js",
+    "./form": "./dist/form/index.js",
+    "./link": "./dist/link/index.js",
+    "./richText": "./dist/richText/index.js",
+    "./video": "./dist/video/index.js",
+    "./youtube": "./dist/youtube/index.js"
   },
   "scripts": {
-    "build": "tamagui-build && yarn ts",
+    "build": "rm -rf dist types && tamagui-build && yarn ts",
     "watch": "tamagui-build src/index.tsx --watch",
     "check-types": "tsc --noEmit",
     "build:2": "npx esbuild ./src/ --outdir=. --bundle --format=esm --platform=node",
