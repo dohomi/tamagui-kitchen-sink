@@ -36,12 +36,7 @@ export const CardsFixedWidth = () => (
 export const ImageAspectRatio = () => (
   <YStack width={300} backgroundColor={'$green5'} height={600}>
     <H3 paddingBottom={'$4'}>Parent Container: 300x600</H3>
-    <LmImage
-      width={'100%'}
-      height={'100%'}
-      src={'https://placekitten.com/400/300'}
-      aspectRatio={4 / 3}
-    />
+    <LmImage width={400} height={300} src={'https://placekitten.com/400/300'} aspectRatio={4 / 3} />
   </YStack>
 )
 

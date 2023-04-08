@@ -6,7 +6,8 @@
   "compilerOptions": {
     "composite": true,
     "esModuleInterop": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "declaration": true
   },
   "references": []
 }

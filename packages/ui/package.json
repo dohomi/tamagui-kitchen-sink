@@ -16,8 +16,8 @@
     "react-hook-form"
   ],
   "types": "./index.d.ts",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.mjs",
   "files": [
     "dist",
     "index.d.ts",
@@ -74,7 +74,7 @@
     }
   },
   "scripts": {
-    "build": "rm -rf dist types && tamagui-build src/index.tsx && yarn ts",
+    "build": "tamagui-build && yarn ts",
     "watch": "tamagui-build src/index.tsx --watch",
     "check-types": "tsc --noEmit",
     "build:2": "npx esbuild ./src/ --outdir=. --bundle --format=esm --platform=node",
@@ -99,17 +99,17 @@
   },
   "devDependencies": {
     "@storybook/react": "^7.0.2",
-    "@tamagui/build": "1.11.2",
-    "@tamagui/themes": "1.11.2",
+    "@tamagui/build": "1.12.2",
+    "@tamagui/themes": "1.12.2",
     "prettier": "^2.8.7",
     "solito": "^3.0.0",
-    "tamagui": "1.11.2",
+    "tamagui": "1.12.2",
     "tamagui-phosphor-icons": "0.2.0",
     "typescript": "5.0.3"
   },
   "peerDependencies": {
     "solito": ">=3.0.0",
-    "tamagui": "1.11.2",
+    "tamagui": "1.12.2",
     "tamagui-phosphor-icons": "0.2.0"
   },
   "publishConfig": {
