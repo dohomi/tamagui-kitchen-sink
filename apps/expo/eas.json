@@ -1,7 +1,6 @@
 {
   "build": {
     "development": {
-      "developmentClient": true,
       "distribution": "internal",
       "android": {
         "buildType": "apk"
@@ -21,24 +20,6 @@
       },
       "env": {
         "TAMAGUI_TARGET": "native"
-      }
-    },
-    "simulator": {
-      "ios": {
-        "simulator": true,
-        "image": "latest"
-      },
-      "android": {
-        "image": "latest"
-      },
-      "env": {
-        "STAGE": "staging",
-        "TAMAGUI_TARGET": "native"
-      },
-      "node": "16.16.0",
-      "yarn": "2.4.3",
-      "cache": {
-        "key": "pt-2"
       }
     }
   }

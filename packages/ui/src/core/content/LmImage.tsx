@@ -6,7 +6,7 @@ export function LmImage(props: LmImageProps) {
   if (props.aspectRatio) {
     return (
       <Stack aspectRatio={props.aspectRatio}>
-        <Image {...props} width={'100%' as any} height={'100%' as any} src={props.src} />
+        <Image {...props} width={'100%'} height={'100%'} source={props.source} />
       </Stack>
     )
   }

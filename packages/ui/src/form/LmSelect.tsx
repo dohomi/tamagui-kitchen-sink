@@ -2,7 +2,7 @@ import { Select, SelectProps, ThemeProps, YStack } from 'tamagui'
 import { LinearGradient } from '@tamagui/linear-gradient'
 import { colormap, ThemeColors } from '../core/themeMappings'
 import { CaretDown, CaretUp, Check } from 'tamagui-phosphor-icons'
-import { useId } from 'react'
+import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
 
@@ -36,8 +36,11 @@ export function LmSelect({
   labelInline,
   labelProps,
   fullWidth,
+  defaultValue,
+  onValueChange,
   ...rest
 }: LmSelectProps) {
+  const [selectVal, setSelectVal] = useState<string>(value ?? defaultValue ?? '')
   const id = useId()
   rest.size = rest.size || '$3'
 
@@ -55,7 +58,17 @@ export function LmSelect({
       helperText={helperText}
       helperTextProps={helperTextProps}
     >
-      <Select id={id} value={`${value}`} {...rest}>
+      <Select
+        id={id}
+        {...rest}
+        value={selectVal}
+        onValueChange={(val) => {
+          setSelectVal(val)
+          if (typeof onValueChange === 'function') {
+            onValueChange(val)
+          }
+        }}
+      >
         <Select.Trigger
           width={fullWidth ? '100%' : width}
           iconAfter={<CaretDown />}

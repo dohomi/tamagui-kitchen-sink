@@ -1,10 +1,9 @@
 import { Button, Input, ListItem, Popover, ThemeName, XStack } from 'tamagui'
-import { CheckSquare, FloppyDisk, ListPlus, Square, X } from 'tamagui-phosphor-icons'
-import { createContext, useDeferredValue, useEffect, useId, useRef, useState } from 'react'
+import { CheckSquare, ListPlus, Square } from 'tamagui-phosphor-icons'
+import { useDeferredValue, useEffect, useId, useRef, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
 import { LmPopover } from '../core/panels'
-import { usePopoverState } from '../core/hooks'
 import { useWindowDimensions } from 'react-native'
 
 type Option = { label: string; value: string | number }
@@ -21,11 +20,11 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
 }
 
 type AutocompleteContext = {
-  selection: Option | Option[] | null
-  setSelection: () => void
+  onChangeSelection: (option: Option | Option[]) => void
+  isSelected: (opts: Option) => boolean
 }
 
-const AutocompleteContext = createContext({})
+type ConditionalOption<T extends boolean> = T extends true ? Option[] : Option
 
 export function LmAutocomplete({
   options,
@@ -40,19 +39,39 @@ export function LmAutocomplete({
   error,
   theme,
   allowNewHook,
+  multiple = false,
   ...rest
 }: LmAutocompleteProps) {
   const id = useId()
   const [opts, setOpts] = useState(options)
-  const [selection, setSelection] = useState<Option | Option[] | null>(value || null)
   const { width } = useWindowDimensions()
   const [popoverWidth, setPopoverWidth] = useState<number>(0)
   const inputRef = useRef<HTMLInputElement>(null)
-  useEffect(() => {
-    if (typeof onChange === 'function') {
-      onChange(selection)
+  const [selection, setSelection] = useState<ConditionalOption<typeof multiple> | null>(
+    value ?? (multiple ? [] : null)
+  )
+
+  const isSelected = (item: Option) =>
+    Array.isArray(selection)
+      ? !!selection?.some((i) => i.value === item.value)
+      : selection?.value === item.value
+
+  const onChangeSelection = (item: Option) => {
+    let newVal: ConditionalOption<typeof multiple> | null = null
+    if (multiple) {
+      const has = isSelected(item)
+      newVal = has
+        ? (selection as Option[])?.filter((i) => i.value !== item.value) ?? []
+        : [...((selection as Option[]) ?? []), item]
+    } else {
+      newVal = isSelected(item) ? null : item
     }
-  }, [selection])
+    setSelection(newVal)
+    if (typeof onChange === 'function') {
+      onChange(newVal)
+    }
+  }
+
   useEffect(() => {
     const elWidth = inputRef.current?.offsetWidth
     if (elWidth) {
@@ -76,6 +95,7 @@ export function LmAutocomplete({
       helperTextProps={helperTextProps}
     >
       <LmPopover
+        isBouncy
         contentProps={{
           minWidth: popoverWidth ? popoverWidth : undefined,
           maxWidth: '100%',
@@ -87,13 +107,8 @@ export function LmAutocomplete({
         <LmAutocompleteInputContent
           theme={theme}
           options={opts}
-          onSelectionChange={(sel) => {
-            if (sel !== selection) {
-              console.log('hier', sel, selection)
-              setSelection(sel || null)
-            }
-          }}
-          value={selection}
+          isSelected={isSelected}
+          onChangeSelection={onChangeSelection}
           onAddNew={(newVal) => {
             if (newVal) {
               const newItem =
@@ -113,24 +128,26 @@ export function LmAutocomplete({
   )
 }
 
-type LmAutocompleteInputContentProps = LmAutocompleteProps & {
-  onSelectionChange: (selection?: Option | Option[]) => void
-  onAddNew: (str: string) => void
-}
+type LmAutocompleteInputContentProps = LmAutocompleteProps &
+  AutocompleteContext & {
+    onAddNew: (str: string) => void
+  }
 
 function LmAutocompleteInputContent({
   disableSearch,
   theme,
   placeholderSearch,
-  multiple,
   options,
   allowNew,
   onAddNew,
-  onSelectionChange,
-  value,
+  onChangeSelection,
+  isSelected,
 }: LmAutocompleteInputContentProps) {
   const [searchTerm, setSearchTerm] = useState<string>()
-  const deferred = useDeferredValue(searchTerm)
+  const deferredTerm = useDeferredValue(searchTerm)
+  const filteredOptions = deferredTerm?.length
+    ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm))
+    : options
   return (
     <>
       {(!disableSearch || allowNew) && (
@@ -140,9 +157,7 @@ function LmAutocompleteInputContent({
             placeholder={placeholderSearch}
             width={'100%'}
             onChangeText={(text) => {
-              if (text) {
-                setSearchTerm(text.toLowerCase())
-              }
+              setSearchTerm(text.toLowerCase())
             }}
           />
         </XStack>
@@ -152,144 +167,39 @@ function LmAutocompleteInputContent({
         keyboardShouldPersistTaps={true}
         style={{ maxHeight: 300, width: '100%' }}
       >
-        {multiple ? (
-          <LmAutocompleteMultiSelection
-            value={value as Option[]}
-            options={options}
-            searchTerm={deferred}
-            onSelectionChange={onSelectionChange}
-          />
-        ) : (
-          <LmAutocompleteSingleSelection
-            value={value as Option}
-            options={options}
-            searchTerm={deferred}
-            onSelectionChange={onSelectionChange}
-          />
+        <LmAutocompleteList
+          options={filteredOptions}
+          onChangeSelection={onChangeSelection}
+          isSelected={isSelected}
+        />
+        {allowNew && !filteredOptions?.length && deferredTerm && (
+          <XStack justifyContent={'flex-start'} marginBottom={'$3'} marginLeft={'$3'}>
+            <Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<ListPlus />}>
+              {deferredTerm}
+            </Button>
+          </XStack>
         )}
       </Popover.ScrollView>
-      {allowNew && <LmAutocompleteAddNew onSave={onAddNew} />}
     </>
   )
 }
 
-type LmAutocompleteAddNewProps = {
-  onSave: (str: string) => void
-}
-
-function LmAutocompleteAddNew({ onSave }: LmAutocompleteAddNewProps) {
-  const { open, onOpenChange } = usePopoverState()
-  const [input, setInput] = useState<string | null>(null)
-  return (
-    <XStack width={'100%'} gap={'$2'} padding={'$2'} borderTopColor={'$borderColor'}>
-      {open && (
-        <Button
-          circular
-          chromeless
-          onPress={() => {
-            setInput(null)
-            onOpenChange(false)
-          }}
-          icon={<X />}
-        />
-      )}
-      <Input onChangeText={(st) => setInput(st)} display={open ? 'flex' : 'none'} flex={1} />
-      <Button
-        circular
-        onPress={() => {
-          if (input && open) {
-            onSave(input)
-          }
-          onOpenChange(!open)
-        }}
-        icon={open ? <FloppyDisk /> : <ListPlus />}
-      />
-    </XStack>
-  )
-}
-
-type LmAutocompleteSingleSelectionProps = {
+type LmAutocompleteListProps = AutocompleteContext & {
   options: LmAutocompleteProps['options']
-  value?: Option
-  onSelectionChange: (option?: Option) => void
-  searchTerm?: string
 }
 
-function LmAutocompleteSingleSelection({
-  options,
-  value,
-  onSelectionChange,
-  searchTerm,
-}: LmAutocompleteSingleSelectionProps) {
-  const [currentVal, setCurrentVal] = useState<Option | undefined>(value)
-  const searchActive = searchTerm?.length
-
-  useEffect(() => {
-    onSelectionChange(currentVal)
-  }, [currentVal])
-
-  return (
-    <>
-      {options.map((item) => {
-        if (searchActive && !item.label.toLowerCase().includes(searchTerm)) {
-          return null
-        }
-        return (
-          <ListItem
-            hoverTheme
-            key={item.value}
-            icon={currentVal?.value === item.value ? <CheckSquare /> : <Square />}
-            title={item.label}
-            onPress={() => {
-              setCurrentVal((old) => (item === old ? undefined : item))
-            }}
-          />
-        )
-      })}
-    </>
-  )
-}
-
-type LmAutocompleteMultiSelectionProps = {
-  options: LmAutocompleteProps['options']
-  value?: Option[]
-  onSelectionChange: (options?: Option[]) => void
-  searchTerm?: string
-}
-
-function LmAutocompleteMultiSelection({
-  options,
-  value,
-  onSelectionChange,
-  searchTerm,
-}: LmAutocompleteMultiSelectionProps) {
-  const [currentVal, setCurrentVal] = useState<Option[] | undefined>(value)
-  const searchActive = searchTerm?.length
-  useEffect(() => {
-    onSelectionChange(currentVal)
-  }, [currentVal])
+function LmAutocompleteList({ options, isSelected, onChangeSelection }: LmAutocompleteListProps) {
   return (
     <>
       {options.map((item, i) => {
-        let isSelected = currentVal
-          ? currentVal.findIndex((i) => i.value === item.value) >= 0
-          : false
-        if (searchActive && !item.label.toLowerCase().includes(searchTerm)) {
-          return null
-        }
+        let has = isSelected(item)
         return (
           <ListItem
             hoverTheme
             key={item.value}
-            icon={isSelected ? <CheckSquare /> : <Square />}
+            icon={has ? <CheckSquare /> : <Square />}
             title={item.label}
-            onPress={() => {
-              setCurrentVal((old) =>
-                isSelected
-                  ? old?.filter((i) => i.value !== item.value) ?? []
-                  : [...(old || []), item]
-              )
-            }}
+            onPress={() => onChangeSelection(item)}
           />
         )
       })}

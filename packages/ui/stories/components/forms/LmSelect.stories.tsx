@@ -42,9 +42,10 @@ export const LightBlue = {
   },
 }
 
-export const Multiple = {
+export const PreSelect = {
   args: {
     options,
+    defaultValue: options[2]?.value,
     placeholder: 'Multiple',
     multiple: true,
   },

@@ -16,7 +16,8 @@
     "react-hook-form"
   ],
   "types": "./index.d.ts",
-  "module": "dist/index.js",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
   "files": [
     "dist",
     "index.d.ts",
@@ -31,14 +32,14 @@
   ],
   "exports": {
     "./package.json": "./package.json",
-    ".": "./dist/index.js",
-    "./date": "./dist/date/index.js",
-    "./file": "./dist/file/index.js",
-    "./form": "./dist/form/index.js",
-    "./link": "./dist/link/index.js",
-    "./richText": "./dist/richText/index.js",
-    "./video": "./dist/video/index.js",
-    "./youtube": "./dist/youtube/index.js"
+    ".": "./dist/esm/index.js",
+    "./date": "./dist/esm/date/index.js",
+    "./file": "./dist/esm/file/index.js",
+    "./form": "./dist/esm/form/index.js",
+    "./link": "./dist/esm/link/index.js",
+    "./richText": "./dist/esm/richText/index.js",
+    "./video": "./dist/esm/video/index.js",
+    "./youtube": "./dist/esm/youtube/index.js"
   },
   "scripts": {
     "build": "rm -rf dist types && tamagui-build && yarn ts",
@@ -58,6 +59,7 @@
     "@tiptap/pm": "2.0.0-beta.220",
     "@tiptap/react": "2.0.0-beta.220",
     "@tiptap/starter-kit": "2.0.0-beta.220",
+    "burnt": "^0.10.0",
     "expo-av": "^13.2.1",
     "expo-document-picker": "^11.2.2",
     "react-hook-form": "^7.43.9",
@@ -66,17 +68,17 @@
   },
   "devDependencies": {
     "@storybook/react": "^7.0.2",
-    "@tamagui/build": "1.12.2",
-    "@tamagui/themes": "1.12.2",
+    "@tamagui/build": "1.13.2",
+    "@tamagui/themes": "1.13.2",
     "prettier": "^2.8.7",
-    "solito": "^3.0.0",
-    "tamagui": "1.12.2",
+    "solito": "^3.0.1",
+    "tamagui": "1.13.2",
     "tamagui-phosphor-icons": "0.2.0",
     "typescript": "5.0.3"
   },
   "peerDependencies": {
-    "solito": ">=3.0.0",
-    "tamagui": "1.12.2",
+    "solito": "3.0.1",
+    "tamagui": "1.13.2",
     "tamagui-phosphor-icons": "0.2.0"
   },
   "publishConfig": {
