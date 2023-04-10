@@ -9,38 +9,40 @@ import {
   TextItalic,
   TextStrikethrough,
 } from 'tamagui-phosphor-icons'
-import { Button, ThemeName, XStack } from 'tamagui'
-import { LmSelect } from '../form/LmSelect'
+import { Button, ColorTokens, XStack } from 'tamagui'
+import { LmSelect } from '../form'
 
 export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
   if (!editor) {
     return null
   }
 
-  const activeThemeColor: ThemeName = 'blue_active'
+  const activeThemeColor: ColorTokens = '$blue10'
 
   return (
     <XStack alignItems={'center'} borderBottomColor={'$borderColor'} borderBottomWidth={1}>
       <Button
         chromeless
+        circular
         onPress={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
-        theme={editor.isActive('bold') ? activeThemeColor : undefined}
-        icon={<TextBolder />}
+        icon={<TextBolder color={editor.isActive('bold') ? activeThemeColor : undefined} />}
       />
       <Button
         chromeless
+        circular
         onPress={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
-        theme={editor.isActive('italic') ? activeThemeColor : undefined}
-        icon={<TextItalic />}
+        icon={<TextItalic color={editor.isActive('italic') ? activeThemeColor : undefined} />}
       />
       <Button
         chromeless
+        circular
         onPress={() => editor.chain().focus().toggleStrike().run()}
         disabled={!editor.can().chain().focus().toggleStrike().run()}
-        theme={editor.isActive('strike') ? activeThemeColor : undefined}
-        icon={<TextStrikethrough />}
+        icon={
+          <TextStrikethrough color={editor.isActive('strike') ? activeThemeColor : undefined} />
+        }
       />
 
       <LmSelect
@@ -70,32 +72,37 @@ export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
       />
       <Button
         chromeless
-        icon={<List />}
-        onPress={() => editor.chain().focus().toggleBulletList().run()}
-        theme={editor.isActive('bulletList') ? activeThemeColor : undefined}
+        circular
+        icon={<List color={editor.isActive('bulletList') ? activeThemeColor : undefined} />}
+        onPress={() => editor?.chain().focus().toggleBulletList().run()}
+        disabled={!editor?.can().chain().focus().toggleBulletList().run()}
       />
       <Button
         chromeless
-        icon={<ListNumbers />}
-        onPress={() => editor.chain().focus().toggleOrderedList().run()}
-        theme={editor.isActive('orderedList') ? activeThemeColor : undefined}
+        circular
+        icon={<ListNumbers color={editor.isActive('orderedList') ? activeThemeColor : undefined} />}
+        onPress={() => editor?.chain().focus().toggleOrderedList().run()}
+        disabled={!editor?.can().chain().focus().toggleOrderedList().run()}
       />
 
       <Button
         chromeless
-        icon={<Quotes />}
+        circular
+        icon={<Quotes color={editor.isActive('blockquote') ? activeThemeColor : undefined} />}
         onPress={() => editor.chain().focus().toggleBlockquote().run()}
-        theme={editor.isActive('blockquote') ? activeThemeColor : undefined}
+        disabled={!editor.can().chain().focus().toggleBlockquote().run()}
       />
 
       <Button
         chromeless
+        circular
         icon={<ArrowCounterClockwise />}
         onPress={() => editor.chain().focus().undo().run()}
         disabled={!editor.can().chain().focus().undo().run()}
       />
       <Button
         chromeless
+        circular
         icon={<ArrowClockwise />}
         onPress={() => editor.chain().focus().redo().run()}
         disabled={!editor.can().chain().focus().redo().run()}

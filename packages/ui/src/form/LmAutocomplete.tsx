@@ -50,7 +50,6 @@ export function LmAutocomplete({
   const [selection, setSelection] = useState<ConditionalOption<typeof multiple> | null>(
     value ?? (multiple ? [] : null)
   )
-
   const isSelected = (item: Option) =>
     Array.isArray(selection)
       ? !!selection?.some((i) => i.value === item.value)
