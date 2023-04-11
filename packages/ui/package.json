@@ -75,12 +75,12 @@
     }
   },
   "scripts": {
-    "rm:all": "rm -rf date file form link richText video youtube out dist types",
+    "rm:all": "rm -rf out dist types",
     "build:tsup": "yarn rm:all && tsup --config ./tsup.config.ts && yarn ts",
     "build": "yarn rm:all && tamagui-build --skip-types && yarn ts",
-    "watch": "tamagui-build src/index.tsx --watch",
+    "watch": "tamagui-build --watch",
     "check-types": "tsc --noEmit",
-    "ts": "rm tsconfig.tsbuildinfo && tsc --emitDeclarationOnly --declarationDir ./ --outDir ./typings --rootDir ./src --tsBuildInfoFile ./tsconfig.tsbuildinfo --declarationMap",
+    "ts": "tsc --emitDeclarationOnly --declarationDir ./ --outDir ./typings --rootDir ./src --tsBuildInfoFile ./tsconfig.tsbuildinfo --declarationMap",
     "ts:clean": "tsc --build --clean && rm -f $(find . -type f -name \"*.d.ts\" -o -name \"*.d.ts.map\")",
     "release-minor": "yarn build && npx release minor",
     "release-patch": "yarn build && npx release patch",
