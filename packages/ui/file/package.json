@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "types": "./index.d.ts",
+  "main": "../dist/esm/file/index.js",
+  "module": "../dist/esm/file/index.mjs"
+}
