@@ -102,19 +102,19 @@
   },
   "devDependencies": {
     "@storybook/react": "^7.0.2",
-    "@tamagui/build": "1.14.0",
-    "@tamagui/themes": "1.14.0",
+    "@tamagui/build": "1.14.3",
+    "@tamagui/themes": "1.14.3",
     "prettier": "^2.8.7",
     "react-native": "^0.71.6",
     "solito": "^3.0.1",
-    "tamagui": "1.14.0",
+    "tamagui": "1.14.3",
     "tamagui-phosphor-icons": "0.2.0",
     "tsup": "6.7.0",
     "typescript": "5.0.3"
   },
   "peerDependencies": {
     "solito": "3.0.1",
-    "tamagui": "1.14.0",
+    "tamagui": "1.14.3",
     "tamagui-phosphor-icons": "0.2.0"
   },
   "publishConfig": {

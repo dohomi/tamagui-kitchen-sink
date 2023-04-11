@@ -1,31 +1,29 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
+import i18n from 'i18next'
+import { initReactI18next } from 'react-i18next'
 
 import de from './locales/de.json'
 import en from './locales/en.json'
 
 export const resources = {
-    en: {
-        translation: en
-    },
-    de: {
-        translation: de
-    }
-};
+  en: {
+    translation: en,
+  },
+  de: {
+    translation: de,
+  },
+}
 
 export const defaultNS = 'translation'
 
-i18n
-    .use(initReactI18next)
-    .init({
-        defaultNS,
-        lng: 'en',
-        resources,
-        interpolation: {
-            escapeValue: false // react already safes from xss
-        }
-    });
-
+i18n.use(initReactI18next).init({
+  defaultNS,
+  compatibilityJSON: 'v3', // because of expo rn
+  lng: 'en',
+  resources,
+  interpolation: {
+    escapeValue: false, // react already safes from xss
+  },
+})
 
 /*
 type DefaultLocale = typeof en
@@ -53,8 +51,8 @@ export const t = (key: TxKeyPath) =>  key ? i18n.t(key) : undefined
  */
 
 export const changeLanguage = (str: string) => {
-    console.log(str, i18n)
-    return i18n.changeLanguage(str);
+  console.log(str, i18n)
+  return i18n.changeLanguage(str)
 }
 
-export default i18n;
+export default i18n
