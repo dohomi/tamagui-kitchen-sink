@@ -27,6 +27,7 @@
     "@storybook/addon-essentials": "^7.0.2",
     "@storybook/addon-links": "^7.0.2",
     "@storybook/addon-react-native-web": "^0.0.20",
+    "@storybook/addon-styling": "next",
     "@storybook/nextjs": "^7.0.2",
     "@storybook/react": "^7.0.2",
     "@types/node": "16.11.9",

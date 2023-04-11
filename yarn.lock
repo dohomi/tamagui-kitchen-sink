@@ -4046,6 +4046,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-styling@npm:next":
+  version: 1.0.0-next.1
+  resolution: "@storybook/addon-styling@npm:1.0.0-next.1"
+  dependencies:
+    "@storybook/api": next
+    "@storybook/components": next
+    "@storybook/core-events": next
+    "@storybook/manager-api": next
+    "@storybook/preview-api": next
+    "@storybook/theming": next
+    "@storybook/types": next
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    resolve-url-loader: ^5.0.0
+    sass-loader: ^10.4.1
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+    resolve-url-loader:
+      optional: true
+    sass-loader:
+      optional: true
+  checksum: 1391241da902b3c00e2b981c2631b64d2b09b69a54a15fb36726742c922b6552c44faca3f8f3b9ad0e5e919c9d4b14133928d92b480f684580ff1999de65adf7
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-toolbars@npm:7.0.2":
   version: 7.0.2
   resolution: "@storybook/addon-toolbars@npm:7.0.2"
@@ -4106,7 +4135,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/api@npm:7.0.2":
+"@storybook/api@npm:7.0.2, @storybook/api@npm:next":
   version: 7.0.2
   resolution: "@storybook/api@npm:7.0.2"
   dependencies:
@@ -4360,7 +4389,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/components@npm:7.0.2":
+"@storybook/components@npm:7.0.2, @storybook/components@npm:next":
   version: 7.0.2
   resolution: "@storybook/components@npm:7.0.2"
   dependencies:
@@ -4416,7 +4445,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core-events@npm:7.0.2":
+"@storybook/core-events@npm:7.0.2, @storybook/core-events@npm:next":
   version: 7.0.2
   resolution: "@storybook/core-events@npm:7.0.2"
   checksum: 5bca4db82f582b939ba1aaba26aee3e8f9aa0a2d36728934b4d26dbe858b6f455a46ddcf4e8e6c7b3f5fa5b517716c503626febca08e53712d516f2ca105bf11
@@ -4560,7 +4589,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/manager-api@npm:7.0.2":
+"@storybook/manager-api@npm:7.0.2, @storybook/manager-api@npm:next":
   version: 7.0.2
   resolution: "@storybook/manager-api@npm:7.0.2"
   dependencies:
@@ -4714,7 +4743,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/preview-api@npm:7.0.2":
+"@storybook/preview-api@npm:7.0.2, @storybook/preview-api@npm:next":
   version: 7.0.2
   resolution: "@storybook/preview-api@npm:7.0.2"
   dependencies:
@@ -4848,7 +4877,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/theming@npm:7.0.2":
+"@storybook/theming@npm:7.0.2, @storybook/theming@npm:next":
   version: 7.0.2
   resolution: "@storybook/theming@npm:7.0.2"
   dependencies:
@@ -4863,7 +4892,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/types@npm:7.0.2":
+"@storybook/types@npm:7.0.2, @storybook/types@npm:next":
   version: 7.0.2
   resolution: "@storybook/types@npm:7.0.2"
   dependencies:
@@ -12837,7 +12866,7 @@ __metadata:
 
 "fsevents@patch:fsevents@^2.1.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -20263,7 +20292,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>":
   version: 1.22.2
-  resolution: "resolve@patch:resolve@npm%3A1.22.2#~builtin<compat/resolve>::version=1.22.2&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.22.2#~builtin<compat/resolve>::version=1.22.2&hash=c3c19d"
   dependencies:
     is-core-module: ^2.11.0
     path-parse: ^1.0.7
@@ -20276,7 +20305,7 @@ __metadata:
 
 "resolve@patch:resolve@^2.0.0-next.4#~builtin<compat/resolve>":
   version: 2.0.0-next.4
-  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#~builtin<compat/resolve>::version=2.0.0-next.4&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#~builtin<compat/resolve>::version=2.0.0-next.4&hash=c3c19d"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -20289,7 +20318,7 @@ __metadata:
 
 "resolve@patch:resolve@~1.7.1#~builtin<compat/resolve>":
   version: 1.7.1
-  resolution: "resolve@patch:resolve@npm%3A1.7.1#~builtin<compat/resolve>::version=1.7.1&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.7.1#~builtin<compat/resolve>::version=1.7.1&hash=3bafbf"
   dependencies:
     path-parse: ^1.0.5
   checksum: c2a6f0e3856ac1ddc8297091c20ca6c36d99bf289ddea366c46bd2a7ed8b31075c7f9d01ff5d390ebed1fe41b9fabe57a79ae087992ba92e3592f0c3be07c1ac
@@ -20557,6 +20586,7 @@ __metadata:
     "@storybook/addon-essentials": ^7.0.2
     "@storybook/addon-links": ^7.0.2
     "@storybook/addon-react-native-web": ^0.0.20
+    "@storybook/addon-styling": next
     "@storybook/nextjs": ^7.0.2
     "@storybook/react": ^7.0.2
     "@types/node": 16.11.9
@@ -22577,21 +22607,21 @@ __metadata:
 
 "typescript@patch:typescript@5.0.3#~builtin<compat/typescript>, typescript@patch:typescript@^5.0.3#~builtin<compat/typescript>":
   version: 5.0.3
-  resolution: "typescript@patch:typescript@npm%3A5.0.3#~builtin<compat/typescript>::version=5.0.3&hash=a1c5e5"
+  resolution: "typescript@patch:typescript@npm%3A5.0.3#~builtin<compat/typescript>::version=5.0.3&hash=85af82"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 9ec0a8eed38d46cc2c8794555b7674e413604c56c159f71b8ff21ce7f17334a44127a68724cb2ef8221ff3b19369f8f05654e8a5266621d7d962aeed889bd630
+  checksum: 5580367025ff7ee1f2a61e5affdbddccfe6e893bc662aa33fefdbf12de7e493173fa7d47475e9e15121828691004c4ed13bcd115e57866baed97b54c60954e1c
   languageName: node
   linkType: hard
 
 "typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
   version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=a1c5e5"
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2eee5c37cad4390385db5db5a8e81470e42e8f1401b0358d7390095d6f681b410f2c4a0c496c6ff9ebd775423c7785cdace7bcdad76c7bee283df3d9718c0f20
+  checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
   languageName: node
   linkType: hard
 

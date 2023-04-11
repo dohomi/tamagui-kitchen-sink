@@ -1,6 +1,0 @@
-{
-  "tagPrefix": "${projectName}",
-  "preset": "angular",
-  "baseBranch": "master",
-  "updateInternalDependencies": false
-}
