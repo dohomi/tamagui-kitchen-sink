@@ -6,8 +6,8 @@
     "packages/*"
   ],
   "scripts": {
-    "native": "yarn build && cd apps/expo && yarn start",
-    "web": "yarn build && cd apps/next && yarn next",
+    "native": "cd apps/expo && yarn start",
+    "web": "cd apps/next && yarn next",
     "sb:vite": "cd apps/vite && yarn storybook",
     "sb:native": "cd apps/storybook-react-native && yarn start",
     "sb": "cd apps/storybook-react && yarn sb",

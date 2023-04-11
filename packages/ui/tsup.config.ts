@@ -5,8 +5,8 @@ const defConfig: Options = {
   outExtension: ({ format }) => ({
     js: `.js`,
   }),
-  sourcemap: true,
-  minify: true,
+  platform: 'neutral',
+  target: 'node16',
   external: ['react', 'react-dom', 'react-native-web', 'react-native', 'tamagui'],
 }
 

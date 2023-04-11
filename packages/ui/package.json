@@ -2,7 +2,7 @@
   "name": "tamagui-extras",
   "license": "MIT",
   "author": "Dominic Garms",
-  "version": "0.13.3",
+  "version": "0.13.4",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",
   "sideEffects": [
@@ -16,8 +16,8 @@
     "react-hook-form"
   ],
   "types": "./index.d.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.mjs",
   "files": [
     "dist",
     "index.d.ts",
@@ -31,9 +31,53 @@
     "video",
     "youtube"
   ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "default": "./dist/esm/index.js"
+    },
+    "./date": {
+      "types": "./date/index.d.ts",
+      "import": "./dist/esm/date/index.mjs",
+      "default": "./dist/esm/date/index.js"
+    },
+    "./file": {
+      "types": "./file/index.d.ts",
+      "import": "./dist/esm/file/index.mjs",
+      "default": "./dist/esm/file/index.js"
+    },
+    "./form": {
+      "types": "./form/index.d.ts",
+      "import": "./dist/esm/form/index.mjs",
+      "default": "./dist/esm/form/index.js"
+    },
+    "./link": {
+      "types": "./link/index.d.ts",
+      "import": "./dist/esm/link/index.mjs",
+      "default": "./dist/esm/link/index.js"
+    },
+    "./richText": {
+      "types": "./richText/index.d.ts",
+      "import": "./dist/esm/richText/index.mjs",
+      "default": "./dist/esm/richText/index.js"
+    },
+    "./video": {
+      "types": "./video/index.d.ts",
+      "import": "./dist/esm/video/index.mjs",
+      "default": "./dist/esm/video/index.js"
+    },
+    "./youtube": {
+      "types": "./youtube/index.d.ts",
+      "import": "./dist/esm/youtube/index.mjs",
+      "default": "./dist/esm/youtube/index.js"
+    }
+  },
   "scripts": {
-    "build": "rm -rf date file form link richText video youtube out dist types && tsup --config ./tsup.config.ts && yarn ts",
-    "build:old": "rm -rf dist types && tamagui-build",
+    "rm:all": "rm -rf date file form link richText video youtube out dist types",
+    "build:tsup": "yarn rm:all && tsup --config ./tsup.config.ts && yarn ts",
+    "build": "yarn rm:all && tamagui-build --skip-types && yarn ts",
     "watch": "tamagui-build src/index.tsx --watch",
     "check-types": "tsc --noEmit",
     "ts": "rm tsconfig.tsbuildinfo && tsc --emitDeclarationOnly --declarationDir ./ --outDir ./typings --rootDir ./src --tsBuildInfoFile ./tsconfig.tsbuildinfo --declarationMap",

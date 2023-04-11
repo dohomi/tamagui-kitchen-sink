@@ -69,22 +69,12 @@ const config: StorybookConfig = {
   //     return config;
   // },
   webpackFinal: async (config, { configType }) => {
-    // config.resolve = {
-    //     ...config.resolve,
-    //     fallback: {
-    //         ...(config.resolve || {}).fallback,
-    //         fs: false,
-    //         stream: false,
-    //         os: false,
-    //     },
-    // }
-    // config.cache = {type: 'memory'}
-    // config.module.rules.push({
-    //   test: /\.(js|mjs|jsx)$/,
-    //   resolve: {
-    //     fullySpecified: false,
-    //   },
-    // })
+    config.module.rules.push({
+      test: /\.(js|mjs|jsx)$/,
+      resolve: {
+        fullySpecified: false,
+      },
+    })
     return config
   },
   env: (config) => ({

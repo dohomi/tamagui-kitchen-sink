@@ -45,7 +45,7 @@ const decorators = [
     return (
       <>
         <LmTamaguiProvider defaultTheme={name || theme}>
-          <YStack bc={'$backgroundStrong'} padding={'$4'} flexGrow={1}>
+          <YStack backgroundColor={'$backgroundStrong'} padding={'$4'} flexGrow={1}>
             <Story />
           </YStack>
         </LmTamaguiProvider>
