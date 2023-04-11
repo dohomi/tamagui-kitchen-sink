@@ -19,10 +19,9 @@ export function LmPopover({
   return (
     <Popover size="$5" {...popoverProps}>
       <Popover.Trigger asChild>{trigger}</Popover.Trigger>
-
       <Popover.Content
-        bw={1}
-        boc="$borderColor"
+        borderWidth={1}
+        borderColor="$borderColor"
         {...(isBouncy && {
           enterStyle: { x: 0, y: -10, opacity: 0 },
           exitStyle: { x: 0, y: -10, opacity: 0, pointerEvents: 'none' },
@@ -42,11 +41,11 @@ export function LmPopover({
         padding={contentProps?.padding || 0}
         {...contentProps}
       >
-        {!hideArrow && <Popover.Arrow bw={1} boc="$borderColor" />}
+        {!hideArrow && <Popover.Arrow borderWidth={1} borderColor="$borderColor" />}
         {children}
       </Popover.Content>
-
-      <Popover.Adapt when="sm" platform="touch">
+      {/*@ts-ignore */}
+      <Popover.Adapt when={'sm'} platform="touch">
         <Popover.Sheet modal dismissOnSnapToBottom>
           <Popover.Sheet.Frame padding={'$4'}>
             <Popover.Sheet.ScrollView>

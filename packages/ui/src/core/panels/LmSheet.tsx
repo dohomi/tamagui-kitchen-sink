@@ -33,7 +33,7 @@ export function LmSheet({
     >
       {!fullScreen && <Sheet.Overlay />}
       {!hideHandle && !fullScreen && <Sheet.Handle />}
-      <Sheet.Frame f={1} p={'$4'} borderRadius={fullScreen ? 0 : undefined}>
+      <Sheet.Frame flex={1} padding={'$4'} borderRadius={fullScreen ? 0 : undefined}>
         {enableScroll ? (
           <Sheet.ScrollView {...scrollviewProps}>{children}</Sheet.ScrollView>
         ) : (

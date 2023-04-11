@@ -77,7 +77,7 @@ export function LmSelect({
         >
           <Select.Value placeholder={placeholder} paddingVertical={0} />
         </Select.Trigger>
-
+        {/*@ts-ignore*/}
         <Select.Adapt when="sm">
           <Select.Sheet modal dismissOnSnapToBottom>
             <Select.Sheet.Frame>

@@ -37,7 +37,7 @@ export function LmCheckbox({
 }: LmCheckboxProps) {
   const id = useId()
   return (
-    <XStack space ai={'center'} {...stackProps}>
+    <XStack space alignItems={'center'} {...stackProps}>
       <Checkbox
         id={id}
         theme={error ? 'red' : theme}

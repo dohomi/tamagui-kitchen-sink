@@ -2,7 +2,8 @@ import { Button, Dialog, DialogProps, SizeTokens, VisuallyHidden, XStack } from 
 import { ReactNode } from 'react'
 import { IconContextProvider, X } from 'tamagui-phosphor-icons'
 import { useWindowDimensions } from 'react-native'
-import {LmDialogActions} from "./LmDialogActions";
+import { LmDialogActions } from './LmDialogActions'
+import { LmDialogContent } from './LmDialogContent'
 
 type LmDialogProps = DialogProps & {
   trigger?: ReactNode
@@ -31,6 +32,7 @@ export function LmDialog({
   return (
     <Dialog modal {...dialogProps}>
       {trigger && <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>}
+      {/*@ts-ignore */}
       <Dialog.Adapt when="sm" platform="touch">
         <Dialog.Sheet zIndex={200000} modal dismissOnSnapToBottom>
           <Dialog.Sheet.Frame padding="$10">
@@ -124,4 +126,4 @@ export function LmDialog({
 }
 
 LmDialog.Actions = LmDialogActions
-LmDialog.Content = LmDialogActions
+LmDialog.Content = LmDialogContent
