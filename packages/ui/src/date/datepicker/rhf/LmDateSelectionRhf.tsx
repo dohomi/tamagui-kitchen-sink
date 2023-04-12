@@ -1,5 +1,5 @@
 import { Controller, FieldValues } from 'react-hook-form'
-import { LmDateSelection, LmDateSelectionProps } from '../../index'
+import { LmDateSelection, LmDateSelectionProps } from '../dateSelection/LmDateSelection'
 import { LmRhfProps } from '../../../form/rhf/lmRhfProps'
 
 export type LmDateSelectionRhfProps<T extends FieldValues> = LmRhfProps<T> & LmDateSelectionProps

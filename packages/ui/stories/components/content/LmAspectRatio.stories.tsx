@@ -39,8 +39,6 @@ export const ImageAspectRatio = () => (
     <LmImage
       source={{ uri: 'https://placekitten.com/400/300', width: 400, height: 300 }}
       aspectRatio={4 / 3}
-      width={400}
-      height={300}
     />
   </YStack>
 )

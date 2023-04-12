@@ -1,6 +1,6 @@
 {
   "private": true,
   "types": "./index.d.ts",
-  "main": "../dist/esm/richText/index.js",
-  "module": "../dist/esm/richText/index.mjs"
+  "main": "./index.js",
+  "module": "./index.mjs"
 }

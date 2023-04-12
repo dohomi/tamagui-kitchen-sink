@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { shallow } from 'zustand/shallow'
 
 export type ThemeVars = 'dark' | 'light'
 type Theme = {
@@ -15,4 +16,9 @@ export const useThemeState = create<Theme>((set) => ({
     })),
 }))
 
-export const useThemeToggle = () => useThemeState((state) => state.toggleTheme)
+export const useThemeNameState = (defaultName?: ThemeVars) => {
+  const name = useThemeState((state) => state.name, shallow)
+  return name || defaultName
+}
+
+export const useThemeToggle = () => useThemeState((state) => state.toggleTheme, shallow)

@@ -1,6 +1,6 @@
 {
   "private": true,
   "types": "./index.d.ts",
-  "main": "../dist/esm/link/index.js",
-  "module": "../dist/esm/link/index.mjs"
+  "main": "./index.js",
+  "module": "./index.mjs"
 }

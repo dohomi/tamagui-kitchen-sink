@@ -2,11 +2,17 @@ import { Image, ImageProps, Stack } from 'tamagui'
 
 export type LmImageProps = ImageProps
 
-export function LmImage(props: LmImageProps) {
-  if (props.aspectRatio) {
+export function LmImage({ aspectRatio, ...props }: LmImageProps) {
+  if (aspectRatio) {
     return (
-      <Stack aspectRatio={props.aspectRatio}>
-        <Image {...props} width={'100%'} height={'100%'} source={props.source} />
+      <Stack width={'100%'} aspectRatio={aspectRatio} position={'relative'}>
+        <Image
+          {...props}
+          aspectRatio={aspectRatio}
+          width={'100%!important'}
+          height={'100%!important'}
+          resizeMode={'contain'}
+        />
       </Stack>
     )
   }

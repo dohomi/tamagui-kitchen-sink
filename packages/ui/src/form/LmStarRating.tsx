@@ -1,4 +1,4 @@
-import { Button, ButtonProps, SizeTokens, XStack } from 'tamagui'
+import { Button, ButtonProps, getTokens, getVariableValue, SizeTokens, XStack } from 'tamagui'
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
@@ -10,13 +10,16 @@ type StarProps = Omit<ButtonProps, 'size'> & {
 }
 
 function StarIcon({ filled, size = '$2', ...props }: StarProps) {
+  // due to missing PR this needs to be done manually
+  const iconSize =
+    typeof size === 'string' ? getVariableValue(getTokens().size[size] || size) : size
   return (
     <Button
       {...props}
       size={size}
       circular
       unstyled
-      icon={<Star size={size} weight={filled ? 'fill' : 'regular'} />}
+      icon={<Star size={iconSize} weight={filled ? 'fill' : 'regular'} />}
     />
   )
 }

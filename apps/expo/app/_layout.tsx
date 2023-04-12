@@ -1,6 +1,7 @@
 import { Provider } from 'app/src/provider'
 import { Stack } from 'expo-router'
 import { useFonts } from 'expo-font'
+import { LmThemeToggle } from 'app/src/components/various/LmThemeToggle'
 
 export default function Root() {
   const [loaded] = useFonts({
@@ -13,7 +14,12 @@ export default function Root() {
 
   return (
     <Provider>
-      <Stack />
+      <Stack
+        initialRouteName={'index'}
+        screenOptions={{
+          headerRight: () => <LmThemeToggle />,
+        }}
+      />
     </Provider>
   )
 }

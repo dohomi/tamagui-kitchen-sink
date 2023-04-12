@@ -13,10 +13,10 @@ export function LmAppBar({ title, rightContent }: LmDashboardAppBarProps) {
   return (
     <XStack
       position={'sticky' as 'absolute'}
-      top={'0px'}
+      top={'$0'}
       zIndex={1100}
       elevation={'$5'}
-      height={'64px'}
+      height={64}
       alignItems={'center'}
       paddingHorizontal={'$2'}
       justifyContent={'space-between'}

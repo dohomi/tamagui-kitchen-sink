@@ -1,6 +1,6 @@
 {
   "private": true,
   "types": "./index.d.ts",
-  "main": "../dist/esm/form/index.js",
-  "module": "../dist/esm/form/index.mjs"
+  "main": "./index.js",
+  "module": "./index.mjs"
 }

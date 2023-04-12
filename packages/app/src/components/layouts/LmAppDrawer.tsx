@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { useOnRouteChange } from 'app/src/navigation/useOnRouteChange'
 import { changeLanguage } from 'app/src/i18n/i18n'
 import { useTranslation } from 'react-i18next'
-import { LmButton } from 'tamagui-extras'
+import { LmButton, LmGrid } from 'tamagui-extras'
 import { LmLinkButton } from 'tamagui-extras/link'
 
 export function LmAppDrawer() {
@@ -30,15 +30,23 @@ export function LmAppDrawer() {
 
         <Sheet.Frame alignItems="center" justifyContent="center">
           <Sheet.ScrollView>
-            <YStack padding="$4" justifyContent="center" alignItems="center">
-              <XStack space>
+            <LmGrid space container row={'sm'}>
+              <LmGrid>
                 <LmLinkButton link={{ href: '/' }}>{t('home')}</LmLinkButton>
+              </LmGrid>
+              <LmGrid>
                 <LmLinkButton link={{ href: '/icons' }}>{t('icons')}</LmLinkButton>
+              </LmGrid>
+              <LmGrid>
                 <LmLinkButton link={{ href: '/playground' }}>{t('playground')}</LmLinkButton>
+              </LmGrid>
+              <LmGrid>
                 <LmLinkButton link={{ href: '/overview' }}>
                   {t('overviewScreen.headline')}
                 </LmLinkButton>
-              </XStack>
+              </LmGrid>
+            </LmGrid>
+            <YStack padding="$4" justifyContent="center" alignItems="center">
               <XStack space marginVertical={'$4'}>
                 <LmButton onPress={() => changeLanguage('de')}>DE</LmButton>
                 <LmButton onPress={() => changeLanguage('en')}>EN</LmButton>

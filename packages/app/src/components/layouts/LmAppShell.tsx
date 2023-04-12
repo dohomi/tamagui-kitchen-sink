@@ -16,7 +16,6 @@ export function LmAppShell({ children, title }: PropsWithChildren<{ title?: stri
         space
       >
         {children}
-
         <LmAppDrawer />
       </YStack>
     </YStack>

@@ -1,17 +1,9 @@
-import {
-  LmAutocompleteRhf,
-  LmFormRhfProvider,
-  LmInputRhf,
-  LmSelectRhf,
-  LmStarRatingRhf,
-} from 'tamagui-extras/form'
-import { LmDatepickerRhf } from 'tamagui-extras/date'
+import { LmFormRhfProvider, LmInputRhf, LmStarRatingRhf } from 'tamagui-extras/form'
 
 import React from 'react'
-import { fruitItemsFixtures } from './util'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
 import { SpaceTokens, YStack } from 'tamagui'
-import { LmRichTextRhf } from 'tamagui-extras/richText'
+import { LmDatepickerRhf } from 'tamagui-extras/date'
 
 export function PlaygroundScreen() {
   const defaultSectionProps: {
@@ -34,22 +26,21 @@ export function PlaygroundScreen() {
           maxWidth={'100%'}
         >
           <YStack {...defaultSectionProps} width={'100%'}>
-            <LmAutocompleteRhf
-              name={'autocomplete'}
-              label={'Autocomplete'}
-              options={fruitItemsFixtures}
-            />
-            <LmSelectRhf options={fruitItemsFixtures} name={'select'} />
-            <LmAutocompleteRhf
-              name={'autocomplete-multi'}
-              label={'Multi'}
-              multiple
-              options={fruitItemsFixtures}
-            />
+            {/*<LmAutocompleteRhf*/}
+            {/*  name={'autocomplete'}*/}
+            {/*  label={'Autocomplete'}*/}
+            {/*  options={fruitItemsFixtures}*/}
+            {/*/>*/}
+            {/*<LmAutocompleteRhf*/}
+            {/*  name={'autocomplete-multi'}*/}
+            {/*  label={'Multi'}*/}
+            {/*  multiple*/}
+            {/*  options={fruitItemsFixtures}*/}
+            {/*/>*/}
+            {/*<LmSelectRhf options={fruitItemsFixtures} name={'select'} />*/}
             <LmDatepickerRhf start={'date'} label={'Date'} />
-            <LmRichTextRhf name={'richtext'} />
+            {/*<LmRichTextRhf name={'richtext'} />*/}
             <LmInputRhf name={'textfield'} label={'Textfield'} />
-
             <LmStarRatingRhf name={'stars'} />
 
             {/*<LmYoutubeEmbed youtubeId={'JxS5E-kZc2s'} aspectRatio={4 / 3}/>*/}
