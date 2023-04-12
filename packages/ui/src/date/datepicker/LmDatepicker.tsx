@@ -4,7 +4,6 @@ import {
   OnDatesChangeProps,
   START_DATE,
   useDatepicker,
-  UseMonthProps,
 } from '@datepicker-react/hooks'
 import { useId, useState } from 'react'
 import { LmMonth } from './LmMonth'
@@ -14,19 +13,10 @@ import { LmPopover } from '../../core/panels'
 import { usePopoverState } from '../../core/hooks'
 import { getLocaleDate } from '../dateHelper'
 import { LmFormFieldContainer } from '../../form/LmFormFieldContainer'
-import { LmFormContainerBaseTypes } from '../../form/formContainerTypes'
-import { Platform } from 'react-native' // change language see: https://github.com/tomgreenwood1/react-datepicker/blob/master/packages/styled/src/components/DateRangeInput/DateRangeInput.stories.tsx#L228
+import { Platform } from 'react-native'
+import { LmDatepickerProps } from './datepickerTypes' // change language see: https://github.com/tomgreenwood1/react-datepicker/blob/master/packages/styled/src/components/DateRangeInput/DateRangeInput.stories.tsx#L228
 
 // change language see: https://github.com/tomgreenwood1/react-datepicker/blob/master/packages/styled/src/components/DateRangeInput/DateRangeInput.stories.tsx#L228
-
-export type LmDatepickerProps = LmFormContainerBaseTypes & {
-  startDate?: Date | null
-  endDate?: Date | null
-  numberOfMonths?: number
-  isRangePicker?: boolean
-  onChange?: (data: OnDatesChangeProps) => void
-  labelFunctions?: Pick<UseMonthProps, 'dayLabelFormat' | 'weekdayLabelFormat' | 'monthLabelFormat'>
-}
 
 export function LmDatepicker({
   numberOfMonths,
@@ -87,7 +77,8 @@ export function LmDatepicker({
         helperText={helperText}
       >
         <LmPopover
-          isBouncy={false}
+          isBouncy={true}
+          hideArrow
           trigger={
             <XStack space width={Platform.OS === 'web' ? 'fit-content' : undefined}>
               <XGroup>

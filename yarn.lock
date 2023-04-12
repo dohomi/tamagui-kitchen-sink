@@ -3525,6 +3525,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-community/datetimepicker@npm:7.0.1":
+  version: 7.0.1
+  resolution: "@react-native-community/datetimepicker@npm:7.0.1"
+  dependencies:
+    invariant: ^2.2.4
+  checksum: 108724a239d086e165ab17fd39fac43a8daf91a852ea9fd40d5bf9a2dd984ad8a473079e6228bc7f9fed0d6cf5610b2f4438142765e228f25aef37f9c6c4f85f
+  languageName: node
+  linkType: hard
+
 "@react-native/assets@npm:1.0.0":
   version: 1.0.0
   resolution: "@react-native/assets@npm:1.0.0"
@@ -21934,6 +21943,7 @@ __metadata:
   resolution: "tamagui-extras@workspace:packages/ui"
   dependencies:
     "@datepicker-react/hooks": ^2.8.4
+    "@react-native-community/datetimepicker": 7.0.1
     "@siposdani87/expo-rich-text-editor": ^0.9.2
     "@storybook/react": ^7.0.2
     "@tamagui/build": 1.14.3

@@ -89,6 +89,7 @@
   },
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",
+    "@react-native-community/datetimepicker": "7.0.1",
     "@siposdani87/expo-rich-text-editor": "^0.9.2",
     "@tiptap/pm": "2.0.0",
     "@tiptap/react": "2.0.0",

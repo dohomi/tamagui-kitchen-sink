@@ -1,9 +1,15 @@
-import { LmFormRhfProvider, LmInputRhf, LmStarRatingRhf } from 'tamagui-extras/form'
+import {
+  LmAutocompleteRhf,
+  LmFormRhfProvider,
+  LmInputRhf,
+  LmStarRatingRhf,
+} from 'tamagui-extras/form'
 
 import React from 'react'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
 import { SpaceTokens, YStack } from 'tamagui'
 import { LmDatepickerRhf } from 'tamagui-extras/date'
+import { fruitItemsFixtures } from 'tamagui-extras/fixtures/selectItems'
 
 export function PlaygroundScreen() {
   const defaultSectionProps: {
@@ -26,11 +32,11 @@ export function PlaygroundScreen() {
           maxWidth={'100%'}
         >
           <YStack {...defaultSectionProps} width={'100%'}>
-            {/*<LmAutocompleteRhf*/}
-            {/*  name={'autocomplete'}*/}
-            {/*  label={'Autocomplete'}*/}
-            {/*  options={fruitItemsFixtures}*/}
-            {/*/>*/}
+            <LmAutocompleteRhf
+              name={'autocomplete'}
+              label={'Autocomplete'}
+              options={fruitItemsFixtures}
+            />
             {/*<LmAutocompleteRhf*/}
             {/*  name={'autocomplete-multi'}*/}
             {/*  label={'Multi'}*/}

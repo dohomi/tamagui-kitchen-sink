@@ -1,15 +1,17 @@
 import { Provider } from 'app/src/provider'
-import { Stack } from 'expo-router'
+import { SplashScreen, Stack } from 'expo-router'
 import { useFonts } from 'expo-font'
-import { LmThemeToggle } from 'app/src/components/various/LmThemeToggle'
+import { useThemeNameState } from 'app/src/state/themeState'
 
 export default function Root() {
+  const theme = useThemeNameState()
+  const isDarkTheme = theme === 'dark'
   const [loaded] = useFonts({
     Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
     InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
   })
   if (!loaded) {
-    return null
+    return <SplashScreen />
   }
 
   return (
@@ -17,7 +19,16 @@ export default function Root() {
       <Stack
         initialRouteName={'index'}
         screenOptions={{
-          headerRight: () => <LmThemeToggle />,
+          headerStyle: {
+            backgroundColor: isDarkTheme ? '#222' : '#f5f5f5',
+          },
+          headerTintColor: isDarkTheme ? '#fff' : '#000',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+          headerBackTitleVisible: false,
+          headerShown: false,
+          // headerRight: ({ canGoBack }) => <LmThemeToggle />,
         }}
       />
     </Provider>

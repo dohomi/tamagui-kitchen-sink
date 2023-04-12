@@ -1,4 +1,4 @@
-import { Popover, PopoverContentProps, PopoverProps } from 'tamagui'
+import { Adapt, Popover, PopoverContentProps, PopoverProps, XStack } from 'tamagui'
 import { ReactNode } from 'react'
 
 export type LmPopoverProps = PopoverProps & {
@@ -19,6 +19,22 @@ export function LmPopover({
   return (
     <Popover size="$5" {...popoverProps}>
       <Popover.Trigger asChild>{trigger}</Popover.Trigger>
+
+      <Adapt when={'sm'} platform="touch">
+        <Popover.Sheet modal dismissOnSnapToBottom>
+          <Popover.Sheet.Overlay />
+
+          <Popover.Sheet.Frame padding={'$4'}>
+            <Popover.Sheet.ScrollView>
+              <XStack justifyContent={'center'}>
+                <Adapt.Contents />
+              </XStack>
+            </Popover.Sheet.ScrollView>
+          </Popover.Sheet.Frame>
+          <Popover.Sheet.Overlay />
+        </Popover.Sheet>
+      </Adapt>
+
       <Popover.Content
         borderWidth={1}
         borderColor="$borderColor"
@@ -44,17 +60,6 @@ export function LmPopover({
         {!hideArrow && <Popover.Arrow borderWidth={1} borderColor="$borderColor" />}
         {children}
       </Popover.Content>
-      {/*@ts-ignore */}
-      <Popover.Adapt when={'sm'} platform="touch">
-        <Popover.Sheet modal dismissOnSnapToBottom>
-          <Popover.Sheet.Frame padding={'$4'}>
-            <Popover.Sheet.ScrollView>
-              <Popover.Adapt.Contents />
-            </Popover.Sheet.ScrollView>
-          </Popover.Sheet.Frame>
-          <Popover.Sheet.Overlay />
-        </Popover.Sheet>
-      </Popover.Adapt>
     </Popover>
   )
 }
