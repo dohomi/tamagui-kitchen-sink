@@ -11,6 +11,7 @@
     "sb:vite": "cd apps/vite && yarn storybook",
     "sb:native": "cd apps/storybook-react-native && yarn start",
     "sb": "cd apps/storybook-react && yarn sb",
+    "sb:build": "cd apps/storybook-react && yarn build && yarn serve-sb",
     "web:prod": "yarn workspace next-app build",
     "watch": "yarn turbo run watch --filter=tamagui-extras",
     "postinstall": "yarn build",

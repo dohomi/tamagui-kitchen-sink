@@ -31,49 +31,6 @@
     "video",
     "youtube"
   ],
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "default": "./dist/esm/index.js"
-    },
-    "./date": {
-      "types": "./date/index.d.ts",
-      "import": "./dist/esm/date/index.mjs",
-      "default": "./dist/esm/date/index.js"
-    },
-    "./file": {
-      "types": "./file/index.d.ts",
-      "import": "./dist/esm/file/index.mjs",
-      "default": "./dist/esm/file/index.js"
-    },
-    "./form": {
-      "types": "./form/index.d.ts",
-      "import": "./dist/esm/form/index.mjs",
-      "default": "./dist/esm/form/index.js"
-    },
-    "./link": {
-      "types": "./link/index.d.ts",
-      "import": "./dist/esm/link/index.mjs",
-      "default": "./dist/esm/link/index.js"
-    },
-    "./richText": {
-      "types": "./richText/index.d.ts",
-      "import": "./dist/esm/richText/index.mjs",
-      "default": "./dist/esm/richText/index.js"
-    },
-    "./video": {
-      "types": "./video/index.d.ts",
-      "import": "./dist/esm/video/index.mjs",
-      "default": "./dist/esm/video/index.js"
-    },
-    "./youtube": {
-      "types": "./youtube/index.d.ts",
-      "import": "./dist/esm/youtube/index.mjs",
-      "default": "./dist/esm/youtube/index.js"
-    }
-  },
   "scripts": {
     "rm:all": "rm -rf out dist types",
     "build:tsup": "yarn rm:all && tsup --config ./tsup.config.ts && yarn ts",
@@ -89,7 +46,7 @@
   },
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",
-    "@react-native-community/datetimepicker": "7.0.1",
+    "@react-native-community/datetimepicker": "^7.0.1",
     "@siposdani87/expo-rich-text-editor": "^0.9.2",
     "@tiptap/pm": "2.0.0",
     "@tiptap/react": "2.0.0",
@@ -98,6 +55,7 @@
     "expo-av": "^13.2.1",
     "expo-document-picker": "^11.2.2",
     "react-hook-form": "^7.43.9",
+    "react-native-modal-datetime-picker": "^15.0.0",
     "react-native-svg": "^13.9.0",
     "react-native-webview": "^11.26.1"
   },

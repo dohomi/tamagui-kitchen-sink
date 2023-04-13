@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "my-app",
-    "slug": "my-app",
+    "name": "tamagui-kitchen-sink",
+    "slug": "tamagui-kitchen-sink",
     "scheme": "my-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -20,14 +20,14 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.natew.my-app"
+      "bundleIdentifier": "com.djgarms.tamagui-kitchen-sink"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.djgarms.myapp"
+      "package": "com.djgarms.tamagui-kitchen-sink"
     },
     "web": {
       "favicon": "./assets/favicon.png"

@@ -3525,7 +3525,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-community/datetimepicker@npm:7.0.1":
+"@react-native-community/datetimepicker@npm:^7.0.1":
   version: 7.0.1
   resolution: "@react-native-community/datetimepicker@npm:7.0.1"
   dependencies:
@@ -19631,6 +19631,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-modal-datetime-picker@npm:^15.0.0":
+  version: 15.0.0
+  resolution: "react-native-modal-datetime-picker@npm:15.0.0"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    "@react-native-community/datetimepicker": ">=6.7.0"
+    react-native: ">=0.65.0"
+  checksum: df70ac4d8d0b0eb7828e5f7e0387d70c4eb34f0717d8460f80b7f1bd28e7edc9da2790dbebbd155bd8f667fc9f083e0a88c410cf53dfae58686e82670190acd3
+  languageName: node
+  linkType: hard
+
 "react-native-safe-area-context@npm:^4.4.1":
   version: 4.5.0
   resolution: "react-native-safe-area-context@npm:4.5.0"
@@ -21943,7 +21955,7 @@ __metadata:
   resolution: "tamagui-extras@workspace:packages/ui"
   dependencies:
     "@datepicker-react/hooks": ^2.8.4
-    "@react-native-community/datetimepicker": 7.0.1
+    "@react-native-community/datetimepicker": ^7.0.1
     "@siposdani87/expo-rich-text-editor": ^0.9.2
     "@storybook/react": ^7.0.2
     "@tamagui/build": 1.14.3
@@ -21957,6 +21969,7 @@ __metadata:
     prettier: ^2.8.7
     react-hook-form: ^7.43.9
     react-native: ^0.71.6
+    react-native-modal-datetime-picker: ^15.0.0
     react-native-svg: ^13.9.0
     react-native-webview: ^11.26.1
     solito: ^3.0.1

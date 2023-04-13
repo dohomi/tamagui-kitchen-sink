@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "name": "tamagui-extras/video",
   "types": "./index.d.ts",
   "main": "./index.js",
   "module": "./index.mjs"

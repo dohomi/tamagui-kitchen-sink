@@ -1,6 +1,7 @@
 import { ControllerProps, useController } from 'react-hook-form'
-import { LmDatepicker, LmDatepickerProps } from '../LmDatepicker'
+import { LmDatepicker } from '../LmDatepicker'
 import { formatISO } from 'date-fns'
+import { LmDatepickerProps } from '../datepickerTypes'
 
 export type LmDatepickerRhf = LmDatepickerProps &
   Pick<ControllerProps, 'control' | 'rules'> & {

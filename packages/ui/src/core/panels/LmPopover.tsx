@@ -1,11 +1,13 @@
-import { Adapt, Popover, PopoverContentProps, PopoverProps, XStack } from 'tamagui'
+import { Adapt, Popover, PopoverContentProps, PopoverProps } from 'tamagui'
 import { ReactNode } from 'react'
+import { LmSheet, LmSheetProps } from './LmSheet'
 
 export type LmPopoverProps = PopoverProps & {
   trigger?: ReactNode
   hideArrow?: boolean
   contentProps?: PopoverContentProps
   isBouncy?: boolean
+  sheetProps?: LmSheetProps
 }
 
 export function LmPopover({
@@ -14,6 +16,7 @@ export function LmPopover({
   hideArrow,
   contentProps,
   isBouncy = true,
+  sheetProps,
   ...popoverProps
 }: LmPopoverProps) {
   return (
@@ -21,18 +24,9 @@ export function LmPopover({
       <Popover.Trigger asChild>{trigger}</Popover.Trigger>
 
       <Adapt when={'sm'} platform="touch">
-        <Popover.Sheet modal dismissOnSnapToBottom>
-          <Popover.Sheet.Overlay />
-
-          <Popover.Sheet.Frame padding={'$4'}>
-            <Popover.Sheet.ScrollView>
-              <XStack justifyContent={'center'}>
-                <Adapt.Contents />
-              </XStack>
-            </Popover.Sheet.ScrollView>
-          </Popover.Sheet.Frame>
-          <Popover.Sheet.Overlay />
-        </Popover.Sheet>
+        <LmSheet {...sheetProps}>
+          <Adapt.Contents />
+        </LmSheet>
       </Adapt>
 
       <Popover.Content

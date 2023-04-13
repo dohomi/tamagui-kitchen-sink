@@ -7,7 +7,8 @@
     "build": "TAMAGUI_TARGET=web storybook build -s public -o dist",
     "sb": "TAMAGUI_TARGET=web storybook dev -p 6006 -s ./public",
     "chromatic": "npx chromatic --project-token=aa4fa9ec8af5",
-    "check-types": "tsc --noemit"
+    "check-types": "tsc --noemit",
+    "serve-sb": "npx serve ./dist"
   },
   "dependencies": {
     "app": "*",

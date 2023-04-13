@@ -2,7 +2,7 @@ import { ScrollViewProps, Sheet } from 'tamagui'
 import { PropsWithChildren, useState } from 'react'
 import { SheetProps } from '@tamagui/sheet/src/types'
 
-type LmSheetProps = PropsWithChildren<
+export type LmSheetProps = PropsWithChildren<
   SheetProps & {
     hideHandle?: boolean
     fullScreen?: boolean

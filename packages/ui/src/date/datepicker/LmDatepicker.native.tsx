@@ -1,4 +1,4 @@
-import DateTimePicker from '@react-native-community/datetimepicker'
+import DateTimePickerModal from 'react-native-modal-datetime-picker'
 import { LmDatepickerProps } from './datepickerTypes'
 import { LmFormFieldContainer } from '../../form'
 import { useId, useState } from 'react'
@@ -49,7 +49,7 @@ export function LmDatepicker({
             ></Input>
           </XGroup.Item>
           <XGroup.Item>
-            <Button onPress={() => startOpenChange(true)} icon={<Calendar />} />
+            <Button onPress={() => startOpenChange((state) => !state)} icon={<Calendar />} />
           </XGroup.Item>
         </XGroup>
         {isRangePicker && (
@@ -61,24 +61,41 @@ export function LmDatepicker({
               />
             </XGroup.Item>
             <XGroup.Item>
-              <Button onPress={() => endOpenChange(true)} icon={<Calendar />} />
+              <Button onPress={() => endOpenChange((state) => !state)} icon={<Calendar />} />
             </XGroup.Item>
           </XGroup>
         )}
       </XStack>
       {startOpen && (
-        <DateTimePicker
-          value={state?.startDate ?? new Date()}
-          onChange={(event, date) => {
+        <DateTimePickerModal
+          date={state.startDate ?? undefined}
+          isVisible={startOpen}
+          mode={'date'}
+          onConfirm={(date) => {
             setState((old) => ({
               ...old,
               startDate: date ?? null,
             }))
             startOpenChange(false)
           }}
+          onCancel={() => startOpenChange(false)}
         />
       )}
-      {endOpen && <DateTimePicker value={state?.endDate ?? new Date()} />}
+      {endOpen && (
+        <DateTimePickerModal
+          date={state.endDate ?? undefined}
+          isVisible={endOpen}
+          mode={'date'}
+          onConfirm={(date) => {
+            setState((old) => ({
+              ...old,
+              endDate: date ?? null,
+            }))
+            startOpenChange(false)
+          }}
+          onCancel={() => endOpenChange(false)}
+        />
+      )}
     </LmFormFieldContainer>
   )
 }

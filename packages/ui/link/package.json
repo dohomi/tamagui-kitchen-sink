@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "name": "tamagui-extras/link",
   "types": "./index.d.ts",
   "main": "./index.js",
   "module": "./index.mjs"
