@@ -191,7 +191,6 @@ function LmAutocompleteInputContent({
                 </Button>
               </XStack>
             )}
-            d
           </Popover.ScrollView>
         </>
       ) : (
