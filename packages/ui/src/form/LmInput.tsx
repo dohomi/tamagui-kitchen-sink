@@ -1,8 +1,9 @@
-import { Button, Input, InputProps, Stack, TextArea, ThemeableStackProps } from 'tamagui'
+import { Input, InputProps, Stack, TextArea, ThemeableStackProps } from 'tamagui'
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
 import { Eye, EyeSlash, IconProps } from 'tamagui-phosphor-icons'
+import { Pressable } from 'react-native'
 
 export type LmInputProps = InputProps &
   LmFormContainerBaseTypes & {
@@ -43,6 +44,7 @@ export function LmInput({
   }
 
   let secureTextEntry = !!(rest.secureTextEntry || isPassword)
+
   return (
     <LmFormFieldContainer
       id={id}
@@ -62,17 +64,22 @@ export function LmInput({
       ) : secureTextEntry ? (
         <Stack position={'relative'} width={fullWidth ? '100%' : 'fit-content'}>
           <Input {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
-          <Button
-            icon={show ? <EyeSlash {...passwordIconProps} /> : <Eye {...passwordIconProps} />}
-            circular
-            unstyled
-            hoverStyle={{ backgroundColor: '$background' }}
-            position={'absolute'}
-            right={'$1'}
+          <Pressable
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              top: 0,
+              marginTop: 'auto',
+              marginBottom: 'auto',
+              height: '20px',
+              right: '10px',
+            }}
             onPress={() => {
               setShow((state) => !state)
             }}
-          />
+          >
+            {show ? <EyeSlash {...passwordIconProps} /> : <Eye {...passwordIconProps} />}
+          </Pressable>
         </Stack>
       ) : (
         <Input {...styleProps} autoCapitalize="none" />

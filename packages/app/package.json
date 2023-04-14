@@ -7,15 +7,15 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@tamagui/animations-react-native": "1.14.3",
-    "@tamagui/colors": "1.14.3",
-    "@tamagui/font-inter": "1.14.3",
-    "@tamagui/shorthands": "1.14.3",
-    "@tamagui/theme-base": "1.14.3",
+    "@tamagui/animations-react-native": "1.14.4",
+    "@tamagui/colors": "1.14.4",
+    "@tamagui/font-inter": "1.14.4",
+    "@tamagui/shorthands": "1.14.4",
+    "@tamagui/theme-base": "1.14.4",
     "i18next": "^21.9.1",
     "react-i18next": "^11.18.6",
     "solito": "^3.0.1",
-    "tamagui": "1.14.3",
+    "tamagui": "1.14.4",
     "tamagui-extras": "*",
     "zustand": "^4.3.3"
   },

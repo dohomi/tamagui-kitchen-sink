@@ -171,6 +171,7 @@ export const WithTamaguiForm_2: StoryObj = {
       defaultValues: {
         name: '',
         email: undefined,
+        password: undefined,
       },
     })
     return (
@@ -198,6 +199,15 @@ export const WithTamaguiForm_2: StoryObj = {
           placeholder={'Type your email...'}
           labelInline
         />
+        <LmInputRhf
+          name={'password'}
+          control={control}
+          label={'Password'}
+          isPassword
+          placeholder={'Your password...'}
+          labelInline
+        />
+
         <XStack gap={'$3'}>
           <LmButton onPress={() => reset()}>Reset</LmButton>
           <Form.Trigger asChild>
