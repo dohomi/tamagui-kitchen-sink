@@ -60,11 +60,12 @@ export function LmFormFieldContainer({
           {label} {required && ` *`}
         </Label>
       )}
-      <YStack space>
+      <YStack>
         {children}
         {helperText && (
           <Paragraph
             paddingLeft={'$2'}
+            marginTop={'$2'}
             size={size as FontSizeTokens}
             {...helperTextProps}
             color={error ? '$red10' : undefined}
