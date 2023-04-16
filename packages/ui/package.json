@@ -31,6 +31,7 @@
     "video",
     "youtube"
   ],
+  "type": "module",
   "scripts": {
     "rm:all": "rm -rf out dist types",
     "build:tsup": "yarn rm:all && tsup --config ./tsup.config.ts && yarn ts",
