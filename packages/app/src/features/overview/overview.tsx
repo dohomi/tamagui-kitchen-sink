@@ -19,8 +19,8 @@ import {
 import { Star } from 'tamagui-phosphor-icons'
 import { fruitItemsFixtures } from 'app/src/lib/fixtures/selectItems'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
-import { LmAvatar, LmButton } from 'tamagui-extras'
-import { LmInput, LmSelect } from 'tamagui-extras/form'
+import { LmAvatar, LmButton } from '@tamagui-extras/core'
+import { LmInput, LmSelect } from '@tamagui-extras/form'
 
 export function OverviewScreen() {
   const {} = useTheme()

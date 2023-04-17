@@ -5,8 +5,8 @@ import React, { useState } from 'react'
 import { useOnRouteChange } from 'app/src/navigation/useOnRouteChange'
 import { changeLanguage } from 'app/src/i18n/i18n'
 import { useTranslation } from 'react-i18next'
-import { LmButton, LmGrid } from 'tamagui-extras'
-import { LmLinkButton } from 'tamagui-extras/link'
+import { LmButton, LmGrid } from '@tamagui-extras/core'
+import { LmLinkButton } from '@tamagui-extras/link'
 
 export function LmAppDrawer() {
   const { t } = useTranslation()

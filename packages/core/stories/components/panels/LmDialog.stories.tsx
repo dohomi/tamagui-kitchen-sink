@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button, Text, XStack, YStack } from 'tamagui'
-import { LmButton, LmDialog, usePopoverState } from '../../../src'
+import { LmDialog, usePopoverState } from '../../../src'
 
-import { WarningCircle, X } from 'tamagui-phosphor-icons'
-import { LmFormRhfProvider, LmInputRhf, LmSelectRhf, LmSubmitButtonRhf } from '../../../src/form'
+import { X } from 'tamagui-phosphor-icons'
 
 export default {
   title: 'core/Panels/Dialog',
@@ -71,54 +70,6 @@ export const ControlledState = () => {
             Some other content follows. You have full control of the opening state of the dialog.
           </Text>
         </LmDialog.Content>
-      </LmDialog>
-    </YStack>
-  )
-}
-
-export const FormInsideDialog = () => {
-  const { open, onOpenChange } = usePopoverState()
-  const [loading, setLoading] = useState(false)
-
-  const fakeSubmit = async (data) => {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      onOpenChange(false)
-      console.log(data)
-    }, 3000)
-  }
-  return (
-    <YStack>
-      <Button onPress={() => onOpenChange(true)}>Open Dialog</Button>
-      <LmDialog onOpenChange={onOpenChange} open={open} title={'Contact data'}>
-        <LmFormRhfProvider>
-          <LmDialog.Content>
-            <LmSelectRhf
-              name={'title'}
-              label={'Title'}
-              required
-              options={[
-                { value: 'mrs', label: 'Mrs.' },
-                { value: 'mr', label: 'Mr.' },
-              ]}
-            />
-            <LmInputRhf name={'firstName'} label={'First Name'} required />
-            <LmInputRhf name={'lastName'} label={'Last Name'} required />
-
-            <LmDialog
-              title={'Some Info'}
-              description={'This is a nested dialog'}
-              trigger={<LmButton icon={<WarningCircle />} />}
-            ></LmDialog>
-          </LmDialog.Content>
-
-          <LmDialog.Actions>
-            <LmSubmitButtonRhf onSubmit={fakeSubmit} loading={loading}>
-              Submit
-            </LmSubmitButtonRhf>
-          </LmDialog.Actions>
-        </LmFormRhfProvider>
       </LmDialog>
     </YStack>
   )

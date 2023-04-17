@@ -40,13 +40,15 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "solito": "^3.0.0"
+    "solito": "^3.0.0",
+    "tamagui": "1.15.14"
   },
   "devDependencies": {
-    "@tamagui/build": "1.15.13",
+    "@tamagui/build": "1.15.14",
     "react": "^18.2.0",
     "react-native": "^0.71.4",
-    "solito": "^3.0.0"
+    "solito": "^3.0.0",
+    "tamagui": "1.15.14"
   },
   "publishConfig": {
     "access": "public"

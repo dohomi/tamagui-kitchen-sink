@@ -1,3 +1,4 @@
+// @ts-ignore
 import path from 'path'
 import { StorybookConfig } from '@storybook/nextjs'
 
@@ -5,7 +6,12 @@ const config: StorybookConfig = {
   stories: [
     // '../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../../../packages/app/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    '../../../packages/ui/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../../../packages/core/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    // '../../../packages/form/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    // '../../../packages/date/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    // '../../../packages/rich-text/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    // '../../../packages/video/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    // '../../../packages/youtube/**/*.stories.@(js|jsx|ts|tsx|mdx)',
   ],
   addons: [
     '@storybook/addon-links',
@@ -31,7 +37,6 @@ const config: StorybookConfig = {
           'expo-document-picker',
           'expo-av',
           'expo-asset',
-          'tamagui-extras',
         ],
 
         babelPlugins: [
@@ -69,12 +74,12 @@ const config: StorybookConfig = {
   //     return config;
   // },
   webpackFinal: async (config, { configType }) => {
-    config.module.rules.push({
-      test: /\.(js|mjs|jsx)$/,
-      resolve: {
-        fullySpecified: false,
-      },
-    })
+    // config.module.rules.push({
+    //   test: /\.(js|mjs|jsx)$/,
+    //   resolve: {
+    //     fullySpecified: false,
+    //   },
+    // })
     return config
   },
   env: (config) => ({

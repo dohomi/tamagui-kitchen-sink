@@ -38,16 +38,19 @@
     "npmPublish": "npm publish"
   },
   "dependencies": {
+    "@tamagui-extras/core": "*",
     "react-hook-form": "^7.43.9"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "tamagui": "1.15.14"
   },
   "devDependencies": {
-    "@tamagui/build": "1.15.13",
+    "@tamagui/build": "1.15.14",
     "react": "^18.2.0",
-    "react-native": "^0.71.4"
+    "react-native": "^0.71.4",
+    "tamagui": "1.15.14"
   },
   "publishConfig": {
     "access": "public"

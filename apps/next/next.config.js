@@ -14,6 +14,17 @@ if (disableExtraction) {
   console.log('Disabling static extraction in development mode for better HMR')
 }
 
+const extrasPlugins = [
+  '@tamagui-extras/core',
+  '@tamagui-extras/date',
+  '@tamagui-extras/file',
+  '@tamagui-extras/form',
+  '@tamagui-extras/link',
+  '@tamagui-extras/rich-text',
+  '@tamagui-extras/video',
+  '@tamagui-extras/youtube',
+]
+
 const transpilePackages = [
   'solito',
   'react-native-web',
@@ -24,7 +35,7 @@ const transpilePackages = [
   'expo-document-picker',
   'expo-av',
   'tamagui-phosphor-icons',
-  'tamagui-extras',
+  ...extrasPlugins,
   // '@expo/vector-icons',
 ]
 
@@ -32,7 +43,7 @@ const plugins = [
   withTM(transpilePackages),
   withTamagui({
     config: './tamagui.config.ts',
-    components: ['tamagui-extras', 'tamagui'],
+    components: ['tamagui', ...extrasPlugins],
     importsWhitelist: ['constants.js', 'colors.js'],
     logTimings: true,
     disableExtraction,

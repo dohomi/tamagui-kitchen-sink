@@ -3,12 +3,12 @@ import {
   LmFormRhfProvider,
   LmInputRhf,
   LmStarRatingRhf,
-} from 'tamagui-extras/form'
+} from '@tamagui-extras/form'
 
 import React from 'react'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
 import { SpaceTokens, YStack } from 'tamagui'
-import { LmDatepickerRhf } from 'tamagui-extras/date'
+import { LmDatepickerRhf } from '@tamagui-extras/date'
 import { fruitItemsFixtures } from '../../lib/fixtures/selectItems'
 
 export function PlaygroundScreen() {
