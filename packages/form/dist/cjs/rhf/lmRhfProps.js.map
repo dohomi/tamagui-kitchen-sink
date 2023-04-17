@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/rhf/lmRhfProps.tsx"],
+  "sourcesContent": ["import { ControllerProps, FieldValues } from 'react-hook-form'\n\nexport type LmRhfProps<TFieldValues extends FieldValues> = Pick<\n  ControllerProps<TFieldValues>,\n  'defaultValue' | 'control' | 'rules' | 'name'\n>\n"],
+  "mappings": ";;;;;;;;;;;;;AAAA;AAAA;",
+  "names": []
+}

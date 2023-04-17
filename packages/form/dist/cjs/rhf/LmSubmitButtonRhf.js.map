@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/rhf/LmSubmitButtonRhf.tsx"],
+  "sourcesContent": ["import { LmButton, LmButtonProps } from '@tamagui-extras/core'\nimport { FieldValues, useFormContext, UseFormReturn } from 'react-hook-form'\n\nexport type LmButtonRhfProps<T extends FieldValues> = LmButtonProps & {\n  onSubmit: (data: T, context: UseFormReturn<T, any>) => void | Promise<void>\n}\n\nexport function LmSubmitButtonRhf<TFieldValues extends FieldValues = FieldValues>({\n  onSubmit,\n  ...props\n}: LmButtonRhfProps<TFieldValues>) {\n  const formContext = useFormContext<TFieldValues>()\n  const { handleSubmit, formState } = formContext\n  return (\n    <LmButton\n      {...props}\n      onPress={handleSubmit((data) => {\n        onSubmit(data, formContext)\n      })}\n      loading={formState.isValidating || props.loading}\n    />\n  )\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,kBAAwC;AACxC,6BAA2D;AAMpD,SAAS,kBAAkE;AAAA,EAChF;AAAA,KACG;AACL,GAAmC;AACjC,QAAM,kBAAc,uCAA6B;AACjD,QAAM,EAAE,cAAc,UAAU,IAAI;AACpC,SACE,CAAC,yBACK,OACJ,SAAS,aAAa,CAAC,SAAS;AAC9B,aAAS,MAAM,WAAW;AAAA,EAC5B,CAAC,GACD,SAAS,UAAU,gBAAgB,MAAM,SAC3C;AAEJ;",
+  "names": []
+}

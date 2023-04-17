@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/rhf/LmRadioGroupRhf.tsx"],
+  "sourcesContent": ["import { LmRhfProps } from './lmRhfProps'\nimport { LmRadioGroup, LmRadioGroupProps } from '../LmRadioGroup'\nimport { Controller, FieldValues } from 'react-hook-form'\n\nexport type LmRadioGroupRhfProps<T extends FieldValues> = LmRadioGroupProps & LmRhfProps<T> & {}\n\nexport function LmRadioGroupRhf<T extends FieldValues>({\n  name,\n  control,\n  rules = {},\n  defaultValue,\n  ...rest\n}: LmRadioGroupRhfProps<T>) {\n  if (rest.required) {\n    rules.required = 'This field is required'\n  }\n  return (\n    <Controller\n      name={name}\n      control={control}\n      rules={rules}\n      defaultValue={defaultValue}\n      render={({ field: { onChange, value }, fieldState: { error } }) => (\n        <LmRadioGroup\n          {...rest}\n          name={name}\n          value={value}\n          onValueChange={onChange}\n          error={!!error}\n          helperText={error ? error.message : rest.helperText}\n        />\n      )}\n    />\n  )\n}\n"],
+  "mappings": "AACA,SAAS,oBAAuC;AAChD,SAAS,kBAA+B;AAIjC,SAAS,gBAAuC;AAAA,EACrD;AAAA,EACA;AAAA,EACA,QAAQ,CAAC;AAAA,EACT;AAAA,KACG;AACL,GAA4B;AAC1B,MAAI,KAAK,UAAU;AACjB,UAAM,WAAW;AAAA,EACnB;AACA,SACE,CAAC,WACC,MAAM,MACN,SAAS,SACT,OAAO,OACP,cAAc,cACd,QAAQ,CAAC,EAAE,OAAO,EAAE,UAAU,MAAM,GAAG,YAAY,EAAE,MAAM,EAAE,MAC3D,CAAC,iBACK,MACJ,MAAM,MACN,OAAO,OACP,eAAe,UACf,OAAO,CAAC,CAAC,OACT,YAAY,QAAQ,MAAM,UAAU,KAAK,YAC3C,IAEJ;AAEJ;",
+  "names": []
+}

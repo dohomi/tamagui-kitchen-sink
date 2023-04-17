@@ -1,9 +1,4 @@
-import {
-  LmAutocomplete,
-  LmAutocompleteRhf,
-  LmFormRhfProvider,
-  LmSubmitButtonRhf,
-} from '../../core/src/form'
+import { LmAutocomplete, LmAutocompleteRhf, LmFormRhfProvider, LmSubmitButtonRhf } from '../src'
 import { Meta, StoryObj } from '@storybook/react'
 import { fruitItemsFixtures } from '../fixtures/selectItems'
 import { useState } from 'react'

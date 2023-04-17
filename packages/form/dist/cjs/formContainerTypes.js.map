@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/formContainerTypes.ts"],
+  "sourcesContent": ["import { LabelProps, ParagraphProps } from 'tamagui'\n\nexport type LmFormContainerBaseTypes = {\n  label?: string\n  labelProps?: Omit<LabelProps, 'htmlFor'>\n  labelInline?: boolean\n  helperText?: string\n  helperTextProps?: ParagraphProps\n  required?: boolean\n  error?: boolean\n}\n"],
+  "mappings": ";;;;;;;;;;;;;AAAA;AAAA;",
+  "names": []
+}

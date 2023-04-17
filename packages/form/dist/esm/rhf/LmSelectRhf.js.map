@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/rhf/LmSelectRhf.tsx"],
+  "sourcesContent": ["import { LmSelect, LmSelectProps } from '../LmSelect'\nimport { Controller, FieldValues } from 'react-hook-form'\nimport { LmRhfProps } from './lmRhfProps'\n\nexport type LmSelectRhfProps<T extends FieldValues> = LmSelectProps & LmRhfProps<T> & {}\n\nexport function LmSelectRhf<T extends FieldValues>({\n  name,\n  control,\n  rules = {},\n  defaultValue,\n  ...inputProps\n}: LmSelectRhfProps<T>) {\n  if (inputProps.required) {\n    rules.required = 'This field is required'\n  }\n  return (\n    <Controller\n      name={name}\n      rules={rules}\n      control={control}\n      defaultValue={defaultValue}\n      render={({ field: { onChange, value }, fieldState: { error, invalid } }) => (\n        <LmSelect\n          {...inputProps}\n          value={value ?? ''}\n          error={invalid}\n          onValueChange={onChange}\n          helperText={error ? error.message : inputProps.helperText}\n        />\n      )}\n    />\n  )\n}\n"],
+  "mappings": "AAAA,SAAS,gBAA+B;AACxC,SAAS,kBAA+B;AAKjC,SAAS,YAAmC;AAAA,EACjD;AAAA,EACA;AAAA,EACA,QAAQ,CAAC;AAAA,EACT;AAAA,KACG;AACL,GAAwB;AACtB,MAAI,WAAW,UAAU;AACvB,UAAM,WAAW;AAAA,EACnB;AACA,SACE,CAAC,WACC,MAAM,MACN,OAAO,OACP,SAAS,SACT,cAAc,cACd,QAAQ,CAAC,EAAE,OAAO,EAAE,UAAU,MAAM,GAAG,YAAY,EAAE,OAAO,QAAQ,EAAE,MACpE,CAAC,aACK,YACJ,OAAO,SAAS,IAChB,OAAO,SACP,eAAe,UACf,YAAY,QAAQ,MAAM,UAAU,WAAW,YACjD,IAEJ;AAEJ;",
+  "names": []
+}

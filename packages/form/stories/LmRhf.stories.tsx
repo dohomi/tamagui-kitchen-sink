@@ -1,4 +1,4 @@
-import { LmAlert, LmButton, LmCard } from '../../core/src'
+import { LmAlert, LmButton, LmCard } from '@tamagui-extras/core'
 import { Form, Paragraph, XStack, YStack } from 'tamagui'
 import {
   LmCheckboxRhf,
@@ -9,7 +9,7 @@ import {
   LmSliderRhf,
   LmSubmitButtonRhf,
   LmSwitchRhf,
-} from '../../core/src/form'
+} from '../src'
 import { LmDatepickerRhf } from '../../date/src'
 import React from 'react'
 import { fruitItemsFixtures } from '../fixtures/selectItems'

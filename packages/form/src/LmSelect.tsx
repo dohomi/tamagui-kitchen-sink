@@ -1,6 +1,6 @@
 import { Select, SelectProps, ThemeProps, YStack } from 'tamagui'
 import { LinearGradient } from '@tamagui/linear-gradient'
-import { colormap, ThemeColors } from '../core/themeMappings'
+import { colormap, ThemeColors } from '@tamagui-extras/core'
 import { CaretDown, CaretUp, Check } from 'tamagui-phosphor-icons'
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'

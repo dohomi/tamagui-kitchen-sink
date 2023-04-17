@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/rhf/LmSwitchRhf.tsx"],
+  "sourcesContent": ["import { Controller, FieldValues } from 'react-hook-form'\nimport { LmRhfProps } from './lmRhfProps'\nimport { LmSwitch, LmSwitchProps } from '../LmSwitch'\n\nexport type LmSwitchRhfProps<T extends FieldValues> = LmSwitchProps & LmRhfProps<T> & {}\n\nexport function LmSwitchRhf<T extends FieldValues>({\n  name,\n  control,\n  rules = {},\n  defaultValue,\n  ...inputProps\n}: LmSwitchRhfProps<T>) {\n  return (\n    <Controller\n      name={name}\n      rules={rules}\n      control={control}\n      defaultValue={defaultValue}\n      render={({ field: { onChange, value } }) => (\n        <LmSwitch {...inputProps} onCheckedChange={onChange} value={value} />\n      )}\n    />\n  )\n}\n"],
+  "mappings": "AAAA,SAAS,kBAA+B;AAExC,SAAS,gBAA+B;AAIjC,SAAS,YAAmC;AAAA,EACjD;AAAA,EACA;AAAA,EACA,QAAQ,CAAC;AAAA,EACT;AAAA,KACG;AACL,GAAwB;AACtB,SACE,CAAC,WACC,MAAM,MACN,OAAO,OACP,SAAS,SACT,cAAc,cACd,QAAQ,CAAC,EAAE,OAAO,EAAE,UAAU,MAAM,EAAE,MACpC,CAAC,aAAa,YAAY,iBAAiB,UAAU,OAAO,OAAO,IAEvE;AAEJ;",
+  "names": []
+}

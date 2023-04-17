@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/rhf/LmCheckboxRhf.tsx"],
+  "sourcesContent": ["import { Controller, FieldValues } from 'react-hook-form'\nimport { LmRhfProps } from './lmRhfProps'\nimport { LmCheckbox, LmCheckboxProps } from '../LmCheckbox'\n\ntype LmCheckboxRhfProps<T extends FieldValues> = LmCheckboxProps & LmRhfProps<T>\n\nexport function LmCheckboxRhf<T extends FieldValues>({\n  name,\n  rules = {},\n  control,\n  defaultValue,\n  ...inputProps\n}: LmCheckboxRhfProps<T>) {\n  if (inputProps.required) {\n    rules.required = 'This field is required'\n  }\n  return (\n    <Controller\n      name={name}\n      rules={rules}\n      control={control}\n      defaultValue={defaultValue}\n      render={({ field: { onChange, value }, fieldState: { error } }) => (\n        <LmCheckbox\n          {...inputProps}\n          value={value ?? false}\n          error={!!error}\n          onChange={onChange}\n          helperText={error ? error.message : inputProps.helperText}\n        />\n      )}\n    />\n  )\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,6BAAwC;AAExC,wBAA4C;AAIrC,SAAS,cAAqC;AAAA,EACnD;AAAA,EACA,QAAQ,CAAC;AAAA,EACT;AAAA,EACA;AAAA,KACG;AACL,GAA0B;AACxB,MAAI,WAAW,UAAU;AACvB,UAAM,WAAW;AAAA,EACnB;AACA,SACE,CAAC,kCACC,MAAM,MACN,OAAO,OACP,SAAS,SACT,cAAc,cACd,QAAQ,CAAC,EAAE,OAAO,EAAE,UAAU,MAAM,GAAG,YAAY,EAAE,MAAM,EAAE,MAC3D,CAAC,iCACK,YACJ,OAAO,SAAS,OAChB,OAAO,CAAC,CAAC,OACT,UAAU,UACV,YAAY,QAAQ,MAAM,UAAU,WAAW,YACjD,IAEJ;AAEJ;",
+  "names": []
+}

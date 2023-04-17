@@ -1,5 +1,6 @@
 {
   "name": "@tamagui-extras/form",
+  "version": "0.17.0",
   "license": "MIT",
   "author": "Dominic Garms",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",

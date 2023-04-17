@@ -1,4 +1,4 @@
-import { LmButton, LmButtonProps } from '../../core/form/LmButton'
+import { LmButton, LmButtonProps } from '@tamagui-extras/core'
 import { FieldValues, useFormContext, UseFormReturn } from 'react-hook-form'
 
 export type LmButtonRhfProps<T extends FieldValues> = LmButtonProps & {
