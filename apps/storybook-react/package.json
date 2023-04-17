@@ -12,37 +12,22 @@
   },
   "dependencies": {
     "app": "*",
-    "next": "13.2.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-native": "0.0.0",
-    "react-native-web": "0.18.9"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.21.4",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/preset-typescript": "^7.21.4",
     "@fontsource/inter": "^4.5.14",
-    "@storybook/addon-actions": "^7.0.5",
     "@storybook/addon-essentials": "^7.0.5",
+    "@storybook/addon-interactions": "^7.0.5",
     "@storybook/addon-links": "^7.0.5",
     "@storybook/addon-react-native-web": "^0.0.20",
     "@storybook/addon-styling": "1.0.1",
+    "@storybook/blocks": "^7.0.5",
     "@storybook/nextjs": "^7.0.5",
     "@storybook/react": "^7.0.5",
-    "@types/node": "16.11.9",
-    "@types/react": "^18.0.17",
-    "babel-loader": "^8.2.3",
-    "babel-plugin-react-native-web": "^0.17.5",
-    "chromatic": "^6.0.6",
-    "eslint": "7",
-    "eslint-config-next": "13.2.4",
-    "eslint-plugin-storybook": "^0.6.4",
-    "path-browserify": "^1.0.1",
+    "@storybook/testing-library": "^0.1.0",
     "storybook": "^7.0.5",
-    "storybook-addon-next-router": "^4.0.2",
-    "typescript": "5.0.3",
-    "util": "^0.12.5"
+    "tamagui-loader": "1.15.14",
+    "typescript": "5.0.3"
   }
 }

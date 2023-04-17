@@ -10,7 +10,20 @@ function LmRadioGroupRhf({
   if (rest.required) {
     rules.required = "This field is required";
   }
-  return <Controller name={name} control={control} rules={rules} defaultValue={defaultValue} render={({ field: { onChange, value }, fieldState: { error } }) => <LmRadioGroup {...rest} name={name} value={value} onValueChange={onChange} error={!!error} helperText={error ? error.message : rest.helperText} />} />;
+  return <Controller
+    name={name}
+    control={control}
+    rules={rules}
+    defaultValue={defaultValue}
+    render={({ field: { onChange, value }, fieldState: { error } }) => <LmRadioGroup
+      {...rest}
+      name={name}
+      value={value}
+      onValueChange={onChange}
+      error={!!error}
+      helperText={error ? error.message : rest.helperText}
+    />}
+  />;
 }
 export {
   LmRadioGroupRhf

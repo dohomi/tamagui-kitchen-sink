@@ -29,7 +29,13 @@ function LmStarRatingRhf({
   defaultValue,
   ...inputProps
 }) {
-  return <import_react_hook_form.Controller name={name} rules={rules} control={control} defaultValue={defaultValue} render={({ field: { onChange, value } }) => <import_LmStarRating.LmStarRating {...inputProps} onChange={onChange} value={value ?? null} />} />;
+  return <import_react_hook_form.Controller
+    name={name}
+    rules={rules}
+    control={control}
+    defaultValue={defaultValue}
+    render={({ field: { onChange, value } }) => <import_LmStarRating.LmStarRating {...inputProps} onChange={onChange} value={value ?? null} />}
+  />;
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

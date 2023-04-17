@@ -7,7 +7,13 @@ function LmSwitchRhf({
   defaultValue,
   ...inputProps
 }) {
-  return <Controller name={name} rules={rules} control={control} defaultValue={defaultValue} render={({ field: { onChange, value } }) => <LmSwitch {...inputProps} onCheckedChange={onChange} value={value} />} />;
+  return <Controller
+    name={name}
+    rules={rules}
+    control={control}
+    defaultValue={defaultValue}
+    render={({ field: { onChange, value } }) => <LmSwitch {...inputProps} onCheckedChange={onChange} value={value} />}
+  />;
 }
 export {
   LmSwitchRhf

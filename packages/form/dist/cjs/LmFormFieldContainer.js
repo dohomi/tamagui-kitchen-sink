@@ -50,14 +50,27 @@ function LmFormFieldContainer({
   ...rest
 }) {
   return <StackContainer space={!!rest.labelInline} {...rest}>
-    {label && <import_tamagui.Label htmlFor={id} size={size || "$3"} {...labelProps} color={error ? "$red10" : void 0} width={rest.labelInline ? 150 : void 0} justifyContent={rest.labelInline ? "flex-end" : void 0}>
+    {label && <import_tamagui.Label
+      htmlFor={id}
+      size={size || "$3"}
+      {...labelProps}
+      color={error ? "$red10" : void 0}
+      width={rest.labelInline ? 150 : void 0}
+      justifyContent={rest.labelInline ? "flex-end" : void 0}
+    >
       {label}
       {" "}
       {required && ` *`}
     </import_tamagui.Label>}
     <import_tamagui.YStack>
       {children}
-      {helperText && <import_tamagui.Paragraph paddingLeft="$2" marginTop="$2" size={size} {...helperTextProps} color={error ? "$red10" : void 0}>{helperText}</import_tamagui.Paragraph>}
+      {helperText && <import_tamagui.Paragraph
+        paddingLeft="$2"
+        marginTop="$2"
+        size={size}
+        {...helperTextProps}
+        color={error ? "$red10" : void 0}
+      >{helperText}</import_tamagui.Paragraph>}
     </import_tamagui.YStack>
   </StackContainer>;
 }

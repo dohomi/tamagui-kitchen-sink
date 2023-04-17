@@ -32,7 +32,20 @@ function LmRadioGroupRhf({
   if (rest.required) {
     rules.required = "This field is required";
   }
-  return <import_react_hook_form.Controller name={name} control={control} rules={rules} defaultValue={defaultValue} render={({ field: { onChange, value }, fieldState: { error } }) => <import_LmRadioGroup.LmRadioGroup {...rest} name={name} value={value} onValueChange={onChange} error={!!error} helperText={error ? error.message : rest.helperText} />} />;
+  return <import_react_hook_form.Controller
+    name={name}
+    control={control}
+    rules={rules}
+    defaultValue={defaultValue}
+    render={({ field: { onChange, value }, fieldState: { error } }) => <import_LmRadioGroup.LmRadioGroup
+      {...rest}
+      name={name}
+      value={value}
+      onValueChange={onChange}
+      error={!!error}
+      helperText={error ? error.message : rest.helperText}
+    />}
+  />;
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

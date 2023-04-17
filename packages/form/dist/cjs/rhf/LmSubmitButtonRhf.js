@@ -28,9 +28,13 @@ function LmSubmitButtonRhf({
 }) {
   const formContext = (0, import_react_hook_form.useFormContext)();
   const { handleSubmit, formState } = formContext;
-  return <import_core.LmButton {...props} onPress={handleSubmit((data) => {
-    onSubmit(data, formContext);
-  })} loading={formState.isValidating || props.loading} />;
+  return <import_core.LmButton
+    {...props}
+    onPress={handleSubmit((data) => {
+      onSubmit(data, formContext);
+    })}
+    loading={formState.isValidating || props.loading}
+  />;
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

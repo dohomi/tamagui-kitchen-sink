@@ -29,7 +29,13 @@ function LmSwitchRhf({
   defaultValue,
   ...inputProps
 }) {
-  return <import_react_hook_form.Controller name={name} rules={rules} control={control} defaultValue={defaultValue} render={({ field: { onChange, value } }) => <import_LmSwitch.LmSwitch {...inputProps} onCheckedChange={onChange} value={value} />} />;
+  return <import_react_hook_form.Controller
+    name={name}
+    rules={rules}
+    control={control}
+    defaultValue={defaultValue}
+    render={({ field: { onChange, value } }) => <import_LmSwitch.LmSwitch {...inputProps} onCheckedChange={onChange} value={value} />}
+  />;
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

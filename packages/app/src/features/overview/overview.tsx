@@ -131,7 +131,7 @@ export function OverviewScreen() {
             </LmButton>
           </XStack>
         </YStack>
-        <H3>Buttons Icons</H3>
+        <H3>Buttons With Icons</H3>
         <YStack space={'$4'}>
           <XStack {...defaultSectionProps}>
             <LmButton size={'$2'} icon={<Star />}>
@@ -139,6 +139,9 @@ export function OverviewScreen() {
             </LmButton>
             <LmButton size={'$4'} icon={<Star />}>
               size 4
+            </LmButton>
+            <LmButton size={'$6'} icon={<Star />}>
+              size 6
             </LmButton>
           </XStack>
           <XStack {...defaultSectionProps}>
@@ -148,14 +151,32 @@ export function OverviewScreen() {
             <LmButton size={'$4'} iconAfter={<Star />} colorVariant={'secondary'}>
               size 4
             </LmButton>
+            <LmButton size={'$6'} iconAfter={<Star />} colorVariant={'success'}>
+              size 6
+            </LmButton>
+          </XStack>
+          <XStack
+            {...defaultSectionProps}
+            space
+            alignItems={'center'}
+            paddingHorizontal={'$2'}
+            justifyContent={'space-between'}
+          >
+            <LmButton size={'$2'} icon={<Star />} circular />
+            <LmButton size={'$4'} icon={<Star />} circular />
+            <LmButton size={'$6'} icon={<Star />} circular />
           </XStack>
         </YStack>
 
         <H3>Buttons Groups</H3>
         <YStack {...defaultSectionProps}>
           <XGroup>
-            <LmButton icon={<Star />}>size 2</LmButton>
-            <LmButton icon={<Star />}>size 4</LmButton>
+            <XGroup.Item>
+              <LmButton icon={<Star />}>size 2</LmButton>
+            </XGroup.Item>
+            <XGroup.Item>
+              <LmButton icon={<Star />}>size 4</LmButton>
+            </XGroup.Item>
           </XGroup>
           <YGroup>
             <LmButton iconAfter={<Star />} colorVariant={'primary'}>

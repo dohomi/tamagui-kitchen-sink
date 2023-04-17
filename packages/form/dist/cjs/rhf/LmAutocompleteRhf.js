@@ -32,22 +32,36 @@ function LmAutocompleteRhf({
   multiple,
   ...inputProps
 }) {
-  return <import_react_hook_form.Controller name={name} rules={rules} control={control} defaultValue={defaultValue} render={({ field: { onChange, value }, fieldState: { error } }) => {
-    let currentValue = multiple ? value || [] : value || null;
-    if (matchId) {
-      currentValue = multiple ? (value || []).map((i) => options.find((j) => (j.value || j) === i)) : options.find((i) => (i.value || i) === value) || null;
-    }
-    return <import_LmAutocomplete.LmAutocomplete {...inputProps} value={currentValue} multiple={multiple} options={options} error={!!error} onChange={(v) => {
-      let changedVal = v;
+  return <import_react_hook_form.Controller
+    name={name}
+    rules={rules}
+    control={control}
+    defaultValue={defaultValue}
+    render={({ field: { onChange, value }, fieldState: { error } }) => {
+      let currentValue = multiple ? value || [] : value || null;
       if (matchId) {
-        changedVal = Array.isArray(v) ? v.map((i) => (i == null ? void 0 : i.value) || i) : (v == null ? void 0 : v.value) || v;
+        currentValue = multiple ? (value || []).map((i) => options.find((j) => (j.value || j) === i)) : options.find((i) => (i.value || i) === value) || null;
       }
-      onChange(changedVal);
-      if (typeof inputProps.onChange === "function") {
-        inputProps.onChange(v);
-      }
-    }} helperText={error ? error.message : inputProps.helperText} />;
-  }} />;
+      return <import_LmAutocomplete.LmAutocomplete
+        {...inputProps}
+        value={currentValue}
+        multiple={multiple}
+        options={options}
+        error={!!error}
+        onChange={(v) => {
+          let changedVal = v;
+          if (matchId) {
+            changedVal = Array.isArray(v) ? v.map((i) => (i == null ? void 0 : i.value) || i) : (v == null ? void 0 : v.value) || v;
+          }
+          onChange(changedVal);
+          if (typeof inputProps.onChange === "function") {
+            inputProps.onChange(v);
+          }
+        }}
+        helperText={error ? error.message : inputProps.helperText}
+      />;
+    }}
+  />;
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

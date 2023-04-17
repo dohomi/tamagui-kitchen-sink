@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["../../../src/rhf/LmResetButtonRhf.tsx"],
   "sourcesContent": ["import { useFormContext } from 'react-hook-form'\nimport { LmButton, LmButtonProps } from '@tamagui-extras/core'\n\nexport function LmResetButtonRhf(props: LmButtonProps) {\n  const { reset } = useFormContext()\n  return (\n    <LmButton\n      {...props}\n      onPress={(e) => {\n        reset()\n        if (typeof props.onPress === 'function') {\n          props.onPress(e)\n        }\n      }}\n    />\n  )\n}\n"],
-  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,6BAA+B;AAC/B,kBAAwC;AAEjC,SAAS,iBAAiB,OAAsB;AACrD,QAAM,EAAE,MAAM,QAAI,uCAAe;AACjC,SACE,CAAC,yBACK,OACJ,SAAS,CAAC,MAAM;AACd,UAAM;AACN,QAAI,OAAO,MAAM,YAAY,YAAY;AACvC,YAAM,QAAQ,CAAC;AAAA,IACjB;AAAA,EACF,GACF;AAEJ;",
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,6BAA+B;AAC/B,kBAAwC;AAEjC,SAAS,iBAAiB,OAAsB;AACrD,QAAM,EAAE,MAAM,QAAI,uCAAe;AACjC,SACE,CAAC;AAAA,QACK;AAAA,IACJ,SAAS,CAAC,MAAM;AACd,YAAM;AACN,UAAI,OAAO,MAAM,YAAY,YAAY;AACvC,cAAM,QAAQ,CAAC;AAAA,MACjB;AAAA,IACF;AAAA,EACF;AAEJ;",
   "names": []
 }

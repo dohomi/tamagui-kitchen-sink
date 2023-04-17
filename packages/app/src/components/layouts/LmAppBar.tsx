@@ -23,18 +23,18 @@ export function LmAppBar({ title, rightContent }: LmDashboardAppBarProps) {
       backgroundColor={'$background'}
       space
     >
-      <XStack alignItems={'center'} space>
-        <LmButton
-          icon={<List />}
-          circular
-          onPress={() => {
-            toggleMainDrawer()
-          }}
-        />
+      <LmButton
+        icon={<List />}
+        size={'$4'}
+        circular
+        chromeless
+        onPress={() => {
+          toggleMainDrawer()
+        }}
+      />
 
-        <H3>{title}</H3>
-      </XStack>
-      <LmThemeToggle icon={<Sun />} circular />
+      <H3 flexGrow={1}>{title}</H3>
+      <LmThemeToggle icon={<Sun />} size={'$4'} circular />
       {rightContent}
     </XStack>
   )

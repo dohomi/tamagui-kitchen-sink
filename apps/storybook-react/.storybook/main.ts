@@ -1,6 +1,17 @@
 // @ts-ignore
-import path from 'path'
+import path, { resolve } from 'path'
 import { StorybookConfig } from '@storybook/nextjs'
+
+const { shouldExclude } = require('tamagui-loader')
+const projectRoot = resolve(__dirname, '../')
+
+const tamaguiOptions = {
+  config: './tamagui.config.ts',
+  components: ['@tamagui-extras/core', 'tamagui'],
+  importsWhitelist: ['constants.js', 'colors.js'],
+  logTimings: true,
+  disableExtraction: process.env.NODE_ENV === 'development',
+}
 
 const config: StorybookConfig = {
   stories: [
@@ -48,38 +59,10 @@ const config: StorybookConfig = {
   framework: {
     name: '@storybook/nextjs',
     options: {
-      nextConfigPath: path.resolve(__dirname, '../../next/next.config.js'),
+      nextConfigPath: path.resolve(projectRoot, 'next.config.js'),
     },
   },
-  // typescript: {
-  //   check: false,
-  //   checkOptions: {},
-  //   reactDocgen: 'react-docgen-typescript',
-  //   reactDocgenTypescriptOptions: {
-  //     // speeds up storybook build time
-  //     allowSyntheticDefaultImports: false,
-  //     // speeds up storybook build time
-  //     esModuleInterop: false,
-  //     // makes union prop types like variant and size appear as select controls
-  //     shouldExtractLiteralValuesFromEnum: true,
-  //     // makes string and boolean types that can be undefined appear as inputs and switches
-  //     shouldRemoveUndefinedFromOptional: true,
-  //     // Filter out third-party props from node_modules except @mui packages
-  //     propFilter: (prop) =>
-  //       prop.parent ? !/node_modules\/(?!tamagui)/.test(prop.parent.fileName) : true,
-  //   },
-  // },
-  // managerWebpack: (config, options) => {
-  //     options.cache.set = () => Promise.resolve();
-  //     return config;
-  // },
   webpackFinal: async (config, { configType }) => {
-    // config.module.rules.push({
-    //   test: /\.(js|mjs|jsx)$/,
-    //   resolve: {
-    //     fullySpecified: false,
-    //   },
-    // })
     return config
   },
   env: (config) => ({

@@ -24,12 +24,15 @@ var import_react_hook_form = require("react-hook-form");
 var import_core = require("@tamagui-extras/core");
 function LmResetButtonRhf(props) {
   const { reset } = (0, import_react_hook_form.useFormContext)();
-  return <import_core.LmButton {...props} onPress={(e) => {
-    reset();
-    if (typeof props.onPress === "function") {
-      props.onPress(e);
-    }
-  }} />;
+  return <import_core.LmButton
+    {...props}
+    onPress={(e) => {
+      reset();
+      if (typeof props.onPress === "function") {
+        props.onPress(e);
+      }
+    }}
+  />;
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

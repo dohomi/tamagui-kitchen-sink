@@ -10,22 +10,36 @@ function LmAutocompleteRhf({
   multiple,
   ...inputProps
 }) {
-  return <Controller name={name} rules={rules} control={control} defaultValue={defaultValue} render={({ field: { onChange, value }, fieldState: { error } }) => {
-    let currentValue = multiple ? value || [] : value || null;
-    if (matchId) {
-      currentValue = multiple ? (value || []).map((i) => options.find((j) => (j.value || j) === i)) : options.find((i) => (i.value || i) === value) || null;
-    }
-    return <LmAutocomplete {...inputProps} value={currentValue} multiple={multiple} options={options} error={!!error} onChange={(v) => {
-      let changedVal = v;
+  return <Controller
+    name={name}
+    rules={rules}
+    control={control}
+    defaultValue={defaultValue}
+    render={({ field: { onChange, value }, fieldState: { error } }) => {
+      let currentValue = multiple ? value || [] : value || null;
       if (matchId) {
-        changedVal = Array.isArray(v) ? v.map((i) => i?.value || i) : v?.value || v;
+        currentValue = multiple ? (value || []).map((i) => options.find((j) => (j.value || j) === i)) : options.find((i) => (i.value || i) === value) || null;
       }
-      onChange(changedVal);
-      if (typeof inputProps.onChange === "function") {
-        inputProps.onChange(v);
-      }
-    }} helperText={error ? error.message : inputProps.helperText} />;
-  }} />;
+      return <LmAutocomplete
+        {...inputProps}
+        value={currentValue}
+        multiple={multiple}
+        options={options}
+        error={!!error}
+        onChange={(v) => {
+          let changedVal = v;
+          if (matchId) {
+            changedVal = Array.isArray(v) ? v.map((i) => i?.value || i) : v?.value || v;
+          }
+          onChange(changedVal);
+          if (typeof inputProps.onChange === "function") {
+            inputProps.onChange(v);
+          }
+        }}
+        helperText={error ? error.message : inputProps.helperText}
+      />;
+    }}
+  />;
 }
 export {
   LmAutocompleteRhf

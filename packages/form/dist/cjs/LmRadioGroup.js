@@ -35,8 +35,22 @@ function LmRadioGroup({
   spaceItem = "$2",
   ...rest
 }) {
-  return <import_LmFormFieldContainer.LmFormFieldContainer error={error} required={required} labelProps={labelProps} label={label} size={size} labelInline={labelInline} helperText={helperText} helperTextProps={helperTextProps}><import_tamagui.RadioGroup space={rest.flexDirection === "row" ? "$4" : "$1"} required={required} {...rest}>{options.map((option, i) => <import_tamagui.XStack key={`${rest.name}-${option.value}-${i}`} alignItems="center" space={spaceItem}>
-    <import_tamagui.RadioGroup.Item value={option.value} id={`${rest.name}-${option.value}-${i}`} size={size} pressTheme><import_tamagui.RadioGroup.Indicator /></import_tamagui.RadioGroup.Item>
+  return <import_LmFormFieldContainer.LmFormFieldContainer
+    error={error}
+    required={required}
+    labelProps={labelProps}
+    label={label}
+    size={size}
+    labelInline={labelInline}
+    helperText={helperText}
+    helperTextProps={helperTextProps}
+  ><import_tamagui.RadioGroup space={rest.flexDirection === "row" ? "$4" : "$1"} required={required} {...rest}>{options.map((option, i) => <import_tamagui.XStack key={`${rest.name}-${option.value}-${i}`} alignItems="center" space={spaceItem}>
+    <import_tamagui.RadioGroup.Item
+      value={option.value}
+      id={`${rest.name}-${option.value}-${i}`}
+      size={size}
+      pressTheme
+    ><import_tamagui.RadioGroup.Indicator /></import_tamagui.RadioGroup.Item>
     <import_tamagui.Label size={size} htmlFor={`${rest.name}-${option.value}-${i}`} cursor="pointer">{option.label}</import_tamagui.Label>
   </import_tamagui.XStack>)}</import_tamagui.RadioGroup></import_LmFormFieldContainer.LmFormFieldContainer>;
 }

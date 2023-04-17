@@ -72,20 +72,43 @@ function LmAutocomplete({
     }
   }, [width]);
   const inputValue = Array.isArray(selection) ? selection.map((option) => option == null ? void 0 : option.label).join(", ") : (selection == null ? void 0 : selection.label) || "";
-  return <import_LmFormFieldContainer.LmFormFieldContainer id={id} error={error} required={required} labelProps={labelProps} label={label} labelInline={labelInline} helperText={helperText} helperTextProps={helperTextProps}><import_tamagui.XGroup ref={inputRef}>
+  return <import_LmFormFieldContainer.LmFormFieldContainer
+    id={id}
+    error={error}
+    required={required}
+    labelProps={labelProps}
+    label={label}
+    labelInline={labelInline}
+    helperText={helperText}
+    helperTextProps={helperTextProps}
+  ><import_tamagui.XGroup ref={inputRef}>
     <import_tamagui.XGroup.Item><import_tamagui.Input flex={1} value={inputValue} theme={theme} textOverflow="ellipsis" /></import_tamagui.XGroup.Item>
-    <import_tamagui.XGroup.Item><import_core.LmPopover isBouncy sheetProps={{}} contentProps={{
-      minWidth: popoverWidth ? popoverWidth : void 0,
-      maxWidth: "100%"
-    }} trigger={<import_tamagui.Button icon={<import_tamagui_phosphor_icons.CaretDown />} borderTopLeftRadius={0} borderBottomLeftRadius={0} />}><LmAutocompleteInputContent theme={theme} options={opts} isSelected={isSelected} onChangeSelection={onChangeSelection} onAddNew={(newVal) => {
-      if (newVal) {
-        const newItem = typeof allowNewHook === "function" ? allowNewHook(newVal) : {
-          value: newVal,
-          label: newVal
-        };
-        setOpts((oldVal) => [newItem, ...oldVal]);
-      }
-    }} {...rest} /></import_core.LmPopover></import_tamagui.XGroup.Item>
+    <import_tamagui.XGroup.Item><import_core.LmPopover
+      isBouncy
+      sheetProps={{
+        // snapPoints: [100, 0],
+      }}
+      contentProps={{
+        minWidth: popoverWidth ? popoverWidth : void 0,
+        maxWidth: "100%"
+      }}
+      trigger={<import_tamagui.Button icon={<import_tamagui_phosphor_icons.CaretDown />} borderTopLeftRadius={0} borderBottomLeftRadius={0} />}
+    ><LmAutocompleteInputContent
+      theme={theme}
+      options={opts}
+      isSelected={isSelected}
+      onChangeSelection={onChangeSelection}
+      onAddNew={(newVal) => {
+        if (newVal) {
+          const newItem = typeof allowNewHook === "function" ? allowNewHook(newVal) : {
+            value: newVal,
+            label: newVal
+          };
+          setOpts((oldVal) => [newItem, ...oldVal]);
+        }
+      }}
+      {...rest}
+    /></import_core.LmPopover></import_tamagui.XGroup.Item>
   </import_tamagui.XGroup></import_LmFormFieldContainer.LmFormFieldContainer>;
 }
 function LmAutocompleteInputContent({
@@ -102,24 +125,51 @@ function LmAutocompleteInputContent({
   const deferredTerm = (0, import_react.useDeferredValue)(searchTerm);
   const filteredOptions = (deferredTerm == null ? void 0 : deferredTerm.length) ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options;
   return <>{import_react_native.Platform.OS === "web" ? <>
-    {(!disableSearch || allowNew) && <import_tamagui.XStack padding="$4" width="100%"><import_tamagui.Input theme={theme} placeholder={placeholderSearch} width="100%" onChangeText={(text) => {
-      setSearchTerm(text.toLowerCase());
-    }} /></import_tamagui.XStack>}
-    <import_tamagui.Popover.ScrollView keyboardShouldPersistTaps="always" style={{ maxHeight: 300, width: "100%" }}>
-      <LmAutocompleteList options={filteredOptions} onChangeSelection={onChangeSelection} isSelected={isSelected} />
+    {(!disableSearch || allowNew) && <import_tamagui.XStack padding="$4" width="100%"><import_tamagui.Input
+      theme={theme}
+      placeholder={placeholderSearch}
+      width="100%"
+      onChangeText={(text) => {
+        setSearchTerm(text.toLowerCase());
+      }}
+    /></import_tamagui.XStack>}
+    <import_tamagui.Popover.ScrollView
+      keyboardShouldPersistTaps="always"
+      style={{ maxHeight: 300, width: "100%" }}
+    >
+      <LmAutocompleteList
+        options={filteredOptions}
+        onChangeSelection={onChangeSelection}
+        isSelected={isSelected}
+      />
       {allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && <import_tamagui.XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><import_tamagui.Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<import_tamagui_phosphor_icons.ListPlus />}>{deferredTerm}</import_tamagui.Button></import_tamagui.XStack>}
     </import_tamagui.Popover.ScrollView>
   </> : <>
-    {(!disableSearch || allowNew) && <import_tamagui.XStack padding="$4" width="100%"><import_tamagui.Input theme={theme} placeholder={placeholderSearch} width="100%" onChangeText={(text) => {
-      setSearchTerm(text.toLowerCase());
-    }} /></import_tamagui.XStack>}
-    <import_tamagui.Sheet.ScrollView><LmAutocompleteList options={filteredOptions} onChangeSelection={onChangeSelection} isSelected={isSelected} /></import_tamagui.Sheet.ScrollView>
+    {(!disableSearch || allowNew) && <import_tamagui.XStack padding="$4" width="100%"><import_tamagui.Input
+      theme={theme}
+      placeholder={placeholderSearch}
+      width="100%"
+      onChangeText={(text) => {
+        setSearchTerm(text.toLowerCase());
+      }}
+    /></import_tamagui.XStack>}
+    <import_tamagui.Sheet.ScrollView><LmAutocompleteList
+      options={filteredOptions}
+      onChangeSelection={onChangeSelection}
+      isSelected={isSelected}
+    /></import_tamagui.Sheet.ScrollView>
     {allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && <import_tamagui.XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><import_tamagui.Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<import_tamagui_phosphor_icons.ListPlus />}>{deferredTerm}</import_tamagui.Button></import_tamagui.XStack>}
   </>}</>;
 }
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
   return <>{options.map((item, i) => {
-    return <import_tamagui.ListItem hoverTheme key={item.value} icon={isSelected(item) ? <import_tamagui_phosphor_icons.CheckSquare /> : <import_tamagui_phosphor_icons.Square />} title={item.label} onPress={() => onChangeSelection(item)} />;
+    return <import_tamagui.ListItem
+      hoverTheme
+      key={item.value}
+      icon={isSelected(item) ? <import_tamagui_phosphor_icons.CheckSquare /> : <import_tamagui_phosphor_icons.Square />}
+      title={item.label}
+      onPress={() => onChangeSelection(item)}
+    />;
   })}</>;
 }
 // Annotate the CommonJS export names for ESM import in node:

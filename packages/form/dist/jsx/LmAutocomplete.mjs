@@ -49,20 +49,43 @@ function LmAutocomplete({
     }
   }, [width]);
   const inputValue = Array.isArray(selection) ? selection.map((option) => option?.label).join(", ") : selection?.label || "";
-  return <LmFormFieldContainer id={id} error={error} required={required} labelProps={labelProps} label={label} labelInline={labelInline} helperText={helperText} helperTextProps={helperTextProps}><XGroup ref={inputRef}>
+  return <LmFormFieldContainer
+    id={id}
+    error={error}
+    required={required}
+    labelProps={labelProps}
+    label={label}
+    labelInline={labelInline}
+    helperText={helperText}
+    helperTextProps={helperTextProps}
+  ><XGroup ref={inputRef}>
     <XGroup.Item><Input flex={1} value={inputValue} theme={theme} textOverflow="ellipsis" /></XGroup.Item>
-    <XGroup.Item><LmPopover isBouncy sheetProps={{}} contentProps={{
-      minWidth: popoverWidth ? popoverWidth : void 0,
-      maxWidth: "100%"
-    }} trigger={<Button icon={<CaretDown />} borderTopLeftRadius={0} borderBottomLeftRadius={0} />}><LmAutocompleteInputContent theme={theme} options={opts} isSelected={isSelected} onChangeSelection={onChangeSelection} onAddNew={(newVal) => {
-      if (newVal) {
-        const newItem = typeof allowNewHook === "function" ? allowNewHook(newVal) : {
-          value: newVal,
-          label: newVal
-        };
-        setOpts((oldVal) => [newItem, ...oldVal]);
-      }
-    }} {...rest} /></LmPopover></XGroup.Item>
+    <XGroup.Item><LmPopover
+      isBouncy
+      sheetProps={{
+        // snapPoints: [100, 0],
+      }}
+      contentProps={{
+        minWidth: popoverWidth ? popoverWidth : void 0,
+        maxWidth: "100%"
+      }}
+      trigger={<Button icon={<CaretDown />} borderTopLeftRadius={0} borderBottomLeftRadius={0} />}
+    ><LmAutocompleteInputContent
+      theme={theme}
+      options={opts}
+      isSelected={isSelected}
+      onChangeSelection={onChangeSelection}
+      onAddNew={(newVal) => {
+        if (newVal) {
+          const newItem = typeof allowNewHook === "function" ? allowNewHook(newVal) : {
+            value: newVal,
+            label: newVal
+          };
+          setOpts((oldVal) => [newItem, ...oldVal]);
+        }
+      }}
+      {...rest}
+    /></LmPopover></XGroup.Item>
   </XGroup></LmFormFieldContainer>;
 }
 function LmAutocompleteInputContent({
@@ -79,24 +102,51 @@ function LmAutocompleteInputContent({
   const deferredTerm = useDeferredValue(searchTerm);
   const filteredOptions = deferredTerm?.length ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options;
   return <>{Platform.OS === "web" ? <>
-    {(!disableSearch || allowNew) && <XStack padding="$4" width="100%"><Input theme={theme} placeholder={placeholderSearch} width="100%" onChangeText={(text) => {
-      setSearchTerm(text.toLowerCase());
-    }} /></XStack>}
-    <Popover.ScrollView keyboardShouldPersistTaps="always" style={{ maxHeight: 300, width: "100%" }}>
-      <LmAutocompleteList options={filteredOptions} onChangeSelection={onChangeSelection} isSelected={isSelected} />
+    {(!disableSearch || allowNew) && <XStack padding="$4" width="100%"><Input
+      theme={theme}
+      placeholder={placeholderSearch}
+      width="100%"
+      onChangeText={(text) => {
+        setSearchTerm(text.toLowerCase());
+      }}
+    /></XStack>}
+    <Popover.ScrollView
+      keyboardShouldPersistTaps="always"
+      style={{ maxHeight: 300, width: "100%" }}
+    >
+      <LmAutocompleteList
+        options={filteredOptions}
+        onChangeSelection={onChangeSelection}
+        isSelected={isSelected}
+      />
       {allowNew && !filteredOptions?.length && deferredTerm && <XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<ListPlus />}>{deferredTerm}</Button></XStack>}
     </Popover.ScrollView>
   </> : <>
-    {(!disableSearch || allowNew) && <XStack padding="$4" width="100%"><Input theme={theme} placeholder={placeholderSearch} width="100%" onChangeText={(text) => {
-      setSearchTerm(text.toLowerCase());
-    }} /></XStack>}
-    <Sheet.ScrollView><LmAutocompleteList options={filteredOptions} onChangeSelection={onChangeSelection} isSelected={isSelected} /></Sheet.ScrollView>
+    {(!disableSearch || allowNew) && <XStack padding="$4" width="100%"><Input
+      theme={theme}
+      placeholder={placeholderSearch}
+      width="100%"
+      onChangeText={(text) => {
+        setSearchTerm(text.toLowerCase());
+      }}
+    /></XStack>}
+    <Sheet.ScrollView><LmAutocompleteList
+      options={filteredOptions}
+      onChangeSelection={onChangeSelection}
+      isSelected={isSelected}
+    /></Sheet.ScrollView>
     {allowNew && !filteredOptions?.length && deferredTerm && <XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<ListPlus />}>{deferredTerm}</Button></XStack>}
   </>}</>;
 }
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
   return <>{options.map((item, i) => {
-    return <ListItem hoverTheme key={item.value} icon={isSelected(item) ? <CheckSquare /> : <Square />} title={item.label} onPress={() => onChangeSelection(item)} />;
+    return <ListItem
+      hoverTheme
+      key={item.value}
+      icon={isSelected(item) ? <CheckSquare /> : <Square />}
+      title={item.label}
+      onPress={() => onChangeSelection(item)}
+    />;
   })}</>;
 }
 export {

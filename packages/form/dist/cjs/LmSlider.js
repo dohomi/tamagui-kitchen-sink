@@ -63,15 +63,44 @@ function LmSlider({
   const id = (0, import_react.useId)();
   const [value, setValue] = (0, import_react.useState)(defaultValue);
   const trackColor = color ? `${color}Dark` : void 0;
-  return <import_LmFormFieldContainer.LmFormFieldContainer id={id} label={label} error={error} required={required} labelProps={labelProps} size={sliderProps.size} labelInline={labelInline} helperText={helperText} helperTextProps={helperTextProps} alignItems={labelInline ? "center" : void 0}><import_tamagui.XStack space alignItems="center">
-    <import_tamagui.Slider size="$2" width={150} defaultValue={value} max={5} step={1} {...sliderProps} onValueChange={(v) => {
-      setValue(v);
-      if (typeof sliderProps.onValueChange === "function") {
-        sliderProps.onValueChange(v);
-      }
-    }}>
+  return <import_LmFormFieldContainer.LmFormFieldContainer
+    id={id}
+    label={label}
+    error={error}
+    required={required}
+    labelProps={labelProps}
+    size={sliderProps.size}
+    labelInline={labelInline}
+    helperText={helperText}
+    helperTextProps={helperTextProps}
+    alignItems={labelInline ? "center" : void 0}
+  ><import_tamagui.XStack space alignItems="center">
+    <import_tamagui.Slider
+      size="$2"
+      width={150}
+      defaultValue={value}
+      max={5}
+      step={1}
+      {...sliderProps}
+      onValueChange={(v) => {
+        setValue(v);
+        if (typeof sliderProps.onValueChange === "function") {
+          sliderProps.onValueChange(v);
+        }
+      }}
+    >
       <CustomSliderTrack colorCustom={!colorActiveOnly ? trackColor : void 0}><CustomSliderTrackActive colorCustom={trackColor} /></CustomSliderTrack>
-      <import_tamagui.Slider.Thumb bordered={false} circular pressTheme={false} hoverTheme={false} focusTheme={false} size="$2" index={0} backgroundColor={color} {...thumbProps} />
+      <import_tamagui.Slider.Thumb
+        bordered={false}
+        circular
+        pressTheme={false}
+        hoverTheme={false}
+        focusTheme={false}
+        size="$2"
+        index={0}
+        backgroundColor={color}
+        {...thumbProps}
+      />
     </import_tamagui.Slider>
     {showValue && <import_tamagui.Text>{value[0]}</import_tamagui.Text>}
   </import_tamagui.XStack></import_LmFormFieldContainer.LmFormFieldContainer>;

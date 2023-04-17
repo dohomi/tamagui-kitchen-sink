@@ -54,19 +54,34 @@ function LmInput({
     styleProps.minWidth = "100%";
   }
   let secureTextEntry = !!(rest.secureTextEntry || isPassword);
-  return <import_LmFormFieldContainer.LmFormFieldContainer id={id} error={error} required={required} labelProps={labelProps} label={label} fullWidth={fullWidth} size={rest.size} labelInline={labelInline} helperText={helperText} helperTextProps={helperTextProps} {...containerProps}>{multiline ? <import_tamagui.TextArea {...styleProps} /> : secureTextEntry ? <import_tamagui.Stack position="relative" width={fullWidth ? "100%" : "fit-content"}>
+  return <import_LmFormFieldContainer.LmFormFieldContainer
+    id={id}
+    error={error}
+    required={required}
+    labelProps={labelProps}
+    label={label}
+    fullWidth={fullWidth}
+    size={rest.size}
+    labelInline={labelInline}
+    helperText={helperText}
+    helperTextProps={helperTextProps}
+    {...containerProps}
+  >{multiline ? <import_tamagui.TextArea {...styleProps} /> : secureTextEntry ? <import_tamagui.Stack position="relative" width={fullWidth ? "100%" : "fit-content"}>
     <import_tamagui.Input {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
-    <import_react_native.Pressable style={{
-      position: "absolute",
-      bottom: 0,
-      top: 0,
-      marginTop: "auto",
-      marginBottom: "auto",
-      height: "20px",
-      right: "10px"
-    }} onPress={() => {
-      setShow((state) => !state);
-    }}>{show ? <import_tamagui_phosphor_icons.EyeSlash {...passwordIconProps} /> : <import_tamagui_phosphor_icons.Eye {...passwordIconProps} />}</import_react_native.Pressable>
+    <import_react_native.Pressable
+      style={{
+        position: "absolute",
+        bottom: 0,
+        top: 0,
+        marginTop: "auto",
+        marginBottom: "auto",
+        height: "20px",
+        right: "10px"
+      }}
+      onPress={() => {
+        setShow((state) => !state);
+      }}
+    >{show ? <import_tamagui_phosphor_icons.EyeSlash {...passwordIconProps} /> : <import_tamagui_phosphor_icons.Eye {...passwordIconProps} />}</import_react_native.Pressable>
   </import_tamagui.Stack> : <import_tamagui.Input {...styleProps} autoCapitalize="none" />}</import_LmFormFieldContainer.LmFormFieldContainer>;
 }
 // Annotate the CommonJS export names for ESM import in node:
