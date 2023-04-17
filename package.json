@@ -30,10 +30,7 @@
     "tests": "yarn build && cd apps/tests && yarn test",
     "check-types": "yarn turbo run check-types",
     "codegen": "yarn turbo run codegen",
-    "rm:nodemodule": "rm -rf node_modules apps/expo/node_modules apps/next/node_modules apps/next/.tamagui packages/core/node_modules yarn.lock apps/storybook-react/node_modules apps/storybook-react-native/node_modules apps/storybook-react/dist",
-    "version:patch": "turbo-version -t tamagui-extras -b patch",
-    "release:ui": "turbo-release -t tamagui-extras",
-    "release:patch": "yarn turbo run release-patch"
+    "rm:nodemodule": "rm -rf node_modules apps/expo/node_modules apps/next/node_modules apps/next/.tamagui packages/core/node_modules yarn.lock apps/storybook-react/node_modules apps/storybook-react-native/node_modules apps/storybook-react/dist"
   },
   "resolutions": {
     "esbuild": "0.15.5",
@@ -46,9 +43,8 @@
     "@babel/runtime": "^7.18.9"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@manypkg/cli": "^0.19.2",
-    "@turbo-version/release": "^0.1.10",
-    "@turbo-version/version": "^0.1.10",
     "@types/react": "^18.0.21",
     "eslint": "^8.21.0",
     "prettier": "^2.7.1",
