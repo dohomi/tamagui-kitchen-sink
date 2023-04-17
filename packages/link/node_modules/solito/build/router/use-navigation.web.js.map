@@ -1,0 +1,1 @@
+{"version":3,"file":"use-navigation.web.js","sourceRoot":"","sources":["../../src/router/use-navigation.web.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,MAAM,aAAa,GAAG,GAAG,EAAE,CAAC,SAAS,CAAA","sourcesContent":["export const useNavigation = () => undefined\n"]}

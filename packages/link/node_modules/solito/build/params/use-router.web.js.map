@@ -1,0 +1,1 @@
+{"version":3,"file":"use-router.web.js","sourceRoot":"","sources":["../../src/params/use-router.web.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,IAAI,UAAU,EAAE,MAAM,aAAa,CAAC;AAEtD,MAAM,CAAC,MAAM,SAAS,GAAG,GAAG,EAAE,CAAC,UAAU,EAAE,CAAC","sourcesContent":["import { useRouter as _useRouter } from 'next/router';\n\nexport const useRouter = () => _useRouter();"]}

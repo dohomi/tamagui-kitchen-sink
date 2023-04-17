@@ -1,0 +1,1 @@
+{"version":3,"file":"linking.js","sourceRoot":"","sources":["../../src/link/linking.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,cAAc,CAAA;AAEtC,MAAM,CAAC,MAAM,OAAO,GAAG,CAAC,GAAW,EAAE,EAAE,CAAC,OAAO,CAAC,OAAO,CAAC,GAAG,CAAC,CAAA","sourcesContent":["import { Linking } from 'react-native'\n\nexport const openURL = (url: string) => Linking.openURL(url)\n"]}

@@ -1,6 +1,0 @@
-{
-  "name": "tamagui-extras/form",
-  "types": "./index.d.ts",
-  "main": "./index.js",
-  "module": "./index.mjs"
-}

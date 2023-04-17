@@ -1,0 +1,1 @@
+{"version":3,"file":"linking.web.js","sourceRoot":"","sources":["../../src/link/linking.web.ts"],"names":[],"mappings":"AAAA,6BAA6B;AAC7B,MAAM,CAAC,MAAM,OAAO,GAAG,CAAC,GAAW,EAAE,EAAE,GAAE,CAAC,CAAA","sourcesContent":["// noop, not supported on web\nexport const openURL = (url: string) => {}\n"]}

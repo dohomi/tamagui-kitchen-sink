@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/image/author/index.ts"],"names":[],"mappings":"AAEA,cAAc,wBAAwB,CAAA;AACtC,cAAc,qBAAqB,CAAA","sourcesContent":["export type { SolitoImageProps } from '../image.types'\n\nexport * from '../create-solito-image'\nexport * from '../use-solito-image'\n"]}

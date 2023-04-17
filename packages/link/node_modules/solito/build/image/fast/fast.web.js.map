@@ -1,0 +1,1 @@
+{"version":3,"file":"fast.web.js","sourceRoot":"","sources":["../../../src/image/fast/fast.web.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,mBAAmB,CAAA","sourcesContent":["export { default } from '../expo/image.web'\n"]}

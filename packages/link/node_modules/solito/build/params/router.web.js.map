@@ -1,0 +1,1 @@
+{"version":3,"file":"router.web.js","sourceRoot":"","sources":["../../src/params/router.web.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,aAAa,CAAA","sourcesContent":["export { default } from 'next/router'\n"]}

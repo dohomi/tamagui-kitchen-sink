@@ -1,6 +1,0 @@
-{
-  "name": "tamagui-extras/richText",
-  "types": "./index.d.ts",
-  "main": "./index.js",
-  "module": "./index.mjs"
-}

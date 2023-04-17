@@ -1,0 +1,57 @@
+{
+  "name": "@tamagui-extras/rich-text",
+  "license": "MIT",
+  "author": "Dominic Garms",
+  "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
+  "homepage": "https://tamagui-extras.vercel.app",
+  "source": "src/index.ts",
+  "types": "./types/index.d.ts",
+  "main": "dist/cjs",
+  "module": "dist/esm",
+  "module:jsx": "dist/jsx",
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "src",
+    "types",
+    "dist"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tamagui-build",
+    "watch": "tamagui-build --watch",
+    "clean": "tamagui-build clean",
+    "clean:build": "tamagui-build clean:build",
+    "check-types": "tsc --noEmit",
+    "release-minor": "yarn build && npx release minor",
+    "release-patch": "yarn build && npx release patch",
+    "release-major": "yarn build && npx release major",
+    "npmPublish": "npm publish"
+  },
+  "dependencies": {
+    "@siposdani87/expo-rich-text-editor": "^0.9.2",
+    "@tiptap/pm": "2.0.0",
+    "@tiptap/react": "2.0.0",
+    "@tiptap/starter-kit": "2.0.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@tamagui/build": "1.15.13",
+    "react": "^18.2.0",
+    "react-native": "^0.71.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"next-router.js","sourceRoot":"","sources":["../../src/router/next-router.ts"],"names":[],"mappings":"AAAA,OAAO,MAAM,MAAM,aAAa,CAAA;AAEhC,MAAM,CAAC,MAAM,UAAU,GAA8B,MAAM,CAAA","sourcesContent":["import Router from 'next/router'\n\nexport const NextRouter: typeof Router | undefined = Router\n"]}

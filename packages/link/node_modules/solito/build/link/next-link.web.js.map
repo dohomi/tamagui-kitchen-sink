@@ -1,0 +1,1 @@
+{"version":3,"file":"next-link.web.js","sourceRoot":"","sources":["../../src/link/next-link.web.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,IAAI,QAAQ,EAAE,MAAM,WAAW,CAAA","sourcesContent":["export { default as NextLink } from 'next/link'\n"]}
