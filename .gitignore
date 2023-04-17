@@ -48,3 +48,6 @@ graphql.config.*
 schema.graphql
 .tamagui
 .turbo
+dist
+
+**/types/**/*.d.ts.map

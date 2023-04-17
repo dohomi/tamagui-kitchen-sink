@@ -10,7 +10,7 @@ import {
   TextStrikethrough,
 } from 'tamagui-phosphor-icons'
 import { Button, ColorTokens, XStack } from 'tamagui'
-import { LmSelect } from '../form'
+import { LmSelect } from '@tamagui-extras/form'
 
 export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
   if (!editor) {

@@ -1,0 +1,1 @@
+{"version":3,"file":"LmDialogActions.d.ts","sourceRoot":"","sources":["LmDialogActions.tsx"],"names":[],"mappings":";AAAA,OAAO,EAAE,UAAU,EAAU,WAAW,EAAE,MAAM,SAAS,CAAA;AAEzD,MAAM,MAAM,oBAAoB,GAAG,WAAW,GAAG;IAC/C,cAAc,CAAC,EAAE,UAAU,CAAA;CAC5B,CAAA;AAED,wBAAgB,eAAe,CAAC,EAC9B,QAAQ,EACR,cAAqB,EACrB,GAAG,IAAI,EACR,EAAE,oBAAoB,eAatB"}

@@ -1,4 +1,4 @@
-import { LmRhfProps } from '../form/rhf/lmRhfProps'
+import { LmRhfProps } from '@tamagui-extras/form'
 import { Controller, FieldValues } from 'react-hook-form'
 import { LmRichText } from './LmRichText'
 import { LmRichTextProps } from './richTextTypes'

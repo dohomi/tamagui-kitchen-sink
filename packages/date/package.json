@@ -1,6 +1,7 @@
 {
   "name": "@tamagui-extras/date",
   "license": "MIT",
+  "version": "0.17.0",
   "author": "Dominic Garms",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",
@@ -39,6 +40,7 @@
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",
     "@react-native-community/datetimepicker": "^7.0.1",
+    "@tamagui-extras/form": "*",
     "react-hook-form": "^7.43.9",
     "react-native-modal-datetime-picker": "^15.0.0"
   },

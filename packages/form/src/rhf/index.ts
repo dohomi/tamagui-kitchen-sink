@@ -1,3 +1,4 @@
+export * from './lmRhfProps'
 export * from './LmInputRhf'
 export * from './LmFormRhfProvider'
 export * from './LmResetButtonRhf'

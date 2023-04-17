@@ -1,6 +1,7 @@
 {
   "name": "@tamagui-extras/file",
   "license": "MIT",
+  "version": "0.17.0",
   "author": "Dominic Garms",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",

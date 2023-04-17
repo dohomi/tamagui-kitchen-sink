@@ -1,4 +1,4 @@
-import { LmButton, LmButtonProps } from '../core/form'
+import { LmButton, LmButtonProps } from '@tamagui-extras/core'
 import { useLink, UseLinkProps } from 'solito/link'
 
 export type LmLinkButtonProps = LmButtonProps & {

@@ -14,6 +14,7 @@ var __reExport = (target, mod, secondTarget) => (__copyProps(target, mod, "defau
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var rhf_exports = {};
 module.exports = __toCommonJS(rhf_exports);
+__reExport(rhf_exports, require("./lmRhfProps"), module.exports);
 __reExport(rhf_exports, require("./LmInputRhf"), module.exports);
 __reExport(rhf_exports, require("./LmFormRhfProvider"), module.exports);
 __reExport(rhf_exports, require("./LmResetButtonRhf"), module.exports);

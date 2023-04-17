@@ -1,7 +1,7 @@
 import { LmYoutubeEmbedProps } from './videoEmbedTypes'
 import { Stack } from 'tamagui'
 import { useState } from 'react'
-import { LmSkeleton } from '../core/content'
+import { LmSkeleton } from '@tamagui-extras/core'
 
 export function LmYoutubeEmbed({
   youtubeId = 'JxS5E-kZc2s',

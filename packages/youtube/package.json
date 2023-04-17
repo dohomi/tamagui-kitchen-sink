@@ -1,6 +1,7 @@
 {
   "name": "@tamagui-extras/youtube",
   "source": "src/index.ts",
+  "version": "0.17.1",
   "types": "./types/index.d.ts",
   "main": "dist/cjs",
   "module": "dist/esm",
@@ -31,6 +32,10 @@
     "release-patch": "yarn build && npx release patch",
     "release-major": "yarn build && npx release major",
     "npmPublish": "npm publish"
+  },
+  "dependencies": {
+    "@tamagui-extras/core": "*",
+    "react-native-webview": "^12.0.2"
   },
   "peerDependencies": {
     "react": "*",

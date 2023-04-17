@@ -1,6 +1,6 @@
 import { DocumentPickerOptions, DocumentResult } from 'expo-document-picker'
 import { StackPropsBase } from 'tamagui'
-import { LmButtonProps } from '../core/form'
+import { LmButtonProps } from '@tamagui-extras/core'
 
 export type LmFilePickerProps = LmButtonProps & {
   label?: string
