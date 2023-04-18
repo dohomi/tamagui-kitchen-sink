@@ -54,7 +54,7 @@ the [NextJS app](https://github.com/dohomi/tamagui-kitchen-sink/blob/master/apps
 
 Add `@tamagui-extras/*` to the `next.config.js` or `babel.config.js` file to transpile the package.
 
-```json
+```
 {
   loader: 'tamagui-loader',
   options: {
