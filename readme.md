@@ -24,20 +24,21 @@ Follow the installation [instructions](https://tamagui.dev/docs/intro/installati
 
 `@tamagui-extras` organisation exports following packages:
 
-* `@tamagui-extras/core`[link](https://tamagui-extras.vercel.app/?path=/docs/core-content-alert--documentation) - core
+* `@tamagui-extras/core`[[link]](https://tamagui-extras.vercel.app/?path=/docs/core-content-alert--documentation) - core
   components
-* `@tamagui-extras/form`[link](https://tamagui-extras.vercel.app/?path=/docs/form-autocomplete--documentation) - form
+* `@tamagui-extras/form`[[link]](https://tamagui-extras.vercel.app/?path=/docs/form-autocomplete--documentation) - form
   components - based on `react-hook-form`
 * `@tamagui-extras/link` - link components - based on `solito`
-* `@tamagui-extras/file`[link](https://tamagui-extras.vercel.app/?path=/docs/file-file-picker--documentation) - file
+* `@tamagui-extras/file`[[link]](https://tamagui-extras.vercel.app/?path=/docs/file-file-picker--documentation) - file
   components - based on `expo-document-picker`
-* `@tamagui-extras/youtube`[link](https://tamagui-extras.vercel.app/?path=/docs/youtube-youtube-embed--documentation) -
+* `@tamagui-extras/youtube`[[link]](https://tamagui-extras.vercel.app/?path=/docs/youtube-youtube-embed--documentation) -
   youtube iframe component
-* `@tamagui-extras/video`[link](https://tamagui-extras.vercel.app/?path=/docs/video-video--documentation - video
+* `@tamagui-extras/video`[[link]](https://tamagui-extras.vercel.app/?path=/docs/video-video--documentation) - video
   components - based on `expo-av`
-* `@tamagui-extras/rich-text`[link](https://tamagui-extras.vercel.app/?path=/docs/richtext-tiptap-editor--documentation) -
+* `@tamagui-extras/rich-text`[[link]](https://tamagui-extras.vercel.app/?path=/docs/richtext-tiptap-editor--documentation) -
   rich text editor web only: `tiptap`
-* `@tamagui-extras/date`[link](https://tamagui-extras.vercel.app/?path=/docs/date-date-selection--documentation) - date
+* `@tamagui-extras/date`[[link]](https://tamagui-extras.vercel.app/?path=/docs/date-date-selection--documentation) -
+  date
   picker and selections
 
 ### Important NextJS config
