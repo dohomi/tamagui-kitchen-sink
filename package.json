@@ -38,7 +38,9 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-refresh": "^0.14.0",
-    "react-native-web": "^0.18.9"
+    "react-native-web": "^0.18.9",
+    "@babel/runtime": "7.21.0",
+    "@babel/core": "7.21.4"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9"

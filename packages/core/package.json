@@ -45,7 +45,6 @@
     "npmPublish": "npm publish"
   },
   "devDependencies": {
-    "@storybook/react": "^7.0.5",
     "@tamagui/build": "1.15.14",
     "@tamagui/themes": "1.15.14",
     "prettier": "^2.8.7",

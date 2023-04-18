@@ -1,3 +1,13 @@
+const extrasPlugins = [
+  '@tamagui-extras/core',
+  '@tamagui-extras/date',
+  '@tamagui-extras/file',
+  '@tamagui-extras/form',
+  '@tamagui-extras/link',
+  '@tamagui-extras/rich-text',
+  '@tamagui-extras/video',
+  '@tamagui-extras/youtube',
+]
 module.exports = function (api) {
   api.cache(true)
   return {
@@ -13,7 +23,7 @@ module.exports = function (api) {
             [
               '@tamagui/babel-plugin',
               {
-                components: ['tamagui'],
+                components: [...extrasPlugins, 'tamagui'],
                 config: './tamagui.config.ts',
               },
             ],

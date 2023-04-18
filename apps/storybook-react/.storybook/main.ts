@@ -2,22 +2,11 @@
 import path, { resolve } from 'path'
 import { StorybookConfig } from '@storybook/nextjs'
 
-const { shouldExclude } = require('tamagui-loader')
-const projectRoot = resolve(__dirname, '../')
-
-const tamaguiOptions = {
-  config: './tamagui.config.ts',
-  components: ['@tamagui-extras/core', 'tamagui'],
-  importsWhitelist: ['constants.js', 'colors.js'],
-  logTimings: true,
-  disableExtraction: process.env.NODE_ENV === 'development',
-}
-
 const config: StorybookConfig = {
   stories: [
     // '../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../../../packages/app/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    '../../../packages/core/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    // '../../../packages/core/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     // '../../../packages/form/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     // '../../../packages/date/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     // '../../../packages/rich-text/**/*.stories.@(js|jsx|ts|tsx|mdx)',
@@ -59,7 +48,7 @@ const config: StorybookConfig = {
   framework: {
     name: '@storybook/nextjs',
     options: {
-      nextConfigPath: path.resolve(projectRoot, 'next.config.js'),
+      // nextConfigPath: path.resolve(projectRoot, 'next.config.js'),
     },
   },
   webpackFinal: async (config, { configType }) => {
