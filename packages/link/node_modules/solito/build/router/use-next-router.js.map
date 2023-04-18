@@ -1,1 +1,0 @@
-{"version":3,"file":"use-next-router.js","sourceRoot":"","sources":["../../src/router/use-next-router.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,MAAM,aAAa,GAAG,GAA6C,EAAE,CAC1E,SAAS,CAAA","sourcesContent":["import type { useRouter } from 'next/router'\n\nexport const useNextRouter = (): ReturnType<typeof useRouter> | undefined =>\n  undefined\n"]}

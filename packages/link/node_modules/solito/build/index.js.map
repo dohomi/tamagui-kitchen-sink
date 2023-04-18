@@ -1,1 +1,0 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":"AAAA,cAAc,qBAAqB,CAAA;AACnC,cAAc,uBAAuB,CAAA;AACrC,cAAc,UAAU,CAAA","sourcesContent":["export * from './types/solito-page'\nexport * from './middleware/provider'\nexport * from './params'\n"]}

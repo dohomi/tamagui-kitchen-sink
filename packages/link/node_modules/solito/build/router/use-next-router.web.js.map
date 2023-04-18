@@ -1,1 +1,0 @@
-{"version":3,"file":"use-next-router.web.js","sourceRoot":"","sources":["../../src/router/use-next-router.web.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,IAAI,aAAa,EAAE,MAAM,aAAa,CAAA","sourcesContent":["export { useRouter as useNextRouter } from 'next/router'\n"]}

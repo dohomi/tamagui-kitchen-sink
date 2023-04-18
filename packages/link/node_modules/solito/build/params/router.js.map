@@ -1,1 +1,0 @@
-{"version":3,"file":"router.js","sourceRoot":"","sources":["../../src/params/router.ts"],"names":[],"mappings":"AAEA,eAAe,SAAiC,CAAA","sourcesContent":["import type Router from 'next/router'\n\nexport default undefined as any as typeof Router\n"]}

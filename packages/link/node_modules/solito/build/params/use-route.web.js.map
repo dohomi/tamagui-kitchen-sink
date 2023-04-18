@@ -1,1 +1,0 @@
-{"version":3,"file":"use-route.web.js","sourceRoot":"","sources":["../../src/params/use-route.web.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,MAAM,QAAQ,GAAG,GAAG,EAAE,CAAC,SAAS,CAAA","sourcesContent":["export const useRoute = () => undefined\n"]}

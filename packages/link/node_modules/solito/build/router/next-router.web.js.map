@@ -1,1 +1,0 @@
-{"version":3,"file":"next-router.web.js","sourceRoot":"","sources":["../../src/router/next-router.web.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,MAAM,UAAU,GAAG,SAAS,CAAA","sourcesContent":["export const NextRouter = undefined\n"]}

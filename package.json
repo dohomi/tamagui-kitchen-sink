@@ -37,10 +37,9 @@
     "esbuild": "0.17.17",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-refresh": "^0.14.0",
-    "react-native-web": "^0.18.9",
-    "@babel/runtime": "7.21.0",
-    "@babel/core": "7.21.4"
+    "react-refresh": "0.14.0",
+    "react-native-web": "0.18.12",
+    "typescript": "5.0.4"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9"
@@ -52,7 +51,7 @@
     "eslint": "^8.21.0",
     "prettier": "^2.7.1",
     "turbo": "^1.8.8",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.4"
   },
   "packageManager": "yarn@3.5.0"
 }
