@@ -17,14 +17,6 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     {
-      name: '@storybook/addon-styling',
-      options: {
-        postCss: {
-          implementation: require('postcss'),
-        },
-      },
-    },
-    {
       name: '@storybook/addon-react-native-web',
       options: {
         modulesToTranspile: [

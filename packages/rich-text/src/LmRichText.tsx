@@ -3,6 +3,7 @@ import StarterKit from '@tiptap/starter-kit'
 import { Stack } from 'tamagui'
 import { LmTipTapToolbar } from './LmTipTapMenuBar'
 import { LmRichTextProps } from './richTextTypes'
+import './proseMirror.css'
 
 export function LmRichText({
   containerProps,

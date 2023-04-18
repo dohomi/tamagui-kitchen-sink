@@ -10,6 +10,7 @@ import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
 import { SpaceTokens, YStack } from 'tamagui'
 import { LmDatepickerRhf } from '@tamagui-extras/date'
 import { fruitItemsFixtures } from '../../lib/fixtures/selectItems'
+import { LmRichTextRhf } from '@tamagui-extras/rich-text'
 
 export function PlaygroundScreen() {
   const defaultSectionProps: {
@@ -45,7 +46,7 @@ export function PlaygroundScreen() {
             {/*/>*/}
             {/*<LmSelectRhf options={fruitItemsFixtures} name={'select'} />*/}
             <LmDatepickerRhf start={'date'} label={'Date'} />
-            {/*<LmRichTextRhf name={'richtext'} />*/}
+            <LmRichTextRhf name={'richtext'} />
             <LmInputRhf name={'textfield'} label={'Textfield'} />
             <LmStarRatingRhf name={'stars'} />
 

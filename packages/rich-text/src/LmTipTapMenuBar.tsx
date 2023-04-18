@@ -23,21 +23,18 @@ export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
     <XStack alignItems={'center'} borderBottomColor={'$borderColor'} borderBottomWidth={1}>
       <Button
         chromeless
-        circular
         onPress={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
         icon={<TextBolder color={editor.isActive('bold') ? activeThemeColor : undefined} />}
       />
       <Button
         chromeless
-        circular
         onPress={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
         icon={<TextItalic color={editor.isActive('italic') ? activeThemeColor : undefined} />}
       />
       <Button
         chromeless
-        circular
         onPress={() => editor.chain().focus().toggleStrike().run()}
         disabled={!editor.can().chain().focus().toggleStrike().run()}
         icon={
@@ -72,14 +69,12 @@ export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
       />
       <Button
         chromeless
-        circular
         icon={<List color={editor.isActive('bulletList') ? activeThemeColor : undefined} />}
         onPress={() => editor?.chain().focus().toggleBulletList().run()}
         disabled={!editor?.can().chain().focus().toggleBulletList().run()}
       />
       <Button
         chromeless
-        circular
         icon={<ListNumbers color={editor.isActive('orderedList') ? activeThemeColor : undefined} />}
         onPress={() => editor?.chain().focus().toggleOrderedList().run()}
         disabled={!editor?.can().chain().focus().toggleOrderedList().run()}
@@ -87,7 +82,6 @@ export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
 
       <Button
         chromeless
-        circular
         icon={<Quotes color={editor.isActive('blockquote') ? activeThemeColor : undefined} />}
         onPress={() => editor.chain().focus().toggleBlockquote().run()}
         disabled={!editor.can().chain().focus().toggleBlockquote().run()}
@@ -95,14 +89,12 @@ export function LmTipTapToolbar({ editor }: { editor: Editor | null }) {
 
       <Button
         chromeless
-        circular
         icon={<ArrowCounterClockwise />}
         onPress={() => editor.chain().focus().undo().run()}
         disabled={!editor.can().chain().focus().undo().run()}
       />
       <Button
         chromeless
-        circular
         icon={<ArrowClockwise />}
         onPress={() => editor.chain().focus().redo().run()}
         disabled={!editor.can().chain().focus().redo().run()}
