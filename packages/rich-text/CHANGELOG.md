@@ -1,5 +1,11 @@
 # @tamagui-extras/rich-text
 
+## 1.0.1
+
+### Patch Changes
+
+- Remove css inside tsx file of proseMirror.css
+
 ## 1.0.0
 
 ### Major Changes
