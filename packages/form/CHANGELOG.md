@@ -1,5 +1,13 @@
 # @tamagui-extras/form
 
+## 1.0.1
+
+### Patch Changes
+
+- rebuild with downgraded esbuild version
+- Updated dependencies
+  - @tamagui-extras/core@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.0.1
+
+### Patch Changes
+
+- rebuild with downgraded esbuild version
+
 ## 1.0.0
 
 ### Major Changes

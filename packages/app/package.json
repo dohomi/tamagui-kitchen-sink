@@ -23,10 +23,10 @@
     "@tamagui/theme-base": "1.15.14",
     "i18next": "^21.9.1",
     "react-i18next": "^11.18.6",
+    "react-native-web": "0.18.12",
     "solito": "^3.0.1",
     "tamagui": "1.15.14",
-    "zustand": "^4.3.3",
-    "react-native-web": "0.18.12"
+    "zustand": "^4.3.3"
   },
   "sideEffects": false
 }
