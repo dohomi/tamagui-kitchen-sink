@@ -5,7 +5,7 @@
 This repo is a mono-repo for npm `@tamagui-extras/*`. Additional components and functionalities extend the
 UI framework `tamagui`
 
-## 📦 @tamagui-extras Storybook
+## 📦 `@tamagui-extras` [Storybook](https://tamagui-extras.vercel.app/)
 
 Overview of all components build on top of `tamagui`
 [Storybook Demo](https://tamagui-extras.vercel.app/) to see all components in action.
