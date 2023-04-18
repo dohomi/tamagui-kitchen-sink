@@ -1,5 +1,13 @@
 # @tamagui-extras/rich-text
 
+## 1.0.4
+
+### Patch Changes
+
+- change esbuild version
+- Updated dependencies
+  - @tamagui-extras/form@1.0.2
+
 ## 1.0.3
 
 ### Patch Changes
