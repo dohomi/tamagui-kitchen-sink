@@ -34,13 +34,13 @@
     "codegen": "yarn turbo run codegen",
     "rm:nodemodule": "rm -rf .yarn/cache node_modules apps/expo/node_modules apps/next/node_modules apps/next/.tamagui packages/core/node_modules yarn.lock apps/storybook-react/node_modules apps/storybook-react-native/node_modules apps/storybook-react/dist",
     "new-version": "yarn changeset",
-    "publish-packages": "turbo run build lint test && changeset version && changeset publish && git push --tags",
+    "publish-packages": "changeset version && changeset publish && git push --tags",
     "release-minor": "yarn build && npx release minor",
     "release-patch": "yarn build && npx release patch",
     "release-major": "yarn build && npx release major"
   },
   "resolutions": {
-    "esbuild": "0.17.17",
+    "esbuild": "0.15.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-refresh": "0.14.0",

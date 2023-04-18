@@ -1,5 +1,11 @@
 # @tamagui-extras/rich-text
 
+## 1.0.2
+
+### Patch Changes
+
+- change css handling of @tamagui-extras/rich-text
+
 ## 1.0.1
 
 ### Patch Changes
