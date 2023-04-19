@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -20,6 +21,7 @@ __export(LmInput_exports, {
   LmInput: () => LmInput
 });
 module.exports = __toCommonJS(LmInput_exports);
+var import_jsx_runtime = require("react/jsx-runtime");
 var import_tamagui = require("tamagui");
 var import_react = require("react");
 var import_LmFormFieldContainer = require("./LmFormFieldContainer");
@@ -54,20 +56,43 @@ function LmInput({
     styleProps.minWidth = "100%";
   }
   let secureTextEntry = !!(rest.secureTextEntry || isPassword);
-  return <import_LmFormFieldContainer.LmFormFieldContainer id={id} error={error} required={required} labelProps={labelProps} label={label} fullWidth={fullWidth} size={rest.size} labelInline={labelInline} helperText={helperText} helperTextProps={helperTextProps} {...containerProps}>{multiline ? <import_tamagui.TextArea {...styleProps} /> : secureTextEntry ? <import_tamagui.Stack position="relative" width={fullWidth ? "100%" : "fit-content"}>
-    <import_tamagui.Input {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
-    <import_react_native.Pressable style={{
-      position: "absolute",
-      bottom: 0,
-      top: 0,
-      marginTop: "auto",
-      marginBottom: "auto",
-      height: "20px",
-      right: "10px"
-    }} onPress={() => {
-      setShow((state) => !state);
-    }}>{show ? <import_tamagui_phosphor_icons.EyeSlash {...passwordIconProps} /> : <import_tamagui_phosphor_icons.Eye {...passwordIconProps} />}</import_react_native.Pressable>
-  </import_tamagui.Stack> : <import_tamagui.Input {...styleProps} autoCapitalize="none" />}</import_LmFormFieldContainer.LmFormFieldContainer>;
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    import_LmFormFieldContainer.LmFormFieldContainer,
+    {
+      id,
+      error,
+      required,
+      labelProps,
+      label,
+      fullWidth,
+      size: rest.size,
+      labelInline,
+      helperText,
+      helperTextProps,
+      ...containerProps,
+      children: multiline ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.TextArea, { ...styleProps }) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : "fit-content", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { ...styleProps, secureTextEntry: !show, autoCapitalize: "none" }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          import_react_native.Pressable,
+          {
+            style: {
+              position: "absolute",
+              bottom: 0,
+              top: 0,
+              marginTop: "auto",
+              marginBottom: "auto",
+              height: "20px",
+              right: "10px"
+            },
+            onPress: () => {
+              setShow((state) => !state);
+            },
+            children: show ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.EyeSlash, { ...passwordIconProps }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.Eye, { ...passwordIconProps })
+          }
+        )
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { ...styleProps, autoCapitalize: "none" })
+    }
+  );
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

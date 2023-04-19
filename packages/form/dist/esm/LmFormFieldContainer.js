@@ -1,3 +1,4 @@
+import { jsx, jsxs } from "react/jsx-runtime";
 import {
   Label,
   Paragraph,
@@ -33,17 +34,38 @@ function LmFormFieldContainer({
   helperTextProps,
   ...rest
 }) {
-  return <StackContainer space={!!rest.labelInline} {...rest}>
-    {label && <Label htmlFor={id} size={size || "$3"} {...labelProps} color={error ? "$red10" : void 0} width={rest.labelInline ? 150 : void 0} justifyContent={rest.labelInline ? "flex-end" : void 0}>
-      {label}
-      {" "}
-      {required && ` *`}
-    </Label>}
-    <YStack>
-      {children}
-      {helperText && <Paragraph paddingLeft="$2" marginTop="$2" size={size} {...helperTextProps} color={error ? "$red10" : void 0}>{helperText}</Paragraph>}
-    </YStack>
-  </StackContainer>;
+  return /* @__PURE__ */ jsxs(StackContainer, { space: !!rest.labelInline, ...rest, children: [
+    label && /* @__PURE__ */ jsxs(
+      Label,
+      {
+        htmlFor: id,
+        size: size || "$3",
+        ...labelProps,
+        color: error ? "$red10" : void 0,
+        width: rest.labelInline ? 150 : void 0,
+        justifyContent: rest.labelInline ? "flex-end" : void 0,
+        children: [
+          label,
+          " ",
+          required && ` *`
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxs(YStack, { children: [
+      children,
+      helperText && /* @__PURE__ */ jsx(
+        Paragraph,
+        {
+          paddingLeft: "$2",
+          marginTop: "$2",
+          size,
+          ...helperTextProps,
+          color: error ? "$red10" : void 0,
+          children: helperText
+        }
+      )
+    ] })
+  ] });
 }
 export {
   LmFormFieldContainer

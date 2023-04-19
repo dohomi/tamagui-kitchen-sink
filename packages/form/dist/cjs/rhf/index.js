@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -26,4 +27,19 @@ __reExport(rhf_exports, require("./LmSliderRhf"), module.exports);
 __reExport(rhf_exports, require("./LmAutocompleteRhf"), module.exports);
 __reExport(rhf_exports, require("./LmStarRatingRhf"), module.exports);
 __reExport(rhf_exports, require("./LmRadioGroupRhf"), module.exports);
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  ...require("./lmRhfProps"),
+  ...require("./LmInputRhf"),
+  ...require("./LmFormRhfProvider"),
+  ...require("./LmResetButtonRhf"),
+  ...require("./LmSubmitButtonRhf"),
+  ...require("./LmSelectRhf"),
+  ...require("./LmCheckboxRhf"),
+  ...require("./LmSwitchRhf"),
+  ...require("./LmSliderRhf"),
+  ...require("./LmAutocompleteRhf"),
+  ...require("./LmStarRatingRhf"),
+  ...require("./LmRadioGroupRhf")
+});
 //# sourceMappingURL=index.js.map

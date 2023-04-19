@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -20,6 +21,7 @@ __export(LmAutocomplete_exports, {
   LmAutocomplete: () => LmAutocomplete
 });
 module.exports = __toCommonJS(LmAutocomplete_exports);
+var import_jsx_runtime = require("react/jsx-runtime");
 var import_tamagui = require("tamagui");
 var import_tamagui_phosphor_icons = require("tamagui-phosphor-icons");
 var import_react = require("react");
@@ -72,21 +74,55 @@ function LmAutocomplete({
     }
   }, [width]);
   const inputValue = Array.isArray(selection) ? selection.map((option) => option == null ? void 0 : option.label).join(", ") : (selection == null ? void 0 : selection.label) || "";
-  return <import_LmFormFieldContainer.LmFormFieldContainer id={id} error={error} required={required} labelProps={labelProps} label={label} labelInline={labelInline} helperText={helperText} helperTextProps={helperTextProps}><import_tamagui.XGroup ref={inputRef}>
-    <import_tamagui.XGroup.Item><import_tamagui.Input flex={1} value={inputValue} theme={theme} textOverflow="ellipsis" /></import_tamagui.XGroup.Item>
-    <import_tamagui.XGroup.Item><import_core.LmPopover isBouncy sheetProps={{}} contentProps={{
-      minWidth: popoverWidth ? popoverWidth : void 0,
-      maxWidth: "100%"
-    }} trigger={<import_tamagui.Button icon={<import_tamagui_phosphor_icons.CaretDown />} borderTopLeftRadius={0} borderBottomLeftRadius={0} />}><LmAutocompleteInputContent theme={theme} options={opts} isSelected={isSelected} onChangeSelection={onChangeSelection} onAddNew={(newVal) => {
-      if (newVal) {
-        const newItem = typeof allowNewHook === "function" ? allowNewHook(newVal) : {
-          value: newVal,
-          label: newVal
-        };
-        setOpts((oldVal) => [newItem, ...oldVal]);
-      }
-    }} {...rest} /></import_core.LmPopover></import_tamagui.XGroup.Item>
-  </import_tamagui.XGroup></import_LmFormFieldContainer.LmFormFieldContainer>;
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    import_LmFormFieldContainer.LmFormFieldContainer,
+    {
+      id,
+      error,
+      required,
+      labelProps,
+      label,
+      labelInline,
+      helperText,
+      helperTextProps,
+      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XGroup, { ref: inputRef, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XGroup.Item, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { flex: 1, value: inputValue, theme, textOverflow: "ellipsis" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XGroup.Item, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          import_core.LmPopover,
+          {
+            isBouncy: true,
+            sheetProps: {
+              // snapPoints: [100, 0],
+            },
+            contentProps: {
+              minWidth: popoverWidth ? popoverWidth : void 0,
+              maxWidth: "100%"
+            },
+            trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Button, { icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.CaretDown, {}), borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }),
+            children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+              LmAutocompleteInputContent,
+              {
+                theme,
+                options: opts,
+                isSelected,
+                onChangeSelection,
+                onAddNew: (newVal) => {
+                  if (newVal) {
+                    const newItem = typeof allowNewHook === "function" ? allowNewHook(newVal) : {
+                      value: newVal,
+                      label: newVal
+                    };
+                    setOpts((oldVal) => [newItem, ...oldVal]);
+                  }
+                },
+                ...rest
+              }
+            )
+          }
+        ) })
+      ] })
+    }
+  );
 }
 function LmAutocompleteInputContent({
   disableSearch,
@@ -101,26 +137,72 @@ function LmAutocompleteInputContent({
   const [searchTerm, setSearchTerm] = (0, import_react.useState)();
   const deferredTerm = (0, import_react.useDeferredValue)(searchTerm);
   const filteredOptions = (deferredTerm == null ? void 0 : deferredTerm.length) ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options;
-  return <>{import_react_native.Platform.OS === "web" ? <>
-    {(!disableSearch || allowNew) && <import_tamagui.XStack padding="$4" width="100%"><import_tamagui.Input theme={theme} placeholder={placeholderSearch} width="100%" onChangeText={(text) => {
-      setSearchTerm(text.toLowerCase());
-    }} /></import_tamagui.XStack>}
-    <import_tamagui.Popover.ScrollView keyboardShouldPersistTaps="always" style={{ maxHeight: 300, width: "100%" }}>
-      <LmAutocompleteList options={filteredOptions} onChangeSelection={onChangeSelection} isSelected={isSelected} />
-      {allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && <import_tamagui.XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><import_tamagui.Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<import_tamagui_phosphor_icons.ListPlus />}>{deferredTerm}</import_tamagui.Button></import_tamagui.XStack>}
-    </import_tamagui.Popover.ScrollView>
-  </> : <>
-    {(!disableSearch || allowNew) && <import_tamagui.XStack padding="$4" width="100%"><import_tamagui.Input theme={theme} placeholder={placeholderSearch} width="100%" onChangeText={(text) => {
-      setSearchTerm(text.toLowerCase());
-    }} /></import_tamagui.XStack>}
-    <import_tamagui.Sheet.ScrollView><LmAutocompleteList options={filteredOptions} onChangeSelection={onChangeSelection} isSelected={isSelected} /></import_tamagui.Sheet.ScrollView>
-    {allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && <import_tamagui.XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><import_tamagui.Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<import_tamagui_phosphor_icons.ListPlus />}>{deferredTerm}</import_tamagui.Button></import_tamagui.XStack>}
-  </>}</>;
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: import_react_native.Platform.OS === "web" ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+    (!disableSearch || allowNew) && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      import_tamagui.Input,
+      {
+        theme,
+        placeholder: placeholderSearch,
+        width: "100%",
+        onChangeText: (text) => {
+          setSearchTerm(text.toLowerCase());
+        }
+      }
+    ) }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+      import_tamagui.Popover.ScrollView,
+      {
+        keyboardShouldPersistTaps: "always",
+        style: { maxHeight: 300, width: "100%" },
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            LmAutocompleteList,
+            {
+              options: filteredOptions,
+              onChangeSelection,
+              isSelected
+            }
+          ),
+          allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Button, { onPress: () => onAddNew(deferredTerm), chromeless: true, icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.ListPlus, {}), children: deferredTerm }) })
+        ]
+      }
+    )
+  ] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
+    (!disableSearch || allowNew) && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      import_tamagui.Input,
+      {
+        theme,
+        placeholder: placeholderSearch,
+        width: "100%",
+        onChangeText: (text) => {
+          setSearchTerm(text.toLowerCase());
+        }
+      }
+    ) }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Sheet.ScrollView, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      LmAutocompleteList,
+      {
+        options: filteredOptions,
+        onChangeSelection,
+        isSelected
+      }
+    ) }),
+    allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Button, { onPress: () => onAddNew(deferredTerm), chromeless: true, icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.ListPlus, {}), children: deferredTerm }) })
+  ] }) });
 }
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
-  return <>{options.map((item, i) => {
-    return <import_tamagui.ListItem hoverTheme key={item.value} icon={isSelected(item) ? <import_tamagui_phosphor_icons.CheckSquare /> : <import_tamagui_phosphor_icons.Square />} title={item.label} onPress={() => onChangeSelection(item)} />;
-  })}</>;
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: options.map((item, i) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      import_tamagui.ListItem,
+      {
+        hoverTheme: true,
+        icon: isSelected(item) ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.CheckSquare, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.Square, {}),
+        title: item.label,
+        onPress: () => onChangeSelection(item)
+      },
+      item.value
+    );
+  }) });
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

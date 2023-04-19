@@ -1,12 +1,13 @@
+import { jsx, jsxs } from "react/jsx-runtime";
 import { Label, Switch, XStack } from "tamagui";
 import { useId } from "react";
 function LmSwitch({ labelLeft, labelRight, space, size = "$2", ...rest }) {
   const id = useId();
-  return <XStack alignItems="center" space="$4">
-    {labelLeft && <Label htmlFor={id} fontSize={size}>{labelLeft}</Label>}
-    <Switch id={id} {...rest} size={size}><Switch.Thumb animation="bouncy" /></Switch>
-    {labelRight && <Label htmlFor={id} fontSize={size}>{labelRight}</Label>}
-  </XStack>;
+  return /* @__PURE__ */ jsxs(XStack, { alignItems: "center", space: "$4", children: [
+    labelLeft && /* @__PURE__ */ jsx(Label, { htmlFor: id, fontSize: size, children: labelLeft }),
+    /* @__PURE__ */ jsx(Switch, { id, ...rest, size, children: /* @__PURE__ */ jsx(Switch.Thumb, { animation: "bouncy" }) }),
+    labelRight && /* @__PURE__ */ jsx(Label, { htmlFor: id, fontSize: size, children: labelRight })
+  ] });
 }
 export {
   LmSwitch

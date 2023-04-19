@@ -1,3 +1,4 @@
+import { jsx, jsxs } from "react/jsx-runtime";
 import { useId } from "react";
 import {
   Checkbox,
@@ -20,20 +21,41 @@ function LmCheckbox({
   ...stackProps
 }) {
   const id = useId();
-  return <XStack space alignItems="center" {...stackProps}>
-    <Checkbox id={id} theme={error ? "red" : theme} size={size} defaultChecked={value} onCheckedChange={(checked) => {
-      if (typeof onChange === "function") {
-        onChange(!!checked);
+  return /* @__PURE__ */ jsxs(XStack, { space: true, alignItems: "center", ...stackProps, children: [
+    /* @__PURE__ */ jsx(
+      Checkbox,
+      {
+        id,
+        theme: error ? "red" : theme,
+        size,
+        defaultChecked: value,
+        onCheckedChange: (checked) => {
+          if (typeof onChange === "function") {
+            onChange(!!checked);
+          }
+        },
+        borderColor: error ? "$red8" : "$borderColor",
+        children: /* @__PURE__ */ jsx(Checkbox.Indicator, { children: /* @__PURE__ */ jsx(Check, {}) })
       }
-    }} borderColor={error ? "$red8" : "$borderColor"}><Checkbox.Indicator><Check /></Checkbox.Indicator></Checkbox>
-    {label && <YStack>
-      <Label size={size} htmlFor={id}>
-        {required ? "* " : ""}
-        {label}
-      </Label>
-      {helperText && <Paragraph paddingLeft="$2" marginTop={0} size={size} {...helperTextProps} color={error ? "$red10" : helperTextProps == null ? void 0 : helperTextProps.color}>{helperText}</Paragraph>}
-    </YStack>}
-  </XStack>;
+    ),
+    label && /* @__PURE__ */ jsxs(YStack, { children: [
+      /* @__PURE__ */ jsxs(Label, { size, htmlFor: id, children: [
+        required ? "* " : "",
+        label
+      ] }),
+      helperText && /* @__PURE__ */ jsx(
+        Paragraph,
+        {
+          paddingLeft: "$2",
+          marginTop: 0,
+          size,
+          ...helperTextProps,
+          color: error ? "$red10" : helperTextProps == null ? void 0 : helperTextProps.color,
+          children: helperText
+        }
+      )
+    ] })
+  ] });
 }
 export {
   LmCheckbox

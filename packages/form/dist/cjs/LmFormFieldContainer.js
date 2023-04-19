@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -20,6 +21,7 @@ __export(LmFormFieldContainer_exports, {
   LmFormFieldContainer: () => LmFormFieldContainer
 });
 module.exports = __toCommonJS(LmFormFieldContainer_exports);
+var import_jsx_runtime = require("react/jsx-runtime");
 var import_tamagui = require("tamagui");
 const StackContainer = (0, import_tamagui.styled)(import_tamagui.ThemeableStack, {
   variants: {
@@ -49,17 +51,38 @@ function LmFormFieldContainer({
   helperTextProps,
   ...rest
 }) {
-  return <StackContainer space={!!rest.labelInline} {...rest}>
-    {label && <import_tamagui.Label htmlFor={id} size={size || "$3"} {...labelProps} color={error ? "$red10" : void 0} width={rest.labelInline ? 150 : void 0} justifyContent={rest.labelInline ? "flex-end" : void 0}>
-      {label}
-      {" "}
-      {required && ` *`}
-    </import_tamagui.Label>}
-    <import_tamagui.YStack>
-      {children}
-      {helperText && <import_tamagui.Paragraph paddingLeft="$2" marginTop="$2" size={size} {...helperTextProps} color={error ? "$red10" : void 0}>{helperText}</import_tamagui.Paragraph>}
-    </import_tamagui.YStack>
-  </StackContainer>;
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(StackContainer, { space: !!rest.labelInline, ...rest, children: [
+    label && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+      import_tamagui.Label,
+      {
+        htmlFor: id,
+        size: size || "$3",
+        ...labelProps,
+        color: error ? "$red10" : void 0,
+        width: rest.labelInline ? 150 : void 0,
+        justifyContent: rest.labelInline ? "flex-end" : void 0,
+        children: [
+          label,
+          " ",
+          required && ` *`
+        ]
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.YStack, { children: [
+      children,
+      helperText && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        import_tamagui.Paragraph,
+        {
+          paddingLeft: "$2",
+          marginTop: "$2",
+          size,
+          ...helperTextProps,
+          color: error ? "$red10" : void 0,
+          children: helperText
+        }
+      )
+    ] })
+  ] });
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

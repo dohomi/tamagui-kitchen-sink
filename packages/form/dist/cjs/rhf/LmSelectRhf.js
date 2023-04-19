@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -20,6 +21,7 @@ __export(LmSelectRhf_exports, {
   LmSelectRhf: () => LmSelectRhf
 });
 module.exports = __toCommonJS(LmSelectRhf_exports);
+var import_jsx_runtime = require("react/jsx-runtime");
 var import_LmSelect = require("../LmSelect");
 var import_react_hook_form = require("react-hook-form");
 function LmSelectRhf({
@@ -32,7 +34,25 @@ function LmSelectRhf({
   if (inputProps.required) {
     rules.required = "This field is required";
   }
-  return <import_react_hook_form.Controller name={name} rules={rules} control={control} defaultValue={defaultValue} render={({ field: { onChange, value }, fieldState: { error, invalid } }) => <import_LmSelect.LmSelect {...inputProps} value={value ?? ""} error={invalid} onValueChange={onChange} helperText={error ? error.message : inputProps.helperText} />} />;
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    import_react_hook_form.Controller,
+    {
+      name,
+      rules,
+      control,
+      defaultValue,
+      render: ({ field: { onChange, value }, fieldState: { error, invalid } }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        import_LmSelect.LmSelect,
+        {
+          ...inputProps,
+          value: value ?? "",
+          error: invalid,
+          onValueChange: onChange,
+          helperText: error ? error.message : inputProps.helperText
+        }
+      )
+    }
+  );
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

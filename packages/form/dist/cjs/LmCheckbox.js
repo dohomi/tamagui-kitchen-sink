@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -20,6 +21,7 @@ __export(LmCheckbox_exports, {
   LmCheckbox: () => LmCheckbox
 });
 module.exports = __toCommonJS(LmCheckbox_exports);
+var import_jsx_runtime = require("react/jsx-runtime");
 var import_react = require("react");
 var import_tamagui = require("tamagui");
 var import_tamagui_phosphor_icons = require("tamagui-phosphor-icons");
@@ -36,20 +38,41 @@ function LmCheckbox({
   ...stackProps
 }) {
   const id = (0, import_react.useId)();
-  return <import_tamagui.XStack space alignItems="center" {...stackProps}>
-    <import_tamagui.Checkbox id={id} theme={error ? "red" : theme} size={size} defaultChecked={value} onCheckedChange={(checked) => {
-      if (typeof onChange === "function") {
-        onChange(!!checked);
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XStack, { space: true, alignItems: "center", ...stackProps, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      import_tamagui.Checkbox,
+      {
+        id,
+        theme: error ? "red" : theme,
+        size,
+        defaultChecked: value,
+        onCheckedChange: (checked) => {
+          if (typeof onChange === "function") {
+            onChange(!!checked);
+          }
+        },
+        borderColor: error ? "$red8" : "$borderColor",
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Checkbox.Indicator, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.Check, {}) })
       }
-    }} borderColor={error ? "$red8" : "$borderColor"}><import_tamagui.Checkbox.Indicator><import_tamagui_phosphor_icons.Check /></import_tamagui.Checkbox.Indicator></import_tamagui.Checkbox>
-    {label && <import_tamagui.YStack>
-      <import_tamagui.Label size={size} htmlFor={id}>
-        {required ? "* " : ""}
-        {label}
-      </import_tamagui.Label>
-      {helperText && <import_tamagui.Paragraph paddingLeft="$2" marginTop={0} size={size} {...helperTextProps} color={error ? "$red10" : helperTextProps == null ? void 0 : helperTextProps.color}>{helperText}</import_tamagui.Paragraph>}
-    </import_tamagui.YStack>}
-  </import_tamagui.XStack>;
+    ),
+    label && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.YStack, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Label, { size, htmlFor: id, children: [
+        required ? "* " : "",
+        label
+      ] }),
+      helperText && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        import_tamagui.Paragraph,
+        {
+          paddingLeft: "$2",
+          marginTop: 0,
+          size,
+          ...helperTextProps,
+          color: error ? "$red10" : helperTextProps == null ? void 0 : helperTextProps.color,
+          children: helperText
+        }
+      )
+    ] })
+  ] });
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

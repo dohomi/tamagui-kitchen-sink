@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -20,16 +21,23 @@ __export(LmResetButtonRhf_exports, {
   LmResetButtonRhf: () => LmResetButtonRhf
 });
 module.exports = __toCommonJS(LmResetButtonRhf_exports);
+var import_jsx_runtime = require("react/jsx-runtime");
 var import_react_hook_form = require("react-hook-form");
 var import_core = require("@tamagui-extras/core");
 function LmResetButtonRhf(props) {
   const { reset } = (0, import_react_hook_form.useFormContext)();
-  return <import_core.LmButton {...props} onPress={(e) => {
-    reset();
-    if (typeof props.onPress === "function") {
-      props.onPress(e);
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    import_core.LmButton,
+    {
+      ...props,
+      onPress: (e) => {
+        reset();
+        if (typeof props.onPress === "function") {
+          props.onPress(e);
+        }
+      }
     }
-  }} />;
+  );
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

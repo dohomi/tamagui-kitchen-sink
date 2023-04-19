@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -20,6 +21,7 @@ __export(LmStarRatingRhf_exports, {
   LmStarRatingRhf: () => LmStarRatingRhf
 });
 module.exports = __toCommonJS(LmStarRatingRhf_exports);
+var import_jsx_runtime = require("react/jsx-runtime");
 var import_react_hook_form = require("react-hook-form");
 var import_LmStarRating = require("../LmStarRating");
 function LmStarRatingRhf({
@@ -29,7 +31,16 @@ function LmStarRatingRhf({
   defaultValue,
   ...inputProps
 }) {
-  return <import_react_hook_form.Controller name={name} rules={rules} control={control} defaultValue={defaultValue} render={({ field: { onChange, value } }) => <import_LmStarRating.LmStarRating {...inputProps} onChange={onChange} value={value ?? null} />} />;
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    import_react_hook_form.Controller,
+    {
+      name,
+      rules,
+      control,
+      defaultValue,
+      render: ({ field: { onChange, value } }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_LmStarRating.LmStarRating, { ...inputProps, onChange, value: value ?? null })
+    }
+  );
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

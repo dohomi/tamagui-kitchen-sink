@@ -20,7 +20,7 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
 }
 
 type AutocompleteContext = {
-  onChangeSelection: (option: Option | Option[]) => void
+  onChangeSelection: (option: Option) => void
   isSelected: (opts: Option) => boolean
 }
 

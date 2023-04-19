@@ -1,3 +1,4 @@
+import { jsx } from "react/jsx-runtime";
 import { LmButton } from "@tamagui-extras/core";
 import { useFormContext } from "react-hook-form";
 function LmSubmitButtonRhf({
@@ -6,9 +7,16 @@ function LmSubmitButtonRhf({
 }) {
   const formContext = useFormContext();
   const { handleSubmit, formState } = formContext;
-  return <LmButton {...props} onPress={handleSubmit((data) => {
-    onSubmit(data, formContext);
-  })} loading={formState.isValidating || props.loading} />;
+  return /* @__PURE__ */ jsx(
+    LmButton,
+    {
+      ...props,
+      onPress: handleSubmit((data) => {
+        onSubmit(data, formContext);
+      }),
+      loading: formState.isValidating || props.loading
+    }
+  );
 }
 export {
   LmSubmitButtonRhf

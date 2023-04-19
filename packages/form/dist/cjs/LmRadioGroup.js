@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -20,6 +21,7 @@ __export(LmRadioGroup_exports, {
   LmRadioGroup: () => LmRadioGroup
 });
 module.exports = __toCommonJS(LmRadioGroup_exports);
+var import_jsx_runtime = require("react/jsx-runtime");
 var import_tamagui = require("tamagui");
 var import_LmFormFieldContainer = require("./LmFormFieldContainer");
 function LmRadioGroup({
@@ -35,10 +37,32 @@ function LmRadioGroup({
   spaceItem = "$2",
   ...rest
 }) {
-  return <import_LmFormFieldContainer.LmFormFieldContainer error={error} required={required} labelProps={labelProps} label={label} size={size} labelInline={labelInline} helperText={helperText} helperTextProps={helperTextProps}><import_tamagui.RadioGroup space={rest.flexDirection === "row" ? "$4" : "$1"} required={required} {...rest}>{options.map((option, i) => <import_tamagui.XStack key={`${rest.name}-${option.value}-${i}`} alignItems="center" space={spaceItem}>
-    <import_tamagui.RadioGroup.Item value={option.value} id={`${rest.name}-${option.value}-${i}`} size={size} pressTheme><import_tamagui.RadioGroup.Indicator /></import_tamagui.RadioGroup.Item>
-    <import_tamagui.Label size={size} htmlFor={`${rest.name}-${option.value}-${i}`} cursor="pointer">{option.label}</import_tamagui.Label>
-  </import_tamagui.XStack>)}</import_tamagui.RadioGroup></import_LmFormFieldContainer.LmFormFieldContainer>;
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    import_LmFormFieldContainer.LmFormFieldContainer,
+    {
+      error,
+      required,
+      labelProps,
+      label,
+      size,
+      labelInline,
+      helperText,
+      helperTextProps,
+      children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.RadioGroup, { space: rest.flexDirection === "row" ? "$4" : "$1", required, ...rest, children: options.map((option, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XStack, { alignItems: "center", space: spaceItem, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          import_tamagui.RadioGroup.Item,
+          {
+            value: option.value,
+            id: `${rest.name}-${option.value}-${i}`,
+            size,
+            pressTheme: true,
+            children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.RadioGroup.Indicator, {})
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Label, { size, htmlFor: `${rest.name}-${option.value}-${i}`, cursor: "pointer", children: option.label })
+      ] }, `${rest.name}-${option.value}-${i}`)) })
+    }
+  );
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -20,6 +21,7 @@ __export(LmFormRhfProvider_exports, {
   LmFormRhfProvider: () => LmFormRhfProvider
 });
 module.exports = __toCommonJS(LmFormRhfProvider_exports);
+var import_jsx_runtime = require("react/jsx-runtime");
 var import_react_hook_form = require("react-hook-form");
 function LmFormRhfProvider({
   children,
@@ -29,7 +31,7 @@ function LmFormRhfProvider({
   const methods = (0, import_react_hook_form.useForm)({
     ...formProps
   });
-  return typeof children === "function" ? forceFormProvider ? <import_react_hook_form.FormProvider {...methods}>{children(methods)}</import_react_hook_form.FormProvider> : <>{children(methods)}</> : <import_react_hook_form.FormProvider {...methods}>{children}</import_react_hook_form.FormProvider>;
+  return typeof children === "function" ? forceFormProvider ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react_hook_form.FormProvider, { ...methods, children: children(methods) }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: children(methods) }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react_hook_form.FormProvider, { ...methods, children });
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

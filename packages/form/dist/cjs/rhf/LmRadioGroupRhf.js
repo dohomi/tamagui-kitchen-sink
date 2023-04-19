@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -20,6 +21,7 @@ __export(LmRadioGroupRhf_exports, {
   LmRadioGroupRhf: () => LmRadioGroupRhf
 });
 module.exports = __toCommonJS(LmRadioGroupRhf_exports);
+var import_jsx_runtime = require("react/jsx-runtime");
 var import_LmRadioGroup = require("../LmRadioGroup");
 var import_react_hook_form = require("react-hook-form");
 function LmRadioGroupRhf({
@@ -32,7 +34,26 @@ function LmRadioGroupRhf({
   if (rest.required) {
     rules.required = "This field is required";
   }
-  return <import_react_hook_form.Controller name={name} control={control} rules={rules} defaultValue={defaultValue} render={({ field: { onChange, value }, fieldState: { error } }) => <import_LmRadioGroup.LmRadioGroup {...rest} name={name} value={value} onValueChange={onChange} error={!!error} helperText={error ? error.message : rest.helperText} />} />;
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    import_react_hook_form.Controller,
+    {
+      name,
+      control,
+      rules,
+      defaultValue,
+      render: ({ field: { onChange, value }, fieldState: { error } }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        import_LmRadioGroup.LmRadioGroup,
+        {
+          ...rest,
+          name,
+          value,
+          onValueChange: onChange,
+          error: !!error,
+          helperText: error ? error.message : rest.helperText
+        }
+      )
+    }
+  );
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

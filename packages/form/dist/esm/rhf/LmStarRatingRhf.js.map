@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["../../../src/rhf/LmStarRatingRhf.tsx"],
   "sourcesContent": ["import { Controller, FieldValues } from 'react-hook-form'\nimport { LmRhfProps } from './lmRhfProps'\nimport { LmStarRating, LmStarRatingProps } from '../LmStarRating'\n\nexport type LmStarRatingRhfProps<T extends FieldValues> = LmStarRatingProps & LmRhfProps<T> & {}\n\nexport function LmStarRatingRhf<T extends FieldValues>({\n  name,\n  control,\n  rules = {},\n  defaultValue,\n  ...inputProps\n}: LmStarRatingRhfProps<T>) {\n  return (\n    <Controller\n      name={name}\n      rules={rules}\n      control={control}\n      defaultValue={defaultValue}\n      render={({ field: { onChange, value } }) => (\n        <LmStarRating {...inputProps} onChange={onChange} value={value ?? null} />\n      )}\n    />\n  )\n}\n"],
-  "mappings": "AAAA,SAAS,kBAA+B;AAExC,SAAS,oBAAuC;AAIzC,SAAS,gBAAuC;AAAA,EACrD;AAAA,EACA;AAAA,EACA,QAAQ,CAAC;AAAA,EACT;AAAA,KACG;AACL,GAA4B;AAC1B,SACE,CAAC,WACC,MAAM,MACN,OAAO,OACP,SAAS,SACT,cAAc,cACd,QAAQ,CAAC,EAAE,OAAO,EAAE,UAAU,MAAM,EAAE,MACpC,CAAC,iBAAiB,YAAY,UAAU,UAAU,OAAO,SAAS,MAAM,IAE5E;AAEJ;",
+  "mappings": "AAoBQ;AApBR,SAAS,kBAA+B;AAExC,SAAS,oBAAuC;AAIzC,SAAS,gBAAuC;AAAA,EACrD;AAAA,EACA;AAAA,EACA,QAAQ,CAAC;AAAA,EACT;AAAA,EACA,GAAG;AACL,GAA4B;AAC1B,SACE;AAAA,IAAC;AAAA;AAAA,MACC;AAAA,MACA;AAAA,MACA;AAAA,MACA;AAAA,MACA,QAAQ,CAAC,EAAE,OAAO,EAAE,UAAU,MAAM,EAAE,MACpC,oBAAC,gBAAc,GAAG,YAAY,UAAoB,OAAO,SAAS,MAAM;AAAA;AAAA,EAE5E;AAEJ;",
   "names": []
 }

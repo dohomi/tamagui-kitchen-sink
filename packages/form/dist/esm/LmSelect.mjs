@@ -1,3 +1,4 @@
+import { jsx, jsxs } from "react/jsx-runtime";
 import { Select, YStack } from "tamagui";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { colormap } from "@tamagui-extras/core";
@@ -27,35 +28,107 @@ function LmSelect({
   const [selectVal, setSelectVal] = useState(value ?? defaultValue ?? "");
   const id = useId();
   rest.size = rest.size || "$3";
-  return <LmFormFieldContainer id={id} theme={colorVariant ? colormap[colorVariant] : themeName || void 0} error={error} required={required} labelProps={labelProps} label={label} size={rest.size} fullWidth={fullWidth} labelInline={labelInline} helperText={helperText} helperTextProps={helperTextProps}><Select id={id} {...rest} value={selectVal} onValueChange={(val) => {
-    setSelectVal(val);
-    if (typeof onValueChange === "function") {
-      onValueChange(val);
+  return /* @__PURE__ */ jsx(
+    LmFormFieldContainer,
+    {
+      id,
+      theme: colorVariant ? colormap[colorVariant] : themeName || void 0,
+      error,
+      required,
+      labelProps,
+      label,
+      size: rest.size,
+      fullWidth,
+      labelInline,
+      helperText,
+      helperTextProps,
+      children: /* @__PURE__ */ jsxs(
+        Select,
+        {
+          id,
+          ...rest,
+          value: selectVal,
+          onValueChange: (val) => {
+            setSelectVal(val);
+            if (typeof onValueChange === "function") {
+              onValueChange(val);
+            }
+          },
+          children: [
+            /* @__PURE__ */ jsx(
+              Select.Trigger,
+              {
+                width: fullWidth ? "100%" : width,
+                iconAfter: /* @__PURE__ */ jsx(CaretDown, {}),
+                paddingVertical: 0,
+                minHeight: rest.size,
+                children: /* @__PURE__ */ jsx(Select.Value, { placeholder, paddingVertical: 0 })
+              }
+            ),
+            /* @__PURE__ */ jsx(Select.Adapt, { when: "sm", children: /* @__PURE__ */ jsxs(Select.Sheet, { modal: true, dismissOnSnapToBottom: true, children: [
+              /* @__PURE__ */ jsx(Select.Sheet.Frame, { children: /* @__PURE__ */ jsx(Select.Sheet.ScrollView, { children: /* @__PURE__ */ jsx(Select.Adapt.Contents, {}) }) }),
+              /* @__PURE__ */ jsx(Select.Sheet.Overlay, {})
+            ] }) }),
+            /* @__PURE__ */ jsxs(Select.Content, { zIndex: 2e5, children: [
+              /* @__PURE__ */ jsxs(
+                Select.ScrollUpButton,
+                {
+                  alignItems: "center",
+                  justifyContent: "center",
+                  position: "relative",
+                  width: "100%",
+                  height: "$3",
+                  children: [
+                    /* @__PURE__ */ jsx(YStack, { zIndex: 10, children: /* @__PURE__ */ jsx(CaretUp, { size: 20 }) }),
+                    /* @__PURE__ */ jsx(
+                      LinearGradient,
+                      {
+                        start: [0, 0],
+                        end: [0, 1],
+                        fullscreen: true,
+                        colors: ["$background", "$backgroundTransparent"],
+                        borderRadius: "$4"
+                      }
+                    )
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsx(Select.Viewport, { children: /* @__PURE__ */ jsxs(Select.Group, { children: [
+                dropDownLabel && /* @__PURE__ */ jsx(Select.Label, { children: dropDownLabel }),
+                options.map((item, i) => /* @__PURE__ */ jsxs(Select.Item, { index: i, value: `${item.value}`, children: [
+                  /* @__PURE__ */ jsx(Select.ItemText, { children: item.label }),
+                  /* @__PURE__ */ jsx(Select.ItemIndicator, { marginLeft: "auto", children: /* @__PURE__ */ jsx(Check, { size: 16 }) })
+                ] }, item.value))
+              ] }) }),
+              /* @__PURE__ */ jsxs(
+                Select.ScrollDownButton,
+                {
+                  alignItems: "center",
+                  justifyContent: "center",
+                  position: "relative",
+                  width: "100%",
+                  height: "$3",
+                  children: [
+                    /* @__PURE__ */ jsx(YStack, { zIndex: 10, children: /* @__PURE__ */ jsx(CaretDown, { size: 20 }) }),
+                    /* @__PURE__ */ jsx(
+                      LinearGradient,
+                      {
+                        start: [0, 0],
+                        end: [0, 1],
+                        fullscreen: true,
+                        colors: ["$backgroundTransparent", "$background"],
+                        borderRadius: "$4"
+                      }
+                    )
+                  ]
+                }
+              )
+            ] })
+          ]
+        }
+      )
     }
-  }}>
-    <Select.Trigger width={fullWidth ? "100%" : width} iconAfter={<CaretDown />} paddingVertical={0} minHeight={rest.size}><Select.Value placeholder={placeholder} paddingVertical={0} /></Select.Trigger>
-    <Select.Adapt when="sm"><Select.Sheet modal dismissOnSnapToBottom>
-      <Select.Sheet.Frame><Select.Sheet.ScrollView><Select.Adapt.Contents /></Select.Sheet.ScrollView></Select.Sheet.Frame>
-      <Select.Sheet.Overlay />
-    </Select.Sheet></Select.Adapt>
-    <Select.Content zIndex={2e5}>
-      <Select.ScrollUpButton alignItems="center" justifyContent="center" position="relative" width="100%" height="$3">
-        <YStack zIndex={10}><CaretUp size={20} /></YStack>
-        <LinearGradient start={[0, 0]} end={[0, 1]} fullscreen colors={["$background", "$backgroundTransparent"]} borderRadius="$4" />
-      </Select.ScrollUpButton>
-      <Select.Viewport><Select.Group>
-        {dropDownLabel && <Select.Label>{dropDownLabel}</Select.Label>}
-        {options.map((item, i) => <Select.Item index={i} key={item.value} value={`${item.value}`}>
-          <Select.ItemText>{item.label}</Select.ItemText>
-          <Select.ItemIndicator marginLeft="auto"><Check size={16} /></Select.ItemIndicator>
-        </Select.Item>)}
-      </Select.Group></Select.Viewport>
-      <Select.ScrollDownButton alignItems="center" justifyContent="center" position="relative" width="100%" height="$3">
-        <YStack zIndex={10}><CaretDown size={20} /></YStack>
-        <LinearGradient start={[0, 0]} end={[0, 1]} fullscreen colors={["$backgroundTransparent", "$background"]} borderRadius="$4" />
-      </Select.ScrollDownButton>
-    </Select.Content>
-  </Select></LmFormFieldContainer>;
+  );
 }
 export {
   LmSelect

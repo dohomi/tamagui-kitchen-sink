@@ -1,3 +1,4 @@
+import { jsx, jsxs } from "react/jsx-runtime";
 import { Input, Stack, TextArea } from "tamagui";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
@@ -32,20 +33,43 @@ function LmInput({
     styleProps.minWidth = "100%";
   }
   let secureTextEntry = !!(rest.secureTextEntry || isPassword);
-  return <LmFormFieldContainer id={id} error={error} required={required} labelProps={labelProps} label={label} fullWidth={fullWidth} size={rest.size} labelInline={labelInline} helperText={helperText} helperTextProps={helperTextProps} {...containerProps}>{multiline ? <TextArea {...styleProps} /> : secureTextEntry ? <Stack position="relative" width={fullWidth ? "100%" : "fit-content"}>
-    <Input {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
-    <Pressable style={{
-      position: "absolute",
-      bottom: 0,
-      top: 0,
-      marginTop: "auto",
-      marginBottom: "auto",
-      height: "20px",
-      right: "10px"
-    }} onPress={() => {
-      setShow((state) => !state);
-    }}>{show ? <EyeSlash {...passwordIconProps} /> : <Eye {...passwordIconProps} />}</Pressable>
-  </Stack> : <Input {...styleProps} autoCapitalize="none" />}</LmFormFieldContainer>;
+  return /* @__PURE__ */ jsx(
+    LmFormFieldContainer,
+    {
+      id,
+      error,
+      required,
+      labelProps,
+      label,
+      fullWidth,
+      size: rest.size,
+      labelInline,
+      helperText,
+      helperTextProps,
+      ...containerProps,
+      children: multiline ? /* @__PURE__ */ jsx(TextArea, { ...styleProps }) : secureTextEntry ? /* @__PURE__ */ jsxs(Stack, { position: "relative", width: fullWidth ? "100%" : "fit-content", children: [
+        /* @__PURE__ */ jsx(Input, { ...styleProps, secureTextEntry: !show, autoCapitalize: "none" }),
+        /* @__PURE__ */ jsx(
+          Pressable,
+          {
+            style: {
+              position: "absolute",
+              bottom: 0,
+              top: 0,
+              marginTop: "auto",
+              marginBottom: "auto",
+              height: "20px",
+              right: "10px"
+            },
+            onPress: () => {
+              setShow((state) => !state);
+            },
+            children: show ? /* @__PURE__ */ jsx(EyeSlash, { ...passwordIconProps }) : /* @__PURE__ */ jsx(Eye, { ...passwordIconProps })
+          }
+        )
+      ] }) : /* @__PURE__ */ jsx(Input, { ...styleProps, autoCapitalize: "none" })
+    }
+  );
 }
 export {
   LmInput

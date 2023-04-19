@@ -1,3 +1,4 @@
+"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -20,6 +21,7 @@ __export(LmSubmitButtonRhf_exports, {
   LmSubmitButtonRhf: () => LmSubmitButtonRhf
 });
 module.exports = __toCommonJS(LmSubmitButtonRhf_exports);
+var import_jsx_runtime = require("react/jsx-runtime");
 var import_core = require("@tamagui-extras/core");
 var import_react_hook_form = require("react-hook-form");
 function LmSubmitButtonRhf({
@@ -28,9 +30,16 @@ function LmSubmitButtonRhf({
 }) {
   const formContext = (0, import_react_hook_form.useFormContext)();
   const { handleSubmit, formState } = formContext;
-  return <import_core.LmButton {...props} onPress={handleSubmit((data) => {
-    onSubmit(data, formContext);
-  })} loading={formState.isValidating || props.loading} />;
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    import_core.LmButton,
+    {
+      ...props,
+      onPress: handleSubmit((data) => {
+        onSubmit(data, formContext);
+      }),
+      loading: formState.isValidating || props.loading
+    }
+  );
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
