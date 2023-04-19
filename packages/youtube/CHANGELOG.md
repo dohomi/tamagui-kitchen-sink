@@ -1,5 +1,13 @@
 # @tamagui-extras/youtube
 
+## 1.0.3
+
+### Patch Changes
+
+- change of tsconfig and re-publish all packages
+- Updated dependencies
+  - @tamagui-extras/core@1.0.4
+
 ## 1.0.2
 
 ### Patch Changes

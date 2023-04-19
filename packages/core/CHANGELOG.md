@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.0.4
+
+### Patch Changes
+
+- change of tsconfig and re-publish all packages
+
 ## 1.0.3
 
 ### Patch Changes
