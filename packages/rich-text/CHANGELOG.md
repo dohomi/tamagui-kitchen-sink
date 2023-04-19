@@ -1,5 +1,13 @@
 # @tamagui-extras/rich-text
 
+## 1.0.6
+
+### Patch Changes
+
+- Fix android isPassword css rule and upgrade to latest tamagui
+- Updated dependencies
+  - @tamagui-extras/form@1.0.5
+
 ## 1.0.5
 
 ### Patch Changes

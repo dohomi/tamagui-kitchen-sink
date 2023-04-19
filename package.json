@@ -26,7 +26,6 @@
     "upgrade:next": "manypkg upgrade next && manypkg upgrade eslint-config-next",
     "upgrade:sb": "manypkg upgrade @storybook && manypkg upgrade storybook",
     "upgrade:ts": "manypkg upgrade typescript",
-    "sync:tamagui": "${TAMAGUI_PATH:-$HOME/tamagui}/starters-sync.sh",
     "eas:dev:ios": "cd apps/expo && yarn eas:dev:ios",
     "doctor": "yarn turbo run doc",
     "tests": "yarn build && cd apps/tests && yarn test",

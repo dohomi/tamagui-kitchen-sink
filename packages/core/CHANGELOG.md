@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.0.5
+
+### Patch Changes
+
+- Fix android isPassword css rule and upgrade to latest tamagui
+
 ## 1.0.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @tamagui-extras/form
 
+## 1.0.5
+
+### Patch Changes
+
+- Fix android isPassword css rule and upgrade to latest tamagui
+- Updated dependencies
+  - @tamagui-extras/core@1.0.5
+
 ## 1.0.4
 
 ### Patch Changes

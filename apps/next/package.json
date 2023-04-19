@@ -18,7 +18,7 @@
     "react-dom": "^18.2.0",
     "react-native": "^0.71.6",
     "react-native-web": "^0.18.12",
-    "react-native-web-lite": "1.15.14"
+    "react-native-web-lite": "1.15.17"
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.13",

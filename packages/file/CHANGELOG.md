@@ -1,5 +1,11 @@
 # @tamagui-extras/file
 
+## 1.0.4
+
+### Patch Changes
+
+- Fix android isPassword css rule and upgrade to latest tamagui
+
 ## 1.0.3
 
 ### Patch Changes

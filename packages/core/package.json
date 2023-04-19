@@ -4,7 +4,7 @@
   "author": "Dominic Garms",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "keywords": [
     "react",
     "react-native",
@@ -48,13 +48,13 @@
     "@tamagui/build": "1.15.14",
     "prettier": "^2.8.7",
     "react-native": "^0.71.6",
-    "tamagui": "1.15.14",
+    "tamagui": "1.15.17",
     "tamagui-phosphor-icons": "0.2.0"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "tamagui": "1.15.14",
+    "tamagui": "1.15.17",
     "tamagui-phosphor-icons": "0.2.0"
   },
   "publishConfig": {

@@ -70,19 +70,17 @@ function LmInput({
       helperText,
       helperTextProps,
       ...containerProps,
-      children: multiline ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.TextArea, { ...styleProps }) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : "fit-content", children: [
+      children: multiline ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.TextArea, { ...styleProps }) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : styleProps == null ? void 0 : styleProps.width, children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { ...styleProps, secureTextEntry: !show, autoCapitalize: "none" }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
           import_react_native.Pressable,
           {
             style: {
               position: "absolute",
-              bottom: 0,
-              top: 0,
-              marginTop: "auto",
-              marginBottom: "auto",
-              height: "20px",
-              right: "10px"
+              top: "50%",
+              transform: [{ translateY: -0.5 * 20 }],
+              height: 20,
+              right: 15
             },
             onPress: () => {
               setShow((state) => !state);

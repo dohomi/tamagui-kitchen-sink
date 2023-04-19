@@ -19,16 +19,16 @@
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.14",
-    "@storybook/addon-essentials": "^7.0.5",
-    "@storybook/addon-interactions": "^7.0.5",
-    "@storybook/addon-links": "^7.0.5",
+    "@storybook/addon-essentials": "^7.0.6",
+    "@storybook/addon-interactions": "^7.0.6",
+    "@storybook/addon-links": "^7.0.6",
     "@storybook/addon-react-native-web": "^0.0.20",
     "@storybook/addon-styling": "1.0.1",
-    "@storybook/blocks": "^7.0.5",
-    "@storybook/nextjs": "^7.0.5",
-    "@storybook/react": "^7.0.5",
+    "@storybook/blocks": "^7.0.6",
+    "@storybook/nextjs": "^7.0.6",
+    "@storybook/react": "^7.0.6",
     "@storybook/testing-library": "^0.1.0",
-    "storybook": "^7.0.5",
+    "storybook": "^7.0.6",
     "typescript": "5.0.4"
   }
 }

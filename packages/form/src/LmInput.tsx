@@ -62,17 +62,15 @@ export function LmInput({
       {multiline ? (
         <TextArea {...styleProps} />
       ) : secureTextEntry ? (
-        <Stack position={'relative'} width={fullWidth ? '100%' : 'fit-content'}>
+        <Stack position={'relative'} width={fullWidth ? '100%' : styleProps?.width}>
           <Input {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
           <Pressable
             style={{
               position: 'absolute',
-              bottom: 0,
-              top: 0,
-              marginTop: 'auto',
-              marginBottom: 'auto',
-              height: '20px',
-              right: '10px',
+              top: '50%',
+              transform: [{ translateY: -0.5 * 20 }],
+              height: 20,
+              right: 15,
             }}
             onPress={() => {
               setShow((state) => !state)
