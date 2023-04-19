@@ -8,6 +8,7 @@
     "downlevelIteration": true,
     "esModuleInterop": true,
     "preserveSymlinks": true,
+    "incremental": true,
     "jsx": "react-jsx",
     "module": "system",
     "moduleResolution": "node",
