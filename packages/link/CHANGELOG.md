@@ -1,5 +1,11 @@
 # @tamagui-extras/link
 
+## 1.0.3
+
+### Patch Changes
+
+- remove core dependency from link package
+
 ## 1.0.2
 
 ### Patch Changes

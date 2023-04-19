@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.0.3
+
+### Patch Changes
+
+- remove core dependency from link package
+
 ## 1.0.2
 
 ### Patch Changes

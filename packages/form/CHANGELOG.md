@@ -1,5 +1,13 @@
 # @tamagui-extras/form
 
+## 1.0.3
+
+### Patch Changes
+
+- remove core dependency from link package
+- Updated dependencies
+  - @tamagui-extras/core@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes
