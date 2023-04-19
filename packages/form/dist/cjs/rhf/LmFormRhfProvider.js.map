@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["../../../src/rhf/LmFormRhfProvider.tsx"],
   "sourcesContent": ["import { FieldValues, FormProvider, useForm, UseFormProps, UseFormReturn } from 'react-hook-form'\nimport { ReactNode } from 'react'\n\nexport type LmFormRhfProviderProps<T extends FieldValues = FieldValues> = UseFormProps<T> & {\n  children: ((context: UseFormReturn<T>) => ReactNode) | ReactNode\n  forceFormProvider?: boolean\n}\n\nexport function LmFormRhfProvider<T extends FieldValues = FieldValues>({\n  children,\n  forceFormProvider,\n  ...formProps\n}: LmFormRhfProviderProps<T>) {\n  const methods = useForm<T>({\n    ...formProps,\n  })\n  return typeof children === 'function' ? (\n    forceFormProvider ? (\n      <FormProvider {...methods}>{children(methods)}</FormProvider>\n    ) : (\n      <>{children(methods)}</>\n    )\n  ) : (\n    <FormProvider {...methods}>{children}</FormProvider>\n  )\n}\n"],
-  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,6BAAgF;AAQzE,SAAS,kBAAuD;AAAA,EACrE;AAAA,EACA;AAAA,EACA,GAAG;AACL,GAA8B;AAC5B,QAAM,cAAU,gCAAW;AAAA,IACzB,GAAG;AAAA,EACL,CAAC;AACD,SAAO,OAAO,aAAa,aACzB,oBACE,CAAC,wCAAiB,UAAU,SAAS,OAAO,EAAE,EAA7C,uCAED,GAAG,SAAS,OAAO,EAAE,MAGvB,CAAC,wCAAiB,UAAU,SAAS,EAApC;AAEL;",
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,6BAAgF;AAQzE,SAAS,kBAAuD;AAAA,EACrE;AAAA,EACA;AAAA,KACG;AACL,GAA8B;AAC5B,QAAM,cAAU,gCAAW;AAAA,IACzB,GAAG;AAAA,EACL,CAAC;AACD,SAAO,OAAO,aAAa,aACzB,oBACE,CAAC,wCAAiB,UAAU,SAAS,OAAO,EAAE,EAA7C,uCAED,GAAG,SAAS,OAAO,EAAE,MAGvB,CAAC,wCAAiB,UAAU,SAAS,EAApC;AAEL;",
   "names": []
 }

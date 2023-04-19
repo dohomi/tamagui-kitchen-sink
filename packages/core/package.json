@@ -46,17 +46,14 @@
   },
   "devDependencies": {
     "@tamagui/build": "1.15.14",
-    "@tamagui/themes": "1.15.14",
     "prettier": "^2.8.7",
     "react-native": "^0.71.6",
-    "solito": "^3.0.1",
     "tamagui": "1.15.14",
     "tamagui-phosphor-icons": "0.2.0"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "solito": "3.0.1",
     "tamagui": "1.15.14",
     "tamagui-phosphor-icons": "0.2.0"
   },

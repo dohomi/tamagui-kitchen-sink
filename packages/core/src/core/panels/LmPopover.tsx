@@ -23,11 +23,11 @@ export function LmPopover({
     <Popover size="$5" {...popoverProps}>
       <Popover.Trigger asChild>{trigger}</Popover.Trigger>
 
-      <Adapt when={'sm'} platform="touch">
+      <Popover.Adapt when={'sm'} platform="touch">
         <LmSheet {...sheetProps}>
           <Adapt.Contents />
         </LmSheet>
-      </Adapt>
+      </Popover.Adapt>
 
       <Popover.Content
         borderWidth={1}

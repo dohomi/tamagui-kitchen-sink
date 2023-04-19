@@ -32,34 +32,19 @@ function LmInput({
     styleProps.minWidth = "100%";
   }
   let secureTextEntry = !!(rest.secureTextEntry || isPassword);
-  return <LmFormFieldContainer
-    id={id}
-    error={error}
-    required={required}
-    labelProps={labelProps}
-    label={label}
-    fullWidth={fullWidth}
-    size={rest.size}
-    labelInline={labelInline}
-    helperText={helperText}
-    helperTextProps={helperTextProps}
-    {...containerProps}
-  >{multiline ? <TextArea {...styleProps} /> : secureTextEntry ? <Stack position="relative" width={fullWidth ? "100%" : "fit-content"}>
+  return <LmFormFieldContainer id={id} error={error} required={required} labelProps={labelProps} label={label} fullWidth={fullWidth} size={rest.size} labelInline={labelInline} helperText={helperText} helperTextProps={helperTextProps} {...containerProps}>{multiline ? <TextArea {...styleProps} /> : secureTextEntry ? <Stack position="relative" width={fullWidth ? "100%" : "fit-content"}>
     <Input {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
-    <Pressable
-      style={{
-        position: "absolute",
-        bottom: 0,
-        top: 0,
-        marginTop: "auto",
-        marginBottom: "auto",
-        height: "20px",
-        right: "10px"
-      }}
-      onPress={() => {
-        setShow((state) => !state);
-      }}
-    >{show ? <EyeSlash {...passwordIconProps} /> : <Eye {...passwordIconProps} />}</Pressable>
+    <Pressable style={{
+      position: "absolute",
+      bottom: 0,
+      top: 0,
+      marginTop: "auto",
+      marginBottom: "auto",
+      height: "20px",
+      right: "10px"
+    }} onPress={() => {
+      setShow((state) => !state);
+    }}>{show ? <EyeSlash {...passwordIconProps} /> : <Eye {...passwordIconProps} />}</Pressable>
   </Stack> : <Input {...styleProps} autoCapitalize="none" />}</LmFormFieldContainer>;
 }
 export {

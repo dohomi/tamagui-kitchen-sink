@@ -34,27 +34,14 @@ function LmFormFieldContainer({
   ...rest
 }) {
   return <StackContainer space={!!rest.labelInline} {...rest}>
-    {label && <Label
-      htmlFor={id}
-      size={size || "$3"}
-      {...labelProps}
-      color={error ? "$red10" : void 0}
-      width={rest.labelInline ? 150 : void 0}
-      justifyContent={rest.labelInline ? "flex-end" : void 0}
-    >
+    {label && <Label htmlFor={id} size={size || "$3"} {...labelProps} color={error ? "$red10" : void 0} width={rest.labelInline ? 150 : void 0} justifyContent={rest.labelInline ? "flex-end" : void 0}>
       {label}
       {" "}
       {required && ` *`}
     </Label>}
     <YStack>
       {children}
-      {helperText && <Paragraph
-        paddingLeft="$2"
-        marginTop="$2"
-        size={size}
-        {...helperTextProps}
-        color={error ? "$red10" : void 0}
-      >{helperText}</Paragraph>}
+      {helperText && <Paragraph paddingLeft="$2" marginTop="$2" size={size} {...helperTextProps} color={error ? "$red10" : void 0}>{helperText}</Paragraph>}
     </YStack>
   </StackContainer>;
 }

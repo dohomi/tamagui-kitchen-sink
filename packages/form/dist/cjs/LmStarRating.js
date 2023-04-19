@@ -26,13 +26,7 @@ var import_LmFormFieldContainer = require("./LmFormFieldContainer");
 var import_tamagui_phosphor_icons = require("tamagui-phosphor-icons");
 function StarIcon({ filled, size = "$2", ...props }) {
   const iconSize = typeof size === "string" ? (0, import_tamagui.getVariableValue)((0, import_tamagui.getTokens)().size[size] || size) : size;
-  return <import_tamagui.Button
-    {...props}
-    size={size}
-    circular
-    unstyled
-    icon={<import_tamagui_phosphor_icons.Star size={iconSize} weight={filled ? "fill" : "regular"} />}
-  />;
+  return <import_tamagui.Button {...props} size={size} circular unstyled icon={<import_tamagui_phosphor_icons.Star size={iconSize} weight={filled ? "fill" : "regular"} />} />;
 }
 function LmStarRating({
   count = 5,
@@ -51,32 +45,18 @@ function LmStarRating({
   const id = (0, import_react.useId)();
   const [rating, setRating] = (0, import_react.useState)(value);
   const arr = Array.from(Array(count).keys());
-  return <import_LmFormFieldContainer.LmFormFieldContainer
-    id={id}
-    required={required}
-    error={error}
-    helperText={helperText}
-    helperTextProps={helperTextProps}
-    label={label}
-    labelInline={labelInline}
-    labelProps={labelProps}
-  ><import_tamagui.XStack>{arr.map((value2) => {
+  return <import_LmFormFieldContainer.LmFormFieldContainer id={id} required={required} error={error} helperText={helperText} helperTextProps={helperTextProps} label={label} labelInline={labelInline} labelProps={labelProps}><import_tamagui.XStack>{arr.map((value2) => {
     const currentRating = value2 + 1;
-    return <StarIcon
-      key={currentRating}
-      {...iconProps}
-      filled={currentRating <= (rating || 0)}
-      onPress={() => {
-        if (disabled) {
-          return;
-        }
-        let newRating = rating === currentRating ? null : currentRating;
-        setRating(newRating);
-        if (typeof onChange === "function") {
-          onChange(newRating);
-        }
-      }}
-    />;
+    return <StarIcon key={currentRating} {...iconProps} filled={currentRating <= (rating || 0)} onPress={() => {
+      if (disabled) {
+        return;
+      }
+      let newRating = rating === currentRating ? null : currentRating;
+      setRating(newRating);
+      if (typeof onChange === "function") {
+        onChange(newRating);
+      }
+    }} />;
   })}</import_tamagui.XStack></import_LmFormFieldContainer.LmFormFieldContainer>;
 }
 // Annotate the CommonJS export names for ESM import in node:

@@ -32,19 +32,7 @@ function LmSelectRhf({
   if (inputProps.required) {
     rules.required = "This field is required";
   }
-  return <import_react_hook_form.Controller
-    name={name}
-    rules={rules}
-    control={control}
-    defaultValue={defaultValue}
-    render={({ field: { onChange, value }, fieldState: { error, invalid } }) => <import_LmSelect.LmSelect
-      {...inputProps}
-      value={value ?? ""}
-      error={invalid}
-      onValueChange={onChange}
-      helperText={error ? error.message : inputProps.helperText}
-    />}
-  />;
+  return <import_react_hook_form.Controller name={name} rules={rules} control={control} defaultValue={defaultValue} render={({ field: { onChange, value }, fieldState: { error, invalid } }) => <import_LmSelect.LmSelect {...inputProps} value={value ?? ""} error={invalid} onValueChange={onChange} helperText={error ? error.message : inputProps.helperText} />} />;
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

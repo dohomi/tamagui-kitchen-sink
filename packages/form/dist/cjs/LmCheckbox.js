@@ -37,30 +37,17 @@ function LmCheckbox({
 }) {
   const id = (0, import_react.useId)();
   return <import_tamagui.XStack space alignItems="center" {...stackProps}>
-    <import_tamagui.Checkbox
-      id={id}
-      theme={error ? "red" : theme}
-      size={size}
-      defaultChecked={value}
-      onCheckedChange={(checked) => {
-        if (typeof onChange === "function") {
-          onChange(!!checked);
-        }
-      }}
-      borderColor={error ? "$red8" : "$borderColor"}
-    ><import_tamagui.Checkbox.Indicator><import_tamagui_phosphor_icons.Check /></import_tamagui.Checkbox.Indicator></import_tamagui.Checkbox>
+    <import_tamagui.Checkbox id={id} theme={error ? "red" : theme} size={size} defaultChecked={value} onCheckedChange={(checked) => {
+      if (typeof onChange === "function") {
+        onChange(!!checked);
+      }
+    }} borderColor={error ? "$red8" : "$borderColor"}><import_tamagui.Checkbox.Indicator><import_tamagui_phosphor_icons.Check /></import_tamagui.Checkbox.Indicator></import_tamagui.Checkbox>
     {label && <import_tamagui.YStack>
       <import_tamagui.Label size={size} htmlFor={id}>
         {required ? "* " : ""}
         {label}
       </import_tamagui.Label>
-      {helperText && <import_tamagui.Paragraph
-        paddingLeft="$2"
-        marginTop={0}
-        size={size}
-        {...helperTextProps}
-        color={error ? "$red10" : helperTextProps == null ? void 0 : helperTextProps.color}
-      >{helperText}</import_tamagui.Paragraph>}
+      {helperText && <import_tamagui.Paragraph paddingLeft="$2" marginTop={0} size={size} {...helperTextProps} color={error ? "$red10" : helperTextProps == null ? void 0 : helperTextProps.color}>{helperText}</import_tamagui.Paragraph>}
     </import_tamagui.YStack>}
   </import_tamagui.XStack>;
 }
