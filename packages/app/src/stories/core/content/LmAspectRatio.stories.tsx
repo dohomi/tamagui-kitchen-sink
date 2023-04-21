@@ -1,6 +1,6 @@
-import { LmAspectRatio } from '../../../src/core/content/LmAspectRatio'
+import { LmAspectRatio } from '../../../../../core/src/core/content/LmAspectRatio'
 import { Card, H2, H3, Paragraph, Stack, XStack, YStack } from 'tamagui'
-import { LmImage } from '../../../src'
+import { LmImage } from '@tamagui-extras/core'
 
 export default {
   title: 'core/Content/Aspect Ratio',

@@ -5,7 +5,7 @@ import {
   LmPopover,
   LmPopoverProps,
   usePopoverState,
-} from '../../../src'
+} from '@tamagui-extras/core'
 import { Button, ListItem, Text, XStack } from 'tamagui'
 import { Smiley } from 'tamagui-phosphor-icons'
 

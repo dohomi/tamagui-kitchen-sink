@@ -22,7 +22,7 @@ export function LmPopover({
   return (
     <Popover size="$5" {...popoverProps}>
       <Popover.Trigger asChild>{trigger}</Popover.Trigger>
-
+      {/* @ts-ignore*/}
       <Popover.Adapt when={'sm'} platform="touch">
         <LmSheet {...sheetProps}>
           <Adapt.Contents />

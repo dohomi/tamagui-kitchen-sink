@@ -6,7 +6,7 @@ const config: StorybookConfig = {
   stories: [
     // '../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../../../packages/app/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    '../../../packages/core/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    // '../../../packages/core/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     // '../../../packages/form/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     // '../../../packages/date/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     // '../../../packages/rich-text/**/*.stories.@(js|jsx|ts|tsx|mdx)',
@@ -16,6 +16,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
     {
       name: '@storybook/addon-react-native-web',
       options: {
