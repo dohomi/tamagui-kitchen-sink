@@ -17,6 +17,7 @@
     "web:prod": "turbo run build --filter=next-app && turbo run start --filter=next-app",
     "build": "yarn workspaces foreach --exclude next-app --exclude sb-react --exclude vite -pi run build",
     "watch": "turbo run watch --filter=app^...",
+    "postinstall": "yarn build",
     "build:all": "yarn turbo run build --filter=...app",
     "build:web": "yarn turbo run build --filter=next-app && yarn turbo run start --filter=next-app",
     "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui/ && manypkg upgrade tamagui-loader && manypkg upgrade react-native-web-lite && manypkg upgrade tamagui-phosphor-icons",
