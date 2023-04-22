@@ -1,6 +1,7 @@
 {
   "name": "@ui/config",
   "version": "0.0.0",
+  "private": true,
   "main": "src/index.ts",
   "dependencies": {
     "@tamagui/animations-react-native": "1.15.30",

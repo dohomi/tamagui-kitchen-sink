@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.0.6
+
+### Patch Changes
+
+- update usePopoverState to improve defaultOpen state
+
 ## 1.0.5
 
 ### Patch Changes
