@@ -44,8 +44,13 @@ function LmInput({
     helperText={helperText}
     helperTextProps={helperTextProps}
     {...containerProps}
-  >{multiline ? <TextArea {...styleProps} /> : secureTextEntry ? <Stack position="relative" width={fullWidth ? "100%" : styleProps?.width}>
-    <Input {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
+  >{multiline ? <TextArea {...styleProps} placeholderTextColor={rest.placeholderTextColor} /> : secureTextEntry ? <Stack position="relative" width={fullWidth ? "100%" : styleProps?.width}>
+    <Input
+      {...styleProps}
+      secureTextEntry={!show}
+      autoCapitalize="none"
+      placeholderTextColor={rest.placeholderTextColor}
+    />
     <Pressable
       style={{
         position: "absolute",

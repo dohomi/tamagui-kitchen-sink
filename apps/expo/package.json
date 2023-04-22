@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@babel/runtime": "^7.18.9",
+    "@ui/config": "*",
     "app": "*",
     "babel-plugin-module-resolver": "^4.1.0",
     "burnt": "^0.10.0",
@@ -28,7 +29,7 @@
     "@babel/core": "^7.17.9",
     "@expo/metro-config": "^0.3.21",
     "@tamagui/babel-plugin": "1.15.14",
-    "@types/react": "^18.0.15",
+    "@types/react": "^18.0.21",
     "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "typescript": "^5.0.4"
   },

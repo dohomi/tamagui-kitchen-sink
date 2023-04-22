@@ -1,10 +1,11 @@
 {
   "extends": "../../tsconfig.base",
   "include": [
-    "./src/**/*"
+    "src"
   ],
   "compilerOptions": {
-    "composite": true
+    "composite": true,
+    "jsx": "react-jsx"
   },
   "references": []
 }

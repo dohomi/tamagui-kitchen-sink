@@ -5,6 +5,9 @@
     "paths": {
       "app/*": [
         "./packages/app/*"
+      ],
+      "@ui/*": [
+        "./packages/config/*"
       ]
     }
   },

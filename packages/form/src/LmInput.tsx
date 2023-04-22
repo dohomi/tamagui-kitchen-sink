@@ -3,7 +3,7 @@ import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
 import { Eye, EyeSlash, IconProps } from 'tamagui-phosphor-icons'
-import { Pressable } from 'react-native'
+import { ColorValue, Pressable } from 'react-native'
 
 export type LmInputProps = InputProps &
   LmFormContainerBaseTypes & {
@@ -32,7 +32,7 @@ export function LmInput({
   const genId = useId()
   const [show, setShow] = useState<boolean>(false)
   const id = rest.id || genId
-  const styleProps: InputProps = {
+  const styleProps = {
     ...rest,
   }
   if (error) {
@@ -60,10 +60,15 @@ export function LmInput({
       {...containerProps}
     >
       {multiline ? (
-        <TextArea {...styleProps} />
+        <TextArea {...styleProps} placeholderTextColor={rest.placeholderTextColor as ColorValue} />
       ) : secureTextEntry ? (
         <Stack position={'relative'} width={fullWidth ? '100%' : styleProps?.width}>
-          <Input {...styleProps} secureTextEntry={!show} autoCapitalize="none" />
+          <Input
+            {...styleProps}
+            secureTextEntry={!show}
+            autoCapitalize="none"
+            placeholderTextColor={rest.placeholderTextColor as InputProps['placeholderTextColor']}
+          />
           <Pressable
             style={{
               position: 'absolute',

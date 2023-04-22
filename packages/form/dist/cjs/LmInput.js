@@ -1,4 +1,3 @@
-"use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
@@ -70,8 +69,16 @@ function LmInput({
       helperText,
       helperTextProps,
       ...containerProps,
-      children: multiline ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.TextArea, { ...styleProps }) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : styleProps == null ? void 0 : styleProps.width, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { ...styleProps, secureTextEntry: !show, autoCapitalize: "none" }),
+      children: multiline ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.TextArea, { ...styleProps, placeholderTextColor: rest.placeholderTextColor }) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : styleProps == null ? void 0 : styleProps.width, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          import_tamagui.Input,
+          {
+            ...styleProps,
+            secureTextEntry: !show,
+            autoCapitalize: "none",
+            placeholderTextColor: rest.placeholderTextColor
+          }
+        ),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
           import_react_native.Pressable,
           {

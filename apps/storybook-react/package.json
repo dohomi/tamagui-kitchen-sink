@@ -11,11 +11,12 @@
     "serve-sb": "npx serve ./dist"
   },
   "dependencies": {
+    "@ui/config": "*",
     "app": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "^0.71.6",
-    "react-native-web": "0.18.12"
+    "react-native-web": "^0.18.12"
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.14",
@@ -30,6 +31,6 @@
     "@storybook/react": "^7.0.6",
     "@storybook/testing-library": "^0.1.0",
     "storybook": "^7.0.6",
-    "typescript": "5.0.4"
+    "typescript": "^5.0.4"
   }
 }

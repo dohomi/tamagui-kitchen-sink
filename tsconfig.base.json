@@ -17,17 +17,17 @@
     "noImplicitReturns": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
+    "experimentalDecorators": true,
     "useUnknownInCatchVariables": false,
     "preserveConstEnums": true,
+    // DONT DO THIS so jsdoc will remain
     "removeComments": false,
     "skipLibCheck": true,
     "sourceMap": false,
-    "strict": true,
     "strictNullChecks": true,
     "target": "es2020",
     "types": [
-      "node",
-      "react"
+      "node"
     ],
     "lib": [
       "dom",

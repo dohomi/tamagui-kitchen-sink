@@ -36,25 +36,28 @@
     "publish-packages": "changeset version && changeset publish && git push --tags",
     "release-minor": "yarn build && npx release minor",
     "release-patch": "yarn build && npx release patch",
-    "release-major": "yarn build && npx release major"
+    "release-major": "yarn build && npx release major",
+    "check-deps": "npx check-dependency-version-consistency .",
+    "check-deps:fix": "npx check-dependency-version-consistency . --fix",
+    "upgrade-latest": "yarn upgrade-interactive --latest"
   },
   "resolutions": {
     "esbuild": "0.17.17",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-refresh": "0.14.0",
-    "react-native-web": "0.18.12",
-    "typescript": "5.0.4"
+    "react-native-web": "^0.18.12",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
-    "@manypkg/cli": "^0.19.2",
+    "@manypkg/cli": "^0.20.0",
     "@types/react": "^18.0.21",
     "eslint": "^8.21.0",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.7",
     "turbo": "^1.9.3",
     "typescript": "^5.0.4"
   },

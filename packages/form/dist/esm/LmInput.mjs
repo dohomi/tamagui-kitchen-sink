@@ -47,8 +47,16 @@ function LmInput({
       helperText,
       helperTextProps,
       ...containerProps,
-      children: multiline ? /* @__PURE__ */ jsx(TextArea, { ...styleProps }) : secureTextEntry ? /* @__PURE__ */ jsxs(Stack, { position: "relative", width: fullWidth ? "100%" : styleProps == null ? void 0 : styleProps.width, children: [
-        /* @__PURE__ */ jsx(Input, { ...styleProps, secureTextEntry: !show, autoCapitalize: "none" }),
+      children: multiline ? /* @__PURE__ */ jsx(TextArea, { ...styleProps, placeholderTextColor: rest.placeholderTextColor }) : secureTextEntry ? /* @__PURE__ */ jsxs(Stack, { position: "relative", width: fullWidth ? "100%" : styleProps == null ? void 0 : styleProps.width, children: [
+        /* @__PURE__ */ jsx(
+          Input,
+          {
+            ...styleProps,
+            secureTextEntry: !show,
+            autoCapitalize: "none",
+            placeholderTextColor: rest.placeholderTextColor
+          }
+        ),
         /* @__PURE__ */ jsx(
           Pressable,
           {
