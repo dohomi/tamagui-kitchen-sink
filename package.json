@@ -1,7 +1,7 @@
 {
   "name": "tamagui-monorepo",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "workspaces": [
     "apps/*",
@@ -15,7 +15,7 @@
     "sb": "cd apps/storybook-react && yarn sb",
     "sb:build": "cd apps/storybook-react && yarn build && yarn serve-sb",
     "web:prod": "turbo run build --filter=next-app && turbo run start --filter=next-app",
-    "build": "yarn workspaces foreach --exclude next-app --exclude sb-react --exclude vite -pi run build",
+    "build": "turbo run build --filter=app^...",
     "watch": "turbo run watch --filter=app^...",
     "postinstall": "yarn build",
     "build:all": "yarn turbo run build --filter=...app",
