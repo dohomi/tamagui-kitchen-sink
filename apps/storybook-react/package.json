@@ -11,7 +11,7 @@
     "serve-sb": "npx serve ./dist"
   },
   "dependencies": {
-    "@ui/config": "*",
+    "@tamagui-extras/config": "*",
     "app": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

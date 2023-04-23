@@ -10,8 +10,8 @@
     "check-types": "tsc --noemit"
   },
   "dependencies": {
+    "@tamagui-extras/config": "*",
     "@tamagui/next-theme": "1.15.14",
-    "@ui/config": "*",
     "app": "*",
     "next": "13.2.4",
     "raf": "^3.4.1",

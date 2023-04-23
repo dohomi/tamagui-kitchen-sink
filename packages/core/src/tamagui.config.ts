@@ -1,4 +1,4 @@
-import { config } from '@ui/config'
+import { config } from '@tamagui-extras/config'
 
 export type Conf = typeof config
 

@@ -45,8 +45,8 @@
     "npmPublish": "npm publish"
   },
   "devDependencies": {
+    "@tamagui-extras/config": "*",
     "@tamagui/build": "1.15.14",
-    "@ui/config": "*",
     "prettier": "^2.8.7",
     "react-native": "^0.71.6",
     "tamagui": "1.15.30",

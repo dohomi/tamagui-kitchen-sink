@@ -8,6 +8,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@tamagui-extras/config": "*",
     "@tamagui-extras/core": "*",
     "@tamagui-extras/date": "*",
     "@tamagui-extras/file": "*",
@@ -16,7 +17,6 @@
     "@tamagui-extras/rich-text": "*",
     "@tamagui-extras/video": "*",
     "@tamagui-extras/youtube": "*",
-    "@ui/config": "*",
     "i18next": "^21.9.1",
     "react-i18next": "^11.18.6",
     "react-native-web": "^0.18.12",
