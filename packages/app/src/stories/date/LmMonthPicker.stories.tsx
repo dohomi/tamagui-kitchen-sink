@@ -1,4 +1,4 @@
-import { LmMonthsPicker } from '@tamagui-extras/date'
+import { LmMonthsPicker } from '../../../../date/src'
 
 export default {
   title: 'date/Months Picker',

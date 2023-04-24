@@ -3,7 +3,7 @@ import {
   LmRadioGroup,
   LmRadioGroupRhf,
   LmSubmitButtonRhf,
-} from '@tamagui-extras/form'
+} from '../../../../form/src'
 import { action } from '@storybook/addon-actions'
 import { YStack } from 'tamagui'
 import { fruitItemsFixtures } from 'app/src/fixtures/selectItems'

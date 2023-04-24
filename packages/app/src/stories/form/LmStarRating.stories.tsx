@@ -1,4 +1,4 @@
-import { LmFormRhfProvider, LmStarRating, LmStarRatingRhf } from '@tamagui-extras/form'
+import { LmFormRhfProvider, LmStarRating, LmStarRatingRhf } from '../../../../form/src'
 import { YStack } from 'tamagui'
 
 export default {

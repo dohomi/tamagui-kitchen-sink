@@ -9,7 +9,7 @@ import {
   LmSliderRhf,
   LmSubmitButtonRhf,
   LmSwitchRhf,
-} from '@tamagui-extras/form'
+} from '../../../../form/src'
 import { LmDatepickerRhf } from '@tamagui-extras/date'
 import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'

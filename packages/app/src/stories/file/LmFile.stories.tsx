@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import { LmFile } from '@tamagui-extras/file'
+import { LmFile } from '../../../../file/src'
 
 export default {
   title: 'file/File Picker',

@@ -3,7 +3,7 @@ import {
   LmCheckboxRhf,
   LmFormRhfProvider,
   LmSubmitButtonRhf,
-} from '@tamagui-extras/form'
+} from '../../../../form/src'
 import { YStack } from 'tamagui'
 import React from 'react'
 import { action } from '@storybook/addon-actions'

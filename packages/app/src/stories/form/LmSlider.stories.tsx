@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react'
-import { LmSlider } from '@tamagui-extras/form'
+import { LmSlider } from '../../../../form/src'
 import { YStack } from 'tamagui'
 
 export default {

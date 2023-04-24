@@ -1,4 +1,4 @@
-import { LmCard, LmCardProps } from '@tamagui-extras/core'
+import { LmCard, LmCardProps } from '../../../../../core/src'
 import { Meta } from '@storybook/react'
 
 export default {

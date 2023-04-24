@@ -1,4 +1,4 @@
-import { LmAlert } from '@tamagui-extras/core'
+import { LmAlert } from '../../../../../core/src'
 
 export default {
   title: 'core/Content/Alert',

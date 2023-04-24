@@ -1,4 +1,4 @@
-import { LmAvatar } from '@tamagui-extras/core'
+import { LmAvatar } from '../../../../../core/src'
 import { Circle, XStack } from 'tamagui'
 import { SolitoImage } from 'solito/image'
 

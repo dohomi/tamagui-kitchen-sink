@@ -3,7 +3,7 @@ import {
   LmAutocompleteRhf,
   LmFormRhfProvider,
   LmSubmitButtonRhf,
-} from '@tamagui-extras/form'
+} from '../../../../form/src'
 import { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 import { action } from '@storybook/addon-actions'

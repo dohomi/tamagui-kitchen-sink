@@ -1,4 +1,4 @@
-import { LmButton } from '@tamagui-extras/core'
+import { LmButton } from '../../../../../core/src'
 import { Meta, StoryObj } from '@storybook/react'
 import { XStack, YStack } from 'tamagui'
 import { Star } from 'tamagui-phosphor-icons'

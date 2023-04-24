@@ -1,4 +1,4 @@
-import { LmImage } from '@tamagui-extras/core'
+import { LmImage } from '../../../../../core/src'
 
 export default {
   title: 'core/Content/Image',

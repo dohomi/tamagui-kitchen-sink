@@ -6,8 +6,8 @@
       "app/*": [
         "./packages/app/*"
       ],
-      "@ui/*": [
-        "./packages/config/*"
+      "@tamagui-extras/*": [
+        "packages/*"
       ]
     }
   },

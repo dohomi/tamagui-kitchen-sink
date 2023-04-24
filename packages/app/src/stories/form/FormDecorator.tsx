@@ -1,4 +1,4 @@
-import { LmFormRhfProvider } from '@tamagui-extras/form'
+import { LmFormRhfProvider } from '../../../../form/src'
 
 export const StorybookRhfDecorator = (Story) => (
   <LmFormRhfProvider>
