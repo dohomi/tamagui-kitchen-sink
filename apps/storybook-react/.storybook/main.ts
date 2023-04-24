@@ -3,16 +3,7 @@ import path, { resolve } from 'path'
 import { StorybookConfig } from '@storybook/nextjs'
 
 const config: StorybookConfig = {
-  stories: [
-    // '../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    '../../../packages/app/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    // '../../../packages/core/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    // '../../../packages/form/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    // '../../../packages/date/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    // '../../../packages/rich-text/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    // '../../../packages/video/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    // '../../../packages/youtube/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-  ],
+  stories: ['../../../packages/app/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',

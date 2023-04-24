@@ -1,8 +1,15 @@
 import { HomeScreen } from './HomeScreen'
+import { Meta, StoryObj } from '@storybook/react'
 
-export default {
-  title: 'demo/HomeScreen',
+const meta = {
+  title: 'demo/Home',
   component: HomeScreen,
-}
+  parameters: {
+    docs: {},
+  },
+} satisfies Meta<typeof HomeScreen>
 
-export const Primary = () => <HomeScreen />
+export default meta
+
+type Story = StoryObj<typeof meta>
+export const Home: Story = {}

@@ -23,13 +23,15 @@ const preview: Preview = {
       },
     },
   },
-  parameters: {
-    i18n,
+  globals: {
     locale: 'en',
     locales: {
       en: 'English',
       de: 'German',
     },
+  },
+  parameters: {
+    i18n,
   },
   decorators: [StorybookDecorator],
 }
