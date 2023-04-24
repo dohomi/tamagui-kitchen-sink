@@ -19,7 +19,7 @@
     "@tamagui-extras/youtube": "1.0.4",
     "react-i18next": "^12.2.1",
     "react-native-web": "^0.18.12",
-    "solito": "^3.0.1",
+    "solito": "^3.2.5",
     "tamagui": "1.15.34",
     "zustand": "^4.3.3"
   },
