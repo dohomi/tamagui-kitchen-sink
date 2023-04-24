@@ -21,15 +21,15 @@ function LmInput({
   const genId = useId();
   const [show, setShow] = useState(false);
   const id = rest.id || genId;
-  const styleProps = {
+  const currentInputProps = {
     ...rest
   };
   if (error) {
-    styleProps.theme = "red";
-    styleProps.borderColor = error ? "$red8" : void 0;
+    currentInputProps.theme = "red";
+    currentInputProps.borderColor = error ? "$red8" : void 0;
   }
   if (fullWidth) {
-    styleProps.minWidth = "100%";
+    currentInputProps.minWidth = "100%";
   }
   let secureTextEntry = !!(rest.secureTextEntry || isPassword);
   return <LmFormFieldContainer
@@ -44,9 +44,12 @@ function LmInput({
     helperText={helperText}
     helperTextProps={helperTextProps}
     {...containerProps}
-  >{multiline ? <TextArea {...styleProps} placeholderTextColor={rest.placeholderTextColor} /> : secureTextEntry ? <Stack position="relative" width={fullWidth ? "100%" : styleProps?.width}>
+  >{multiline ? <TextArea
+    {...currentInputProps}
+    placeholderTextColor={rest.placeholderTextColor}
+  /> : secureTextEntry ? <Stack position="relative" width={fullWidth ? "100%" : currentInputProps?.width}>
     <Input
-      {...styleProps}
+      {...currentInputProps}
       secureTextEntry={!show}
       autoCapitalize="none"
       placeholderTextColor={rest.placeholderTextColor}
@@ -63,7 +66,7 @@ function LmInput({
         setShow((state) => !state);
       }}
     >{show ? <EyeSlash {...passwordIconProps} /> : <Eye {...passwordIconProps} />}</Pressable>
-  </Stack> : <Input {...styleProps} autoCapitalize="none" />}</LmFormFieldContainer>;
+  </Stack> : <Input {...currentInputProps} autoCapitalize="none" />}</LmFormFieldContainer>;
 }
 export {
   LmInput

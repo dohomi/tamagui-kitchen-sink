@@ -22,15 +22,15 @@ function LmInput({
   const genId = useId();
   const [show, setShow] = useState(false);
   const id = rest.id || genId;
-  const styleProps = {
+  const currentInputProps = {
     ...rest
   };
   if (error) {
-    styleProps.theme = "red";
-    styleProps.borderColor = error ? "$red8" : void 0;
+    currentInputProps.theme = "red";
+    currentInputProps.borderColor = error ? "$red8" : void 0;
   }
   if (fullWidth) {
-    styleProps.minWidth = "100%";
+    currentInputProps.minWidth = "100%";
   }
   let secureTextEntry = !!(rest.secureTextEntry || isPassword);
   return /* @__PURE__ */ jsx(
@@ -47,11 +47,17 @@ function LmInput({
       helperText,
       helperTextProps,
       ...containerProps,
-      children: multiline ? /* @__PURE__ */ jsx(TextArea, { ...styleProps, placeholderTextColor: rest.placeholderTextColor }) : secureTextEntry ? /* @__PURE__ */ jsxs(Stack, { position: "relative", width: fullWidth ? "100%" : styleProps == null ? void 0 : styleProps.width, children: [
+      children: multiline ? /* @__PURE__ */ jsx(
+        TextArea,
+        {
+          ...currentInputProps,
+          placeholderTextColor: rest.placeholderTextColor
+        }
+      ) : secureTextEntry ? /* @__PURE__ */ jsxs(Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps == null ? void 0 : currentInputProps.width, children: [
         /* @__PURE__ */ jsx(
           Input,
           {
-            ...styleProps,
+            ...currentInputProps,
             secureTextEntry: !show,
             autoCapitalize: "none",
             placeholderTextColor: rest.placeholderTextColor
@@ -73,7 +79,7 @@ function LmInput({
             children: show ? /* @__PURE__ */ jsx(EyeSlash, { ...passwordIconProps }) : /* @__PURE__ */ jsx(Eye, { ...passwordIconProps })
           }
         )
-      ] }) : /* @__PURE__ */ jsx(Input, { ...styleProps, autoCapitalize: "none" })
+      ] }) : /* @__PURE__ */ jsx(Input, { ...currentInputProps, autoCapitalize: "none" })
     }
   );
 }

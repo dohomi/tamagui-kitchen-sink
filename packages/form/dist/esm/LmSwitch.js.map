@@ -1,7 +1,6 @@
 {
   "version": 3,
   "sources": ["../../src/LmSwitch.tsx"],
-  "sourcesContent": ["import {Label, Switch, SwitchProps, XStack} from \"tamagui\";\nimport {useId} from \"react\";\n\nexport type LmSwitchProps = SwitchProps & {\n    labelLeft?: string\n    labelRight?: string\n\n}\n\nexport function LmSwitch({labelLeft, labelRight, space, size = '$2', ...rest}: LmSwitchProps) {\n    const id = useId()\n    return (\n        <XStack alignItems={'center'} space={'$4'}>\n            {labelLeft && (\n                <Label htmlFor={id} fontSize={size}>{labelLeft}</Label>\n            )}\n            <Switch id={id} {...rest} size={size}>\n                <Switch.Thumb animation={'bouncy'}/>\n            </Switch>\n            {labelRight && (\n                <Label htmlFor={id} fontSize={size}>{labelRight}</Label>\n            )}\n        </XStack>\n    )\n}"],
   "mappings": "AAYQ,SAEQ,KAFR;AAZR,SAAQ,OAAO,QAAqB,cAAa;AACjD,SAAQ,aAAY;AAQb,SAAS,SAAS,EAAC,WAAW,YAAY,OAAO,OAAO,MAAM,GAAG,KAAI,GAAkB;AAC1F,QAAM,KAAK,MAAM;AACjB,SACI,qBAAC,UAAO,YAAY,UAAU,OAAO,MAChC;AAAA,iBACG,oBAAC,SAAM,SAAS,IAAI,UAAU,MAAO,qBAAU;AAAA,IAEnD,oBAAC,UAAO,IAAS,GAAG,MAAM,MACtB,8BAAC,OAAO,OAAP,EAAa,WAAW,UAAS,GACtC;AAAA,IACC,cACG,oBAAC,SAAM,SAAS,IAAI,UAAU,MAAO,sBAAW;AAAA,KAExD;AAER;",
   "names": []
 }

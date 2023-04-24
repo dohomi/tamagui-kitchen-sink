@@ -44,15 +44,15 @@ function LmInput({
   const genId = (0, import_react.useId)();
   const [show, setShow] = (0, import_react.useState)(false);
   const id = rest.id || genId;
-  const styleProps = {
+  const currentInputProps = {
     ...rest
   };
   if (error) {
-    styleProps.theme = "red";
-    styleProps.borderColor = error ? "$red8" : void 0;
+    currentInputProps.theme = "red";
+    currentInputProps.borderColor = error ? "$red8" : void 0;
   }
   if (fullWidth) {
-    styleProps.minWidth = "100%";
+    currentInputProps.minWidth = "100%";
   }
   let secureTextEntry = !!(rest.secureTextEntry || isPassword);
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
@@ -69,11 +69,17 @@ function LmInput({
       helperText,
       helperTextProps,
       ...containerProps,
-      children: multiline ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.TextArea, { ...styleProps, placeholderTextColor: rest.placeholderTextColor }) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : styleProps == null ? void 0 : styleProps.width, children: [
+      children: multiline ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        import_tamagui.TextArea,
+        {
+          ...currentInputProps,
+          placeholderTextColor: rest.placeholderTextColor
+        }
+      ) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps == null ? void 0 : currentInputProps.width, children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
           import_tamagui.Input,
           {
-            ...styleProps,
+            ...currentInputProps,
             secureTextEntry: !show,
             autoCapitalize: "none",
             placeholderTextColor: rest.placeholderTextColor
@@ -95,7 +101,7 @@ function LmInput({
             children: show ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.EyeSlash, { ...passwordIconProps }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.Eye, { ...passwordIconProps })
           }
         )
-      ] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { ...styleProps, autoCapitalize: "none" })
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { ...currentInputProps, autoCapitalize: "none" })
     }
   );
 }

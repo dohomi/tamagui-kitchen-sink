@@ -1,16 +1,16 @@
 import 'react-i18next'
-import en from './src/i18n/locales/en.json'
+import en from '../../apps/next/public/locales/en/common.json'
 
 const resources = {
-    en: {
-        translation: en
-        // tss
-    }
+  en: {
+    common: en,
+    // tss
+  },
 } as const
 
 declare module 'react-i18next' {
-    interface CustomTypeOptions {
-        defaultNS: 'translation',
-        resources: typeof resources.en;
-    }
+  interface CustomTypeOptions {
+    defaultNS: 'common'
+    resources: typeof resources.en
+  }
 }
