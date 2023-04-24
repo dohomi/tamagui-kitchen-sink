@@ -21,18 +21,24 @@ import { fruitItemsFixtures } from 'app/src/fixtures/selectItems'
 export default {
   title: 'form/React Hook Form',
 }
+type FormValues = {
+  name: string
+  description?: string
+}
 
 export const ReactHookForm: StoryObj = {
   render: () => (
     <XStack padding={'$3'}>
       <LmFormRhfProvider
         defaultValues={{
+          name: '',
+          description: '',
           slider_pre: 2,
         }}
       >
         <LmCard>
           <YStack space padding={'$3'}>
-            <LmInputRhf
+            <LmInputRhf<FormValues>
               name={'name'}
               label={'Name'}
               placeholder={'Type your name...'}

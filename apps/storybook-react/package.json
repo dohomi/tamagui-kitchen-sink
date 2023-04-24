@@ -13,10 +13,13 @@
   "dependencies": {
     "@tamagui-extras/config": "1.0.1",
     "app": "*",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "i18next-http-backend": "^2.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "^0.71.6",
-    "react-native-web": "^0.18.12"
+    "react-native-web": "^0.18.12",
+    "storybook-react-i18next": "^2.0.1"
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.14",

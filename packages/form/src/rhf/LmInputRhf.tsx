@@ -15,7 +15,7 @@ export function LmInputRhf<T extends FieldValues = FieldValues>({
     rules.required = 'This field is required'
   }
   return (
-    <Controller
+    <Controller<T>
       name={name}
       rules={rules}
       control={control}

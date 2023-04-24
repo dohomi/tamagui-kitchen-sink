@@ -4,6 +4,7 @@ import '@fontsource/inter/700.css'
 import 'raf/polyfill' // const OriginalNextImage = NextImage.default
 import { Preview } from '@storybook/react'
 import { StorybookDecorator } from 'app/src/provider/StorybookDecorator'
+import i18n from './i18n'
 
 const preview: Preview = {
   globalTypes: {
@@ -20,6 +21,14 @@ const preview: Preview = {
           { value: 'dark', left: '🌙', title: 'Dark Mode' },
         ],
       },
+    },
+  },
+  parameters: {
+    i18n,
+    locale: 'en',
+    locales: {
+      en: 'English',
+      de: 'German',
     },
   },
   decorators: [StorybookDecorator],

@@ -1,7 +1,7 @@
 const { withTamagui } = require('@tamagui/next-plugin')
 const { join } = require('path')
 const withTM = require('next-transpile-modules') // pass the modules you would like to see transpiled
-
+const { i18n } = require('./next-i18next.config')
 const boolVals = {
   true: true,
   false: false,
@@ -61,10 +61,7 @@ const plugins = [
 module.exports = function () {
   /** @type {import('next').NextConfig} */
   let config = {
-    i18n: {
-      defaultLocale: 'en',
-      locales: ['en', 'de', 'fr'],
-    },
+    i18n,
     typescript: {
       ignoreBuildErrors: true,
     },

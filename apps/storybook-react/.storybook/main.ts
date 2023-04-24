@@ -17,6 +17,7 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    'storybook-react-i18next',
     {
       name: '@storybook/addon-react-native-web',
       options: {

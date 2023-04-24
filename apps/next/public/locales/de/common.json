@@ -17,5 +17,8 @@
   },
   "overviewScreen": {
     "headline": "Übersicht"
+  },
+  "mediaScreen": {
+    "headline": "Medien"
   }
 }

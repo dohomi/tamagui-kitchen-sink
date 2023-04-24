@@ -1,17 +1,19 @@
 import { Button, Sheet, XStack, YStack } from 'tamagui'
-
+import { Platform } from 'react-native'
 import { useAppState } from 'app/src/state/appState'
 import React, { useState } from 'react'
 import { useOnRouteChange } from 'app/src/navigation/useOnRouteChange'
-import { changeLanguage } from 'app/src/i18n/i18n'
+// import { changeLanguage } from 'app/src/i18n/i18n'
 import { useTranslation } from 'react-i18next'
 import { LmButton, LmGrid } from '@tamagui-extras/core'
 import { LmLinkButton } from '@tamagui-extras/link'
+import { useRouter } from 'solito/router'
 
 export function LmAppDrawer() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const { isMainDrawerOpen, setMainDrawer } = useAppState()
   const [position, setPosition] = useState(0)
+  const { push } = useRouter()
   useOnRouteChange(() => setMainDrawer(false))
 
   return (
@@ -45,11 +47,32 @@ export function LmAppDrawer() {
                   {t('overviewScreen.headline')}
                 </LmLinkButton>
               </LmGrid>
+              <LmGrid>
+                <LmLinkButton link={{ href: '/media' }}>{t('mediaScreen.headline')}</LmLinkButton>
+              </LmGrid>
             </LmGrid>
             <YStack padding="$4" justifyContent="center" alignItems="center">
               <XStack space marginVertical={'$4'}>
-                <LmButton onPress={() => changeLanguage('de')}>DE</LmButton>
-                <LmButton onPress={() => changeLanguage('en')}>EN</LmButton>
+                <LmButton
+                  onPress={() => {
+                    if (process.env.STORYBOOK || Platform.OS !== 'web') {
+                      return i18n.changeLanguage('de')
+                    }
+                    push('/', undefined, { locale: 'de' })
+                  }}
+                >
+                  DE
+                </LmButton>
+                <LmButton
+                  onPress={() => {
+                    if (process.env.STORYBOOK || Platform.OS !== 'web') {
+                      return i18n.changeLanguage('en')
+                    }
+                    push('/', undefined, { locale: 'en' })
+                  }}
+                >
+                  EN
+                </LmButton>
               </XStack>
               <Button onPress={() => setMainDrawer(false)}>{t('close')}</Button>
             </YStack>

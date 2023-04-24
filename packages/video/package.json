@@ -38,7 +38,7 @@
     "npmPublish": "npm publish"
   },
   "dependencies": {
-    "expo-av": "^13.2.1"
+    "expo-av": "~13.2.1"
   },
   "peerDependencies": {
     "react": "*",

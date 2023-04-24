@@ -1529,7 +1529,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.5, @babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.6, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.19.4, @babel/runtime@npm:^7.20.0, @babel/runtime@npm:^7.20.1, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.14.5, @babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.6, @babel/runtime@npm:^7.18.9, @babel/runtime@npm:^7.19.4, @babel/runtime@npm:^7.20.0, @babel/runtime@npm:^7.20.1, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.6, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.21.0
   resolution: "@babel/runtime@npm:7.21.0"
   dependencies:
@@ -5442,7 +5442,7 @@ __metadata:
   resolution: "@tamagui-extras/video@workspace:packages/video"
   dependencies:
     "@tamagui/build": 1.15.33
-    expo-av: ^13.2.1
+    expo-av: ~13.2.1
     react: ^18.2.0
     react-native: ^0.71.6
     tamagui: 1.15.33
@@ -5461,7 +5461,7 @@ __metadata:
     "@tamagui/build": 1.15.33
     react: ^18.2.0
     react-native: ^0.71.6
-    react-native-webview: ^12.0.2
+    react-native-webview: 11.26.0
   peerDependencies:
     react: "*"
     react-native: "*"
@@ -7186,6 +7186,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hoist-non-react-statics@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "@types/hoist-non-react-statics@npm:3.3.1"
+  dependencies:
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+  checksum: 2c0778570d9a01d05afabc781b32163f28409bb98f7245c38d5eaf082416fdb73034003f5825eb5e21313044e8d2d9e1f3fe2831e345d3d1b1d20bcd12270719
+  languageName: node
+  linkType: hard
+
 "@types/html-minifier-terser@npm:^6.0.0":
   version: 6.1.0
   resolution: "@types/html-minifier-terser@npm:6.1.0"
@@ -7403,7 +7413,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:>=16, @types/react@npm:^18.0.21":
+"@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:^18.0.21":
   version: 18.0.38
   resolution: "@types/react@npm:18.0.38"
   dependencies:
@@ -9944,6 +9954,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:^3":
+  version: 3.30.1
+  resolution: "core-js@npm:3.30.1"
+  checksum: 6d4a00b488694d4c715c424e15dfef31433ac7aa395c39c518a0cfacec918ada1c716fed74682033197e0164e23bbf38bfd598ee9a239c4aaa590ab1ba862ac8
+  languageName: node
+  linkType: hard
+
 "core-util-is@npm:~1.0.0":
   version: 1.0.3
   resolution: "core-util-is@npm:1.0.3"
@@ -10017,7 +10034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-fetch@npm:^3.1.5":
+"cross-fetch@npm:3.1.5, cross-fetch@npm:^3.1.5":
   version: 3.1.5
   resolution: "cross-fetch@npm:3.1.5"
   dependencies:
@@ -11658,6 +11675,7 @@ __metadata:
     babel-plugin-transform-inline-environment-variables: ^0.4.4
     burnt: ^0.10.0
     expo: ^48.0.10
+    expo-av: ~13.2.1
     expo-constants: ^14.2.1
     expo-dev-client: ^2.1.5
     expo-font: ^11.1.1
@@ -11670,12 +11688,14 @@ __metadata:
     expo-updates: ^0.16.3
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-i18next: ^12.2.1
     react-native: ^0.71.6
     react-native-gesture-handler: ^2.9.0
     react-native-safe-area-context: ^4.4.1
     react-native-screens: ^3.20.0
     react-native-svg: ^13.4.0
     react-native-web: ^0.18.12
+    react-native-webview: 11.26.0
     typescript: ^5.0.4
   languageName: unknown
   linkType: soft
@@ -11704,7 +11724,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-av@npm:^13.2.1":
+"expo-av@npm:~13.2.1":
   version: 13.2.1
   resolution: "expo-av@npm:13.2.1"
   peerDependencies:
@@ -13307,7 +13327,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.0":
+"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -13484,6 +13504,31 @@ __metadata:
   version: 1.0.4
   resolution: "hyphenate-style-name@npm:1.0.4"
   checksum: 4f5bf4b055089754924babebaa23c17845937bcca6aee95d5d015f8fa1e6814279002bd6a9e541e3fac2cd02519fc76305396727066c57c8e21a7e73e7a12137
+  languageName: node
+  linkType: hard
+
+"i18next-browser-languagedetector@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "i18next-browser-languagedetector@npm:7.0.1"
+  dependencies:
+    "@babel/runtime": ^7.19.4
+  checksum: 03129614be8761988df59b630359ded4f7c989eec4553781b5968139fd898de1eb09128c4c69c1365b547649ad829ff9abe1f60161658f8789668bcc623adcf0
+  languageName: node
+  linkType: hard
+
+"i18next-fs-backend@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "i18next-fs-backend@npm:2.1.1"
+  checksum: fe606df2639b3ea49501b5bc947553e4bfbce67290c91ab22a8b9ecee4d11b8ae78179980720998881f117f0321d3ba0f739fb93a0ab95613cd79b85ffb014f5
+  languageName: node
+  linkType: hard
+
+"i18next-http-backend@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "i18next-http-backend@npm:2.2.0"
+  dependencies:
+    cross-fetch: 3.1.5
+  checksum: 21d22d947a23a1b95f9bb7d4e1071639e4cfd5f6c2bd21eded7fe2df848108a87cdab31586764d9ef9c1ee0fba38a887bfe9c0daadc049f22760d8de0bfb4a4f
   languageName: node
   linkType: hard
 
@@ -16906,6 +16951,7 @@ __metadata:
     file-loader: ^6.2.0
     html-webpack-plugin: ^5.5.0
     next: 13.2.4
+    next-i18next: ^13.2.2
     next-images: ^1.8.4
     next-transpile-modules: ^10.0.0
     raf: ^3.4.1
@@ -16917,6 +16963,24 @@ __metadata:
     url-loader: ^4.1.1
   languageName: unknown
   linkType: soft
+
+"next-i18next@npm:^13.2.2":
+  version: 13.2.2
+  resolution: "next-i18next@npm:13.2.2"
+  dependencies:
+    "@babel/runtime": ^7.20.13
+    "@types/hoist-non-react-statics": ^3.3.1
+    core-js: ^3
+    hoist-non-react-statics: ^3.3.2
+    i18next-fs-backend: ^2.1.1
+  peerDependencies:
+    i18next: ^22.0.6
+    next: ">= 12.0.0"
+    react: ">= 17.0.2"
+    react-i18next: ^12.2.0
+  checksum: 2adfc9facea57a5e733557d06377a85b991aa23dbc80f7af4856cfba224eac6714a46a970022a519dbda266371193f9251b12f29175a46d2b97cfcee21d5b1d4
+  languageName: node
+  linkType: hard
 
 "next-images@npm:^1.8.4":
   version: 1.8.5
@@ -18853,6 +18917,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-i18next@npm:^12.2.1":
+  version: 12.2.1
+  resolution: "react-i18next@npm:12.2.1"
+  dependencies:
+    "@babel/runtime": ^7.20.6
+    html-parse-stringify: ^3.0.1
+  peerDependencies:
+    i18next: ">= 19.0.0"
+    react: ">= 16.8.0"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 7a15e998a6ece46b13dd0c9bd1e0fb92848c95ed69716d4ce290915b96e325e05311655ba8ef4a5f976d56d5a78ae9db27ea2aa25e3c01f23edcf4c066b8e251
+  languageName: node
+  linkType: hard
+
 "react-inspector@npm:^6.0.0":
   version: 6.0.1
   resolution: "react-inspector@npm:6.0.1"
@@ -19031,19 +19113,6 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 9335fd21cdb9a883e241650cf66421a72d0456c905d8da2948bdc168124b8eec944c86e5f1730d4985fb4b3fe8554363c08765f0c5e6c0014035620cb7450378
-  languageName: node
-  linkType: hard
-
-"react-native-webview@npm:^12.0.2":
-  version: 12.0.2
-  resolution: "react-native-webview@npm:12.0.2"
-  dependencies:
-    escape-string-regexp: 2.0.0
-    invariant: 2.2.4
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: f777dc48683ada530eb4c87ff85ab9bcdcb35156c319f226a220fd194c226fe136c240d020b6a835f2eba44cba3e08e42752cc6ee8d38ebb4408a31d2e2ab9c8
   languageName: node
   linkType: hard
 
@@ -19999,11 +20068,14 @@ __metadata:
     "@storybook/testing-library": ^0.1.0
     "@tamagui-extras/config": 1.0.1
     app: "*"
+    i18next-browser-languagedetector: ^7.0.1
+    i18next-http-backend: ^2.2.0
     react: ^18.2.0
     react-dom: ^18.2.0
     react-native: ^0.71.6
     react-native-web: ^0.18.12
     storybook: ^7.0.6
+    storybook-react-i18next: ^2.0.1
     typescript: ^5.0.4
   languageName: unknown
   linkType: soft
@@ -20707,6 +20779,50 @@ __metadata:
   version: 2.14.2
   resolution: "store2@npm:2.14.2"
   checksum: 6f270fc5bab99b63f45fcc7bd8b99c2714b4adf880f557ed7ffb5ed3987131251165bccde425a00928aaf044870aee79ddeef548576d093c68703ed2edec45d7
+  languageName: node
+  linkType: hard
+
+"storybook-i18n@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "storybook-i18n@npm:2.0.6"
+  peerDependencies:
+    "@storybook/components": ^7.0.0
+    "@storybook/manager-api": ^7.0.0
+    "@storybook/preview-api": ^7.0.0
+    "@storybook/types": ^7.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 430797a7f0a5a11636ac95e6e35064417e9a4cc79dfe991b99b84cecd630e0194561c4d5f3ed8013d892274288723fbe4d4faa95fa8f416f4d444bd059a9de1c
+  languageName: node
+  linkType: hard
+
+"storybook-react-i18next@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "storybook-react-i18next@npm:2.0.1"
+  dependencies:
+    storybook-i18n: ^2.0.6
+  peerDependencies:
+    "@storybook/components": ^7.0.0
+    "@storybook/manager-api": ^7.0.0
+    "@storybook/preview-api": ^7.0.0
+    "@storybook/types": ^7.0.0
+    i18next: ^22.0.0
+    i18next-browser-languagedetector: ^7.0.0
+    i18next-http-backend: ^2.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-i18next: ^12.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 8b5f1fb76748997b241da58c5bd36185e67ffd3867862b11daee8e0d8e16e61e1f60b53eedbcbfb9f0b924ff9c650ebb93179ba56b230916d0fff2ed1cb9906d
   languageName: node
   linkType: hard
 

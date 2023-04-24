@@ -3,10 +3,11 @@ import { NextThemeProvider, useRootTheme } from '@tamagui/next-theme'
 import { Provider } from 'app/src/provider'
 import { useThemeState } from 'app/src/state/themeState'
 import Head from 'next/head'
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect } from 'react'
 import type { SolitoAppProps } from 'solito'
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/700.css'
+import { appWithTranslation } from 'next-i18next'
 
 import 'raf/polyfill'
 
@@ -18,9 +19,6 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
       setTheme(name)
     }
   }, [name, setTheme])
-  const contents = useMemo(() => {
-    return <Component {...pageProps} />
-  }, [pageProps, Component])
 
   return (
     <>
@@ -29,13 +27,13 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
         <meta name="description" content="Tamagui, Solito, Expo & Next.js" />
         <link rel="icon" href="/apps/next/public/favicon.ico" />
       </Head>
-      <NextThemeProvider onChangeTheme={setTheme} forcedTheme={theme}>
+      <NextThemeProvider onChangeTheme={setTheme as any} forcedTheme={theme}>
         <Provider disableRootThemeClass defaultTheme={theme}>
-          {contents}
+          <Component {...pageProps} />
         </Provider>
       </NextThemeProvider>
     </>
   )
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)
