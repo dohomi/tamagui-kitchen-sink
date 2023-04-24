@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.0.7
+
+### Patch Changes
+
+- updated tamagui deps
+
 ## 1.0.6
 
 ### Patch Changes

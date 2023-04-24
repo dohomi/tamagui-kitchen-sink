@@ -1,5 +1,11 @@
 # @tamagui-extras/file
 
+## 1.0.5
+
+### Patch Changes
+
+- updated tamagui deps
+
 ## 1.0.4
 
 ### Patch Changes

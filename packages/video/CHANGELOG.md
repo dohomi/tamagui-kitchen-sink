@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.1.1
+
+### Patch Changes
+
+- updated tamagui deps
+
 ## 1.1.0
 
 ### Minor Changes

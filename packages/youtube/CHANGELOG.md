@@ -1,5 +1,13 @@
 # @tamagui-extras/youtube
 
+## 1.0.4
+
+### Patch Changes
+
+- updated tamagui deps
+- Updated dependencies
+  - @tamagui-extras/core@1.0.7
+
 ## 1.0.3
 
 ### Patch Changes
