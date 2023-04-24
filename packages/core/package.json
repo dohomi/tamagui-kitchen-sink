@@ -46,16 +46,16 @@
   },
   "devDependencies": {
     "@tamagui-extras/config": "1.0.1",
-    "@tamagui/build": "1.15.33",
+    "@tamagui/build": "1.15.34",
     "prettier": "^2.8.7",
     "react-native": "^0.71.6",
-    "tamagui": "1.15.33",
+    "tamagui": "1.15.34",
     "tamagui-phosphor-icons": "0.2.0"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "tamagui": "1.15.33",
+    "tamagui": "1.15.34",
     "tamagui-phosphor-icons": "0.2.0"
   },
   "publishConfig": {
