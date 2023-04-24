@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { shallow } from 'zustand/shallow'
 
-export type ThemeVars = 'dark' | 'light'
+type ThemeVars = 'dark' | 'light'
 type Theme = {
   name?: ThemeVars
   changeTheme: (name: ThemeVars) => void
