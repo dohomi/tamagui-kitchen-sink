@@ -1,13 +1,13 @@
-import {ImageSourcePropType} from "react-native";
-import {ResizeMode} from "expo-av";
-import {SizableStackProps, StackPropsBase} from "tamagui";
+import { ImageSourcePropType, StyleProp, View } from 'react-native'
+import { VideoProps } from 'expo-av'
+import { SizableStackProps } from 'tamagui'
 
-export type LmVideoProps = Pick<StackPropsBase, 'width' | 'height' | 'aspectRatio'> & {
-    src: string
-    containerProps?: SizableStackProps
-    posterSource?: ImageSourcePropType
-    isLooping?: boolean
-    resizeMode?: ResizeMode
-    useNativeControls?: boolean
-    autoplay?: boolean
+export type LmVideoProps = Omit<VideoProps, 'style' | 'source'> & {
+  src: string
+  width?: number
+  height?: number
+  style?: Omit<StyleProp<View>, 'width' | 'height'>
+  aspectRatio?: number
+  containerProps?: SizableStackProps
+  posterSource?: ImageSourcePropType
 }
