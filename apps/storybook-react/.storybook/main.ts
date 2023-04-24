@@ -21,15 +21,15 @@ const config: StorybookConfig = {
       name: '@storybook/addon-react-native-web',
       options: {
         modulesToTranspile: [
-          // 'solito',
+          'solito',
           // 'react-native-web',
-          // 'expo-linking',
-          // 'expo-constants',
-          // 'expo-modules-core',
+          'expo-linking',
+          'expo-constants',
+          'expo-modules-core',
           // 'react-i18next',
-          // 'expo-document-picker',
-          // 'expo-av',
-          // 'expo-asset',
+          'expo-document-picker',
+          'expo-av',
+          'expo-asset',
         ],
 
         babelPlugins: [

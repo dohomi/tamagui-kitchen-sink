@@ -1,4 +1,5 @@
 const extrasPlugins = [
+  '@tamagui-extras/config',
   '@tamagui-extras/core',
   '@tamagui-extras/date',
   '@tamagui-extras/file',
