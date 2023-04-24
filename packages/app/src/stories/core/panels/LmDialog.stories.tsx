@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, SizableText, Text, XStack, YStack } from 'tamagui'
-import { LmDialog, usePopoverState } from '@tamagui-extras/core'
+import { LmDialog, usePopoverState } from '../../../../../core/src'
 import { userEvent, within } from '@storybook/testing-library'
 import { expect } from '@storybook/jest'
 

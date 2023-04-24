@@ -40,20 +40,20 @@
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",
     "@react-native-community/datetimepicker": "^7.0.1",
-    "@tamagui-extras/form": "*",
+    "@tamagui-extras/form": "1.0.5",
     "react-hook-form": "^7.43.9",
     "react-native-modal-datetime-picker": "^15.0.0"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "tamagui": "1.15.30"
+    "tamagui": "1.15.33"
   },
   "devDependencies": {
-    "@tamagui/build": "1.15.14",
+    "@tamagui/build": "1.15.33",
     "react": "^18.2.0",
     "react-native": "^0.71.6",
-    "tamagui": "1.15.30"
+    "tamagui": "1.15.33"
   },
   "publishConfig": {
     "access": "public"
