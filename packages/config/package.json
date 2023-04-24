@@ -1,6 +1,6 @@
 {
   "name": "@tamagui-extras/config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Dominic Garms",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
@@ -13,5 +13,8 @@
     "@tamagui/shorthands": "1.15.30",
     "@tamagui/themes": "1.15.30",
     "tamagui": "1.15.30"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
