@@ -43,13 +43,13 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "tamagui": "1.20.4"
+    "tamagui": "1.20.5"
   },
   "devDependencies": {
-    "@tamagui/build": "1.20.4",
+    "@tamagui/build": "1.20.5",
     "react": "^18.2.0",
     "react-native": "^0.71.6",
-    "tamagui": "1.20.4"
+    "tamagui": "1.20.5"
   },
   "publishConfig": {
     "access": "public"
