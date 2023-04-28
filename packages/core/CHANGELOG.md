@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.0.8
+
+### Patch Changes
+
+- forward popover content props in popover and autocomplete element
+
 ## 1.0.7
 
 ### Patch Changes

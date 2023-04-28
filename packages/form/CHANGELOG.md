@@ -1,5 +1,13 @@
 # @tamagui-extras/form
 
+## 1.0.7
+
+### Patch Changes
+
+- forward popover content props in popover and autocomplete element
+- Updated dependencies
+  - @tamagui-extras/core@1.0.8
+
 ## 1.0.6
 
 ### Patch Changes
