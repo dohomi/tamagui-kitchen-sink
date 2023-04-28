@@ -18,6 +18,7 @@ function LmAutocomplete({
   theme,
   allowNewHook,
   multiple = false,
+  popoverProps,
   ...rest
 }) {
   const id = useId();
@@ -62,12 +63,11 @@ function LmAutocomplete({
     <XGroup.Item><Input flex={1} value={inputValue} theme={theme} textOverflow="ellipsis" /></XGroup.Item>
     <XGroup.Item><LmPopover
       isBouncy
-      sheetProps={{
-        // snapPoints: [100, 0],
-      }}
+      {...popoverProps}
       contentProps={{
         minWidth: popoverWidth ? popoverWidth : void 0,
-        maxWidth: "100%"
+        maxWidth: "100%",
+        ...popoverProps?.contentProps
       }}
       trigger={<Button icon={<CaretDown />} borderTopLeftRadius={0} borderBottomLeftRadius={0} />}
     ><LmAutocompleteInputContent

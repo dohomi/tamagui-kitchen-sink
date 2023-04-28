@@ -47,7 +47,7 @@ export const BasicPlay: Story = {
     setTimeout(async () => {
       await expect(canvas.getByText('Some Title')).toBeInTheDocument()
       await expect(canvas.getByText('This is the description of the Dialog')).toBeInTheDocument()
-    }, 400)
+    }, 500)
   },
 }
 
@@ -76,6 +76,16 @@ export const OnlyContent: Story = {
 export const FixedWidthHeight: Story = {
   args: {
     trigger: <SizableText>Open Dialog</SizableText>,
+    children: <SizableText padding={'$4'}>Dialog content</SizableText>,
+    hideCloseButton: true,
+    dialogWidth: 600,
+    dialogHeight: 400,
+  },
+}
+
+export const PreventClickOutside: Story = {
+  args: {
+    trigger: <SizableText>Needs investigation...</SizableText>,
     children: <SizableText padding={'$4'}>Dialog content</SizableText>,
     hideCloseButton: true,
     dialogWidth: 600,

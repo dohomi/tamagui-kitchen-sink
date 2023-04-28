@@ -44,7 +44,7 @@ export function PlaygroundScreen() {
             {/*  options={fruitItemsFixtures}*/}
             {/*/>*/}
             {/*<LmSelectRhf options={fruitItemsFixtures} name={'select'} />*/}
-            <LmDatepickerRhf start={'date'} label={'Date'} />
+            <LmDatepickerRhf name={'date'} label={'Date'} />
             {/*<LmRichTextRhf name={'richtext'} />*/}
             <LmInputRhf name={'textfield'} label={'Textfield'} />
             <LmStarRatingRhf name={'stars'} />

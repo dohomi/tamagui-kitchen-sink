@@ -1,34 +1,36 @@
-import { LmDatepicker, LmDatepickerRhf } from '../../../../date/src'
+import { LmDatepicker, LmDatepickerRhf, LmDateRangePickerRhf } from '../../../../date/src'
 import { LmFormRhfProvider, LmSubmitButtonRhf } from '@tamagui-extras/form'
 import { YStack } from 'tamagui'
 import { action } from '@storybook/addon-actions'
+import { Meta, StoryObj } from '@storybook/react'
 
-export default {
+const meta = {
   title: 'date/Datepicker',
   component: LmDatepicker,
-}
-
-export const Single = {
+} satisfies Meta<typeof LmDatepicker>
+export default meta
+type Story = StoryObj<typeof meta>
+export const Single: Story = {
   args: {
     label: 'Pick a date',
   },
 }
 
-export const SinglePreselect = {
+export const SinglePreselect: Story = {
   args: {
     label: 'Preselected date',
     startDate: new Date('2022-03-01'),
   },
 }
 
-export const RangePicker = {
+export const RangePicker: Story = {
   args: {
     label: 'Pick a range',
     isRangePicker: true,
   },
 }
 
-export const RangePickerPreselect = {
+export const RangePickerPreselect: Story = {
   args: {
     isRangePicker: true,
     label: 'Range preselected',
@@ -37,7 +39,7 @@ export const RangePickerPreselect = {
   },
 }
 
-export const ThreeMonths = {
+export const ThreeMonths: Story = {
   args: {
     label: 'Range with 3 months',
     isRangePicker: true,
@@ -55,19 +57,19 @@ export const ReactHookForm = () => (
     }}
   >
     <YStack space>
-      <LmDatepickerRhf start={'start'} label={'Single Date'} labelInline />
-      <LmDatepickerRhf start={'required'} label={'Required'} required labelInline />
-      <LmDatepickerRhf start={'single'} label={'With String'} labelInline />
-      <LmDatepickerRhf start={'singleDate'} label={'With Date'} labelInline />
-      <LmDatepickerRhf start={'rangeStart'} end={'rangeEnd'} label={'Range'} labelInline />
-      <LmDatepickerRhf
+      <LmDatepickerRhf name={'start'} label={'Single Date'} labelInline />
+      <LmDatepickerRhf name={'required'} label={'Required'} required labelInline />
+      <LmDatepickerRhf name={'single'} label={'With String'} labelInline />
+      <LmDatepickerRhf name={'singleDate'} label={'With Date'} labelInline />
+      <LmDateRangePickerRhf start={'rangeStart'} end={'rangeEnd'} label={'Range'} labelInline />
+      <LmDateRangePickerRhf
         start={'rangeReq'}
         end={'rangeEndReq'}
         label={'Range Required'}
         required
         labelInline
       />
-      <LmDatepickerRhf
+      <LmDateRangePickerRhf
         start={'rangeStartP'}
         end={'rangeEndP'}
         label={'Range Preselect'}

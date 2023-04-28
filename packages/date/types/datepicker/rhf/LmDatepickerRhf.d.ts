@@ -1,9 +1,7 @@
 /// <reference types="react" />
-import { ControllerProps } from 'react-hook-form';
+import { FieldValues } from 'react-hook-form';
 import { LmDatepickerProps } from '../datepickerTypes';
-export type LmDatepickerRhf = LmDatepickerProps & Pick<ControllerProps, 'control' | 'rules'> & {
-    start: string;
-    end?: string;
-};
-export declare function LmDatepickerRhf({ start, end, control, rules, required, ...datepickerProps }: LmDatepickerRhf): JSX.Element;
+import { LmRhfProps } from '@tamagui-extras/form';
+export type LmDatepickerRhf<T extends FieldValues> = LmRhfProps<T> & LmDatepickerProps;
+export declare function LmDatepickerRhf<T extends FieldValues>({ name, defaultValue, control, rules, required, ...datepickerProps }: LmDatepickerRhf<T>): JSX.Element;
 //# sourceMappingURL=LmDatepickerRhf.d.ts.map

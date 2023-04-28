@@ -4,10 +4,11 @@ import {
   LmFormRhfProvider,
   LmSubmitButtonRhf,
 } from '../../../../form/src'
+import { LmDialog } from '../../../../core/src'
 import { Meta, StoryObj } from '@storybook/react'
 import { useState } from 'react'
 import { action } from '@storybook/addon-actions'
-import { YStack } from 'tamagui'
+import { Button, YStack } from 'tamagui'
 import { fruitItemsFixtures } from 'app/src/fixtures/selectItems'
 
 export default {
@@ -113,5 +114,45 @@ export const MultipleRhf = () => {
         <LmSubmitButtonRhf onSubmit={action('formData')}>Submit</LmSubmitButtonRhf>
       </div>
     </LmFormRhfProvider>
+  )
+}
+
+export const InsideDialog = () => {
+  const [form, setForm] = useState<any>({
+    pre: [{ value: 'Pear', label: 'Pear' }],
+    pre_matched: ['Pear'],
+  })
+  return (
+    <LmDialog trigger={<Button>Open Dialog</Button>}>
+      <LmFormRhfProvider
+        defaultValues={{
+          ...form,
+        }}
+      >
+        <LmDialog.Content>
+          <LmAutocompleteRhf
+            popoverProps={{ contentProps: { zIndex: 250000 } }}
+            label={'Multiple'}
+            name={'autocomplete'}
+            options={options}
+            multiple
+          />
+          <LmAutocompleteRhf
+            label={'Multiple Preselected'}
+            name={'pre'}
+            options={options}
+            multiple
+          />
+          <LmAutocompleteRhf
+            label={'Multiple - Match ID'}
+            name={'pre_matched'}
+            matchId
+            options={options}
+            multiple
+          />
+          <LmSubmitButtonRhf onSubmit={action('formData')}>Submit</LmSubmitButtonRhf>
+        </LmDialog.Content>
+      </LmFormRhfProvider>
+    </LmDialog>
   )
 }

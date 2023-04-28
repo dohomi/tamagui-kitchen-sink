@@ -1,8 +1,16 @@
-import { Button, Dialog, DialogProps, SizeTokens, VisuallyHidden, XStack } from 'tamagui'
+import {
+  Button,
+  Dialog,
+  DialogContentProps,
+  DialogProps,
+  SizeTokens,
+  VisuallyHidden,
+  XStack,
+} from 'tamagui'
 import { ReactNode } from 'react'
 import { IconContextProvider, X } from 'tamagui-phosphor-icons'
 import { useWindowDimensions } from 'react-native'
-import { LmDialogActions } from './LmDialogActions'
+import { LmDialogActions, LmDialogHeader } from './LmDialogActions'
 import { LmDialogContent } from './LmDialogContent'
 
 type LmDialogProps = DialogProps & {
@@ -14,6 +22,7 @@ type LmDialogProps = DialogProps & {
   contentPadding?: SizeTokens
   dialogHeight?: string | number
   dialogWidth?: string | number
+  dialogContentProps?: DialogContentProps
 }
 
 export function LmDialog({
@@ -26,13 +35,13 @@ export function LmDialog({
   contentPadding = '$4',
   dialogWidth,
   dialogHeight,
+  dialogContentProps,
   ...dialogProps
 }: LmDialogProps) {
   const { width, height } = useWindowDimensions()
   return (
     <Dialog modal {...dialogProps}>
       {trigger && <Dialog.Trigger asChild>{trigger}</Dialog.Trigger>}
-      {/*@ts-ignore */}
       <Dialog.Adapt when="sm" platform="touch">
         <Dialog.Sheet zIndex={200000} modal dismissOnSnapToBottom>
           <Dialog.Sheet.Frame padding="$10">
@@ -79,6 +88,7 @@ export function LmDialog({
                 width: dialogWidth,
                 height: dialogHeight,
               })}
+          {...dialogContentProps}
         >
           <IconContextProvider value={{ color: '$color' }}>
             {(!hideCloseButton || title) && (
@@ -127,3 +137,4 @@ export function LmDialog({
 
 LmDialog.Actions = LmDialogActions
 LmDialog.Content = LmDialogContent
+LmDialog.Header = LmDialogHeader

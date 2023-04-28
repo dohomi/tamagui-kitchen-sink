@@ -4,6 +4,7 @@ import { OnDatesChangeProps, UseMonthProps } from '@datepicker-react/hooks'
 export type LmDatepickerProps = LmFormContainerBaseTypes & {
   startDate?: Date | null
   endDate?: Date | null
+  value?: Date | null
   numberOfMonths?: number
   isRangePicker?: boolean
   onChange?: (data: OnDatesChangeProps) => void

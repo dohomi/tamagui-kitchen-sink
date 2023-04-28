@@ -41,6 +41,7 @@ function LmAutocomplete({
   theme,
   allowNewHook,
   multiple = false,
+  popoverProps,
   ...rest
 }) {
   const id = (0, import_react.useId)();
@@ -90,12 +91,11 @@ function LmAutocomplete({
           import_core.LmPopover,
           {
             isBouncy: true,
-            sheetProps: {
-              // snapPoints: [100, 0],
-            },
+            ...popoverProps,
             contentProps: {
               minWidth: popoverWidth ? popoverWidth : void 0,
-              maxWidth: "100%"
+              maxWidth: "100%",
+              ...popoverProps == null ? void 0 : popoverProps.contentProps
             },
             trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Button, { icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.CaretDown, {}), borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }),
             children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(

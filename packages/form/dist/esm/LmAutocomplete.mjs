@@ -19,6 +19,7 @@ function LmAutocomplete({
   theme,
   allowNewHook,
   multiple = false,
+  popoverProps,
   ...rest
 }) {
   const id = useId();
@@ -68,12 +69,11 @@ function LmAutocomplete({
           LmPopover,
           {
             isBouncy: true,
-            sheetProps: {
-              // snapPoints: [100, 0],
-            },
+            ...popoverProps,
             contentProps: {
               minWidth: popoverWidth ? popoverWidth : void 0,
-              maxWidth: "100%"
+              maxWidth: "100%",
+              ...popoverProps == null ? void 0 : popoverProps.contentProps
             },
             trigger: /* @__PURE__ */ jsx(Button, { icon: /* @__PURE__ */ jsx(CaretDown, {}), borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }),
             children: /* @__PURE__ */ jsx(

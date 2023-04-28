@@ -62,7 +62,7 @@ export const ReactHookForm: StoryObj = {
 
             <LmCheckboxRhf name={'check_this'} required label={'Do you agree to our T&C?'} />
             <LmSwitchRhf name={'switch'} labelRight={'Some switch'} />
-            <LmDatepickerRhf start="datepicker" label={'Choose a date'} />
+            <LmDatepickerRhf name="datepicker" label={'Choose a date'} />
             <LmSliderRhf name={'slider'} />
             <LmSliderRhf name={'slider_pre'} />
             <XStack space>
