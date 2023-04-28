@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@tamagui-extras/config": "1.0.1",
+    "@tamagui-extras/config": "1.0.2",
     "app": "*",
     "babel-plugin-module-resolver": "^4.1.0",
     "burnt": "^0.10.0",
@@ -47,7 +47,7 @@
     "check-types": "tsc --noemit"
   },
   "main": "index.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "name": "expo-app"
 }

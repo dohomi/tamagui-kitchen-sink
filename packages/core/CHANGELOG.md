@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.0.9
+
+### Patch Changes
+
+- Improve Dialog and AlertDialog and upgrade tamagui. Additionally split DatepickerRhf to DateRangePickerRhf
+
 ## 1.0.8
 
 ### Patch Changes

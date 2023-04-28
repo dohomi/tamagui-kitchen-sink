@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.1.2
+
+### Patch Changes
+
+- Improve Dialog and AlertDialog and upgrade tamagui. Additionally split DatepickerRhf to DateRangePickerRhf
+
 ## 1.1.1
 
 ### Patch Changes

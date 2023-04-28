@@ -1,5 +1,13 @@
 # @tamagui-extras/rich-text
 
+## 1.0.9
+
+### Patch Changes
+
+- Improve Dialog and AlertDialog and upgrade tamagui. Additionally split DatepickerRhf to DateRangePickerRhf
+- Updated dependencies
+  - @tamagui-extras/form@1.0.8
+
 ## 1.0.8
 
 ### Patch Changes

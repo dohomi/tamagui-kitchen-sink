@@ -1,5 +1,13 @@
 # @tamagui-extras/youtube
 
+## 1.0.6
+
+### Patch Changes
+
+- Improve Dialog and AlertDialog and upgrade tamagui. Additionally split DatepickerRhf to DateRangePickerRhf
+- Updated dependencies
+  - @tamagui-extras/core@1.0.9
+
 ## 1.0.5
 
 ### Patch Changes
