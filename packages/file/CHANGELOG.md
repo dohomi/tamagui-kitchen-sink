@@ -1,5 +1,11 @@
 # @tamagui-extras/file
 
+## 1.0.7
+
+### Patch Changes
+
+- Re-publish broken release
+
 ## 1.0.6
 
 ### Patch Changes

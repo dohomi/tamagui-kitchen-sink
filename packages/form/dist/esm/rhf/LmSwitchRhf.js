@@ -15,7 +15,7 @@ function LmSwitchRhf({
       rules,
       control,
       defaultValue,
-      render: ({ field: { onChange, value } }) => /* @__PURE__ */ jsx(LmSwitch, { ...inputProps, onCheckedChange: onChange, value })
+      render: ({ field: { onChange, value } }) => /* @__PURE__ */ jsx(LmSwitch, { ...inputProps, onCheckedChange: onChange, value, checked: !!value })
     }
   );
 }

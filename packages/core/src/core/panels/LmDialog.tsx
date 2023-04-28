@@ -89,7 +89,6 @@ export function LmDialog({
                 height: dialogHeight,
               })}
           {...dialogContentProps}
-          trap
         >
           <IconContextProvider value={{ color: '$color' }}>
             {(!hideCloseButton || title) && (

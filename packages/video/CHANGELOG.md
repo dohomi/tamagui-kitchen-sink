@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.1.3
+
+### Patch Changes
+
+- Re-publish broken release
+
 ## 1.1.2
 
 ### Patch Changes

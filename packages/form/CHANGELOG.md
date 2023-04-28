@@ -1,5 +1,19 @@
 # @tamagui-extras/form
 
+## 1.0.10
+
+### Patch Changes
+
+- Re-publish broken release
+- Updated dependencies
+  - @tamagui-extras/core@1.0.10
+
+## 1.0.9
+
+### Patch Changes
+
+- Fix Switch to automatically adjust checked prop if value is true
+
 ## 1.0.8
 
 ### Patch Changes

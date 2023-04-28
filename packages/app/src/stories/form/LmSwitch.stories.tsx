@@ -1,4 +1,4 @@
-import { LmSwitch } from '../../../../form/src'
+import { LmFormRhfProvider, LmSwitch, LmSwitchRhf } from '../../../../form/src'
 import { YStack } from 'tamagui'
 
 export default {
@@ -32,4 +32,13 @@ export const Sizes = () => (
     <LmSwitch labelRight={'Some label with size $3'} size={'$3'} />
     <LmSwitch labelRight={'Some label with size $4'} size={'$4'} />
   </YStack>
+)
+
+export const ReactHookForm = () => (
+  <LmFormRhfProvider defaultValues={{ is_checked: true }}>
+    <YStack space>
+      <LmSwitchRhf name={'first'} labelRight={'Some label on the right side'} />
+      <LmSwitchRhf name={'is_checked'} labelRight={'Pre checked.'} />
+    </YStack>
+  </LmFormRhfProvider>
 )

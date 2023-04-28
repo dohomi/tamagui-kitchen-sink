@@ -1,5 +1,13 @@
 # @tamagui-extras/youtube
 
+## 1.0.7
+
+### Patch Changes
+
+- Re-publish broken release
+- Updated dependencies
+  - @tamagui-extras/core@1.0.10
+
 ## 1.0.6
 
 ### Patch Changes

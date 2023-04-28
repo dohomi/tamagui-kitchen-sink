@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.0.10
+
+### Patch Changes
+
+- Re-publish broken release
+
 ## 1.0.9
 
 ### Patch Changes

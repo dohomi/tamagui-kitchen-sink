@@ -18,7 +18,7 @@ export function LmSwitchRhf<T extends FieldValues>({
       control={control}
       defaultValue={defaultValue}
       render={({ field: { onChange, value } }) => (
-        <LmSwitch {...inputProps} onCheckedChange={onChange} value={value} />
+        <LmSwitch {...inputProps} onCheckedChange={onChange} value={value} checked={!!value} />
       )}
     />
   )
