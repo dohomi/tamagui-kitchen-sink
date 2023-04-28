@@ -3,7 +3,7 @@ import { CaretDown, CheckSquare, ListPlus, Square } from 'tamagui-phosphor-icons
 import { useDeferredValue, useEffect, useId, useRef, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { LmPopover } from '@tamagui-extras/core'
+import { LmPopover, LmPopoverProps } from '@tamagui-extras/core'
 import { Platform, useWindowDimensions } from 'react-native'
 
 type Option = { label: string; value: string | number }
@@ -17,6 +17,7 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
   theme?: ThemeName
   allowNew?: boolean
   allowNewHook?: (newValue: string) => Option
+  popoverProps?: LmPopoverProps
 }
 
 type AutocompleteContext = {
@@ -40,6 +41,7 @@ export function LmAutocomplete({
   theme,
   allowNewHook,
   multiple = false,
+  popoverProps,
   ...rest
 }: LmAutocompleteProps) {
   const id = useId()
@@ -100,14 +102,11 @@ export function LmAutocomplete({
         <XGroup.Item>
           <LmPopover
             isBouncy
-            sheetProps={
-              {
-                // snapPoints: [100, 0],
-              }
-            }
+            {...popoverProps}
             contentProps={{
               minWidth: popoverWidth ? popoverWidth : undefined,
               maxWidth: '100%',
+              ...popoverProps?.contentProps,
             }}
             trigger={
               <Button icon={<CaretDown />} borderTopLeftRadius={0} borderBottomLeftRadius={0} />

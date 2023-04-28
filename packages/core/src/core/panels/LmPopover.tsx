@@ -1,4 +1,4 @@
-import { Adapt, Popover, PopoverContentProps, PopoverProps } from 'tamagui'
+import { Popover, PopoverContentProps, PopoverProps } from 'tamagui'
 import { ReactNode } from 'react'
 import { LmSheet, LmSheetProps } from './LmSheet'
 
@@ -24,7 +24,7 @@ export function LmPopover({
       <Popover.Trigger asChild>{trigger}</Popover.Trigger>
       <Popover.Adapt when={'sm'} platform="touch">
         <LmSheet {...sheetProps}>
-          <Adapt.Contents />
+          <Popover.Adapt.Contents />
         </LmSheet>
       </Popover.Adapt>
 
