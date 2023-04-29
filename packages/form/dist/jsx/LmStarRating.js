@@ -1,15 +1,14 @@
-import { Button, getTokens, getVariableValue, XStack } from "tamagui";
+import { Button, XStack } from "tamagui";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
-import { Star } from "tamagui-phosphor-icons";
-function StarIcon({ filled, size = "$2", ...props }) {
-  const iconSize = typeof size === "string" ? getVariableValue(getTokens().size[size] || size) : size;
+import { StarFill, StarRegular } from "@tamagui-extras/core";
+function StarIcon({ filled, size = "$1", ...props }) {
   return <Button
     {...props}
     size={size}
     circular
     unstyled
-    icon={<Star size={iconSize} weight={filled ? "fill" : "regular"} />}
+    icon={filled ? <StarFill size={size} /> : <StarRegular size={size} />}
   />;
 }
 function LmStarRating({

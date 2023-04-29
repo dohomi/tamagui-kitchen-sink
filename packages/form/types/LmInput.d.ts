@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import { InputProps, ThemeableStackProps } from 'tamagui';
 import { LmFormContainerBaseTypes } from './formContainerTypes';
-import { IconProps } from 'tamagui-phosphor-icons';
+import { IconProps } from '@tamagui-extras/core';
 export type LmInputProps = InputProps & LmFormContainerBaseTypes & {
     containerProps?: ThemeableStackProps;
     multiline?: boolean;

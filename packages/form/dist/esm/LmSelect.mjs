@@ -1,8 +1,12 @@
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Select, YStack } from "tamagui";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { colormap } from "@tamagui-extras/core";
-import { CaretDown, CaretUp, Check } from "tamagui-phosphor-icons";
+import {
+  CaretDownRegular,
+  CaretUpRegular,
+  CheckRegular,
+  colormap
+} from "@tamagui-extras/core";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
 function LmSelect({
@@ -59,7 +63,7 @@ function LmSelect({
               Select.Trigger,
               {
                 width: fullWidth ? "100%" : width,
-                iconAfter: /* @__PURE__ */ jsx(CaretDown, {}),
+                iconAfter: /* @__PURE__ */ jsx(CaretDownRegular, {}),
                 paddingVertical: 0,
                 minHeight: rest.size,
                 children: /* @__PURE__ */ jsx(Select.Value, { placeholder, paddingVertical: 0 })
@@ -79,7 +83,7 @@ function LmSelect({
                   width: "100%",
                   height: "$3",
                   children: [
-                    /* @__PURE__ */ jsx(YStack, { zIndex: 10, children: /* @__PURE__ */ jsx(CaretUp, { size: 20 }) }),
+                    /* @__PURE__ */ jsx(YStack, { zIndex: 10, children: /* @__PURE__ */ jsx(CaretUpRegular, { size: 20 }) }),
                     /* @__PURE__ */ jsx(
                       LinearGradient,
                       {
@@ -97,7 +101,7 @@ function LmSelect({
                 dropDownLabel && /* @__PURE__ */ jsx(Select.Label, { children: dropDownLabel }),
                 options.map((item, i) => /* @__PURE__ */ jsxs(Select.Item, { index: i, value: `${item.value}`, children: [
                   /* @__PURE__ */ jsx(Select.ItemText, { children: item.label }),
-                  /* @__PURE__ */ jsx(Select.ItemIndicator, { marginLeft: "auto", children: /* @__PURE__ */ jsx(Check, { size: 16 }) })
+                  /* @__PURE__ */ jsx(Select.ItemIndicator, { marginLeft: "auto", children: /* @__PURE__ */ jsx(CheckRegular, { size: 16 }) })
                 ] }, item.value))
               ] }) }),
               /* @__PURE__ */ jsxs(
@@ -109,7 +113,7 @@ function LmSelect({
                   width: "100%",
                   height: "$3",
                   children: [
-                    /* @__PURE__ */ jsx(YStack, { zIndex: 10, children: /* @__PURE__ */ jsx(CaretDown, { size: 20 }) }),
+                    /* @__PURE__ */ jsx(YStack, { zIndex: 10, children: /* @__PURE__ */ jsx(CaretDownRegular, { size: 20 }) }),
                     /* @__PURE__ */ jsx(
                       LinearGradient,
                       {

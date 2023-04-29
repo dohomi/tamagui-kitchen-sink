@@ -24,9 +24,8 @@ var import_jsx_runtime = require("react/jsx-runtime");
 var import_tamagui = require("tamagui");
 var import_react = require("react");
 var import_LmFormFieldContainer = require("./LmFormFieldContainer");
-var import_tamagui_phosphor_icons = require("tamagui-phosphor-icons");
-function StarIcon({ filled, size = "$2", ...props }) {
-  const iconSize = typeof size === "string" ? (0, import_tamagui.getVariableValue)((0, import_tamagui.getTokens)().size[size] || size) : size;
+var import_core = require("@tamagui-extras/core");
+function StarIcon({ filled, size = "$1", ...props }) {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     import_tamagui.Button,
     {
@@ -34,7 +33,7 @@ function StarIcon({ filled, size = "$2", ...props }) {
       size,
       circular: true,
       unstyled: true,
-      icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.Star, { size: iconSize, weight: filled ? "fill" : "regular" })
+      icon: filled ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.StarFill, { size }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.StarRegular, { size })
     }
   );
 }

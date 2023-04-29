@@ -8,7 +8,7 @@ import {
   XStack,
 } from 'tamagui'
 import { ReactNode } from 'react'
-import { IconContextProvider, X } from 'tamagui-phosphor-icons'
+import { XRegular } from '../content/icons'
 import { useWindowDimensions } from 'react-native'
 import { LmDialogActions, LmDialogHeader } from './LmDialogActions'
 import { LmDialogContent } from './LmDialogContent'
@@ -90,45 +90,43 @@ export function LmDialog({
               })}
           {...dialogContentProps}
         >
-          <IconContextProvider value={{ color: '$color' }}>
-            {(!hideCloseButton || title) && (
-              <XStack
-                space
-                justifyContent={'space-between'}
-                paddingRight={contentPadding}
-                paddingLeft={contentPadding}
-                paddingTop={contentPadding}
-              >
-                {title ? (
-                  <Dialog.Title>{title}</Dialog.Title>
-                ) : (
-                  <VisuallyHidden>
-                    <Dialog.Title></Dialog.Title>
-                  </VisuallyHidden>
-                )}
-                {!hideCloseButton && (
-                  <Dialog.Close asChild>
-                    <Button size="$3" circular icon={<X />} />
-                  </Dialog.Close>
-                )}
-              </XStack>
-            )}
+          {(!hideCloseButton || title) && (
+            <XStack
+              space
+              justifyContent={'space-between'}
+              paddingRight={contentPadding}
+              paddingLeft={contentPadding}
+              paddingTop={contentPadding}
+            >
+              {title ? (
+                <Dialog.Title>{title}</Dialog.Title>
+              ) : (
+                <VisuallyHidden>
+                  <Dialog.Title></Dialog.Title>
+                </VisuallyHidden>
+              )}
+              {!hideCloseButton && (
+                <Dialog.Close asChild>
+                  <Button size="$3" circular icon={<XRegular />} />
+                </Dialog.Close>
+              )}
+            </XStack>
+          )}
 
-            {description ? (
-              <Dialog.Description
-                paddingTop={contentPadding}
-                paddingRight={contentPadding}
-                paddingLeft={contentPadding}
-              >
-                {description}
-              </Dialog.Description>
-            ) : (
-              <VisuallyHidden>
-                <Dialog.Description />
-              </VisuallyHidden>
-            )}
-            {children}
-          </IconContextProvider>
+          {description ? (
+            <Dialog.Description
+              paddingTop={contentPadding}
+              paddingRight={contentPadding}
+              paddingLeft={contentPadding}
+            >
+              {description}
+            </Dialog.Description>
+          ) : (
+            <VisuallyHidden>
+              <Dialog.Description />
+            </VisuallyHidden>
+          )}
+          {children}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog>

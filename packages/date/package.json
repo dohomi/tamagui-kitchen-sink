@@ -40,6 +40,7 @@
   "dependencies": {
     "@datepicker-react/hooks": "^2.8.4",
     "@react-native-community/datetimepicker": "^7.0.1",
+    "@tamagui-extras/core": "1.0.10",
     "@tamagui-extras/form": "1.0.10",
     "react-hook-form": "^7.43.9",
     "react-native-modal-datetime-picker": "^15.0.0"

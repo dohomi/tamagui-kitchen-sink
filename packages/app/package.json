@@ -21,6 +21,7 @@
     "react-native-web": "^0.18.12",
     "solito": "^3.2.5",
     "tamagui": "1.20.5",
+    "tamagui-phosphor-icons": "^0.2.0",
     "zustand": "^4.3.3"
   },
   "devDependencies": {

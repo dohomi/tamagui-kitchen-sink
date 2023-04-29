@@ -24,7 +24,6 @@ var import_jsx_runtime = require("react/jsx-runtime");
 var import_tamagui = require("tamagui");
 var import_linear_gradient = require("@tamagui/linear-gradient");
 var import_core = require("@tamagui-extras/core");
-var import_tamagui_phosphor_icons = require("tamagui-phosphor-icons");
 var import_react = require("react");
 var import_LmFormFieldContainer = require("./LmFormFieldContainer");
 function LmSelect({
@@ -81,7 +80,7 @@ function LmSelect({
               import_tamagui.Select.Trigger,
               {
                 width: fullWidth ? "100%" : width,
-                iconAfter: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.CaretDown, {}),
+                iconAfter: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CaretDownRegular, {}),
                 paddingVertical: 0,
                 minHeight: rest.size,
                 children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Value, { placeholder, paddingVertical: 0 })
@@ -101,7 +100,7 @@ function LmSelect({
                   width: "100%",
                   height: "$3",
                   children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.YStack, { zIndex: 10, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.CaretUp, { size: 20 }) }),
+                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.YStack, { zIndex: 10, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CaretUpRegular, { size: 20 }) }),
                     /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
                       import_linear_gradient.LinearGradient,
                       {
@@ -119,7 +118,7 @@ function LmSelect({
                 dropDownLabel && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Label, { children: dropDownLabel }),
                 options.map((item, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Select.Item, { index: i, value: `${item.value}`, children: [
                   /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.ItemText, { children: item.label }),
-                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.ItemIndicator, { marginLeft: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.Check, { size: 16 }) })
+                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.ItemIndicator, { marginLeft: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CheckRegular, { size: 16 }) })
                 ] }, item.value))
               ] }) }),
               /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
@@ -131,7 +130,7 @@ function LmSelect({
                   width: "100%",
                   height: "$3",
                   children: [
-                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.YStack, { zIndex: 10, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.CaretDown, { size: 20 }) }),
+                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.YStack, { zIndex: 10, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CaretDownRegular, { size: 20 }) }),
                     /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
                       import_linear_gradient.LinearGradient,
                       {

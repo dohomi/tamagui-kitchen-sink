@@ -1,5 +1,5 @@
 import { Card, CardProps, ColorProp, ColorTokens, Paragraph, useThemeName, XStack } from 'tamagui'
-import { CheckCircle, Info, Warning, WarningCircle } from 'tamagui-phosphor-icons'
+import { CheckCircleRegular, InfoRegular, WarningCircleRegular, WarningRegular } from './icons'
 
 type Severity = 'default' | 'error' | 'info' | 'warning' | 'success'
 export type LmAlertProps = CardProps & {
@@ -31,11 +31,11 @@ function AlertIcon({ severity = 'default', outlined, shouldInvert }: AlertIconPr
     props.color = 'white'
   }
   return {
-    default: <Info {...props} />,
-    error: <WarningCircle {...props} />,
-    info: <Info {...props} />,
-    warning: <Warning {...props} />,
-    success: <CheckCircle {...props} />,
+    default: <InfoRegular {...props} />,
+    error: <WarningCircleRegular {...props} />,
+    info: <InfoRegular {...props} />,
+    warning: <WarningRegular {...props} />,
+    success: <CheckCircleRegular {...props} />,
   }[severity]
 }
 

@@ -1,9 +1,15 @@
 import { Button, Input, ListItem, Popover, Sheet, ThemeName, XGroup, XStack } from 'tamagui'
-import { CaretDown, CheckSquare, ListPlus, Square } from 'tamagui-phosphor-icons'
 import { useDeferredValue, useEffect, useId, useRef, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { LmPopover, LmPopoverProps } from '@tamagui-extras/core'
+import {
+  CaretDownRegular,
+  CheckSquareRegular,
+  ListPlusRegular,
+  LmPopover,
+  LmPopoverProps,
+  SquareRegular,
+} from '@tamagui-extras/core'
 import { Platform, useWindowDimensions } from 'react-native'
 
 type Option = { label: string; value: string | number }
@@ -109,7 +115,11 @@ export function LmAutocomplete({
               ...popoverProps?.contentProps,
             }}
             trigger={
-              <Button icon={<CaretDown />} borderTopLeftRadius={0} borderBottomLeftRadius={0} />
+              <Button
+                icon={<CaretDownRegular />}
+                borderTopLeftRadius={0}
+                borderBottomLeftRadius={0}
+              />
             }
           >
             <LmAutocompleteInputContent
@@ -185,7 +195,11 @@ function LmAutocompleteInputContent({
             />
             {allowNew && !filteredOptions?.length && deferredTerm && (
               <XStack justifyContent={'flex-start'} marginBottom={'$3'} marginLeft={'$3'}>
-                <Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<ListPlus />}>
+                <Button
+                  onPress={() => onAddNew(deferredTerm)}
+                  chromeless
+                  icon={<ListPlusRegular />}
+                >
                   {deferredTerm}
                 </Button>
               </XStack>
@@ -215,7 +229,7 @@ function LmAutocompleteInputContent({
           </Sheet.ScrollView>
           {allowNew && !filteredOptions?.length && deferredTerm && (
             <XStack justifyContent={'flex-start'} marginBottom={'$3'} marginLeft={'$3'}>
-              <Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<ListPlus />}>
+              <Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<ListPlusRegular />}>
                 {deferredTerm}
               </Button>
             </XStack>
@@ -238,7 +252,7 @@ function LmAutocompleteList({ options, isSelected, onChangeSelection }: LmAutoco
           <ListItem
             hoverTheme
             key={item.value}
-            icon={isSelected(item) ? <CheckSquare /> : <Square />}
+            icon={isSelected(item) ? <CheckSquareRegular /> : <SquareRegular />}
             title={item.label}
             onPress={() => onChangeSelection(item)}
           />

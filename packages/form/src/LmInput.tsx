@@ -2,8 +2,8 @@ import { Input, InputProps, Stack, TextArea, ThemeableStackProps } from 'tamagui
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { Eye, EyeSlash, IconProps } from 'tamagui-phosphor-icons'
 import { ColorValue, Pressable } from 'react-native'
+import { EyeRegular, EyeSlashRegular, IconProps } from '@tamagui-extras/core'
 
 export type LmInputProps = InputProps &
   LmFormContainerBaseTypes & {
@@ -84,7 +84,11 @@ export function LmInput({
               setShow((state) => !state)
             }}
           >
-            {show ? <EyeSlash {...passwordIconProps} /> : <Eye {...passwordIconProps} />}
+            {show ? (
+              <EyeSlashRegular {...passwordIconProps} />
+            ) : (
+              <EyeRegular {...passwordIconProps} />
+            )}
           </Pressable>
         </Stack>
       ) : (

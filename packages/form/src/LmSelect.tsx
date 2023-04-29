@@ -1,7 +1,12 @@
 import { Select, SelectProps, ThemeProps, YStack } from 'tamagui'
 import { LinearGradient } from '@tamagui/linear-gradient'
-import { colormap, ThemeColors } from '@tamagui-extras/core'
-import { CaretDown, CaretUp, Check } from 'tamagui-phosphor-icons'
+import {
+  CaretDownRegular,
+  CaretUpRegular,
+  CheckRegular,
+  colormap,
+  ThemeColors,
+} from '@tamagui-extras/core'
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
@@ -71,7 +76,7 @@ export function LmSelect({
       >
         <Select.Trigger
           width={fullWidth ? '100%' : width}
-          iconAfter={<CaretDown />}
+          iconAfter={<CaretDownRegular />}
           paddingVertical={0}
           minHeight={rest.size}
         >
@@ -98,7 +103,7 @@ export function LmSelect({
             height="$3"
           >
             <YStack zIndex={10}>
-              <CaretUp size={20} />
+              <CaretUpRegular size={20} />
             </YStack>
             <LinearGradient
               start={[0, 0]}
@@ -116,7 +121,7 @@ export function LmSelect({
                 <Select.Item index={i} key={item.value} value={`${item.value}`}>
                   <Select.ItemText>{item.label}</Select.ItemText>
                   <Select.ItemIndicator marginLeft="auto">
-                    <Check size={16} />
+                    <CheckRegular size={16} />
                   </Select.ItemIndicator>
                 </Select.Item>
               ))}
@@ -131,7 +136,7 @@ export function LmSelect({
             height="$3"
           >
             <YStack zIndex={10}>
-              <CaretDown size={20} />
+              <CaretDownRegular size={20} />
             </YStack>
             <LinearGradient
               start={[0, 0]}

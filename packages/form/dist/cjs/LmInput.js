@@ -24,8 +24,8 @@ var import_jsx_runtime = require("react/jsx-runtime");
 var import_tamagui = require("tamagui");
 var import_react = require("react");
 var import_LmFormFieldContainer = require("./LmFormFieldContainer");
-var import_tamagui_phosphor_icons = require("tamagui-phosphor-icons");
 var import_react_native = require("react-native");
+var import_core = require("@tamagui-extras/core");
 function LmInput({
   required,
   error,
@@ -98,7 +98,7 @@ function LmInput({
             onPress: () => {
               setShow((state) => !state);
             },
-            children: show ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.EyeSlash, { ...passwordIconProps }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.Eye, { ...passwordIconProps })
+            children: show ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.EyeSlashRegular, { ...passwordIconProps }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.EyeRegular, { ...passwordIconProps })
           }
         )
       ] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { ...currentInputProps, autoCapitalize: "none" })

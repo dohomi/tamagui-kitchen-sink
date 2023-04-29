@@ -1,12 +1,12 @@
 import { Button, H5, H6, SizableText, Stack, XStack } from 'tamagui'
 import {
-  ArrowLeft,
-  ArrowRight,
-  CaretDoubleLeft,
-  CaretDoubleRight,
-  CaretLeft,
-  CaretRight,
-} from 'tamagui-phosphor-icons'
+  ArrowLeftRegular,
+  ArrowRightRegular,
+  CaretDoubleLeftRegular,
+  CaretDoubleRightRegular,
+  CaretLeftRegular,
+  CaretRightRegular,
+} from '@tamagui-extras/core'
 import { useMonth, UseMonthProps } from '@datepicker-react/hooks'
 import { LmDay } from './LmDay'
 import { useDatepickerContext } from './DatepickerProvider'
@@ -53,7 +53,7 @@ export function LmMonth({
           focusable={false}
           circular
           onPress={() => goToPreviousYear(10)}
-          icon={<CaretDoubleLeft />}
+          icon={<CaretDoubleLeftRegular />}
         />
         <Button
           size={'$2'}
@@ -61,7 +61,7 @@ export function LmMonth({
           circular
           focusable={false}
           onPress={() => goToPreviousYear(1)}
-          icon={<CaretLeft />}
+          icon={<CaretLeftRegular />}
         />
         <H6>{year}</H6>
         <Button
@@ -69,7 +69,7 @@ export function LmMonth({
           chromeless
           focusable={false}
           onPress={() => goToNextYear(1)}
-          icon={<CaretRight />}
+          icon={<CaretRightRegular />}
           circular
         />
         <Button
@@ -78,7 +78,7 @@ export function LmMonth({
           circular
           focusable={false}
           onPress={() => goToNextYear(10)}
-          icon={<CaretDoubleRight />}
+          icon={<CaretDoubleRightRegular />}
         />
       </XStack>
 
@@ -88,7 +88,7 @@ export function LmMonth({
           opacity={isFirst ? undefined : 0}
           disabled={!isFirst}
           onPress={monthsCount > 1 ? goToPreviousMonths : goToPreviousMonthsByOneMonth}
-          icon={<ArrowLeft />}
+          icon={<ArrowLeftRegular />}
           circular
           chromeless
         />
@@ -100,7 +100,7 @@ export function LmMonth({
           opacity={isLast ? undefined : 0}
           disabled={!isLast}
           onPress={monthsCount > 1 ? goToNextMonths : goToNextMonthsByOneMonth}
-          icon={<ArrowRight />}
+          icon={<ArrowRightRegular />}
           circular
           chromeless
         />

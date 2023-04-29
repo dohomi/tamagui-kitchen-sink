@@ -2,8 +2,8 @@ import { jsx, jsxs } from "react/jsx-runtime";
 import { Input, Stack, TextArea } from "tamagui";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
-import { Eye, EyeSlash } from "tamagui-phosphor-icons";
 import { Pressable } from "react-native";
+import { EyeRegular, EyeSlashRegular } from "@tamagui-extras/core";
 function LmInput({
   required,
   error,
@@ -76,7 +76,7 @@ function LmInput({
             onPress: () => {
               setShow((state) => !state);
             },
-            children: show ? /* @__PURE__ */ jsx(EyeSlash, { ...passwordIconProps }) : /* @__PURE__ */ jsx(Eye, { ...passwordIconProps })
+            children: show ? /* @__PURE__ */ jsx(EyeSlashRegular, { ...passwordIconProps }) : /* @__PURE__ */ jsx(EyeRegular, { ...passwordIconProps })
           }
         )
       ] }) : /* @__PURE__ */ jsx(Input, { ...currentInputProps, autoCapitalize: "none" })

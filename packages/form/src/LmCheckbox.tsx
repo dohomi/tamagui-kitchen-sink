@@ -10,7 +10,7 @@ import {
   XStackProps,
   YStack,
 } from 'tamagui'
-import { Check } from 'tamagui-phosphor-icons'
+import { CheckSquareRegular } from '@tamagui-extras/core'
 
 export type LmCheckboxProps = XStackProps & {
   label?: ReactNode
@@ -51,7 +51,7 @@ export function LmCheckbox({
         borderColor={error ? '$red8' : '$borderColor'}
       >
         <Checkbox.Indicator>
-          <Check />
+          <CheckSquareRegular />
         </Checkbox.Indicator>
       </Checkbox>
       {label && (

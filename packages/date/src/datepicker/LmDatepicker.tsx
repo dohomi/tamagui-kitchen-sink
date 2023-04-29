@@ -8,8 +8,7 @@ import {
 import { useId, useState } from 'react'
 import { LmMonth } from './LmMonth'
 import { Button, Input, XGroup, XStack } from 'tamagui'
-import { Calendar } from 'tamagui-phosphor-icons'
-import { LmPopover, usePopoverState } from '@tamagui-extras/core'
+import { CalendarRegular, LmPopover, usePopoverState } from '@tamagui-extras/core'
 import { getLocaleDate } from '../dateHelper'
 import { LmFormFieldContainer } from '@tamagui-extras/form'
 import { Platform } from 'react-native'
@@ -88,7 +87,7 @@ export function LmDatepicker({
                   ></Input>
                 </XGroup.Item>
                 <XGroup.Item>
-                  <Button icon={<Calendar />} />
+                  <Button icon={<CalendarRegular />} />
                 </XGroup.Item>
               </XGroup>
               {isRangePicker && (
@@ -100,7 +99,7 @@ export function LmDatepicker({
                     />
                   </XGroup.Item>
                   <XGroup.Item>
-                    <Button onPress={() => onOpenChange(true)} icon={<Calendar />} />
+                    <Button onPress={() => onOpenChange(true)} icon={<CalendarRegular />} />
                   </XGroup.Item>
                 </XGroup>
               )}

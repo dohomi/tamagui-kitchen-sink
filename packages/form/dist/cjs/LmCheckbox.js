@@ -23,7 +23,7 @@ module.exports = __toCommonJS(LmCheckbox_exports);
 var import_jsx_runtime = require("react/jsx-runtime");
 var import_react = require("react");
 var import_tamagui = require("tamagui");
-var import_tamagui_phosphor_icons = require("tamagui-phosphor-icons");
+var import_core = require("@tamagui-extras/core");
 function LmCheckbox({
   label,
   onChange,
@@ -51,7 +51,7 @@ function LmCheckbox({
           }
         },
         borderColor: error ? "$red8" : "$borderColor",
-        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Checkbox.Indicator, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.Check, {}) })
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Checkbox.Indicator, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CheckSquareRegular, {}) })
       }
     ),
     label && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.YStack, { children: [

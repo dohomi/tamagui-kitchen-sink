@@ -22,7 +22,6 @@ __export(LmAutocomplete_exports, {
 module.exports = __toCommonJS(LmAutocomplete_exports);
 var import_jsx_runtime = require("react/jsx-runtime");
 var import_tamagui = require("tamagui");
-var import_tamagui_phosphor_icons = require("tamagui-phosphor-icons");
 var import_react = require("react");
 var import_LmFormFieldContainer = require("./LmFormFieldContainer");
 var import_core = require("@tamagui-extras/core");
@@ -97,7 +96,14 @@ function LmAutocomplete({
               maxWidth: "100%",
               ...popoverProps == null ? void 0 : popoverProps.contentProps
             },
-            trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Button, { icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.CaretDown, {}), borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }),
+            trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+              import_tamagui.Button,
+              {
+                icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CaretDownRegular, {}),
+                borderTopLeftRadius: 0,
+                borderBottomLeftRadius: 0
+              }
+            ),
             children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
               LmAutocompleteInputContent,
               {
@@ -162,7 +168,15 @@ function LmAutocompleteInputContent({
               isSelected
             }
           ),
-          allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Button, { onPress: () => onAddNew(deferredTerm), chromeless: true, icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.ListPlus, {}), children: deferredTerm }) })
+          allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+            import_tamagui.Button,
+            {
+              onPress: () => onAddNew(deferredTerm),
+              chromeless: true,
+              icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.ListPlusRegular, {}),
+              children: deferredTerm
+            }
+          ) })
         ]
       }
     )
@@ -186,7 +200,7 @@ function LmAutocompleteInputContent({
         isSelected
       }
     ) }),
-    allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Button, { onPress: () => onAddNew(deferredTerm), chromeless: true, icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.ListPlus, {}), children: deferredTerm }) })
+    allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Button, { onPress: () => onAddNew(deferredTerm), chromeless: true, icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.ListPlusRegular, {}), children: deferredTerm }) })
   ] }) });
 }
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
@@ -195,7 +209,7 @@ function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
       import_tamagui.ListItem,
       {
         hoverTheme: true,
-        icon: isSelected(item) ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.CheckSquare, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui_phosphor_icons.Square, {}),
+        icon: isSelected(item) ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CheckSquareRegular, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.SquareRegular, {}),
         title: item.label,
         onPress: () => onChangeSelection(item)
       },

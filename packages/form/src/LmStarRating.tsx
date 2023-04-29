@@ -1,25 +1,23 @@
-import { Button, ButtonProps, getTokens, getVariableValue, SizeTokens, XStack } from 'tamagui'
+import { Button, ButtonProps, SizeTokens, XStack } from 'tamagui'
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { Star } from 'tamagui-phosphor-icons'
+import { StarFill, StarRegular } from '@tamagui-extras/core'
 
 type StarProps = Omit<ButtonProps, 'size'> & {
   filled: boolean
   size?: SizeTokens
 }
 
-function StarIcon({ filled, size = '$2', ...props }: StarProps) {
+function StarIcon({ filled, size = '$1', ...props }: StarProps) {
   // due to missing PR this needs to be done manually
-  const iconSize =
-    typeof size === 'string' ? getVariableValue(getTokens().size[size] || size) : size
   return (
     <Button
       {...props}
       size={size}
       circular
       unstyled
-      icon={<Star size={iconSize} weight={filled ? 'fill' : 'regular'} />}
+      icon={filled ? <StarFill size={size} /> : <StarRegular size={size} />}
     />
   )
 }

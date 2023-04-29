@@ -5,7 +5,7 @@ import { useId, useState } from 'react'
 import { Button, Input, XGroup, XStack } from 'tamagui'
 import { Platform } from 'react-native'
 import { getLocaleDate } from '../dateHelper'
-import { Calendar } from 'tamagui-phosphor-icons'
+import { CalendarRegular } from '@tamagui-extras/core'
 import { OnDatesChangeProps, START_DATE } from '@datepicker-react/hooks'
 
 export function LmDatepicker({
@@ -49,7 +49,7 @@ export function LmDatepicker({
             ></Input>
           </XGroup.Item>
           <XGroup.Item>
-            <Button onPress={() => startOpenChange((state) => !state)} icon={<Calendar />} />
+            <Button onPress={() => startOpenChange((state) => !state)} icon={<CalendarRegular />} />
           </XGroup.Item>
         </XGroup>
         {isRangePicker && (
@@ -61,7 +61,7 @@ export function LmDatepicker({
               />
             </XGroup.Item>
             <XGroup.Item>
-              <Button onPress={() => endOpenChange((state) => !state)} icon={<Calendar />} />
+              <Button onPress={() => endOpenChange((state) => !state)} icon={<CalendarRegular />} />
             </XGroup.Item>
           </XGroup>
         )}

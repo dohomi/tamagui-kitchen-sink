@@ -1,10 +1,9 @@
 import { jsx } from "react/jsx-runtime";
-import { Button, getTokens, getVariableValue, XStack } from "tamagui";
+import { Button, XStack } from "tamagui";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
-import { Star } from "tamagui-phosphor-icons";
-function StarIcon({ filled, size = "$2", ...props }) {
-  const iconSize = typeof size === "string" ? getVariableValue(getTokens().size[size] || size) : size;
+import { StarFill, StarRegular } from "@tamagui-extras/core";
+function StarIcon({ filled, size = "$1", ...props }) {
   return /* @__PURE__ */ jsx(
     Button,
     {
@@ -12,7 +11,7 @@ function StarIcon({ filled, size = "$2", ...props }) {
       size,
       circular: true,
       unstyled: true,
-      icon: /* @__PURE__ */ jsx(Star, { size: iconSize, weight: filled ? "fill" : "regular" })
+      icon: filled ? /* @__PURE__ */ jsx(StarFill, { size }) : /* @__PURE__ */ jsx(StarRegular, { size })
     }
   );
 }

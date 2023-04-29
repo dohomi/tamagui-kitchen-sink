@@ -1,9 +1,14 @@
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 import { Button, Input, ListItem, Popover, Sheet, XGroup, XStack } from "tamagui";
-import { CaretDown, CheckSquare, ListPlus, Square } from "tamagui-phosphor-icons";
 import { useDeferredValue, useEffect, useId, useRef, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
-import { LmPopover } from "@tamagui-extras/core";
+import {
+  CaretDownRegular,
+  CheckSquareRegular,
+  ListPlusRegular,
+  LmPopover,
+  SquareRegular
+} from "@tamagui-extras/core";
 import { Platform, useWindowDimensions } from "react-native";
 function LmAutocomplete({
   options,
@@ -75,7 +80,14 @@ function LmAutocomplete({
               maxWidth: "100%",
               ...popoverProps == null ? void 0 : popoverProps.contentProps
             },
-            trigger: /* @__PURE__ */ jsx(Button, { icon: /* @__PURE__ */ jsx(CaretDown, {}), borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }),
+            trigger: /* @__PURE__ */ jsx(
+              Button,
+              {
+                icon: /* @__PURE__ */ jsx(CaretDownRegular, {}),
+                borderTopLeftRadius: 0,
+                borderBottomLeftRadius: 0
+              }
+            ),
             children: /* @__PURE__ */ jsx(
               LmAutocompleteInputContent,
               {
@@ -140,7 +152,15 @@ function LmAutocompleteInputContent({
               isSelected
             }
           ),
-          allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && /* @__PURE__ */ jsx(XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ jsx(Button, { onPress: () => onAddNew(deferredTerm), chromeless: true, icon: /* @__PURE__ */ jsx(ListPlus, {}), children: deferredTerm }) })
+          allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && /* @__PURE__ */ jsx(XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ jsx(
+            Button,
+            {
+              onPress: () => onAddNew(deferredTerm),
+              chromeless: true,
+              icon: /* @__PURE__ */ jsx(ListPlusRegular, {}),
+              children: deferredTerm
+            }
+          ) })
         ]
       }
     )
@@ -164,7 +184,7 @@ function LmAutocompleteInputContent({
         isSelected
       }
     ) }),
-    allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && /* @__PURE__ */ jsx(XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ jsx(Button, { onPress: () => onAddNew(deferredTerm), chromeless: true, icon: /* @__PURE__ */ jsx(ListPlus, {}), children: deferredTerm }) })
+    allowNew && !(filteredOptions == null ? void 0 : filteredOptions.length) && deferredTerm && /* @__PURE__ */ jsx(XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ jsx(Button, { onPress: () => onAddNew(deferredTerm), chromeless: true, icon: /* @__PURE__ */ jsx(ListPlusRegular, {}), children: deferredTerm }) })
   ] }) });
 }
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
@@ -173,7 +193,7 @@ function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
       ListItem,
       {
         hoverTheme: true,
-        icon: isSelected(item) ? /* @__PURE__ */ jsx(CheckSquare, {}) : /* @__PURE__ */ jsx(Square, {}),
+        icon: isSelected(item) ? /* @__PURE__ */ jsx(CheckSquareRegular, {}) : /* @__PURE__ */ jsx(SquareRegular, {}),
         title: item.label,
         onPress: () => onChangeSelection(item)
       },

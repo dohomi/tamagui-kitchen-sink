@@ -6,7 +6,7 @@ import {
   XStack,
   YStack
 } from "tamagui";
-import { Check } from "tamagui-phosphor-icons";
+import { CheckSquareRegular } from "@tamagui-extras/core";
 function LmCheckbox({
   label,
   onChange,
@@ -32,7 +32,7 @@ function LmCheckbox({
         }
       }}
       borderColor={error ? "$red8" : "$borderColor"}
-    ><Checkbox.Indicator><Check /></Checkbox.Indicator></Checkbox>
+    ><Checkbox.Indicator><CheckSquareRegular /></Checkbox.Indicator></Checkbox>
     {label && <YStack>
       <Label size={size} htmlFor={id}>
         {required ? "* " : ""}

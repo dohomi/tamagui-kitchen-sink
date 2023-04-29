@@ -1,8 +1,13 @@
 import { Button, Input, ListItem, Popover, Sheet, XGroup, XStack } from "tamagui";
-import { CaretDown, CheckSquare, ListPlus, Square } from "tamagui-phosphor-icons";
 import { useDeferredValue, useEffect, useId, useRef, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
-import { LmPopover } from "@tamagui-extras/core";
+import {
+  CaretDownRegular,
+  CheckSquareRegular,
+  ListPlusRegular,
+  LmPopover,
+  SquareRegular
+} from "@tamagui-extras/core";
 import { Platform, useWindowDimensions } from "react-native";
 function LmAutocomplete({
   options,
@@ -69,7 +74,11 @@ function LmAutocomplete({
         maxWidth: "100%",
         ...popoverProps?.contentProps
       }}
-      trigger={<Button icon={<CaretDown />} borderTopLeftRadius={0} borderBottomLeftRadius={0} />}
+      trigger={<Button
+        icon={<CaretDownRegular />}
+        borderTopLeftRadius={0}
+        borderBottomLeftRadius={0}
+      />}
     ><LmAutocompleteInputContent
       theme={theme}
       options={opts}
@@ -119,7 +128,11 @@ function LmAutocompleteInputContent({
         onChangeSelection={onChangeSelection}
         isSelected={isSelected}
       />
-      {allowNew && !filteredOptions?.length && deferredTerm && <XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<ListPlus />}>{deferredTerm}</Button></XStack>}
+      {allowNew && !filteredOptions?.length && deferredTerm && <XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><Button
+        onPress={() => onAddNew(deferredTerm)}
+        chromeless
+        icon={<ListPlusRegular />}
+      >{deferredTerm}</Button></XStack>}
     </Popover.ScrollView>
   </> : <>
     {(!disableSearch || allowNew) && <XStack padding="$4" width="100%"><Input
@@ -135,7 +148,7 @@ function LmAutocompleteInputContent({
       onChangeSelection={onChangeSelection}
       isSelected={isSelected}
     /></Sheet.ScrollView>
-    {allowNew && !filteredOptions?.length && deferredTerm && <XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<ListPlus />}>{deferredTerm}</Button></XStack>}
+    {allowNew && !filteredOptions?.length && deferredTerm && <XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<ListPlusRegular />}>{deferredTerm}</Button></XStack>}
   </>}</>;
 }
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
@@ -143,7 +156,7 @@ function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
     return <ListItem
       hoverTheme
       key={item.value}
-      icon={isSelected(item) ? <CheckSquare /> : <Square />}
+      icon={isSelected(item) ? <CheckSquareRegular /> : <SquareRegular />}
       title={item.label}
       onPress={() => onChangeSelection(item)}
     />;

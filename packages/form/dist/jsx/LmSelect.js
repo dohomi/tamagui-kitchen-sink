@@ -1,7 +1,11 @@
 import { Select, YStack } from "tamagui";
 import { LinearGradient } from "@tamagui/linear-gradient";
-import { colormap } from "@tamagui-extras/core";
-import { CaretDown, CaretUp, Check } from "tamagui-phosphor-icons";
+import {
+  CaretDownRegular,
+  CaretUpRegular,
+  CheckRegular,
+  colormap
+} from "@tamagui-extras/core";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
 function LmSelect({
@@ -52,7 +56,7 @@ function LmSelect({
   >
     <Select.Trigger
       width={fullWidth ? "100%" : width}
-      iconAfter={<CaretDown />}
+      iconAfter={<CaretDownRegular />}
       paddingVertical={0}
       minHeight={rest.size}
     ><Select.Value placeholder={placeholder} paddingVertical={0} /></Select.Trigger>
@@ -71,7 +75,7 @@ function LmSelect({
         width="100%"
         height="$3"
       >
-        <YStack zIndex={10}><CaretUp size={20} /></YStack>
+        <YStack zIndex={10}><CaretUpRegular size={20} /></YStack>
         <LinearGradient
           start={[0, 0]}
           end={[0, 1]}
@@ -84,7 +88,7 @@ function LmSelect({
         {dropDownLabel && <Select.Label>{dropDownLabel}</Select.Label>}
         {options.map((item, i) => <Select.Item index={i} key={item.value} value={`${item.value}`}>
           <Select.ItemText>{item.label}</Select.ItemText>
-          <Select.ItemIndicator marginLeft="auto"><Check size={16} /></Select.ItemIndicator>
+          <Select.ItemIndicator marginLeft="auto"><CheckRegular size={16} /></Select.ItemIndicator>
         </Select.Item>)}
       </Select.Group></Select.Viewport>
       <Select.ScrollDownButton
@@ -94,7 +98,7 @@ function LmSelect({
         width="100%"
         height="$3"
       >
-        <YStack zIndex={10}><CaretDown size={20} /></YStack>
+        <YStack zIndex={10}><CaretDownRegular size={20} /></YStack>
         <LinearGradient
           start={[0, 0]}
           end={[0, 1]}
