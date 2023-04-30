@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.1.1
+
+### Patch Changes
+
+- Add sun to icons
+
 ## 1.1.0
 
 ### Minor Changes

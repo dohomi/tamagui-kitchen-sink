@@ -1,20 +1,16 @@
 import React from 'react'
-import { Activity, Airplane, Quotes, Star } from 'tamagui-phosphor-icons'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
 import { SizableText, XStack } from 'tamagui'
+import { QuotesRegular, StarFill, StarRegular } from '@tamagui-extras/core'
 
 export default function IconsScreen() {
   return (
     <LmAppShell title={'Icons'}>
-      <SizableText>Lucide icons</SizableText>
+      <SizableText>Icons</SizableText>
       <XStack space>
-        <Star />
-        <Quotes />
-      </XStack>
-      <SizableText>Phosphor icons</SizableText>
-      <XStack space>
-        <Airplane />
-        <Activity />
+        <StarRegular />
+        <StarFill />
+        <QuotesRegular />
       </XStack>
     </LmAppShell>
   )

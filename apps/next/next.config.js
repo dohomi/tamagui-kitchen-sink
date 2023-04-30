@@ -35,7 +35,6 @@ const transpilePackages = [
   'expo-modules-core',
   'expo-document-picker',
   'expo-av',
-  'tamagui-phosphor-icons',
   ...extrasPlugins,
   // '@expo/vector-icons',
 ]
@@ -66,12 +65,6 @@ module.exports = function () {
       ignoreBuildErrors: true,
     },
     images: {},
-    modularizeImports: {
-      'tamagui-phosphor-icons': {
-        transform: 'tamagui-phosphor-icons/dist/jsx/icons/icons/{{member}}',
-        skipDefaultConversion: true,
-      },
-    },
     // transpilePackages: transpilePackages,
     experimental: {
       scrollRestoration: true,

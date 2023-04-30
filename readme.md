@@ -15,7 +15,7 @@ Overview of all components build on top of `tamagui`
 Install peer dependencies
 
 ```sh
-# yarn add tamagui @tamagui/themes tamagui-phosphor-icons solito
+# yarn add tamagui @tamagui/themes solito
 ```
 
 Follow the installation [instructions](https://tamagui.dev/docs/intro/installation) of the tamagui framework.

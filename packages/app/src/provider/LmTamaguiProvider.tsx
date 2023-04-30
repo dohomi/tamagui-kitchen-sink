@@ -1,5 +1,4 @@
 import { TamaguiProvider, TamaguiProviderProps } from 'tamagui'
-import { IconContextProvider } from 'tamagui-phosphor-icons'
 import config from '../../tamagui.config'
 import { useThemeNameState } from 'app/src/state/themeState'
 
@@ -14,7 +13,7 @@ export function LmTamaguiProvider({ children, ...rest }: LmTamaguiProviderProps)
       defaultTheme={theme}
       {...rest}
     >
-      <IconContextProvider value={{ color: '$color' }}>{children}</IconContextProvider>
+      {children}
     </TamaguiProvider>
   )
 }

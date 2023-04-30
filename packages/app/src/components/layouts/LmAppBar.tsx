@@ -3,8 +3,7 @@ import { LmDashboardShellProps } from 'app/src/components/layouts/layoutTypes'
 import { LmThemeToggle } from 'app/src/components/various/LmThemeToggle'
 import { useToggleMainDrawer } from 'app/src/state/appState'
 import { H3, XStack } from 'tamagui'
-import { LmButton } from '@tamagui-extras/core'
-import { List, Sun } from 'tamagui-phosphor-icons'
+import { ListRegular, LmButton, SunRegular } from '@tamagui-extras/core'
 
 type LmDashboardAppBarProps = Pick<LmDashboardShellProps, 'rightContent' | 'title'>
 
@@ -24,7 +23,7 @@ export function LmAppBar({ title, rightContent }: LmDashboardAppBarProps) {
       space
     >
       <LmButton
-        icon={<List />}
+        icon={<ListRegular />}
         size={'$4'}
         circular
         chromeless
@@ -34,7 +33,7 @@ export function LmAppBar({ title, rightContent }: LmDashboardAppBarProps) {
       />
 
       <H3 flexGrow={1}>{title}</H3>
-      <LmThemeToggle icon={<Sun />} size={'$4'} circular />
+      <LmThemeToggle icon={<SunRegular />} size={'$4'} circular />
       {rightContent}
     </XStack>
   )

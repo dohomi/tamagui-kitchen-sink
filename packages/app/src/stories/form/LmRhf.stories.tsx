@@ -1,4 +1,11 @@
-import { LmAlert, LmButton, LmCard, LmDialog, usePopoverState } from '@tamagui-extras/core'
+import {
+  LmAlert,
+  LmButton,
+  LmCard,
+  LmDialog,
+  usePopoverState,
+  WarningCircleRegular,
+} from '@tamagui-extras/core'
 import { Button, Form, Paragraph, XStack, YStack } from 'tamagui'
 import {
   LmCheckboxRhf,
@@ -15,7 +22,6 @@ import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { useForm } from 'react-hook-form'
 import { StoryObj } from '@storybook/react'
-import { WarningCircle } from 'tamagui-phosphor-icons'
 import { fruitItemsFixtures } from 'app/src/fixtures/selectItems'
 
 export default {
@@ -259,7 +265,7 @@ export const FormInsideDialog = () => {
             <LmDialog
               title={'Some Info'}
               description={'This is a nested dialog'}
-              trigger={<LmButton icon={<WarningCircle />} />}
+              trigger={<LmButton icon={<WarningCircleRegular />} />}
             ></LmDialog>
           </LmDialog.Content>
 

@@ -1,7 +1,6 @@
-import { LmButton } from '../../../../../core/src'
+import { LmButton, StarRegular as Star } from '../../../../../core/src'
 import { Meta, StoryObj } from '@storybook/react'
 import { XStack, YStack } from 'tamagui'
-import { Star } from 'tamagui-phosphor-icons'
 
 export default {
   title: 'core/Content/Button',

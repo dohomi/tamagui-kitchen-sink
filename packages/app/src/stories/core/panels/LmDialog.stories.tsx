@@ -1,10 +1,9 @@
 import React from 'react'
 import { Button, SizableText, Text, XStack, YStack } from 'tamagui'
-import { LmDialog, usePopoverState } from '../../../../../core/src'
+import { LmDialog, usePopoverState, XRegular } from '../../../../../core/src'
 import { userEvent, within } from '@storybook/testing-library'
 import { expect } from '@storybook/jest'
 
-import { X } from 'tamagui-phosphor-icons'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
@@ -112,7 +111,7 @@ export const ControlledState: Story = {
                 onPress={() => dialogState.onOpenChange(false)}
                 chromeless
                 circular
-                icon={<X />}
+                icon={<XRegular />}
               />
             </XStack>
             <Text>

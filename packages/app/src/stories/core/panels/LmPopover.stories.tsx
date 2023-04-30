@@ -4,10 +4,10 @@ import {
   LmDialog,
   LmPopover,
   LmPopoverProps,
+  StarRegular,
   usePopoverState,
 } from '../../../../../core/src'
 import { Button, ListItem, Text, XStack } from 'tamagui'
-import { Smiley } from 'tamagui-phosphor-icons'
 
 export default {
   title: 'core/Panels/Popover',
@@ -20,7 +20,7 @@ export const Basic = {
     trigger: <Text>Open Popover</Text>,
     children: (
       <XStack space alignItems={'center'}>
-        <Smiley />
+        <StarRegular />
         <Text padding={'$4'}>Some Popover content</Text>
       </XStack>
     ),

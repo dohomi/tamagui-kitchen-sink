@@ -16,10 +16,9 @@ import {
   YGroup,
   YStack,
 } from 'tamagui'
-import { Star } from 'tamagui-phosphor-icons'
 import { fruitItemsFixtures } from 'app/src/lib/fixtures/selectItems'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
-import { LmAvatar, LmButton } from '@tamagui-extras/core'
+import { LmAvatar, LmButton, StarRegular as Star } from '@tamagui-extras/core'
 import { LmInput, LmSelect } from '@tamagui-extras/form'
 
 export function OverviewScreen() {
