@@ -1,5 +1,17 @@
 # @tamagui-extras/date
 
+## 1.1.0
+
+### Minor Changes
+
+- Remove dependencies of tamagui-phosphor-icons in all packages
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.1.0
+  - @tamagui-extras/form@1.1.0
+
 ## 1.0.9
 
 ### Patch Changes

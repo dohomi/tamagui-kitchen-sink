@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.1.0
+
+### Minor Changes
+
+- Remove dependencies of tamagui-phosphor-icons in all packages
+
 ## 1.0.10
 
 ### Patch Changes

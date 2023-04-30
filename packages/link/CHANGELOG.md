@@ -1,5 +1,11 @@
 # @tamagui-extras/link
 
+## 1.1.0
+
+### Minor Changes
+
+- Remove dependencies of tamagui-phosphor-icons in all packages
+
 ## 1.0.8
 
 ### Patch Changes

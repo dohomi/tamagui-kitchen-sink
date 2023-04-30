@@ -1,5 +1,19 @@
 # app
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/rich-text@1.1.0
+  - @tamagui-extras/core@1.1.0
+  - @tamagui-extras/date@1.1.0
+  - @tamagui-extras/file@1.1.0
+  - @tamagui-extras/form@1.1.0
+  - @tamagui-extras/link@1.1.0
+  - @tamagui-extras/video@1.2.0
+  - @tamagui-extras/youtube@1.1.0
+
 ## 0.0.5
 
 ### Patch Changes
