@@ -142,8 +142,9 @@ function LmAutocompleteInputContent({
   const [searchTerm, setSearchTerm] = (0, import_react.useState)();
   const deferredTerm = (0, import_react.useDeferredValue)(searchTerm);
   const filteredOptions = (deferredTerm == null ? void 0 : deferredTerm.length) ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options;
+  const showSearch = !disableSearch || allowNew;
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: import_react_native.Platform.OS === "web" ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-    (!disableSearch || allowNew) && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    showSearch && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
       import_tamagui.Input,
       {
         theme,
@@ -155,10 +156,13 @@ function LmAutocompleteInputContent({
       }
     ) }),
     /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
-      import_tamagui.Popover.ScrollView,
+      import_tamagui.ScrollView,
       {
         keyboardShouldPersistTaps: "always",
-        style: { maxHeight: 300, width: "100%" },
+        maxHeight: 300,
+        width: "100%",
+        marginTop: !showSearch ? "$4" : void 0,
+        marginBottom: "$4",
         children: [
           /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
             LmAutocompleteList,
@@ -180,8 +184,8 @@ function LmAutocompleteInputContent({
         ]
       }
     )
-  ] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-    (!disableSearch || allowNew) && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  ] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.YStack, { children: [
+    showSearch && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
       import_tamagui.Input,
       {
         theme,
@@ -192,7 +196,7 @@ function LmAutocompleteInputContent({
         }
       }
     ) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Sheet.ScrollView, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.ScrollView, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
       LmAutocompleteList,
       {
         options: filteredOptions,
@@ -204,17 +208,16 @@ function LmAutocompleteInputContent({
   ] }) });
 }
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: options.map((item, i) => {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.YGroup, { borderRadius: 0, children: options.map((item, i) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.YGroup.Item, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
       import_tamagui.ListItem,
       {
         hoverTheme: true,
         icon: isSelected(item) ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CheckSquareRegular, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.SquareRegular, {}),
         title: item.label,
         onPress: () => onChangeSelection(item)
-      },
-      item.value
-    );
+      }
+    ) }, item.value);
   }) });
 }
 // Annotate the CommonJS export names for ESM import in node:

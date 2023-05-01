@@ -1,5 +1,14 @@
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
-import { Button, Input, ListItem, Popover, Sheet, XGroup, XStack } from "tamagui";
+import {
+  Button,
+  Input,
+  ListItem,
+  ScrollView,
+  XGroup,
+  XStack,
+  YGroup,
+  YStack
+} from "tamagui";
 import { useDeferredValue, useEffect, useId, useRef, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
 import {
@@ -126,8 +135,9 @@ function LmAutocompleteInputContent({
   const [searchTerm, setSearchTerm] = useState();
   const deferredTerm = useDeferredValue(searchTerm);
   const filteredOptions = (deferredTerm == null ? void 0 : deferredTerm.length) ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options;
+  const showSearch = !disableSearch || allowNew;
   return /* @__PURE__ */ jsx(Fragment, { children: Platform.OS === "web" ? /* @__PURE__ */ jsxs(Fragment, { children: [
-    (!disableSearch || allowNew) && /* @__PURE__ */ jsx(XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ jsx(
+    showSearch && /* @__PURE__ */ jsx(XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ jsx(
       Input,
       {
         theme,
@@ -139,10 +149,13 @@ function LmAutocompleteInputContent({
       }
     ) }),
     /* @__PURE__ */ jsxs(
-      Popover.ScrollView,
+      ScrollView,
       {
         keyboardShouldPersistTaps: "always",
-        style: { maxHeight: 300, width: "100%" },
+        maxHeight: 300,
+        width: "100%",
+        marginTop: !showSearch ? "$4" : void 0,
+        marginBottom: "$4",
         children: [
           /* @__PURE__ */ jsx(
             LmAutocompleteList,
@@ -164,8 +177,8 @@ function LmAutocompleteInputContent({
         ]
       }
     )
-  ] }) : /* @__PURE__ */ jsxs(Fragment, { children: [
-    (!disableSearch || allowNew) && /* @__PURE__ */ jsx(XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ jsx(
+  ] }) : /* @__PURE__ */ jsxs(YStack, { children: [
+    showSearch && /* @__PURE__ */ jsx(XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ jsx(
       Input,
       {
         theme,
@@ -176,7 +189,7 @@ function LmAutocompleteInputContent({
         }
       }
     ) }),
-    /* @__PURE__ */ jsx(Sheet.ScrollView, { children: /* @__PURE__ */ jsx(
+    /* @__PURE__ */ jsx(ScrollView, { children: /* @__PURE__ */ jsx(
       LmAutocompleteList,
       {
         options: filteredOptions,
@@ -188,17 +201,16 @@ function LmAutocompleteInputContent({
   ] }) });
 }
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
-  return /* @__PURE__ */ jsx(Fragment, { children: options.map((item, i) => {
-    return /* @__PURE__ */ jsx(
+  return /* @__PURE__ */ jsx(YGroup, { borderRadius: 0, children: options.map((item, i) => {
+    return /* @__PURE__ */ jsx(YGroup.Item, { children: /* @__PURE__ */ jsx(
       ListItem,
       {
         hoverTheme: true,
         icon: isSelected(item) ? /* @__PURE__ */ jsx(CheckSquareRegular, {}) : /* @__PURE__ */ jsx(SquareRegular, {}),
         title: item.label,
         onPress: () => onChangeSelection(item)
-      },
-      item.value
-    );
+      }
+    ) }, item.value);
   }) });
 }
 export {

@@ -1,5 +1,14 @@
 # @tamagui-extras/rich-text
 
+## 1.1.2
+
+### Patch Changes
+
+- Add preventClickOutside to <Dialog/> and improve style of Autocomplete
+- Updated dependencies
+  - @tamagui-extras/core@1.1.2
+  - @tamagui-extras/form@1.1.2
+
 ## 1.1.1
 
 ### Patch Changes

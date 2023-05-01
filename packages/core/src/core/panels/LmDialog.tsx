@@ -23,6 +23,7 @@ type LmDialogProps = DialogProps & {
   dialogHeight?: string | number
   dialogWidth?: string | number
   dialogContentProps?: DialogContentProps
+  preventClickOutside?: boolean
 }
 
 export function LmDialog({
@@ -36,6 +37,7 @@ export function LmDialog({
   dialogWidth,
   dialogHeight,
   dialogContentProps,
+  preventClickOutside,
   ...dialogProps
 }: LmDialogProps) {
   const { width, height } = useWindowDimensions()
@@ -88,6 +90,14 @@ export function LmDialog({
                 width: dialogWidth,
                 height: dialogHeight,
               })}
+          {...(preventClickOutside && {
+            onEscapeKeyDown: (ev) => {
+              ev.preventDefault()
+            },
+            onInteractOutside: (ev) => {
+              ev.preventDefault()
+            },
+          })}
           {...dialogContentProps}
         >
           {(!hideCloseButton || title) && (

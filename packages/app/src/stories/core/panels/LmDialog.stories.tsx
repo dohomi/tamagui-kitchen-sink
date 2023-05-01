@@ -26,7 +26,7 @@ export const Basic: Story = {
   args: {
     title: 'Some Title',
     description: 'This is the description of the Dialog',
-    trigger: <SizableText>Open Dialog</SizableText>,
+    trigger: <Button>Open Dialog</Button>,
     children: <SizableText padding={'$4'}>Dialog content</SizableText>,
   },
 }
@@ -54,7 +54,7 @@ export const FullScreen: Story = {
   args: {
     title: 'Some Title',
     description: 'This is the description of the Dialog',
-    trigger: <SizableText>Open Dialog</SizableText>,
+    trigger: <Button>Open Dialog</Button>,
     children: (
       <LmDialog.Content>
         <SizableText>Dialog content</SizableText>
@@ -66,7 +66,7 @@ export const FullScreen: Story = {
 
 export const OnlyContent: Story = {
   args: {
-    trigger: <SizableText>Open Dialog</SizableText>,
+    trigger: <Button>Open Dialog</Button>,
     children: <SizableText padding={'$4'}>Dialog content</SizableText>,
     hideCloseButton: true,
   },
@@ -74,7 +74,7 @@ export const OnlyContent: Story = {
 
 export const FixedWidthHeight: Story = {
   args: {
-    trigger: <SizableText>Open Dialog</SizableText>,
+    trigger: <Button>Open Dialog</Button>,
     children: <SizableText padding={'$4'}>Dialog content</SizableText>,
     hideCloseButton: true,
     dialogWidth: 600,
@@ -84,11 +84,13 @@ export const FixedWidthHeight: Story = {
 
 export const PreventClickOutside: Story = {
   args: {
-    trigger: <SizableText>Needs investigation...</SizableText>,
-    children: <SizableText padding={'$4'}>Dialog content</SizableText>,
+    trigger: <Button>Prevent click outside</Button>,
+    title: 'Sticky Dialog',
+    description: 'This dialog cannot be closed by clicking outside of it or hitting ESC button',
     hideCloseButton: true,
     dialogWidth: 600,
     dialogHeight: 400,
+    preventClickOutside: true,
   },
 }
 

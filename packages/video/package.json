@@ -1,7 +1,7 @@
 {
   "name": "@tamagui-extras/video",
   "license": "MIT",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Dominic Garms",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",
@@ -43,13 +43,13 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "tamagui": "1.20.5"
+    "tamagui": "1.21.4"
   },
   "devDependencies": {
-    "@tamagui/build": "1.20.5",
+    "@tamagui/build": "1.21.4",
     "react": "^18.2.0",
     "react-native": "^0.71.6",
-    "tamagui": "1.20.5"
+    "tamagui": "1.21.4"
   },
   "publishConfig": {
     "access": "public"

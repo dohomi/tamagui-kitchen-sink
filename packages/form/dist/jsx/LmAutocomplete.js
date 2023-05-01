@@ -1,4 +1,13 @@
-import { Button, Input, ListItem, Popover, Sheet, XGroup, XStack } from "tamagui";
+import {
+  Button,
+  Input,
+  ListItem,
+  ScrollView,
+  XGroup,
+  XStack,
+  YGroup,
+  YStack
+} from "tamagui";
 import { useDeferredValue, useEffect, useId, useRef, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
 import {
@@ -110,8 +119,9 @@ function LmAutocompleteInputContent({
   const [searchTerm, setSearchTerm] = useState();
   const deferredTerm = useDeferredValue(searchTerm);
   const filteredOptions = deferredTerm?.length ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options;
+  const showSearch = !disableSearch || allowNew;
   return <>{Platform.OS === "web" ? <>
-    {(!disableSearch || allowNew) && <XStack padding="$4" width="100%"><Input
+    {showSearch && <XStack padding="$4" width="100%"><Input
       theme={theme}
       placeholder={placeholderSearch}
       width="100%"
@@ -119,9 +129,12 @@ function LmAutocompleteInputContent({
         setSearchTerm(text.toLowerCase());
       }}
     /></XStack>}
-    <Popover.ScrollView
+    <ScrollView
       keyboardShouldPersistTaps="always"
-      style={{ maxHeight: 300, width: "100%" }}
+      maxHeight={300}
+      width="100%"
+      marginTop={!showSearch ? "$4" : void 0}
+      marginBottom="$4"
     >
       <LmAutocompleteList
         options={filteredOptions}
@@ -133,9 +146,9 @@ function LmAutocompleteInputContent({
         chromeless
         icon={<ListPlusRegular />}
       >{deferredTerm}</Button></XStack>}
-    </Popover.ScrollView>
-  </> : <>
-    {(!disableSearch || allowNew) && <XStack padding="$4" width="100%"><Input
+    </ScrollView>
+  </> : <YStack>
+    {showSearch && <XStack padding="$4" width="100%"><Input
       theme={theme}
       placeholder={placeholderSearch}
       width="100%"
@@ -143,24 +156,23 @@ function LmAutocompleteInputContent({
         setSearchTerm(text.toLowerCase());
       }}
     /></XStack>}
-    <Sheet.ScrollView><LmAutocompleteList
+    <ScrollView><LmAutocompleteList
       options={filteredOptions}
       onChangeSelection={onChangeSelection}
       isSelected={isSelected}
-    /></Sheet.ScrollView>
+    /></ScrollView>
     {allowNew && !filteredOptions?.length && deferredTerm && <XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<ListPlusRegular />}>{deferredTerm}</Button></XStack>}
-  </>}</>;
+  </YStack>}</>;
 }
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
-  return <>{options.map((item, i) => {
-    return <ListItem
+  return <YGroup borderRadius={0}>{options.map((item, i) => {
+    return <YGroup.Item key={item.value}><ListItem
       hoverTheme
-      key={item.value}
       icon={isSelected(item) ? <CheckSquareRegular /> : <SquareRegular />}
       title={item.label}
       onPress={() => onChangeSelection(item)}
-    />;
-  })}</>;
+    /></YGroup.Item>;
+  })}</YGroup>;
 }
 export {
   LmAutocomplete

@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.2.1
+
+### Patch Changes
+
+- Add preventClickOutside to <Dialog/> and improve style of Autocomplete
+
 ## 1.2.0
 
 ### Minor Changes

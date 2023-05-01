@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.1.2
+
+### Patch Changes
+
+- Add preventClickOutside to <Dialog/> and improve style of Autocomplete
+
 ## 1.1.1
 
 ### Patch Changes

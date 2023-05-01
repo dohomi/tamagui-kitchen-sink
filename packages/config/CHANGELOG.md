@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.0.3
+
+### Patch Changes
+
+- Add preventClickOutside to <Dialog/> and improve style of Autocomplete
+
 ## 1.0.2
 
 ### Patch Changes
