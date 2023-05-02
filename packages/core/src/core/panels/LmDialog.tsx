@@ -13,7 +13,7 @@ import { useWindowDimensions } from 'react-native'
 import { LmDialogActions, LmDialogHeader } from './LmDialogActions'
 import { LmDialogContent } from './LmDialogContent'
 
-type LmDialogProps = DialogProps & {
+export type LmDialogProps = DialogProps & {
   trigger?: ReactNode
   title?: string
   description?: string

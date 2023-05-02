@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.1.3
+
+### Patch Changes
+
+- Export missing LmDialogProps
+
 ## 1.1.2
 
 ### Patch Changes

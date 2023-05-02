@@ -13,7 +13,7 @@
     "sb:vite": "cd apps/vite && yarn storybook",
     "sb:native": "cd apps/storybook-react-native && yarn start",
     "sb": "cd apps/storybook-react && yarn sb",
-    "sb:build": "cd apps/storybook-react && yarn build && yarn serve-sb",
+    "build:sb": "cd apps/storybook-react && yarn build && yarn serve-sb",
     "web:prod": "turbo run build --filter=next-app && turbo run start --filter=next-app",
     "build": "turbo run build --filter=app^...",
     "watch": "turbo run watch --filter=app^...",

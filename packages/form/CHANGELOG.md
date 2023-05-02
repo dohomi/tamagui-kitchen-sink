@@ -1,5 +1,12 @@
 # @tamagui-extras/form
 
+## 1.1.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.1.3
+
 ## 1.1.2
 
 ### Patch Changes
