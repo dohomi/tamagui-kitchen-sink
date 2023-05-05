@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.1.4
+
+### Patch Changes
+
+- Upgrade Tamagui and introduce a fullWidth prop to LmDatepicker to align form designs
+
 ## 1.1.3
 
 ### Patch Changes

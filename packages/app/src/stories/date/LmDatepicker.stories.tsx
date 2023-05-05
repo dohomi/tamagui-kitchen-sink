@@ -23,6 +23,13 @@ export const SinglePreselect: Story = {
   },
 }
 
+export const FullWidth: Story = {
+  args: {
+    label: 'Full width',
+    fullWidth: true,
+  },
+}
+
 export const RangePicker: Story = {
   args: {
     label: 'Pick a range',
@@ -36,6 +43,14 @@ export const RangePickerPreselect: Story = {
     label: 'Range preselected',
     startDate: new Date('2022-03-01'),
     endDate: new Date('2022-03-15'),
+  },
+}
+
+export const RangePickerFullWidth: Story = {
+  args: {
+    label: 'Pick a range',
+    isRangePicker: true,
+    fullWidth: true,
   },
 }
 

@@ -1,5 +1,14 @@
 # @tamagui-extras/rich-text
 
+## 1.1.4
+
+### Patch Changes
+
+- Upgrade Tamagui and introduce a fullWidth prop to LmDatepicker to align form designs
+- Updated dependencies
+  - @tamagui-extras/core@1.1.4
+  - @tamagui-extras/form@1.1.4
+
 ## 1.1.3
 
 ### Patch Changes

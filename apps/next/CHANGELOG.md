@@ -1,5 +1,13 @@
 # next-app
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/config@1.0.4
+  - app@0.0.10
+
 ## 0.1.2
 
 ### Patch Changes

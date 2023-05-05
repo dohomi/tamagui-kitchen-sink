@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.0.4
+
+### Patch Changes
+
+- Upgrade Tamagui and introduce a fullWidth prop to LmDatepicker to align form designs
+
 ## 1.0.3
 
 ### Patch Changes

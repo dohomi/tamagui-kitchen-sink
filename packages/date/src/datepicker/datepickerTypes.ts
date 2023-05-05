@@ -9,4 +9,5 @@ export type LmDatepickerProps = LmFormContainerBaseTypes & {
   isRangePicker?: boolean
   onChange?: (data: OnDatesChangeProps) => void
   labelFunctions?: Pick<UseMonthProps, 'dayLabelFormat' | 'weekdayLabelFormat' | 'monthLabelFormat'>
+  fullWidth?: boolean
 }

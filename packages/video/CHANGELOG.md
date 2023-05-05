@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.2.2
+
+### Patch Changes
+
+- Upgrade Tamagui and introduce a fullWidth prop to LmDatepicker to align form designs
+
 ## 1.2.1
 
 ### Patch Changes

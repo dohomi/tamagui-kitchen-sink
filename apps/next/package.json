@@ -1,6 +1,6 @@
 {
   "name": "next-app",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,8 +10,8 @@
     "check-types": "tsc --noemit"
   },
   "dependencies": {
-    "@tamagui-extras/config": "1.0.3",
-    "@tamagui/next-theme": "1.21.4",
+    "@tamagui-extras/config": "1.0.4",
+    "@tamagui/next-theme": "1.23.0",
     "app": "*",
     "next": "13.2.4",
     "next-i18next": "^13.2.2",
@@ -20,11 +20,11 @@
     "react-dom": "^18.2.0",
     "react-native": "^0.71.6",
     "react-native-web": "^0.18.12",
-    "react-native-web-lite": "1.21.4"
+    "react-native-web-lite": "1.23.0"
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.14",
-    "@tamagui/next-plugin": "1.21.4",
+    "@tamagui/next-plugin": "1.23.0",
     "@types/node": "^18.6.4",
     "eslint-config-next": "^13.2.4",
     "file-loader": "^6.2.0",

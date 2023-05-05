@@ -29,6 +29,7 @@ export function LmDatepicker({
   label,
   labelProps,
   labelInline,
+  fullWidth,
 }: LmDatepickerProps) {
   const id = useId()
   const { open, onOpenChange } = usePopoverState(false)
@@ -73,16 +74,26 @@ export function LmDatepicker({
         label={label}
         labelInline={labelInline}
         helperText={helperText}
+        fullWidth={fullWidth}
       >
         <LmPopover
           isBouncy={true}
           hideArrow
           trigger={
-            <XStack space width={Platform.OS === 'web' ? 'fit-content' : undefined}>
-              <XGroup>
+            <XStack
+              space
+              {...(fullWidth
+                ? {
+                    flexGrow: 1,
+                  }
+                : {
+                    width: Platform.OS === 'web' ? '100%' : undefined,
+                  })}
+            >
+              <XGroup flexGrow={fullWidth ? 1 : undefined}>
                 <XGroup.Item>
                   <Input
-                    width={'$12'}
+                    width={'100%'}
                     value={state.startDate ? getLocaleDate({ date: state.startDate }) : ''}
                   ></Input>
                 </XGroup.Item>
@@ -91,10 +102,10 @@ export function LmDatepicker({
                 </XGroup.Item>
               </XGroup>
               {isRangePicker && (
-                <XGroup>
+                <XGroup flexGrow={fullWidth ? 1 : undefined}>
                   <XGroup.Item>
                     <Input
-                      width={'$12'}
+                      width={'100%'}
                       value={state.endDate ? getLocaleDate({ date: state.endDate }) : ''}
                     />
                   </XGroup.Item>
