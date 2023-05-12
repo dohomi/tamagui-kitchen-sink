@@ -8,7 +8,7 @@
     "sb": "TAMAGUI_TARGET=web storybook dev -p 6006 -s ./public",
     "chromatic": "npx chromatic --project-token=aa4fa9ec8af5",
     "check-types": "tsc --noemit",
-    "serve-sb": "npx serve ./dist"
+    "serve-sb": "npx serve ./public-storybook"
   },
   "dependencies": {
     "@tamagui-extras/config": "1.0.5",
