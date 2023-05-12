@@ -39,7 +39,7 @@ export declare const datepickerContextDefaultValue: {
 };
 declare const DatepickerContext: import("react").Context<DatepickerContext>;
 export type LmDatepickerProviderProps = PropsWithChildren<DatepickerContext>;
-export declare const LmDatepickerProvider: ({ children, ...value }: LmDatepickerProviderProps) => JSX.Element;
+export declare const LmDatepickerProvider: ({ children, ...value }: LmDatepickerProviderProps) => import("react/jsx-runtime").JSX.Element;
 export declare const useDatepickerContext: () => DatepickerContext;
 export {};
 //# sourceMappingURL=DatepickerProvider.d.ts.map

@@ -4,5 +4,5 @@ export type LmFormRhfProviderProps<T extends FieldValues = FieldValues> = UseFor
     children: ((context: UseFormReturn<T>) => ReactNode) | ReactNode;
     forceFormProvider?: boolean;
 };
-export declare function LmFormRhfProvider<T extends FieldValues = FieldValues>({ children, forceFormProvider, ...formProps }: LmFormRhfProviderProps<T>): JSX.Element;
+export declare function LmFormRhfProvider<T extends FieldValues = FieldValues>({ children, forceFormProvider, ...formProps }: LmFormRhfProviderProps<T>): import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=LmFormRhfProvider.d.ts.map

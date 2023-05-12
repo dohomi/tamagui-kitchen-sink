@@ -1,5 +1,4 @@
-/// <reference types="react" />
 import { LmRichTextProps } from './richTextTypes';
 import './proseMirror.css';
-export declare function LmRichText({ containerProps, value, onChange, options, }: LmRichTextProps): JSX.Element;
+export declare function LmRichText({ containerProps, value, onChange, options, }: LmRichTextProps): import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=LmRichText.d.ts.map

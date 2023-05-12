@@ -1649,7 +1649,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/cli@npm:^2.26.1":
+"@changesets/cli@npm:2.26.1":
   version: 2.26.1
   resolution: "@changesets/cli@npm:2.26.1"
   dependencies:
@@ -2068,27 +2068,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/eslintrc@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "@eslint/eslintrc@npm:2.0.2"
+"@eslint/eslintrc@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "@eslint/eslintrc@npm:2.0.3"
   dependencies:
     ajv: ^6.12.4
     debug: ^4.3.2
-    espree: ^9.5.1
+    espree: ^9.5.2
     globals: ^13.19.0
     ignore: ^5.2.0
     import-fresh: ^3.2.1
     js-yaml: ^4.1.0
     minimatch: ^3.1.2
     strip-json-comments: ^3.1.1
-  checksum: cfcf5e12c7b2c4476482e7f12434e76eae16fcd163ee627309adb10b761e5caa4a4e52ed7be464423320ff3d11eca5b50de5bf8be3e25834222470835dd5c801
+  checksum: ddc51f25f8524d8231db9c9bf03177e503d941a332e8d5ce3b10b09241be4d5584a378a529a27a527586bfbccf3031ae539eb891352033c340b012b4d0c81d92
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:8.39.0":
-  version: 8.39.0
-  resolution: "@eslint/js@npm:8.39.0"
-  checksum: 63fe36e2bfb5ff5705d1c1a8ccecd8eb2f81d9af239713489e767b0e398759c0177fcc75ad62581d02942f2776903a8496d5fae48dc2d883dff1b96fcb19e9e2
+"@eslint/js@npm:8.40.0":
+  version: 8.40.0
+  resolution: "@eslint/js@npm:8.40.0"
+  checksum: e84936b8ebd1c8fd90e860182e95d1404006da4cbca722b14950b298aeeca102b080aa9b62c8e69f90824ec54e19f1ba79b239046223624d1414ee82e8e628ac
   languageName: node
   linkType: hard
 
@@ -3257,7 +3257,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@manypkg/cli@npm:^0.20.0":
+"@manypkg/cli@npm:0.20.0":
   version: 0.20.0
   resolution: "@manypkg/cli@npm:0.20.0"
   dependencies:
@@ -5541,7 +5541,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui-extras/config@1.0.4, @tamagui-extras/config@workspace:packages/config":
+"@tamagui-extras/config@1.0.5, @tamagui-extras/config@workspace:packages/config":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/config@workspace:packages/config"
   dependencies:
@@ -5554,11 +5554,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/core@1.1.4, @tamagui-extras/core@workspace:packages/core":
+"@tamagui-extras/core@1.1.5, @tamagui-extras/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/core@workspace:packages/core"
   dependencies:
-    "@tamagui-extras/config": 1.0.4
+    "@tamagui-extras/config": 1.0.5
     "@tamagui/build": 1.27.3
     prettier: ^2.8.7
     react-native: ^0.71.6
@@ -5572,14 +5572,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/date@1.1.4, @tamagui-extras/date@workspace:packages/date":
+"@tamagui-extras/date@1.1.5, @tamagui-extras/date@workspace:packages/date":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/date@workspace:packages/date"
   dependencies:
     "@datepicker-react/hooks": ^2.8.4
     "@react-native-community/datetimepicker": ^7.0.1
-    "@tamagui-extras/core": 1.1.4
-    "@tamagui-extras/form": 1.1.4
+    "@tamagui-extras/core": 1.1.5
+    "@tamagui-extras/form": 1.2.0
     "@tamagui/build": 1.27.3
     react: ^18.2.0
     react-hook-form: ^7.43.9
@@ -5593,7 +5593,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/file@1.1.2, @tamagui-extras/file@workspace:packages/file":
+"@tamagui-extras/file@1.1.3, @tamagui-extras/file@workspace:packages/file":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/file@workspace:packages/file"
   dependencies:
@@ -5609,11 +5609,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/form@1.1.4, @tamagui-extras/form@workspace:packages/form":
+"@tamagui-extras/form@1.2.0, @tamagui-extras/form@workspace:packages/form":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/form@workspace:packages/form"
   dependencies:
-    "@tamagui-extras/core": 1.1.4
+    "@tamagui-extras/core": 1.1.5
     "@tamagui/build": 1.27.3
     react: ^18.2.0
     react-hook-form: ^7.43.9
@@ -5626,7 +5626,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/link@1.1.2, @tamagui-extras/link@workspace:packages/link":
+"@tamagui-extras/link@1.1.3, @tamagui-extras/link@workspace:packages/link":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/link@workspace:packages/link"
   dependencies:
@@ -5643,13 +5643,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/rich-text@1.1.4, @tamagui-extras/rich-text@workspace:packages/rich-text":
+"@tamagui-extras/rich-text@1.1.5, @tamagui-extras/rich-text@workspace:packages/rich-text":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/rich-text@workspace:packages/rich-text"
   dependencies:
     "@siposdani87/expo-rich-text-editor": ^0.9.2
-    "@tamagui-extras/core": 1.1.4
-    "@tamagui-extras/form": 1.1.4
+    "@tamagui-extras/core": 1.1.5
+    "@tamagui-extras/form": 1.2.0
     "@tamagui/build": 1.27.3
     "@tiptap/pm": 2.0.0
     "@tiptap/react": 2.0.0
@@ -5664,7 +5664,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/video@1.2.2, @tamagui-extras/video@workspace:packages/video":
+"@tamagui-extras/video@1.2.3, @tamagui-extras/video@workspace:packages/video":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/video@workspace:packages/video"
   dependencies:
@@ -5680,11 +5680,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/youtube@1.1.4, @tamagui-extras/youtube@workspace:packages/youtube":
+"@tamagui-extras/youtube@1.1.5, @tamagui-extras/youtube@workspace:packages/youtube":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/youtube@workspace:packages/youtube"
   dependencies:
-    "@tamagui-extras/core": 1.1.4
+    "@tamagui-extras/core": 1.1.5
     "@tamagui/build": 1.27.3
     react: ^18.2.0
     react-native: ^0.71.6
@@ -7664,6 +7664,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react@npm:18.2.6":
+  version: 18.2.6
+  resolution: "@types/react@npm:18.2.6"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: dea9d232d8df7ac357367a69dcb557711ab3d5501807ffa77cebeee73d49ee94d095f298e36853c63ed47cce097eee4c7eae2aaa8c02fac3f0171ec1b523a819
+  languageName: node
+  linkType: hard
+
 "@types/responselike@npm:^1.0.0":
   version: 1.0.0
   resolution: "@types/responselike@npm:1.0.0"
@@ -8384,15 +8395,15 @@ __metadata:
     "@storybook/jest": ^0.1.0
     "@storybook/react": ^7.0.10
     "@storybook/testing-library": ^0.1.0
-    "@tamagui-extras/config": 1.0.4
-    "@tamagui-extras/core": 1.1.4
-    "@tamagui-extras/date": 1.1.4
-    "@tamagui-extras/file": 1.1.2
-    "@tamagui-extras/form": 1.1.4
-    "@tamagui-extras/link": 1.1.2
-    "@tamagui-extras/rich-text": 1.1.4
-    "@tamagui-extras/video": 1.2.2
-    "@tamagui-extras/youtube": 1.1.4
+    "@tamagui-extras/config": 1.0.5
+    "@tamagui-extras/core": 1.1.5
+    "@tamagui-extras/date": 1.1.5
+    "@tamagui-extras/file": 1.1.3
+    "@tamagui-extras/form": 1.2.0
+    "@tamagui-extras/link": 1.1.3
+    "@tamagui-extras/rich-text": 1.1.5
+    "@tamagui-extras/video": 1.2.3
+    "@tamagui-extras/youtube": 1.1.5
     react-i18next: ^12.2.1
     react-native-web: ^0.18.12
     solito: ^3.2.5
@@ -11697,21 +11708,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-visitor-keys@npm:^3.3.0, eslint-visitor-keys@npm:^3.4.0":
+"eslint-visitor-keys@npm:^3.3.0":
   version: 3.4.0
   resolution: "eslint-visitor-keys@npm:3.4.0"
   checksum: 33159169462d3989321a1ec1e9aaaf6a24cc403d5d347e9886d1b5bfe18ffa1be73bdc6203143a28a606b142b1af49787f33cff0d6d0813eb5f2e8d2e1a6043c
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.21.0":
-  version: 8.39.0
-  resolution: "eslint@npm:8.39.0"
+"eslint-visitor-keys@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "eslint-visitor-keys@npm:3.4.1"
+  checksum: f05121d868202736b97de7d750847a328fcfa8593b031c95ea89425333db59676ac087fa905eba438d0a3c5769632f828187e0c1a0d271832a2153c1d3661c2c
+  languageName: node
+  linkType: hard
+
+"eslint@npm:8.40.0":
+  version: 8.40.0
+  resolution: "eslint@npm:8.40.0"
   dependencies:
     "@eslint-community/eslint-utils": ^4.2.0
     "@eslint-community/regexpp": ^4.4.0
-    "@eslint/eslintrc": ^2.0.2
-    "@eslint/js": 8.39.0
+    "@eslint/eslintrc": ^2.0.3
+    "@eslint/js": 8.40.0
     "@humanwhocodes/config-array": ^0.11.8
     "@humanwhocodes/module-importer": ^1.0.1
     "@nodelib/fs.walk": ^1.2.8
@@ -11722,8 +11740,8 @@ __metadata:
     doctrine: ^3.0.0
     escape-string-regexp: ^4.0.0
     eslint-scope: ^7.2.0
-    eslint-visitor-keys: ^3.4.0
-    espree: ^9.5.1
+    eslint-visitor-keys: ^3.4.1
+    espree: ^9.5.2
     esquery: ^1.4.2
     esutils: ^2.0.2
     fast-deep-equal: ^3.1.3
@@ -11750,7 +11768,7 @@ __metadata:
     text-table: ^0.2.0
   bin:
     eslint: bin/eslint.js
-  checksum: d7a074ff326e7ea482500dc0427a7d4b0260460f0f812d19b46b1cca681806b67309f23da9d17cd3de8eb74dd3c14cb549c4d58b05b140564d14cc1a391122a0
+  checksum: b79eba37f52f517a420eec99a80ae9f284d2cbe73afc0d4d3d4d5ed1cce0b06f21badc0374bfb7ac239efd2d49a1fd7c6111d6c3d52888521f377ba33de77e61
   languageName: node
   linkType: hard
 
@@ -11761,14 +11779,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"espree@npm:^9.5.1":
-  version: 9.5.1
-  resolution: "espree@npm:9.5.1"
+"espree@npm:^9.5.2":
+  version: 9.5.2
+  resolution: "espree@npm:9.5.2"
   dependencies:
     acorn: ^8.8.0
     acorn-jsx: ^5.3.2
-    eslint-visitor-keys: ^3.4.0
-  checksum: cdf6e43540433d917c4f2ee087c6e987b2063baa85a1d9cdaf51533d78275ebd5910c42154e7baf8e3e89804b386da0a2f7fad2264d8f04420e7506bf87b3b88
+    eslint-visitor-keys: ^3.4.1
+  checksum: 6506289d6eb26471c0b383ee24fee5c8ae9d61ad540be956b3127be5ce3bf687d2ba6538ee5a86769812c7c552a9d8239e8c4d150f9ea056c6d5cbe8399c03c1
   languageName: node
   linkType: hard
 
@@ -11971,7 +11989,7 @@ __metadata:
     "@babel/core": ^7.17.9
     "@babel/runtime": ^7.18.9
     "@expo/metro-config": ^0.3.21
-    "@tamagui-extras/config": 1.0.4
+    "@tamagui-extras/config": 1.0.5
     "@tamagui/babel-plugin": 1.27.3
     "@types/react": ^18.0.21
     app: "*"
@@ -17313,7 +17331,7 @@ __metadata:
   resolution: "next-app@workspace:apps/next"
   dependencies:
     "@fontsource/inter": ^4.5.14
-    "@tamagui-extras/config": 1.0.4
+    "@tamagui-extras/config": 1.0.5
     "@tamagui/next-plugin": 1.27.3
     "@tamagui/next-theme": 1.27.3
     "@types/node": ^18.6.4
@@ -18601,7 +18619,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.7.1, prettier@npm:^2.8.0, prettier@npm:^2.8.7":
+"prettier@npm:2.8.8, prettier@npm:^2.7.1, prettier@npm:^2.8.0, prettier@npm:^2.8.7":
   version: 2.8.8
   resolution: "prettier@npm:2.8.8"
   bin:
@@ -19234,7 +19252,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.2.0":
+"react-dom@npm:18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
   dependencies:
@@ -19469,7 +19487,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-web@npm:^0.18.12":
+"react-native-web@npm:0.18.12":
   version: 0.18.12
   resolution: "react-native-web@npm:0.18.12"
   dependencies:
@@ -19676,7 +19694,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.2.0":
+"react@npm:18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -20459,7 +20477,7 @@ __metadata:
     "@storybook/nextjs": ^7.0.10
     "@storybook/react": ^7.0.10
     "@storybook/testing-library": ^0.1.0
-    "@tamagui-extras/config": 1.0.4
+    "@tamagui-extras/config": 1.0.5
     app: "*"
     i18next: ^22.4.15
     i18next-browser-languagedetector: ^7.0.1
@@ -21598,13 +21616,13 @@ __metadata:
   resolution: "tamagui-monorepo@workspace:."
   dependencies:
     "@babel/runtime": ^7.18.9
-    "@changesets/cli": ^2.26.1
-    "@manypkg/cli": ^0.20.0
-    "@types/react": ^18.0.21
-    eslint: ^8.21.0
-    prettier: ^2.8.7
-    turbo: ^1.9.3
-    typescript: ^5.0.4
+    "@changesets/cli": 2.26.1
+    "@manypkg/cli": 0.20.0
+    "@types/react": 18.2.6
+    eslint: 8.40.0
+    prettier: 2.8.8
+    turbo: 1.9.4
+    typescript: 5.0.4
   languageName: unknown
   linkType: soft
 
@@ -22158,58 +22176,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo-darwin-64@npm:1.9.3":
-  version: 1.9.3
-  resolution: "turbo-darwin-64@npm:1.9.3"
+"turbo-darwin-64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "turbo-darwin-64@npm:1.9.4"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-darwin-arm64@npm:1.9.3":
-  version: 1.9.3
-  resolution: "turbo-darwin-arm64@npm:1.9.3"
+"turbo-darwin-arm64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "turbo-darwin-arm64@npm:1.9.4"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-linux-64@npm:1.9.3":
-  version: 1.9.3
-  resolution: "turbo-linux-64@npm:1.9.3"
+"turbo-linux-64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "turbo-linux-64@npm:1.9.4"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-linux-arm64@npm:1.9.3":
-  version: 1.9.3
-  resolution: "turbo-linux-arm64@npm:1.9.3"
+"turbo-linux-arm64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "turbo-linux-arm64@npm:1.9.4"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo-windows-64@npm:1.9.3":
-  version: 1.9.3
-  resolution: "turbo-windows-64@npm:1.9.3"
+"turbo-windows-64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "turbo-windows-64@npm:1.9.4"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"turbo-windows-arm64@npm:1.9.3":
-  version: 1.9.3
-  resolution: "turbo-windows-arm64@npm:1.9.3"
+"turbo-windows-arm64@npm:1.9.4":
+  version: 1.9.4
+  resolution: "turbo-windows-arm64@npm:1.9.4"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"turbo@npm:^1.9.3":
-  version: 1.9.3
-  resolution: "turbo@npm:1.9.3"
+"turbo@npm:1.9.4":
+  version: 1.9.4
+  resolution: "turbo@npm:1.9.4"
   dependencies:
-    turbo-darwin-64: 1.9.3
-    turbo-darwin-arm64: 1.9.3
-    turbo-linux-64: 1.9.3
-    turbo-linux-arm64: 1.9.3
-    turbo-windows-64: 1.9.3
-    turbo-windows-arm64: 1.9.3
+    turbo-darwin-64: 1.9.4
+    turbo-darwin-arm64: 1.9.4
+    turbo-linux-64: 1.9.4
+    turbo-linux-arm64: 1.9.4
+    turbo-windows-64: 1.9.4
+    turbo-windows-arm64: 1.9.4
   dependenciesMeta:
     turbo-darwin-64:
       optional: true
@@ -22225,7 +22243,7 @@ __metadata:
       optional: true
   bin:
     turbo: bin/turbo
-  checksum: ebf06d3b9b1401a5baabace238cd1e0d8fc1dc062b4f7bd577f644298c555f326d15f331144641c0b43a60ae8058769bcbd9d1660874fa9927ec64b5be8ee9dc
+  checksum: 178488e89e9d3f445dd8e3c1dd972d398aba4be801d6f42e76b7ff018b0be1fb7ce3b37da2c715205b62a56830308d14c67bf3c065dc79633e45beec98af7afa
   languageName: node
   linkType: hard
 
@@ -22361,7 +22379,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.0.4":
+"typescript@npm:5.0.4":
   version: 5.0.4
   resolution: "typescript@npm:5.0.4"
   bin:
@@ -22371,7 +22389,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.0.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>":
   version: 5.0.4
   resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"
   bin:

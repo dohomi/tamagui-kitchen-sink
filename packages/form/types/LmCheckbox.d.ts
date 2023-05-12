@@ -11,5 +11,5 @@ export type LmCheckboxProps = XStackProps & {
     size?: SizeTokens;
     required?: boolean;
 };
-export declare function LmCheckbox({ label, onChange, error, helperText, size, value, required, theme, helperTextProps, checkboxProps, ...stackProps }: LmCheckboxProps): JSX.Element;
+export declare function LmCheckbox({ label, onChange, error, helperText, size, value, required, theme, helperTextProps, checkboxProps, ...stackProps }: LmCheckboxProps): import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=LmCheckbox.d.ts.map

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { UseMonthProps } from '@datepicker-react/hooks';
 export type LmMonthProps = UseMonthProps & {
     onPrevious?: () => void;
@@ -7,5 +6,5 @@ export type LmMonthProps = UseMonthProps & {
     isFirst: boolean;
     isLast: boolean;
 };
-export declare function LmMonth({ onPrevious, onNext, monthsCount, isFirst, isLast, ...props }: LmMonthProps): JSX.Element;
+export declare function LmMonth({ onPrevious, onNext, monthsCount, isFirst, isLast, ...props }: LmMonthProps): import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=LmMonth.d.ts.map
