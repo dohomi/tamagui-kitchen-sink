@@ -1,7 +1,7 @@
 {
   "name": "tamagui-monorepo",
   "private": true,
-  "version": "0.0.11",
+  "version": "0.0.12",
   "license": "MIT",
   "workspaces": [
     "apps/*",
