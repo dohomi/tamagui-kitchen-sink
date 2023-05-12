@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.0.5
+
+### Patch Changes
+
+- Update Tamagui deps. Improve Input component to support rtl for password fields. Improve Checkbox component look and feel and indeterminate state.
+
 ## 1.0.4
 
 ### Patch Changes

@@ -15,6 +15,14 @@ export const Basic = {
   },
 }
 
+export const RightToLeft = {
+  args: {
+    size: '$4',
+    placeholder: 'Placeholder..',
+    direction: 'rtl',
+  },
+}
+
 export const Textarea = {
   args: {
     size: '$4',
@@ -28,6 +36,15 @@ export const Password = {
     size: '$4',
     placeholder: 'Password..',
     isPassword: true,
+  },
+}
+
+export const PasswordRightToLeft = {
+  args: {
+    size: '$4',
+    placeholder: 'Password..',
+    isPassword: true,
+    direction: 'rtl',
   },
 }
 

@@ -1,5 +1,14 @@
 # @tamagui-extras/rich-text
 
+## 1.1.5
+
+### Patch Changes
+
+- Update Tamagui deps. Improve Input component to support rtl for password fields. Improve Checkbox component look and feel and indeterminate state.
+- Updated dependencies
+  - @tamagui-extras/form@1.2.0
+  - @tamagui-extras/core@1.1.5
+
 ## 1.1.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.2.3
+
+### Patch Changes
+
+- Update Tamagui deps. Improve Input component to support rtl for password fields. Improve Checkbox component look and feel and indeterminate state.
+
 ## 1.2.2
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @tamagui-extras/form
 
+## 1.2.0
+
+### Minor Changes
+
+- Update Tamagui deps. Improve Input component to support rtl for password fields. Improve Checkbox component look and feel and indeterminate state.
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.1.5
+
 ## 1.1.4
 
 ### Patch Changes

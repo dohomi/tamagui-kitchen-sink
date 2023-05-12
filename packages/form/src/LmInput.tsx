@@ -78,7 +78,13 @@ export function LmInput({
               top: '50%',
               transform: [{ translateY: -0.5 * 20 }],
               height: 20,
-              right: 15,
+              ...(rest?.direction === 'rtl'
+                ? {
+                    left: 15,
+                  }
+                : {
+                    right: 15,
+                  }),
             }}
             onPress={() => {
               setShow((state) => !state)

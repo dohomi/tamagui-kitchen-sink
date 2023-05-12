@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.1.5
+
+### Patch Changes
+
+- Update Tamagui deps. Improve Input component to support rtl for password fields. Improve Checkbox component look and feel and indeterminate state.
+
 ## 1.1.4
 
 ### Patch Changes

@@ -1,7 +1,7 @@
 {
   "name": "sb-react",
   "private": true,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "scripts": {
     "build": "TAMAGUI_TARGET=web storybook build -s public -o dist",
@@ -11,7 +11,7 @@
     "serve-sb": "npx serve ./dist"
   },
   "dependencies": {
-    "@tamagui-extras/config": "1.0.4",
+    "@tamagui-extras/config": "1.0.5",
     "app": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -20,21 +20,21 @@
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.14",
-    "@storybook/addon-essentials": "^7.0.8",
-    "@storybook/addon-interactions": "^7.0.8",
-    "@storybook/addon-links": "^7.0.8",
+    "@storybook/addon-essentials": "^7.0.10",
+    "@storybook/addon-interactions": "^7.0.10",
+    "@storybook/addon-links": "^7.0.10",
     "@storybook/addon-react-native-web": "^0.0.20",
-    "@storybook/addon-styling": "1.0.6",
-    "@storybook/blocks": "^7.0.8",
+    "@storybook/addon-styling": "1.0.7",
+    "@storybook/blocks": "^7.0.10",
     "@storybook/jest": "^0.1.0",
-    "@storybook/nextjs": "^7.0.8",
-    "@storybook/react": "^7.0.8",
+    "@storybook/nextjs": "^7.0.10",
+    "@storybook/react": "^7.0.10",
     "@storybook/testing-library": "^0.1.0",
     "i18next": "^22.4.15",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.2.0",
     "react-i18next": "^12.2.1",
-    "storybook": "^7.0.8",
+    "storybook": "^7.0.10",
     "storybook-react-i18next": "^2.0.1",
     "typescript": "^5.0.4"
   }

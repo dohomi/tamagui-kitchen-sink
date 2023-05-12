@@ -26,6 +26,22 @@ export const Blue = {
   },
 }
 
+export const Checked = {
+  args: {
+    label: 'Checked',
+    value: true,
+  },
+}
+
+export const Indeterminate = {
+  args: {
+    label: 'Indeterminate',
+    checkboxProps: {
+      checked: 'indeterminate',
+    },
+  },
+}
+
 export const Sizes = () => (
   <YStack space>
     <LmCheckbox label={'size default'} />
