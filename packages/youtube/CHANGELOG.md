@@ -1,5 +1,13 @@
 # @tamagui-extras/youtube
 
+## 1.1.6
+
+### Patch Changes
+
+- Upgrade Tamagui and minor bugfix release
+- Updated dependencies
+  - @tamagui-extras/core@1.1.6
+
 ## 1.1.5
 
 ### Patch Changes

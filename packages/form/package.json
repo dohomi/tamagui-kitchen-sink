@@ -1,7 +1,7 @@
 {
   "name": "@tamagui-extras/form",
   "license": "MIT",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Dominic Garms",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",
@@ -38,7 +38,7 @@
     "npmPublish": "npm publish"
   },
   "dependencies": {
-    "@tamagui-extras/core": "1.1.5",
+    "@tamagui-extras/core": "1.1.6",
     "react-hook-form": "^7.43.9"
   },
   "peerDependencies": {

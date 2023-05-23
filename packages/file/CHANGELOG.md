@@ -1,5 +1,11 @@
 # @tamagui-extras/file
 
+## 1.1.4
+
+### Patch Changes
+
+- Upgrade Tamagui and minor bugfix release
+
 ## 1.1.3
 
 ### Patch Changes

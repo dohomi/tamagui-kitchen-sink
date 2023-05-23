@@ -1,5 +1,17 @@
 # @tamagui-extras/date
 
+## 1.2.0
+
+### Minor Changes
+
+- Upgrade Tamagui and minor bugfix release
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.1.6
+  - @tamagui-extras/form@1.2.1
+
 ## 1.1.5
 
 ### Patch Changes

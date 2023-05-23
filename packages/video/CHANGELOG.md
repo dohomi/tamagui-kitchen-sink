@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.2.4
+
+### Patch Changes
+
+- Upgrade Tamagui and minor bugfix release
+
 ## 1.2.3
 
 ### Patch Changes
