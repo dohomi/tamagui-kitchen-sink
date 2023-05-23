@@ -6,13 +6,13 @@ import {
   useDatepicker,
 } from '@datepicker-react/hooks'
 import { useId, useState } from 'react'
-import { LmMonth } from './LmMonth'
-import { Button, Input, XGroup, XStack } from 'tamagui'
-import { CalendarRegular, LmPopover, usePopoverState } from '@tamagui-extras/core'
+import { Input, useMedia, XGroup, XStack } from 'tamagui'
+import { usePopoverState } from '@tamagui-extras/core'
 import { getLocaleDate } from '../dateHelper'
 import { LmFormFieldContainer } from '@tamagui-extras/form'
 import { Platform } from 'react-native'
-import { LmDatepickerProps } from './datepickerTypes' // change language see: https://github.com/tomgreenwood1/react-datepicker/blob/master/packages/styled/src/components/DateRangeInput/DateRangeInput.stories.tsx#L228
+import { LmDatepickerProps } from './datepickerTypes'
+import { LmDatepickerPopover } from './LmDatepickerPopover' // change language see: https://github.com/tomgreenwood1/react-datepicker/blob/master/packages/styled/src/components/DateRangeInput/DateRangeInput.stories.tsx#L228
 
 // change language see: https://github.com/tomgreenwood1/react-datepicker/blob/master/packages/styled/src/components/DateRangeInput/DateRangeInput.stories.tsx#L228
 
@@ -30,15 +30,18 @@ export function LmDatepicker({
   labelProps,
   labelInline,
   fullWidth,
+  inputProps,
+  buttonProps,
 }: LmDatepickerProps) {
   const id = useId()
-  const { open, onOpenChange } = usePopoverState(false)
+  const media = useMedia()
+  const popoverState = usePopoverState(false)
   const [state, setState] = useState<OnDatesChangeProps>({
     startDate: startDate,
     endDate: endDate,
     focusedInput: START_DATE,
   })
-  const monthsCount: number = isRangePicker ? numberOfMonths ?? 2 : 1
+  const monthsCount: number = isRangePicker ? (media.xs ? 1 : numberOfMonths ?? 2) : 1
 
   const { activeMonths, firstDayOfWeek, ...context } = useDatepicker({
     startDate: state.startDate,
@@ -54,7 +57,7 @@ export function LmDatepicker({
         onChange(data)
       }
       if (!isRangePicker) {
-        onOpenChange(false)
+        popoverState.onOpenChange(false)
       }
     },
     numberOfMonths: monthsCount,
@@ -64,6 +67,11 @@ export function LmDatepicker({
     }),
   })
 
+  const getInputValue = isRangePicker
+    ? `${getLocaleDate({ date: state.startDate })}${
+        state.endDate ? ' - ' + getLocaleDate({ date: state.endDate }) : ''
+      }`
+    : getLocaleDate({ date: state.startDate })
   return (
     <LmDatepickerProvider {...context}>
       <LmFormFieldContainer
@@ -76,69 +84,38 @@ export function LmDatepicker({
         helperText={helperText}
         fullWidth={fullWidth}
       >
-        <LmPopover
-          isBouncy={true}
-          hideArrow
-          trigger={
-            <XStack
-              space
-              {...(fullWidth
-                ? {
-                    flexGrow: 1,
-                  }
-                : {
-                    width: Platform.OS === 'web' ? '100%' : undefined,
-                  })}
-            >
-              <XGroup flexGrow={fullWidth ? 1 : undefined}>
-                <XGroup.Item>
-                  <Input
-                    width={'100%'}
-                    value={state.startDate ? getLocaleDate({ date: state.startDate }) : ''}
-                  ></Input>
-                </XGroup.Item>
-                <XGroup.Item>
-                  <Button icon={<CalendarRegular />} />
-                </XGroup.Item>
-              </XGroup>
-              {isRangePicker && (
-                <XGroup flexGrow={fullWidth ? 1 : undefined}>
-                  <XGroup.Item>
-                    <Input
-                      width={'100%'}
-                      value={state.endDate ? getLocaleDate({ date: state.endDate }) : ''}
-                    />
-                  </XGroup.Item>
-                  <XGroup.Item>
-                    <Button onPress={() => onOpenChange(true)} icon={<CalendarRegular />} />
-                  </XGroup.Item>
-                </XGroup>
-              )}
-            </XStack>
-          }
-          open={open}
-          onOpenChange={onOpenChange}
-          contentProps={{
-            padding: '$4',
-            elevation: '$5',
-          }}
+        <XStack
+          space
+          {...(fullWidth
+            ? {
+                flexGrow: 1,
+              }
+            : {
+                width: Platform.OS === 'web' ? '100%' : undefined,
+              })}
         >
-          <XStack space alignItems={'flex-start'}>
-            {open &&
-              activeMonths.map((month, index) => (
-                <LmMonth
-                  key={`${month.year}-${month.month}`}
-                  year={month.year}
-                  month={month.month}
-                  monthsCount={monthsCount}
-                  firstDayOfWeek={firstDayOfWeek}
-                  isFirst={monthsCount === 0 || index === 0}
-                  isLast={monthsCount === 0 || index === monthsCount - 1}
-                  {...labelFunctions}
-                />
-              ))}
-          </XStack>
-        </LmPopover>
+          <XGroup flexGrow={fullWidth ? 1 : undefined} alignItems={'center'} flexDirection={'row'}>
+            <XGroup.Item>
+              <Input
+                width={'100%'}
+                minWidth={isRangePicker ? '$16' : undefined}
+                value={getInputValue}
+                onPressIn={() => popoverState.onOpenChange(true)}
+                {...inputProps}
+              ></Input>
+            </XGroup.Item>
+            <XGroup.Item>
+              <LmDatepickerPopover
+                activeMonths={activeMonths}
+                monthsCount={monthsCount}
+                firstDayOfWeek={firstDayOfWeek}
+                labelFunctions={labelFunctions}
+                buttonProps={buttonProps}
+                {...popoverState}
+              />
+            </XGroup.Item>
+          </XGroup>
+        </XStack>
       </LmFormFieldContainer>
     </LmDatepickerProvider>
   )

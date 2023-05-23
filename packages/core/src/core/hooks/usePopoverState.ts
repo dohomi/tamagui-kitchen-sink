@@ -1,6 +1,11 @@
-import { useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 
-export const usePopoverState = (defaultOpen?: boolean) => {
+export type UsePopoverState = {
+  open: boolean
+  onOpenChange: Dispatch<SetStateAction<boolean>>
+  defaultOpen: boolean
+}
+export const usePopoverState = (defaultOpen?: boolean): UsePopoverState => {
   const [open, onOpenChange] = useState<boolean>(!!defaultOpen)
   return {
     open,

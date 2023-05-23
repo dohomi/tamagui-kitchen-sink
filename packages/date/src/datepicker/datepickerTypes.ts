@@ -1,5 +1,6 @@
 import { LmFormContainerBaseTypes } from '@tamagui-extras/form'
 import { OnDatesChangeProps, UseMonthProps } from '@datepicker-react/hooks'
+import { ButtonProps, InputProps } from 'tamagui'
 
 export type LmDatepickerProps = LmFormContainerBaseTypes & {
   startDate?: Date | null
@@ -10,4 +11,6 @@ export type LmDatepickerProps = LmFormContainerBaseTypes & {
   onChange?: (data: OnDatesChangeProps) => void
   labelFunctions?: Pick<UseMonthProps, 'dayLabelFormat' | 'weekdayLabelFormat' | 'monthLabelFormat'>
   fullWidth?: boolean
+  inputProps?: InputProps
+  buttonProps?: ButtonProps
 }

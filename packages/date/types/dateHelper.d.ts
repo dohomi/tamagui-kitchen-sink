@@ -7,8 +7,8 @@ export declare const getMonthOptions: (props?: MonthNamesProps) => {
     value: number;
     label: string;
 }[];
-export declare const getLocaleDate: ({ localeName, options, date }: MonthNamesProps & {
-    date: Date;
+export declare const getLocaleDate: ({ localeName, options, date, }: MonthNamesProps & {
+    date?: Date | null | undefined;
 }) => string;
 export {};
 //# sourceMappingURL=dateHelper.d.ts.map

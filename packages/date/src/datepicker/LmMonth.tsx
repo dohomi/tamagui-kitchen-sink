@@ -45,7 +45,7 @@ export function LmMonth({
   const { year } = props
 
   return (
-    <Stack width={250}>
+    <Stack width={250} $xs={{ width: '100%' }}>
       <XStack space={'$2'} justifyContent={'center'} alignItems={'center'}>
         <Button
           size={'$2'}
@@ -105,7 +105,7 @@ export function LmMonth({
           chromeless
         />
       </XStack>
-      <XStack flex={7} width={250}>
+      <XStack flex={7} width={250} $xs={{ width: '100%' }}>
         {weekdayLabels.map((dayLabel) => (
           <SizableText
             width={`${100 / 7}%`}
@@ -117,7 +117,7 @@ export function LmMonth({
           </SizableText>
         ))}
       </XStack>
-      <XStack display={'flex'} flexWrap={'wrap'} width={250}>
+      <XStack display={'flex'} flexWrap={'wrap'} width={250} $xs={{ width: '100%' }}>
         {days.map((day, index) => {
           if (typeof day === 'object') {
             return <LmDay dayLabel={day.dayLabel} date={day.date} key={day.date.toString()} />
