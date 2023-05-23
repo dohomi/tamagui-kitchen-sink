@@ -23,9 +23,9 @@
     "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader && manypkg upgrade react-native-web-lite && manypkg upgrade tamagui-phosphor-icons",
     "upgrade:rnw": "manypkg upgrade react-native-web",
     "upgrade:solito": "manypkg upgrade solito",
-    "upgrade:next": "manypkg upgrade next && manypkg upgrade eslint-config-next",
-    "upgrade:sb": "manypkg upgrade @storybook && manypkg upgrade storybook",
-    "upgrade:ts": "manypkg upgrade typescript",
+    "upgrade:next": "yarn up next@latest eslint-config-next@latest",
+    "upgrade:sb": "yarn up '@storybook/*'@latest storybook@latest",
+    "upgrade:ts": "manypkg upgrade typescript@latest",
     "eas:dev:ios": "cd apps/expo && yarn eas:dev:ios",
     "doctor": "yarn turbo run doc",
     "tests": "yarn build && cd apps/tests && yarn test",
@@ -58,7 +58,7 @@
     "@types/react": "18.2.6",
     "eslint": "8.40.0",
     "prettier": "2.8.8",
-    "turbo": "1.9.4",
+    "turbo": "1.9.8",
     "typescript": "5.0.4"
   },
   "packageManager": "yarn@3.5.0"

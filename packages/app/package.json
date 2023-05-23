@@ -21,13 +21,13 @@
     "react-native-safe-area-context": "^4.5.2",
     "react-native-web": "^0.18.12",
     "solito": "^3.2.5",
-    "tamagui": "1.27.3",
+    "tamagui": "1.29.3",
     "zustand": "^4.3.3"
   },
   "devDependencies": {
-    "@storybook/jest": "^0.1.0",
-    "@storybook/react": "^7.0.10",
-    "@storybook/testing-library": "^0.1.0"
+    "@storybook/jest": "latest",
+    "@storybook/react": "latest",
+    "@storybook/testing-library": "latest"
   },
   "sideEffects": false
 }

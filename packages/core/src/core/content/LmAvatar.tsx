@@ -1,13 +1,14 @@
-import { Avatar, AvatarProps, Text, TextProps } from 'tamagui'
+import { Avatar, AvatarProps, ImageProps, Paragraph, ParagraphProps } from 'tamagui'
 
 export type LmAvatarProps = AvatarProps & {
   color?: AvatarProps['backgroundColor']
   src?: string
   letter?: string
-  letterProps?: TextProps
+  letterProps?: ParagraphProps
+  imageProps?: ImageProps
 }
 
-export function LmAvatar({ color, src, letter, letterProps, ...rest }: LmAvatarProps) {
+export function LmAvatar({ color, src, letter, letterProps, imageProps, ...rest }: LmAvatarProps) {
   return (
     <Avatar
       circular={rest.circular ?? true}
@@ -16,13 +17,18 @@ export function LmAvatar({ color, src, letter, letterProps, ...rest }: LmAvatarP
     >
       {src ? (
         <>
-          <Avatar.Image src={{ uri: src }} />
+          <Avatar.Image source={{ uri: src }} {...imageProps} />
           <Avatar.Fallback backgroundColor={color || '$gray10'} />
         </>
       ) : (
-        <Text fontSize={'$8'} color={'white'} backgroundColor={'$gray10'} {...letterProps}>
+        <Paragraph
+          fontSize={rest.size}
+          color={'white'}
+          backgroundColor={'$gray10'}
+          {...letterProps}
+        >
           {letter}
-        </Text>
+        </Paragraph>
       )}
     </Avatar>
   )
