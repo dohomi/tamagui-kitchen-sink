@@ -1,5 +1,14 @@
 # @tamagui-extras/rich-text
 
+## 1.1.7
+
+### Patch Changes
+
+- Update to latest version and forward Popover props on Datepicker component
+- Updated dependencies
+  - @tamagui-extras/core@1.1.7
+  - @tamagui-extras/form@1.2.2
+
 ## 1.1.6
 
 ### Patch Changes

@@ -1,12 +1,10 @@
-import { CalendarRegular, LmPopover } from '@tamagui-extras/core'
+import { CalendarRegular, LmPopover, LmPopoverProps } from '@tamagui-extras/core'
 import { LmMonth, LmMonthProps } from './LmMonth'
 import { MonthType } from '@datepicker-react/hooks'
 import { LmDatepickerProps } from './datepickerTypes'
 import { Button, ButtonProps, XStack } from 'tamagui'
 
-type LmDatepickerPopoverProps = {
-  open: boolean
-  onOpenChange: (open: boolean) => void
+type LmDatepickerPopoverProps = Omit<LmPopoverProps, 'trigger'> & {
   activeMonths: MonthType[]
   monthsCount: number
   firstDayOfWeek: LmMonthProps['firstDayOfWeek']
@@ -19,18 +17,17 @@ export function LmDatepickerPopover({
   monthsCount,
   firstDayOfWeek,
   labelFunctions,
-  open,
-  onOpenChange,
   buttonProps,
+  ...popoverProps
 }: LmDatepickerPopoverProps) {
   return (
     <LmPopover
-      open={open}
-      onOpenChange={onOpenChange}
       isBouncy={true}
+      {...popoverProps}
       contentProps={{
         padding: '$4',
         elevation: '$5',
+        ...popoverProps?.contentProps,
       }}
       trigger={
         <Button

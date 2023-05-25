@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.2.5
+
+### Patch Changes
+
+- Update to latest version and forward Popover props on Datepicker component
+
 ## 1.2.4
 
 ### Patch Changes

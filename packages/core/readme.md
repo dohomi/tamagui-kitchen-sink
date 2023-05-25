@@ -1,37 +1,32 @@
-# Tamagui + Solito + Next + Expo Kitchen-Sink
+# @tamagui-extras/core Installation and configuration
 
-This repo is a mono-repo where `tamagui-extras` will be developed to add missing components and functionalities into the
-UI framework `tamagui`
+This package contains components which are not part of the core tamagui framework. You find the installation for
+Tamagui [here](https://tamagui.dev/docs/intro/installation)
 
-## 🔦 About
+### Installation of @tamagui/core
 
-This monorepo is a kitchen sink for an Expo + Next.js + Tamagui + Solito + Storybook app.
-
-Many thanks to  [@FernandoTheRojo](https://twitter.com/fernandotherojo) for the Solito starter monorepo which this was
-forked from. Check out
-his [talk about using expo + next together at Next.js Conf 2021](https://www.youtube.com/watch?v=0lnbdRweJtA).
-
-## 📦 tamagui-extras
-
-Fully functional [Demo](https://tamagui-extras.vercel.app/) to see all components in action.
-
-### Installation
-
-```
-# yarn install tamagui tamagui-extras
+```sh
+# yarn add @tamagui-extras/core
 ```
 
-Follow the installation [instructions](https://tamagui.dev/docs/intro/installation) of the tamagui framework.
+### Configuration of NextJS
 
-#### Important NextJS config
+Add `@tamagui-extras/core` to the config section of your `next.config.js` file.
 
-Due to external dependencies`tamagui-extras`utilizes some components which needs to be transpiled before you are able to
-start.
+```js
+withTamagui({
+    config: './tamagui.config.ts',
+    components: ['tamagui', '@tamagui-extras/core'],
+    // the rest of your config
+})
+```
 
-Currently following components must be
-transpiled ([see example](https://github.com/dohomi/tamagui-kitchen-sink/blob/master/apps/next/next.config.js#L16)):
+Important: if you bump into compile issues you might have to add the package also to the `transpileModule` section.
 
-```ts
+Have a look of the NextJS
+config -[see example](https://github.com/dohomi/tamagui-kitchen-sink/blob/master/apps/next/next.config.js#L16)
+
+```js
 require('next-transpile-modules')(
     [
         'solito',
@@ -39,11 +34,8 @@ require('next-transpile-modules')(
         'expo-linking',
         'expo-constants',
         'expo-modules-core',
-        'expo-document-picker',
-        'expo-asset',
-        'expo-av',
-        '@my/config',
-        'tamagui-extras'
+        '@tamagui-extras/core'
+        // the rest of the config
     ]
 )
 ```
@@ -56,36 +48,21 @@ web.
 
 All components are prefixed with `Lm` to have an easy identifier which component belongs to this package.
 
-### Integration of `react-hook-form`
-
-Form components have a trailing `Rhf` component name for an easy integration with `react-hook-form` library.
-
-Wrap any form component with `LmFormRhfProvider` and add a `LmSubmitButtonRhf` to validate and receive all form values.
+### Example
 
 ```js
-import {LmFormRhfProvider, LmInputRhf, LmSliderRhf, LmSubmitButtonRhf} from "tamagui-extras";
+import {LmAlert} from "@tamagui-extras/core";
 import {YStack} from 'tamagui'
 
-function MyForm() {
-    const [mutate, {isLoading}] = useMutation()
+function MyApp() {
     return (
-        <LmFormRhfProvider>
-            <YStack space>
-                <LmInputRhf name={'name'} label="Name"/>
-                <LmSliderRhf name={'slider'} label="Slider"/>
-                <LmSubmitButtonRhf
-                    onSubmit={(formData) => {
-                        mutate(formData)
-                    }}
-                    loading={isLoading}
-                >Submit
-                </LmSubmitButtonRhf>
-            </YStack>
-        </LmFormRhfProvider>
+        <YStack space>
+            <LmAlert text={"My alert message"}/>
+        </YStack>
     )
 }
 ```
 
-#### Links
+### Links
 
-[tamagui](https://tamagui.dev/)
+[Storybook Demo](https://tamagui-extras.vercel.app/?path=/docs/core-content-alert--documentation)

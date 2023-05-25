@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@babel/runtime": "^7.18.9",
-    "@tamagui-extras/config": "1.0.5",
+    "@tamagui-extras/config": "1.0.6",
     "app": "*",
     "babel-plugin-module-resolver": "^4.1.0",
     "burnt": "^0.10.0",
@@ -25,13 +25,13 @@
     "react-native-safe-area-context": "^4.4.1",
     "react-native-screens": "^3.20.0",
     "react-native-svg": "^13.4.0",
-    "react-native-web": "^0.18.12",
+    "react-native-web": "0.18.12",
     "react-native-webview": "11.26.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@expo/metro-config": "^0.3.21",
-    "@tamagui/babel-plugin": "1.29.3",
+    "@tamagui/babel-plugin": "^1.29.6",
     "@types/react": "^18.0.21",
     "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "typescript": "^5.0.4"
@@ -47,7 +47,7 @@
     "check-types": "tsc --noemit"
   },
   "main": "index.js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": true,
   "name": "expo-app"
 }

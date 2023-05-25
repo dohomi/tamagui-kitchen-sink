@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.0.6
+
+### Patch Changes
+
+- Update to latest version and forward Popover props on Datepicker component
+
 ## 1.0.5
 
 ### Patch Changes

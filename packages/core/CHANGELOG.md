@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.1.7
+
+### Patch Changes
+
+- Update to latest version and forward Popover props on Datepicker component
+
 ## 1.1.6
 
 ### Patch Changes

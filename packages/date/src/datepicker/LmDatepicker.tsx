@@ -32,6 +32,7 @@ export function LmDatepicker({
   fullWidth,
   inputProps,
   buttonProps,
+  popoverProps,
 }: LmDatepickerProps) {
   const id = useId()
   const media = useMedia()
@@ -112,6 +113,7 @@ export function LmDatepicker({
                 labelFunctions={labelFunctions}
                 buttonProps={buttonProps}
                 {...popoverState}
+                {...popoverProps}
               />
             </XGroup.Item>
           </XGroup>

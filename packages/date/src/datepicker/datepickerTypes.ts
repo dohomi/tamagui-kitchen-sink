@@ -1,6 +1,7 @@
 import { LmFormContainerBaseTypes } from '@tamagui-extras/form'
 import { OnDatesChangeProps, UseMonthProps } from '@datepicker-react/hooks'
 import { ButtonProps, InputProps } from 'tamagui'
+import { LmPopoverProps } from '@tamagui-extras/core'
 
 export type LmDatepickerProps = LmFormContainerBaseTypes & {
   startDate?: Date | null
@@ -13,4 +14,5 @@ export type LmDatepickerProps = LmFormContainerBaseTypes & {
   fullWidth?: boolean
   inputProps?: InputProps
   buttonProps?: ButtonProps
+  popoverProps?: Omit<LmPopoverProps, 'trigger'>
 }
