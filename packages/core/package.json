@@ -46,11 +46,11 @@
   },
   "devDependencies": {
     "@tamagui-extras/config": "1.0.6",
-    "@tamagui/build": "^1.29.6",
+    "@tamagui/build": "^1.30.0",
     "prettier": "^2.8.7",
     "react-native": "^0.71.6",
     "react-native-svg": "^13.9.0",
-    "tamagui": "^1.29.6"
+    "tamagui": "^1.30.0"
   },
   "peerDependencies": {
     "react": "*",

@@ -20,7 +20,7 @@
     "postinstall": "yarn build",
     "build:all": "yarn turbo run build --filter=...app",
     "build:web": "yarn turbo run build --filter=next-app && yarn turbo run start --filter=next-app",
-    "upgrade:tamagui2": "yarn up '*tamagui*' '@tamagui/*' react-native-web-lite",
+    "upgrade:tamagui": "yarn up '*tamagui*' '@tamagui/*' react-native-web-lite",
     "upgrade:rnw": "yarn up react-native-web@0.18.12",
     "upgrade:solito": "yarn up solito",
     "upgrade:next": "yarn up next eslint-config-next",
