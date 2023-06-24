@@ -1,5 +1,16 @@
 # @tamagui-extras/form
 
+## 1.3.0
+
+### Minor Changes
+
+- 48c7268: upgrade to latest Tamagui version. Add Storybook stories for color usecase on LmInput and forward props for LmDatepicker
+
+### Patch Changes
+
+- Updated dependencies [48c7268]
+  - @tamagui-extras/core@1.2.0
+
 ## 1.2.2
 
 ### Patch Changes

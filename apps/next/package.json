@@ -1,6 +1,6 @@
 {
   "name": "next-app",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,7 @@
     "vercel-build": "npm run prepare && next build"
   },
   "dependencies": {
-    "@tamagui-extras/config": "1.0.6",
+    "@tamagui-extras/config": "1.1.0",
     "@tamagui/next-theme": "^1.35.12",
     "app": "*",
     "next": "^13.4.3",
