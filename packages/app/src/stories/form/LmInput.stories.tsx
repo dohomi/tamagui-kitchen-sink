@@ -1,21 +1,25 @@
 import React from 'react'
 import { LmInput } from '../../../../form/src'
-import { Meta } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { XStack, YStack } from 'tamagui'
 
-export default {
+const meta = {
   title: 'form/Input',
   component: LmInput,
-} as Meta<typeof LmInput>
+} satisfies Meta<typeof LmInput>
 
-export const Basic = {
+export default meta
+
+type Story = StoryObj<typeof meta>
+
+export const Basic: Story = {
   args: {
     size: '$4',
     placeholder: 'Placeholder..',
   },
 }
 
-export const RightToLeft = {
+export const RightToLeft: Story = {
   args: {
     size: '$4',
     placeholder: 'Placeholder..',
@@ -23,7 +27,7 @@ export const RightToLeft = {
   },
 }
 
-export const Textarea = {
+export const Textarea: Story = {
   args: {
     size: '$4',
     multiline: true,
@@ -31,7 +35,21 @@ export const Textarea = {
   },
 }
 
-export const Password = {
+export const CustomFocusColors: Story = {
+  args: {
+    label: 'Custom Focus Colors',
+    backgroundColor: 'violet',
+    borderColor: 'blue',
+    color: 'red',
+    focusStyle: {
+      backgroundColor: 'green',
+      borderColor: 'purple',
+      color: 'yellow',
+    },
+  },
+}
+
+export const Password: Story = {
   args: {
     size: '$4',
     placeholder: 'Password..',
@@ -39,7 +57,7 @@ export const Password = {
   },
 }
 
-export const PasswordRightToLeft = {
+export const PasswordRightToLeft: Story = {
   args: {
     size: '$4',
     placeholder: 'Password..',

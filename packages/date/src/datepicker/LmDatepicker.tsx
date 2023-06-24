@@ -26,6 +26,7 @@ export function LmDatepicker({
   required,
   error,
   helperText,
+  helperTextProps,
   label,
   labelProps,
   labelInline,
@@ -83,6 +84,7 @@ export function LmDatepicker({
         label={label}
         labelInline={labelInline}
         helperText={helperText}
+        helperTextProps={helperTextProps}
         fullWidth={fullWidth}
       >
         <XStack

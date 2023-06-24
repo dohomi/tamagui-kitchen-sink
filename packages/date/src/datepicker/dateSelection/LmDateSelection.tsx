@@ -16,6 +16,7 @@ export function LmDateSelection({
   required,
   error,
   helperText,
+  helperTextProps,
   label,
   labelProps,
   labelInline,
@@ -76,6 +77,7 @@ export function LmDateSelection({
       error={isInvalid || error}
       required={required}
       labelProps={labelProps}
+      helperTextProps={helperTextProps}
       label={label}
       labelInline={labelInline}
       helperText={isInvalid ? invalidDateMessage : helperText}

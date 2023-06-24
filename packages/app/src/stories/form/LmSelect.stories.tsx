@@ -1,27 +1,29 @@
-import { Meta } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 import { XStack, YStack } from 'tamagui'
 import { LmSelect } from '../../../../form/src'
 import { fruitItemsFixtures } from 'app/src/fixtures/selectItems'
 
-export default {
+const meta = {
   title: 'form/Select',
   component: LmSelect,
-} as Meta<typeof LmSelect>
+} satisfies Meta<typeof LmSelect>
 
+export default meta
+
+type Story = StoryObj<typeof meta>
 const options = fruitItemsFixtures
 
-export const Basic = {
+export const Basic: Story = {
   args: {
     colorVariant: 'primary',
     options,
     label: 'Select Fruits',
     dropDownLabel: 'Fruits',
     width: 300,
-    scrollButtonGradient: ['$red10', '$yellow10'],
   },
 }
 
-export const Inline = {
+export const Inline: Story = {
   args: {
     colorVariant: 'primary',
     options,
@@ -30,28 +32,28 @@ export const Inline = {
     labelInline: true,
     dropDownLabel: 'Fruits',
     width: 300,
-    scrollButtonGradient: ['$red10', '$yellow10'],
   },
 }
 
-export const LightBlue = {
+export const LightBlue: Story = {
   args: {
     themeName: 'light_blue',
     options,
-    placeholder: "Doesn't show up",
+    label: 'Select Fruits',
+    placeholder: 'Placeholder',
   },
 }
 
-export const PreSelect = {
-  args: {
-    options,
-    defaultValue: options[2]?.value,
-    placeholder: 'Multiple',
-    multiple: true,
-  },
-}
+// export const PreSelect: Story = {
+//   args: {
+//     options,
+//     defaultValue: options[2]?.value,
+//     placeholder: 'Multiple',
+//     multiple: true,
+//   },
+// }
 
-export const FullWidth = {
+export const FullWidth: Story = {
   args: {
     options,
     placeholder: 'Full Width',
@@ -80,15 +82,10 @@ export const Width = () => (
 export const Colors = () => (
   <YStack space={'$4'}>
     <XStack space={'$4'}>
+      <LmSelect options={options} colorVariant={'info'} />
       <LmSelect options={options} colorVariant={'primary'} />
       <LmSelect options={options} colorVariant={'secondary'} />
       <LmSelect options={options} colorVariant={'success'} />
-    </XStack>
-    <XStack space={'$4'}>
-      <LmSelect options={options} colorVariant={'info'} />
-      <LmSelect options={options} colorVariant={'warning'} />
-      <LmSelect options={options} colorVariant={'error'} />
-      <LmSelect options={options} themeName={'gray_alt2'} />
     </XStack>
   </YStack>
 )

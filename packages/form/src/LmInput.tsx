@@ -2,7 +2,7 @@ import { Input, InputProps, Stack, TextArea, ThemeableStackProps } from 'tamagui
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { ColorValue, Pressable } from 'react-native'
+import { Pressable } from 'react-native'
 import { EyeRegular, EyeSlashRegular, IconProps } from '@tamagui-extras/core'
 
 export type LmInputProps = InputProps &
@@ -60,10 +60,7 @@ export function LmInput({
       {...containerProps}
     >
       {multiline ? (
-        <TextArea
-          {...currentInputProps}
-          placeholderTextColor={rest.placeholderTextColor as ColorValue}
-        />
+        <TextArea {...currentInputProps} placeholderTextColor={rest.placeholderTextColor} />
       ) : secureTextEntry ? (
         <Stack position={'relative'} width={fullWidth ? '100%' : currentInputProps?.width}>
           <Input

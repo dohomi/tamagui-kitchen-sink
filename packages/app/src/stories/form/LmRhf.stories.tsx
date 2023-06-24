@@ -88,6 +88,7 @@ export const FormAsRenderFunction = () => {
       defaultValues={{
         name: '',
         email: null,
+        custom: '',
       }}
     >
       {({ control, handleSubmit, reset }) => (
@@ -111,6 +112,19 @@ export const FormAsRenderFunction = () => {
             control={control}
             label={'Name'}
             placeholder={'Type your email...'}
+            labelInline
+          />
+          <LmInputRhf
+            name={'custom'}
+            control={control}
+            label={'Fancy color'}
+            backgroundColor={'violet'}
+            color={'red'}
+            focusStyle={{
+              backgroundColor: 'green',
+              borderColor: 'purple',
+              color: 'yellow',
+            }}
             labelInline
           />
           <XStack gap={'$3'}>
