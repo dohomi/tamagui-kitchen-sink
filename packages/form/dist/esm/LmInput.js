@@ -47,13 +47,7 @@ function LmInput({
       helperText,
       helperTextProps,
       ...containerProps,
-      children: multiline ? /* @__PURE__ */ jsx(
-        TextArea,
-        {
-          ...currentInputProps,
-          placeholderTextColor: rest.placeholderTextColor
-        }
-      ) : secureTextEntry ? /* @__PURE__ */ jsxs(Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps == null ? void 0 : currentInputProps.width, children: [
+      children: multiline ? /* @__PURE__ */ jsx(TextArea, { ...currentInputProps, placeholderTextColor: rest.placeholderTextColor }) : secureTextEntry ? /* @__PURE__ */ jsxs(Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps == null ? void 0 : currentInputProps.width, children: [
         /* @__PURE__ */ jsx(
           Input,
           {

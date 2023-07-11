@@ -23,6 +23,7 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
         <link rel="icon" href="/apps/next/public/favicon.ico" />
       </Head>
       <ThemeContainer>
+        {/* @ts-ignore */}
         <Component {...pageProps} />
       </ThemeContainer>
     </>

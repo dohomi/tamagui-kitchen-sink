@@ -9,12 +9,12 @@ import {
   Paragraph,
   Separator,
   SizableText,
-  SpaceTokens,
   useTheme,
   XGroup,
   XStack,
   YGroup,
   YStack,
+  YStackProps,
 } from 'tamagui'
 import { fruitItemsFixtures } from 'app/src/lib/fixtures/selectItems'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
@@ -24,10 +24,7 @@ import { LmInput, LmSelect } from '@tamagui-extras/form'
 export function OverviewScreen() {
   const {} = useTheme()
 
-  const defaultSectionProps: {
-    space?: SpaceTokens | null
-    flexWrap: 'wrap' | 'nowrap' | 'wrap-reverse'
-  } = {
+  const defaultSectionProps: Partial<YStackProps> = {
     space: '$4',
     flexWrap: 'wrap',
   }
@@ -102,7 +99,6 @@ export function OverviewScreen() {
             <LmButton colorVariant={'info'}>info</LmButton>
             <LmButton colorVariant={'warning'}>warning</LmButton>
             <LmButton colorVariant={'error'}>error</LmButton>
-            <LmButton theme={'gray_alt2'}>dark gray alt</LmButton>
           </XStack>
         </YStack>
         <H3>Buttons Loading</H3>
@@ -259,14 +255,12 @@ export function OverviewScreen() {
             <LmSelect options={items} colorVariant={'info'} />
             <LmSelect options={items} colorVariant={'warning'} />
             <LmSelect options={items} colorVariant={'error'} />
-            <LmSelect options={items} themeName={'gray'} />
           </XStack>
         </YStack>
         <H4>Themes</H4>
         <XStack {...defaultSectionProps}>
           <LmSelect options={items} themeName={'blue_alt2'} />
           <LmSelect options={items} themeName={'yellow_alt1'} />
-          <LmSelect options={items} themeName={'gray'} />
         </XStack>
         <H4>Sizes</H4>
         <XStack {...defaultSectionProps}>

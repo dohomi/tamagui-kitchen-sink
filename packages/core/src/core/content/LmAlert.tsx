@@ -1,5 +1,21 @@
-import { Card, CardProps, ColorProp, ColorTokens, Paragraph, useThemeName, XStack } from 'tamagui'
-import { CheckCircleRegular, InfoRegular, WarningCircleRegular, WarningRegular } from './icons'
+import {
+  Card,
+  CardProps,
+  ColorProp,
+  ColorTokens,
+  Paragraph,
+  ParagraphProps,
+  useThemeName,
+  XStack,
+  XStackProps,
+} from 'tamagui'
+import {
+  CheckCircleRegular,
+  IconProps,
+  InfoRegular,
+  WarningCircleRegular,
+  WarningRegular,
+} from './icons'
 
 type Severity = 'default' | 'error' | 'info' | 'warning' | 'success'
 export type LmAlertProps = CardProps & {
@@ -7,6 +23,9 @@ export type LmAlertProps = CardProps & {
   text?: string
   outlined?: boolean
   hideIcon?: boolean
+  paragraphProps?: ParagraphProps
+  xStackProps?: XStackProps
+  iconProps?: IconProps
 }
 
 const severityColor: { [k in Severity]: ColorProp } = {
@@ -45,31 +64,38 @@ export function LmAlert({
   hideIcon,
   outlined,
   children,
+  paragraphProps,
+  xStackProps,
+  iconProps,
   ...rest
 }: LmAlertProps) {
   const theme = useThemeName()
   let shouldInverse = theme === 'light' && severity !== 'default' && !outlined
   return (
     <Card
-      // themeInverse={shouldInverse}
       bordered={outlined}
       {...(outlined
         ? {
-            // border: `1px solid ${severityColor[severity]}`,
             borderColor: severityColor[severity],
             color: severityColor[severity],
           }
         : {
             backgroundColor: severityColor[severity],
           })}
+      {...rest}
       padding={rest.padding || '$4'}
     >
-      <XStack space alignItems={'center'}>
-        <AlertIcon shouldInvert={shouldInverse} severity={severity} outlined={outlined} />
+      <XStack space alignItems={'center'} {...xStackProps}>
+        <AlertIcon
+          shouldInvert={shouldInverse}
+          severity={severity}
+          outlined={outlined}
+          {...iconProps}
+        />
         {text && (
           <Paragraph
-            fontWeight={outlined ? 'bold' : undefined}
             color={outlined ? severityColor[severity] : shouldInverse ? 'white' : undefined}
+            {...paragraphProps}
           >
             {text}
           </Paragraph>

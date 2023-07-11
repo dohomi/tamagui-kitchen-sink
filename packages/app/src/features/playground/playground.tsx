@@ -7,15 +7,12 @@ import {
 
 import React from 'react'
 import { LmAppShell } from 'app/src/components/layouts/LmAppShell'
-import { SpaceTokens, YStack } from 'tamagui'
+import { YStack, YStackProps } from 'tamagui'
 import { LmDatepickerRhf } from '@tamagui-extras/date'
 import { fruitItemsFixtures } from '../../lib/fixtures/selectItems'
 
 export function PlaygroundScreen() {
-  const defaultSectionProps: {
-    space?: SpaceTokens | null
-    flexWrap: 'wrap' | 'nowrap' | 'wrap-reverse'
-  } = {
+  const defaultSectionProps: Partial<YStackProps> = {
     space: '$4',
     flexWrap: 'wrap',
   }

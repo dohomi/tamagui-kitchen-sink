@@ -69,13 +69,7 @@ function LmInput({
       helperText,
       helperTextProps,
       ...containerProps,
-      children: multiline ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-        import_tamagui.TextArea,
-        {
-          ...currentInputProps,
-          placeholderTextColor: rest.placeholderTextColor
-        }
-      ) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps == null ? void 0 : currentInputProps.width, children: [
+      children: multiline ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.TextArea, { ...currentInputProps, placeholderTextColor: rest.placeholderTextColor }) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps == null ? void 0 : currentInputProps.width, children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
           import_tamagui.Input,
           {

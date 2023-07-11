@@ -1,25 +1,36 @@
-import {Label, Switch, SwitchProps, XStack} from "tamagui";
-import {useId} from "react";
+import { Label, Switch, SwitchProps, SwitchThumbProps, XStack } from 'tamagui'
+import { useId } from 'react'
 
 export type LmSwitchProps = SwitchProps & {
-    labelLeft?: string
-    labelRight?: string
-
+  labelLeft?: string
+  labelRight?: string
+  thumbProps?: SwitchThumbProps
 }
 
-export function LmSwitch({labelLeft, labelRight, space, size = '$2', ...rest}: LmSwitchProps) {
-    const id = useId()
-    return (
-        <XStack alignItems={'center'} space={'$4'}>
-            {labelLeft && (
-                <Label htmlFor={id} fontSize={size}>{labelLeft}</Label>
-            )}
-            <Switch id={id} {...rest} size={size}>
-                <Switch.Thumb animation={'bouncy'}/>
-            </Switch>
-            {labelRight && (
-                <Label htmlFor={id} fontSize={size}>{labelRight}</Label>
-            )}
-        </XStack>
-    )
+export function LmSwitch({
+  labelLeft,
+  labelRight,
+  space,
+  size = '$2',
+  thumbProps,
+  ...rest
+}: LmSwitchProps) {
+  const id = useId()
+  return (
+    <XStack alignItems={'center'} space={'$4'}>
+      {labelLeft && (
+        <Label htmlFor={id} size={size}>
+          {labelLeft}
+        </Label>
+      )}
+      <Switch id={id} {...rest} size={size}>
+        <Switch.Thumb animation={'bouncy'} {...thumbProps} />
+      </Switch>
+      {labelRight && (
+        <Label htmlFor={id} size={size}>
+          {labelRight}
+        </Label>
+      )}
+    </XStack>
+  )
 }

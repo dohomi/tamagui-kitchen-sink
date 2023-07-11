@@ -5,5 +5,5 @@ export type LmDateSelectionProps = LmFormContainerBaseTypes & {
     value?: string;
     locale?: string;
 };
-export declare function LmDateSelection({ required, error, helperText, label, labelProps, labelInline, onChange, invalidDateMessage, locale, value, }: LmDateSelectionProps): import("react/jsx-runtime").JSX.Element;
+export declare function LmDateSelection({ required, error, helperText, helperTextProps, label, labelProps, labelInline, onChange, invalidDateMessage, locale, value, }: LmDateSelectionProps): import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=LmDateSelection.d.ts.map

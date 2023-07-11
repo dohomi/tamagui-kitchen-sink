@@ -44,10 +44,7 @@ function LmInput({
     helperText={helperText}
     helperTextProps={helperTextProps}
     {...containerProps}
-  >{multiline ? <TextArea
-    {...currentInputProps}
-    placeholderTextColor={rest.placeholderTextColor}
-  /> : secureTextEntry ? <Stack position="relative" width={fullWidth ? "100%" : currentInputProps?.width}>
+  >{multiline ? <TextArea {...currentInputProps} placeholderTextColor={rest.placeholderTextColor} /> : secureTextEntry ? <Stack position="relative" width={fullWidth ? "100%" : currentInputProps?.width}>
     <Input
       {...currentInputProps}
       secureTextEntry={!show}

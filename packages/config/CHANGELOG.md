@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.2.0
+
+### Minor Changes
+
+- Fix Button colors and upgrade to latest Tamagui version including NextJS and Storybook
+
 ## 1.1.0
 
 ### Minor Changes

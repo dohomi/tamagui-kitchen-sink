@@ -1,4 +1,4 @@
-import { Avatar, AvatarProps, ImageProps, Paragraph, ParagraphProps } from 'tamagui'
+import { Avatar, AvatarProps, FontSizeTokens, ImageProps, Paragraph, ParagraphProps } from 'tamagui'
 
 export type LmAvatarProps = AvatarProps & {
   color?: AvatarProps['backgroundColor']
@@ -22,7 +22,7 @@ export function LmAvatar({ color, src, letter, letterProps, imageProps, ...rest 
         </>
       ) : (
         <Paragraph
-          fontSize={rest.size}
+          fontSize={rest.size as FontSizeTokens}
           color={'white'}
           backgroundColor={'$gray10'}
           {...letterProps}

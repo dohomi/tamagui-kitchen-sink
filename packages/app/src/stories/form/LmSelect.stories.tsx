@@ -81,11 +81,12 @@ export const Width = () => (
 
 export const Colors = () => (
   <YStack space={'$4'}>
-    <XStack space={'$4'}>
+    <YStack space={'$4'}>
       <LmSelect options={options} colorVariant={'info'} />
       <LmSelect options={options} colorVariant={'primary'} />
       <LmSelect options={options} colorVariant={'secondary'} />
       <LmSelect options={options} colorVariant={'success'} />
-    </XStack>
+      <LmSelect options={options} colorVariant={'warning'} />
+    </YStack>
   </YStack>
 )

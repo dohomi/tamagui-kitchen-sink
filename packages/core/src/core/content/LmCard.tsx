@@ -1,4 +1,4 @@
-import { Card, CardProps, H2, Paragraph } from 'tamagui'
+import { Card, CardProps, H2, Paragraph, ThemeName } from 'tamagui'
 import { PropsWithChildren, ReactNode } from 'react'
 import { LmImage } from './LmImage'
 
@@ -23,7 +23,7 @@ export const LmCard = ({
   footer,
   image,
   children,
-  theme = 'gray',
+  theme = 'gray' as ThemeName,
   ...cardProps
 }: LmCardProps) => {
   return (

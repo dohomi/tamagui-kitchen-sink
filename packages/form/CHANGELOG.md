@@ -1,5 +1,16 @@
 # @tamagui-extras/form
 
+## 1.4.0
+
+### Minor Changes
+
+- Fix Button colors and upgrade to latest Tamagui version including NextJS and Storybook
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.3.0
+
 ## 1.3.0
 
 ### Minor Changes

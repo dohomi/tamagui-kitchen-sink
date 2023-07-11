@@ -23,12 +23,19 @@ module.exports = __toCommonJS(LmSwitch_exports);
 var import_jsx_runtime = require("react/jsx-runtime");
 var import_tamagui = require("tamagui");
 var import_react = require("react");
-function LmSwitch({ labelLeft, labelRight, space, size = "$2", ...rest }) {
+function LmSwitch({
+  labelLeft,
+  labelRight,
+  space,
+  size = "$2",
+  thumbProps,
+  ...rest
+}) {
   const id = (0, import_react.useId)();
   return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XStack, { alignItems: "center", space: "$4", children: [
-    labelLeft && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Label, { htmlFor: id, fontSize: size, children: labelLeft }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Switch, { id, ...rest, size, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Switch.Thumb, { animation: "bouncy" }) }),
-    labelRight && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Label, { htmlFor: id, fontSize: size, children: labelRight })
+    labelLeft && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Label, { htmlFor: id, size, children: labelLeft }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Switch, { id, ...rest, size, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Switch.Thumb, { animation: "bouncy", ...thumbProps }) }),
+    labelRight && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Label, { htmlFor: id, size, children: labelRight })
   ] });
 }
 // Annotate the CommonJS export names for ESM import in node:
