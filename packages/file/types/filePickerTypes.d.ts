@@ -1,4 +1,4 @@
-import { DocumentPickerOptions, DocumentResult } from 'expo-document-picker';
+import { DocumentPickerOptions, DocumentPickerResult as DocumentResult } from 'expo-document-picker';
 import { StackPropsBase } from 'tamagui';
 import { LmButtonProps } from '@tamagui-extras/core';
 export type LmFilePickerProps = LmButtonProps & {
