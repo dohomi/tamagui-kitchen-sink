@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.5.0
+
+### Minor Changes
+
+- version bump
+
 ## 1.4.0
 
 ### Minor Changes

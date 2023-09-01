@@ -1,5 +1,17 @@
 # @tamagui-extras/date
 
+## 1.5.0
+
+### Minor Changes
+
+- version bump
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.4.0
+  - @tamagui-extras/form@1.5.0
+
 ## 1.4.0
 
 ### Minor Changes
