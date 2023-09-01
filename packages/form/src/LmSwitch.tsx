@@ -1,10 +1,10 @@
-import { Label, Switch, SwitchProps, SwitchThumbProps, XStack } from 'tamagui'
+import { Label, StackProps, Switch, SwitchProps, XStack } from 'tamagui'
 import { useId } from 'react'
 
 export type LmSwitchProps = SwitchProps & {
   labelLeft?: string
   labelRight?: string
-  thumbProps?: SwitchThumbProps
+  thumbProps?: StackProps
 }
 
 export function LmSwitch({

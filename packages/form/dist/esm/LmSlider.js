@@ -81,7 +81,7 @@ function LmSlider({
                   pressTheme: false,
                   hoverTheme: false,
                   focusTheme: false,
-                  size: "$2",
+                  size: "$1",
                   index: 0,
                   backgroundColor: color,
                   ...thumbProps
