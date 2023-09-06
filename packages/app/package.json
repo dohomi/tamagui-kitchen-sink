@@ -21,7 +21,7 @@
     "react-native-safe-area-context": "^4.5.2",
     "react-native-web": "0.18.12",
     "solito": "^3.2.5",
-    "tamagui": "^1.58.4",
+    "tamagui": "^1.61.0",
     "zustand": "^4.3.3"
   },
   "devDependencies": {
