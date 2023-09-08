@@ -1,5 +1,13 @@
 # @tamagui-extras/form
 
+## 1.5.1
+
+### Patch Changes
+
+- update tamagui
+- Updated dependencies
+  - @tamagui-extras/core@1.4.1
+
 ## 1.5.0
 
 ### Minor Changes

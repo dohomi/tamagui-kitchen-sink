@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.3.1
+
+### Patch Changes
+
+- update tamagui
+
 ## 1.3.0
 
 ### Minor Changes

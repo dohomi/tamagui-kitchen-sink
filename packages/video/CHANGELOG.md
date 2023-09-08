@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.5.1
+
+### Patch Changes
+
+- update tamagui
+
 ## 1.5.0
 
 ### Minor Changes
