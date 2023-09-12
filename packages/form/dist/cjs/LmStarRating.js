@@ -4,35 +4,28 @@ var __getOwnPropNames = Object.getOwnPropertyNames;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
+    __defProp(target, name, { get: all[name], enumerable: !0 });
+}, __copyProps = (to, from, except, desc) => {
+  if (from && typeof from == "object" || typeof from == "function")
     for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
+      !__hasOwnProp.call(to, key) && key !== except && __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   return to;
 };
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: !0 }), mod);
 var LmStarRating_exports = {};
 __export(LmStarRating_exports, {
   LmStarRating: () => LmStarRating
 });
 module.exports = __toCommonJS(LmStarRating_exports);
-var import_jsx_runtime = require("react/jsx-runtime");
-var import_tamagui = require("tamagui");
-var import_react = require("react");
-var import_LmFormFieldContainer = require("./LmFormFieldContainer");
-var import_core = require("@tamagui-extras/core");
+var import_tamagui = require("tamagui"), import_react = require("react"), import_LmFormFieldContainer = require("./LmFormFieldContainer"), import_core = require("@tamagui-extras/core"), import_jsx_runtime = require("react/jsx-runtime");
 function StarIcon({ filled, size = "$1", ...props }) {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     import_tamagui.Button,
     {
       ...props,
       size,
-      circular: true,
-      unstyled: true,
+      circular: !0,
+      unstyled: !0,
       icon: filled ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.StarFill, { size }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.StarRegular, { size })
     }
   );
@@ -51,9 +44,7 @@ function LmStarRating({
   labelProps,
   ...iconProps
 }) {
-  const id = (0, import_react.useId)();
-  const [rating, setRating] = (0, import_react.useState)(value);
-  const arr = Array.from(Array(count).keys());
+  const id = (0, import_react.useId)(), [rating, setRating] = (0, import_react.useState)(value), arr = Array.from(Array(count).keys());
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     import_LmFormFieldContainer.LmFormFieldContainer,
     {
@@ -73,14 +64,10 @@ function LmStarRating({
             ...iconProps,
             filled: currentRating <= (rating || 0),
             onPress: () => {
-              if (disabled) {
+              if (disabled)
                 return;
-              }
               let newRating = rating === currentRating ? null : currentRating;
-              setRating(newRating);
-              if (typeof onChange === "function") {
-                onChange(newRating);
-              }
+              setRating(newRating), typeof onChange == "function" && onChange(newRating);
             }
           },
           currentRating

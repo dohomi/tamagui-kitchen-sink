@@ -4,45 +4,34 @@ var __getOwnPropNames = Object.getOwnPropertyNames;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
+    __defProp(target, name, { get: all[name], enumerable: !0 });
+}, __copyProps = (to, from, except, desc) => {
+  if (from && typeof from == "object" || typeof from == "function")
     for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
+      !__hasOwnProp.call(to, key) && key !== except && __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   return to;
 };
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: !0 }), mod);
 var LmSlider_exports = {};
 __export(LmSlider_exports, {
   LmSlider: () => LmSlider
 });
 module.exports = __toCommonJS(LmSlider_exports);
-var import_jsx_runtime = require("react/jsx-runtime");
-var import_tamagui = require("tamagui");
-var import_react = require("react");
-var import_LmFormFieldContainer = require("./LmFormFieldContainer");
+var import_tamagui = require("tamagui"), import_react = require("react"), import_LmFormFieldContainer = require("./LmFormFieldContainer"), import_jsx_runtime = require("react/jsx-runtime");
 const CustomSliderTrack = (0, import_tamagui.styled)(import_tamagui.Slider.Track, {
   variants: {
     colorCustom: {
-      ":string": (color) => {
-        return {
-          backgroundColor: color
-        };
-      }
+      ":string": (color) => ({
+        backgroundColor: color
+      })
     }
   }
-});
-const CustomSliderTrackActive = (0, import_tamagui.styled)(import_tamagui.Slider.TrackActive, {
+}), CustomSliderTrackActive = (0, import_tamagui.styled)(import_tamagui.Slider.TrackActive, {
   variants: {
     colorCustom: {
-      ":string": (color) => {
-        return {
-          backgroundColor: color
-        };
-      }
+      ":string": (color) => ({
+        backgroundColor: color
+      })
     }
   }
 });
@@ -61,9 +50,7 @@ function LmSlider({
   showValue,
   ...sliderProps
 }) {
-  const id = (0, import_react.useId)();
-  const [value, setValue] = (0, import_react.useState)(defaultValue);
-  const trackColor = color ? `${color}Dark` : void 0;
+  const id = (0, import_react.useId)(), [value, setValue] = (0, import_react.useState)(defaultValue), trackColor = color ? `${color}Dark` : void 0;
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     import_LmFormFieldContainer.LmFormFieldContainer,
     {
@@ -77,7 +64,7 @@ function LmSlider({
       helperText,
       helperTextProps,
       alignItems: labelInline ? "center" : void 0,
-      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XStack, { space: true, alignItems: "center", children: [
+      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XStack, { space: !0, alignItems: "center", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
           import_tamagui.Slider,
           {
@@ -88,21 +75,18 @@ function LmSlider({
             step: 1,
             ...sliderProps,
             onValueChange: (v) => {
-              setValue(v);
-              if (typeof sliderProps.onValueChange === "function") {
-                sliderProps.onValueChange(v);
-              }
+              setValue(v), typeof sliderProps.onValueChange == "function" && sliderProps.onValueChange(v);
             },
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CustomSliderTrack, { colorCustom: !colorActiveOnly ? trackColor : void 0, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CustomSliderTrackActive, { colorCustom: trackColor }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CustomSliderTrack, { colorCustom: colorActiveOnly ? void 0 : trackColor, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CustomSliderTrackActive, { colorCustom: trackColor }) }),
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
                 import_tamagui.Slider.Thumb,
                 {
-                  bordered: false,
-                  circular: true,
-                  pressTheme: false,
-                  hoverTheme: false,
-                  focusTheme: false,
+                  bordered: !1,
+                  circular: !0,
+                  pressTheme: !1,
+                  hoverTheme: !1,
+                  focusTheme: !1,
                   size: "$1",
                   index: 0,
                   backgroundColor: color,

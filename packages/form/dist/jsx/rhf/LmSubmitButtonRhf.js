@@ -4,8 +4,7 @@ function LmSubmitButtonRhf({
   onSubmit,
   ...props
 }) {
-  const formContext = useFormContext();
-  const { handleSubmit, formState } = formContext;
+  const formContext = useFormContext(), { handleSubmit, formState } = formContext;
   return <LmButton
     {...props}
     onPress={handleSubmit((data) => {

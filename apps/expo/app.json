@@ -2,7 +2,7 @@
   "expo": {
     "name": "tamagui-kitchen-sink",
     "slug": "tamagui-kitchen-sink",
-    "scheme": "my-app",
+    "scheme": "tamagui-kitchen-sink",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -32,9 +32,15 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "plugins": [
+      "expo-router"
+    ],
     "extra": {
+      "router": {
+        "origin": false
+      },
       "eas": {
-        "projectId": "5cb2dfb8-4dc1-4fe8-acb6-6b7fc415dc54"
+        "projectId": "c40ceca5-30d0-4094-9f17-749f00bb45dc"
       }
     }
   }

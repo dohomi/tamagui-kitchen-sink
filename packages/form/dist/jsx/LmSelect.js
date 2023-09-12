@@ -28,10 +28,8 @@ function LmSelect({
   onValueChange,
   ...rest
 }) {
-  const [selectVal, setSelectVal] = useState(value ?? defaultValue ?? "");
-  const id = useId();
-  rest.size = rest.size || "$3";
-  return <LmFormFieldContainer
+  const [selectVal, setSelectVal] = useState(value ?? defaultValue ?? ""), id = useId();
+  return rest.size = rest.size || "$3", <LmFormFieldContainer
     id={id}
     theme={colorVariant ? colormap[colorVariant] : themeName || void 0}
     error={error}
@@ -48,10 +46,7 @@ function LmSelect({
     {...rest}
     value={selectVal}
     onValueChange={(val) => {
-      setSelectVal(val);
-      if (typeof onValueChange === "function") {
-        onValueChange(val);
-      }
+      setSelectVal(val), typeof onValueChange == "function" && onValueChange(val);
     }}
   >
     <Select.Trigger

@@ -7,10 +7,7 @@ function LmRadioGroupRhf({
   defaultValue,
   ...rest
 }) {
-  if (rest.required) {
-    rules.required = "This field is required";
-  }
-  return <Controller
+  return rest.required && (rules.required = "This field is required"), <Controller
     name={name}
     control={control}
     rules={rules}

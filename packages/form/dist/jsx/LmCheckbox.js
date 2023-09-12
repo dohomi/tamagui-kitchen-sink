@@ -29,9 +29,7 @@ function LmCheckbox({
       defaultChecked={value || checkboxProps?.defaultChecked}
       size={size}
       onCheckedChange={(checked) => {
-        if (typeof onChange === "function") {
-          onChange(checked);
-        }
+        typeof onChange == "function" && onChange(checked);
       }}
       borderColor={error ? "$red8" : "$borderColor"}
     ><Checkbox.Indicator>{checkboxProps?.checked === "indeterminate" ? <MinusRegular /> : <CheckRegular />}</Checkbox.Indicator></Checkbox>

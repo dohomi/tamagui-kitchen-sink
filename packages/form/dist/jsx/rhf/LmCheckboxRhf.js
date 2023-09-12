@@ -7,17 +7,14 @@ function LmCheckboxRhf({
   defaultValue,
   ...inputProps
 }) {
-  if (inputProps.required) {
-    rules.required = "This field is required";
-  }
-  return <Controller
+  return inputProps.required && (rules.required = "This field is required"), <Controller
     name={name}
     rules={rules}
     control={control}
     defaultValue={defaultValue}
     render={({ field: { onChange, value }, fieldState: { error } }) => <LmCheckbox
       {...inputProps}
-      value={value ?? false}
+      value={value ?? !1}
       error={!!error}
       onChange={onChange}
       helperText={error ? error.message : inputProps.helperText}

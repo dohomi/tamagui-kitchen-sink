@@ -1,6 +1,6 @@
-import { jsx } from "react/jsx-runtime";
 import { LmSelect } from "../LmSelect";
 import { Controller } from "react-hook-form";
+import { jsx } from "react/jsx-runtime";
 function LmSelectRhf({
   name,
   control,
@@ -8,10 +8,7 @@ function LmSelectRhf({
   defaultValue,
   ...inputProps
 }) {
-  if (inputProps.required) {
-    rules.required = "This field is required";
-  }
-  return /* @__PURE__ */ jsx(
+  return inputProps.required && (rules.required = "This field is required"), /* @__PURE__ */ jsx(
     Controller,
     {
       name,

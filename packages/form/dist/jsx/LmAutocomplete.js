@@ -31,37 +31,19 @@ function LmAutocomplete({
   error,
   theme,
   allowNewHook,
-  multiple = false,
+  multiple = !1,
   popoverProps,
   ...rest
 }) {
-  const id = useId();
-  const [opts, setOpts] = useState(options);
-  const { width } = useWindowDimensions();
-  const [popoverWidth, setPopoverWidth] = useState(0);
-  const inputRef = useRef(null);
-  const [selection, setSelection] = useState(
+  const id = useId(), [opts, setOpts] = useState(options), { width } = useWindowDimensions(), [popoverWidth, setPopoverWidth] = useState(0), inputRef = useRef(null), [selection, setSelection] = useState(
     value ?? (multiple ? [] : null)
-  );
-  const isSelected = (item) => Array.isArray(selection) ? !!selection?.some((i) => i.value === item.value) : selection?.value === item.value;
-  const onChangeSelection = (item) => {
+  ), isSelected = (item) => Array.isArray(selection) ? !!selection?.some((i) => i.value === item.value) : selection?.value === item.value, onChangeSelection = (item) => {
     let newVal = null;
-    if (multiple) {
-      const has = isSelected(item);
-      newVal = has ? selection?.filter((i) => i.value !== item.value) ?? [] : [...selection ?? [], item];
-    } else {
-      newVal = isSelected(item) ? null : item;
-    }
-    setSelection(newVal);
-    if (typeof onChange === "function") {
-      onChange(newVal);
-    }
+    multiple ? newVal = isSelected(item) ? selection?.filter((i) => i.value !== item.value) ?? [] : [...selection ?? [], item] : newVal = isSelected(item) ? null : item, setSelection(newVal), typeof onChange == "function" && onChange(newVal);
   };
   useEffect(() => {
     const elWidth = inputRef.current?.offsetWidth;
-    if (elWidth) {
-      setPopoverWidth(elWidth);
-    }
+    elWidth && setPopoverWidth(elWidth);
   }, [width]);
   const inputValue = Array.isArray(selection) ? selection.map((option) => option?.label).join(", ") : selection?.label || "";
   return <LmFormFieldContainer
@@ -79,7 +61,7 @@ function LmAutocomplete({
       isBouncy
       {...popoverProps}
       contentProps={{
-        minWidth: popoverWidth ? popoverWidth : void 0,
+        minWidth: popoverWidth || void 0,
         maxWidth: "100%",
         ...popoverProps?.contentProps
       }}
@@ -95,7 +77,7 @@ function LmAutocomplete({
       onChangeSelection={onChangeSelection}
       onAddNew={(newVal) => {
         if (newVal) {
-          const newItem = typeof allowNewHook === "function" ? allowNewHook(newVal) : {
+          const newItem = typeof allowNewHook == "function" ? allowNewHook(newVal) : {
             value: newVal,
             label: newVal
           };
@@ -116,10 +98,7 @@ function LmAutocompleteInputContent({
   onChangeSelection,
   isSelected
 }) {
-  const [searchTerm, setSearchTerm] = useState();
-  const deferredTerm = useDeferredValue(searchTerm);
-  const filteredOptions = deferredTerm?.length ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options;
-  const showSearch = !disableSearch || allowNew;
+  const [searchTerm, setSearchTerm] = useState(), deferredTerm = useDeferredValue(searchTerm), filteredOptions = deferredTerm?.length ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options, showSearch = !disableSearch || allowNew;
   return <>{Platform.OS === "web" ? <>
     {showSearch && <XStack padding="$4" width="100%"><Input
       theme={theme}
@@ -133,7 +112,7 @@ function LmAutocompleteInputContent({
       keyboardShouldPersistTaps="always"
       maxHeight={300}
       width="100%"
-      marginTop={!showSearch ? "$4" : void 0}
+      marginTop={showSearch ? void 0 : "$4"}
       marginBottom="$4"
     >
       <LmAutocompleteList
@@ -165,14 +144,12 @@ function LmAutocompleteInputContent({
   </YStack>}</>;
 }
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
-  return <YGroup borderRadius={0}>{options.map((item, i) => {
-    return <YGroup.Item key={item.value}><ListItem
-      hoverTheme
-      icon={isSelected(item) ? <CheckSquareRegular /> : <SquareRegular />}
-      title={item.label}
-      onPress={() => onChangeSelection(item)}
-    /></YGroup.Item>;
-  })}</YGroup>;
+  return <YGroup borderRadius={0}>{options.map((item, i) => <YGroup.Item key={item.value}><ListItem
+    hoverTheme
+    icon={isSelected(item) ? <CheckSquareRegular /> : <SquareRegular />}
+    title={item.label}
+    onPress={() => onChangeSelection(item)}
+  /></YGroup.Item>)}</YGroup>;
 }
 export {
   LmAutocomplete

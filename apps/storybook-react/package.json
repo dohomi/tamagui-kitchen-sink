@@ -1,17 +1,17 @@
 {
   "name": "sb-react",
   "private": true,
-  "version": "1.0.9",
+  "version": "1.0.10",
   "license": "MIT",
   "scripts": {
-    "build": "TAMAGUI_TARGET=web storybook build -s public -o public-storybook",
-    "sb": "TAMAGUI_TARGET=web storybook dev -p 6006 -s ./public",
+    "build": "storybook build -s public -o public-storybook",
+    "sb": "storybook dev -p 6006 -s ./public",
     "chromatic": "npx chromatic --project-token=aa4fa9ec8af5",
     "check-types": "tsc --noemit",
     "serve-sb": "npx serve ./public-storybook"
   },
   "dependencies": {
-    "@tamagui-extras/config": "1.3.1",
+    "@tamagui-extras/config": "1.4.0",
     "app": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

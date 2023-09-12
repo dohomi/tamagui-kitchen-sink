@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.6.0
+
+### Minor Changes
+
+- upgrade to zero-config tamagui and fix typings issues on several components
+
 ## 1.5.1
 
 ### Patch Changes

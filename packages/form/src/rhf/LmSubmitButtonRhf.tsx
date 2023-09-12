@@ -13,7 +13,7 @@ export function LmSubmitButtonRhf<TFieldValues extends FieldValues = FieldValues
   const { handleSubmit, formState } = formContext
   return (
     <LmButton
-      {...props}
+      {...(props as any)}
       onPress={handleSubmit((data) => {
         onSubmit(data, formContext)
       })}

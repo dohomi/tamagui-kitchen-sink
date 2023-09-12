@@ -1,5 +1,16 @@
 # @tamagui-extras/form
 
+## 1.6.0
+
+### Minor Changes
+
+- upgrade to zero-config tamagui and fix typings issues on several components
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.5.0
+
 ## 1.5.1
 
 ### Patch Changes

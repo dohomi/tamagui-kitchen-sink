@@ -4,28 +4,20 @@ var __getOwnPropNames = Object.getOwnPropertyNames;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
+    __defProp(target, name, { get: all[name], enumerable: !0 });
+}, __copyProps = (to, from, except, desc) => {
+  if (from && typeof from == "object" || typeof from == "function")
     for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
+      !__hasOwnProp.call(to, key) && key !== except && __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   return to;
 };
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: !0 }), mod);
 var LmSelect_exports = {};
 __export(LmSelect_exports, {
   LmSelect: () => LmSelect
 });
 module.exports = __toCommonJS(LmSelect_exports);
-var import_jsx_runtime = require("react/jsx-runtime");
-var import_tamagui = require("tamagui");
-var import_linear_gradient = require("@tamagui/linear-gradient");
-var import_core = require("@tamagui-extras/core");
-var import_react = require("react");
-var import_LmFormFieldContainer = require("./LmFormFieldContainer");
+var import_tamagui = require("tamagui"), import_linear_gradient = require("@tamagui/linear-gradient"), import_core = require("@tamagui-extras/core"), import_react = require("react"), import_LmFormFieldContainer = require("./LmFormFieldContainer"), import_jsx_runtime = require("react/jsx-runtime");
 function LmSelect({
   value,
   colorVariant,
@@ -46,10 +38,8 @@ function LmSelect({
   onValueChange,
   ...rest
 }) {
-  const [selectVal, setSelectVal] = (0, import_react.useState)(value ?? defaultValue ?? "");
-  const id = (0, import_react.useId)();
-  rest.size = rest.size || "$3";
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  const [selectVal, setSelectVal] = (0, import_react.useState)(value ?? defaultValue ?? ""), id = (0, import_react.useId)();
+  return rest.size = rest.size || "$3", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     import_LmFormFieldContainer.LmFormFieldContainer,
     {
       id,
@@ -70,10 +60,7 @@ function LmSelect({
           ...rest,
           value: selectVal,
           onValueChange: (val) => {
-            setSelectVal(val);
-            if (typeof onValueChange === "function") {
-              onValueChange(val);
-            }
+            setSelectVal(val), typeof onValueChange == "function" && onValueChange(val);
           },
           children: [
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
@@ -86,7 +73,7 @@ function LmSelect({
                 children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Value, { placeholder, paddingVertical: 0 })
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Adapt, { when: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Select.Sheet, { modal: true, dismissOnSnapToBottom: true, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Adapt, { when: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Select.Sheet, { modal: !0, dismissOnSnapToBottom: !0, children: [
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Sheet.Frame, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Sheet.ScrollView, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Adapt.Contents, {}) }) }),
               /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Sheet.Overlay, {})
             ] }) }),
@@ -106,7 +93,7 @@ function LmSelect({
                       {
                         start: [0, 0],
                         end: [0, 1],
-                        fullscreen: true,
+                        fullscreen: !0,
                         colors: ["$background", "$backgroundTransparent"],
                         borderRadius: "$4"
                       }
@@ -136,7 +123,7 @@ function LmSelect({
                       {
                         start: [0, 0],
                         end: [0, 1],
-                        fullscreen: true,
+                        fullscreen: !0,
                         colors: ["$backgroundTransparent", "$background"],
                         borderRadius: "$4"
                       }

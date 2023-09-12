@@ -18,19 +18,10 @@ function LmInput({
   fullWidth,
   ...rest
 }) {
-  const genId = useId();
-  const [show, setShow] = useState(false);
-  const id = rest.id || genId;
-  const currentInputProps = {
+  const genId = useId(), [show, setShow] = useState(!1), id = rest.id || genId, currentInputProps = {
     ...rest
   };
-  if (error) {
-    currentInputProps.theme = "red";
-    currentInputProps.borderColor = error ? "$red8" : void 0;
-  }
-  if (fullWidth) {
-    currentInputProps.minWidth = "100%";
-  }
+  error && (currentInputProps.theme = "red", currentInputProps.borderColor = error ? "$red8" : void 0), fullWidth && (currentInputProps.minWidth = "100%");
   let secureTextEntry = !!(rest.secureTextEntry || isPassword);
   return <LmFormFieldContainer
     id={id}

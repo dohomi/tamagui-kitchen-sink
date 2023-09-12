@@ -1,6 +1,6 @@
-import { jsx, jsxs } from "react/jsx-runtime";
 import { Label, RadioGroup, XStack } from "tamagui";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
+import { jsx, jsxs } from "react/jsx-runtime";
 function LmRadioGroup({
   options,
   required,
@@ -32,7 +32,7 @@ function LmRadioGroup({
             value: option.value,
             id: `${rest.name}-${option.value}-${i}`,
             size,
-            pressTheme: true,
+            pressTheme: !0,
             children: /* @__PURE__ */ jsx(RadioGroup.Indicator, {})
           }
         ),

@@ -1,6 +1,6 @@
-import { jsx } from "react/jsx-runtime";
 import { Controller } from "react-hook-form";
 import { LmSwitch } from "../LmSwitch";
+import { jsx } from "react/jsx-runtime";
 function LmSwitchRhf({
   name,
   control,

@@ -1,26 +1,21 @@
-import { jsx, jsxs } from "react/jsx-runtime";
 import { Slider, styled, Text, XStack } from "tamagui";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
+import { jsx, jsxs } from "react/jsx-runtime";
 const CustomSliderTrack = styled(Slider.Track, {
   variants: {
     colorCustom: {
-      ":string": (color) => {
-        return {
-          backgroundColor: color
-        };
-      }
+      ":string": (color) => ({
+        backgroundColor: color
+      })
     }
   }
-});
-const CustomSliderTrackActive = styled(Slider.TrackActive, {
+}), CustomSliderTrackActive = styled(Slider.TrackActive, {
   variants: {
     colorCustom: {
-      ":string": (color) => {
-        return {
-          backgroundColor: color
-        };
-      }
+      ":string": (color) => ({
+        backgroundColor: color
+      })
     }
   }
 });
@@ -39,9 +34,7 @@ function LmSlider({
   showValue,
   ...sliderProps
 }) {
-  const id = useId();
-  const [value, setValue] = useState(defaultValue);
-  const trackColor = color ? `${color}Dark` : void 0;
+  const id = useId(), [value, setValue] = useState(defaultValue), trackColor = color ? `${color}Dark` : void 0;
   return /* @__PURE__ */ jsx(
     LmFormFieldContainer,
     {
@@ -55,7 +48,7 @@ function LmSlider({
       helperText,
       helperTextProps,
       alignItems: labelInline ? "center" : void 0,
-      children: /* @__PURE__ */ jsxs(XStack, { space: true, alignItems: "center", children: [
+      children: /* @__PURE__ */ jsxs(XStack, { space: !0, alignItems: "center", children: [
         /* @__PURE__ */ jsxs(
           Slider,
           {
@@ -66,21 +59,18 @@ function LmSlider({
             step: 1,
             ...sliderProps,
             onValueChange: (v) => {
-              setValue(v);
-              if (typeof sliderProps.onValueChange === "function") {
-                sliderProps.onValueChange(v);
-              }
+              setValue(v), typeof sliderProps.onValueChange == "function" && sliderProps.onValueChange(v);
             },
             children: [
-              /* @__PURE__ */ jsx(CustomSliderTrack, { colorCustom: !colorActiveOnly ? trackColor : void 0, children: /* @__PURE__ */ jsx(CustomSliderTrackActive, { colorCustom: trackColor }) }),
+              /* @__PURE__ */ jsx(CustomSliderTrack, { colorCustom: colorActiveOnly ? void 0 : trackColor, children: /* @__PURE__ */ jsx(CustomSliderTrackActive, { colorCustom: trackColor }) }),
               /* @__PURE__ */ jsx(
                 Slider.Thumb,
                 {
-                  bordered: false,
-                  circular: true,
-                  pressTheme: false,
-                  hoverTheme: false,
-                  focusTheme: false,
+                  bordered: !1,
+                  circular: !0,
+                  pressTheme: !1,
+                  hoverTheme: !1,
+                  focusTheme: !1,
                   size: "$1",
                   index: 0,
                   backgroundColor: color,

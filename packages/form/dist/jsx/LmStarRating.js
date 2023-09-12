@@ -25,9 +25,7 @@ function LmStarRating({
   labelProps,
   ...iconProps
 }) {
-  const id = useId();
-  const [rating, setRating] = useState(value);
-  const arr = Array.from(Array(count).keys());
+  const id = useId(), [rating, setRating] = useState(value), arr = Array.from(Array(count).keys());
   return <LmFormFieldContainer
     id={id}
     required={required}
@@ -44,14 +42,10 @@ function LmStarRating({
       {...iconProps}
       filled={currentRating <= (rating || 0)}
       onPress={() => {
-        if (disabled) {
+        if (disabled)
           return;
-        }
         let newRating = rating === currentRating ? null : currentRating;
-        setRating(newRating);
-        if (typeof onChange === "function") {
-          onChange(newRating);
-        }
+        setRating(newRating), typeof onChange == "function" && onChange(newRating);
       }}
     />;
   })}</XStack></LmFormFieldContainer>;

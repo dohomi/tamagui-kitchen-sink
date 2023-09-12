@@ -1,7 +1,7 @@
 import { ListItem, Stack, XStack } from 'tamagui'
 import { useState } from 'react'
 import { LmFileProps } from './filePickerTypes'
-import { DocumentResult } from 'expo-document-picker'
+import { DocumentPickerResult } from 'expo-document-picker'
 import { LmFilePicker } from './LmFilePicker'
 import { LmButton } from '@tamagui-extras/core'
 
@@ -13,21 +13,22 @@ export function LmFile({
   directUpload,
   cancelButtonProps = { label: 'Cancel' },
 }: LmFileProps) {
-  const [result, setFiles] = useState<DocumentResult | null>(null)
+  const [result, setFiles] = useState<DocumentPickerResult | null>(null)
   const [isUploading, setUploading] = useState(false)
-  const upload = async (res: DocumentResult) => {
+  const upload = async (res: DocumentPickerResult) => {
     setUploading(true)
     await onUpload(res)
     setUploading(false)
   }
+  const selectedFileList = result?.output ?? []
   return (
     <Stack {...containerProps}>
-      {result?.type === 'success' &&
-        Array.from(result.output ?? []).map((file: File) => (
+      {selectedFileList.length > 0 &&
+        Array.from(selectedFileList).map((file: File) => (
           <ListItem title={file.name} subTitle={file.type} key={file.name + file.size} />
         ))}
-      {result?.type === 'success' ? (
-        <XStack space={1}>
+      {result?.canceled === false ? (
+        <XStack space={'$2'}>
           <LmButton
             {...cancelButtonProps}
             onPress={() => {
@@ -47,6 +48,7 @@ export function LmFile({
             if (directUpload) {
               return upload(files)
             } else {
+              console.log({ files })
               setFiles(files)
             }
           }}

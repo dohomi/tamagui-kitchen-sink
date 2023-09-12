@@ -17,14 +17,7 @@ function LmSliderRhf({
         {...sliderProps}
         defaultValue={preparedValue}
         onValueChange={(v) => {
-          if (v.length === 1) {
-            onChange(v[0]);
-          } else {
-            onChange(v);
-          }
-          if (typeof sliderProps.onValueChange === "function") {
-            sliderProps.onValueChange(v);
-          }
+          v.length === 1 ? onChange(v[0]) : onChange(v), typeof sliderProps.onValueChange == "function" && sliderProps.onValueChange(v);
         }}
       />;
     }}

@@ -4,22 +4,17 @@ import { LmFormFieldContainer } from "./LmFormFieldContainer";
 const CustomSliderTrack = styled(Slider.Track, {
   variants: {
     colorCustom: {
-      ":string": (color) => {
-        return {
-          backgroundColor: color
-        };
-      }
+      ":string": (color) => ({
+        backgroundColor: color
+      })
     }
   }
-});
-const CustomSliderTrackActive = styled(Slider.TrackActive, {
+}), CustomSliderTrackActive = styled(Slider.TrackActive, {
   variants: {
     colorCustom: {
-      ":string": (color) => {
-        return {
-          backgroundColor: color
-        };
-      }
+      ":string": (color) => ({
+        backgroundColor: color
+      })
     }
   }
 });
@@ -38,9 +33,7 @@ function LmSlider({
   showValue,
   ...sliderProps
 }) {
-  const id = useId();
-  const [value, setValue] = useState(defaultValue);
-  const trackColor = color ? `${color}Dark` : void 0;
+  const id = useId(), [value, setValue] = useState(defaultValue), trackColor = color ? `${color}Dark` : void 0;
   return <LmFormFieldContainer
     id={id}
     label={label}
@@ -61,19 +54,16 @@ function LmSlider({
       step={1}
       {...sliderProps}
       onValueChange={(v) => {
-        setValue(v);
-        if (typeof sliderProps.onValueChange === "function") {
-          sliderProps.onValueChange(v);
-        }
+        setValue(v), typeof sliderProps.onValueChange == "function" && sliderProps.onValueChange(v);
       }}
     >
-      <CustomSliderTrack colorCustom={!colorActiveOnly ? trackColor : void 0}><CustomSliderTrackActive colorCustom={trackColor} /></CustomSliderTrack>
+      <CustomSliderTrack colorCustom={colorActiveOnly ? void 0 : trackColor}><CustomSliderTrackActive colorCustom={trackColor} /></CustomSliderTrack>
       <Slider.Thumb
-        bordered={false}
+        bordered={!1}
         circular
-        pressTheme={false}
-        hoverTheme={false}
-        focusTheme={false}
+        pressTheme={!1}
+        hoverTheme={!1}
+        focusTheme={!1}
         size="$1"
         index={0}
         backgroundColor={color}

@@ -1,5 +1,17 @@
 # @tamagui-extras/rich-text
 
+## 1.5.0
+
+### Minor Changes
+
+- upgrade to zero-config tamagui and fix typings issues on several components
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.5.0
+  - @tamagui-extras/form@1.6.0
+
 ## 1.4.1
 
 ### Patch Changes

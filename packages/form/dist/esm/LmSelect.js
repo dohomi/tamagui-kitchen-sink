@@ -1,4 +1,3 @@
-import { jsx, jsxs } from "react/jsx-runtime";
 import { Select, YStack } from "tamagui";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import {
@@ -9,6 +8,7 @@ import {
 } from "@tamagui-extras/core";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
+import { jsx, jsxs } from "react/jsx-runtime";
 function LmSelect({
   value,
   colorVariant,
@@ -29,10 +29,8 @@ function LmSelect({
   onValueChange,
   ...rest
 }) {
-  const [selectVal, setSelectVal] = useState(value ?? defaultValue ?? "");
-  const id = useId();
-  rest.size = rest.size || "$3";
-  return /* @__PURE__ */ jsx(
+  const [selectVal, setSelectVal] = useState(value ?? defaultValue ?? ""), id = useId();
+  return rest.size = rest.size || "$3", /* @__PURE__ */ jsx(
     LmFormFieldContainer,
     {
       id,
@@ -53,10 +51,7 @@ function LmSelect({
           ...rest,
           value: selectVal,
           onValueChange: (val) => {
-            setSelectVal(val);
-            if (typeof onValueChange === "function") {
-              onValueChange(val);
-            }
+            setSelectVal(val), typeof onValueChange == "function" && onValueChange(val);
           },
           children: [
             /* @__PURE__ */ jsx(
@@ -69,7 +64,7 @@ function LmSelect({
                 children: /* @__PURE__ */ jsx(Select.Value, { placeholder, paddingVertical: 0 })
               }
             ),
-            /* @__PURE__ */ jsx(Select.Adapt, { when: "sm", children: /* @__PURE__ */ jsxs(Select.Sheet, { modal: true, dismissOnSnapToBottom: true, children: [
+            /* @__PURE__ */ jsx(Select.Adapt, { when: "sm", children: /* @__PURE__ */ jsxs(Select.Sheet, { modal: !0, dismissOnSnapToBottom: !0, children: [
               /* @__PURE__ */ jsx(Select.Sheet.Frame, { children: /* @__PURE__ */ jsx(Select.Sheet.ScrollView, { children: /* @__PURE__ */ jsx(Select.Adapt.Contents, {}) }) }),
               /* @__PURE__ */ jsx(Select.Sheet.Overlay, {})
             ] }) }),
@@ -89,7 +84,7 @@ function LmSelect({
                       {
                         start: [0, 0],
                         end: [0, 1],
-                        fullscreen: true,
+                        fullscreen: !0,
                         colors: ["$background", "$backgroundTransparent"],
                         borderRadius: "$4"
                       }
@@ -119,7 +114,7 @@ function LmSelect({
                       {
                         start: [0, 0],
                         end: [0, 1],
-                        fullscreen: true,
+                        fullscreen: !0,
                         colors: ["$backgroundTransparent", "$background"],
                         borderRadius: "$4"
                       }

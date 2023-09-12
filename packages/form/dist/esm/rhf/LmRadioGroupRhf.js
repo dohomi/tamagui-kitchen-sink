@@ -1,6 +1,6 @@
-import { jsx } from "react/jsx-runtime";
 import { LmRadioGroup } from "../LmRadioGroup";
 import { Controller } from "react-hook-form";
+import { jsx } from "react/jsx-runtime";
 function LmRadioGroupRhf({
   name,
   control,
@@ -8,10 +8,7 @@ function LmRadioGroupRhf({
   defaultValue,
   ...rest
 }) {
-  if (rest.required) {
-    rules.required = "This field is required";
-  }
-  return /* @__PURE__ */ jsx(
+  return rest.required && (rules.required = "This field is required"), /* @__PURE__ */ jsx(
     Controller,
     {
       name,

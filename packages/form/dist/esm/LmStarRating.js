@@ -1,16 +1,16 @@
-import { jsx } from "react/jsx-runtime";
 import { Button, XStack } from "tamagui";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
 import { StarFill, StarRegular } from "@tamagui-extras/core";
+import { jsx } from "react/jsx-runtime";
 function StarIcon({ filled, size = "$1", ...props }) {
   return /* @__PURE__ */ jsx(
     Button,
     {
       ...props,
       size,
-      circular: true,
-      unstyled: true,
+      circular: !0,
+      unstyled: !0,
       icon: filled ? /* @__PURE__ */ jsx(StarFill, { size }) : /* @__PURE__ */ jsx(StarRegular, { size })
     }
   );
@@ -29,9 +29,7 @@ function LmStarRating({
   labelProps,
   ...iconProps
 }) {
-  const id = useId();
-  const [rating, setRating] = useState(value);
-  const arr = Array.from(Array(count).keys());
+  const id = useId(), [rating, setRating] = useState(value), arr = Array.from(Array(count).keys());
   return /* @__PURE__ */ jsx(
     LmFormFieldContainer,
     {
@@ -51,14 +49,10 @@ function LmStarRating({
             ...iconProps,
             filled: currentRating <= (rating || 0),
             onPress: () => {
-              if (disabled) {
+              if (disabled)
                 return;
-              }
               let newRating = rating === currentRating ? null : currentRating;
-              setRating(newRating);
-              if (typeof onChange === "function") {
-                onChange(newRating);
-              }
+              setRating(newRating), typeof onChange == "function" && onChange(newRating);
             }
           },
           currentRating

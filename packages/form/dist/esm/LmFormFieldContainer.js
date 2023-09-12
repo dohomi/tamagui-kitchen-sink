@@ -1,4 +1,3 @@
-import { jsx, jsxs } from "react/jsx-runtime";
 import {
   Label,
   Paragraph,
@@ -6,6 +5,7 @@ import {
   ThemeableStack,
   YStack
 } from "tamagui";
+import { jsx, jsxs } from "react/jsx-runtime";
 const StackContainer = styled(ThemeableStack, {
   variants: {
     fullWidth: {
@@ -16,7 +16,7 @@ const StackContainer = styled(ThemeableStack, {
     labelInline: {
       true: {
         flexDirection: "row",
-        space: true,
+        space: !0,
         alignItems: "center"
       }
     }
@@ -47,7 +47,7 @@ function LmFormFieldContainer({
         children: [
           label,
           " ",
-          required && ` *`
+          required && " *"
         ]
       }
     ),

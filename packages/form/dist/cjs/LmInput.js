@@ -4,28 +4,20 @@ var __getOwnPropNames = Object.getOwnPropertyNames;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
+    __defProp(target, name, { get: all[name], enumerable: !0 });
+}, __copyProps = (to, from, except, desc) => {
+  if (from && typeof from == "object" || typeof from == "function")
     for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
+      !__hasOwnProp.call(to, key) && key !== except && __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   return to;
 };
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: !0 }), mod);
 var LmInput_exports = {};
 __export(LmInput_exports, {
   LmInput: () => LmInput
 });
 module.exports = __toCommonJS(LmInput_exports);
-var import_jsx_runtime = require("react/jsx-runtime");
-var import_tamagui = require("tamagui");
-var import_react = require("react");
-var import_LmFormFieldContainer = require("./LmFormFieldContainer");
-var import_react_native = require("react-native");
-var import_core = require("@tamagui-extras/core");
+var import_tamagui = require("tamagui"), import_react = require("react"), import_LmFormFieldContainer = require("./LmFormFieldContainer"), import_react_native = require("react-native"), import_core = require("@tamagui-extras/core"), import_jsx_runtime = require("react/jsx-runtime");
 function LmInput({
   required,
   error,
@@ -41,19 +33,10 @@ function LmInput({
   fullWidth,
   ...rest
 }) {
-  const genId = (0, import_react.useId)();
-  const [show, setShow] = (0, import_react.useState)(false);
-  const id = rest.id || genId;
-  const currentInputProps = {
+  const genId = (0, import_react.useId)(), [show, setShow] = (0, import_react.useState)(!1), id = rest.id || genId, currentInputProps = {
     ...rest
   };
-  if (error) {
-    currentInputProps.theme = "red";
-    currentInputProps.borderColor = error ? "$red8" : void 0;
-  }
-  if (fullWidth) {
-    currentInputProps.minWidth = "100%";
-  }
+  error && (currentInputProps.theme = "red", currentInputProps.borderColor = error ? "$red8" : void 0), fullWidth && (currentInputProps.minWidth = "100%");
   let secureTextEntry = !!(rest.secureTextEntry || isPassword);
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     import_LmFormFieldContainer.LmFormFieldContainer,

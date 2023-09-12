@@ -4,26 +4,20 @@ var __getOwnPropNames = Object.getOwnPropertyNames;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
+    __defProp(target, name, { get: all[name], enumerable: !0 });
+}, __copyProps = (to, from, except, desc) => {
+  if (from && typeof from == "object" || typeof from == "function")
     for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
+      !__hasOwnProp.call(to, key) && key !== except && __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   return to;
 };
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: !0 }), mod);
 var LmCheckbox_exports = {};
 __export(LmCheckbox_exports, {
   LmCheckbox: () => LmCheckbox
 });
 module.exports = __toCommonJS(LmCheckbox_exports);
-var import_jsx_runtime = require("react/jsx-runtime");
-var import_react = require("react");
-var import_tamagui = require("tamagui");
-var import_core = require("@tamagui-extras/core");
+var import_react = require("react"), import_tamagui = require("tamagui"), import_core = require("@tamagui-extras/core"), import_jsx_runtime = require("react/jsx-runtime");
 function LmCheckbox({
   label,
   onChange,
@@ -38,7 +32,7 @@ function LmCheckbox({
   ...stackProps
 }) {
   const id = (0, import_react.useId)();
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XStack, { space: true, alignItems: "center", ...stackProps, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XStack, { space: !0, alignItems: "center", ...stackProps, children: [
     /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
       import_tamagui.Checkbox,
       {
@@ -48,9 +42,7 @@ function LmCheckbox({
         defaultChecked: value || (checkboxProps == null ? void 0 : checkboxProps.defaultChecked),
         size,
         onCheckedChange: (checked) => {
-          if (typeof onChange === "function") {
-            onChange(checked);
-          }
+          typeof onChange == "function" && onChange(checked);
         },
         borderColor: error ? "$red8" : "$borderColor",
         children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Checkbox.Indicator, { children: (checkboxProps == null ? void 0 : checkboxProps.checked) === "indeterminate" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.MinusRegular, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CheckRegular, {}) })

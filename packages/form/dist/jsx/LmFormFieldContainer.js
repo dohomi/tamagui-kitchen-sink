@@ -15,7 +15,7 @@ const StackContainer = styled(ThemeableStack, {
     labelInline: {
       true: {
         flexDirection: "row",
-        space: true,
+        space: !0,
         alignItems: "center"
       }
     }
@@ -44,7 +44,7 @@ function LmFormFieldContainer({
     >
       {label}
       {" "}
-      {required && ` *`}
+      {required && " *"}
     </Label>}
     <YStack>
       {children}

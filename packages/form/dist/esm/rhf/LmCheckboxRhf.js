@@ -1,6 +1,6 @@
-import { jsx } from "react/jsx-runtime";
 import { Controller } from "react-hook-form";
 import { LmCheckbox } from "../LmCheckbox";
+import { jsx } from "react/jsx-runtime";
 function LmCheckboxRhf({
   name,
   rules = {},
@@ -8,10 +8,7 @@ function LmCheckboxRhf({
   defaultValue,
   ...inputProps
 }) {
-  if (inputProps.required) {
-    rules.required = "This field is required";
-  }
-  return /* @__PURE__ */ jsx(
+  return inputProps.required && (rules.required = "This field is required"), /* @__PURE__ */ jsx(
     Controller,
     {
       name,
@@ -22,7 +19,7 @@ function LmCheckboxRhf({
         LmCheckbox,
         {
           ...inputProps,
-          value: value ?? false,
+          value: value ?? !1,
           error: !!error,
           onChange,
           helperText: error ? error.message : inputProps.helperText

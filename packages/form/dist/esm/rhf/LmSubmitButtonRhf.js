@@ -1,12 +1,11 @@
-import { jsx } from "react/jsx-runtime";
 import { LmButton } from "@tamagui-extras/core";
 import { useFormContext } from "react-hook-form";
+import { jsx } from "react/jsx-runtime";
 function LmSubmitButtonRhf({
   onSubmit,
   ...props
 }) {
-  const formContext = useFormContext();
-  const { handleSubmit, formState } = formContext;
+  const formContext = useFormContext(), { handleSubmit, formState } = formContext;
   return /* @__PURE__ */ jsx(
     LmButton,
     {

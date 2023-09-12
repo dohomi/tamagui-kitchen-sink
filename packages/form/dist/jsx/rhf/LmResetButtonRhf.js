@@ -5,10 +5,7 @@ function LmResetButtonRhf(props) {
   return <LmButton
     {...props}
     onPress={(e) => {
-      reset();
-      if (typeof props.onPress === "function") {
-        props.onPress(e);
-      }
+      reset(), typeof props.onPress == "function" && props.onPress(e);
     }}
   />;
 }

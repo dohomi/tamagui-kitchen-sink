@@ -1,4 +1,3 @@
-import { jsx, jsxs } from "react/jsx-runtime";
 import { useId } from "react";
 import {
   Checkbox,
@@ -8,6 +7,7 @@ import {
   YStack
 } from "tamagui";
 import { CheckRegular, MinusRegular } from "@tamagui-extras/core";
+import { jsx, jsxs } from "react/jsx-runtime";
 function LmCheckbox({
   label,
   onChange,
@@ -22,22 +22,20 @@ function LmCheckbox({
   ...stackProps
 }) {
   const id = useId();
-  return /* @__PURE__ */ jsxs(XStack, { space: true, alignItems: "center", ...stackProps, children: [
+  return /* @__PURE__ */ jsxs(XStack, { space: !0, alignItems: "center", ...stackProps, children: [
     /* @__PURE__ */ jsx(
       Checkbox,
       {
         id,
         theme: error ? "red" : theme,
         ...checkboxProps,
-        defaultChecked: value || (checkboxProps == null ? void 0 : checkboxProps.defaultChecked),
+        defaultChecked: value || checkboxProps?.defaultChecked,
         size,
         onCheckedChange: (checked) => {
-          if (typeof onChange === "function") {
-            onChange(checked);
-          }
+          typeof onChange == "function" && onChange(checked);
         },
         borderColor: error ? "$red8" : "$borderColor",
-        children: /* @__PURE__ */ jsx(Checkbox.Indicator, { children: (checkboxProps == null ? void 0 : checkboxProps.checked) === "indeterminate" ? /* @__PURE__ */ jsx(MinusRegular, {}) : /* @__PURE__ */ jsx(CheckRegular, {}) })
+        children: /* @__PURE__ */ jsx(Checkbox.Indicator, { children: checkboxProps?.checked === "indeterminate" ? /* @__PURE__ */ jsx(MinusRegular, {}) : /* @__PURE__ */ jsx(CheckRegular, {}) })
       }
     ),
     label && /* @__PURE__ */ jsxs(YStack, { children: [
@@ -52,7 +50,7 @@ function LmCheckbox({
           marginTop: 0,
           size,
           ...helperTextProps,
-          color: error ? "$red10" : helperTextProps == null ? void 0 : helperTextProps.color,
+          color: error ? "$red10" : helperTextProps?.color,
           children: helperText
         }
       )
