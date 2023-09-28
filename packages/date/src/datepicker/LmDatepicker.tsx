@@ -34,6 +34,7 @@ export function LmDatepicker({
   inputProps,
   buttonProps,
   popoverProps,
+  containerProps,
 }: LmDatepickerProps) {
   const id = useId()
   const media = useMedia()
@@ -86,7 +87,8 @@ export function LmDatepicker({
         helperText={helperText}
         helperTextProps={helperTextProps}
         fullWidth={fullWidth}
-      >
+        {...containerProps}
+        >
         <XStack
           space
           {...(fullWidth

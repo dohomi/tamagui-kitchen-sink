@@ -3,6 +3,7 @@ import {
   Input,
   ListItem,
   ScrollView,
+  ThemeableStackProps,
   ThemeName,
   XGroup,
   XStack,
@@ -34,6 +35,7 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
   allowNew?: boolean
   allowNewHook?: (newValue: string) => Option
   popoverProps?: LmPopoverProps
+  containerProps?: ThemeableStackProps
 }
 
 type AutocompleteContext = {
@@ -58,6 +60,7 @@ export function LmAutocomplete({
   allowNewHook,
   multiple = false,
   popoverProps,
+  containerProps,
   ...rest
 }: LmAutocompleteProps) {
   const id = useId()
@@ -110,6 +113,7 @@ export function LmAutocomplete({
       labelInline={labelInline}
       helperText={helperText}
       helperTextProps={helperTextProps}
+      {...containerProps}
     >
       <XGroup ref={inputRef}>
         <XGroup.Item>

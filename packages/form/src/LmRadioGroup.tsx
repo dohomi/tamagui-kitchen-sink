@@ -1,5 +1,5 @@
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { Label, RadioGroup, RadioGroupProps, SizeTokens, SpaceTokens, XStack } from 'tamagui'
+import { Label, RadioGroup, RadioGroupProps, SizeTokens, SpaceTokens, ThemeableStackProps, XStack } from 'tamagui'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 
 export type LmRadioGroupProps = RadioGroupProps &
@@ -8,6 +8,7 @@ export type LmRadioGroupProps = RadioGroupProps &
     size?: SizeTokens
     name?: string
     spaceItem?: SpaceTokens
+    containerProps?: ThemeableStackProps
   }
 
 export function LmRadioGroup({
@@ -21,6 +22,7 @@ export function LmRadioGroup({
   labelProps,
   size = '$3',
   spaceItem = '$2',
+  containerProps,
   ...rest
 }: LmRadioGroupProps) {
   return (
@@ -33,6 +35,7 @@ export function LmRadioGroup({
       labelInline={labelInline}
       helperText={helperText}
       helperTextProps={helperTextProps}
+      {...containerProps}
     >
       <RadioGroup space={rest.flexDirection === 'row' ? '$4' : '$1'} required={required} {...rest}>
         {options.map((option, i) => (

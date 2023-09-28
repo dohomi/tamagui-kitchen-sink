@@ -21,6 +21,7 @@ export function LmDatepicker({
   label,
   labelProps,
   labelInline,
+  containerProps,
 }: LmDatepickerProps) {
   const id = useId()
   const [startOpen, startOpenChange] = useState(false)
@@ -39,6 +40,7 @@ export function LmDatepicker({
       label={label}
       labelInline={labelInline}
       helperText={helperText}
+      {...containerProps}
     >
       <XStack space width={Platform.OS === 'web' ? 'fit-content' : undefined}>
         <XGroup>
