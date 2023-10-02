@@ -1,4 +1,4 @@
-import { Select, SelectProps, ThemeableStackProps, ThemeProps, YStack } from 'tamagui'
+import { Select, SelectProps, ThemeProps, YStack } from 'tamagui'
 import { LinearGradient } from '@tamagui/linear-gradient'
 import {
   CaretDownRegular,
@@ -23,7 +23,6 @@ export type LmSelectProps = SelectProps &
     placeholder?: string
     dropDownLabel?: string // above the items list
     fullWidth?: boolean
-    containerProps?: ThemeableStackProps
   }
 
 export function LmSelect({

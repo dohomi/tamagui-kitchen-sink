@@ -1,5 +1,5 @@
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { Label, RadioGroup, RadioGroupProps, SizeTokens, SpaceTokens, ThemeableStackProps, XStack } from 'tamagui'
+import { Label, RadioGroup, RadioGroupProps, SizeTokens, SpaceTokens, XStack } from 'tamagui'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 
 export type LmRadioGroupProps = RadioGroupProps &
@@ -8,7 +8,6 @@ export type LmRadioGroupProps = RadioGroupProps &
     size?: SizeTokens
     name?: string
     spaceItem?: SpaceTokens
-    containerProps?: ThemeableStackProps
   }
 
 export function LmRadioGroup({

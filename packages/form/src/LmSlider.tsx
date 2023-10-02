@@ -1,4 +1,4 @@
-import { ColorTokens, Slider, SliderProps, SliderThumbProps, styled, Text, ThemeableStackProps, XStack } from 'tamagui'
+import { ColorTokens, Slider, SliderProps, SliderThumbProps, styled, Text, XStack } from 'tamagui'
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
@@ -33,7 +33,6 @@ export type LmSliderProps = SliderProps &
     colorActiveOnly?: boolean
     thumbProps?: SliderThumbProps
     showValue?: boolean
-    containerProps?: ThemeableStackProps
   }
 
 export function LmSlider({

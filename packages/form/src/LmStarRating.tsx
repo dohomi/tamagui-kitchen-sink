@@ -1,4 +1,4 @@
-import { Button, ButtonProps, SizeTokens, ThemeableStackProps, XStack } from 'tamagui'
+import { Button, ButtonProps, SizeTokens, XStack } from 'tamagui'
 import { useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
@@ -28,7 +28,6 @@ export type LmStarRatingProps = LmFormContainerBaseTypes & {
   value?: number | null
   size?: SizeTokens
   disabled?: boolean
-  containerProps?: ThemeableStackProps
 }
 
 export function LmStarRating({

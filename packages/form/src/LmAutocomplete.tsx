@@ -3,7 +3,6 @@ import {
   Input,
   ListItem,
   ScrollView,
-  ThemeableStackProps,
   ThemeName,
   XGroup,
   XStack,
@@ -35,7 +34,6 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
   allowNew?: boolean
   allowNewHook?: (newValue: string) => Option
   popoverProps?: LmPopoverProps
-  containerProps?: ThemeableStackProps
 }
 
 type AutocompleteContext = {

@@ -1,4 +1,4 @@
-import { LabelProps, ParagraphProps } from 'tamagui'
+import { LabelProps, ParagraphProps, ThemeableStackProps } from 'tamagui'
 
 export type LmFormContainerBaseTypes = {
   label?: string
@@ -8,4 +8,5 @@ export type LmFormContainerBaseTypes = {
   helperTextProps?: ParagraphProps
   required?: boolean
   error?: boolean
+  containerProps?: ThemeableStackProps
 }
