@@ -11,6 +11,7 @@ function LmRadioGroup({
   labelProps,
   size = "$3",
   spaceItem = "$2",
+  containerProps,
   ...rest
 }) {
   return <LmFormFieldContainer
@@ -22,6 +23,7 @@ function LmRadioGroup({
     labelInline={labelInline}
     helperText={helperText}
     helperTextProps={helperTextProps}
+    {...containerProps}
   ><RadioGroup space={rest.flexDirection === "row" ? "$4" : "$1"} required={required} {...rest}>{options.map((option, i) => <XStack key={`${rest.name}-${option.value}-${i}`} alignItems="center" space={spaceItem}>
     <RadioGroup.Item
       value={option.value}

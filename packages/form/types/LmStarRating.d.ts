@@ -7,5 +7,5 @@ export type LmStarRatingProps = LmFormContainerBaseTypes & {
     size?: SizeTokens;
     disabled?: boolean;
 };
-export declare function LmStarRating({ count, onChange, value, disabled, required, error, helperText, helperTextProps, label, labelInline, labelProps, ...iconProps }: LmStarRatingProps): import("react/jsx-runtime").JSX.Element;
+export declare function LmStarRating({ count, onChange, value, disabled, required, error, helperText, helperTextProps, label, labelInline, labelProps, containerProps, ...iconProps }: LmStarRatingProps): import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=LmStarRating.d.ts.map

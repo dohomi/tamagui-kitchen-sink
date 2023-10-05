@@ -27,6 +27,7 @@ function LmStarRating({
   label,
   labelInline,
   labelProps,
+  containerProps,
   ...iconProps
 }) {
   const id = useId(), [rating, setRating] = useState(value), arr = Array.from(Array(count).keys());
@@ -41,6 +42,7 @@ function LmStarRating({
       label,
       labelInline,
       labelProps,
+      ...containerProps,
       children: /* @__PURE__ */ jsx(XStack, { children: arr.map((value2) => {
         const currentRating = value2 + 1;
         return /* @__PURE__ */ jsx(

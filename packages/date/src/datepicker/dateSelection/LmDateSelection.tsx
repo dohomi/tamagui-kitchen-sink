@@ -1,4 +1,4 @@
-import { XStack } from 'tamagui'
+import { ThemeableStackProps, XStack } from 'tamagui'
 import { useId, useRef, useState } from 'react'
 import { LmFormContainerBaseTypes, LmFormFieldContainer } from '@tamagui-extras/form'
 import { LmDaySelect } from './LmDaySelect'
@@ -10,6 +10,7 @@ export type LmDateSelectionProps = LmFormContainerBaseTypes & {
   invalidDateMessage?: string
   value?: string
   locale?: string
+  containerProps?: ThemeableStackProps
 }
 
 export function LmDateSelection({

@@ -33,6 +33,7 @@ function LmAutocomplete({
   allowNewHook,
   multiple = !1,
   popoverProps,
+  containerProps,
   ...rest
 }) {
   const id = (0, import_react.useId)(), [opts, setOpts] = (0, import_react.useState)(options), { width } = (0, import_react_native.useWindowDimensions)(), [popoverWidth, setPopoverWidth] = (0, import_react.useState)(0), inputRef = (0, import_react.useRef)(null), [selection, setSelection] = (0, import_react.useState)(
@@ -58,6 +59,7 @@ function LmAutocomplete({
       labelInline,
       helperText,
       helperTextProps,
+      ...containerProps,
       children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XGroup, { ref: inputRef, children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XGroup.Item, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { flex: 1, value: inputValue, theme, textOverflow: "ellipsis" }) }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XGroup.Item, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(

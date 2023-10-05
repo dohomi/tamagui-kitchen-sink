@@ -29,6 +29,7 @@ function LmRadioGroup({
   labelProps,
   size = "$3",
   spaceItem = "$2",
+  containerProps,
   ...rest
 }) {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
@@ -42,6 +43,7 @@ function LmRadioGroup({
       labelInline,
       helperText,
       helperTextProps,
+      ...containerProps,
       children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.RadioGroup, { space: rest.flexDirection === "row" ? "$4" : "$1", required, ...rest, children: options.map((option, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XStack, { alignItems: "center", space: spaceItem, children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
           import_tamagui.RadioGroup.Item,

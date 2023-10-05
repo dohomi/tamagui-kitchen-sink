@@ -26,6 +26,7 @@ function LmSelect({
   fullWidth,
   defaultValue,
   onValueChange,
+  containerProps,
   ...rest
 }) {
   const [selectVal, setSelectVal] = useState(value ?? defaultValue ?? ""), id = useId();
@@ -41,6 +42,7 @@ function LmSelect({
     labelInline={labelInline}
     helperText={helperText}
     helperTextProps={helperTextProps}
+    {...containerProps}
   ><Select
     id={id}
     {...rest}

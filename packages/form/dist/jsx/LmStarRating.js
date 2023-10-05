@@ -23,6 +23,7 @@ function LmStarRating({
   label,
   labelInline,
   labelProps,
+  containerProps,
   ...iconProps
 }) {
   const id = useId(), [rating, setRating] = useState(value), arr = Array.from(Array(count).keys());
@@ -35,6 +36,7 @@ function LmStarRating({
     label={label}
     labelInline={labelInline}
     labelProps={labelProps}
+    {...containerProps}
   ><XStack>{arr.map((value2) => {
     const currentRating = value2 + 1;
     return <StarIcon

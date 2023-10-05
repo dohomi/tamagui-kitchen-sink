@@ -34,6 +34,7 @@ function LmAutocomplete({
   allowNewHook,
   multiple = !1,
   popoverProps,
+  containerProps,
   ...rest
 }) {
   const id = useId(), [opts, setOpts] = useState(options), { width } = useWindowDimensions(), [popoverWidth, setPopoverWidth] = useState(0), inputRef = useRef(null), [selection, setSelection] = useState(
@@ -58,6 +59,7 @@ function LmAutocomplete({
       labelInline,
       helperText,
       helperTextProps,
+      ...containerProps,
       children: /* @__PURE__ */ jsxs(XGroup, { ref: inputRef, children: [
         /* @__PURE__ */ jsx(XGroup.Item, { children: /* @__PURE__ */ jsx(Input, { flex: 1, value: inputValue, theme, textOverflow: "ellipsis" }) }),
         /* @__PURE__ */ jsx(XGroup.Item, { children: /* @__PURE__ */ jsx(

@@ -12,6 +12,7 @@ function LmRadioGroup({
   labelProps,
   size = "$3",
   spaceItem = "$2",
+  containerProps,
   ...rest
 }) {
   return /* @__PURE__ */ jsx(
@@ -25,6 +26,7 @@ function LmRadioGroup({
       labelInline,
       helperText,
       helperTextProps,
+      ...containerProps,
       children: /* @__PURE__ */ jsx(RadioGroup, { space: rest.flexDirection === "row" ? "$4" : "$1", required, ...rest, children: options.map((option, i) => /* @__PURE__ */ jsxs(XStack, { alignItems: "center", space: spaceItem, children: [
         /* @__PURE__ */ jsx(
           RadioGroup.Item,

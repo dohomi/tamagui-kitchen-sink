@@ -32,6 +32,7 @@ function LmSlider({
   labelInline,
   colorActiveOnly,
   showValue,
+  containerProps,
   ...sliderProps
 }) {
   const id = useId(), [value, setValue] = useState(defaultValue), trackColor = color ? `${color}Dark` : void 0;
@@ -48,6 +49,7 @@ function LmSlider({
       helperText,
       helperTextProps,
       alignItems: labelInline ? "center" : void 0,
+      ...containerProps,
       children: /* @__PURE__ */ jsxs(XStack, { space: !0, alignItems: "center", children: [
         /* @__PURE__ */ jsxs(
           Slider,

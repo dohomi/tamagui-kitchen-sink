@@ -42,6 +42,7 @@ function LmStarRating({
   label,
   labelInline,
   labelProps,
+  containerProps,
   ...iconProps
 }) {
   const id = (0, import_react.useId)(), [rating, setRating] = (0, import_react.useState)(value), arr = Array.from(Array(count).keys());
@@ -56,6 +57,7 @@ function LmStarRating({
       label,
       labelInline,
       labelProps,
+      ...containerProps,
       children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { children: arr.map((value2) => {
         const currentRating = value2 + 1;
         return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(

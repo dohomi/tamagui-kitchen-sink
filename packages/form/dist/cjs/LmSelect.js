@@ -36,6 +36,7 @@ function LmSelect({
   fullWidth,
   defaultValue,
   onValueChange,
+  containerProps,
   ...rest
 }) {
   const [selectVal, setSelectVal] = (0, import_react.useState)(value ?? defaultValue ?? ""), id = (0, import_react.useId)();
@@ -53,6 +54,7 @@ function LmSelect({
       labelInline,
       helperText,
       helperTextProps,
+      ...containerProps,
       children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
         import_tamagui.Select,
         {

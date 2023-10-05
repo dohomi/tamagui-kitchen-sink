@@ -14,5 +14,5 @@ export type LmSelectProps = SelectProps & LmFormContainerBaseTypes & {
     dropDownLabel?: string;
     fullWidth?: boolean;
 };
-export declare function LmSelect({ value, colorVariant, themeName, options, width, placeholder, dropDownLabel, required, error, helperText, helperTextProps, label, labelInline, labelProps, fullWidth, defaultValue, onValueChange, ...rest }: LmSelectProps): import("react/jsx-runtime").JSX.Element;
+export declare function LmSelect({ value, colorVariant, themeName, options, width, placeholder, dropDownLabel, required, error, helperText, helperTextProps, label, labelInline, labelProps, fullWidth, defaultValue, onValueChange, containerProps, ...rest }: LmSelectProps): import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=LmSelect.d.ts.map

@@ -27,6 +27,7 @@ function LmSelect({
   fullWidth,
   defaultValue,
   onValueChange,
+  containerProps,
   ...rest
 }) {
   const [selectVal, setSelectVal] = useState(value ?? defaultValue ?? ""), id = useId();
@@ -44,6 +45,7 @@ function LmSelect({
       labelInline,
       helperText,
       helperTextProps,
+      ...containerProps,
       children: /* @__PURE__ */ jsxs(
         Select,
         {

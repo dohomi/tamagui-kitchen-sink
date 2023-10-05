@@ -1,5 +1,16 @@
 # @tamagui-extras/date
 
+## 1.7.0
+
+### Minor Changes
+
+- add containerProps to various components
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/form@1.7.0
+
 ## 1.6.0
 
 ### Minor Changes

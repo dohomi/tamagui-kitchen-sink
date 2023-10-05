@@ -31,6 +31,7 @@ function LmSlider({
   labelInline,
   colorActiveOnly,
   showValue,
+  containerProps,
   ...sliderProps
 }) {
   const id = useId(), [value, setValue] = useState(defaultValue), trackColor = color ? `${color}Dark` : void 0;
@@ -45,6 +46,7 @@ function LmSlider({
     helperText={helperText}
     helperTextProps={helperTextProps}
     alignItems={labelInline ? "center" : void 0}
+    {...containerProps}
   ><XStack space alignItems="center">
     <Slider
       size="$2"

@@ -48,6 +48,7 @@ function LmSlider({
   labelInline,
   colorActiveOnly,
   showValue,
+  containerProps,
   ...sliderProps
 }) {
   const id = (0, import_react.useId)(), [value, setValue] = (0, import_react.useState)(defaultValue), trackColor = color ? `${color}Dark` : void 0;
@@ -64,6 +65,7 @@ function LmSlider({
       helperText,
       helperTextProps,
       alignItems: labelInline ? "center" : void 0,
+      ...containerProps,
       children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XStack, { space: !0, alignItems: "center", children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
           import_tamagui.Slider,

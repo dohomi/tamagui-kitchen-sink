@@ -1,8 +1,7 @@
-import { InputProps, ThemeableStackProps } from 'tamagui';
+import { InputProps } from 'tamagui';
 import { LmFormContainerBaseTypes } from './formContainerTypes';
 import { IconProps } from '@tamagui-extras/core';
 export type LmInputProps = InputProps & LmFormContainerBaseTypes & {
-    containerProps?: ThemeableStackProps;
     multiline?: boolean;
     isPassword?: boolean;
     fullWidth?: boolean;

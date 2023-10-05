@@ -17,6 +17,6 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
     allowNewHook?: (newValue: string) => Option;
     popoverProps?: LmPopoverProps;
 };
-export declare function LmAutocomplete({ options, labelInline, labelProps, helperText, helperTextProps, required, label, value, onChange, error, theme, allowNewHook, multiple, popoverProps, ...rest }: LmAutocompleteProps): import("react/jsx-runtime").JSX.Element;
+export declare function LmAutocomplete({ options, labelInline, labelProps, helperText, helperTextProps, required, label, value, onChange, error, theme, allowNewHook, multiple, popoverProps, containerProps, ...rest }: LmAutocompleteProps): import("react/jsx-runtime").JSX.Element;
 export {};
 //# sourceMappingURL=LmAutocomplete.d.ts.map
