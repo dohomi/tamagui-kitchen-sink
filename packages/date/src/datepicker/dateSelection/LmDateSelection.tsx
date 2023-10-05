@@ -24,6 +24,7 @@ export function LmDateSelection({
   invalidDateMessage = 'This is not a valid date',
   locale,
   value,
+  containerProps,
 }: LmDateSelectionProps) {
   let dayValue = ''
   let monthValue = ''
@@ -81,6 +82,7 @@ export function LmDateSelection({
       label={label}
       labelInline={labelInline}
       helperText={isInvalid ? invalidDateMessage : helperText}
+      {...containerProps}
     >
       <XStack space id={id}>
         <LmDaySelect

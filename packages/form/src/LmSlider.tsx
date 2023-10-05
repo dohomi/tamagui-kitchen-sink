@@ -48,6 +48,7 @@ export function LmSlider({
   labelInline,
   colorActiveOnly,
   showValue,
+  containerProps,
   ...sliderProps
 }: LmSliderProps) {
   const id = useId()
@@ -65,6 +66,7 @@ export function LmSlider({
       helperText={helperText}
       helperTextProps={helperTextProps}
       alignItems={labelInline ? 'center' : undefined}
+      {...containerProps}
     >
       <XStack space alignItems={'center'}>
         <Slider

@@ -58,6 +58,7 @@ export function LmAutocomplete({
   allowNewHook,
   multiple = false,
   popoverProps,
+  containerProps,
   ...rest
 }: LmAutocompleteProps) {
   const id = useId()
@@ -110,6 +111,7 @@ export function LmAutocomplete({
       labelInline={labelInline}
       helperText={helperText}
       helperTextProps={helperTextProps}
+      {...containerProps}
     >
       <XGroup ref={inputRef}>
         <XGroup.Item>

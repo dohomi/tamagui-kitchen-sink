@@ -43,6 +43,7 @@ export function LmSelect({
   fullWidth,
   defaultValue,
   onValueChange,
+  containerProps,
   ...rest
 }: LmSelectProps) {
   const [selectVal, setSelectVal] = useState<string>(value ?? defaultValue ?? '')
@@ -62,6 +63,7 @@ export function LmSelect({
       labelInline={labelInline}
       helperText={helperText}
       helperTextProps={helperTextProps}
+      {...containerProps}
     >
       <Select
         id={id}

@@ -21,6 +21,7 @@ export function LmRadioGroup({
   labelProps,
   size = '$3',
   spaceItem = '$2',
+  containerProps,
   ...rest
 }: LmRadioGroupProps) {
   return (
@@ -33,6 +34,7 @@ export function LmRadioGroup({
       labelInline={labelInline}
       helperText={helperText}
       helperTextProps={helperTextProps}
+      {...containerProps}
     >
       <RadioGroup space={rest.flexDirection === 'row' ? '$4' : '$1'} required={required} {...rest}>
         {options.map((option, i) => (

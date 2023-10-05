@@ -42,6 +42,7 @@ export function LmStarRating({
   label,
   labelInline,
   labelProps,
+  containerProps,
   ...iconProps
 }: LmStarRatingProps) {
   const id = useId()
@@ -57,6 +58,7 @@ export function LmStarRating({
       label={label}
       labelInline={labelInline}
       labelProps={labelProps}
+      {...containerProps}
     >
       <XStack>
         {arr.map((value) => {
