@@ -1,12 +1,4 @@
-import {
-  Avatar,
-  AvatarProps,
-  FontSizeTokens,
-  ImageProps,
-  Paragraph,
-  ParagraphProps,
-  useProps,
-} from 'tamagui'
+import { Avatar, AvatarProps, FontSizeTokens, ImageProps, Paragraph, ParagraphProps } from 'tamagui'
 
 export type LmAvatarProps = AvatarProps & {
   color?: AvatarProps['backgroundColor']
@@ -17,8 +9,6 @@ export type LmAvatarProps = AvatarProps & {
 }
 
 export function LmAvatar({ color, src, letter, letterProps, imageProps, ...rest }: LmAvatarProps) {
-  const p = useProps(rest)
-  console.log(p)
   return (
     <Avatar
       circular={rest.circular ?? true}

@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.6.1
+
+### Patch Changes
+
+- remove of console log in avatar
+
 ## 1.6.0
 
 ### Minor Changes

@@ -53,7 +53,6 @@ const plugins = [
         return true
       }
     },
-    useReactNativeWebLite: false, // if enabled dont need excludeReactNativeWebExports
     excludeReactNativeWebExports: ['Switch', 'ProgressBar', 'Picker', 'CheckBox', 'Touchable'],
   }),
 ]
