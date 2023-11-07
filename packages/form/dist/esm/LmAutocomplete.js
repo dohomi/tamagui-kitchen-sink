@@ -17,7 +17,7 @@ import {
   LmPopover,
   SquareRegular
 } from "@tamagui-extras/core";
-import { Platform, useWindowDimensions } from "react-native";
+import { Platform, useWindowDimensions } from "react-native-web";
 import { Fragment, jsx, jsxs } from "react/jsx-runtime";
 function LmAutocomplete({
   options,

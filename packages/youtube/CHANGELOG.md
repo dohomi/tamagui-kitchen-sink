@@ -1,5 +1,16 @@
 # @tamagui-extras/youtube
 
+## 1.6.0
+
+### Minor Changes
+
+- Upgrade internal tamagui deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.6.0
+
 ## 1.5.0
 
 ### Minor Changes

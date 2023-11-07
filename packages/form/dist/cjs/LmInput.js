@@ -17,7 +17,7 @@ __export(LmInput_exports, {
   LmInput: () => LmInput
 });
 module.exports = __toCommonJS(LmInput_exports);
-var import_tamagui = require("tamagui"), import_react = require("react"), import_LmFormFieldContainer = require("./LmFormFieldContainer"), import_react_native = require("react-native"), import_core = require("@tamagui-extras/core"), import_jsx_runtime = require("react/jsx-runtime");
+var import_tamagui = require("tamagui"), import_react = require("react"), import_LmFormFieldContainer = require("./LmFormFieldContainer"), import_react_native = require("react-native-web"), import_core = require("@tamagui-extras/core"), import_jsx_runtime = require("react/jsx-runtime");
 function LmInput({
   required,
   error,

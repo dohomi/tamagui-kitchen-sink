@@ -1,5 +1,17 @@
 # @tamagui-extras/date
 
+## 1.8.0
+
+### Minor Changes
+
+- Upgrade internal tamagui deps
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.6.0
+  - @tamagui-extras/form@1.8.0
+
 ## 1.7.0
 
 ### Minor Changes

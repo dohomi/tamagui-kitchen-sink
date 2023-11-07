@@ -17,7 +17,7 @@ __export(LmAutocomplete_exports, {
   LmAutocomplete: () => LmAutocomplete
 });
 module.exports = __toCommonJS(LmAutocomplete_exports);
-var import_tamagui = require("tamagui"), import_react = require("react"), import_LmFormFieldContainer = require("./LmFormFieldContainer"), import_core = require("@tamagui-extras/core"), import_react_native = require("react-native"), import_jsx_runtime = require("react/jsx-runtime");
+var import_tamagui = require("tamagui"), import_react = require("react"), import_LmFormFieldContainer = require("./LmFormFieldContainer"), import_core = require("@tamagui-extras/core"), import_react_native = require("react-native-web"), import_jsx_runtime = require("react/jsx-runtime");
 function LmAutocomplete({
   options,
   labelInline,

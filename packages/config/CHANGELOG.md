@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.5.0
+
+### Minor Changes
+
+- Upgrade internal tamagui deps
+
 ## 1.4.0
 
 ### Minor Changes

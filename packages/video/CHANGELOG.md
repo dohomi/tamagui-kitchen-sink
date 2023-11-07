@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.7.0
+
+### Minor Changes
+
+- Upgrade internal tamagui deps
+
 ## 1.6.0
 
 ### Minor Changes

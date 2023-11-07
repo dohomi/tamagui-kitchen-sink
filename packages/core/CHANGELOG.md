@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.6.0
+
+### Minor Changes
+
+- Upgrade internal tamagui deps
+
 ## 1.5.0
 
 ### Minor Changes

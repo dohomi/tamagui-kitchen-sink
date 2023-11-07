@@ -14,6 +14,7 @@
     "sb:native": "cd apps/storybook-react-native && yarn start",
     "sb": "cd apps/storybook-react && yarn sb",
     "build:sb": "cd apps/storybook-react && yarn build && yarn serve-sb",
+    "chromatic": "cd apps/storybook-react && yarn chromatic",
     "web:prod": "turbo run build --filter=next-app && turbo run start --filter=next-app",
     "build": "turbo run build --filter=app^...",
     "watch": "turbo run watch --filter=app^...",
