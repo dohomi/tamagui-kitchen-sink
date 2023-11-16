@@ -20,9 +20,10 @@ export function LmInputRhf<T extends FieldValues = FieldValues>({
       rules={rules}
       control={control}
       defaultValue={defaultValue}
-      render={({ field: { onChange, value, onBlur }, fieldState: { error } }) => (
+      render={({ field: { onChange, value, onBlur, ref }, fieldState: { error } }) => (
         <LmInput
           {...inputProps}
+          ref={ref}
           value={value ?? ''}
           onBlur={onBlur}
           error={!!error}

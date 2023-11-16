@@ -1,9 +1,9 @@
 import { Input, Stack, TextArea } from "tamagui";
-import { useId, useState } from "react";
+import { forwardRef, useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
 import { Pressable } from "react-native-web";
 import { EyeRegular, EyeSlashRegular } from "@tamagui-extras/core";
-function LmInput({
+const LmInput = forwardRef(function({
   required,
   error,
   helperText,
@@ -17,7 +17,7 @@ function LmInput({
   passwordIconProps,
   fullWidth,
   ...rest
-}) {
+}, ref) {
   const genId = useId(), [show, setShow] = useState(!1), id = rest.id || genId, currentInputProps = {
     ...rest
   };
@@ -35,9 +35,14 @@ function LmInput({
     helperText={helperText}
     helperTextProps={helperTextProps}
     {...containerProps}
-  >{multiline ? <TextArea {...currentInputProps} placeholderTextColor={rest.placeholderTextColor} /> : secureTextEntry ? <Stack position="relative" width={fullWidth ? "100%" : currentInputProps?.width}>
+  >{multiline ? <TextArea
+    {...currentInputProps}
+    placeholderTextColor={rest.placeholderTextColor}
+    ref={ref}
+  /> : secureTextEntry ? <Stack position="relative" width={fullWidth ? "100%" : currentInputProps?.width}>
     <Input
       {...currentInputProps}
+      ref={ref}
       secureTextEntry={!show}
       autoCapitalize="none"
       placeholderTextColor={rest.placeholderTextColor}
@@ -58,8 +63,8 @@ function LmInput({
         setShow((state) => !state);
       }}
     >{show ? <EyeSlashRegular {...passwordIconProps} /> : <EyeRegular {...passwordIconProps} />}</Pressable>
-  </Stack> : <Input {...currentInputProps} autoCapitalize="none" />}</LmFormFieldContainer>;
-}
+  </Stack> : <Input {...currentInputProps} autoCapitalize="none" ref={ref} />}</LmFormFieldContainer>;
+});
 export {
   LmInput
 };

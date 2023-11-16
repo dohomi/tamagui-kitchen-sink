@@ -7,7 +7,7 @@ import {
   colormap,
   ThemeColors,
 } from '@tamagui-extras/core'
-import { useId, useState } from 'react'
+import { forwardRef, useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
 
@@ -25,27 +25,30 @@ export type LmSelectProps = SelectProps &
     fullWidth?: boolean
   }
 
-export function LmSelect({
-  value,
-  colorVariant,
-  themeName,
-  options = [],
-  width = 180,
-  placeholder = '',
-  dropDownLabel,
-  required,
-  error,
-  helperText,
-  helperTextProps,
-  label,
-  labelInline,
-  labelProps,
-  fullWidth,
-  defaultValue,
-  onValueChange,
-  containerProps,
-  ...rest
-}: LmSelectProps) {
+export const LmSelect = forwardRef(function LmSelectEl(
+  {
+    value,
+    colorVariant,
+    themeName,
+    options = [],
+    width = 180,
+    placeholder = '',
+    dropDownLabel,
+    required,
+    error,
+    helperText,
+    helperTextProps,
+    label,
+    labelInline,
+    labelProps,
+    fullWidth,
+    defaultValue,
+    onValueChange,
+    containerProps,
+    ...rest
+  }: LmSelectProps,
+  ref
+) {
   const [selectVal, setSelectVal] = useState<string>(value ?? defaultValue ?? '')
   const id = useId()
   rest.size = rest.size || '$3'
@@ -81,6 +84,7 @@ export function LmSelect({
           iconAfter={<CaretDownRegular />}
           paddingVertical={0}
           minHeight={rest.size}
+          ref={ref as any}
         >
           <Select.Value placeholder={placeholder} paddingVertical={0} />
         </Select.Trigger>
@@ -152,4 +156,4 @@ export function LmSelect({
       </Select>
     </LmFormFieldContainer>
   )
-}
+})

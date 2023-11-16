@@ -32,10 +32,11 @@ function LmInputRhf({
       rules,
       control,
       defaultValue,
-      render: ({ field: { onChange, value, onBlur }, fieldState: { error } }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+      render: ({ field: { onChange, value, onBlur, ref }, fieldState: { error } }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
         import_LmInput.LmInput,
         {
           ...inputProps,
+          ref,
           value: value ?? "",
           onBlur,
           error: !!error,

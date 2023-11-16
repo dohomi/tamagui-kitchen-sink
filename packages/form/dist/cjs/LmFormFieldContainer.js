@@ -28,7 +28,7 @@ const StackContainer = (0, import_tamagui.styled)(import_tamagui.ThemeableStack,
     labelInline: {
       true: {
         flexDirection: "row",
-        space: !0,
+        space: "$3",
         alignItems: "center"
       }
     }
@@ -46,7 +46,7 @@ function LmFormFieldContainer({
   helperTextProps,
   ...rest
 }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(StackContainer, { space: !!rest.labelInline, ...rest, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(StackContainer, { space: rest.labelInline ? "$3" : void 0, ...rest, children: [
     label && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
       import_tamagui.Label,
       {

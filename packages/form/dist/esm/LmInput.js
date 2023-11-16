@@ -1,10 +1,10 @@
 import { Input, Stack, TextArea } from "tamagui";
-import { useId, useState } from "react";
+import { forwardRef, useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
 import { Pressable } from "react-native-web";
 import { EyeRegular, EyeSlashRegular } from "@tamagui-extras/core";
 import { jsx, jsxs } from "react/jsx-runtime";
-function LmInput({
+const LmInput = forwardRef(function({
   required,
   error,
   helperText,
@@ -18,7 +18,7 @@ function LmInput({
   passwordIconProps,
   fullWidth,
   ...rest
-}) {
+}, ref) {
   const genId = useId(), [show, setShow] = useState(!1), id = rest.id || genId, currentInputProps = {
     ...rest
   };
@@ -38,11 +38,19 @@ function LmInput({
       helperText,
       helperTextProps,
       ...containerProps,
-      children: multiline ? /* @__PURE__ */ jsx(TextArea, { ...currentInputProps, placeholderTextColor: rest.placeholderTextColor }) : secureTextEntry ? /* @__PURE__ */ jsxs(Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps?.width, children: [
+      children: multiline ? /* @__PURE__ */ jsx(
+        TextArea,
+        {
+          ...currentInputProps,
+          placeholderTextColor: rest.placeholderTextColor,
+          ref
+        }
+      ) : secureTextEntry ? /* @__PURE__ */ jsxs(Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps?.width, children: [
         /* @__PURE__ */ jsx(
           Input,
           {
             ...currentInputProps,
+            ref,
             secureTextEntry: !show,
             autoCapitalize: "none",
             placeholderTextColor: rest.placeholderTextColor
@@ -68,10 +76,10 @@ function LmInput({
             children: show ? /* @__PURE__ */ jsx(EyeSlashRegular, { ...passwordIconProps }) : /* @__PURE__ */ jsx(EyeRegular, { ...passwordIconProps })
           }
         )
-      ] }) : /* @__PURE__ */ jsx(Input, { ...currentInputProps, autoCapitalize: "none" })
+      ] }) : /* @__PURE__ */ jsx(Input, { ...currentInputProps, autoCapitalize: "none", ref })
     }
   );
-}
+});
 export {
   LmInput
 };

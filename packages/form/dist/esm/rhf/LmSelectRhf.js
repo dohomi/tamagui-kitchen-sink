@@ -15,9 +15,10 @@ function LmSelectRhf({
       rules,
       control,
       defaultValue,
-      render: ({ field: { onChange, value }, fieldState: { error, invalid } }) => /* @__PURE__ */ jsx(
+      render: ({ field: { onChange, value, ref }, fieldState: { error, invalid } }) => /* @__PURE__ */ jsx(
         LmSelect,
         {
+          ref,
           ...inputProps,
           value: value ?? "",
           error: invalid,

@@ -1,7 +1,7 @@
 {
   "name": "@tamagui-extras/rich-text",
   "license": "MIT",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "author": "Dominic Garms",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",
@@ -40,7 +40,7 @@
   "dependencies": {
     "@siposdani87/expo-rich-text-editor": "^0.9.2",
     "@tamagui-extras/core": "1.6.1",
-    "@tamagui-extras/form": "1.8.1",
+    "@tamagui-extras/form": "1.8.2",
     "@tiptap/pm": "2.1.7",
     "@tiptap/react": "2.1.7",
     "@tiptap/starter-kit": "2.1.7"

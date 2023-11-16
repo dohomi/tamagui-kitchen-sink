@@ -18,7 +18,7 @@ __export(LmInput_exports, {
 });
 module.exports = __toCommonJS(LmInput_exports);
 var import_tamagui = require("tamagui"), import_react = require("react"), import_LmFormFieldContainer = require("./LmFormFieldContainer"), import_react_native = require("react-native-web"), import_core = require("@tamagui-extras/core"), import_jsx_runtime = require("react/jsx-runtime");
-function LmInput({
+const LmInput = (0, import_react.forwardRef)(function({
   required,
   error,
   helperText,
@@ -32,7 +32,7 @@ function LmInput({
   passwordIconProps,
   fullWidth,
   ...rest
-}) {
+}, ref) {
   const genId = (0, import_react.useId)(), [show, setShow] = (0, import_react.useState)(!1), id = rest.id || genId, currentInputProps = {
     ...rest
   };
@@ -52,11 +52,19 @@ function LmInput({
       helperText,
       helperTextProps,
       ...containerProps,
-      children: multiline ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.TextArea, { ...currentInputProps, placeholderTextColor: rest.placeholderTextColor }) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps == null ? void 0 : currentInputProps.width, children: [
+      children: multiline ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        import_tamagui.TextArea,
+        {
+          ...currentInputProps,
+          placeholderTextColor: rest.placeholderTextColor,
+          ref
+        }
+      ) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps == null ? void 0 : currentInputProps.width, children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
           import_tamagui.Input,
           {
             ...currentInputProps,
+            ref,
             secureTextEntry: !show,
             autoCapitalize: "none",
             placeholderTextColor: rest.placeholderTextColor
@@ -82,10 +90,10 @@ function LmInput({
             children: show ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.EyeSlashRegular, { ...passwordIconProps }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.EyeRegular, { ...passwordIconProps })
           }
         )
-      ] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { ...currentInputProps, autoCapitalize: "none" })
+      ] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { ...currentInputProps, autoCapitalize: "none", ref })
     }
   );
-}
+});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   LmInput

@@ -1,5 +1,11 @@
 # @tamagui-extras/form
 
+## 1.8.2
+
+### Patch Changes
+
+- add ref to input and select
+
 ## 1.8.1
 
 ### Patch Changes

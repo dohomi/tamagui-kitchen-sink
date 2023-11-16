@@ -1,5 +1,12 @@
 # @tamagui-extras/date
 
+## 1.8.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/form@1.8.2
+
 ## 1.8.1
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 import { Input, InputProps, Stack, TextArea } from 'tamagui'
-import { useId, useState } from 'react'
+import { forwardRef, useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
 import { Pressable } from 'react-native'
@@ -13,21 +13,24 @@ export type LmInputProps = InputProps &
     passwordIconProps?: IconProps
   }
 
-export function LmInput({
-  required,
-  error,
-  helperText,
-  helperTextProps,
-  label,
-  labelProps,
-  labelInline,
-  multiline,
-  containerProps,
-  isPassword,
-  passwordIconProps,
-  fullWidth,
-  ...rest
-}: LmInputProps) {
+export const LmInput = forwardRef(function LmInputEl(
+  {
+    required,
+    error,
+    helperText,
+    helperTextProps,
+    label,
+    labelProps,
+    labelInline,
+    multiline,
+    containerProps,
+    isPassword,
+    passwordIconProps,
+    fullWidth,
+    ...rest
+  }: LmInputProps,
+  ref
+) {
   const genId = useId()
   const [show, setShow] = useState<boolean>(false)
   const id = rest.id || genId
@@ -59,11 +62,16 @@ export function LmInput({
       {...containerProps}
     >
       {multiline ? (
-        <TextArea {...currentInputProps} placeholderTextColor={rest.placeholderTextColor} />
+        <TextArea
+          {...currentInputProps}
+          placeholderTextColor={rest.placeholderTextColor}
+          ref={ref as any}
+        />
       ) : secureTextEntry ? (
         <Stack position={'relative'} width={fullWidth ? '100%' : currentInputProps?.width}>
           <Input
             {...currentInputProps}
+            ref={ref as any}
             secureTextEntry={!show}
             autoCapitalize="none"
             placeholderTextColor={rest.placeholderTextColor as InputProps['placeholderTextColor']}
@@ -94,8 +102,8 @@ export function LmInput({
           </Pressable>
         </Stack>
       ) : (
-        <Input {...currentInputProps} autoCapitalize="none" />
+        <Input {...currentInputProps} autoCapitalize="none" ref={ref as any} />
       )}
     </LmFormFieldContainer>
   )
-}
+})

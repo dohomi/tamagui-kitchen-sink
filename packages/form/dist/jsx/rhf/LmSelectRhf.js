@@ -12,7 +12,8 @@ function LmSelectRhf({
     rules={rules}
     control={control}
     defaultValue={defaultValue}
-    render={({ field: { onChange, value }, fieldState: { error, invalid } }) => <LmSelect
+    render={({ field: { onChange, value, ref }, fieldState: { error, invalid } }) => <LmSelect
+      ref={ref}
       {...inputProps}
       value={value ?? ""}
       error={invalid}

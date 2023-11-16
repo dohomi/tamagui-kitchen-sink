@@ -15,7 +15,7 @@ const StackContainer = styled(ThemeableStack, {
     labelInline: {
       true: {
         flexDirection: "row",
-        space: !0,
+        space: "$3",
         alignItems: "center"
       }
     }
@@ -33,7 +33,7 @@ function LmFormFieldContainer({
   helperTextProps,
   ...rest
 }) {
-  return <StackContainer space={!!rest.labelInline} {...rest}>
+  return <StackContainer space={rest.labelInline ? "$3" : void 0} {...rest}>
     {label && <Label
       htmlFor={id}
       size={size || "$3"}

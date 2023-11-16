@@ -43,7 +43,7 @@ export const ReactHookForm: StoryObj = {
         }}
       >
         <LmCard>
-          <YStack space padding={'$3'}>
+          <YStack space={'$3'} padding={'$3'}>
             <LmInputRhf<FormValues>
               name={'name'}
               label={'Name'}
@@ -71,7 +71,7 @@ export const ReactHookForm: StoryObj = {
             <LmDatepickerRhf name="datepicker" label={'Choose a date'} />
             <LmSliderRhf name={'slider'} />
             <LmSliderRhf name={'slider_pre'} />
-            <XStack space>
+            <XStack space={'$3'}>
               <LmResetButtonRhf>Reset</LmResetButtonRhf>
               <LmSubmitButtonRhf onSubmit={action('submit')}>Submit</LmSubmitButtonRhf>
             </XStack>
@@ -149,6 +149,7 @@ export const WithTamaguiForm_1 = () => {
     <LmFormRhfProvider
       defaultValues={{
         name: '',
+        color: '',
         email: undefined,
       }}
     >
@@ -179,6 +180,14 @@ export const WithTamaguiForm_1 = () => {
             label={'Name'}
             placeholder={'Type your email...'}
             labelInline
+          />
+          <LmSelectRhf
+            labelInline
+            options={[]}
+            label={'Select color'}
+            control={control}
+            name={'color'}
+            required
           />
           <XStack gap={'$3'}>
             <LmButton onPress={() => reset()}>Reset</LmButton>

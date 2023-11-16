@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import { SelectProps, ThemeProps } from 'tamagui';
 import { ThemeColors } from '@tamagui-extras/core';
 import { LmFormContainerBaseTypes } from './formContainerTypes';
@@ -14,5 +15,17 @@ export type LmSelectProps = SelectProps & LmFormContainerBaseTypes & {
     dropDownLabel?: string;
     fullWidth?: boolean;
 };
-export declare function LmSelect({ value, colorVariant, themeName, options, width, placeholder, dropDownLabel, required, error, helperText, helperTextProps, label, labelInline, labelProps, fullWidth, defaultValue, onValueChange, containerProps, ...rest }: LmSelectProps): import("react/jsx-runtime").JSX.Element;
+export declare const LmSelect: import("react").ForwardRefExoticComponent<SelectProps & LmFormContainerBaseTypes & {
+    value?: string | undefined;
+    options: {
+        label: string;
+        value: string | number;
+    }[];
+    colorVariant?: ThemeColors | undefined;
+    themeName?: ThemeProps['name'];
+    width?: string | number | undefined;
+    placeholder?: string | undefined;
+    dropDownLabel?: string | undefined;
+    fullWidth?: boolean | undefined;
+} & import("react").RefAttributes<unknown>>;
 //# sourceMappingURL=LmSelect.d.ts.map
