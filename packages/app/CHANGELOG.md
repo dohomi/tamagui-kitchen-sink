@@ -1,5 +1,14 @@
 # app
 
+## 0.0.23
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/form@1.8.3
+  - @tamagui-extras/date@1.8.3
+  - @tamagui-extras/rich-text@1.6.3
+
 ## 0.0.22
 
 ### Patch Changes

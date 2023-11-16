@@ -1,5 +1,11 @@
 # @tamagui-extras/form
 
+## 1.8.3
+
+### Patch Changes
+
+- remove ref
+
 ## 1.8.2
 
 ### Patch Changes

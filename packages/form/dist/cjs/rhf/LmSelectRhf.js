@@ -35,7 +35,6 @@ function LmSelectRhf({
       render: ({ field: { onChange, value, ref }, fieldState: { error, invalid } }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
         import_LmSelect.LmSelect,
         {
-          ref,
           ...inputProps,
           value: value ?? "",
           error: invalid,

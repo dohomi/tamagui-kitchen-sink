@@ -18,7 +18,7 @@ __export(LmSelect_exports, {
 });
 module.exports = __toCommonJS(LmSelect_exports);
 var import_tamagui = require("tamagui"), import_linear_gradient = require("@tamagui/linear-gradient"), import_core = require("@tamagui-extras/core"), import_react = require("react"), import_LmFormFieldContainer = require("./LmFormFieldContainer"), import_jsx_runtime = require("react/jsx-runtime");
-const LmSelect = (0, import_react.forwardRef)(function({
+function LmSelect({
   value,
   colorVariant,
   themeName,
@@ -38,7 +38,7 @@ const LmSelect = (0, import_react.forwardRef)(function({
   onValueChange,
   containerProps,
   ...rest
-}, ref) {
+}) {
   const [selectVal, setSelectVal] = (0, import_react.useState)(value ?? defaultValue ?? ""), id = (0, import_react.useId)();
   return rest.size = rest.size || "$3", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     import_LmFormFieldContainer.LmFormFieldContainer,
@@ -72,7 +72,6 @@ const LmSelect = (0, import_react.forwardRef)(function({
                 iconAfter: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CaretDownRegular, {}),
                 paddingVertical: 0,
                 minHeight: rest.size,
-                ref,
                 children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Value, { placeholder, paddingVertical: 0 })
               }
             ),
@@ -140,7 +139,7 @@ const LmSelect = (0, import_react.forwardRef)(function({
       )
     }
   );
-});
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   LmSelect

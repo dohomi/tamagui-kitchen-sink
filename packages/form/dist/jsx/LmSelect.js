@@ -6,9 +6,9 @@ import {
   CheckRegular,
   colormap
 } from "@tamagui-extras/core";
-import { forwardRef, useId, useState } from "react";
+import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
-const LmSelect = forwardRef(function({
+function LmSelect({
   value,
   colorVariant,
   themeName,
@@ -28,7 +28,7 @@ const LmSelect = forwardRef(function({
   onValueChange,
   containerProps,
   ...rest
-}, ref) {
+}) {
   const [selectVal, setSelectVal] = useState(value ?? defaultValue ?? ""), id = useId();
   return rest.size = rest.size || "$3", <LmFormFieldContainer
     id={id}
@@ -56,7 +56,6 @@ const LmSelect = forwardRef(function({
       iconAfter={<CaretDownRegular />}
       paddingVertical={0}
       minHeight={rest.size}
-      ref={ref}
     ><Select.Value placeholder={placeholder} paddingVertical={0} /></Select.Trigger>
     {
       /*@ts-ignore*/
@@ -107,7 +106,7 @@ const LmSelect = forwardRef(function({
       </Select.ScrollDownButton>
     </Select.Content>
   </Select></LmFormFieldContainer>;
-});
+}
 export {
   LmSelect
 };

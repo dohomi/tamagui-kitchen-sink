@@ -6,10 +6,10 @@ import {
   CheckRegular,
   colormap
 } from "@tamagui-extras/core";
-import { forwardRef, useId, useState } from "react";
+import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
 import { jsx, jsxs } from "react/jsx-runtime";
-const LmSelect = forwardRef(function({
+function LmSelect({
   value,
   colorVariant,
   themeName,
@@ -29,7 +29,7 @@ const LmSelect = forwardRef(function({
   onValueChange,
   containerProps,
   ...rest
-}, ref) {
+}) {
   const [selectVal, setSelectVal] = useState(value ?? defaultValue ?? ""), id = useId();
   return rest.size = rest.size || "$3", /* @__PURE__ */ jsx(
     LmFormFieldContainer,
@@ -63,7 +63,6 @@ const LmSelect = forwardRef(function({
                 iconAfter: /* @__PURE__ */ jsx(CaretDownRegular, {}),
                 paddingVertical: 0,
                 minHeight: rest.size,
-                ref,
                 children: /* @__PURE__ */ jsx(Select.Value, { placeholder, paddingVertical: 0 })
               }
             ),
@@ -131,7 +130,7 @@ const LmSelect = forwardRef(function({
       )
     }
   );
-});
+}
 export {
   LmSelect
 };
