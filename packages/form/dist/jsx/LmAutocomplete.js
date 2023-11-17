@@ -2,20 +2,22 @@ import {
   Button,
   Input,
   ListItem,
+  ListItemTitle,
   ScrollView,
   XGroup,
   XStack,
   YGroup,
   YStack
 } from "tamagui";
-import { useDeferredValue, useEffect, useId, useRef, useState } from "react";
+import { forwardRef, useDeferredValue, useEffect, useId, useRef, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
 import {
   CaretDownRegular,
   CheckSquareRegular,
   ListPlusRegular,
   LmPopover,
-  SquareRegular
+  SquareRegular,
+  usePopoverState
 } from "@tamagui-extras/core";
 import { Platform, useWindowDimensions } from "react-native-web";
 function LmAutocomplete({
@@ -36,7 +38,7 @@ function LmAutocomplete({
   containerProps,
   ...rest
 }) {
-  const id = useId(), [opts, setOpts] = useState(options), { width } = useWindowDimensions(), [popoverWidth, setPopoverWidth] = useState(0), inputRef = useRef(null), [selection, setSelection] = useState(
+  const id = useId(), [opts, setOpts] = useState(options), { width } = useWindowDimensions(), popoverState = usePopoverState(), [popoverWidth, setPopoverWidth] = useState(0), inputRef = useRef(null), searchInputRef = useRef(null), [selection, setSelection] = useState(
     value ?? (multiple ? [] : null)
   ), isSelected = (item) => Array.isArray(selection) ? !!selection?.some((i) => i.value === item.value) : selection?.value === item.value, onChangeSelection = (item) => {
     let newVal = null;
@@ -45,7 +47,9 @@ function LmAutocomplete({
   useEffect(() => {
     const elWidth = inputRef.current?.offsetWidth;
     elWidth && setPopoverWidth(elWidth);
-  }, [width]);
+  }, [width]), useEffect(() => {
+    popoverState.open && searchInputRef.current?.focus?.();
+  }, [popoverState.open]);
   const inputValue = Array.isArray(selection) ? selection.map((option) => option?.label).join(", ") : selection?.label || "";
   return <LmFormFieldContainer
     id={id}
@@ -58,10 +62,24 @@ function LmAutocomplete({
     helperTextProps={helperTextProps}
     {...containerProps}
   ><XGroup ref={inputRef}>
-    <XGroup.Item><Input flex={1} value={inputValue} theme={theme} textOverflow="ellipsis" /></XGroup.Item>
+    <XGroup.Item><Input
+      flex={1}
+      value={inputValue}
+      theme={theme}
+      textOverflow="ellipsis"
+      onFocus={(el) => {
+        popoverState.onOpenChange(!popoverState.open), el.target.blur?.();
+      }}
+    /></XGroup.Item>
     <XGroup.Item><LmPopover
       isBouncy
       {...popoverProps}
+      {...popoverState}
+      offset={{
+        // alignmentAxis: 20,
+        mainAxis: 15,
+        crossAxis: -30
+      }}
       contentProps={{
         minWidth: popoverWidth || void 0,
         maxWidth: "100%",
@@ -73,6 +91,7 @@ function LmAutocomplete({
         borderBottomLeftRadius={0}
       />}
     ><LmAutocompleteInputContent
+      ref={searchInputRef}
       theme={theme}
       options={opts}
       isSelected={isSelected}
@@ -90,7 +109,7 @@ function LmAutocomplete({
     /></LmPopover></XGroup.Item>
   </XGroup></LmFormFieldContainer>;
 }
-function LmAutocompleteInputContent({
+const LmAutocompleteInputContent = forwardRef(function({
   disableSearch,
   theme,
   placeholderSearch,
@@ -99,13 +118,14 @@ function LmAutocompleteInputContent({
   onAddNew,
   onChangeSelection,
   isSelected
-}) {
+}, ref) {
   const [searchTerm, setSearchTerm] = useState(), deferredTerm = useDeferredValue(searchTerm), filteredOptions = deferredTerm?.length ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options, showSearch = !disableSearch || allowNew;
   return <>{Platform.OS === "web" ? <>
     {showSearch && <XStack padding="$4" width="100%"><Input
       theme={theme}
       placeholder={placeholderSearch}
       width="100%"
+      ref={ref}
       onChangeText={(text) => {
         setSearchTerm(text.toLowerCase());
       }}
@@ -131,6 +151,7 @@ function LmAutocompleteInputContent({
   </> : <YStack>
     {showSearch && <XStack padding="$4" width="100%"><Input
       theme={theme}
+      ref={ref}
       placeholder={placeholderSearch}
       width="100%"
       onChangeText={(text) => {
@@ -144,14 +165,16 @@ function LmAutocompleteInputContent({
     /></ScrollView>
     {allowNew && !filteredOptions?.length && deferredTerm && <XStack justifyContent="flex-start" marginBottom="$3" marginLeft="$3"><Button onPress={() => onAddNew(deferredTerm)} chromeless icon={<ListPlusRegular />}>{deferredTerm}</Button></XStack>}
   </YStack>}</>;
-}
+});
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
   return <YGroup borderRadius={0}>{options.map((item, i) => <YGroup.Item key={item.value}><ListItem
     hoverTheme
+    pressTheme
+    focusTheme
+    cursor="pointer"
     icon={isSelected(item) ? <CheckSquareRegular /> : <SquareRegular />}
-    title={item.label}
     onPress={() => onChangeSelection(item)}
-  /></YGroup.Item>)}</YGroup>;
+  ><ListItemTitle cursor="pointer">{item.label}</ListItemTitle></ListItem></YGroup.Item>)}</YGroup>;
 }
 export {
   LmAutocomplete

@@ -1,4 +1,4 @@
-import { Select, YStack } from "tamagui";
+import { getFontSize, Select, YStack } from "tamagui";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import {
   CaretDownRegular,
@@ -6,14 +6,14 @@ import {
   CheckRegular,
   colormap
 } from "@tamagui-extras/core";
-import { useId, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
 function LmSelect({
   value,
   colorVariant,
   themeName,
   options = [],
-  width = 180,
+  width = 200,
   placeholder = "",
   dropDownLabel,
   required,
@@ -30,7 +30,7 @@ function LmSelect({
   ...rest
 }) {
   const [selectVal, setSelectVal] = useState(value ?? defaultValue ?? ""), id = useId();
-  return rest.size = rest.size || "$3", <LmFormFieldContainer
+  return <LmFormFieldContainer
     id={id}
     theme={colorVariant ? colormap[colorVariant] : themeName || void 0}
     error={error}
@@ -45,6 +45,7 @@ function LmSelect({
     {...containerProps}
   ><Select
     id={id}
+    disablePreventBodyScroll
     {...rest}
     value={selectVal}
     onValueChange={(val) => {
@@ -54,9 +55,7 @@ function LmSelect({
     <Select.Trigger
       width={fullWidth ? "100%" : width}
       iconAfter={<CaretDownRegular />}
-      paddingVertical={0}
-      minHeight={rest.size}
-    ><Select.Value placeholder={placeholder} paddingVertical={0} /></Select.Trigger>
+    ><Select.Value placeholder={placeholder} /></Select.Trigger>
     {
       /*@ts-ignore*/
     }
@@ -81,13 +80,31 @@ function LmSelect({
           borderRadius="$4"
         />
       </Select.ScrollUpButton>
-      <Select.Viewport><Select.Group>
-        {dropDownLabel && <Select.Label>{dropDownLabel}</Select.Label>}
-        {options.map((item, i) => <Select.Item index={i} key={item.value} value={`${item.value}`}>
-          <Select.ItemText>{item.label}</Select.ItemText>
-          <Select.ItemIndicator marginLeft="auto"><CheckRegular size={16} /></Select.ItemIndicator>
-        </Select.Item>)}
-      </Select.Group></Select.Viewport>
+      <Select.Viewport>
+        <Select.Group>
+          {dropDownLabel && <Select.Label>{dropDownLabel}</Select.Label>}
+          {useMemo(
+            () => options.map((item, i) => <Select.Item index={i} key={item.value} value={`${item.value}`}>
+              <Select.ItemText>{item.label}</Select.ItemText>
+              <Select.ItemIndicator marginLeft="auto"><CheckRegular size={16} /></Select.ItemIndicator>
+            </Select.Item>),
+            [options]
+          )}
+        </Select.Group>
+        {
+          /* Native gets an extra icon */
+        }
+        {rest.native && <YStack
+          position="absolute"
+          right={0}
+          top={0}
+          bottom={0}
+          alignItems="center"
+          justifyContent="center"
+          width="$4"
+          pointerEvents="none"
+        ><CaretDownRegular size={getFontSize(rest.size ?? "$true")} /></YStack>}
+      </Select.Viewport>
       <Select.ScrollDownButton
         alignItems="center"
         justifyContent="center"
@@ -100,7 +117,7 @@ function LmSelect({
           start={[0, 0]}
           end={[0, 1]}
           fullscreen
-          colors={["$backgroundTransparent", "$background"]}
+          colors={["transparent", "$background"]}
           borderRadius="$4"
         />
       </Select.ScrollDownButton>

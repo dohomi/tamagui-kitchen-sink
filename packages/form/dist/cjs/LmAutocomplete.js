@@ -36,7 +36,7 @@ function LmAutocomplete({
   containerProps,
   ...rest
 }) {
-  const id = (0, import_react.useId)(), [opts, setOpts] = (0, import_react.useState)(options), { width } = (0, import_react_native.useWindowDimensions)(), [popoverWidth, setPopoverWidth] = (0, import_react.useState)(0), inputRef = (0, import_react.useRef)(null), [selection, setSelection] = (0, import_react.useState)(
+  const id = (0, import_react.useId)(), [opts, setOpts] = (0, import_react.useState)(options), { width } = (0, import_react_native.useWindowDimensions)(), popoverState = (0, import_core.usePopoverState)(), [popoverWidth, setPopoverWidth] = (0, import_react.useState)(0), inputRef = (0, import_react.useRef)(null), searchInputRef = (0, import_react.useRef)(null), [selection, setSelection] = (0, import_react.useState)(
     value ?? (multiple ? [] : null)
   ), isSelected = (item) => Array.isArray(selection) ? !!(selection != null && selection.some((i) => i.value === item.value)) : (selection == null ? void 0 : selection.value) === item.value, onChangeSelection = (item) => {
     let newVal = null;
@@ -46,7 +46,10 @@ function LmAutocomplete({
     var _a;
     const elWidth = (_a = inputRef.current) == null ? void 0 : _a.offsetWidth;
     elWidth && setPopoverWidth(elWidth);
-  }, [width]);
+  }, [width]), (0, import_react.useEffect)(() => {
+    var _a, _b;
+    popoverState.open && ((_b = (_a = searchInputRef.current) == null ? void 0 : _a.focus) == null || _b.call(_a));
+  }, [popoverState.open]);
   const inputValue = Array.isArray(selection) ? selection.map((option) => option == null ? void 0 : option.label).join(", ") : (selection == null ? void 0 : selection.label) || "";
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     import_LmFormFieldContainer.LmFormFieldContainer,
@@ -61,12 +64,30 @@ function LmAutocomplete({
       helperTextProps,
       ...containerProps,
       children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.XGroup, { ref: inputRef, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XGroup.Item, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { flex: 1, value: inputValue, theme, textOverflow: "ellipsis" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XGroup.Item, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          import_tamagui.Input,
+          {
+            flex: 1,
+            value: inputValue,
+            theme,
+            textOverflow: "ellipsis",
+            onFocus: (el) => {
+              var _a, _b;
+              popoverState.onOpenChange(!popoverState.open), (_b = (_a = el.target).blur) == null || _b.call(_a);
+            }
+          }
+        ) }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XGroup.Item, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
           import_core.LmPopover,
           {
             isBouncy: !0,
             ...popoverProps,
+            ...popoverState,
+            offset: {
+              // alignmentAxis: 20,
+              mainAxis: 15,
+              crossAxis: -30
+            },
             contentProps: {
               minWidth: popoverWidth || void 0,
               maxWidth: "100%",
@@ -83,6 +104,7 @@ function LmAutocomplete({
             children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
               LmAutocompleteInputContent,
               {
+                ref: searchInputRef,
                 theme,
                 options: opts,
                 isSelected,
@@ -105,7 +127,7 @@ function LmAutocomplete({
     }
   );
 }
-function LmAutocompleteInputContent({
+const LmAutocompleteInputContent = (0, import_react.forwardRef)(function({
   disableSearch,
   theme,
   placeholderSearch,
@@ -114,7 +136,7 @@ function LmAutocompleteInputContent({
   onAddNew,
   onChangeSelection,
   isSelected
-}) {
+}, ref) {
   const [searchTerm, setSearchTerm] = (0, import_react.useState)(), deferredTerm = (0, import_react.useDeferredValue)(searchTerm), filteredOptions = deferredTerm != null && deferredTerm.length ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options, showSearch = !disableSearch || allowNew;
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: import_react_native.Platform.OS === "web" ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
     showSearch && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
@@ -123,6 +145,7 @@ function LmAutocompleteInputContent({
         theme,
         placeholder: placeholderSearch,
         width: "100%",
+        ref,
         onChangeText: (text) => {
           setSearchTerm(text.toLowerCase());
         }
@@ -162,6 +185,7 @@ function LmAutocompleteInputContent({
       import_tamagui.Input,
       {
         theme,
+        ref,
         placeholder: placeholderSearch,
         width: "100%",
         onChangeText: (text) => {
@@ -179,15 +203,18 @@ function LmAutocompleteInputContent({
     ) }),
     allowNew && !(filteredOptions != null && filteredOptions.length) && deferredTerm && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Button, { onPress: () => onAddNew(deferredTerm), chromeless: !0, icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.ListPlusRegular, {}), children: deferredTerm }) })
   ] }) });
-}
+});
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.YGroup, { borderRadius: 0, children: options.map((item, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.YGroup.Item, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     import_tamagui.ListItem,
     {
       hoverTheme: !0,
+      pressTheme: !0,
+      focusTheme: !0,
+      cursor: "pointer",
       icon: isSelected(item) ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CheckSquareRegular, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.SquareRegular, {}),
-      title: item.label,
-      onPress: () => onChangeSelection(item)
+      onPress: () => onChangeSelection(item),
+      children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.ListItemTitle, { cursor: "pointer", children: item.label })
     }
   ) }, item.value)) });
 }

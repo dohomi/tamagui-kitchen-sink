@@ -62,12 +62,12 @@ export const FullWidth: Story = {
 }
 
 export const Sizes = () => (
-  <XStack space={'$4'}>
-    <LmSelect options={options} colorVariant={'info'} size={'$1'} />
-    <LmSelect options={options} colorVariant={'info'} size={'$2'} />
-    <LmSelect options={options} colorVariant={'info'} size={'$4'} />
-    <LmSelect options={options} colorVariant={'info'} size={'$6'} />
-  </XStack>
+  <YStack space={'$4'}>
+    <LmSelect options={options} colorVariant={'info'} size={'$2'} label={'Size $2'} />
+    <LmSelect options={options} colorVariant={'info'} size={'$3'} label={'Size $3'} />
+    <LmSelect options={options} colorVariant={'info'} size={'$4'} label={'Size $4'} />
+    <LmSelect options={options} colorVariant={'info'} size={'$6'} label={'Size $6'} />
+  </YStack>
 )
 
 export const Width = () => (
@@ -82,11 +82,11 @@ export const Width = () => (
 export const Colors = () => (
   <YStack space={'$4'}>
     <YStack space={'$4'}>
-      <LmSelect options={options} colorVariant={'info'} />
-      <LmSelect options={options} colorVariant={'primary'} />
-      <LmSelect options={options} colorVariant={'secondary'} />
-      <LmSelect options={options} colorVariant={'success'} />
-      <LmSelect options={options} colorVariant={'warning'} />
+      <LmSelect options={options} colorVariant={'info'} label={'Color info'} />
+      <LmSelect options={options} colorVariant={'primary'} label={'Color primary'} />
+      <LmSelect options={options} colorVariant={'secondary'} label={'Color secondary'} />
+      <LmSelect options={options} colorVariant={'success'} label={'Color success'} />
+      <LmSelect options={options} colorVariant={'warning'} label={'Color warning'} />
     </YStack>
   </YStack>
 )

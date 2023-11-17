@@ -23,7 +23,7 @@ function LmSelect({
   colorVariant,
   themeName,
   options = [],
-  width = 180,
+  width = 200,
   placeholder = "",
   dropDownLabel,
   required,
@@ -40,7 +40,7 @@ function LmSelect({
   ...rest
 }) {
   const [selectVal, setSelectVal] = (0, import_react.useState)(value ?? defaultValue ?? ""), id = (0, import_react.useId)();
-  return rest.size = rest.size || "$3", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     import_LmFormFieldContainer.LmFormFieldContainer,
     {
       id,
@@ -59,6 +59,7 @@ function LmSelect({
         import_tamagui.Select,
         {
           id,
+          disablePreventBodyScroll: !0,
           ...rest,
           value: selectVal,
           onValueChange: (val) => {
@@ -70,9 +71,7 @@ function LmSelect({
               {
                 width: fullWidth ? "100%" : width,
                 iconAfter: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CaretDownRegular, {}),
-                paddingVertical: 0,
-                minHeight: rest.size,
-                children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Value, { placeholder, paddingVertical: 0 })
+                children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Value, { placeholder })
               }
             ),
             /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Adapt, { when: "sm", children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Select.Sheet, { modal: !0, dismissOnSnapToBottom: !0, children: [
@@ -103,13 +102,32 @@ function LmSelect({
                   ]
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Viewport, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Select.Group, { children: [
-                dropDownLabel && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Label, { children: dropDownLabel }),
-                options.map((item, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Select.Item, { index: i, value: `${item.value}`, children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.ItemText, { children: item.label }),
-                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.ItemIndicator, { marginLeft: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CheckRegular, { size: 16 }) })
-                ] }, item.value))
-              ] }) }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Select.Viewport, { children: [
+                /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Select.Group, { children: [
+                  dropDownLabel && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.Label, { children: dropDownLabel }),
+                  (0, import_react.useMemo)(
+                    () => options.map((item, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Select.Item, { index: i, value: `${item.value}`, children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.ItemText, { children: item.label }),
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Select.ItemIndicator, { marginLeft: "auto", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CheckRegular, { size: 16 }) })
+                    ] }, item.value)),
+                    [options]
+                  )
+                ] }),
+                rest.native && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+                  import_tamagui.YStack,
+                  {
+                    position: "absolute",
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "$4",
+                    pointerEvents: "none",
+                    children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CaretDownRegular, { size: (0, import_tamagui.getFontSize)(rest.size ?? "$true") })
+                  }
+                )
+              ] }),
               /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
                 import_tamagui.Select.ScrollDownButton,
                 {
@@ -126,7 +144,7 @@ function LmSelect({
                         start: [0, 0],
                         end: [0, 1],
                         fullscreen: !0,
-                        colors: ["$backgroundTransparent", "$background"],
+                        colors: ["transparent", "$background"],
                         borderRadius: "$4"
                       }
                     )

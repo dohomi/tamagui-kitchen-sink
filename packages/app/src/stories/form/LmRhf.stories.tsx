@@ -149,6 +149,7 @@ export const WithTamaguiForm_1 = () => {
     <LmFormRhfProvider
       defaultValues={{
         name: '',
+        name_native: '',
         color: '',
         email: undefined,
       }}
@@ -183,10 +184,25 @@ export const WithTamaguiForm_1 = () => {
           />
           <LmSelectRhf
             labelInline
-            options={[]}
+            options={[
+              { label: 'Red', value: 'red' },
+              { label: 'Green', value: 'green' },
+            ]}
             label={'Select color'}
             control={control}
             name={'color'}
+            required
+          />
+          <LmSelectRhf
+            labelInline
+            native
+            options={[
+              { label: 'Red', value: 'red' },
+              { label: 'Green', value: 'green' },
+            ]}
+            label={'Select color'}
+            control={control}
+            name={'color_native'}
             required
           />
           <XStack gap={'$3'}>

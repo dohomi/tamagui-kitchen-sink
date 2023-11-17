@@ -1,5 +1,11 @@
 # @tamagui-extras/form
 
+## 1.9.0
+
+### Minor Changes
+
+- improve select and autocomplete styles. Also fix UX of autocomplete
+
 ## 1.8.3
 
 ### Patch Changes
