@@ -1,8 +1,9 @@
 import { LmDatepicker, LmDatepickerRhf, LmDateRangePickerRhf } from '../../../../date/src'
-import { LmFormRhfProvider, LmSubmitButtonRhf } from '@tamagui-extras/form'
+import { LmFormRhfProvider, LmInputRhf, LmSubmitButtonRhf } from '@tamagui-extras/form'
 import { YStack } from 'tamagui'
 import { action } from '@storybook/addon-actions'
 import { Meta, StoryObj } from '@storybook/react'
+import { LmGrid } from '@tamagui-extras/core'
 
 const meta = {
   title: 'date/Datepicker',
@@ -90,6 +91,31 @@ export const ReactHookForm = () => (
         label={'Range Preselect'}
         labelInline
       />
+      <LmSubmitButtonRhf onSubmit={action('submit')}>Submit</LmSubmitButtonRhf>
+    </YStack>
+  </LmFormRhfProvider>
+)
+
+export const ReactHookFormMixed = () => (
+  <LmFormRhfProvider
+    defaultValues={{
+      single: '2022-12-24',
+      singleDate: new Date('2022-12-31'),
+      rangeStartP: '2022-12-24',
+      rangeEndP: '2022-12-31',
+    }}
+  >
+    <YStack space width={'100%'}>
+      <LmGrid container row width={'100%'} gap={'$2'}>
+        <LmGrid>
+          <LmInputRhf name={'input'} label={'Input Field'} />
+          <LmDatepickerRhf name={'required'} label={'Required'} required fullWidth />
+        </LmGrid>
+        <LmGrid xs>
+          <LmInputRhf name={'input'} label={'Input Field'} />
+          <LmInputRhf name={'required'} label={'Required'} required fullWidth />
+        </LmGrid>
+      </LmGrid>
       <LmSubmitButtonRhf onSubmit={action('submit')}>Submit</LmSubmitButtonRhf>
     </YStack>
   </LmFormRhfProvider>

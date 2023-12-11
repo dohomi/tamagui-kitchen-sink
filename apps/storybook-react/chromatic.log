@@ -7,16 +7,20 @@ Authenticating with Chromatic
 Authenticated with Chromatic
     → Using project token '****************6cb2'
 Retrieving git information
+⚠ Using outdated package
+You are using an outdated version of the Chromatic CLI (v7.6.0).
+A new major version is available (v10.1.0).
+Run yarn upgrade chromatic --latest to upgrade.
 Retrieved git information
-    → Commit '7fff23a' on branch 'master'; no ancestor found
+    → Commit '0a4d4fe' on branch 'master'; found 1 parent build
 Collecting Storybook metadata
 Collected Storybook metadata
     → ; no supported addons found
 Initializing build
 Initialized build
-    → Build 1 initialized
+    → Build 2 initialized
 Building your Storybook
-    → Running command: yarn run build --output-dir /var/folders/5w/ft468r392g99dk5b_ckw00y00000gn/T/chromatic--25992-PHaMuWhQ34e1
+    → Running command: yarn run build --output-dir /var/folders/5w/ft468r392g99dk5b_ckw00y00000gn/T/chromatic--42797-0uoMoMqS48ve
 Storybook built in 28 seconds
     → View build log at /Users/dominicgarms/Documents/Coding/react-native/kitchen-sink/apps/storybook-react/build-storybook.log
 Publish your built Storybook
@@ -25,21 +29,17 @@ Publishing your built Storybook
     → Retrieving target location
     → Starting publish
     → [                    ] 0%
+    → [                    ] 2%
     → [=                   ] 3%
     → [=                   ] 4%
     → [=                   ] 5%
-    → [=                   ] 6%
     → [=                   ] 7%
     → [==                  ] 8%
-    → [==                  ] 9%
     → [==                  ] 10%
-    → [==                  ] 11%
     → [==                  ] 12%
-    → [===                 ] 14%
     → [===                 ] 16%
-    → [====                ] 19%
-    → [====                ] 20%
-    → [====                ] 21%
+    → [====                ] 22%
+    → [=====               ] 23%
     → [=====               ] 24%
     → [=====               ] 25%
     → [=====               ] 26%
@@ -53,9 +53,9 @@ Publishing your built Storybook
     → [=======             ] 34%
     → [=======             ] 35%
     → [=======             ] 36%
-    → [=======             ] 37%
     → [========            ] 38%
     → [========            ] 39%
+    → [========            ] 40%
     → [========            ] 41%
     → [========            ] 42%
     → [=========           ] 43%
@@ -72,16 +72,15 @@ Publishing your built Storybook
     → [===========         ] 54%
     → [===========         ] 55%
     → [===========         ] 56%
+    → [===========         ] 57%
     → [============        ] 58%
     → [============        ] 59%
+    → [============        ] 60%
     → [============        ] 61%
     → [============        ] 62%
     → [=============       ] 63%
     → [=============       ] 64%
-    → [=============       ] 65%
-    → [=============       ] 66%
     → [=============       ] 67%
-    → [==============      ] 68%
     → [==============      ] 69%
     → [==============      ] 70%
     → [==============      ] 71%
@@ -95,6 +94,7 @@ Publishing your built Storybook
     → [================    ] 79%
     → [================    ] 80%
     → [================    ] 81%
+    → [================    ] 82%
     → [=================   ] 83%
     → [=================   ] 84%
     → [=================   ] 85%
@@ -105,41 +105,14 @@ Publishing your built Storybook
     → [==================  ] 90%
     → [==================  ] 91%
     → [==================  ] 92%
-    → [=================== ] 93%
     → [=================== ] 94%
     → [=================== ] 95%
     → [=================== ] 96%
-    → [=================== ] 97%
     → [====================] 98%
     → [====================] 99%
     → [====================] 100%
-Publish complete in 1 minute 53 seconds
-    → View your Storybook at https://65499e866ec46d761a07da83-gflxwozhay.chromatic.com
+Publish complete in 2 minutes 1 second
+    → View your Storybook at https://65499e866ec46d761a07da83-myhiaemymf.chromatic.com
 Verifying your Storybook
     → This may take a few minutes
-Started build 1
-    → Continue setup at https://www.chromatic.com/setup?appId=65499e866ec46d761a07da83
-Running 130 tests
-    → This may take a few minutes
-ℹ Speed up Continuous Integration
-Your project is linked to GitHub so Chromatic will report results there.
-This means you can pass the --exit-once-uploaded flag to skip waiting for build results.
-Read more here: https://www.chromatic.com/docs/cli#chromatic-options
-    → [                    ] 1/130  Home › Home 
-    → [==                  ] 12/130  Aspect Ratio › Cards Fixed Width 
-    → [========            ] 50/130  Datepicker › Single Preselect 
-    → [===========         ] 71/130  Checkbox › Checked 
-    → [==============      ] 94/130  React Hook Form › With Tamagui Form 1 
-    → [==================  ] 119/130  Switch › Label Both Sides 
-    → [=================== ] 121/130  Switch › React Hook Form 
-    → [=================== ] 122/130  TipTap Editor › Basic 
-    → [=================== ] 123/130  TipTap Editor › Multiple 
-    → [=================== ] 124/130  Video › Basic 
-    → [=================== ] 125/130  Video › Width 200 
-    → [====================] 127/130  Video › Height 200 Contain 
-    → [====================] 128/130  Video › Aspect Ratio 
-    → [====================] 129/130  Youtube Embed › Youtube 
-    → [====================] 130/130  Youtube Embed › Aspect Ratio 
-✔ Build passed. Welcome to Chromatic!
-We found 32 components with 130 stories and took 130 snapshots.
-ℹ Please continue setup at https://www.chromatic.com/setup?appId=65499e866ec46d761a07da83
+    → Build verification timed out

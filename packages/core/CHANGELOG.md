@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.7.0
+
+### Minor Changes
+
+- update tamagui deps and fix a month breakpoint issue when custom breakpoints are set in the Tamagui theme
+
 ## 1.6.1
 
 ### Patch Changes

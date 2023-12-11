@@ -34,6 +34,33 @@ export const Sizes = () => (
   </YStack>
 )
 
+export const Colors = () => (
+  <YStack space>
+    <LmSwitch labelRight={'Theme orange'} theme={'orange'} />
+    <LmSwitch
+      labelRight={'Theme blue thumb green'}
+      theme={'blue'}
+      thumbProps={{
+        backgroundColor: '$green10',
+      }}
+    />
+    <LmSwitch
+      labelRight={'Theme red thumb orange'}
+      theme={'red'}
+      thumbProps={{
+        backgroundColor: '$orange10',
+      }}
+    />
+    <LmSwitch
+      labelRight={'Theme yellow thumb blue'}
+      theme={'yellow'}
+      thumbProps={{
+        backgroundColor: '$blue10',
+      }}
+    />
+  </YStack>
+)
+
 export const ReactHookForm = () => (
   <LmFormRhfProvider defaultValues={{ is_checked: true }}>
     <YStack space>

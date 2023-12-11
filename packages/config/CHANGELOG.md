@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.6.0
+
+### Minor Changes
+
+- update tamagui deps and fix a month breakpoint issue when custom breakpoints are set in the Tamagui theme
+
 ## 1.5.0
 
 ### Minor Changes

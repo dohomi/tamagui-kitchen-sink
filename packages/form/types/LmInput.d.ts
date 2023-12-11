@@ -8,13 +8,13 @@ export type LmInputProps = InputProps & LmFormContainerBaseTypes & {
     fullWidth?: boolean;
     passwordIconProps?: IconProps;
 };
-export declare const LmInput: import("react").ForwardRefExoticComponent<Omit<import("react-native/types").TextInputProps & Omit<import("tamagui").TextProps, keyof import("react-native/types").TextInputProps> & {
+export declare const LmInput: import("react").ForwardRefExoticComponent<Omit<import("react-native").TextInputProps & Omit<import("tamagui").TextProps, keyof import("react-native").TextInputProps> & {
     readonly unstyled?: boolean | undefined;
     readonly size?: import("tamagui").SizeTokens | undefined;
-} & import("@tamagui/web").PseudoProps<Partial<import("react-native/types").TextInputProps & Omit<import("tamagui").TextProps, keyof import("react-native/types").TextInputProps> & {
+} & import("@tamagui/web").PseudoProps<Partial<import("react-native").TextInputProps & Omit<import("tamagui").TextProps, keyof import("react-native").TextInputProps> & {
     readonly unstyled?: boolean | undefined;
     readonly size?: import("tamagui").SizeTokens | undefined;
-}>> & import("@tamagui/web").MediaProps<Partial<import("react-native/types").TextInputProps & Omit<import("tamagui").TextProps, keyof import("react-native/types").TextInputProps> & {
+}>> & import("@tamagui/web").MediaProps<Partial<import("react-native").TextInputProps & Omit<import("tamagui").TextProps, keyof import("react-native").TextInputProps> & {
     readonly unstyled?: boolean | undefined;
     readonly size?: import("tamagui").SizeTokens | undefined;
 }>>, "placeholderTextColor"> & {

@@ -1,18 +1,18 @@
 {
   "name": "@tamagui-extras/config",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "license": "MIT",
   "author": "Dominic Garms",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",
   "main": "src/index.ts",
   "dependencies": {
-    "@tamagui/animations-react-native": "^1.76.0",
-    "@tamagui/font-inter": "^1.76.0",
-    "@tamagui/react-native-media-driver": "^1.76.0",
-    "@tamagui/shorthands": "^1.76.0",
-    "@tamagui/themes": "^1.76.0",
-    "tamagui": "^1.76.0"
+    "@tamagui/animations-react-native": "^1.79.9",
+    "@tamagui/font-inter": "^1.79.9",
+    "@tamagui/react-native-media-driver": "^1.79.9",
+    "@tamagui/shorthands": "^1.79.9",
+    "@tamagui/themes": "^1.79.9",
+    "tamagui": "^1.79.9"
   },
   "publishConfig": {
     "access": "public"

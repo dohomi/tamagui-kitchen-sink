@@ -1,5 +1,17 @@
 # @tamagui-extras/rich-text
 
+## 1.7.0
+
+### Minor Changes
+
+- update tamagui deps and fix a month breakpoint issue when custom breakpoints are set in the Tamagui theme
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.7.0
+  - @tamagui-extras/form@1.10.0
+
 ## 1.6.4
 
 ### Patch Changes
