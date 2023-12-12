@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.6.1
+
+### Patch Changes
+
+- improve star rating especially with customisation of icons and colors
+
 ## 1.6.0
 
 ### Minor Changes

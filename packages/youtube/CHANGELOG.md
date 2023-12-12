@@ -1,5 +1,13 @@
 # @tamagui-extras/youtube
 
+## 1.7.1
+
+### Patch Changes
+
+- improve star rating especially with customisation of icons and colors
+- Updated dependencies
+  - @tamagui-extras/core@1.7.1
+
 ## 1.7.0
 
 ### Minor Changes

@@ -21,7 +21,7 @@
     "postinstall": "yarn build",
     "build:all": "yarn turbo run build --filter=...app",
     "build:web": "yarn turbo run build --filter=next-app && yarn turbo run start --filter=next-app",
-    "upgrade:tamagui": "yarn up '*tamagui*' '@tamagui/*' react-native-web-lite",
+    "upgrade:tamagui": "yarn up '*tamagui*' '@tamagui/*'",
     "upgrade:rnw": "yarn up react-native-web@0.18.12",
     "upgrade:solito": "yarn up solito",
     "upgrade:next": "yarn up next eslint-config-next",
@@ -55,7 +55,7 @@
     "eslint": "8.40.0",
     "prettier": "2.8.8",
     "turbo": "1.9.8",
-    "typescript": "^5.0.4"
+    "typescript": "^5.2.2"
   },
   "packageManager": "yarn@3.5.0"
 }

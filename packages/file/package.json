@@ -1,7 +1,7 @@
 {
   "name": "@tamagui-extras/file",
   "license": "MIT",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "author": "Dominic Garms",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",
@@ -46,11 +46,11 @@
     "tamagui": "1.29.3"
   },
   "devDependencies": {
-    "@tamagui/build": "^1.79.9",
+    "@tamagui/build": "^1.79.10",
     "expo": "^49.0.10",
     "react": "^18.2.0",
     "react-native": "0.72.4",
-    "tamagui": "^1.79.9"
+    "tamagui": "^1.79.10"
   },
   "publishConfig": {
     "access": "public"

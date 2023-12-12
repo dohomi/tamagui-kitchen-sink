@@ -1,5 +1,16 @@
 # @tamagui-extras/form
 
+## 1.11.0
+
+### Minor Changes
+
+- improve star rating especially with customisation of icons and colors
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.7.1
+
 ## 1.10.0
 
 ### Minor Changes

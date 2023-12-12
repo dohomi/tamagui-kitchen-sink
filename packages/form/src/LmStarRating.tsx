@@ -1,26 +1,8 @@
-import { Button, ButtonProps, SizeTokens, XStack } from 'tamagui'
-import { useId, useState } from 'react'
+import { SizableStack, SizeTokens, XStack, XStackProps } from 'tamagui'
+import { ComponentType, useId, useState } from 'react'
 import { LmFormFieldContainer } from './LmFormFieldContainer'
 import { LmFormContainerBaseTypes } from './formContainerTypes'
-import { StarFill, StarRegular } from '@tamagui-extras/core'
-
-type StarProps = Omit<ButtonProps, 'size'> & {
-  filled: boolean
-  size?: SizeTokens
-}
-
-function StarIcon({ filled, size = '$1', ...props }: StarProps) {
-  // due to missing PR this needs to be done manually
-  return (
-    <Button
-      {...props}
-      size={size}
-      circular
-      unstyled
-      icon={filled ? <StarFill size={size} /> : <StarRegular size={size} />}
-    />
-  )
-}
+import { IconProps, StarFill } from '@tamagui-extras/core'
 
 export type LmStarRatingProps = LmFormContainerBaseTypes & {
   count?: number
@@ -28,6 +10,13 @@ export type LmStarRatingProps = LmFormContainerBaseTypes & {
   value?: number | null
   size?: SizeTokens
   disabled?: boolean
+  iconProps?: IconProps
+  gap?: XStackProps['gap']
+  Icon?: ComponentType<IconProps>
+  colorActive?: IconProps['color']
+  colorHover?: IconProps['color']
+  colorActiveHover?: IconProps['color']
+  color?: IconProps['color']
 }
 
 export function LmStarRating({
@@ -43,10 +32,19 @@ export function LmStarRating({
   labelInline,
   labelProps,
   containerProps,
-  ...iconProps
+  iconProps,
+  gap,
+  Icon = StarFill,
+  size = '$1',
+  colorHover = '$yellow7',
+  colorActiveHover = '$yellow8',
+  colorActive = '$yellow10',
+  color = '$gray7',
+  ...sizeableStackProps
 }: LmStarRatingProps) {
   const id = useId()
   const [rating, setRating] = useState<number | null>(value)
+  const [hoverRating, setHoverRating] = useState<number | null>(null)
   const arr = Array.from(Array(count).keys())
   return (
     <LmFormFieldContainer
@@ -60,25 +58,48 @@ export function LmStarRating({
       labelProps={labelProps}
       {...containerProps}
     >
-      <XStack>
+      <XStack gap={gap}>
         {arr.map((value) => {
           const currentRating = value + 1
+          const filled = currentRating <= (rating || 0)
+          const hovered = currentRating <= (hoverRating || 0)
+          const currentColor = filled
+            ? hovered
+              ? colorActiveHover
+              : colorActive
+            : hovered
+            ? colorHover
+            : color
           return (
-            <StarIcon
-              key={currentRating}
-              {...iconProps}
-              filled={currentRating <= (rating || 0)}
+            <SizableStack
+              {...sizeableStackProps}
+              size={size}
+              circular
+              onHoverIn={() => {
+                if (disabled) {
+                  return
+                }
+                setHoverRating(currentRating)
+              }}
+              onHoverOut={() => {
+                if (disabled) {
+                  return
+                }
+                setHoverRating(null)
+              }}
               onPress={() => {
                 if (disabled) {
                   return
                 }
-                let newRating = rating === currentRating ? null : currentRating
+                const newRating = rating === currentRating ? null : currentRating
                 setRating(newRating)
                 if (typeof onChange === 'function') {
                   onChange(newRating)
                 }
               }}
-            />
+            >
+              <Icon {...iconProps} size={size} color={currentColor} />
+            </SizableStack>
           )
         })}
       </XStack>

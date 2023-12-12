@@ -1,20 +1,8 @@
-import { Button, XStack } from "tamagui";
+import { SizableStack, XStack } from "tamagui";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
-import { StarFill, StarRegular } from "@tamagui-extras/core";
+import { StarFill } from "@tamagui-extras/core";
 import { jsx } from "react/jsx-runtime";
-function StarIcon({ filled, size = "$1", ...props }) {
-  return /* @__PURE__ */ jsx(
-    Button,
-    {
-      ...props,
-      size,
-      circular: !0,
-      unstyled: !0,
-      icon: filled ? /* @__PURE__ */ jsx(StarFill, { size }) : /* @__PURE__ */ jsx(StarRegular, { size })
-    }
-  );
-}
 function LmStarRating({
   count = 5,
   onChange,
@@ -28,9 +16,17 @@ function LmStarRating({
   labelInline,
   labelProps,
   containerProps,
-  ...iconProps
+  iconProps,
+  gap,
+  Icon = StarFill,
+  size = "$1",
+  colorHover = "$yellow7",
+  colorActiveHover = "$yellow8",
+  colorActive = "$yellow10",
+  color = "$gray7",
+  ...sizeableStackProps
 }) {
-  const id = useId(), [rating, setRating] = useState(value), arr = Array.from(Array(count).keys());
+  const id = useId(), [rating, setRating] = useState(value), [hoverRating, setHoverRating] = useState(null), arr = Array.from(Array(count).keys());
   return /* @__PURE__ */ jsx(
     LmFormFieldContainer,
     {
@@ -43,21 +39,28 @@ function LmStarRating({
       labelInline,
       labelProps,
       ...containerProps,
-      children: /* @__PURE__ */ jsx(XStack, { children: arr.map((value2) => {
-        const currentRating = value2 + 1;
+      children: /* @__PURE__ */ jsx(XStack, { gap, children: arr.map((value2) => {
+        const currentRating = value2 + 1, filled = currentRating <= (rating || 0), hovered = currentRating <= (hoverRating || 0);
         return /* @__PURE__ */ jsx(
-          StarIcon,
+          SizableStack,
           {
-            ...iconProps,
-            filled: currentRating <= (rating || 0),
+            ...sizeableStackProps,
+            size,
+            circular: !0,
+            onHoverIn: () => {
+              disabled || setHoverRating(currentRating);
+            },
+            onHoverOut: () => {
+              disabled || setHoverRating(null);
+            },
             onPress: () => {
               if (disabled)
                 return;
-              let newRating = rating === currentRating ? null : currentRating;
+              const newRating = rating === currentRating ? null : currentRating;
               setRating(newRating), typeof onChange == "function" && onChange(newRating);
-            }
-          },
-          currentRating
+            },
+            children: /* @__PURE__ */ jsx(Icon, { ...iconProps, size, color: filled ? hovered ? colorActiveHover : colorActive : hovered ? colorHover : color })
+          }
         );
       }) })
     }

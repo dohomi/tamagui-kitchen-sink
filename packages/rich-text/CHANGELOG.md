@@ -1,5 +1,14 @@
 # @tamagui-extras/rich-text
 
+## 1.7.1
+
+### Patch Changes
+
+- improve star rating especially with customisation of icons and colors
+- Updated dependencies
+  - @tamagui-extras/form@1.11.0
+  - @tamagui-extras/core@1.7.1
+
 ## 1.7.0
 
 ### Minor Changes

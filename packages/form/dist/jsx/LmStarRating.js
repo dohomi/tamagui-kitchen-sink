@@ -1,16 +1,7 @@
-import { Button, XStack } from "tamagui";
+import { SizableStack, XStack } from "tamagui";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
-import { StarFill, StarRegular } from "@tamagui-extras/core";
-function StarIcon({ filled, size = "$1", ...props }) {
-  return <Button
-    {...props}
-    size={size}
-    circular
-    unstyled
-    icon={filled ? <StarFill size={size} /> : <StarRegular size={size} />}
-  />;
-}
+import { StarFill } from "@tamagui-extras/core";
 function LmStarRating({
   count = 5,
   onChange,
@@ -24,9 +15,17 @@ function LmStarRating({
   labelInline,
   labelProps,
   containerProps,
-  ...iconProps
+  iconProps,
+  gap,
+  Icon = StarFill,
+  size = "$1",
+  colorHover = "$yellow7",
+  colorActiveHover = "$yellow8",
+  colorActive = "$yellow10",
+  color = "$gray7",
+  ...sizeableStackProps
 }) {
-  const id = useId(), [rating, setRating] = useState(value), arr = Array.from(Array(count).keys());
+  const id = useId(), [rating, setRating] = useState(value), [hoverRating, setHoverRating] = useState(null), arr = Array.from(Array(count).keys());
   return <LmFormFieldContainer
     id={id}
     required={required}
@@ -37,19 +36,25 @@ function LmStarRating({
     labelInline={labelInline}
     labelProps={labelProps}
     {...containerProps}
-  ><XStack>{arr.map((value2) => {
-    const currentRating = value2 + 1;
-    return <StarIcon
-      key={currentRating}
-      {...iconProps}
-      filled={currentRating <= (rating || 0)}
+  ><XStack gap={gap}>{arr.map((value2) => {
+    const currentRating = value2 + 1, filled = currentRating <= (rating || 0), hovered = currentRating <= (hoverRating || 0), currentColor = filled ? hovered ? colorActiveHover : colorActive : hovered ? colorHover : color;
+    return <SizableStack
+      {...sizeableStackProps}
+      size={size}
+      circular
+      onHoverIn={() => {
+        disabled || setHoverRating(currentRating);
+      }}
+      onHoverOut={() => {
+        disabled || setHoverRating(null);
+      }}
       onPress={() => {
         if (disabled)
           return;
-        let newRating = rating === currentRating ? null : currentRating;
+        const newRating = rating === currentRating ? null : currentRating;
         setRating(newRating), typeof onChange == "function" && onChange(newRating);
       }}
-    />;
+    ><Icon {...iconProps} size={size} color={currentColor} /></SizableStack>;
   })}</XStack></LmFormFieldContainer>;
 }
 export {

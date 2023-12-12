@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.8.1
+
+### Patch Changes
+
+- improve star rating especially with customisation of icons and colors
+
 ## 1.8.0
 
 ### Minor Changes
