@@ -12,19 +12,25 @@ const extrasPlugins = [
   '@tamagui-extras/link',
   '@tamagui-extras/rich-text',
   '@tamagui-extras/video',
-  '@tamagui-extras/youtube'
+  '@tamagui-extras/youtube',
 ]
 
 const tamaguiConfig = {
   components: [...extrasPlugins, 'tamagui'],
-  config: './tamagui.config.ts'
+  config: './tamagui.config.ts',
 }
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    // extensions: extensions,
+    alias: {
+      'react-native/Libraries/Image/AssetRegistry': 'react-native-web/dist/modules/AssetRegistry',
+    },
+  },
   plugins: [
     react(),
     tamaguiPlugin(tamaguiConfig),
-    shouldExtract ? tamaguiExtractPlugin(tamaguiConfig) : null
-  ].filter(Boolean)
+    shouldExtract ? tamaguiExtractPlugin(tamaguiConfig) : null,
+  ].filter(Boolean),
 })

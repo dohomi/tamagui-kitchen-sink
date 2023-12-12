@@ -5,7 +5,15 @@ import 'raf/polyfill' // const OriginalNextImage = NextImage.default
 import { Preview } from '@storybook/react'
 import { StorybookDecorator } from 'app/src/provider/StorybookDecorator'
 import i18n from './i18n'
+import { RouterContext } from 'next/dist/shared/lib/router-context.shared-runtime'
 
+const RouterDecorator = (Story) => {
+  return (
+    <RouterContext.Provider value={RouterContext}>
+      <Story />
+    </RouterContext.Provider>
+  )
+}
 const preview: Preview = {
   globalTypes: {
     theme: {
@@ -32,8 +40,12 @@ const preview: Preview = {
   },
   parameters: {
     i18n,
+    // nextRouter: {
+    //   Provider: RouterContext.Provider, // next 13 next 13 (using next/navigation)
+    //   // Provider: RouterContext.Provider, // next 13 (using next/router) / next < 12
+    // },
   },
-  decorators: [StorybookDecorator],
+  decorators: [RouterDecorator, StorybookDecorator],
 }
 
 export default preview

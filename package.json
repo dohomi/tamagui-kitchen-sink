@@ -45,7 +45,8 @@
     "react-dom": "18.2.0",
     "react-refresh": "0.14.0",
     "typescript": "5.2.2",
-    "esbuild": "~0.19.3"
+    "esbuild": "~0.19.3",
+    "expo-asset": "~8.10.1"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9"

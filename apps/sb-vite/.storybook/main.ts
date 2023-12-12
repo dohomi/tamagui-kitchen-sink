@@ -11,37 +11,34 @@ function getAbsolutePath(value: string): any {
 }
 
 const config: StorybookConfig = {
-  stories: [
-    // '../src/**/*.mdx',
-    // '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-    '../../../packages/app/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-  ],
+  stories: ['../../../packages/app/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-interactions'),
     getAbsolutePath('storybook-react-i18next'),
+
     // getAbsolutePath('storybook-addon-next-router'),
-    {
-      name: getAbsolutePath('@storybook/addon-react-native-web'),
-      options: {
-        modulesToTranspile: [
-          'solito',
-          'react-native-web',
-          'react-native',
-          'expo-linking',
-          'expo-constants',
-          'expo-modules-core',
-          'react-i18next',
-          'expo-document-picker',
-          'expo-av',
-          'expo-asset',
-          // ...extrasPlugins
-          // 'app',
-        ],
-        babelPlugins: [],
-      },
-    },
+    // {
+    //   name: getAbsolutePath('@storybook/addon-react-native-web'),
+    //   options: {
+    //     modulesToTranspile: [
+    //       'solito',
+    //       'react-native-web',
+    //       'react-native',
+    //       'expo-linking',
+    //       'expo-constants',
+    //       'expo-modules-core',
+    //       'react-i18next',
+    //       'expo-document-picker',
+    //       'expo-av',
+    //       'expo-asset',
+    //       // ...extrasPlugins
+    //       // 'app',
+    //     ],
+    //     babelPlugins: [],
+    //   },
+    // },
   ],
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
@@ -57,8 +54,8 @@ const config: StorybookConfig = {
       ...config.resolve,
       alias: {
         ...config.resolve?.alias,
-        'react-native/Libraries/Image/AssetRegistry$':
-          'react-native-web/dist/modules/AssetRegistry',
+        //   'react-native/Libraries/Image/AssetRegistry$':
+        //     'react-native-web/dist/modules/AssetRegistry',
       },
     }
     return config
