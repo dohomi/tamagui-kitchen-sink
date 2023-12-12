@@ -1,5 +1,49 @@
 # @tamagui-extras/date
 
+## 1.9.6
+
+### Patch Changes
+
+- fix exports of package.json
+- Updated dependencies
+  - @tamagui-extras/core@1.8.4
+  - @tamagui-extras/form@1.12.4
+
+## 1.9.5
+
+### Patch Changes
+
+- remove exports block in package.json
+- Updated dependencies
+  - @tamagui-extras/core@1.8.3
+  - @tamagui-extras/form@1.12.3
+
+## 1.9.4
+
+### Patch Changes
+
+- attempt to fix package.json
+- Updated dependencies
+  - @tamagui-extras/core@1.8.2
+  - @tamagui-extras/form@1.12.2
+
+## 1.9.3
+
+### Patch Changes
+
+- release after update esbuild version
+- Updated dependencies
+  - @tamagui-extras/core@1.8.1
+  - @tamagui-extras/form@1.12.1
+
+## 1.9.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.8.0
+  - @tamagui-extras/form@1.12.0
+
 ## 1.9.1
 
 ### Patch Changes

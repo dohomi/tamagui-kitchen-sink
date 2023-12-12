@@ -1,5 +1,35 @@
 # @tamagui-extras/video
 
+## 1.9.4
+
+### Patch Changes
+
+- fix exports of package.json
+
+## 1.9.3
+
+### Patch Changes
+
+- remove exports block in package.json
+
+## 1.9.2
+
+### Patch Changes
+
+- attempt to fix package.json
+
+## 1.9.1
+
+### Patch Changes
+
+- release after update esbuild version
+
+## 1.9.0
+
+### Minor Changes
+
+- cleaned up source of tamagui-build
+
 ## 1.8.1
 
 ### Patch Changes

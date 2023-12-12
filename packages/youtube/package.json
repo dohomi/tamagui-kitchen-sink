@@ -1,27 +1,16 @@
 {
   "name": "@tamagui-extras/youtube",
+  "version": "1.8.4",
   "source": "src/index.ts",
-  "version": "1.7.1",
   "types": "./types/index.d.ts",
   "main": "dist/cjs",
   "module": "dist/esm",
   "module:jsx": "dist/jsx",
-  "sideEffects": [
-    "*.css"
-  ],
   "files": [
     "src",
     "types",
     "dist"
   ],
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js"
-    }
-  },
   "scripts": {
     "build": "tamagui-build",
     "watch": "tamagui-build --watch",
@@ -34,7 +23,7 @@
     "npmPublish": "npm publish"
   },
   "dependencies": {
-    "@tamagui-extras/core": "1.7.1",
+    "@tamagui-extras/core": "1.8.4",
     "react-native-webview": "11.26.0"
   },
   "peerDependencies": {

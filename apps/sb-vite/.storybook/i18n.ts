@@ -2,8 +2,8 @@ import { initReactI18next } from 'react-i18next'
 import i18n from 'i18next'
 import Backend from 'i18next-http-backend'
 
-import translationEn from '../../next/public/locales/en/translation.json'
-import translationDe from '../../next/public/locales/de/translation.json'
+import translationEn from '../../next/public/locales/en/common.json'
+import translationDe from '../../next/public/locales/de/common.json'
 
 const ns = ['translation']
 const supportedLngs = ['en', 'de']
@@ -32,12 +32,12 @@ i18n
     supportedLngs,
     resources: {
       en: {
-        translation: translationEn
+        translation: translationEn,
       },
       de: {
-        translation: translationDe
-      }
-    }
+        translation: translationDe,
+      },
+    },
   })
 
 export default i18n

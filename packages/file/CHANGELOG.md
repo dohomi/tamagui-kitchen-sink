@@ -1,5 +1,41 @@
 # @tamagui-extras/file
 
+## 1.8.4
+
+### Patch Changes
+
+- fix exports of package.json
+- Updated dependencies
+  - @tamagui-extras/core@1.8.4
+
+## 1.8.3
+
+### Patch Changes
+
+- remove exports block in package.json
+- Updated dependencies
+  - @tamagui-extras/core@1.8.3
+
+## 1.8.2
+
+### Patch Changes
+
+- attempt to fix package.json
+- Updated dependencies
+  - @tamagui-extras/core@1.8.2
+
+## 1.8.1
+
+### Patch Changes
+
+- release after update esbuild version
+
+## 1.8.0
+
+### Minor Changes
+
+- cleaned up source of tamagui-build
+
 ## 1.7.1
 
 ### Patch Changes

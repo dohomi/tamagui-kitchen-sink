@@ -1,4 +1,4 @@
-import { PlaygroundScreen } from 'app/src/features/playground/playground'
+import { PlaygroundScreen } from './playground'
 
 export default {
   title: 'demo/playground',

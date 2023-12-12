@@ -1,5 +1,53 @@
 # @tamagui-extras/rich-text
 
+## 1.8.4
+
+### Patch Changes
+
+- fix exports of package.json
+- Updated dependencies
+  - @tamagui-extras/core@1.8.4
+  - @tamagui-extras/form@1.12.4
+
+## 1.8.3
+
+### Patch Changes
+
+- remove exports block in package.json
+- Updated dependencies
+  - @tamagui-extras/core@1.8.3
+  - @tamagui-extras/form@1.12.3
+
+## 1.8.2
+
+### Patch Changes
+
+- attempt to fix package.json
+- Updated dependencies
+  - @tamagui-extras/core@1.8.2
+  - @tamagui-extras/form@1.12.2
+
+## 1.8.1
+
+### Patch Changes
+
+- release after update esbuild version
+- Updated dependencies
+  - @tamagui-extras/core@1.8.1
+  - @tamagui-extras/form@1.12.1
+
+## 1.8.0
+
+### Minor Changes
+
+- cleaned up source of tamagui-build
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.8.0
+  - @tamagui-extras/form@1.12.0
+
 ## 1.7.1
 
 ### Patch Changes

@@ -1,7 +1,7 @@
 {
   "name": "@tamagui-extras/file",
   "license": "MIT",
-  "version": "1.7.1",
+  "version": "1.8.4",
   "author": "Dominic Garms",
   "repository": "https://github.com/dohomi/tamagui-kitchen-sink",
   "homepage": "https://tamagui-extras.vercel.app",
@@ -10,22 +10,11 @@
   "main": "dist/cjs",
   "module": "dist/esm",
   "module:jsx": "dist/jsx",
-  "sideEffects": [
-    "*.css"
-  ],
   "files": [
     "src",
     "types",
     "dist"
   ],
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js"
-    }
-  },
   "scripts": {
     "build": "tamagui-build",
     "watch": "tamagui-build --watch",
@@ -38,6 +27,7 @@
     "npmPublish": "npm publish"
   },
   "dependencies": {
+    "@tamagui-extras/core": "^1.8.4",
     "expo-document-picker": "~11.5.4"
   },
   "peerDependencies": {

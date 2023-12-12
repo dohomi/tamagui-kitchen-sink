@@ -17,6 +17,9 @@
     "codegen": {
       "cache": false
     },
+    "clean": {
+      "cache": false
+    },
     "start": {
       "cache": false
     },
