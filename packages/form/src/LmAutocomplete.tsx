@@ -4,6 +4,7 @@ import {
   ListItem,
   ListItemTitle,
   ScrollView,
+  SizeTokens,
   ThemeName,
   XGroup,
   XStack,
@@ -36,6 +37,7 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
   allowNew?: boolean
   allowNewHook?: (newValue: string) => Option
   popoverProps?: LmPopoverProps
+  size?: SizeTokens
 }
 
 type AutocompleteContext = {
@@ -61,6 +63,7 @@ export function LmAutocomplete({
   multiple = false,
   popoverProps,
   containerProps,
+  size,
   ...rest
 }: LmAutocompleteProps) {
   const id = useId()
@@ -121,6 +124,7 @@ export function LmAutocomplete({
       labelInline={labelInline}
       helperText={helperText}
       helperTextProps={helperTextProps}
+      size={size}
       {...containerProps}
     >
       <XGroup ref={inputRef}>
@@ -128,6 +132,7 @@ export function LmAutocomplete({
           <Input
             flex={1}
             value={inputValue}
+            size={size}
             theme={theme}
             textOverflow={'ellipsis'}
             onFocus={(el) => {
@@ -154,6 +159,7 @@ export function LmAutocomplete({
             }}
             trigger={
               <Button
+                size={size}
                 icon={<CaretDownRegular />}
                 borderTopLeftRadius={0}
                 borderBottomLeftRadius={0}

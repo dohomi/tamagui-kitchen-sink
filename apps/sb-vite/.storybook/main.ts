@@ -54,6 +54,7 @@ const config: StorybookConfig = {
       ...config.resolve,
       alias: {
         ...config.resolve?.alias,
+        'next/router': getAbsolutePath('next-router-mock'),
         //   'react-native/Libraries/Image/AssetRegistry$':
         //     'react-native-web/dist/modules/AssetRegistry',
       },

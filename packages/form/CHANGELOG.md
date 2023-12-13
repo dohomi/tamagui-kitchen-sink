@@ -1,5 +1,11 @@
 # @tamagui-extras/form
 
+## 1.13.0
+
+### Minor Changes
+
+- add size prop to autocomplete
+
 ## 1.12.4
 
 ### Patch Changes

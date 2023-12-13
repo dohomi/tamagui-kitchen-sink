@@ -22515,6 +22515,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-router-mock@npm:^0.9.10":
+  version: 0.9.10
+  resolution: "next-router-mock@npm:0.9.10"
+  peerDependencies:
+    next: ">=10.0.0"
+    react: ">=17.0.0"
+  checksum: 6910972cac4537a9f98ed6de5f2f834fc73ce7353e28e88f0dfd4836b74de525e1deafa39a2de9fb0a9bbb9824075d89503089a031d8b9950474076d42a3475a
+  languageName: node
+  linkType: hard
+
 "next-transpile-modules@npm:^10.0.1":
   version: 10.0.1
   resolution: "next-transpile-modules@npm:10.0.1"
@@ -26191,6 +26201,7 @@ __metadata:
     eslint-plugin-react-refresh: ^0.4.4
     eslint-plugin-storybook: ^0.6.15
     next: 14.0.3
+    next-router-mock: ^0.9.10
     react: ^18.2.0
     react-dom: ^18.2.0
     storybook: 7.6.4

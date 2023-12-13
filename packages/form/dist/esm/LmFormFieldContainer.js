@@ -34,16 +34,16 @@ function LmFormFieldContainer({
   helperTextProps,
   ...rest
 }) {
-  return /* @__PURE__ */ jsxs(StackContainer, { space: rest.labelInline ? "$3" : void 0, ...rest, children: [
+  return /* @__PURE__ */ jsxs(StackContainer, { ...rest, space: rest.labelInline ? "$3" : rest.space, children: [
     label && /* @__PURE__ */ jsxs(
       Label,
       {
         htmlFor: id,
         size: size || "$3",
         ...labelProps,
-        color: error ? "$red10" : void 0,
-        width: rest.labelInline ? 150 : void 0,
-        justifyContent: rest.labelInline ? "flex-end" : void 0,
+        color: error ? "$red10" : labelProps?.color,
+        width: rest.labelInline ? 150 : labelProps?.width,
+        justifyContent: rest.labelInline ? "flex-end" : labelProps?.justifyContent,
         children: [
           label,
           " ",

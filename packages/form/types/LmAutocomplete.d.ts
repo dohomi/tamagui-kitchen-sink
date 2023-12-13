@@ -1,4 +1,4 @@
-import { ThemeName } from 'tamagui';
+import { SizeTokens, ThemeName } from 'tamagui';
 import { LmFormContainerBaseTypes } from './formContainerTypes';
 import { LmPopoverProps } from '@tamagui-extras/core';
 type Option = {
@@ -16,7 +16,8 @@ export type LmAutocompleteProps = LmFormContainerBaseTypes & {
     allowNew?: boolean;
     allowNewHook?: (newValue: string) => Option;
     popoverProps?: LmPopoverProps;
+    size?: SizeTokens;
 };
-export declare function LmAutocomplete({ options, labelInline, labelProps, helperText, helperTextProps, required, label, value, onChange, error, theme, allowNewHook, multiple, popoverProps, containerProps, ...rest }: LmAutocompleteProps): import("react/jsx-runtime").JSX.Element;
+export declare function LmAutocomplete({ options, labelInline, labelProps, helperText, helperTextProps, required, label, value, onChange, error, theme, allowNewHook, multiple, popoverProps, containerProps, size, ...rest }: LmAutocompleteProps): import("react/jsx-runtime").JSX.Element;
 export {};
 //# sourceMappingURL=LmAutocomplete.d.ts.map

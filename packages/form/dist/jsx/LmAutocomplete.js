@@ -36,6 +36,7 @@ function LmAutocomplete({
   multiple = !1,
   popoverProps,
   containerProps,
+  size,
   ...rest
 }) {
   const id = useId(), [opts, setOpts] = useState(options), { width } = useWindowDimensions(), popoverState = usePopoverState(), [popoverWidth, setPopoverWidth] = useState(0), inputRef = useRef(null), searchInputRef = useRef(null), [selection, setSelection] = useState(
@@ -60,11 +61,13 @@ function LmAutocomplete({
     labelInline={labelInline}
     helperText={helperText}
     helperTextProps={helperTextProps}
+    size={size}
     {...containerProps}
   ><XGroup ref={inputRef}>
     <XGroup.Item><Input
       flex={1}
       value={inputValue}
+      size={size}
       theme={theme}
       textOverflow="ellipsis"
       onFocus={(el) => {
@@ -86,6 +89,7 @@ function LmAutocomplete({
         ...popoverProps?.contentProps
       }}
       trigger={<Button
+        size={size}
         icon={<CaretDownRegular />}
         borderTopLeftRadius={0}
         borderBottomLeftRadius={0}

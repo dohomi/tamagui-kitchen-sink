@@ -37,6 +37,7 @@ function LmAutocomplete({
   multiple = !1,
   popoverProps,
   containerProps,
+  size,
   ...rest
 }) {
   const id = useId(), [opts, setOpts] = useState(options), { width } = useWindowDimensions(), popoverState = usePopoverState(), [popoverWidth, setPopoverWidth] = useState(0), inputRef = useRef(null), searchInputRef = useRef(null), [selection, setSelection] = useState(
@@ -63,6 +64,7 @@ function LmAutocomplete({
       labelInline,
       helperText,
       helperTextProps,
+      size,
       ...containerProps,
       children: /* @__PURE__ */ jsxs(XGroup, { ref: inputRef, children: [
         /* @__PURE__ */ jsx(XGroup.Item, { children: /* @__PURE__ */ jsx(
@@ -70,6 +72,7 @@ function LmAutocomplete({
           {
             flex: 1,
             value: inputValue,
+            size,
             theme,
             textOverflow: "ellipsis",
             onFocus: (el) => {
@@ -96,6 +99,7 @@ function LmAutocomplete({
             trigger: /* @__PURE__ */ jsx(
               Button,
               {
+                size,
                 icon: /* @__PURE__ */ jsx(CaretDownRegular, {}),
                 borderTopLeftRadius: 0,
                 borderBottomLeftRadius: 0

@@ -11,20 +11,32 @@ import { action } from '@storybook/addon-actions'
 import { Button, YStack } from 'tamagui'
 import { fruitItemsFixtures } from 'app/src/fixtures/selectItems'
 
-export default {
+const meta = {
   title: 'form/Autocomplete',
   component: LmAutocomplete,
-} as Meta<typeof LmAutocomplete>
+} satisfies Meta<typeof LmAutocomplete>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
 const options = fruitItemsFixtures
 
-export const Single = {
+export const Single: Story = {
   args: {
     options,
     label: 'Autocomplete Label',
   },
 }
 
-export const SingleInline = {
+export const SingleSized: Story = {
+  args: {
+    options,
+    label: 'Autocomplete Label',
+    size: '$5',
+  },
+}
+
+export const SingleInline: Story = {
   args: {
     options,
     labelInline: true,
@@ -32,32 +44,44 @@ export const SingleInline = {
   },
 }
 
-export const Multiple = {
+export const SingleInlineSized: Story = {
+  args: {
+    options,
+    labelInline: true,
+    label: 'Label',
+    size: '$5',
+  },
+}
+
+export const Multiple: Story = {
   args: {
     options,
     multiple: true,
   },
 }
 
-export const WithoutSearch = {
+export const WithoutSearch: Story = {
   args: {
     options,
     disableSearch: true,
   },
 }
 
-export const AllowNew = {
+export const AllowNew: Story = {
   args: {
     options,
     allowNew: true,
   },
 }
 
-export const SingleRhf: StoryObj = {
+export const SingleRhf: Story = {
   parameters: {
     docs: {
       source: {},
     },
+  },
+  args: {
+    options,
   },
   render: () => (
     <LmFormRhfProvider

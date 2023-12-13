@@ -33,14 +33,14 @@ function LmFormFieldContainer({
   helperTextProps,
   ...rest
 }) {
-  return <StackContainer space={rest.labelInline ? "$3" : void 0} {...rest}>
+  return <StackContainer {...rest} space={rest.labelInline ? "$3" : rest.space}>
     {label && <Label
       htmlFor={id}
       size={size || "$3"}
       {...labelProps}
-      color={error ? "$red10" : void 0}
-      width={rest.labelInline ? 150 : void 0}
-      justifyContent={rest.labelInline ? "flex-end" : void 0}
+      color={error ? "$red10" : labelProps?.color}
+      width={rest.labelInline ? 150 : labelProps?.width}
+      justifyContent={rest.labelInline ? "flex-end" : labelProps?.justifyContent}
     >
       {label}
       {" "}
