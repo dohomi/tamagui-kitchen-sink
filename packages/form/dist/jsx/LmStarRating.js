@@ -39,6 +39,7 @@ function LmStarRating({
   ><XStack gap={gap}>{arr.map((value2) => {
     const currentRating = value2 + 1, filled = currentRating <= (rating || 0), hovered = currentRating <= (hoverRating || 0), currentColor = filled ? hovered ? colorActiveHover : colorActive : hovered ? colorHover : color;
     return <SizableStack
+      key={`${currentRating}`}
       {...sizeableStackProps}
       size={size}
       circular

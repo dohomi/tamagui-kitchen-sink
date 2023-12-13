@@ -72,6 +72,7 @@ export function LmStarRating({
             : color
           return (
             <SizableStack
+              key={`${currentRating}`}
               {...sizeableStackProps}
               size={size}
               circular

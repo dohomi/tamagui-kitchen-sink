@@ -75,7 +75,8 @@ function LmStarRating({
               setRating(newRating), typeof onChange == "function" && onChange(newRating);
             },
             children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { ...iconProps, size, color: filled ? hovered ? colorActiveHover : colorActive : hovered ? colorHover : color })
-          }
+          },
+          `${currentRating}`
         );
       }) })
     }
