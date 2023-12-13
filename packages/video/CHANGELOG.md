@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.9.5
+
+### Patch Changes
+
+- improve sizing on date picker. add possibility to size all date components
+
 ## 1.9.4
 
 ### Patch Changes

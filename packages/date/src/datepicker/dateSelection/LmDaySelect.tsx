@@ -6,7 +6,7 @@ export function LmDaySelect(props: InputSelectorProps) {
   const options = useMemo(() => {
     return daysForLocale()
   }, [])
-  return <LmSelect options={options} width={70} {...props} />
+  return <LmSelect options={options} width={120} {...props} />
 }
 
 function daysForLocale(params?: Pick<DaysForLocaleProps, 'localeName'>) {

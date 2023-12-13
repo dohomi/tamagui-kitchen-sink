@@ -1,5 +1,11 @@
 # @tamagui-extras/link
 
+## 1.8.5
+
+### Patch Changes
+
+- improve sizing on date picker. add possibility to size all date components
+
 ## 1.8.4
 
 ### Patch Changes

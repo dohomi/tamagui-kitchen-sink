@@ -35,6 +35,7 @@ export function LmDatepicker({
   buttonProps,
   popoverProps,
   containerProps,
+  size,
 }: LmDatepickerProps) {
   const id = useId()
   const media = useMedia()
@@ -87,8 +88,9 @@ export function LmDatepicker({
         helperText={helperText}
         helperTextProps={helperTextProps}
         fullWidth={fullWidth}
+        size={size}
         {...containerProps}
-        >
+      >
         <XStack
           space
           {...(fullWidth
@@ -106,6 +108,7 @@ export function LmDatepicker({
                 minWidth={isRangePicker ? '$16' : undefined}
                 value={getInputValue}
                 onPressIn={() => popoverState.onOpenChange(true)}
+                size={size}
                 {...inputProps}
               ></Input>
             </XGroup.Item>
@@ -116,6 +119,7 @@ export function LmDatepicker({
                 firstDayOfWeek={firstDayOfWeek}
                 labelFunctions={labelFunctions}
                 buttonProps={buttonProps}
+                size={size}
                 {...popoverState}
                 {...popoverProps}
               />

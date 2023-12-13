@@ -21,6 +21,14 @@ export const German = {
   },
 }
 
+export const Size = {
+  args: {
+    label: 'Geburtstag',
+    locale: 'de',
+    size: '$2',
+  },
+}
+
 export const ReactHookForm = () => {
   return (
     <LmFormRhfProvider

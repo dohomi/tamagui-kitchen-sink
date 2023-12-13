@@ -17,3 +17,11 @@ export const BasicInline = {
     labelInline: true,
   },
 }
+
+export const Size = {
+  args: {
+    label: 'Month Picker',
+    size: '$6',
+    width: 250,
+  },
+}

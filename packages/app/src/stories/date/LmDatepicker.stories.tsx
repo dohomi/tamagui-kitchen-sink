@@ -31,6 +31,13 @@ export const FullWidth: Story = {
   },
 }
 
+export const Size: Story = {
+  args: {
+    label: 'Full width',
+    size: '$6',
+  },
+}
+
 export const RangePicker: Story = {
   args: {
     label: 'Pick a range',

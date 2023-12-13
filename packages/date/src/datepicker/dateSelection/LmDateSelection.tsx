@@ -1,4 +1,4 @@
-import { ThemeableStackProps, XStack } from 'tamagui'
+import { SizeTokens, ThemeableStackProps, XStack } from 'tamagui'
 import { useId, useRef, useState } from 'react'
 import { LmFormContainerBaseTypes, LmFormFieldContainer } from '@tamagui-extras/form'
 import { LmDaySelect } from './LmDaySelect'
@@ -11,6 +11,7 @@ export type LmDateSelectionProps = LmFormContainerBaseTypes & {
   value?: string
   locale?: string
   containerProps?: ThemeableStackProps
+  size?: SizeTokens
 }
 
 export function LmDateSelection({
@@ -25,6 +26,7 @@ export function LmDateSelection({
   invalidDateMessage = 'This is not a valid date',
   locale,
   value,
+  size = '$3',
   containerProps,
 }: LmDateSelectionProps) {
   let dayValue = ''
@@ -83,11 +85,13 @@ export function LmDateSelection({
       label={label}
       labelInline={labelInline}
       helperText={isInvalid ? invalidDateMessage : helperText}
+      size={size}
       {...containerProps}
     >
       <XStack space id={id}>
         <LmDaySelect
           value={dayValue}
+          size={size}
           onValueChange={(day) => {
             dayRef.current = day
             updateDate()
@@ -96,6 +100,7 @@ export function LmDateSelection({
         <LmMonthSelect
           value={monthValue}
           locale={locale}
+          size={size}
           onValueChange={(month) => {
             monthRef.current = month
             updateDate()
@@ -103,6 +108,7 @@ export function LmDateSelection({
         />
         <LmYearSelect
           value={yearValue}
+          size={size}
           onValueChange={(year) => {
             yearRef.current = year
             updateDate()

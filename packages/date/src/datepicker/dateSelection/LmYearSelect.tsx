@@ -6,7 +6,7 @@ export function LmYearSelect(props: InputSelectorProps) {
   const options = useMemo(() => {
     return yearsForLocale()
   }, [])
-  return <LmSelect options={options} width={100} {...props} />
+  return <LmSelect options={options} width={120} {...props} />
 }
 
 type YearsForLocaleProps = {

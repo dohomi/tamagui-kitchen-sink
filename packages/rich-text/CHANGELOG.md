@@ -1,5 +1,14 @@
 # @tamagui-extras/rich-text
 
+## 1.8.7
+
+### Patch Changes
+
+- improve sizing on date picker. add possibility to size all date components
+- Updated dependencies
+  - @tamagui-extras/core@1.8.5
+  - @tamagui-extras/form@1.13.2
+
 ## 1.8.6
 
 ### Patch Changes

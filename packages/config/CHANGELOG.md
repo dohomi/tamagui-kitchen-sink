@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.6.2
+
+### Patch Changes
+
+- improve sizing on date picker. add possibility to size all date components
+
 ## 1.6.1
 
 ### Patch Changes

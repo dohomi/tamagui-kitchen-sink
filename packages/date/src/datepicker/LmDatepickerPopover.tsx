@@ -18,6 +18,7 @@ export function LmDatepickerPopover({
   firstDayOfWeek,
   labelFunctions,
   buttonProps,
+  size,
   ...popoverProps
 }: LmDatepickerPopoverProps) {
   return (
@@ -34,6 +35,7 @@ export function LmDatepickerPopover({
           icon={<CalendarRegular />}
           borderTopLeftRadius={0}
           borderBottomLeftRadius={0}
+          size={size}
           {...buttonProps}
         />
       }

@@ -1,5 +1,13 @@
 # @tamagui-extras/form
 
+## 1.13.2
+
+### Patch Changes
+
+- improve sizing on date picker. add possibility to size all date components
+- Updated dependencies
+  - @tamagui-extras/core@1.8.5
+
 ## 1.13.1
 
 ### Patch Changes

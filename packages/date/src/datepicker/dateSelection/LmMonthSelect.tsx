@@ -11,7 +11,7 @@ export function LmMonthSelect({
   const options = useMemo(() => {
     return monthsForLocale({ localeName: locale })
   }, [])
-  return <LmSelect options={options} width={80} {...props} />
+  return <LmSelect options={options} width={120} {...props} />
 }
 
 function monthsForLocale(params?: DaysForLocaleProps) {
