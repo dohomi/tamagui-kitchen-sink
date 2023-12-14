@@ -73,6 +73,19 @@ export const ThreeMonths: Story = {
 export const ReactHookForm = () => (
   <LmFormRhfProvider
     defaultValues={{
+      birthday: '',
+    }}
+  >
+    <YStack space>
+      <LmDatepickerRhf name={'birthday'} label={'Birthday'} />
+      <LmSubmitButtonRhf onSubmit={action('submit')}>Submit</LmSubmitButtonRhf>
+    </YStack>
+  </LmFormRhfProvider>
+)
+
+export const ReactHookFormComplex = () => (
+  <LmFormRhfProvider
+    defaultValues={{
       single: '2022-12-24',
       singleDate: new Date('2022-12-31'),
       rangeStartP: '2022-12-24',
