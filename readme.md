@@ -51,6 +51,29 @@ Currently following components must be
 transpiled as you can see in
 the [NextJS app](https://github.com/dohomi/tamagui-kitchen-sink/blob/master/apps/next/next.config.js#L16).
 
+### Installation | Troubleshoot Expo
+
+You have to manually add following dependencies for Expo native builds:
+
+```
+yarn add expo-linear-gradient
+```
+
+#### Datepicker `@tamagui-extras/date`
+
+The Datepicker component uses `@react-native-community/datetimepicker` for native builds. You have to manually install the package in Expo
+
+```
+yarn add @react-native-community/datetimepicker
+```
+
+While writing this docs there has been issues reported with mismatching versioning so make sure to pin the right version in your root package.json
+
+```json
+"resolutions": {
+    "@react-native-community/datetimepicker": "7.2.0"
+},
+```
 ### Adjusting the build
 
 Add `@tamagui-extras/*` to the `next.config.js` or `babel.config.js` file to transpile the package.
