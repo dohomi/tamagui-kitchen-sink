@@ -1,7 +1,7 @@
 import DateTimePickerModal from 'react-native-modal-datetime-picker'
 import { LmDatepickerProps } from './datepickerTypes'
 import { LmFormFieldContainer } from '@tamagui-extras/form'
-import { useId, useState } from 'react'
+import { useEffect, useId, useState } from 'react'
 import { Button, Input, XGroup, XStack } from 'tamagui'
 import { Platform } from 'react-native'
 import { getLocaleDate } from '../dateHelper'
@@ -31,6 +31,11 @@ export function LmDatepicker({
     endDate: endDate,
     focusedInput: START_DATE,
   })
+  useEffect(() => {
+    if (typeof onChange === 'function') {
+      onChange(state)
+    }
+  }, [state])
   return (
     <LmFormFieldContainer
       id={id}

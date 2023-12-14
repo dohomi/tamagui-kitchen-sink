@@ -7,38 +7,60 @@ import {
 import { YStack } from 'tamagui'
 import React from 'react'
 import { action } from '@storybook/addon-actions'
+import { Meta, StoryObj } from '@storybook/react'
 
-export default {
+const meta = {
   title: 'form/Checkbox',
   component: LmCheckbox,
-}
+} satisfies Meta<typeof LmCheckbox>
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Basic = {
+export const Basic: Story = {
   args: {
     label: 'Please check this out',
   },
 }
 
-export const Blue = {
+export const Blue: Story = {
   args: {
     label: 'Blue theme',
     theme: 'blue',
   },
 }
 
-export const Checked = {
+export const Custom: Story = {
+  args: {
+    label: 'Blue theme',
+    labelProps: {
+      color: '$orange10',
+    },
+    checkboxProps: {
+      borderColor: '$orange10',
+    },
+  },
+}
+
+export const Checked: Story = {
   args: {
     label: 'Checked',
     value: true,
   },
 }
 
-export const Indeterminate = {
+export const Indeterminate: Story = {
   args: {
     label: 'Indeterminate',
     checkboxProps: {
       checked: 'indeterminate',
     },
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    label: 'Disabled',
+    disabled: true,
   },
 }
 

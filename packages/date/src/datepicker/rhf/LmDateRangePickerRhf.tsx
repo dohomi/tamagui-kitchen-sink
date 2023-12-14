@@ -18,7 +18,7 @@ export function LmDateRangePickerRhf({
   ...datepickerProps
 }: LmDateRangePickerRhf) {
   if (required) {
-    rules.required = 'This field is required'
+    rules.required = rules?.required ?? 'This field is required'
   }
   const startController = useController({
     name: start,

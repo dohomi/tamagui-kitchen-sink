@@ -1,5 +1,13 @@
 # @tamagui-extras/date
 
+## 1.9.10
+
+### Patch Changes
+
+- fix datepicker native and improve checkbox element
+- Updated dependencies
+  - @tamagui-extras/form@1.13.3
+
 ## 1.9.9
 
 ### Patch Changes

@@ -29,6 +29,8 @@ function LmCheckbox({
   theme,
   helperTextProps,
   checkboxProps,
+  labelProps,
+  disabled,
   ...stackProps
 }) {
   const id = (0, import_react.useId)();
@@ -39,17 +41,18 @@ function LmCheckbox({
         id,
         theme: error ? "red" : theme,
         ...checkboxProps,
+        disabled,
         defaultChecked: value || (checkboxProps == null ? void 0 : checkboxProps.defaultChecked),
+        borderColor: error ? "$red8" : (checkboxProps == null ? void 0 : checkboxProps.borderColor) ?? "$borderColor",
         size,
         onCheckedChange: (checked) => {
           typeof onChange == "function" && onChange(checked);
         },
-        borderColor: error ? "$red8" : "$borderColor",
         children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Checkbox.Indicator, { children: (checkboxProps == null ? void 0 : checkboxProps.checked) === "indeterminate" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.MinusRegular, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CheckRegular, {}) })
       }
     ),
     label && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.YStack, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Label, { size, htmlFor: id, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Label, { size, htmlFor: id, ...labelProps, disabled, children: [
         required ? "* " : "",
         label
       ] }),

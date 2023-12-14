@@ -19,6 +19,8 @@ function LmCheckbox({
   theme,
   helperTextProps,
   checkboxProps,
+  labelProps,
+  disabled,
   ...stackProps
 }) {
   const id = useId();
@@ -29,17 +31,18 @@ function LmCheckbox({
         id,
         theme: error ? "red" : theme,
         ...checkboxProps,
+        disabled,
         defaultChecked: value || checkboxProps?.defaultChecked,
+        borderColor: error ? "$red8" : checkboxProps?.borderColor ?? "$borderColor",
         size,
         onCheckedChange: (checked) => {
           typeof onChange == "function" && onChange(checked);
         },
-        borderColor: error ? "$red8" : "$borderColor",
         children: /* @__PURE__ */ jsx(Checkbox.Indicator, { children: checkboxProps?.checked === "indeterminate" ? /* @__PURE__ */ jsx(MinusRegular, {}) : /* @__PURE__ */ jsx(CheckRegular, {}) })
       }
     ),
     label && /* @__PURE__ */ jsxs(YStack, { children: [
-      /* @__PURE__ */ jsxs(Label, { size, htmlFor: id, children: [
+      /* @__PURE__ */ jsxs(Label, { size, htmlFor: id, ...labelProps, disabled, children: [
         required ? "* " : "",
         label
       ] }),

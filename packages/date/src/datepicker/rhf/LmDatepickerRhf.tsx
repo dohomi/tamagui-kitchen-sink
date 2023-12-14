@@ -15,7 +15,7 @@ export function LmDatepickerRhf<T extends FieldValues>({
   ...datepickerProps
 }: LmDatepickerRhf<T>) {
   if (required) {
-    rules.required = 'This field is required'
+    rules.required = rules.required ?? 'This field is required'
   }
   const startController = useController({
     name,

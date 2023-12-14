@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import { CheckboxProps, CheckedState, ParagraphProps, SizeTokens, XStackProps } from 'tamagui';
+import { CheckboxProps, CheckedState, LabelProps, ParagraphProps, SizeTokens, XStackProps } from 'tamagui';
 export type LmCheckboxProps = XStackProps & {
-    checkboxProps?: CheckboxProps;
+    checkboxProps?: Omit<CheckboxProps, 'disabled'>;
     label?: ReactNode;
     onChange?: (state: CheckedState) => void;
     value?: boolean;
@@ -10,6 +10,7 @@ export type LmCheckboxProps = XStackProps & {
     helperTextProps?: ParagraphProps;
     size?: SizeTokens;
     required?: boolean;
+    labelProps?: Omit<LabelProps, 'htmlFor' | 'ref'>;
 };
-export declare function LmCheckbox({ label, onChange, error, helperText, size, value, required, theme, helperTextProps, checkboxProps, ...stackProps }: LmCheckboxProps): import("react/jsx-runtime").JSX.Element;
+export declare function LmCheckbox({ label, onChange, error, helperText, size, value, required, theme, helperTextProps, checkboxProps, labelProps, disabled, ...stackProps }: LmCheckboxProps): import("react/jsx-runtime").JSX.Element;
 //# sourceMappingURL=LmCheckbox.d.ts.map

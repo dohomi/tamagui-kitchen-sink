@@ -18,6 +18,8 @@ function LmCheckbox({
   theme,
   helperTextProps,
   checkboxProps,
+  labelProps,
+  disabled,
   ...stackProps
 }) {
   const id = useId();
@@ -26,15 +28,16 @@ function LmCheckbox({
       id={id}
       theme={error ? "red" : theme}
       {...checkboxProps}
+      disabled={disabled}
       defaultChecked={value || checkboxProps?.defaultChecked}
+      borderColor={error ? "$red8" : checkboxProps?.borderColor ?? "$borderColor"}
       size={size}
       onCheckedChange={(checked) => {
         typeof onChange == "function" && onChange(checked);
       }}
-      borderColor={error ? "$red8" : "$borderColor"}
     ><Checkbox.Indicator>{checkboxProps?.checked === "indeterminate" ? <MinusRegular /> : <CheckRegular />}</Checkbox.Indicator></Checkbox>
     {label && <YStack>
-      <Label size={size} htmlFor={id}>
+      <Label size={size} htmlFor={id} {...labelProps} disabled={disabled}>
         {required ? "* " : ""}
         {label}
       </Label>

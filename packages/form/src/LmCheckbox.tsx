@@ -5,6 +5,7 @@ import {
   CheckedState,
   FontSizeTokens,
   Label,
+  LabelProps,
   Paragraph,
   ParagraphProps,
   SizeTokens,
@@ -15,7 +16,7 @@ import {
 import { CheckRegular, MinusRegular } from '@tamagui-extras/core'
 
 export type LmCheckboxProps = XStackProps & {
-  checkboxProps?: CheckboxProps
+  checkboxProps?: Omit<CheckboxProps, 'disabled'>
   label?: ReactNode
   onChange?: (state: CheckedState) => void
   value?: boolean
@@ -24,6 +25,7 @@ export type LmCheckboxProps = XStackProps & {
   helperTextProps?: ParagraphProps
   size?: SizeTokens
   required?: boolean
+  labelProps?: Omit<LabelProps, 'htmlFor' | 'ref'>
 }
 
 export function LmCheckbox({
@@ -37,6 +39,8 @@ export function LmCheckbox({
   theme,
   helperTextProps,
   checkboxProps,
+  labelProps,
+  disabled,
   ...stackProps
 }: LmCheckboxProps) {
   const id = useId()
@@ -46,14 +50,15 @@ export function LmCheckbox({
         id={id}
         theme={error ? 'red' : theme}
         {...checkboxProps}
+        disabled={disabled}
         defaultChecked={value || checkboxProps?.defaultChecked}
+        borderColor={error ? '$red8' : checkboxProps?.borderColor ?? '$borderColor'}
         size={size}
         onCheckedChange={(checked) => {
           if (typeof onChange === 'function') {
             onChange(checked)
           }
         }}
-        borderColor={error ? '$red8' : '$borderColor'}
       >
         <Checkbox.Indicator>
           {checkboxProps?.checked === 'indeterminate' ? <MinusRegular /> : <CheckRegular />}
@@ -61,7 +66,7 @@ export function LmCheckbox({
       </Checkbox>
       {label && (
         <YStack>
-          <Label size={size} htmlFor={id}>
+          <Label size={size} htmlFor={id} {...labelProps} disabled={disabled}>
             {required ? '* ' : ''}
             {label}
           </Label>
