@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.6.3
+
+### Patch Changes
+
+- update dependencies
+
 ## 1.6.2
 
 ### Patch Changes

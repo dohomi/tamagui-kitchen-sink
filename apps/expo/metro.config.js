@@ -20,8 +20,7 @@ config.resolver = {
   ...config.resolver,
 }
 
-config.transformer = config.transformer || {}
+config.transformer = { ...config.transformer, unstable_allowRequireContext: true }
 config.transformer.minifierPath = require.resolve('metro-minify-terser')
-config.transformer.unstable_allowRequireContext = true
 
 module.exports = config

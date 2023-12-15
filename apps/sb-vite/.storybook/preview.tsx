@@ -1,7 +1,7 @@
 import '@tamagui/core/reset.css'
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/700.css'
-import 'raf/polyfill' // const OriginalNextImage = NextImage.default
+import 'raf/polyfill'
 import { Preview } from '@storybook/react'
 import { StorybookDecorator } from 'app/src/provider/StorybookDecorator'
 import i18n from './i18n'

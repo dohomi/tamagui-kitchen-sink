@@ -1,5 +1,13 @@
 # @tamagui-extras/file
 
+## 1.8.6
+
+### Patch Changes
+
+- update dependencies
+- Updated dependencies
+  - @tamagui-extras/core@1.8.6
+
 ## 1.8.5
 
 ### Patch Changes

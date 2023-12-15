@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.8.6
+
+### Patch Changes
+
+- update dependencies
+
 ## 1.8.5
 
 ### Patch Changes

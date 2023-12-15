@@ -22,9 +22,13 @@ const tamaguiConfig = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    global: 'window',
+  },
   resolve: {
     // extensions: extensions,
     alias: {
+      'react-native': 'react-native-web',
       'react-native/Libraries/Image/AssetRegistry': 'react-native-web/dist/modules/AssetRegistry',
     },
   },
