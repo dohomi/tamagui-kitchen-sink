@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
 import { tamaguiExtractPlugin, tamaguiPlugin } from '@tamagui/vite-plugin'
+import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite'
 
 const shouldExtract = process.env.EXTRACT === '1'
 
@@ -22,13 +22,9 @@ const tamaguiConfig = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  define: {
-    global: 'window',
-  },
   resolve: {
     // extensions: extensions,
     alias: {
-      'react-native': 'react-native-web',
       'react-native/Libraries/Image/AssetRegistry': 'react-native-web/dist/modules/AssetRegistry',
     },
   },
@@ -37,4 +33,12 @@ export default defineConfig({
     tamaguiPlugin(tamaguiConfig),
     shouldExtract ? tamaguiExtractPlugin(tamaguiConfig) : null,
   ].filter(Boolean),
+  server: {
+    fs: {
+      // Load server-side code also from `src`
+      allow: ['src'],
+      // Enable stricter file checks
+      strict: true,
+    },
+  },
 })

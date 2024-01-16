@@ -9112,7 +9112,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui-extras/config@1.6.2, @tamagui-extras/config@workspace:packages/config":
+"@tamagui-extras/config@1.6.3, @tamagui-extras/config@workspace:packages/config":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/config@workspace:packages/config"
   dependencies:
@@ -9125,11 +9125,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/core@1.8.5, @tamagui-extras/core@^1.8.5, @tamagui-extras/core@workspace:packages/core":
+"@tamagui-extras/core@1.8.6, @tamagui-extras/core@^1.8.6, @tamagui-extras/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/core@workspace:packages/core"
   dependencies:
-    "@tamagui-extras/config": 1.6.2
+    "@tamagui-extras/config": 1.6.3
     "@tamagui/build": ^1.79.12
     prettier: ^2.8.7
     react-native: 0.72.4
@@ -9143,14 +9143,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/date@1.9.10, @tamagui-extras/date@workspace:packages/date":
+"@tamagui-extras/date@1.9.11, @tamagui-extras/date@workspace:packages/date":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/date@workspace:packages/date"
   dependencies:
     "@datepicker-react/hooks": ^2.8.4
     "@react-native-community/datetimepicker": ^7.0.1
-    "@tamagui-extras/core": 1.8.5
-    "@tamagui-extras/form": 1.13.3
+    "@tamagui-extras/core": 1.8.6
+    "@tamagui-extras/form": 1.13.4
     "@tamagui/build": ^1.79.12
     react: ^18.2.0
     react-hook-form: ^7.43.9
@@ -9164,11 +9164,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/file@1.8.5, @tamagui-extras/file@workspace:packages/file":
+"@tamagui-extras/file@1.8.6, @tamagui-extras/file@workspace:packages/file":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/file@workspace:packages/file"
   dependencies:
-    "@tamagui-extras/core": ^1.8.5
+    "@tamagui-extras/core": ^1.8.6
     "@tamagui/build": ^1.79.12
     expo: ^49.0.10
     expo-document-picker: ~11.5.4
@@ -9182,11 +9182,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/form@1.13.3, @tamagui-extras/form@workspace:packages/form":
+"@tamagui-extras/form@1.13.4, @tamagui-extras/form@workspace:packages/form":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/form@workspace:packages/form"
   dependencies:
-    "@tamagui-extras/core": 1.8.5
+    "@tamagui-extras/core": 1.8.6
     "@tamagui/build": ^1.79.12
     react: ^18.2.0
     react-hook-form: ^7.43.9
@@ -9199,7 +9199,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/link@1.8.5, @tamagui-extras/link@workspace:packages/link":
+"@tamagui-extras/link@1.8.6, @tamagui-extras/link@workspace:packages/link":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/link@workspace:packages/link"
   dependencies:
@@ -9215,13 +9215,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/rich-text@1.8.8, @tamagui-extras/rich-text@workspace:packages/rich-text":
+"@tamagui-extras/rich-text@1.8.9, @tamagui-extras/rich-text@workspace:packages/rich-text":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/rich-text@workspace:packages/rich-text"
   dependencies:
     "@siposdani87/expo-rich-text-editor": ^0.9.2
-    "@tamagui-extras/core": 1.8.5
-    "@tamagui-extras/form": 1.13.3
+    "@tamagui-extras/core": 1.8.6
+    "@tamagui-extras/form": 1.13.4
     "@tamagui/build": ^1.79.12
     "@tiptap/pm": 2.1.7
     "@tiptap/react": 2.1.7
@@ -9236,7 +9236,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/video@1.9.5, @tamagui-extras/video@workspace:packages/video":
+"@tamagui-extras/video@1.9.6, @tamagui-extras/video@workspace:packages/video":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/video@workspace:packages/video"
   dependencies:
@@ -9253,11 +9253,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tamagui-extras/youtube@1.8.5, @tamagui-extras/youtube@workspace:packages/youtube":
+"@tamagui-extras/youtube@1.8.6, @tamagui-extras/youtube@workspace:packages/youtube":
   version: 0.0.0-use.local
   resolution: "@tamagui-extras/youtube@workspace:packages/youtube"
   dependencies:
-    "@tamagui-extras/core": 1.8.5
+    "@tamagui-extras/core": 1.8.6
     "@tamagui/build": ^1.79.12
     react: ^18.2.0
     react-native: ^0.71.6
@@ -12516,15 +12516,15 @@ __metadata:
     "@storybook/jest": 0.2.3
     "@storybook/react": 7.6.4
     "@storybook/testing-library": 0.2.2
-    "@tamagui-extras/config": 1.6.2
-    "@tamagui-extras/core": 1.8.5
-    "@tamagui-extras/date": 1.9.10
-    "@tamagui-extras/file": 1.8.5
-    "@tamagui-extras/form": 1.13.3
-    "@tamagui-extras/link": 1.8.5
-    "@tamagui-extras/rich-text": 1.8.8
-    "@tamagui-extras/video": 1.9.5
-    "@tamagui-extras/youtube": 1.8.5
+    "@tamagui-extras/config": 1.6.3
+    "@tamagui-extras/core": 1.8.6
+    "@tamagui-extras/date": 1.9.11
+    "@tamagui-extras/file": 1.8.6
+    "@tamagui-extras/form": 1.13.4
+    "@tamagui-extras/link": 1.8.6
+    "@tamagui-extras/rich-text": 1.8.9
+    "@tamagui-extras/video": 1.9.6
+    "@tamagui-extras/youtube": 1.8.6
     react-i18next: ^12.2.1
     react-native-safe-area-context: ^4.5.2
     react-native-web: 0.18.12
@@ -14689,16 +14689,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"create-react-class@npm:^15.7.0":
-  version: 15.7.0
-  resolution: "create-react-class@npm:15.7.0"
-  dependencies:
-    loose-envify: ^1.3.1
-    object-assign: ^4.1.1
-  checksum: 0c5f43da705fa9f67ec289051dd5780792652d440dfa17cd2c7d8423c1f604609596f895dabf46fda1960ddd93ee96fe1b61ef4d55a94fc4271b07d515486714
-  languageName: node
-  linkType: hard
-
 "crelt@npm:^1.0.0":
   version: 1.0.5
   resolution: "crelt@npm:1.0.5"
@@ -16662,7 +16652,7 @@ __metadata:
     "@babel/core": ^7.17.9
     "@babel/runtime": ^7.18.9
     "@expo/metro-config": ~0.10.0
-    "@tamagui-extras/config": 1.6.2
+    "@tamagui-extras/config": 1.6.3
     "@tamagui/babel-plugin": ^1.79.12
     "@types/react": ~18.2.14
     app: "*"
@@ -21304,7 +21294,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.3.1, loose-envify@npm:^1.4.0":
+"loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -23251,7 +23241,7 @@ __metadata:
   resolution: "next-app@workspace:apps/next"
   dependencies:
     "@fontsource/inter": ^4.5.14
-    "@tamagui-extras/config": 1.6.2
+    "@tamagui-extras/config": 1.6.3
     "@tamagui/next-plugin": ^1.79.12
     "@tamagui/next-theme": ^1.79.12
     "@types/node": ^18.6.4
@@ -23644,13 +23634,6 @@ __metadata:
   bin:
     nopt: bin/nopt.js
   checksum: 82149371f8be0c4b9ec2f863cc6509a7fd0fa729929c009f3a58e4eb0c9e4cae9920e8f1f8eb46e7d032fec8fb01bede7f0f41a67eb3553b7b8e14fa53de1dac
-  languageName: node
-  linkType: hard
-
-"normalize-css-color@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "normalize-css-color@npm:1.0.2"
-  checksum: 7433dc995a8d27c9384059ef0b52ceef47f4fab1bab55f1f085058b27e7472466ce321f46391fc85b6851db5212b9bd2bf55f5dc361da01a8a8cf4c360f69dab
   languageName: node
   linkType: hard
 
@@ -25740,43 +25723,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-web@npm:0.18.12":
-  version: 0.18.12
-  resolution: "react-native-web@npm:0.18.12"
-  dependencies:
-    "@babel/runtime": ^7.18.6
-    create-react-class: ^15.7.0
-    fbjs: ^3.0.4
-    inline-style-prefixer: ^6.0.1
-    normalize-css-color: ^1.0.2
-    postcss-value-parser: ^4.2.0
-    styleq: ^0.1.2
-  peerDependencies:
-    react: ^17.0.2 || ^18.0.0
-    react-dom: ^17.0.2 || ^18.0.0
-  checksum: 69f0ebafafc4b04b845105646d0efc0cee10ed378377c621ac67a487d5508bb0dbd1c0ff3ea8d17f5cff0c0fb8d6355916f52f19ad3dad842b99b75c65ff4973
-  languageName: node
-  linkType: hard
-
-"react-native-web@npm:^0.19.9":
-  version: 0.19.9
-  resolution: "react-native-web@npm:0.19.9"
-  dependencies:
-    "@babel/runtime": ^7.18.6
-    "@react-native/normalize-color": ^2.1.0
-    fbjs: ^3.0.4
-    inline-style-prefixer: ^6.0.1
-    memoize-one: ^6.0.0
-    nullthrows: ^1.1.1
-    postcss-value-parser: ^4.2.0
-    styleq: ^0.1.3
-  peerDependencies:
-    react: ^18.0.0
-    react-dom: ^18.0.0
-  checksum: 79fe259a9fc0168c1cd12e72011a5e21cf2493a6b1a92334c3b5cf73ce2219fbf2adb79bca528d02b9643ff4a027e18e4988bc9d50e924be6e9d658c97a7e5ec
-  languageName: node
-  linkType: hard
-
 "react-native-web@npm:~0.19.6":
   version: 0.19.8
   resolution: "react-native-web@npm:0.19.8"
@@ -27005,7 +26951,7 @@ __metadata:
     "@storybook/nextjs": 7.6.4
     "@storybook/react": 7.6.4
     "@storybook/testing-library": 0.2.2
-    "@tamagui-extras/config": 1.6.2
+    "@tamagui-extras/config": 1.6.3
     app: "*"
     chromatic: ^10.1.0
     i18next: ^22.4.15
@@ -28234,7 +28180,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styleq@npm:^0.1.2, styleq@npm:^0.1.3":
+"styleq@npm:^0.1.3":
   version: 0.1.3
   resolution: "styleq@npm:0.1.3"
   checksum: 14a8d23abd914166a9b4bd04ed753bd91363f0e029ee4a94ec2c7dc37d3213fe01fceee22dc655288da3ae89f5dc01cec42d5e2b58478b0dea33bf5bdf509be1

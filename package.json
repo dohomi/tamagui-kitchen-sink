@@ -47,6 +47,7 @@
     "typescript": "5.2.2",
     "esbuild": "~0.19.3",
     "expo-asset": "~8.10.1",
+    "react-native-web": "~0.19.6",
     "@react-navigation/native": "~6.1.6",
     "@react-native-community/datetimepicker": "7.2.0"
   },
