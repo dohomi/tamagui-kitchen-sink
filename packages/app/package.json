@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@storybook/jest": "0.2.3",
-    "@storybook/react": "7.6.4",
+    "@storybook/react": "7.6.8",
     "@storybook/testing-library": "0.2.2"
   },
   "sideEffects": false
