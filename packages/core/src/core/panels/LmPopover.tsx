@@ -5,7 +5,7 @@ import { LmSheet, LmSheetProps } from './LmSheet'
 export type LmPopoverProps = PopoverProps & {
   trigger?: ReactNode
   hideArrow?: boolean
-  contentProps?: PopoverContentProps
+  contentProps?: Omit<PopoverContentProps, 'ref'>
   isBouncy?: boolean
   sheetProps?: LmSheetProps
 }

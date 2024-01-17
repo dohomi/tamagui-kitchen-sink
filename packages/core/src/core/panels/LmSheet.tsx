@@ -1,4 +1,4 @@
-import { ScrollViewProps, Sheet } from 'tamagui'
+import { Sheet } from 'tamagui'
 import { PropsWithChildren, useState } from 'react'
 import { SheetProps } from '@tamagui/sheet/src/types'
 
@@ -7,7 +7,7 @@ export type LmSheetProps = PropsWithChildren<
     hideHandle?: boolean
     fullScreen?: boolean
     enableScroll?: boolean
-    scrollviewProps?: ScrollViewProps
+    scrollviewProps?: typeof Sheet.ScrollView
   }
 >
 

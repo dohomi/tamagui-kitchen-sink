@@ -30,13 +30,10 @@ export const Installation = () => (
       <Anchor href={'https://tamagui.dev/docs/intro/installation'} target={'_blank'}>
         tamagui installation
       </Anchor>
-      . After that add tamagui-extras:
+      . After that add components of @tamagui-extras/* you want to use:
     </Paragraph>
-    <code># yarn install tamagui-extras</code>
-    <Paragraph paddingRight={'$3'}>
-      All components of this library are prefixed with a `Lm[ComponentName]`. To be more flexible
-      and due to frequent changes of tamagui you have to install it along tamagui-extras.
-    </Paragraph>
+    <code># yarn install @tamagui-extras/core @tamagui-extras/form</code>
+    <Paragraph paddingRight={'$3'}>Follow instructions on hints how to setup Tamagui</Paragraph>
     <H5>Links</H5>
     <ul>
       <li>

@@ -31,7 +31,7 @@
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@expo/metro-config": "~0.10.0",
-    "@tamagui/babel-plugin": "^1.79.12",
+    "@tamagui/babel-plugin": "^1.86.1",
     "@types/react": "~18.2.14",
     "react-native-codegen": "^0.70.7",
     "typescript": "^5.3.3"

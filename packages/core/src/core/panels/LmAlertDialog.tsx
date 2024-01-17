@@ -2,9 +2,9 @@ import { ReactNode } from 'react'
 import {
   AlertDialog,
   AlertDialogContentProps,
+  AlertDialogDescriptionProps,
   AlertDialogProps,
-  HeadingProps,
-  ParagraphProps,
+  AlertDialogTitleProps,
   XStack,
   XStackProps,
   YStack,
@@ -18,9 +18,9 @@ export type LmAlertDialogProps = AlertDialogProps & {
   contentStackProps?: XStackProps
   actionStackProps?: XStackProps
   title: string
-  titleProps?: HeadingProps
+  titleProps?: AlertDialogTitleProps
   description: string
-  descriptionProps?: ParagraphProps
+  descriptionProps?: AlertDialogDescriptionProps
 }
 
 export function LmAlertDialog({
