@@ -33,7 +33,12 @@ export const Installation = () => (
       . After that add components of @tamagui-extras/* you want to use:
     </Paragraph>
     <code># yarn install @tamagui-extras/core @tamagui-extras/form</code>
-    <Paragraph paddingRight={'$3'}>Follow instructions on hints how to setup Tamagui</Paragraph>
+    <Paragraph paddingRight={'$3'}>
+      Follow instructions on hints how to setup Tamagui in the main repo:
+    </Paragraph>
+    <Anchor href={'https://github.com/dohomi/tamagui-kitchen-sink'} target={'_blank'}>
+      Tamagui Kitchen Sink
+    </Anchor>
     <H5>Links</H5>
     <ul>
       <li>
