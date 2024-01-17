@@ -16,6 +16,7 @@
     "build:sb": "cd apps/storybook-react && yarn build && yarn serve-sb",
     "chromatic": "cd apps/storybook-react && yarn chromatic",
     "web:prod": "turbo run build --filter=next-app && turbo run start --filter=next-app",
+    "pre:build": "turbo run build --filter=@tamagui-extras/core",
     "build": "turbo run build --filter=app^...",
     "clean": "turbo run clean --filter=app^... && yarn",
     "watch": "turbo run watch --filter=app^...",

@@ -1,3 +1,0 @@
-import { LmDatepickerProps } from './datepickerTypes';
-export declare function LmDatepicker({ numberOfMonths, isRangePicker, onChange, labelFunctions, startDate, endDate, required, error, helperText, helperTextProps, label, labelProps, labelInline, fullWidth, inputProps, buttonProps, popoverProps, containerProps, size, }: LmDatepickerProps): import("react/jsx-runtime").JSX.Element;
-//# sourceMappingURL=LmDatepicker.d.ts.map
