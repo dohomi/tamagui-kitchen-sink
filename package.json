@@ -26,7 +26,7 @@
     "upgrade:tamagui": "yarn up '*tamagui*' '@tamagui/*'",
     "upgrade:rnw": "yarn up react-native-web@0.18.12",
     "upgrade:solito": "yarn up solito",
-    "upgrade:next": "yarn up next eslint-config-next",
+    "upgrade:next": "yarn up next eslint-config-next -E",
     "upgrade:sb": "yarn up '@storybook/*' storybook -E",
     "upgrade:ts": "yarn up typescript",
     "eas:dev:ios": "cd apps/expo && yarn eas:dev:ios",

@@ -41,7 +41,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
     "eslint-plugin-storybook": "^0.6.15",
-    "next": "14.0.3",
+    "next": "14.0.4",
     "next-router-mock": "^0.9.10",
     "storybook": "7.6.8",
     "storybook-react-i18next": "2.0.9",
