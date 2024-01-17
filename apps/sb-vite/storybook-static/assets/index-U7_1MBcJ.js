@@ -1,0 +1,1 @@
+import"./index-o7np2shc.js";import{a as t}from"./index-4g5l5LRQ.js";import{D as a}from"./EventEmitter-8bYFdwfg.js";globalThis.React||(globalThis.React=t);typeof requestAnimationFrame>"u"&&(globalThis.requestAnimationFrame=setImmediate);a.addEventListener("change",()=>{i.forEach(e=>e(window))});const i=new Set;
