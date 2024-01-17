@@ -1,5 +1,16 @@
 # @tamagui-extras/form
 
+## 1.14.0
+
+### Minor Changes
+
+- bump latest Tamagui version
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.9.0
+
 ## 1.13.4
 
 ### Patch Changes

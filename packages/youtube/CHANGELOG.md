@@ -1,5 +1,16 @@
 # @tamagui-extras/youtube
 
+## 1.9.0
+
+### Minor Changes
+
+- bump latest Tamagui version
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.9.0
+
 ## 1.8.6
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.10.0
+
+### Minor Changes
+
+- bump latest Tamagui version
+
 ## 1.9.6
 
 ### Patch Changes

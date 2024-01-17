@@ -1,5 +1,11 @@
 # @tamagui-extras/link
 
+## 1.9.0
+
+### Minor Changes
+
+- bump latest Tamagui version
+
 ## 1.8.6
 
 ### Patch Changes

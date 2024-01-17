@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.9.0
+
+### Minor Changes
+
+- bump latest Tamagui version
+
 ## 1.8.6
 
 ### Patch Changes
