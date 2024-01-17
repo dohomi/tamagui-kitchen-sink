@@ -1,9 +1,7 @@
 {
   "extends": "../../tsconfig.base",
   "include": [
-    "app/**/*.ts",
-    "app/**/*.tsx",
-    "i18n.ts"
+    "src"
   ],
   "compilerOptions": {
     "composite": true,

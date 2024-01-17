@@ -37,6 +37,6 @@
     "react-i18next": "^12.2.1",
     "storybook": "7.6.8",
     "storybook-react-i18next": "^2.0.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.3.3"
   }
 }

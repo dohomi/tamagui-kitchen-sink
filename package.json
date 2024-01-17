@@ -44,7 +44,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-refresh": "0.14.0",
-    "typescript": "5.2.2",
+    "typescript": "5.3.3",
     "esbuild": "~0.19.3",
     "expo-asset": "~8.10.1",
     "react-native-web": "~0.19.6",
@@ -60,8 +60,8 @@
     "@types/react": "18.2.6",
     "eslint": "8.40.0",
     "prettier": "2.8.8",
-    "turbo": "1.9.8",
-    "typescript": "^5.2.2"
+    "turbo": "1.11.3",
+    "typescript": "^5.3.3"
   },
   "packageManager": "yarn@3.5.0"
 }

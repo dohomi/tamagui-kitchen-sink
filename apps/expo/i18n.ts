@@ -1,7 +1,9 @@
 import { initReactI18next } from 'react-i18next'
 
 import i18n from 'i18next'
+// @ts-ignore
 import EN from '../next/public/locales/en/common.json'
+// @ts-ignore
 import DE from '../next/public/locales/de/common.json'
 
 const ns = ['common']
