@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@tamagui-extras/config": "1.6.3",
-    "@tamagui/next-theme": "^1.88.2",
+    "@tamagui/next-theme": "^1.88.3",
     "app": "*",
     "next": "14.0.4",
     "next-i18next": "^13.2.2",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.14",
-    "@tamagui/next-plugin": "^1.88.2",
+    "@tamagui/next-plugin": "^1.88.3",
     "@types/node": "^18.6.4",
     "eslint-config-next": "14.0.4",
     "file-loader": "^6.2.0",
