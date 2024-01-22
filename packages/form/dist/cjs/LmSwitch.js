@@ -33,8 +33,4 @@ function LmSwitch({
     labelRight && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Label, { htmlFor: id, size, children: labelRight })
   ] });
 }
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  LmSwitch
-});
 //# sourceMappingURL=LmSwitch.js.map

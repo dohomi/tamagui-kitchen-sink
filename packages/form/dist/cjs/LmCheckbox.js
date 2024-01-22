@@ -42,13 +42,13 @@ function LmCheckbox({
         theme: error ? "red" : theme,
         ...checkboxProps,
         disabled,
-        defaultChecked: value || (checkboxProps == null ? void 0 : checkboxProps.defaultChecked),
-        borderColor: error ? "$red8" : (checkboxProps == null ? void 0 : checkboxProps.borderColor) ?? "$borderColor",
+        defaultChecked: value || checkboxProps?.defaultChecked,
+        borderColor: error ? "$red8" : checkboxProps?.borderColor ?? "$borderColor",
         size,
         onCheckedChange: (checked) => {
           typeof onChange == "function" && onChange(checked);
         },
-        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Checkbox.Indicator, { children: (checkboxProps == null ? void 0 : checkboxProps.checked) === "indeterminate" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.MinusRegular, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CheckRegular, {}) })
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Checkbox.Indicator, { children: checkboxProps?.checked === "indeterminate" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.MinusRegular, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.CheckRegular, {}) })
       }
     ),
     label && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.YStack, { children: [
@@ -63,15 +63,11 @@ function LmCheckbox({
           marginTop: 0,
           size,
           ...helperTextProps,
-          color: error ? "$red10" : helperTextProps == null ? void 0 : helperTextProps.color,
+          color: error ? "$red10" : helperTextProps?.color,
           children: helperText
         }
       )
     ] })
   ] });
 }
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  LmCheckbox
-});
 //# sourceMappingURL=LmCheckbox.js.map

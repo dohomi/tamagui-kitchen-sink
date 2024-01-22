@@ -5,6 +5,7 @@ import {
   ThemeableStack,
   YStack
 } from "tamagui";
+import { jsx, jsxs } from "react/jsx-runtime";
 const StackContainer = styled(ThemeableStack, {
   variants: {
     fullWidth: {
@@ -33,30 +34,38 @@ function LmFormFieldContainer({
   helperTextProps,
   ...rest
 }) {
-  return <StackContainer {...rest} space={rest.labelInline ? "$3" : rest.space}>
-    {label && <Label
-      htmlFor={id}
-      size={size || "$3"}
-      {...labelProps}
-      color={error ? "$red10" : labelProps?.color}
-      width={rest.labelInline ? 150 : labelProps?.width}
-      justifyContent={rest.labelInline ? "flex-end" : labelProps?.justifyContent}
-    >
-      {label}
-      {" "}
-      {required && " *"}
-    </Label>}
-    <YStack>
-      {children}
-      {helperText && <Paragraph
-        paddingLeft="$2"
-        marginTop="$2"
-        size={size}
-        {...helperTextProps}
-        color={error ? "$red10" : void 0}
-      >{helperText}</Paragraph>}
-    </YStack>
-  </StackContainer>;
+  return /* @__PURE__ */ jsxs(StackContainer, { ...rest, space: rest.labelInline ? "$3" : rest.space, children: [
+    label && /* @__PURE__ */ jsxs(
+      Label,
+      {
+        htmlFor: id,
+        size: size || "$3",
+        ...labelProps,
+        color: error ? "$red10" : labelProps?.color,
+        width: rest.labelInline ? 150 : labelProps?.width,
+        justifyContent: rest.labelInline ? "flex-end" : labelProps?.justifyContent,
+        children: [
+          label,
+          " ",
+          required && " *"
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxs(YStack, { children: [
+      children,
+      helperText && /* @__PURE__ */ jsx(
+        Paragraph,
+        {
+          paddingLeft: "$2",
+          marginTop: "$2",
+          size,
+          ...helperTextProps,
+          color: error ? "$red10" : void 0,
+          children: helperText
+        }
+      )
+    ] })
+  ] });
 }
 export {
   LmFormFieldContainer

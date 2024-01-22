@@ -47,7 +47,7 @@ function LmAutocompleteRhf({
             error: !!error,
             onChange: (v) => {
               let changedVal = v;
-              matchId && (changedVal = Array.isArray(v) ? v.map((i) => (i == null ? void 0 : i.value) || i) : (v == null ? void 0 : v.value) || v), onChange(changedVal), typeof inputProps.onChange == "function" && inputProps.onChange(v);
+              matchId && (changedVal = Array.isArray(v) ? v.map((i) => i?.value || i) : v?.value || v), onChange(changedVal), typeof inputProps.onChange == "function" && inputProps.onChange(v);
             },
             helperText: error ? error.message : inputProps.helperText
           }
@@ -56,8 +56,4 @@ function LmAutocompleteRhf({
     }
   );
 }
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  LmAutocompleteRhf
-});
 //# sourceMappingURL=LmAutocompleteRhf.js.map

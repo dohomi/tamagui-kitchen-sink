@@ -59,7 +59,7 @@ const LmInput = (0, import_react.forwardRef)(function({
           placeholderTextColor: rest.placeholderTextColor,
           ref
         }
-      ) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps == null ? void 0 : currentInputProps.width, children: [
+      ) : secureTextEntry ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_tamagui.Stack, { position: "relative", width: fullWidth ? "100%" : currentInputProps?.width, children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
           import_tamagui.Input,
           {
@@ -78,7 +78,7 @@ const LmInput = (0, import_react.forwardRef)(function({
               top: "50%",
               transform: [{ translateY: -0.5 * 20 }],
               height: 20,
-              ...(rest == null ? void 0 : rest.direction) === "rtl" ? {
+              ...rest?.direction === "rtl" ? {
                 left: 15
               } : {
                 right: 15
@@ -93,9 +93,5 @@ const LmInput = (0, import_react.forwardRef)(function({
       ] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Input, { ...currentInputProps, autoCapitalize: "none", ref })
     }
   );
-});
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  LmInput
 });
 //# sourceMappingURL=LmInput.js.map

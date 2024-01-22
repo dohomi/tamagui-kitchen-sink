@@ -22,18 +22,4 @@ __reExport(src_exports, require("./LmSlider"), module.exports);
 __reExport(src_exports, require("./LmAutocomplete"), module.exports);
 __reExport(src_exports, require("./LmStarRating"), module.exports);
 __reExport(src_exports, require("./LmRadioGroup"), module.exports);
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  ...require("./formContainerTypes"),
-  ...require("./rhf"),
-  ...require("./LmFormFieldContainer"),
-  ...require("./LmInput"),
-  ...require("./LmSelect"),
-  ...require("./LmCheckbox"),
-  ...require("./LmSwitch"),
-  ...require("./LmSlider"),
-  ...require("./LmAutocomplete"),
-  ...require("./LmStarRating"),
-  ...require("./LmRadioGroup")
-});
 //# sourceMappingURL=index.js.map

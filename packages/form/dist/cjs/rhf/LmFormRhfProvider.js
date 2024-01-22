@@ -28,8 +28,4 @@ function LmFormRhfProvider({
   });
   return typeof children == "function" ? forceFormProvider ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react_hook_form.FormProvider, { ...methods, children: children(methods) }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: children(methods) }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react_hook_form.FormProvider, { ...methods, children });
 }
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  LmFormRhfProvider
-});
 //# sourceMappingURL=LmFormRhfProvider.js.map

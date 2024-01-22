@@ -1,5 +1,6 @@
 import { Label, Switch, XStack } from "tamagui";
 import { useId } from "react";
+import { jsx, jsxs } from "react/jsx-runtime";
 function LmSwitch({
   labelLeft,
   labelRight,
@@ -9,11 +10,11 @@ function LmSwitch({
   ...rest
 }) {
   const id = useId();
-  return <XStack alignItems="center" space="$4">
-    {labelLeft && <Label htmlFor={id} size={size}>{labelLeft}</Label>}
-    <Switch id={id} {...rest} size={size}><Switch.Thumb animation="bouncy" {...thumbProps} /></Switch>
-    {labelRight && <Label htmlFor={id} size={size}>{labelRight}</Label>}
-  </XStack>;
+  return /* @__PURE__ */ jsxs(XStack, { alignItems: "center", space: "$4", children: [
+    labelLeft && /* @__PURE__ */ jsx(Label, { htmlFor: id, size, children: labelLeft }),
+    /* @__PURE__ */ jsx(Switch, { id, ...rest, size, children: /* @__PURE__ */ jsx(Switch.Thumb, { animation: "bouncy", ...thumbProps }) }),
+    labelRight && /* @__PURE__ */ jsx(Label, { htmlFor: id, size, children: labelRight })
+  ] });
 }
 export {
   LmSwitch

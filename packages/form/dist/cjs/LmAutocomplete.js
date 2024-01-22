@@ -39,19 +39,17 @@ function LmAutocomplete({
 }) {
   const id = (0, import_react.useId)(), [opts, setOpts] = (0, import_react.useState)(options), { width } = (0, import_react_native.useWindowDimensions)(), popoverState = (0, import_core.usePopoverState)(), [popoverWidth, setPopoverWidth] = (0, import_react.useState)(0), inputRef = (0, import_react.useRef)(null), searchInputRef = (0, import_react.useRef)(null), [selection, setSelection] = (0, import_react.useState)(
     value ?? (multiple ? [] : null)
-  ), isSelected = (item) => Array.isArray(selection) ? !!(selection != null && selection.some((i) => i.value === item.value)) : (selection == null ? void 0 : selection.value) === item.value, onChangeSelection = (item) => {
+  ), isSelected = (item) => Array.isArray(selection) ? !!selection?.some((i) => i.value === item.value) : selection?.value === item.value, onChangeSelection = (item) => {
     let newVal = null;
-    multiple ? newVal = isSelected(item) ? (selection == null ? void 0 : selection.filter((i) => i.value !== item.value)) ?? [] : [...selection ?? [], item] : newVal = isSelected(item) ? null : item, setSelection(newVal), typeof onChange == "function" && onChange(newVal);
+    multiple ? newVal = isSelected(item) ? selection?.filter((i) => i.value !== item.value) ?? [] : [...selection ?? [], item] : newVal = isSelected(item) ? null : item, setSelection(newVal), typeof onChange == "function" && onChange(newVal);
   };
   (0, import_react.useEffect)(() => {
-    var _a;
-    const elWidth = (_a = inputRef.current) == null ? void 0 : _a.offsetWidth;
+    const elWidth = inputRef.current?.offsetWidth;
     elWidth && setPopoverWidth(elWidth);
   }, [width]), (0, import_react.useEffect)(() => {
-    var _a, _b;
-    popoverState.open && ((_b = (_a = searchInputRef.current) == null ? void 0 : _a.focus) == null || _b.call(_a));
+    popoverState.open && searchInputRef.current?.focus?.();
   }, [popoverState.open]);
-  const inputValue = Array.isArray(selection) ? selection.map((option) => option == null ? void 0 : option.label).join(", ") : (selection == null ? void 0 : selection.label) || "";
+  const inputValue = Array.isArray(selection) ? selection.map((option) => option?.label).join(", ") : selection?.label || "";
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
     import_LmFormFieldContainer.LmFormFieldContainer,
     {
@@ -75,8 +73,7 @@ function LmAutocomplete({
             theme,
             textOverflow: "ellipsis",
             onFocus: (el) => {
-              var _a, _b;
-              popoverState.onOpenChange(!popoverState.open), (_b = (_a = el.target).blur) == null || _b.call(_a);
+              popoverState.onOpenChange(!popoverState.open), el.target.blur?.();
             }
           }
         ) }),
@@ -94,7 +91,7 @@ function LmAutocomplete({
             contentProps: {
               minWidth: popoverWidth || void 0,
               maxWidth: "100%",
-              ...popoverProps == null ? void 0 : popoverProps.contentProps
+              ...popoverProps?.contentProps
             },
             trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
               import_tamagui.Button,
@@ -141,7 +138,7 @@ const LmAutocompleteInputContent = (0, import_react.forwardRef)(function({
   onChangeSelection,
   isSelected
 }, ref) {
-  const [searchTerm, setSearchTerm] = (0, import_react.useState)(), deferredTerm = (0, import_react.useDeferredValue)(searchTerm), filteredOptions = deferredTerm != null && deferredTerm.length ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options, showSearch = !disableSearch || allowNew;
+  const [searchTerm, setSearchTerm] = (0, import_react.useState)(), deferredTerm = (0, import_react.useDeferredValue)(searchTerm), filteredOptions = deferredTerm?.length ? options.filter((i) => i.label.toLowerCase().includes(deferredTerm)) : options, showSearch = !disableSearch || allowNew;
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: import_react_native.Platform.OS === "web" ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
     showSearch && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { padding: "$4", width: "100%", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
       import_tamagui.Input,
@@ -172,7 +169,7 @@ const LmAutocompleteInputContent = (0, import_react.forwardRef)(function({
               isSelected
             }
           ),
-          allowNew && !(filteredOptions != null && filteredOptions.length) && deferredTerm && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          allowNew && !filteredOptions?.length && deferredTerm && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
             import_tamagui.Button,
             {
               onPress: () => onAddNew(deferredTerm),
@@ -205,7 +202,7 @@ const LmAutocompleteInputContent = (0, import_react.forwardRef)(function({
         isSelected
       }
     ) }),
-    allowNew && !(filteredOptions != null && filteredOptions.length) && deferredTerm && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Button, { onPress: () => onAddNew(deferredTerm), chromeless: !0, icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.ListPlusRegular, {}), children: deferredTerm }) })
+    allowNew && !filteredOptions?.length && deferredTerm && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.XStack, { justifyContent: "flex-start", marginBottom: "$3", marginLeft: "$3", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_tamagui.Button, { onPress: () => onAddNew(deferredTerm), chromeless: !0, icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_core.ListPlusRegular, {}), children: deferredTerm }) })
   ] }) });
 });
 function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
@@ -222,8 +219,4 @@ function LmAutocompleteList({ options, isSelected, onChangeSelection }) {
     }
   ) }, item.value)) });
 }
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  LmAutocomplete
-});
 //# sourceMappingURL=LmAutocomplete.js.map

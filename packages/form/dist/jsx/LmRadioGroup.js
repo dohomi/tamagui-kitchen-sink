@@ -1,5 +1,6 @@
 import { Label, RadioGroup, XStack } from "tamagui";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
+import { jsx, jsxs } from "react/jsx-runtime";
 function LmRadioGroup({
   options,
   required,
@@ -14,25 +15,33 @@ function LmRadioGroup({
   containerProps,
   ...rest
 }) {
-  return <LmFormFieldContainer
-    error={error}
-    required={required}
-    labelProps={labelProps}
-    label={label}
-    size={size}
-    labelInline={labelInline}
-    helperText={helperText}
-    helperTextProps={helperTextProps}
-    {...containerProps}
-  ><RadioGroup space={rest.flexDirection === "row" ? "$4" : "$1"} required={required} {...rest}>{options.map((option, i) => <XStack key={`${rest.name}-${option.value}-${i}`} alignItems="center" space={spaceItem}>
-    <RadioGroup.Item
-      value={option.value}
-      id={`${rest.name}-${option.value}-${i}`}
-      size={size}
-      pressTheme
-    ><RadioGroup.Indicator /></RadioGroup.Item>
-    <Label size={size} htmlFor={`${rest.name}-${option.value}-${i}`} cursor="pointer">{option.label}</Label>
-  </XStack>)}</RadioGroup></LmFormFieldContainer>;
+  return /* @__PURE__ */ jsx(
+    LmFormFieldContainer,
+    {
+      error,
+      required,
+      labelProps,
+      label,
+      size,
+      labelInline,
+      helperText,
+      helperTextProps,
+      ...containerProps,
+      children: /* @__PURE__ */ jsx(RadioGroup, { space: rest.flexDirection === "row" ? "$4" : "$1", required, ...rest, children: options.map((option, i) => /* @__PURE__ */ jsxs(XStack, { alignItems: "center", space: spaceItem, children: [
+        /* @__PURE__ */ jsx(
+          RadioGroup.Item,
+          {
+            value: option.value,
+            id: `${rest.name}-${option.value}-${i}`,
+            size,
+            pressTheme: !0,
+            children: /* @__PURE__ */ jsx(RadioGroup.Indicator, {})
+          }
+        ),
+        /* @__PURE__ */ jsx(Label, { size, htmlFor: `${rest.name}-${option.value}-${i}`, cursor: "pointer", children: option.label })
+      ] }, `${rest.name}-${option.value}-${i}`)) })
+    }
+  );
 }
 export {
   LmRadioGroup

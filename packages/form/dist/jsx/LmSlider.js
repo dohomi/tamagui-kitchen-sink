@@ -1,6 +1,7 @@
 import { Slider, styled, Text, XStack } from "tamagui";
 import { useId, useState } from "react";
 import { LmFormFieldContainer } from "./LmFormFieldContainer";
+import { jsx, jsxs } from "react/jsx-runtime";
 const CustomSliderTrack = styled(Slider.Track, {
   variants: {
     colorCustom: {
@@ -35,45 +36,56 @@ function LmSlider({
   ...sliderProps
 }) {
   const id = useId(), [value, setValue] = useState(defaultValue), trackColor = color ? `${color}Dark` : void 0;
-  return <LmFormFieldContainer
-    id={id}
-    label={label}
-    error={error}
-    required={required}
-    labelProps={labelProps}
-    size={sliderProps.size}
-    labelInline={labelInline}
-    helperText={helperText}
-    helperTextProps={helperTextProps}
-    alignItems={labelInline ? "center" : void 0}
-    {...containerProps}
-  ><XStack space alignItems="center">
-    <Slider
-      size="$2"
-      width={150}
-      defaultValue={value}
-      max={5}
-      step={1}
-      {...sliderProps}
-      onValueChange={(v) => {
-        setValue(v), typeof sliderProps.onValueChange == "function" && sliderProps.onValueChange(v);
-      }}
-    >
-      <CustomSliderTrack colorCustom={colorActiveOnly ? void 0 : trackColor}><CustomSliderTrackActive colorCustom={trackColor} /></CustomSliderTrack>
-      <Slider.Thumb
-        bordered={!1}
-        circular
-        pressTheme={!1}
-        hoverTheme={!1}
-        focusTheme={!1}
-        size="$1"
-        index={0}
-        backgroundColor={color}
-        {...thumbProps}
-      />
-    </Slider>
-    {showValue && <Text>{value[0]}</Text>}
-  </XStack></LmFormFieldContainer>;
+  return /* @__PURE__ */ jsx(
+    LmFormFieldContainer,
+    {
+      id,
+      label,
+      error,
+      required,
+      labelProps,
+      size: sliderProps.size,
+      labelInline,
+      helperText,
+      helperTextProps,
+      alignItems: labelInline ? "center" : void 0,
+      ...containerProps,
+      children: /* @__PURE__ */ jsxs(XStack, { space: !0, alignItems: "center", children: [
+        /* @__PURE__ */ jsxs(
+          Slider,
+          {
+            size: "$2",
+            width: 150,
+            defaultValue: value,
+            max: 5,
+            step: 1,
+            ...sliderProps,
+            onValueChange: (v) => {
+              setValue(v), typeof sliderProps.onValueChange == "function" && sliderProps.onValueChange(v);
+            },
+            children: [
+              /* @__PURE__ */ jsx(CustomSliderTrack, { colorCustom: colorActiveOnly ? void 0 : trackColor, children: /* @__PURE__ */ jsx(CustomSliderTrackActive, { colorCustom: trackColor }) }),
+              /* @__PURE__ */ jsx(
+                Slider.Thumb,
+                {
+                  bordered: !1,
+                  circular: !0,
+                  pressTheme: !1,
+                  hoverTheme: !1,
+                  focusTheme: !1,
+                  size: "$1",
+                  index: 0,
+                  backgroundColor: color,
+                  ...thumbProps
+                }
+              )
+            ]
+          }
+        ),
+        showValue && /* @__PURE__ */ jsx(Text, { children: value[0] })
+      ] })
+    }
+  );
 }
 export {
   LmSlider

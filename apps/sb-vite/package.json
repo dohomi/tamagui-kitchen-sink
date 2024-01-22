@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
+    "dev:vite": "NODE_ENV=development vite --host --clearScreen false",
     "build": "tsc && vite build",
     "lint": "eslint storybook-vite --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -12,26 +13,26 @@
     "chromatic": "npx chromatic --project-token=aa4fa9ec8af5"
   },
   "dependencies": {
-    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native": "~6.1.9",
     "@react-navigation/stack": "^6.3.20",
     "app": "*",
     "expo-router": "^3.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tamagui": "^1.86.1"
+    "tamagui": "^1.88.2"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "7.6.8",
-    "@storybook/addon-interactions": "7.6.8",
-    "@storybook/addon-links": "7.6.8",
+    "@storybook/addon-essentials": "7.6.10",
+    "@storybook/addon-interactions": "7.6.10",
+    "@storybook/addon-links": "7.6.10",
     "@storybook/addon-onboarding": "1.0.10",
     "@storybook/addon-react-native-web": "0.0.22",
-    "@storybook/blocks": "7.6.8",
-    "@storybook/nextjs": "7.6.8",
-    "@storybook/react": "7.6.8",
-    "@storybook/react-vite": "7.6.8",
+    "@storybook/blocks": "7.6.10",
+    "@storybook/nextjs": "7.6.10",
+    "@storybook/react": "7.6.10",
+    "@storybook/react-vite": "7.6.10",
     "@storybook/testing-library": "0.2.2",
-    "@tamagui/vite-plugin": "^1.86.1",
+    "@tamagui/vite-plugin": "^1.88.2",
     "@types/react": "~18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
@@ -43,9 +44,9 @@
     "eslint-plugin-storybook": "^0.6.15",
     "next": "14.0.4",
     "next-router-mock": "^0.9.10",
-    "storybook": "7.6.8",
-    "storybook-react-i18next": "2.0.9",
-    "typescript": "^5.3.3",
+    "storybook": "7.6.10",
+    "storybook-react-i18next": "^2.0.9",
+    "typescript": "5.3.3",
     "vite": "^5.0.0"
   }
 }

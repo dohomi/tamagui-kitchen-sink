@@ -53,9 +53,9 @@ function LmFormFieldContainer({
         htmlFor: id,
         size: size || "$3",
         ...labelProps,
-        color: error ? "$red10" : labelProps == null ? void 0 : labelProps.color,
-        width: rest.labelInline ? 150 : labelProps == null ? void 0 : labelProps.width,
-        justifyContent: rest.labelInline ? "flex-end" : labelProps == null ? void 0 : labelProps.justifyContent,
+        color: error ? "$red10" : labelProps?.color,
+        width: rest.labelInline ? 150 : labelProps?.width,
+        justifyContent: rest.labelInline ? "flex-end" : labelProps?.justifyContent,
         children: [
           label,
           " ",
@@ -79,8 +79,4 @@ function LmFormFieldContainer({
     ] })
   ] });
 }
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  LmFormFieldContainer
-});
 //# sourceMappingURL=LmFormFieldContainer.js.map

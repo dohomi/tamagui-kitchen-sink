@@ -1,5 +1,5 @@
 import { DocumentPickerOptions, DocumentPickerResult } from 'expo-document-picker';
-import { StackPropsBase } from 'tamagui';
+import { StackProps } from 'tamagui';
 import { LmButtonProps } from '@tamagui-extras/core';
 export type LmFilePickerProps = LmButtonProps & {
     label?: string;
@@ -7,7 +7,7 @@ export type LmFilePickerProps = LmButtonProps & {
     onChange?: (files: DocumentPickerResult) => Promise<void> | void;
 };
 export type LmFileProps = {
-    containerProps?: StackPropsBase;
+    containerProps?: Omit<StackProps, 'children' | 'asChild'>;
     uploadButtonProps?: LmButtonProps & {
         label?: string;
     };

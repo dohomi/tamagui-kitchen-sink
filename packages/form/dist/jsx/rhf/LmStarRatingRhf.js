@@ -1,5 +1,6 @@
 import { Controller } from "react-hook-form";
 import { LmStarRating } from "../LmStarRating";
+import { jsx } from "react/jsx-runtime";
 function LmStarRatingRhf({
   name,
   control,
@@ -7,13 +8,16 @@ function LmStarRatingRhf({
   defaultValue,
   ...inputProps
 }) {
-  return <Controller
-    name={name}
-    rules={rules}
-    control={control}
-    defaultValue={defaultValue}
-    render={({ field: { onChange, value } }) => <LmStarRating {...inputProps} onChange={onChange} value={value ?? null} />}
-  />;
+  return /* @__PURE__ */ jsx(
+    Controller,
+    {
+      name,
+      rules,
+      control,
+      defaultValue,
+      render: ({ field: { onChange, value } }) => /* @__PURE__ */ jsx(LmStarRating, { ...inputProps, onChange, value: value ?? null })
+    }
+  );
 }
 export {
   LmStarRatingRhf

@@ -1,5 +1,6 @@
 import { Controller } from "react-hook-form";
 import { LmSwitch } from "../LmSwitch";
+import { jsx } from "react/jsx-runtime";
 function LmSwitchRhf({
   name,
   control,
@@ -7,13 +8,16 @@ function LmSwitchRhf({
   defaultValue,
   ...inputProps
 }) {
-  return <Controller
-    name={name}
-    rules={rules}
-    control={control}
-    defaultValue={defaultValue}
-    render={({ field: { onChange, value } }) => <LmSwitch {...inputProps} onCheckedChange={onChange} value={value} checked={!!value} />}
-  />;
+  return /* @__PURE__ */ jsx(
+    Controller,
+    {
+      name,
+      rules,
+      control,
+      defaultValue,
+      render: ({ field: { onChange, value } }) => /* @__PURE__ */ jsx(LmSwitch, { ...inputProps, onCheckedChange: onChange, value, checked: !!value })
+    }
+  );
 }
 export {
   LmSwitchRhf

@@ -1,5 +1,6 @@
 import { Controller } from "react-hook-form";
 import { LmInput } from "../LmInput";
+import { jsx } from "react/jsx-runtime";
 function LmInputRhf({
   name,
   control,
@@ -7,21 +8,27 @@ function LmInputRhf({
   defaultValue,
   ...inputProps
 }) {
-  return inputProps.required && (rules.required = "This field is required"), <Controller
-    name={name}
-    rules={rules}
-    control={control}
-    defaultValue={defaultValue}
-    render={({ field: { onChange, value, onBlur, ref }, fieldState: { error } }) => <LmInput
-      {...inputProps}
-      ref={ref}
-      value={value ?? ""}
-      onBlur={onBlur}
-      error={!!error}
-      onChangeText={onChange}
-      helperText={error ? error.message : inputProps.helperText}
-    />}
-  />;
+  return inputProps.required && (rules.required = "This field is required"), /* @__PURE__ */ jsx(
+    Controller,
+    {
+      name,
+      rules,
+      control,
+      defaultValue,
+      render: ({ field: { onChange, value, onBlur, ref }, fieldState: { error } }) => /* @__PURE__ */ jsx(
+        LmInput,
+        {
+          ...inputProps,
+          ref,
+          value: value ?? "",
+          onBlur,
+          error: !!error,
+          onChangeText: onChange,
+          helperText: error ? error.message : inputProps.helperText
+        }
+      )
+    }
+  );
 }
 export {
   LmInputRhf
