@@ -1,5 +1,14 @@
 # @tamagui-extras/date
 
+## 1.11.1
+
+### Patch Changes
+
+- bump tamagui version
+- Updated dependencies
+  - @tamagui-extras/core@1.10.1
+  - @tamagui-extras/form@1.15.1
+
 ## 1.11.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @tamagui-extras/link
 
+## 1.10.1
+
+### Patch Changes
+
+- bump tamagui version
+
 ## 1.10.0
 
 ### Minor Changes

@@ -1,1 +1,0 @@
-import"./index-4g5l5LRQ.js";import{j as a}from"./Stacks-0gbGCfo_.js";import{L as s}from"./LmGrid-eqtElkhI.js";import{a as e}from"./index.esm-SaFMQc_X.js";function l({onSubmit:m,...t}){const o=e(),{handleSubmit:n,formState:r}=o;return a.jsx(s,{...t,onPress:n(i=>{m(i,o)}),loading:r.isValidating||t.loading})}export{l as L};

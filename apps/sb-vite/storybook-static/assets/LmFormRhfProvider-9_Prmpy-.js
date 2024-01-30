@@ -1,1 +1,0 @@
-import{u as n,F as t}from"./index.esm-SaFMQc_X.js";import{j as s}from"./Stacks-0gbGCfo_.js";function u({children:o,forceFormProvider:m,...e}){const r=n({...e});return typeof o=="function"?m?s.jsx(t,{...r,children:o(r)}):s.jsx(s.Fragment,{children:o(r)}):s.jsx(t,{...r,children:o})}export{u as L};

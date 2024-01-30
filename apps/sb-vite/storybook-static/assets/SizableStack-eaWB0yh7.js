@@ -1,1 +1,0 @@
-import{h as a,p as r,f as t,i as o,j as m,k as i,l as h}from"./index-LvVOA0P4.js";import{s as c,X as l}from"./Stacks-0gbGCfo_.js";const p=c(l,{name:"SizableStack",variants:{unstyled:{true:{hoverTheme:!1,pressTheme:!1,focusTheme:!1,elevate:!1,bordered:!1}},hoverTheme:a,pressTheme:r,focusTheme:t,circular:o,elevate:m,bordered:i,size:{"...size":(e,s)=>h(e,s)}}});export{p as S};

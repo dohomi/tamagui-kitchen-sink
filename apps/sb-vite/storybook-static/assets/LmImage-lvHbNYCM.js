@@ -1,1 +1,0 @@
-import"./index-LvVOA0P4.js";import{j as i,S as o}from"./Stacks-0gbGCfo_.js";import"./index-4g5l5LRQ.js";import{I as m}from"./Image-i53vtBSC.js";function x({aspectRatio:t,...r}){return t?i.jsx(o,{width:"100%",aspectRatio:t,position:"relative",children:i.jsx(m,{...r,aspectRatio:t,width:"100%!important",height:"100%!important",resizeMode:"contain"})}):i.jsx(m,{...r})}export{x as L};

@@ -2,6 +2,11 @@ import { tamaguiExtractPlugin, tamaguiPlugin } from '@tamagui/vite-plugin'
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
 
+const isProduction = process.env.NODE_ENV === 'production'
+
+const profiling = isProduction && {
+  'react-dom/client': 'react-dom/profiling',
+}
 const shouldExtract = process.env.EXTRACT === '1'
 
 const extrasPlugins = [
@@ -26,6 +31,7 @@ export default defineConfig({
     // extensions: extensions,
     alias: {
       'react-native/Libraries/Image/AssetRegistry': 'react-native-web/dist/modules/AssetRegistry',
+      ...profiling,
     },
   },
   plugins: [

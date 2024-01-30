@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.10.1
+
+### Patch Changes
+
+- bump tamagui version
+
 ## 1.10.0
 
 ### Minor Changes

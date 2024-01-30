@@ -1,0 +1,1 @@
+import"./index-4g5l5LRQ.js";import{s as r,j as i}from"./Stacks-cf55noxu.js";import{S as m}from"./Headings-zc2v6h-R.js";const s=r(m,{name:"Anchor",tag:"a",accessibilityRole:"link"}),p=s.styleable(({href:o,target:t,...a},e)=>i.jsx(s,{...a,href:o,target:t,ref:e}));export{p as A};

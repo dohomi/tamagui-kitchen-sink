@@ -19,7 +19,7 @@
     "expo-router": "^3.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tamagui": "^1.88.3"
+    "tamagui": "^1.88.17"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "7.6.10",
@@ -32,7 +32,7 @@
     "@storybook/react": "7.6.10",
     "@storybook/react-vite": "7.6.10",
     "@storybook/testing-library": "0.2.2",
-    "@tamagui/vite-plugin": "^1.88.3",
+    "@tamagui/vite-plugin": "^1.88.17",
     "@types/react": "~18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
