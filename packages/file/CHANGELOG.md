@@ -1,5 +1,16 @@
 # @tamagui-extras/file
 
+## 1.11.0
+
+### Minor Changes
+
+- update tamagui to theme v3
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.11.0
+
 ## 1.10.1
 
 ### Patch Changes

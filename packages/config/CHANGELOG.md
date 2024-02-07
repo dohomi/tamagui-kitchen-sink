@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.7.0
+
+### Minor Changes
+
+- update tamagui to theme v3
+
 ## 1.6.3
 
 ### Patch Changes

@@ -1,7 +1,7 @@
 {
   "name": "sb-react",
   "private": true,
-  "version": "1.0.15",
+  "version": "1.0.16",
   "license": "MIT",
   "scripts": {
     "build-storybook": "storybook build -s public",
@@ -11,7 +11,7 @@
     "serve-sb": "npx serve ./public-storybook"
   },
   "dependencies": {
-    "@tamagui-extras/config": "1.6.3",
+    "@tamagui-extras/config": "1.7.0",
     "app": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

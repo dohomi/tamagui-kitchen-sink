@@ -2,7 +2,6 @@ import { ReactNode, useId } from 'react'
 import {
   Checkbox,
   CheckboxProps,
-  CheckedState,
   FontSizeTokens,
   Label,
   LabelProps,
@@ -18,7 +17,7 @@ import { CheckRegular, MinusRegular } from '@tamagui-extras/core'
 export type LmCheckboxProps = XStackProps & {
   checkboxProps?: Omit<CheckboxProps, 'disabled'>
   label?: ReactNode
-  onChange?: (state: CheckedState) => void
+  onChange?: CheckboxProps['onCheckedChange']
   value?: boolean
   error?: boolean
   helperText?: ReactNode

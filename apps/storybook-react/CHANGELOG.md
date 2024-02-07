@@ -1,5 +1,13 @@
 # sb-react
 
+## 1.0.16
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/config@1.7.0
+  - app@0.0.40
+
 ## 1.0.15
 
 ### Patch Changes

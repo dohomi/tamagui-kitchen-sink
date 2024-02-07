@@ -1,5 +1,17 @@
 # @tamagui-extras/date
 
+## 1.12.0
+
+### Minor Changes
+
+- update tamagui to theme v3
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.11.0
+  - @tamagui-extras/form@1.16.0
+
 ## 1.11.1
 
 ### Patch Changes

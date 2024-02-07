@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.12.0
+
+### Minor Changes
+
+- update tamagui to theme v3
+
 ## 1.11.1
 
 ### Patch Changes
