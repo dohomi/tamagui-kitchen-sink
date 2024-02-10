@@ -7,13 +7,13 @@
   "homepage": "https://tamagui-extras.vercel.app",
   "main": "src/index.ts",
   "dependencies": {
-    "@tamagui/animations-react-native": "^1.89.9",
-    "@tamagui/config": "^1.89.9",
-    "@tamagui/font-inter": "^1.89.9",
-    "@tamagui/react-native-media-driver": "^1.89.9",
-    "@tamagui/shorthands": "^1.89.9",
-    "@tamagui/themes": "^1.89.9",
-    "tamagui": "^1.89.9"
+    "@tamagui/animations-react-native": "^1.89.15",
+    "@tamagui/config": "^1.89.15",
+    "@tamagui/font-inter": "^1.89.15",
+    "@tamagui/react-native-media-driver": "^1.89.15",
+    "@tamagui/shorthands": "^1.89.15",
+    "@tamagui/themes": "^1.89.15",
+    "tamagui": "^1.89.15"
   },
   "publishConfig": {
     "access": "public"

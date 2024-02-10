@@ -33,10 +33,10 @@
     "tamagui": "^1.64.1"
   },
   "devDependencies": {
-    "@tamagui/build": "^1.89.9",
+    "@tamagui/build": "^1.89.15",
     "react": "^18.2.0",
     "solito": "^3.2.5",
-    "tamagui": "^1.89.9"
+    "tamagui": "^1.89.15"
   },
   "publishConfig": {
     "access": "public"

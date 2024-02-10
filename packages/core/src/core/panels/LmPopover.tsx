@@ -1,6 +1,7 @@
-import { Popover, PopoverContentProps, PopoverProps } from 'tamagui'
+import { useControllableState } from 'tamagui'
 import { ReactNode } from 'react'
 import { LmSheet, LmSheetProps } from './LmSheet'
+import { Popover, PopoverContentProps, PopoverProps } from './PopoverNew'
 
 export type LmPopoverProps = PopoverProps & {
   trigger?: ReactNode
@@ -19,15 +20,24 @@ export function LmPopover({
   sheetProps,
   ...popoverProps
 }: LmPopoverProps) {
+  const { onOpenChange, open, defaultOpen, ...rest } = popoverProps
+  const [currentOpen, setOpen] = useControllableState({
+    onChange: onOpenChange,
+    defaultProp: defaultOpen,
+    prop: open,
+  })
+  // console.log({ open, currentOpen })
   return (
-    <Popover size="$5" {...popoverProps}>
+    <Popover size="$5" {...rest} open={currentOpen} onOpenChange={setOpen}>
       <Popover.Trigger asChild>{trigger}</Popover.Trigger>
+      {/*{currentOpen && (*/}
       <Popover.Adapt when={'sm'} platform="touch">
         <LmSheet {...sheetProps}>
           <Popover.Adapt.Contents />
         </LmSheet>
       </Popover.Adapt>
-
+      {/*)}*/}
+      {/*{currentOpen && (*/}
       <Popover.Content
         borderWidth={1}
         borderColor="$borderColor"
@@ -53,6 +63,7 @@ export function LmPopover({
         {!hideArrow && <Popover.Arrow borderWidth={1} borderColor="$borderColor" />}
         {children}
       </Popover.Content>
+      {/*)}*/}
     </Popover>
   )
 }
