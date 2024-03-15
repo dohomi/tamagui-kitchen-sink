@@ -59,6 +59,7 @@ export function LmPopover({
         elevate
         padding={contentProps?.padding || 0}
         {...contentProps}
+        setIsFullyHidden={contentProps?.setIsFullyHidden as PopoverContentProps['setIsFullyHidden']}
       >
         {!hideArrow && <Popover.Arrow borderWidth={1} borderColor="$borderColor" />}
         {children}

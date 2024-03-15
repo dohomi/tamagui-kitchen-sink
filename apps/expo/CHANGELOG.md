@@ -1,5 +1,13 @@
 # expo-app
 
+## 1.0.17
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/config@1.8.0
+  - app@0.0.41
+
 ## 1.0.16
 
 ### Patch Changes

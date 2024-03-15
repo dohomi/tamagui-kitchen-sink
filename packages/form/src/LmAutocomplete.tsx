@@ -155,7 +155,7 @@ export function LmAutocomplete({
             contentProps={{
               minWidth: popoverWidth ? popoverWidth : undefined,
               maxWidth: '100%',
-              ...popoverProps?.contentProps,
+              ...(popoverProps?.contentProps as any),
             }}
             trigger={
               <Button

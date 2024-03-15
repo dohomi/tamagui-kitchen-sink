@@ -1,5 +1,16 @@
 # @tamagui-extras/form
 
+## 1.17.0
+
+### Minor Changes
+
+- upgrade tamagui to latest version
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.12.0
+
 ## 1.16.0
 
 ### Minor Changes

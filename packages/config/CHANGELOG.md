@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.8.0
+
+### Minor Changes
+
+- upgrade tamagui to latest version
+
 ## 1.7.0
 
 ### Minor Changes

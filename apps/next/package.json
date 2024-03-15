@@ -1,6 +1,6 @@
 {
   "name": "next-app",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,8 +11,8 @@
     "vercel-build": "npm run prepare && next build"
   },
   "dependencies": {
-    "@tamagui-extras/config": "1.7.0",
-    "@tamagui/next-theme": "^1.89.15",
+    "@tamagui-extras/config": "1.8.0",
+    "@tamagui/next-theme": "^1.91.4",
     "app": "*",
     "next": "14.0.4",
     "next-i18next": "^13.2.2",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.14",
-    "@tamagui/next-plugin": "^1.89.15",
+    "@tamagui/next-plugin": "^1.91.4",
     "@types/node": "^18.6.4",
     "eslint-config-next": "14.0.4",
     "file-loader": "^6.2.0",

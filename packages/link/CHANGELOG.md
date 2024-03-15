@@ -1,5 +1,11 @@
 # @tamagui-extras/link
 
+## 1.12.0
+
+### Minor Changes
+
+- upgrade tamagui to latest version
+
 ## 1.11.0
 
 ### Minor Changes

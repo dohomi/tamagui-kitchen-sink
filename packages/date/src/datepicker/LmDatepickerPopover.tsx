@@ -28,7 +28,7 @@ export function LmDatepickerPopover({
       contentProps={{
         padding: '$4',
         elevation: '$5',
-        ...popoverProps?.contentProps,
+        ...(popoverProps?.contentProps as any),
       }}
       trigger={
         <Button
