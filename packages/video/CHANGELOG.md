@@ -1,5 +1,11 @@
 # @tamagui-extras/video
 
+## 1.13.1
+
+### Patch Changes
+
+- fix popover content prop
+
 ## 1.13.0
 
 ### Minor Changes

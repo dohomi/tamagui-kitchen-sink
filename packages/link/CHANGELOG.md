@@ -1,5 +1,11 @@
 # @tamagui-extras/link
 
+## 1.12.1
+
+### Patch Changes
+
+- fix popover content prop
+
 ## 1.12.0
 
 ### Minor Changes

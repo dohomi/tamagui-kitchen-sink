@@ -1,5 +1,14 @@
 # @tamagui-extras/rich-text
 
+## 1.12.1
+
+### Patch Changes
+
+- fix popover content prop
+- Updated dependencies
+  - @tamagui-extras/core@1.12.1
+  - @tamagui-extras/form@1.17.1
+
 ## 1.12.0
 
 ### Minor Changes

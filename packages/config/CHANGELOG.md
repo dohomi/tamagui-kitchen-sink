@@ -1,5 +1,11 @@
 # @tamagui-extras/config
 
+## 1.8.1
+
+### Patch Changes
+
+- fix popover content prop
+
 ## 1.8.0
 
 ### Minor Changes

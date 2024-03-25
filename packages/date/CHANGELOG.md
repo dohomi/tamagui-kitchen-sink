@@ -1,5 +1,14 @@
 # @tamagui-extras/date
 
+## 1.13.1
+
+### Patch Changes
+
+- fix popover content prop
+- Updated dependencies
+  - @tamagui-extras/core@1.12.1
+  - @tamagui-extras/form@1.17.1
+
 ## 1.13.0
 
 ### Minor Changes
