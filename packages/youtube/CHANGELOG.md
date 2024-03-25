@@ -1,5 +1,12 @@
 # @tamagui-extras/youtube
 
+## 1.12.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.12.2
+
 ## 1.12.1
 
 ### Patch Changes

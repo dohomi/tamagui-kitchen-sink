@@ -1,5 +1,13 @@
 # @tamagui-extras/rich-text
 
+## 1.12.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @tamagui-extras/core@1.12.2
+  - @tamagui-extras/form@1.17.2
+
 ## 1.12.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@tamagui-extras/youtube",
-  "version": "1.12.1",
+  "version": "1.12.2",
   "source": "src/index.ts",
   "types": "./types/index.d.ts",
   "main": "dist/cjs",
@@ -23,7 +23,7 @@
     "npmPublish": "npm publish"
   },
   "dependencies": {
-    "@tamagui-extras/core": "1.12.1",
+    "@tamagui-extras/core": "1.12.2",
     "react-native-webview": "13.2.2"
   },
   "peerDependencies": {

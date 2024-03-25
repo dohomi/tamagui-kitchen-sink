@@ -1,14 +1,11 @@
-import { useControllableState } from 'tamagui'
-import { Dispatch, ReactNode, SetStateAction } from 'react'
+import { Popover, PopoverContentProps, PopoverProps, useControllableState } from 'tamagui'
+import { ReactNode } from 'react'
 import { LmSheet, LmSheetProps } from './LmSheet'
-import { Popover, PopoverContentProps, PopoverProps } from './PopoverNew'
 
 export type LmPopoverProps = PopoverProps & {
   trigger?: ReactNode
   hideArrow?: boolean
-  contentProps?: Omit<PopoverContentProps, 'ref' | 'setIsFullyHidden'> & {
-    setIsFullyHidden?: Dispatch<SetStateAction<boolean>>
-  }
+  contentProps?: Omit<PopoverContentProps, 'ref'>
   isBouncy?: boolean
   sheetProps?: LmSheetProps
 }
@@ -36,7 +33,6 @@ export function LmPopover({
           <Popover.Adapt.Contents />
         </LmSheet>
       </Popover.Adapt>
-      {/* @ts-ignore */}
       <Popover.Content
         borderWidth={1}
         borderColor="$borderColor"

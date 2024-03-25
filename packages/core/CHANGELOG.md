@@ -1,5 +1,11 @@
 ## 0.0.1 (2023-04-02)
 
+## 1.12.2
+
+### Patch Changes
+
+- fix deps on popover
+
 ## 1.12.1
 
 ### Patch Changes
